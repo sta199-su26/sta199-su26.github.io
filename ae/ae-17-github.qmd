@@ -75,7 +75,7 @@ counties_sample <- county_2019 |>
 
 ### Simulate the null distribution
 
-Now, simulate the null distribution.
+Simulate the null distribution.
 We are testing $H_0: \beta_1=0$ versus the alternative $H_A: \beta_1\neq 0$.
 
 ```{r}

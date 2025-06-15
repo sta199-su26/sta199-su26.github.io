@@ -2,7 +2,7 @@
 title: "AE 16: Houses in Duke Forest"
 ---
 
-In this application exercise, we will use bootstrapping to construct confidence intervals.
+In this application exercise, we use bootstrapping to construct confidence intervals.
 
 ## Packages
 
