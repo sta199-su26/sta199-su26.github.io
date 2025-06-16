@@ -6,3 +6,4 @@
 /.quarto/
 _site/
 *.key
+.DS_Store
