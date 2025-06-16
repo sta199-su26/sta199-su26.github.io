@@ -6,7 +6,7 @@ In this application exercise, we will do hypothesis testing for the slope in the
 
 ## Packages
 
-We will use **tidyverse** and **tidymodels** for data exploration and modeling, respectively, and the **openintro** package for the data, and the **knitr** package for formatting tables.
+We will use **tidyverse** and **tidymodels** for data exploration and modeling, respectively, and the **openintro** package for the data.
 
 ```{r}
 #| label: load-packages

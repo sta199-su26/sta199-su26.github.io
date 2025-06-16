@@ -82,7 +82,8 @@ observed_fit
 
 ### Simulate the null distribution
 
-Now, simulate the null distribution. We are testing $H_0: \beta_1=0$ versus the alternative $H_A: \beta_1\neq 0$.
+Now, simulate the null distribution.
+We are testing $H_0: \beta_1=0$ versus the alternative $H_A: \beta_1\neq 0$.
 
 ```{r}
 #| label: simulate-null-dist
@@ -95,7 +96,8 @@ null_dist <- counties_sample |>
   fit()
 ```
 
-Now, we are going to visualize the null distribution. Note that it's centered at zero, because if the null were true and the true slope was in fact zero, we would expect noisy, imperfect estimates of the slope to wiggle around 0.
+Now, we are going to visualize the null distribution.
+Note that it's centered at zero, because if the null were true and the true slope was in fact zero, we would expect noisy, imperfect estimates of the slope to wiggle around 0.
 
 ```{r}
 #| label: plot-null-dist
@@ -123,4 +125,6 @@ null_dist |>
   get_p_value(obs_stat = observed_fit, direction = "two-sided")
 ```
 
-**Interpretation**: If the null were true (the true slope was zero), then there is approximately a 10% chance of observing data as or more extreme than the one we observed. At a 5% discernibility level, we fail to reject the null hypothesis. The data do not provide convincing evidence for the alternative hypothesis.
+**Interpretation**: If the null were true (the true slope was zero), then there is approximately a 10% chance of observing data as or more extreme than the one we observed.
+At a 5% discernibility level, we fail to reject the null hypothesis.
+The data do not provide convincing evidence for the alternative hypothesis.
