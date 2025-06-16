@@ -123,4 +123,4 @@ null_dist |>
   get_p_value(obs_stat = observed_fit, direction = "two-sided")
 ```
 
-**Interpretation**: if the null were true (the true slope was zero), then the probability of data as or more extreme than what we saw in about 10%. At a 5% discernibility level, we fail to reject the null. With the data we have, you can't discern with tremendously high confidence whether the null is true or not. We just don't know.
+**Interpretation**: If the null were true (the true slope was zero), then there is approximately a 10% chance of observing data as or more extreme than the one we observed. At a 5% discernibility level, we fail to reject the null hypothesis. The data do not provide convincing evidence for the alternative hypothesis.
