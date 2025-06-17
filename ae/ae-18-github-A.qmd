@@ -1,0 +1,199 @@
+---
+title: "AE 17: Stocks!!"
+---
+
+Today we’ll explore the question “How do stock prices of Apple and Microsoft relate to each other?”
+
+# Packages
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+```
+
+# Data
+
+The data for this application exercise was originally gathered using the [**tidyquant**](https://business-science.github.io/tidyquant/) R package. It features Apple and Microsoft stock prices from January 1st 2020 to December 31st 2021.
+
+First, let's load the data:
+
+```{r}
+#| label: load-data
+#| message: false
+
+stocks <- read_csv("data/stocks.csv")
+```
+
+To keep things simple, we'll work with a subset of the data, stock prices in January 2020.
+
+```{r}
+stocks_jan2020 <- stocks |>
+  filter(month(date) == 1 & year(date) == 2020)
+
+glimpse(stocks_jan2020)
+```
+
+These are daily data. For each stock, we have several variables, including:
+
+-   `Open`: price at the start of the trading day;
+-   `High`: highest price during the trading day;
+-   `Low`: lowest price during the trading day;
+-   `Close`: price at the end of the trading day;
+
+We will focus on using the Microsoft **open** to predict the Apple **open**.
+
+# Visualize
+
+**Your turn**: Plot the data and the line of best fit.
+
+```{r}
+#| message: false
+ggplot(stocks_jan2020, aes(x = MSFT.Open, y = AAPL.Open)) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+# Point Estimation
+
+a.  **Your turn**: Fit the linear model to these data:
+
+```{r}
+observed_fit <- stocks_jan2020 |>
+  specify(AAPL.Open ~ MSFT.Open) |>
+  fit()
+observed_fit
+```
+
+::: callout-note 
+This gives the exact same numbers that you get if you use `linear_reg() |> fit()`, but we need this new syntax because it plays nice with the tools we have for confidence intervals and hypothesis tests. I know, I hate it too, but it's the way it is.
+:::
+
+b.  **Your turn**: Typeset the equation for the model fit:
+
+$$
+\widehat{AAPL} = 3.31 + 0.45\times MSFT
+$$
+
+c.  **Your turn**: Interpret the slope and the intercept estimates:
+
+    -   If Microsoft opened at \$0, we predict that Apple opens at \$3.31 on average;
+    -   A \$1 increase in Microsoft predicts ia associated with a \$0.45 increase in Apple, on average.
+
+# Interval Estimation
+
+a.  **Demo**: Using seed `8675309`, generate `500` bootstrap samples, and store them in a new data frame called `bstrap_samples`.
+
+```{r}
+set.seed(8675309)
+bstrap_samples <- stocks_jan2020 |>
+  specify(AAPL.Open ~ MSFT.Open) |>
+  generate(reps = 500, type = "bootstrap")
+```
+
+b.  **Demo**: Fit a linear model to each of these bootstrap samples and store the estimates in a new data framed called `bstrap_fits`.
+
+```{r}
+bstrap_fits <- bstrap_samples |> 
+  fit()
+```
+
+c.  **Your turn**: Use `linear_reg() |> fit(...)` to fit a linear model to bootstrap sample number *347*, and verify that you get the same estimates as the ones contained in `bstrap_fits`.
+
+```{r}
+replicate_347 <- bstrap_samples |>
+  filter(
+    replicate == 347
+  )
+
+linear_reg() |>
+  fit(AAPL.Open ~ MSFT.Open, data = replicate_347) |>
+  tidy()
+
+bstrap_fits |>
+  filter(replicate == 347)
+```
+
+::: callout-note 
+The only point I'm making here is that this new bootstrap code is not performing a fundamentally new task. It's performing an old task (fitting the linear model), but it's repeating it A LOT. So the numbers you get here are not mysterious. They're numbers you already know how to compute.
+:::
+
+d.  **Demo**: Compute 90% confidence intervals for the slope and the intercept using the `get_confidence_interval` command.
+
+```{r}
+ci_90 <- get_confidence_interval(
+  bstrap_fits,
+  point_estimate = observed_fit,
+  level = 0.90,
+  type = "percentile"
+)
+ci_90
+```
+
+e.  **Your turn**: Verify that you get the same numbers when you manually calculate the quantiles of the slope estimates using `summarize` and `quantile`. *Pay attention to the grouping*.
+
+```{r}
+bstrap_fits |>
+  ungroup() |>
+  group_by(term) |>
+  summarize(
+    lower_ci = quantile(estimate, 0.05),
+    upper_ci = quantile(estimate, 0.95)
+  )
+```
+
+::: callout-note 
+Same point as before. There's no magic here. `get_confidence_interval` is just a convenient way of doing something that you already knew how to do.s
+:::
+
+f. **BONUS**: You can visualize the confidence interval:
+
+```{r}
+visualize(bstrap_fits) + 
+  shade_confidence_interval(ci_90)
+```
+
+
+# Hypothesis Testing
+
+Let's consider the hypotheses:
+
+$$
+H_0:\beta_1=0\quad vs\quad H_A: \beta_1\neq 0.
+$$ The null hypothesis corresponds to the claim that Microsoft and Apple stock prices are uncorrelated. Probably bogus.
+
+a.  Simulate and plot the null distribution for the slope:
+
+```{r}
+#| message: false
+set.seed(20241118)
+null_dist <- stocks_jan2020 |>
+  specify(AAPL.Open ~ MSFT.Open) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 500, type = "permute") |>
+  fit()
+
+null_dist |>
+  filter(term == "MSFT.Open") |>
+  ggplot(aes(x = estimate)) + 
+  geom_histogram()
+```
+
+b.  Add a vertical line to your plot indicating the point estimate of the slope from your original data analysis:
+
+```{r}
+visualize(null_dist) +
+  shade_p_value(obs_stat = observed_fit, direction = "two-sided")
+```
+
+c.  Compute the $p$-value for this test and interpret it:
+
+```{r}
+#| warning: false
+null_dist |>
+  get_p_value(obs_stat = observed_fit, direction = "two-sided")
+```
+
+**Answer**: If the null were true and $\beta_1=0$ (meaning Apple and Microsoft stock prices are uncorrelated), the probability of getting an estimate as or more extreme than the one we got ($b_1=0.45$) is essentially 0. So to hell with the null! We reject it. Evidence is sufficient to conclude that $\beta_1$, whatever it is, is not equal to zero.
