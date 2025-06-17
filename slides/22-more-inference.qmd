@@ -18,7 +18,6 @@ auto-stretch: false
 library(tidyverse)
 library(tidymodels)
 library(openintro)
-library(distr)
 library(glue)
 todays_ae <- "ae-18-inference-practice"
 ```
@@ -617,94 +616,6 @@ glimpse(original_dataset)
 |               |     |     |        |     |     | 0.523  |     |     |        |
 |               |     |     |        |     |     | 1.563  |     |     |        |
 
-## Which is a 98% confidence interval? {.smaller}
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-#| fig-asp: 0.4
-
-set.seed(34567890)
-M <- 5000
-x <- r(UnivarMixingDistribution(Norm(mean = -3, sd = 3/4), 
-                                     Norm(mean = -0, sd = 3/4),
-                                     Norm(mean = +2.5, sd = 3/4),
-                                     mixCoeff = c(0.1, 0.65, 0.25)))(M)
-
-par(mfrow = c(1, 1), mar = c(4, 0.5, 0.5, 0.5))
-hist(x, breaks = "Scott", freq = FALSE,
-     yaxt = "n", 
-     xaxt = "n", 
-     main = "")
-axis(1, at = quantile(x, probs = c(0.01, 0.05, 0.09, 0.5, 0.91, 0.95, 0.99)),
-     labels = c(expression(q[0.01]), 
-                expression(q[0.05]),
-                expression(q[0.09]),
-                expression(q["0.50"]),
-                expression(q[0.91]),
-                expression(q[0.95]),
-                expression(q[0.99])),
-     las = 2,
-     cex.axis = 1.5)
-```
-
-::: columns
-::: column
-a.  $(q_{0.01},\,q_{0.91})$
-b.  $(q_{0.01},\,q_{0.99})$
-:::
-
-::: column
-c.  $(q_{0.09},\,q_{0.95})$
-d.  $(q_{0.05},\,q_{0.99})$
-:::
-:::
-
-
-## Which is a 98% confidence interval? {.smaller}
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-#| fig-asp: 0.4
-
-set.seed(34567890)
-M <- 5000
-x <- r(UnivarMixingDistribution(Norm(mean = -3, sd = 3/4), 
-                                     Norm(mean = -0, sd = 3/4),
-                                     Norm(mean = +2.5, sd = 3/4),
-                                     mixCoeff = c(0.1, 0.65, 0.25)))(M)
-
-par(mfrow = c(1, 1), mar = c(4, 0.5, 0.5, 0.5))
-hist(x, breaks = "Scott", freq = FALSE,
-     yaxt = "n", 
-     xaxt = "n", 
-     main = "")
-axis(1, at = quantile(x, probs = c(0.01, 0.05, 0.09, 0.5, 0.91, 0.95, 0.99)),
-     labels = c(expression(q[0.01]), 
-                expression(q[0.05]),
-                expression(q[0.09]),
-                expression(q["0.50"]),
-                expression(q[0.91]),
-                expression(q[0.95]),
-                expression(q[0.99])),
-     las = 2,
-     cex.axis = 1.5)
-```
-
-::: columns
-::: column
-a.  $(q_{0.01},\,q_{0.91})$
-b.  $(q_{0.01},\,q_{0.99})$ (*correct*)
-:::
-
-::: column
-c.  $(q_{0.09},\,q_{0.95})$
-d.  $(q_{0.05},\,q_{0.99})$
-:::
-:::
 
 ## Match the picture to the p-value. {.smaller}
 
