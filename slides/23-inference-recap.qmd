@@ -502,7 +502,7 @@ A random sample of US births from 2014:
 #| attr-output: "style='font-size: 0.6em'"
 
 births14 <- births14 |> drop_na(weight, habit) 
-births_14
+births14
 ```
 
 Do babies born to mothers who smoke have lower body weights than non-smoking mothers?
