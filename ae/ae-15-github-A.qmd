@@ -48,7 +48,8 @@ forested_test <- testing(forested_split)
 
 # Exploratory data analysis
 
-Create some visualizations to explore the data! This can help you determine which predictors you want to include in your model.
+Create some visualizations to explore the data!
+This can help you determine which predictors you want to include in your model.
 
 **Note:** Pay attention to which dataset you use for your exploration.
 
@@ -82,7 +83,8 @@ ggplot(forested_train, aes(x = temp_annual_mean, color = forested)) +
 
 ## Fit
 
-Fit a model for classifying plots as forested or not based on a subset of predictors of your choice. Name the model `forested_custom_fit` and display a tidy output of the model.
+Fit a model for classifying plots as forested or not based on a subset of predictors of your choice.
+Name the model `forested_custom_fit` and display a tidy output of the model.
 
 ```{r}
 #| label: forested-custom-fit
@@ -129,7 +131,8 @@ forested_custom_aug |>
   )
 ```
 
-Another commonly used display of this information is a confusion matrix. Create this using the `conf_mat()` function.
+Another commonly used display of this information is a confusion matrix.
+Create this using the `conf_mat()` function.
 
 ```{r}
 #| label: conf-mat-custom
@@ -169,7 +172,8 @@ ggplot(forested_custom_roc, aes(x = 1 - specificity, y = sensitivity)) +
 
 ## Fit
 
-Fit a model for classifying plots as forested or not based on all predictors available. Name the model `forested_full_fit` and display a tidy output of the model.
+Fit a model for classifying plots as forested or not based on all predictors available.
+Name the model `forested_full_fit` and display a tidy output of the model.
 
 ```{r}
 #| label: forested-full-fit
@@ -271,7 +275,8 @@ roc_combined |>
   coord_equal() # makes square
 ```
 
-The full model looks better. We can quantify this comparison with the area under the curve:
+The full model looks better.
+We can quantify this comparison with the area under the curve:
 
 ```{r}
 # same as roc_curve, but roc_auc
@@ -293,4 +298,5 @@ custom_roc_auc <- roc_auc (
 
 full_roc_auc
 custom_roc_auc
+
 ```
