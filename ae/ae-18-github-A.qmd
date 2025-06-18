@@ -207,3 +207,5 @@ null_dist |>
 So to hell with the null!
 We reject it.
 Evidence is sufficient to conclude that $\beta_1$, whatever it is, is not equal to zero.
+
+# 

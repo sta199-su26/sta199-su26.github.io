@@ -208,3 +208,48 @@ null_dist |>
 ```
 
 Add interpretation here!
+
+# New Question:
+
+Are Apple open prices different in the early week (Mondays and Tuesdays) than the late week (Wednesday - Friday) on average?
+
+Run this code to create a part of week variable!
+
+```{r}
+#| eval: false
+
+
+stocks <- stocks |> 
+  mutate(part_of_week = if_else(weekdays(date) 
+                                %in% c("Monday", "Tuesday"), "Early", "Late"))
+
+```
+
+## Visualize: 
+
+**Task:** Create a visualization to represent Apple open stock prices in the early vs. late week.
+
+```{r}
+# add code here
+```
+
+## Point Estimate
+
+**Task:** Use `specify` to get a point estimate of the difference in means between the two groups.
+
+```{r}
+# add code here
+```
+
+## Hypothesis Test
+
+We want to test the hypothesis of whether the opening stock prices early in the week look, on average, like prices later in the week.
+
+**Task:** Write the hypothesis we want to test using proper notation.
+
+**Task:** Write code to implement this test.
+What are your conclusions?
+
+```{r}
+# add code here
+```
