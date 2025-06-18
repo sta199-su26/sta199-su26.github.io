@@ -108,7 +108,7 @@ linear_reg() |>
 -   We can use the *bootstrap* to construct alternative datasets and assess the sensitivity of our estimates to changes in the data.
 :::
 
-## Bootstrap distribution {.smaller }
+## Bootstrap distribution {.smaller}
 
 This histogram displays variation in the slope estimate across alternative datasets.
 
@@ -233,7 +233,9 @@ This is how the world should look *if the null is true*.
 
 ## Null distribution versus reality {.smaller}
 
-Locate the *actual* results of your *actual* data analysis under the null distribution. Are they in the middle? Are they in the tails?
+Locate the *actual* results of your *actual* data analysis under the null distribution.
+Are they in the middle?
+Are they in the tails?
 
 ```{r}
 #| echo: false
@@ -259,7 +261,8 @@ Are these results in harmony or conflict with the null?
 ## Null distribution versus reality {.smaller}
 
 Locate the *actual* results of your *actual* data analysis under the null distribution.
-Are they in the middle? Are they in the tails?
+Are they in the middle?
+Are they in the tails?
 
 ```{r}
 #| echo: false
@@ -426,7 +429,6 @@ Null looks...?
 
 We will do a few multiple choice questions to check-in about statistical inference:
 
-
 ## What is $b_1$? {.smaller}
 
 ```{r}
@@ -457,7 +459,7 @@ c.  1 / 4
 :::
 
 ::: column
-d.  1 / 2 
+d.  1 / 2
 e.  1
 f.  2
 :::
@@ -529,7 +531,7 @@ b.  1.75
 
 ::: column
 c.  2
-d.  3 
+d.  3
 :::
 :::
 
@@ -581,16 +583,15 @@ original_dataset <- tibble(scores = round(rnorm(5), 3))
 glimpse(original_dataset)
 ```
 
-| A  |     |     | B      |     |     | C      |     |     | D      |
-|---------------|-----|-----|--------|-----|-----|--------|-----|-----|--------|
-| -0.515        |     |     | 1.563  |     |     | -0.515 |     |     | -0.522 |
-| -0.411        |     |     | -0.411 |     |     | -0.411 |     |     | 1.12   |
-| 1.563         |     |     | -0.515 |     |     | -0.411 |     |     | 1.206  |
-| -0.515        |     |     |        |     |     | 1.563  |     |     | 0.68   |
-| -0.515        |     |     |        |     |     | 1.563  |     |     | 0.83   |
-|               |     |     |        |     |     | 0.523  |     |     |        |
-|               |     |     |        |     |     | 1.563  |     |     |        |
-
+| A      |     |     | B      |     |     | C      |     |     | D      |
+|--------|-----|-----|--------|-----|-----|--------|-----|-----|--------|
+| -0.515 |     |     | 1.563  |     |     | -0.515 |     |     | -0.522 |
+| -0.411 |     |     | -0.411 |     |     | -0.411 |     |     | 1.12   |
+| 1.563  |     |     | -0.515 |     |     | -0.411 |     |     | 1.206  |
+| -0.515 |     |     |        |     |     | 1.563  |     |     | 0.68   |
+| -0.515 |     |     |        |     |     | 1.563  |     |     | 0.83   |
+|        |     |     |        |     |     | 0.523  |     |     |        |
+|        |     |     |        |     |     | 1.563  |     |     |        |
 
 ## Which of these could be a bootstrap sample? {.smaller}
 
@@ -615,7 +616,6 @@ glimpse(original_dataset)
 | -0.515        |     |     |        |     |     | 1.563  |     |     | 0.83   |
 |               |     |     |        |     |     | 0.523  |     |     |        |
 |               |     |     |        |     |     | 1.563  |     |     |        |
-
 
 ## Match the picture to the p-value. {.smaller}
 
@@ -644,12 +644,12 @@ abline(v = v[4], lty = 2, col = "red")
 ::: columns
 ::: column
 a.  0
-b.  0.045 
+b.  0.045
 :::
 
 ::: column
-c.  0.32 
-d.  0.62 
+c.  0.32
+d.  0.62
 :::
 :::
 
@@ -688,8 +688,6 @@ c.  0.32 (Plot 3)
 d.  0.62 (Plot 1)
 :::
 :::
-
-
 
 ## Which could be the null distribution of the test? {.smaller}
 
@@ -768,8 +766,6 @@ ggplot(df, aes(x = draws)) +
     y = NULL
   )
 ```
-
-
 
 # Application exercise {.smaller}
 
