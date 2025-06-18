@@ -1,8 +1,8 @@
 ---
-title: "AE 17: Stocks!!"
+title: "AE 18: Stocks!!"
 ---
 
-Today we’ll explore the question “How do stock prices of Apple and Microsoft relate to each other?”
+Today we'll explore the question "How do stock prices of Apple and Microsoft relate to each other?"
 
 # Packages
 
@@ -16,7 +16,8 @@ library(tidymodels)
 
 # Data
 
-The data for this application exercise was originally gathered using the [**tidyquant**](https://business-science.github.io/tidyquant/) R package. It features Apple and Microsoft stock prices from January 1st 2020 to December 31st 2021.
+The data for this application exercise was originally gathered using the [**tidyquant**](https://business-science.github.io/tidyquant/) R package.
+It features Apple and Microsoft stock prices from January 1st 2020 to December 31st 2021.
 
 First, let's load the data:
 
@@ -36,7 +37,8 @@ stocks_jan2020 <- stocks |>
 glimpse(stocks_jan2020)
 ```
 
-These are daily data. For each stock, we have several variables, including:
+These are daily data.
+For each stock, we have several variables, including:
 
 -   `Open`: price at the start of the trading day;
 -   `High`: highest price during the trading day;
@@ -67,8 +69,9 @@ observed_fit <- stocks_jan2020 |>
 observed_fit
 ```
 
-::: callout-note 
-This gives the exact same numbers that you get if you use `linear_reg() |> fit()`, but we need this new syntax because it plays nice with the tools we have for confidence intervals and hypothesis tests. I know, I hate it too, but it's the way it is.
+::: callout-note
+This gives the exact same numbers that you get if you use `linear_reg() |> fit()`, but we need this new syntax because it plays nice with the tools we have for confidence intervals and hypothesis tests.
+I know, I hate it too, but it's the way it is.
 :::
 
 b.  **Your turn**: Typeset the equation for the model fit:
@@ -116,8 +119,10 @@ bstrap_fits |>
   filter(replicate == 347)
 ```
 
-::: callout-note 
-The only point I'm making here is that this new bootstrap code is not performing a fundamentally new task. It's performing an old task (fitting the linear model), but it's repeating it A LOT. So the numbers you get here are not mysterious. They're numbers you already know how to compute.
+::: callout-note
+The only point I'm making here is that this new bootstrap code is not performing a fundamentally new task.
+It's performing an old task (fitting the linear model), but it's repeating it A LOT. So the numbers you get here are not mysterious.
+They're numbers you already know how to compute.
 :::
 
 d.  **Demo**: Compute 90% confidence intervals for the slope and the intercept using the `get_confidence_interval` command.
@@ -144,17 +149,18 @@ bstrap_fits |>
   )
 ```
 
-::: callout-note 
-Same point as before. There's no magic here. `get_confidence_interval` is just a convenient way of doing something that you already knew how to do.s
+::: callout-note
+Same point as before.
+There's no magic here.
+`get_confidence_interval` is just a convenient way of doing something that you already knew how to do.s
 :::
 
-f. **BONUS**: You can visualize the confidence interval:
+f.  **BONUS**: You can visualize the confidence interval:
 
 ```{r}
 visualize(bstrap_fits) + 
   shade_confidence_interval(ci_90)
 ```
-
 
 # Hypothesis Testing
 
@@ -162,7 +168,8 @@ Let's consider the hypotheses:
 
 $$
 H_0:\beta_1=0\quad vs\quad H_A: \beta_1\neq 0.
-$$ The null hypothesis corresponds to the claim that Microsoft and Apple stock prices are uncorrelated. Probably bogus.
+$$ The null hypothesis corresponds to the claim that Microsoft and Apple stock prices are uncorrelated.
+Probably bogus.
 
 a.  Simulate and plot the null distribution for the slope:
 
@@ -196,4 +203,7 @@ null_dist |>
   get_p_value(obs_stat = observed_fit, direction = "two-sided")
 ```
 
-**Answer**: If the null were true and $\beta_1=0$ (meaning Apple and Microsoft stock prices are uncorrelated), the probability of getting an estimate as or more extreme than the one we got ($b_1=0.45$) is essentially 0. So to hell with the null! We reject it. Evidence is sufficient to conclude that $\beta_1$, whatever it is, is not equal to zero.
+**Answer**: If the null were true and $\beta_1=0$ (meaning Apple and Microsoft stock prices are uncorrelated), the probability of getting an estimate as or more extreme than the one we got ($b_1=0.45$) is essentially 0.
+So to hell with the null!
+We reject it.
+Evidence is sufficient to conclude that $\beta_1$, whatever it is, is not equal to zero.

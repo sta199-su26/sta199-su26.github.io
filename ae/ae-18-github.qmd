@@ -1,5 +1,5 @@
 ---
-title: "AE 17: Stocks!!"
+title: "AE 18: Stocks!!"
 ---
 
 Today we'll explore the question "How do stock prices of Apple and Microsoft relate to each other?"
