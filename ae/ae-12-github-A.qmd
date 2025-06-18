@@ -136,10 +136,9 @@ We are extrapolating when we take flipper length = 100: it is outside of the dat
 
 **Task 9:** A different researcher wants to look at body weight of penguins based on the island they were recorded on.
 
--   **Question:** How are the variables involved in this analysis different?\
+-   **Question:** How are the variables involved in this analysis different?
 
-    \
-    *Add answer here.*
+    The predictor variable is categorical, not quantitative!
 
 -   **Code:** Make an appropriate visualization to investigate this relationship below.
     Additionally, calculate the mean body mass by island.
@@ -147,13 +146,18 @@ We are extrapolating when we take flipper length = 100: it is outside of the dat
 ```{r}
 #| label: plot-bm-island
 
-# add plot here
+
+penguins |>
+  ggplot(aes(x = island, y = body_mass_g)) +
+  geom_boxplot()
 ```
 
 ```{r}
 #| label: mean-bm-island
 
-# add mean by island
+penguins |>
+  group_by(island) |>
+  summarize(mean_bm = mean(body_mass_g, na.rm = TRUE))
 ```
 
 **Task 10:** Change the geom of your previous plot to `geom_point()`.
@@ -162,7 +166,9 @@ Use this plot to think about how R models these data.
 ```{r}
 #| label: plot-bm-island-points
 
-# add code here
+penguins |>
+  ggplot(aes(x = island, y = body_mass_g)) +
+  geom_point()
 ```
 
 **Task 11:** Fit the linear regression model and display the results.
@@ -171,24 +177,27 @@ Write the estimated model output below.
 ```{r}
 #| label: fit-bm-island
 
-# add code here
+
+bm_island_fit <- linear_reg() |>
+  fit(body_mass_g ~ island, data = penguins)
+
+tidy(bm_island_fit)
 ```
+
+$$
+\widehat{bodymass} = 4716 -1003 \times dream -1010 \times torgersen
+$$
 
 ## Interpreting Categorical Predictors
 
 **Task 12:** Fill in the blanks.
 
--   The baseline island is \_\_\_\_\_\_\_\_.
-
-<!-- -->
-
--   Intercept: Penguins from \_\_\_\_\_\_\_\_\_ island are expected to weigh, on average, \_\_\_\_\_\_\_ grams.
-
+-   The baseline island is Biscoe.
+-   Intercept: Penguins from Biscoe island are expected to weigh, on average, 4716 grams.
 -   Slopes:
+    -   Penguins from Dream are expected to weigh, on average, 1003 grams less than those from Biscoe.
 
-    -   Penguins from \_\_\_\_\_\_\_\_\_ are expected to weigh, on average, \_\_\_\_\_\_\_ grams \_\_\_\_\_ than those from \_\_\_\_\_\_\_.
-
-    -   Penguins from \_\_\_\_\_\_\_\_\_ island are expected to weigh, on average, \_\_\_\_\_\_\_\_ grams \_\_\_\_\_\_\_ than those from \_\_\_\_\_\_\_.
+    -   Penguins from Torgersen island are expected to weigh, on average, 1010 grams less than those from Biscoe.
 
 **Task 13:** What is the estimated body weight of a penguin on Biscoe island?
 What are the estimated body weights of penguins on Dream and Torgersen islands?
@@ -196,5 +205,11 @@ What are the estimated body weights of penguins on Dream and Torgersen islands?
 ```{r}
 #| label: predict-bm-island
 
-# add code here
+
+three_penguins <- tibble(
+  island = c("Biscoe", "Dream", "Torgersen")
+)
+
+bm_island_fit |>
+  predict(new_data = three_penguins)
 ```
