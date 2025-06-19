@@ -215,16 +215,13 @@ Are Apple open prices different in the early week (Mondays and Tuesdays) than th
 Run this code to create a part of week variable!
 
 ```{r}
-#| eval: false
-
-
 stocks <- stocks |> 
   mutate(part_of_week = if_else(weekdays(date) 
                                 %in% c("Monday", "Tuesday"), "Early", "Late"))
 
 ```
 
-## Visualize: 
+## Visualize:
 
 **Task:** Create a visualization to represent Apple open stock prices in the early vs. late week.
 
@@ -233,7 +230,9 @@ stocks |>
   ggplot(aes(x = AAPL.Open, color = part_of_week)) +
   geom_boxplot()
 ```
-Seems like there isn't really a difference! This is probably what you would have expected. 
+
+Seems like there isn't really a difference!
+This is probably what you would have expected.
 
 ## Point Estimate
 
@@ -255,9 +254,9 @@ We want to test the hypothesis of whether the opening stock prices early in the 
 
 $$
 H_0:\beta_1=0\quad vs\quad H_A: \beta_1\neq 0.
-$$ 
+$$
 
-The null hypothesis corresponds to the claim that Apple stock prices are unrelated to the time of week; could reasonably be true. 
+The null hypothesis corresponds to the claim that Apple stock prices are unrelated to the time of week; could reasonably be true.
 
 **Task:** Write code to implement this test.
 What are your conclusions?
@@ -278,6 +277,7 @@ null_dist |>
   ggplot(aes(x = estimate)) + 
   geom_histogram()
 ```
+
 ```{r}
 visualize(null_dist) +
   shade_p_value(obs_stat = observed_fit_part_of_week, direction = "two-sided")
@@ -289,4 +289,6 @@ null_dist |>
   get_p_value(obs_stat = observed_fit_part_of_week, direction = "two-sided")
 ```
 
- If the null were true (the true slope - here, the true difference in means - was zero), then there is approximately a 81% chance of observing data as or more extreme than the one we observed. At a 5% discernibility level, we fail to reject the null hypothesis. The data do not provide convincing evidence for the alternative hypothesis.
+If the null were true (the true slope - here, the true difference in means - was zero), then there is approximately a 81% chance of observing data as or more extreme than the one we observed.
+At a 5% discernibility level, we fail to reject the null hypothesis.
+The data do not provide convincing evidence for the alternative hypothesis.
