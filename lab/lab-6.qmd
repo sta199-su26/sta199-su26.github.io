@@ -30,7 +30,7 @@ In this lab, you'll work with data from the [Duke Lemur Center](https://lemur.du
 
 You'll work with a dataset of selected lemur species.
 The dataset, called `lemurs.csv`, can be found in the `data` folder.
-You can learn more about the data at [https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24](#0){.uri}.
+You can learn more about the data at: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24>.
 
 ::: callout-note
 ## Zoboomafoo
