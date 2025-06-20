@@ -1,0 +1,247 @@
+---
+title: "Milestone 4"
+date: "2025-06-16"
+format: revealjs
+auto-stretch: false
+editor_options: 
+  chunk_output_type: console
+---
+
+## Announcements
+
+-   Commit and pushes changes to AE
+
+-   TEAMMATES peer evaluation will open today at noon and close Wednesday at 11:59pm
+
+    -   Let Marie/Mary know if you are not getting emails from TEAMMATES (check spam folder)
+
+-   Today
+
+    -   Tips to help make project beautiful
+
+    -   Work on project
+
+    -   Review one other team's project
+
+## Code cell options {.smaller}
+
+-   We will examine the `echo`, `warning`, `eval`, `fig-width`, and `fig-asp` code chunk options using the following code:
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+#| eval: false
+#| echo: true
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+
+-   To set code chunk options:
+
+    -   `#| option: value` -- The spaces must be included! Without first space it's just a comment.
+
+    -   Must be at the top of the code chunk or within the YAML at the top of the document (to include the same option for all code chunks)
+
+-   Try the various options, render the document, and see what happens
+
+
+## Code cell options -- echo {.smaller}
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+:::
+:::::
+
+::: incremental
+-   echo: Includes the code chunk in the ouptut.
+
+-   We want this for labs to show our work. We do NOT want this for the project
+
+-   To include this for the main project file (index.qmd), within yaml at top of document, change `echo: true` to `echo: false`. Then `echo` is set to `false` for ALL code chunks
+:::
+
+## Code cell options -- warning {.smaller}
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| warning: false
+#| echo: true
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| warning: true
+#| echo: true
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+:::
+:::::
+
+::: incremental
+-   warning: Includes warning messages in the output.
+:::
+
+## Code cell options -- eval {.smaller}
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+#| echo: true
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: true
+#| echo: true
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+:::
+:::::
+
+::: incremental
+-   eval: Evaluates, or runs, the code.
+
+-   Can be helpful if you are unable to fix an error before the deadline.
+:::
+
+## Code cell options -- fig-width {.smaller}
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+#| fig-width: 1
+#| echo: false
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-width: 4
+#| echo: false
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+:::
+:::::
+
+-   fig-width: controls figure width (is a value between 1 and 10)
+
+-   `fig-width: 1` on the left, `fig-width: 4` on the right
+
+## Code cell options -- fig-asp {.smaller}
+
+::::: columns
+::: {.column width="33%"}
+```{r}
+#| fig-asp: 0.1
+#| echo: false
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+:::
+
+::: {.column width="33%"}
+```{r}
+#| fig-asp: 0.5
+#| echo: false
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+:::
+
+::: {.column width="33%"}
+```{r}
+#| fig-asp: 1
+#| echo: false
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_point()
+```
+:::
+:::::
+
+-   fig-asp: controls figure aspect ratio (is a value between 0 and 1)
+
+-   `fig-asp: 0.1` on the left, `fig-asp: 0.5` in the middle, `fig-asp: 1` on the right
+
+## Tables {.smaller}
+
+-   Can create pretty tables using `kable` (uses knitr library)
+
+```{r}
+library(knitr)
+```
+
+::::: columns
+::: {.column width="70%"}
+```{r}
+#| echo: true
+
+
+
+mtcars |>
+  group_by(cyl) |>
+  summarize(
+    avg_mpg = mean(mpg),
+    avg_hp = mean(hp),
+    count = n()
+  ) |>
+  kable(digits = 2, 
+        caption = "Average MPG and HP by Cylinder")
+```
+:::
+
+::: {.column width="30%"}
+```{r}
+#| echo: true
+mtcars |>
+  group_by(cyl) |>
+  summarize(
+    avg_mpg = mean(mpg),
+    avg_hp = mean(hp),
+    count = n()
+  ) 
+```
+:::
+:::::
+
