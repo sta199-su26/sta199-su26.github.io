@@ -40,7 +40,10 @@ For one bonus point added to this lab, write code that clearly displays this lem
 Place this code in a section titled bonus.
 :::
 
+The packages you will need for this lab are:
+
 ```{r}
+#| message: false
 library(tidyverse)
 library(tidymodels)
 ```
