@@ -162,3 +162,7 @@ Are the slides well organized, readable, not full of text, featuring figures wit
     -   Does the analysis answer the question?
     -   Are the conclusion(s) made based on the analysis justifiable?
     -   Are the limitations carefully considered and articulated?
+
+```{r}
+
+```

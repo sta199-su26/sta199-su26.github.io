@@ -29,7 +29,7 @@ editor_options:
 
 ```{r}
 #| message: false
-
+#| eval: true
 library(tidyverse)
 library(palmerpenguins)
 ```
@@ -43,16 +43,16 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 
 -   To set code chunk options:
 
-    -   `#| option: value` -- The spaces must be included! Without first space it's just a comment.
+    -   `#| option: value` -- The spaces must be included!
+        Without first space it's just a comment.
 
     -   Must be at the top of the code chunk or within the YAML at the top of the document (to include the same option for all code chunks)
 
 -   Try the various options, render the document, and see what happens
 
-
 ## Code cell options -- echo {.smaller}
 
-::::: columns
+::: columns
 ::: {.column width="50%"}
 ```{r}
 #| echo: false
@@ -70,19 +70,21 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point()
 ```
 :::
-:::::
+:::
 
 ::: incremental
 -   echo: Includes the code chunk in the ouptut.
 
--   We want this for labs to show our work. We do NOT want this for the project
+-   We want this for labs to show our work.
+    We do NOT want this for the project
 
--   To include this for the main project file (index.qmd), within yaml at top of document, change `echo: true` to `echo: false`. Then `echo` is set to `false` for ALL code chunks
+-   To include this for the main project file (index.qmd), within yaml at top of document, change `echo: true` to `echo: false`.
+    Then `echo` is set to `false` for ALL code chunks
 :::
 
 ## Code cell options -- warning {.smaller}
 
-::::: columns
+::: columns
 ::: {.column width="50%"}
 ```{r}
 #| warning: false
@@ -102,7 +104,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point()
 ```
 :::
-:::::
+:::
 
 ::: incremental
 -   warning: Includes warning messages in the output.
@@ -110,7 +112,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 
 ## Code cell options -- eval {.smaller}
 
-::::: columns
+::: columns
 ::: {.column width="50%"}
 ```{r}
 #| eval: false
@@ -130,7 +132,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point()
 ```
 :::
-:::::
+:::
 
 ::: incremental
 -   eval: Evaluates, or runs, the code.
@@ -140,7 +142,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 
 ## Code cell options -- fig-width {.smaller}
 
-::::: columns
+::: columns
 ::: {.column width="50%"}
 ```{r}
 #| fig-width: 1
@@ -160,7 +162,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point()
 ```
 :::
-:::::
+:::
 
 -   fig-width: controls figure width (is a value between 1 and 10)
 
@@ -168,7 +170,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 
 ## Code cell options -- fig-asp {.smaller}
 
-::::: columns
+::: columns
 ::: {.column width="33%"}
 ```{r}
 #| fig-asp: 0.1
@@ -198,7 +200,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point()
 ```
 :::
-:::::
+:::
 
 -   fig-asp: controls figure aspect ratio (is a value between 0 and 1)
 
@@ -212,7 +214,7 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 library(knitr)
 ```
 
-::::: columns
+::: columns
 ::: {.column width="70%"}
 ```{r}
 #| echo: true
@@ -243,5 +245,4 @@ mtcars |>
   ) 
 ```
 :::
-:::::
-
+:::
