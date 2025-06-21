@@ -143,20 +143,20 @@ $$
 **Task:** Write the model equations for each home type.
 Provide interpretations of the coefficients.
 
-**House:** $ \widehat{price} = 13394.8 + 114.5 \times sqft $
+**House:** \$ \widehat{price} = 13394.8 + 114.5 \times sqft \$
 
--  Intercept: On average, we expect a house with 0 square feet to cost $13394.8. 
--  Slope: On average, for houses, we expect every one additional square foot to correspond to an additional price of $114.5. 
+-   Intercept: On average, we expect a house with 0 square feet to cost \$13394.8.
+-   Slope: On average, for houses, we expect every one additional square foot to correspond to an additional price of \$114.5.
 
-**Townhouse:** $ \widehat{price} = (13394.8 - 20306) + 114.5 \times sqft $
+**Townhouse:** \$ \widehat{price} = (13394.8 - 20306) + 114.5 \times sqft \$
 
--  Intercept: On average, we expect a townhouse with 0 square feet to cost $-6911.2. This does not make sense in the context of the data -  townhouses cannot be 0 sqft and prices cannot be negative.
--  Slope: On average, for townhouses, we expect every one additional square foot to correspond to an additional price of $114.5. 
+-   Intercept: On average, we expect a townhouse with 0 square feet to cost \$-6911.2. This does not make sense in the context of the data - townhouses cannot be 0 sqft and prices cannot be negative.
+-   Slope: On average, for townhouses, we expect every one additional square foot to correspond to an additional price of \$114.5.
 
-**Duplex:** $ \widehat{price} = (13394.8 - 63251)  + 114.5 \times sqft $
+**Duplex:** \$ \widehat{price} = (13394.8 - 63251) + 114.5 \times sqft \$
 
--  Intercept: On average, we expect a house with 0 square feet to cost -$49856.2. 49856.2. This does not make sense in the context of the data -  duplexes cannot be 0 sqft and prices cannot be negative.
--  Slope: On average, for duplexes, we expect every one additional square foot to correspond to an additional price of $114.5. 
+-   Intercept: On average, we expect a house with 0 square feet to cost -\$49856.2. 49856.2. This does not make sense in the context of the data - duplexes cannot be 0 sqft and prices cannot be negative.
+-   Slope: On average, for duplexes, we expect every one additional square foot to correspond to an additional price of \$114.5.
 
 **NOTE**: Slopes are the SAME for all types!!
 
@@ -183,12 +183,11 @@ $$
 
 **Task:** Write the model equations for each home type.
 
-**House:** $ \widehat{price} = 9087 + 117 \times sqft $
+**House:** \$ \widehat{price} = 9087 + 117 \times sqft \$
 
-**Townhouse:** $ \widehat{price} = (9087 + 139970) + (117 - 27) \times sqft $
+**Townhouse:** \$ \widehat{price} = (9087 + 139970) + (117 - 27) \times sqft \$
 
-**Duplex:** $ \widehat{price} = (9087 + 57547)  + (117 - 73) \times sqft $
-
+**Duplex:** \$ \widehat{price} = (9087 + 57547) + (117 - 73) \times sqft \$
 
 # Model Comparison
 
@@ -206,6 +205,7 @@ Which is the worst?
 glance(price_main_fit)
 glance(price_inter_fit)
 ```
+
 Adjusted R squared is a higher for the interaction effects model - this is the better model!
 # One more model?
 
@@ -220,4 +220,5 @@ price_inter_bed_fit <- linear_reg() |>
 
 glance(price_inter_bed_fit)
 ```
+
 Adding the number of bedrooms greatly boosts the adjusted r squared value - this is a preferrable model!
