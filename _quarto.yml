@@ -81,6 +81,8 @@ website:
             text: "Midterm Review: Part 2"
           - href: exam-review/midterm-review-1-A.qmd   
             text: "Midterm Review: Part 2 Answers"
+          - href: exam-review/final-review.qmd   
+            text: "Final Review"
             
   page-footer:
     right: 'This page is built with [{{< fa heart >}}]{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
