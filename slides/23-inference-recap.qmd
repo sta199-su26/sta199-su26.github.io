@@ -182,7 +182,8 @@ We use quantiles (think IQR), but there are other ways.
 
 -   Do the data strongly favor one or the other?
 
--   How can we quantify this? p-values!
+-   How can we quantify this?
+    p-values!
 :::
 
 ## *p*-value {.scrollable}
@@ -209,7 +210,6 @@ null_dist <- df |>
 visualize(null_dist) + 
   shade_p_value(obs_stat = obs_stat, direction = "two-sided")
 ```
-
 
 ## Discernibility level {.scrollable}
 
@@ -379,7 +379,6 @@ We are simulating what the world would look like *if* the **null hypothesis were
 | 7             | 68                |
 | 9             | 66                |
 | 6             | 64                |
-
 :::
 :::
 
@@ -408,17 +407,17 @@ We are simulating what the world would look like *if* the **null hypothesis were
 | 9             | 68                |
 | 8             | 66                |
 | 6             | 64                |
-
 :::
 :::
 
-. . . 
+. . .
 
 Do this `reps` times; make a histogram of slope estimates!
 
 ## Null distribution {.smaller}
 
-The null distribution shows the plot of 
+The null distribution shows the plot of
+
 ```{r}
 #| echo: false
 #| message: false
@@ -430,8 +429,6 @@ null_dist |>
        x = "Slope estimate under null",
        y = "Count")
 ```
-
-
 
 ## Then what? {.smaller}
 
@@ -460,14 +457,12 @@ visualize(null_dist) +
   shade_p_value(obs_stat = observed_fit, direction = "two-sided")
 ```
 
-
 ## The p-value {.smaller}
 
 ```{r}
 null_dist |>
   get_p_value(obs_stat = observed_fit, direction = "two-sided")
 ```
-
 
 ## Recap: Hypothesis testing {.smaller}
 
@@ -485,13 +480,12 @@ null_dist |>
 
 ## Idea: Hypothesis test for a difference in means {.smaller}
 
-What if I want to test if the means of two groups are actually different from each other? 
+What if I want to test if the means of two groups are actually different from each other?
 
-:::incremental
-- Is the mean household income different in counties that vote red vs. blue?
-- Do athletes who train over a certain number of hours a day have better performance (measured by some metric) than those who train under that number?
-- Do babies born to mothers who smoke have lower body weights than non-smoking mothers?
-
+::: incremental
+-   Is the mean household income different in counties that vote red vs. blue?
+-   Do athletes who train over a certain number of hours a day have better performance (measured by some metric) than those who train under that number?
+-   Do babies born to mothers who smoke have lower body weights than non-smoking mothers?
 :::
 
 ## Example: smoking/non-smoking mothers {.smaller}
@@ -559,14 +553,14 @@ births14 |>
   )
 ```
 
-. . . 
-
+. . .
 
 ::: callout-note
 ## Don't forget!
 
 In a simple linear regression with a numerical response and a binary predictor, the slope estimate is the difference in the average response between the two groups.
 :::
+
 ## Confidence interval {.smaller}
 
 ```{r}
@@ -608,7 +602,8 @@ boot_fits |>
   )
 ```
 
-We are 95% confident that the true mean difference is between -0.919 and -0.301. This does not contain 0!!!
+We are 95% confident that the true mean difference is between -0.919 and -0.301.
+This does not contain 0!!!
 
 ## Competing claims {.smaller}
 
@@ -621,7 +616,7 @@ H_0&: \beta_1\neq0 && (\text{some effect})\\
 \end{aligned}
 $$
 
-:::incremental
+::: incremental
 -   $\beta_1$ is the difference in mean response between the smoking and non-smoking group;
 -   the alternative does not specify if the effect is positive or negative;
 -   the alternative does not specify that the effect is "large".
@@ -666,7 +661,6 @@ The p-value is basically zero.
 
 > Just because there is a statistically discernible association does not mean there is a causal relationship.
 
-
 ## So, when can we draw causal conclusions? {.smaller}
 
 ::: incremental
@@ -682,7 +676,6 @@ The p-value is basically zero.
     -   you couldn't control gosh darned thing;
     -   different outcomes could be caused by confounding factors, which you may or may not have measured.
 :::
-
 
 ## A proper, controlled experiment {.smaller}
 
@@ -719,7 +712,6 @@ $$
 \widehat{change}=-4.33+7.83\times \texttt{esc}
 $$
 
-
 ## Remember... {.smaller}
 
 $$
@@ -739,7 +731,7 @@ $$
 :::
 
 ## Again, those were not magic numbers!! {.smaller}
- 
+
 ```{r}
 stem_cell |>
   group_by(trmt) |>
@@ -747,7 +739,6 @@ stem_cell |>
     mean_change = mean(change)
   )
 ```
-
 
 ## Confidence interval {.smaller}
 
@@ -844,15 +835,14 @@ The p-value is basically zero.
     Statistics cannot answer that question!
 :::
 
-
 # AE !
 
 Today's AE: Inference Overview
 
 ## Announcements {.smaller}
 
-- I am filling in for Mary's OH today!!
+-   I am filling in for Mary's OH today!!
 
-- Do your second peer feedback forms!!
+-   Do your second peer feedback forms!!
 
-- Come to lab on Friday!!!
+-   Come to lab on Friday!!!

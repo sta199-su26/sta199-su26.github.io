@@ -506,7 +506,7 @@ roc_curve(spam_aug_all, truth = spam, .pred_1, event_level = "second") |>
 Which corner of the plot indicates the best model performance?
 :::
 
-![](images/20/roc-curve-annotated.png) 
+![](images/20/roc-curve-annotated.png)
 
 . . .
 

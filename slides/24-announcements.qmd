@@ -11,7 +11,8 @@ auto-stretch: false
 ## Announcements {.xsmall}
 
 ::: incremental
--   Do your second peer feedback survey! **Now: today at noon!!**
+-   Do your second peer feedback survey!
+    **Now: today at noon!!**
 
 -   Project: **Due MONDAY MORNING!**
 
@@ -30,14 +31,13 @@ auto-stretch: false
             -   8 minutes: Cut off!!
 
         -   You do not have to record your presentations
-        
-    -   Reports: read the requirements carefully!! (pay attention: 10 pages)
-    
+
+    -   Reports: read the requirements carefully!!
+        (pay attention: 10 pages)
+
 -   Final review on Monday: fill out the survey!
 
 -   Final: Thursday 2 - 5 pm
 
 -   Please please please fill out my teaching review:)
-
-
 :::

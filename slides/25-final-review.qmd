@@ -1,0 +1,450 @@
+---
+title: "Final Review - June 23"
+date: "2025-6-23"
+format: 
+  revealjs:
+    output-file: 25-final-review-slides.html
+    pdf-separate-fragments: true
+auto-stretch: false
+---
+
+## Announcement: Office Hours/Exam {.smaller}
+
+-   Tuesday:
+
+    -   [9:30 - 10:45 AM]{.underline} (Marie)
+
+    -   3:30 - 5:30 PM (Marie)
+
+-   Wednesday:
+
+    -   [9:30 - 10:45 AM]{.underline} (Marie)
+
+    -   [1:30 - 3:30 PM]{.underline} (Mary - Zoom)
+
+    -   5:30 - 7:30 PM (Katie)
+
+-   Thursday:
+
+    No class or office hours!
+    **Final is 2-5pm in this room.**
+
+## Teaching Evaluation {.smaller}
+
+Teaching evaluations due [***tomorrow***]{.underline}.
+If we get 13/17 responses, I'll add +2 points to everyone's final exam grade!
+
+![](images/course_eval.png){fig-align="center" width="363"}
+
+## Current Grade Calculation {.smaller}
+
+::: incremental
+-   **AEs: 5%**: completion of 80% or more is full credits
+
+    -   Equivalent to dropping the lowest 4 (out of 20 total)
+
+    -   Take the number you have completed; divide by 16
+
+-   **Lab Attendance: 5%** - one drop given (score - number of labs out of 10)
+
+-   **Labs: 30%** - Lowest is dropped (5 labs at 6% each)
+
+-   **Midterm - 20%** (Add in-class + take-home score to get total out of 100)
+
+-   **Project - 20%**
+
+-   **Final - 20%**
+:::
+
+. . .
+
+If you do better on the final than the midterm, it will be weighted higher!
+
+## Final Overview {.smaller}
+
+::: incremental
+-   All multiple choice (same format as midterm in-class)
+-   Cumulative!!!
+-   Cheat sheet: 2 pages front and back
+:::
+
+##  {.smaller}
+
+# Content Review
+
+## What model should I use? {.smaller}
+
+First, look at what type of output you have:
+
+-   **Numerical**: Linear regression
+
+-   **Binary:** Logistic regression
+
+-   **Other:** We haven't learned how to do this!
+
+## What model should I use? {.smaller}
+
+Now, look at your predictors.
+Does the *relationship between the output and each predictor* [stay the same]{.underline} *regardless of other predictors*?
+
+-   Yes: Additive
+
+-   No: interaction
+
+## Additive vs. Interaction
+
+```{r}
+#| include: false
+library(palmerpenguins)
+library(tidyverse)
+library(tidymodels)
+
+bm_fl_island_fit <- linear_reg() |>
+  fit(body_mass_g ~ flipper_length_mm + island, data = penguins)
+
+tidy(bm_fl_island_fit)
+```
+
+```{r}
+#| label: additive-interaction-viz
+#| layout-ncol: 2
+#| echo: false
+#| fig-asp: 1
+#| warning: false
+#| message: false
+
+
+# Plot A
+bm_fl_island_fit <- linear_reg() |>
+  fit(body_mass_g ~ flipper_length_mm + island, data = penguins)
+bm_fl_island_aug <- augment(bm_fl_island_fit, new_data = penguins)
+# Plot A - Additive model
+ggplot(
+  bm_fl_island_aug, 
+  aes(x = flipper_length_mm, y = body_mass_g, color = island)
+) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(aes(y = .pred), method = "lm") +
+  labs(
+    title = "Plot A - Additive model",
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)",
+    color = "Island"
+  ) +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(size = 18, face = "bold"),
+    axis.title = element_text(size = 16),
+    axis.text = element_text(size = 14),
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 12)
+  )
+
+# Plot B - Interaction model
+ggplot(
+  penguins, 
+  aes(x = flipper_length_mm, y = body_mass_g, color = island)
+) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Plot B - Interaction model",
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)",
+    color = "Island"
+  ) +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(size = 18, face = "bold"),
+    axis.title = element_text(size = 16),
+    axis.text = element_text(size = 14),
+    legend.title = element_text(size = 14),
+    legend.text = element_text(size = 12)
+  )
+
+```
+
+## Practice {.smaller}
+
+```{r}
+#| include: false
+set.seed(123)
+
+n <- 200
+
+# Simulate rain status
+did_rain <- sample(c("rain", "no_rain"), size = n, replace = TRUE, prob = c(0.4, 0.6))
+
+# Simulate temperature (cooler if it rained)
+temperature <- ifelse(did_rain == "rain",
+                      rnorm(n, mean = 65, sd = 5),
+                      rnorm(n, mean = 75, sd = 5))
+
+# Simulate humidity (higher if it rained)
+humidity <- ifelse(did_rain == "rain",
+                   rnorm(n, mean = 85, sd = 5),
+                   rnorm(n, mean = 60, sd = 10))
+
+# Combine into a data frame
+weather_df <- tibble::tibble(
+  did_rain = factor(did_rain, levels = c("no_rain", "rain")),
+  temperature = round(temperature, 1),
+  humidity = round(humidity, 1)
+)
+
+```
+
+```{r}
+head(weather_df)
+```
+
+::: incremental
+-   What type of model to predict `did_rain` from temperature?
+-   What type of model to predict `temperature` from `did_rain`?
+-   What type of model to predict `humidity` from `did_rain` and and `temperature`?
+-   What type of model to predict `did_rain` from `temperature` and `humidity`?
+:::
+
+## Model comparison {.smaller}
+
+::: incremental
+-   Linear Regression:
+
+    -   $R^2$:
+
+        -   Tells us the percent of variability in the data explained by the model
+
+        -   Always increases when adding more variables to a model
+
+    -   Adjusted $R^2$: Like $R^2$ but with a penalty for more variables
+
+-   Logistic Regression:
+
+    -   TPR, TNR, FPR, FNR
+
+    -   ROC Curve: which curve goes further to the top right?
+
+    -   AUC: Area under the ROC curve
+:::
+
+# Review: Logistic Regression
+
+```{r}
+#| label: cartoon-settings
+#| message: false
+#| echo: false
+
+set.seed(8675309)
+n <- 50
+x <- rnorm(n, mean = 0, sd = 1)
+b0 <- 0  
+b1 <- 5
+prob <- 1 / (1 + exp(-(b0 + b1 * x)))
+y <- rbinom(n, 1, prob)
+fit <- glm(y ~ x, family = binomial)
+seq_x = seq(1.2 * min(x), 1.2 * max(x), length.out = 500)
+y_vals <- 1 / (1 + exp(-(fit$coefficients[1] + fit$coefficients[2] * seq_x)))
+
+example_df = data.frame(round(x, 2),y)
+example_df = example_df |> rename(x = round.x..2.)
+df = example_df |> slice(1:10)
+```
+
+## Line of best fit? A little silly...
+
+```{r}
+#| message: false
+#| echo: false
+par(mar = c(5, 5, 0.5, 0.5))
+plot(x, y, pch = 19, cex = 1.3, ylim = c(-0.25, 1.25), cex.lab = 1.5,
+     ylab = "y",
+     xlab = "x")
+abline(lm(y ~ x), col = "hotpink2", lwd = 3)
+```
+
+## S-curve of best fit {.smaller}
+
+```{r}
+#| message: false
+#| echo: false
+par(mar = c(5, 5, 0.5, 0.5))
+plot(x, y, pch = 19, cex = 1.3, ylim = c(-0.25, 1.25), cex.lab = 1.5,
+     ylab = "Prob(y = 1)",
+     xlab = "x")
+lines(seq_x, y_vals, col = "hotpink2", lwd = 3)
+points(x, y, pch = 19, cex = 0.75)
+```
+
+## What is the s-curve?? {.smaller}
+
+It's the *logistic function*:
+
+$$
+\text{Prob}(y = 1)
+=
+\frac{e^{\beta_0+\beta_1x}}{1+e^{\beta_0+\beta_1x}}.
+$$
+
+. . .
+
+If you set $p = \text{Prob}(y = 1)$ and do some algebra, you get the simple linear model for the *log-odds*:
+
+. . .
+
+$$
+\log\left(\frac{p}{1-p}\right)
+=
+\beta_0+\beta_1x.
+$$
+
+. . .
+
+This is called the *logistic regression* model.
+
+## Estimation {.smaller}
+
+::: incremental
+-   We estimate the parameters $\beta_0,\,\beta_1$ using *maximum likelihood* (don't worry about it) to get the "best fitting" S-curve;
+
+-   The fitted model is
+:::
+
+. . .
+
+$$
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right)
+=
+b_0+b_1x.
+$$
+
+. . .
+
+::: incremental
+-   $\hat{p}$ is the predicted probability that $y = 1$
+-   In R, the *second* level of the factor is taken as $y = 1$
+:::
+
+## Interpreting the intercept {.smaller}
+
+Plug in $x = 0$:
+
+$$
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right)
+=
+b_0+b_1x.
+$$
+
+. . .
+
+When $x = 0$, the estimated log-odds is $b_0$.
+
+. . .
+
+When $x = 0$, the estimated probability that $y = 1$ is
+
+$$
+\hat{p} = \frac{e^{b_0}}{1+e^{b_0}}
+$$
+
+## Interpreting the slope is tricky {.smaller}
+
+Recall:
+
+$$
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right)
+=
+b_0+b_1x.
+$$
+
+. . .
+
+Alternatively:
+
+$$
+\frac{\widehat{p}}{1-\widehat{p}}
+=
+e^{b_0+b_1x}
+=
+\color{blue}{e^{b_0}e^{b_1x}}
+.
+$$
+
+. . .
+
+If we increase $x$ by one unit, we have:
+
+$$
+\frac{\widehat{p}}{1-\widehat{p}}
+=
+e^{b_0}e^{b_1(x+1)}
+=
+e^{b_0}e^{b_1x+b_1}
+=
+{\color{blue}{e^{b_0}e^{b_1x}}}{\color{red}{e^{b_1}}}
+.
+$$
+
+. . .
+
+A one unit increase in $x$ is associated with a change in odds by a factor of $e^{b_1}$.
+Gross!
+
+## Sign of the slope is meaningful {.smaller}
+
+A one unit increase in $x$ is associated with a change in odds by a factor of $e^{b_1}$.
+
+. . .
+
+-   A positive slope means increasing $x$ increases the odds (and probability!) that $y = 1$
+-   A negative slope means increasing $x$ decreases the odds (and probability!) that $y = 1$
+
+## Threshold {.smaller}
+
+Pick some probability threshold $p^*$.
+
+::: incremental
+-   If $\hat{p} > p^*$ - predict $y = 1$
+-   If $\hat{p} < p^*$ - predict $y = 0$
+:::
+
+. . .
+
+The higher the threshold, the harder it is to classify as $y = 1$!!!
+
+## Classification Rates
+
+::: columns
+::: {.column width="40%"}
+![](images/c_m.png)
+:::
+
+::: {.column width="60%"}
+::: incremental
+-   False negative rate = $\frac{FN}{FN + TP}$
+-   False positive rate = $\frac{FP}{FP + TN}$
+-   Sensitivity = $\frac{FN}{FN + TP}$ = 1 − False negative rate
+-   Specificity = $\frac{TN}{FP + TN}$ = 1 - False positive rate
+:::
+:::
+:::
+
+## ROC Curve + AUC {.smaller}
+
+![](images/20/roc-curve-annotated.png){width="523"}
+
+. . .
+
+AUC: Area under the curve
+
+## "Three branches of statistical government" {.smaller}
+
+We have an unknown quantity we are trying to learn about (for example, $\beta_1$) using noisy, imperfect data.
+Learning comes in three flavors:
+
+::: incremental
+-   POINT ESTIMATION: get a single-number best guess for $\beta_1$;
+
+-   INTERVAL ESTIMATION: get a range of likely values for $\beta_1$ that characterizes (sampling) uncertainty;
+
+-   HYPOTHESIS TESTING: use the data to distinguish competing claims about $\beta_1$.
+:::
