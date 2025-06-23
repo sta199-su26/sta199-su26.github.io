@@ -19,7 +19,8 @@ theme_set(theme_minimal(base_size = 12))
 ```
 
 ::: callout-note
-Suggested answers coming soon! 
+Suggested answers posted!
+But I would resist the temptation to look at them before going through the questions yourself.
 :::
 
 # Part 1 - Employment
@@ -212,10 +213,10 @@ e.  $b_0 = 3.658$, $b_1 = 0.0814$
 Now it's time to perform a hypothesis test to see if the GPAs of the two groups are equal on average.
 Which of the following is the correct set of hypotheses to test?
 
-a.  $H_0: \beta_0 = 0$, $H_A: \beta\_0 \neq 0 $
-b.  $H_0: \beta_0 \neq 0$, $H_A: \beta\_0 = 0 $
-c.  $H_0: \beta_1 = 0$, $H_A: \beta\_1 \neq 0 $
-d.  $H_0: \beta_1 \neq 0$, $H_A: \beta\_1 = 0 $
+a.  $H_0: \beta_0 = 0$, $H_A: \beta_0 \neq 0$
+b.  $H_0: \beta_0 \neq 0$, $H_A: \beta_0 = 0$
+c.  $H_0: \beta_1 = 0$, $H_A: \beta_1 \neq 0$
+d.  $H_0: \beta_1 \neq 0$, $H_A: \beta_1 = 0$
 e.  $H_0: \beta_0 = \beta_1$, $H_A: \beta_0 \neq \beta_1$
 
 ## Question 7
@@ -495,7 +496,6 @@ A valid interpretation of this interval is
 a.  95% of all teens who text send between 1450 and 1550 text messages per month.
 b.  If a new survey with the same sample size were to be taken, there is a 95% chance that the mean number of texts in the sample would be between 1450 and 1550.
 c.  We are 95% confident that the mean number of texts per month of all American teens is between 1450 and 1550.
-d.  We are 95% confident that, were we to repeat this survey, the mean number of texts per month of those taking part in the survey would be between 1450 and 1550.
 
 {{< pagebreak >}}
 
@@ -546,17 +546,14 @@ axis(1, at = quantile(x, probs = c(0.01, 0.05, 0.09, 0.5, 0.91, 0.95, 0.99)),
      cex.axis = 1.5)
 ```
 
-
 a.  $(q_{0.01},\,q_{0.91})$
 b.  $(q_{0.01},\,q_{0.99})$
 c.  $(q_{0.09},\,q_{0.95})$
 d.  $(q_{0.05},\,q_{0.99})$
 
-
 ## Question 17
 
 True or false: In hypotheses testing, rejecting the null when the null is true is referred to as a Type II error.
-
 
 ## Question 18
 
@@ -575,26 +572,28 @@ penguins |> ggplot(aes(x = body_mass_g, y= flipper_length_mm)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE)
 ```
-a. 1.3
-b. 0.4
-c. 0.75
-d. 1
-e. 0
 
+a.  1.3
+b.  0.4
+c.  0.75
+d.  1
+e.  0
 
 ## Question 20
 
 Why should we not use regular/unadjusted $R^2$ to select which variables to include in a model?
 
-a. It is too hard to calculate
-b. It is too dependent on units
-c. It always selects models that are too simple
-d. It always goes up whenever you add any variables to your model
-e. It can only be computed in simple linear regression
+a.  It is too hard to calculate
+b.  It is too dependent on units
+c.  It always selects models that are too simple
+d.  It always goes up whenever you add any variables to your model
+e.  It can only be computed in simple linear regression
 
 ## Question 21
 
-An ROC curve is plotted below. The red point corresponds to the values at some threshold. At this threshold, what were the true positive, false positive, true negative, and false negative rate?
+An ROC curve is plotted below.
+The red point corresponds to the values at some threshold.
+At this threshold, what were the true positive, false positive, true negative, and false negative rate?
 
 ```{r}
 #| echo: false
