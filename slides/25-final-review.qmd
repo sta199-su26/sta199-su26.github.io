@@ -1,5 +1,5 @@
 ---
-title: "Final Review - June 23"
+title: "Final Review"
 date: "2025-6-23"
 format: 
   revealjs:
