@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - misc_files/**
 
 website:
   page-navigation: true
