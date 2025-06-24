@@ -1,6 +1,6 @@
 ---
 title: Final review
-subtitle: Suggested answers
+subtitle: Suggested Answers
 execute:
   echo: false
 ---
