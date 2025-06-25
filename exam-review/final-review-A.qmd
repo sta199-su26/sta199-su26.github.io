@@ -12,7 +12,7 @@ execute:
 4. c - since less is the baseline, we will see level more in the output
 5. c
 6. c
-7. b, c, e; The p-value 0.3 greater than the 0.05 discernability level means we fail to reject the null hypothesis. About 30% of samples in the null distribution were more extreme than our observed value. 
+7. b, c, e; The p-value 0.3 greater than the 0.05 disernability level means we fail to reject the null hypothesis. About 30% of samples in the null distribution were more extreme than our observed value. 
 
 Option e is a little unclear - this would be phrased more precisely if something like this appears on an exam. Here, when I am talking about our observed value, I am specifically talking about our observed value of the slope since this is what the hypothesis test was looking at. About 30% of the null distribution are more extreme - here, about 15% of the null distribution values are greater than the observed value. 
 
