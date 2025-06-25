@@ -11,8 +11,8 @@ execute:
 3. a, d - both of these will return the same values; the one with specify() is the code we should use if we need point estimates with confidence intervals/hypothesis testing
 4. c - since less is the baseline, we will see level more in the output
 5. c
-6. a
-7. a, c
+6. c
+7. b, c
 
 ## Part 2
 
