@@ -62,9 +62,9 @@ website:
       - ae.qmd
             
   page-footer:
-    right: 'This page is built with [{{< fa heart >}}]{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
+    right: 'This page is built with [{{< fa heart >}}]{style="color: #f21118;"} and [Quarto](https://quarto.org/).'
     left: "&copy; Copyright 2026, Mine Çetinkaya-Rundel, Katie Solarz"
-    background: "#121940"
+    background: "#ffc9f0"
 
 format:
   html:

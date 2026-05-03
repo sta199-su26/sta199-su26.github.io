@@ -7,3 +7,5 @@
 _site/
 *.key
 .DS_Store
+
+**/*.quarto_ipynb
