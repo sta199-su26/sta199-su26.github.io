@@ -6,10 +6,10 @@ project:
 website:
   page-navigation: true
   title: "STA 199"
-  description: "Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2025."
-  site-url: "https://sta199-su25.github.io/"
+  description: "Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I."
+  site-url: "https://sta199-su26.github.io/"
 
-  repo-url: https://github.com/sta199-su25/sta199-su25.github.io
+  repo-url: https://github.com/sta199-su26/sta199-su26.github.io
   repo-actions: [edit, issue]
 
   open-graph: true
@@ -20,13 +20,13 @@ website:
   draft-mode: unlinked
 
   sidebar:
-    background: "#bfd9d5"
+    background: "#ffc9f0"
     logo: "img/logo.png"
     pinned: true
     align: center
     tools:
       - icon: github
-        href: https://github.com/sta199-su25
+        href: https://github.com/sta199-su26
         text: "GitHub organization"
       - icon: code-square
         href: https://cmgr.oit.duke.edu/containers
@@ -58,39 +58,12 @@ website:
           - href: computing-troubleshooting.qmd
             text: Troubleshooting
       - section: "Project"
-        contents:
-          - href: project/description.qmd
-            text: "Description"
-          - href: project/1-working-collaboratively.qmd
-            text: "Milestone 1"
-          - href: project/2-proposal.qmd
-            text: "Milestone 2"
-          - href: project/3-improvement-progress.qmd
-            text: "Milestone 3"
-          - href: project/4-peer-review.qmd
-            text: "Milestone 4"
-          - href: project/5-writeup-presentation.qmd
-            text: "Milestone 5"
       - lab.qmd
       - ae.qmd
-      - section: "Exam Review"
-        contents:
-          - href: exam-review/midterm-review.qmd   
-            text: "Midterm Review"
-          - href: exam-review/midterm-review-A.qmd   
-            text: "Midterm Review Answers"
-          - href: exam-review/midterm-review-1.qmd   
-            text: "Midterm Review: Part 2"
-          - href: exam-review/midterm-review-1-A.qmd   
-            text: "Midterm Review: Part 2 Answers"
-          - href: exam-review/final-review.qmd   
-            text: "Final Review"
-          - href: exam-review/final-review-A.qmd   
-            text: "Final Review Answers"
             
   page-footer:
     right: 'This page is built with [{{< fa heart >}}]{style="color: #FFBE98;"} and [Quarto](https://quarto.org/).'
-    left: "&copy; Copyright 2025, Mine Çetinkaya-Rundel, Marie Neubrander"
+    left: "&copy; Copyright 2026, Mine Çetinkaya-Rundel, Katie Solarz"
     background: "#121940"
 
 format:
@@ -99,7 +72,7 @@ format:
     css:
       - style/sta199.scss
 
-linkcolor: "#5D737E"
+linkcolor: "#6f659e"
 toc: true
 code-copy: hover
 code-link: true
