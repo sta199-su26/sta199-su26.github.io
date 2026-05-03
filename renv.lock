@@ -1178,7 +1178,7 @@
     },
     "gssr": {
       "Package": "gssr",
-      "Version": "0.6",
+      "Version": "0.9",
       "Source": "Repository",
       "Repository": "https://kjhealy.r-universe.dev",
       "Requirements": [
