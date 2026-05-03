@@ -4,27 +4,10 @@ title: "Teaching team"
 
 ## Instructor
 
-![](img/marie.jpg){style="float:right; padding: 0 0 0 10px; width:150px; height:150px; border-radius: 50%; object-fit: cover;" fig-alt="Headshot of Marie Neubrander"}
+![](img/katie.png){style="float:right; padding: 0 0 0 10px; width:150px; height:150px; border-radius: 50%; object-fit: cover;" fig-alt="Headshot of Katie Solarz"}
 
-Marie Neubrander is a second year Ph.D. student in the Department of Statistical Science at Duke University and is the instructor for this course. Marie's research is focused on developing statistical methods with various applications in political science.
+Katie Solarz is a graduate of the Master's in Statistical Science program, Department of Statistical Science at Duke University, and is the instructor for this course. Katie is an incoming PhD student in the Department of Biostatistics at the Harvard T.H. Chan School of Public Health. Her research interests include Bayesian hierarchical modeling, (Bayesian) survival analysis, study design, and causal inference. Her personal website can be found at X.
 
-You can contact her at [marie.neubrander\@duke.edu](mailto:marie.neubrander@duke.edu)) with any questions regarding this course.
+You can contact Katie at [katie.solarz\@duke.edu](mailto:katie.solarz@duke.edu)) with any questions regarding this course.
 
-*Office hours: Tuesdays 3:30 - 5:30 pm, Fridays 1 - 3 pm in Old Chem 203*
-
-## Lab Instructor & Course Coordinator
-
-![](img/mary.png){style="float:right; width:150px; height:150px; border-radius: 50%; object-fit: cover;" fig-alt="Headshot of Dr. Mary Knox"}
-
-Dr. Mary Knox (she/her) is the course coordinator for this course.\
-You can contact her (at [mary.knox\@duke.edu](mailto:mary.knox@duke.edu)) with any questions regarding accommodations, missed work, extensions, registration, etc.
-
-*Office hours: Wednesdays 2 - 3 pm on [Zoom](https://duke.zoom.us/j/95219443117?pwd=n8DbwA8TTSbhb8pZRsJYnLb6BMzF2m.1)*
-
-## Teaching Assistant
-
-![](img/katie.png){style="float:right; width:150px; height:150px; border-radius: 50%; object-fit: cover;" fig-alt="Headshot of Katie Solarz"}
-
-Katie Solarz is the teaching assistant for this course.\
-
-*Office hours: Wednesdays, 5:30 - 7:30pm in Old Chem 203B*
+*Office hours: TBD*
