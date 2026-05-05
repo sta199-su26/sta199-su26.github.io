@@ -7,7 +7,8 @@ editor_options:
 ---
 
 This page contains an outline of the topics, content, and assignments for the semester!
-Entries for future dates are tentative; the timeline of topics, assignments, and due dates might be changed throughout the session at the instructor's discretion. All material changes will be communicated with the students in a timely manner.
+Entries for future dates are tentative; the timeline of topics, assignments, and due dates might be changed throughout the session at the instructor's discretion.
+All material changes will be communicated with the students in a timely manner.
 
 ```{r}
 #| echo: false
