@@ -42,13 +42,13 @@ website:
           - href: course-syllabus.qmd
             text: Syllabus
           - href: course-team.qmd
-            text: Support
-          - href: course-support.qmd
             text: Team
+          - href: course-support.qmd
+            text: Couse Support
           - href: index.qmd
             text: Schedule
           - href: course-links.qmd
-            text: Useful links
+            text: Useful Links
       - section: "Computing"
         contents:
           - href: computing-access.qmd
