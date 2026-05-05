@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Application Exercises – STA 199</title>
+<title>AE 00: Make a GitHub – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./lab.html" rel="prev">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-389cffa847aaba16d6661ddf3cdd3c98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-389cffa847aaba16d6661ddf3cdd3c98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,73 +67,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-ae-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-ae-listing'] = new List('listing-ae-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="style/sta199.scss">
-<meta property="og:title" content="Application Exercises – STA 199">
+<link rel="stylesheet" href="../style/sta199.scss">
+<meta property="og:title" content="AE 00: Make a GitHub – STA 199">
 <meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Application Exercises – STA 199">
+<meta name="twitter:title" content="AE 00: Make a GitHub – STA 199">
 <meta name="twitter:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
-<meta name="twitter:image" content="https://sta199-su26.github.io/img/twitter-card-ks.pdf">
+<meta name="twitter:image" content="https://sta199-su26.github.io/ae/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -150,7 +89,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ae.html">Application Exercises</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 00: Make a GitHub</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -164,8 +103,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main">
     <a href="https://github.com/sta199-su26" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
@@ -190,37 +129,37 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-team.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Couse Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-links.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-links.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Useful Links</span></a>
   </div>
 </li>
@@ -237,25 +176,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cheatsheets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-principles-oh.html" class="sidebar-item-text sidebar-link">
+  <a href="../coding-principles-oh.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Coding principles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Troubleshooting</span></a>
   </div>
 </li>
@@ -267,13 +206,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab.html" class="sidebar-item-text sidebar-link">
+  <a href="../lab.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Labs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ae.html" class="sidebar-item-text sidebar-link active">
+  <a href="../ae.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Application Exercises</span></a>
   </div>
 </li>
@@ -282,15 +221,23 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link" data-scroll-target="#create-a-github-account">Create a GitHub account</a></li>
+  <li><a href="#share-the-account-with-us" id="toc-share-the-account-with-us" class="nav-link" data-scroll-target="#share-the-account-with-us">Share the Account with Us</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae/ae-00-github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Application Exercises</h1>
+<h1 class="title">AE 00: Make a GitHub</h1>
 </div>
 
 
@@ -307,40 +254,58 @@ window.Quarto = {
 </header>
 
 
-<p>All application exercises (AEs) are due by the end of lecture (or, precisely, by 10:45 am) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, <strong>commit and then push</strong> your change to your AE repo. AEs are graded for engagement, not accuracy.</p>
-<p>More AEs to be added as the semester progresses.</p>
-<p><br></p>
-<div id="listing-ae-listing" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Title
-</th>
-<th>
-Subtitle
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1778017717162" data-listing-reading-time-sort="3" data-listing-word-count-sort="405" data-listing-title-sort="AE 00: Make a GitHub" data-listing-filename-sort="ae-00-github.qmd">
-<td>
-<a href="./ae/ae-00-github.html" class="title listing-title">AE 00: Make a GitHub</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Normally, these AEs will contain coding practice to be done alongside the instructor in lecture. However, before you’ll be able to start coding, you will need to make a GitHub account.</p>
+<p>In tomorrow’s lab &amp; lecture (and throughout the remainder of this course), you will learn more about how GitHub works. For now, understand that <strong><em>GitHub is like the Google Drive of coding.</em></strong> You can upload files, track changes over time, and work with others without overwriting each other’s work.</p>
+<p>In this class, we will have a <strong>GitHub organization</strong> so that:</p>
+<ul>
+<li><p>Everyone has a central place to both access and work on course materials (AEs, labs, project repos, etc.)</p></li>
+<li><p>We can see your progress, provide help, and review changes over time</p></li>
+<li><p>You gain familiarity with tools that are standard in data science, research, and industry</p></li>
+</ul>
+<p>If you’ve never coded before, it might not be clear why we need something specialized and can’t just use a Google Drive (or Box, or iCloud, or similar). I think that this becomes more clear as you dive into coding, but the long story <em>very</em> short is that you aren’t typing code into a word document. You’re using and running special code files, and normal drives are not properly equipped to handle these file types.</p>
+</section>
+<section id="create-a-github-account" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-github-account">Create a GitHub account</h2>
+<p>Tomorrow, we will give a more detailed introduction to using GitHub. In order for you to access the course organization, you need an account, and we need to add your username to the list of users with access.</p>
+<p>Go to <a href="https://github.com/" class="uri">https://github.com/</a> and walk through the steps for creating an account. I recommend using a personal email address so that your GitHub account stays with you long after your time at Duke.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
-<p><br></p>
+<div class="callout-body-container callout-body">
+<p>You’ll need to choose a user name. I recommend reviewing the user name advice at <a href="https://happygitwithr.com/github-acct#username-advice" class="uri">https://happygitwithr.com/github-acct#username-advice</a> before choosing a username.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What if I already have a GitHub account?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If you already have a GitHub account, you do not need to create a new one for this course. Just log in to that account to make sure you still remember your username and password. If you are unsure of your login credentials, carefully follow GitHub’s instructions for recovering this information. If you accumulate too many failed login attempts, you will be locked out of your account for the day.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="share-the-account-with-us" class="level2">
+<h2 class="anchored" data-anchor-id="share-the-account-with-us">Share the Account with Us</h2>
+<p>So that we can add you to the course organization, share your username with us via the GitHub <a href="https://canvas.duke.edu/courses/56756/quizzes/35369">canvas quiz.</a> Do this before you leave the room!</p>
 
 
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -760,15 +725,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./lab.html" class="pagination-link" aria-label="Labs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Labs</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -777,7 +733,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae/ae-00-github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #f21118;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
