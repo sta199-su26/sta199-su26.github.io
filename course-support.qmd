@@ -11,13 +11,13 @@ There are likely other students with the same question, so asking will create a 
 
 ## Help from humans
 
-### Office hours
+### Office Hours
 
 The teaching team is here to help you be successful in the course.
 You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments.
 Many questions are most effectively answered in person, so office hours are a valuable resource.
 I encourage each and every one of you to take advantage of this resource!
-Make a pledge to stop by during office hours at least once during the first three weeks of class.
+Make a pledge to stop by during office hours at least once before the first midterm.
 If you have no questions, stop by and say hi and introduce yourself.
 You can find a list of everyone's office hours [here](/course-team.html).
 
@@ -33,38 +33,24 @@ If you know the answer to a question that is posted, I encourage you to respond!
 
 You can access this tool on the course website toolbar -- just click on the lifesaver icon.
 
-### Peer tutoring
+### **Peer Tutoring Groups**
 
-MINT Peer Tutoring (Meaningful Interactive Tutoring) are small groups of 2-5 students in the same course who meet weekly with a Peer Tutor.
-This semester, Peer Tutor who will be leading MINT Peer Tutoring for STA 199 is Stanley Borden ([stanley.borden\@duke.edu](mailto:stanley.borden@duke.edu)).
+Peer Tutoring Groups are small groups of 2-5 students in the same course who meet weekly with a Peer Educator, twice per week during the summer.
+This free resource is focused on allowing students to receive additional support for questions they have on the course content while being part of a community of fellow learners.
+Peer Educators will communicate with students in advance of the meetings so that they can be responsive to student needs during the group meetings.
+Stella Turner ([stella.turner\@duke.edu](mailto:stella.turner@duke.edu)) will be leading a tutoring group for the STA 199 Summer Session I course.
+We will post the exact days/times as soon as Stella has finalized her schedule.
 
-The peer tutoring groups are a resource focused on allowing students to receive additional support for questions they have on the course content while still being part of a community of fellow learners.
-Peer tutors communicate with students in advance of the meetings so that they can be responsive to student needs during the group meetings.
-Some groups meet in person and some meet virtually.
-
--   In person, Wednesday 7:00 pm
--   Virtual, Wednesday 8:05 pm
-
-For more details and to see what other courses we offer services for, please visit their website: <https://arc.duke.edu/peer-education>
-
-Signups for MINT Peer Tutoring open the morning of Thursday, September 5th and groups start meeting on Monday, September 9th.
-
-Note that peer tutors are not directly affiliated with the course, however they tend to be students who have taken the course in the past.
-
-## Help from AI: Chatbot
-
-The course has a chatbot that has been trained specifically on the course textbooks.
-If you're looking for AI-help, we strongly recommend starting here.
-
-You can access this tool on the course website toolbar -- just click on the lifesaver icon.
+Peer Tutoring Groups are a great option if you have specific questions/problems you want to work on.
+For signup instructions, more details, and to see what other courses we offer services for, please visit the ARC's website: [https://arc.duke.edu/peer-education/](#0 "https://arc.duke.edu/peer-education/")
 
 ## Email
 
 Please refrain from emailing any course content questions (those should go to Ed Discussion), and only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, accommodations, etc.).
-For such matters, you may email Dr. Mine Çetinkaya-Rundel at [mc301\@duke.edu](mailto:mc301@duke.edu).
+For such matters, you may email Katie Solarz at [katie.solarz\@duke.edu](katie.solarz@duke.edu).
 
 If there is a question that's not appropriate for the public forum, you are welcome to email me directly.
-**If you email me, please include "STA 199" in the subject line.** Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours Monday - Friday.
+**If you email me, please include "STA 199" in the subject line.** Barring extenuating circumstances, I will respond to STA 199 emails by EOD Monday - Friday.
 Response time may be slower for emails sent Friday evening - Sunday.
 
 ## Academic support
