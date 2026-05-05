@@ -7,7 +7,7 @@ editor_options:
 ---
 
 This page contains an outline of the topics, content, and assignments for the semester!
-Entries for future dates are tentative; the timeline of topics, assignments, and due dates might be changed throughout the semester!
+Entries for future dates are tentative; the timeline of topics, assignments, and due dates might be changed throughout the session at the instructor's discretion. All material changes will be communicated with the students in a timely manner.
 
 ```{r}
 #| echo: false
@@ -17,7 +17,7 @@ library(googlesheets4)
 library(gt)
 library(tidyverse)
 gs4_deauth()
-d <- read_sheet("https://docs.google.com/spreadsheets/d/1o5Bx8dQKjupw62WxY2nTNUoi0PhNwaShZa7S7bZFD2c/edit?usp=sharing", sheet = "Schedule")
+d <- read_sheet("https://docs.google.com/spreadsheets/d/1XPLEkKk_BNO3xDl6n2Jvkpo3oFVWa6bPGCAj4Z55wNc/edit?usp=sharing")
 prepare_cutoff_date <- as.Date("2025-05-13")
 ```
 
