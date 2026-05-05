@@ -433,7 +433,7 @@
     "href": "coding-principles-oh.html#example-1",
     "title": "Intro to Coding Principles",
     "section": "Example 1",
-    "text": "Example 1\n\nmidwest |&gt;\n  sumarize(avg_pop_dens = mean(popdensity))\n\nError in `sumarize()`:\n! could not find function \"sumarize\"\n\n\n\n\n\n\n\n\nWhat’s wrong with this code?\n\n\n\n\n\nIn this case, we just have a simple spelling error! It may seem trivial, but this will constitute at least half of the errors that you have. Make this the first thing you check - you will never meet a programmer who doesn’t have a story of the time they spent at least 30 minutes debugging a function, just to realize it was a typo all along.",
+    "text": "Example 1\n\nmidwest |&gt;\n  sumarize(avg_pop_dens = mean(popdensity))\n\nError in sumarize(midwest, avg_pop_dens = mean(popdensity)): could not find function \"sumarize\"\n\n\n\n\n\n\n\n\nWhat’s wrong with this code?\n\n\n\n\n\nIn this case, we just have a simple spelling error! It may seem trivial, but this will constitute at least half of the errors that you have. Make this the first thing you check - you will never meet a programmer who doesn’t have a story of the time they spent at least 30 minutes debugging a function, just to realize it was a typo all along.",
     "crumbs": [
       "Computing",
       "Coding principles"
@@ -444,7 +444,7 @@
     "href": "coding-principles-oh.html#example-2",
     "title": "Intro to Coding Principles",
     "section": "Example 2",
-    "text": "Example 2\n\nggplot(midwest, aes(x = poptotal, y = popdensity,)) |&gt;\n  geom_point() |&gt;\n  labs(x = \"Total Population\", y = \"Population Density\")\n\nError in `geom_point()`:\n! `mapping` must be created by `aes()`.\n✖ You've supplied a &lt;ggplot2::ggplot&gt; object.\nℹ Did you use `%&gt;%` or `|&gt;` instead of `+`?\n\n\n\n\n\n\n\n\nWhat’s wrong with this code?\n\n\n\n\n\nThis one should be pretty obvious, since it’s a common enough error that R gives an extremely helpful error message. When you’re building a ggplot object, you use + rather than |&gt; to add additional lines!\nThere’s a second error here, that R knew well enough to handle here, but which could become an issue in more complicated code chunks. Did anyone spot it?",
+    "text": "Example 2\n\nggplot(midwest, aes(x = poptotal, y = popdensity,)) |&gt;\n  geom_point() |&gt;\n  labs(x = \"Total Population\", y = \"Population Density\")\n\nError in `geom_point()`:\n! `mapping` must be created by `aes()`.\nℹ Did you use `%&gt;%` or `|&gt;` instead of `+`?\n\n\n\n\n\n\n\n\nWhat’s wrong with this code?\n\n\n\n\n\nThis one should be pretty obvious, since it’s a common enough error that R gives an extremely helpful error message. When you’re building a ggplot object, you use + rather than |&gt; to add additional lines!\nThere’s a second error here, that R knew well enough to handle here, but which could become an issue in more complicated code chunks. Did anyone spot it?",
     "crumbs": [
       "Computing",
       "Coding principles"
