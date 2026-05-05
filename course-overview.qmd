@@ -1,15 +1,15 @@
 ---
-title: "STA 199<br>Summer 2025"
+title: "STA 199<br>Summer 2026: Session I"
 image: img/logo.png
 image-alt: Hex logo for course with
 about:
   template: trestles
   links:
     - icon: laptop
-      href: https://sta199-su25.github.io
+      href: https://sta199-su26.github.io
       aria-label: Link to course website
     - icon: github
-      href: https://github.com/sta199-su25
+      href: https://github.com/sta199-su26
       aria-label: Link to course GitHub organization
 ---
 
@@ -32,17 +32,6 @@ Not open to students who have taken a 100-level Statistical Science course, Stat
 
 ## Office hours
 
-+------------------+---------------------------------------------------------------------------------+---------------------+
-| Name             | Location                                                                        | Time                |
-+==================+=================================================================================+=====================+
-| Marie Neubrander | Old Chem 203A                                                                   | Tu 3:30PM - 5:30PM\ |
-|                  |                                                                                 | F 1PM - 3PM         |
-+------------------+---------------------------------------------------------------------------------+---------------------+
-| Mary Knox        | [Zoom](https://duke.zoom.us/j/95219443117?pwd=n8DbwA8TTSbhb8pZRsJYnLb6BMzF2m.1) | W 2PM - 3PM         |
-+------------------+---------------------------------------------------------------------------------+---------------------+
-| Katie Solarz     | Old Chem 203A                                                                   | W 5:30-7:30 PM      |
-+------------------+---------------------------------------------------------------------------------+---------------------+
-
-::: callout-note
-## On May 21 (W), Marie will run Katie's office hours. Katie will run Marie's on May 23 (F). This week, Katie's office hours will be on Zoom at https://duke.zoom.us/j/95513369376
-:::
+|              |               |     |
+|--------------|---------------|-----|
+| Katie Solarz | Old Chem 203A | TBD |
