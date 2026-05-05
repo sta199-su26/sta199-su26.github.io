@@ -63,7 +63,7 @@ website:
             
   page-footer:
     right: 'This page is built with [{{< fa heart >}}]{style="color: #f21118;"} and [Quarto](https://quarto.org/).'
-    left: "&copy; Copyright 2026, Mine Çetinkaya-Rundel, Katie Solarz"
+    left: "&copy; Copyright 2026, Mine Çetinkaya-Rundel, Marie Neubrander, John Zito, Katie Solarz"
     background: "#ffc9f0"
 
 format:

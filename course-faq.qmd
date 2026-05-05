@@ -12,6 +12,7 @@ The downloaded file will go to wherever files you download off the internet goes
 ```{=html}
 <iframe width="700" height="394" src="https://www.youtube.com/embed/cAHCMpPJx3k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
+
 ## How can I submit my assignment to Gradescope?
 
 The instructions for submitting your assignment to Gradescope can be found [here](https://help.gradescope.com/article/ccbpppziu9-student-submit-work#submitting_a_pdf).
@@ -22,6 +23,7 @@ It's also OK if a page includes multiple questions.
 ```{=html}
 <iframe width="700" height="394" src="https://www.youtube.com/embed/u-pK4GzpId0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
+
 ## Can I use a local install of R and RStudio instead of using the RStudio containers?
 
 The short answer is, I'd rather you didn't, to save yourself some headache.
