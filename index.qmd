@@ -1,5 +1,5 @@
 ---
-title: "STA 199: Intro to Data Science and Statistical Thinking"
+title: "STA 199: Introduction to Data Science & Statistical Thinking"
 execute: 
   freeze: false
 editor_options: 
@@ -19,7 +19,7 @@ library(gt)
 library(tidyverse)
 gs4_deauth()
 d <- read_sheet("https://docs.google.com/spreadsheets/d/1XPLEkKk_BNO3xDl6n2Jvkpo3oFVWa6bPGCAj4Z55wNc/edit?usp=sharing")
-prepare_cutoff_date <- as.Date("2025-05-13")
+prepare_cutoff_date <- as.Date("2026-05-12")
 ```
 
 ```{r}
@@ -31,8 +31,8 @@ d_display <- d |>
   mutate(date = as.Date(date)) |>
   mutate(
     highlight_color = case_when(
-      session == "exam" ~ "#f45ca4",   # light yellow
-      session == "NC" ~ "#ffd561",     # light gray
+      session == "exam" ~ "#f45ca4",  
+      session == "NC" ~ "#6493fa",     
       session == "Lab" ~ "#f3e6f9",    # lab marker, used for text color only
       TRUE ~ NA_character_
     )#,
@@ -101,12 +101,12 @@ d_display_clean |>
   ) |>
   # Highlight: no class (gray)
   tab_style(
-    style = cell_fill(color = "#ffd561"),
-    locations = cells_body(rows = d_display$highlight_color == "#ffd561")
+    style = cell_fill(color = "#6493fa"),
+    locations = cells_body(rows = d_display$highlight_color == "#6493fa")
   ) |>
   # LAB: purple bold text only (no background!)
   tab_style(
-  style = cell_text(color = "#8000ff", weight = "bold"),
+  style = cell_text(color = "#392cf2", weight = "bold"),
   locations = cells_body(
     columns = c(topic, prepare, materials),
     rows = d_display$highlight_color == "#f3e6f9"
