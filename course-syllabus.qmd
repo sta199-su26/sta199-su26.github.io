@@ -1,6 +1,6 @@
 ---
-title: "STA 199: Intro to Data Science and Statistical Thinking"
-subtitle: "Summer 2025"
+title: "STA 199: Introduction to Data Science & Statistical Thinking"
+subtitle: "Summer 2026: Session I"
 format:
   html: default
   pdf: default
@@ -104,10 +104,10 @@ The final course grade will be calculated as follows:
 
 | Category              | Percentage |
 |-----------------------|------------|
-| Labs                  | 30%        |
+| Labs                  | 20%        |
 | Project               | 20%        |
-| Midterm               | 20%        |
-| Final                 | 20%        |
+| Midterm               | 25%        |
+| Final                 | 25%        |
 | Application Exercises | 5%         |
 | Lab Attendance        | 5%         |
 
@@ -154,16 +154,16 @@ Students should contact the SDAO to [request or update accommodations](https://a
 
 ### Communication
 
-All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: [sta199-su25.github.io](https://sta199-f24.github.io/ "STA 199 - Fall 2024 course website").
+All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: [sta199-su26.github.io](https://sta199-su26.github.io/ "Course Website for STA 199 - Summer 2026: Session I").
 
 Announcements will periodically be emailed through Canvas Announcements.
 Please check your email regularly to ensure you have the latest announcements for the course.
 
 ### Email
 
-If you have questions about assignment extensions, accommodations, or any other matter not appropriate for the class discussion forum, please email me directly at [marie.neubrander\@duke.edu]{.underline}.
-**If you do so, please include "STA 199" in the subject line.** Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours, Monday through Friday.
-Response time may be slower for emails sent Friday evening through Sunday.
+If you have questions about assignment extensions, accommodations, or any other matter not appropriate for the class discussion forum, please email me directly at [katie.solarz\@duke.edu]{.underline}.
+**If you email me, please include "STA 199" in the subject line.** Barring extenuating circumstances, I will respond to STA 199 emails by EOD Monday - Friday.
+Response time may be slower for emails sent Friday evening - Sunday.
 
 ## Five tips for success
 
@@ -200,7 +200,7 @@ The course team will help you by providing you with materials answering question
 -   The teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!
 -   Outside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, [Ed Discussion](https://edstem.org/us/courses/62468/discussion/). There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!
 
-Check out the [Support](https://sta199-f24.github.io/course-support.html) tab for more resources.
+Check out the [Support](https://sta199-su26.github.io/course-support.html) tab for more resources.
 
 ## Course policies
 
@@ -280,16 +280,6 @@ Note that the lowest lab assignment will be dropped to accommodate such circumst
 -   No late work is accepted for application exercises since these are designed to help you prepare for other assessments in the course.
 -   No late work is accepted for exams.
 -   No late work is accepted for projects.
-
-### Waiver for extenuating circumstances
-
-If circumstances prevent you from completing a lab by the stated due date, you may email the course coordinator, [Dr. Mary Knox](mailto:mary.knox@duke.edu), before the deadline to waive the late penalty.
-In your email, you only need to request the waiver; you do not need to provide an explanation.
-This waiver may only be used **once** a semester, so only use it for a truly extenuating circumstance.
-
-If circumstances have a longer-term impact on your academic performance, please let your academic dean know.
-They can be a resource.
-Please let me know if you need help contacting your academic dean.
 
 ### Regrade requests
 
