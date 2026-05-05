@@ -1,112 +1,13 @@
 [
   {
-    "objectID": "course-syllabus.html",
-    "href": "course-syllabus.html",
-    "title": "STA 199: Intro to Data Science and Statistical Thinking",
+    "objectID": "computing-troubleshooting.html",
+    "href": "computing-troubleshooting.html",
+    "title": "Computing troubleshooting",
     "section": "",
-    "text": "By the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to communicate results through written assignments and project presentation effectively",
+    "text": "If you’re having difficulty launching an RStudio session from your reserved container, go to status.oit.duke.edu and scroll down to Teaching and Learning Tools. Under this heading you’ll find an entry called Container Manager (CMGR Coursework Containers).\n\nIf the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the Ed Discussions to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. If you’re still having trouble, follow the steps in the order given below:\n\nRestart your browser.\nMake sure there are no updates pending for your browser. If there are, install those updates and restart your browser again.\nRequest a restart of your container – To do so, select your container as you usually do and then, instead of Login, click on Request Restart. Read the warning in the next page, and then click once more to restart your container.\nClear your browser cache and restart your browser again.\nRestart your computer to ensure a fresh new connection.\nIf your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).",
     "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#course-learning-objectives",
-    "href": "course-syllabus.html#course-learning-objectives",
-    "title": "STA 199: Intro to Data Science and Statistical Thinking",
-    "section": "",
-    "text": "By the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to communicate results through written assignments and project presentation effectively",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#course-materials",
-    "href": "course-syllabus.html#course-materials",
-    "title": "STA 199: Intro to Data Science and Statistical Thinking",
-    "section": "Course materials",
-    "text": "Course materials\n\nTextbooks\nAll books are freely available online.\n\nR for Data Science, 2e, Wickham, Çetinkaya-Rundel, Grolemund. O’Reilly, 2nd edition, 2023. Hard copy available on Amazon.\nIntroduction to Modern Statistics, Çetinkaya-Rundel, Hardin. OpenIntro Inc., 2nd Edition, 2023. Hard copy available on Amazon.\n\n\n\nComputing\nYou will need a laptop you can bring to lecture and lab for this course. We will use the statistical software R. Students will be able to access R through Docker containers provided by Duke Office of Information Technology. See the computing page for more information.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#course-components",
-    "href": "course-syllabus.html#course-components",
-    "title": "STA 199: Intro to Data Science and Statistical Thinking",
-    "section": "Course components",
-    "text": "Course components\n\nLectures and labs\nLectures and labs are designed to be interactive, so you gain experience applying new concepts and learning from each other. My role as instructor is to introduce you to new methods, tools, and techniques, but it is up to you to take them and use them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will work on various tasks and activities throughout each lecture and lab. You are expected to prepare for class by completing assigned readings, attending lectures and lab sessions, and meaningfully contributing to in-class exercises and discussions. Additionally, most lectures will feature application exercises that will be graded based on completing what we do in class.\nYou are expected to bring a laptop (or Chromebook) to each class so that you can participate in the in-class exercises. Please ensure your device is fully charged before you come to class, as the number of outlets in the classroom will not be sufficient to accommodate everyone. A tablet also works, but the user experience will be much smoother on a laptop.\n\n\nActivities & Assessment\nYou will be assessed based on five components: application exercises, labs, exams, project, and teamwork.\n\nLabs\nIn labs, you will apply what you’ve learned in the videos and during lectures to complete data analysis tasks. You may discuss lab assignments with other students; however, the lab should be completed and submitted individually. Lab assignments must be typed up using Quarto, all work must be pushed to your GitHub repository for the lab, and the lab’s PDF output must be submitted on Gradescope by the deadline.\nLabs are due at 11:59pm ET on the indicated due date. Generally, for Monday labs, this is the following Wednesday; for Thursday labs, this is the following Sunday.\nThe lowest lab grade will be dropped at the end of the semester.\n\n\nExams\nThis course will have two exams: a midterm and a final. The midterm will include an in-class component (with a cheat sheet) and an open-note take-home component, while the final will include only an in-class component (with a cheat sheet).\nYou can demonstrate what you’ve learned in the course thus far through these exams. The exams will focus on both conceptual understanding of the content and application through analysis and computational tasks. The exam’s content will be related to the content in videos and reading assignments, lectures, application exercises, and labs.\nMore details about the exams will be given during the semester.\n\n\nProject\nThe project aims to apply what you’ve learned throughout the semester to analyze an interesting data-driven research question. The project will be completed in teams, and each team will present their work in the last lab session of the semester. The write-up will be due on the same day.\nYou cannot pass this course if you have not completed the project.\nMore information about the project will be provided during the semester.\n\n\nApplication exercises\nParts of some lectures will be dedicated to working on Application Exercises (AEs). These exercises allow you to apply the statistical concepts and code introduced in the preparation materials. These AEs are due by 10:45 am ET on the day of the lecture they are covered. To submit the AEs, you only need to push your work to your GitHub repo.\nBecause these AEs are for practice, they will be graded based on attempt, i.e., a good-faith effort has been made in attempting all parts.\nSuccessful on-time completion of at least 80% of AEs will result in full credit for AEs in the final course grade.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#grading",
-    "href": "course-syllabus.html#grading",
-    "title": "STA 199: Intro to Data Science and Statistical Thinking",
-    "section": "Grading",
-    "text": "Grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nLabs\n30%\n\n\nProject\n20%\n\n\nMidterm\n20%\n\n\nFinal\n20%\n\n\nApplication Exercises\n5%\n\n\nLab Attendance\n5%\n\n\n\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n&gt;= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n&lt; 60",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#course-community",
-    "href": "course-syllabus.html#course-community",
-    "title": "STA 199: Intro to Data Science and Statistical Thinking",
-    "section": "Course community",
-    "text": "Course community\n\nInclusive community\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. I intend to present materials and activities that respect diversity and align with Duke’s Commitment to Diversity and Inclusion. Furthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives, and experiences and honors their identities. To help accomplish this:\n\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If anything was said in class (by anyone) that made you feel uncomfortable, please let me or a teaching team member know.\n\n\n\nPersonal pronouns\nPronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive. You can update your gender pronouns in Duke Hub and learn more about personal pronouns at the Center for Sexual and Gender Diversity’s website.\n\n\nAccessibility\nIf any portion of the course is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students can engage with their courses and related assignments. Students should contact the SDAO to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: sta199-su25.github.io.\nAnnouncements will periodically be emailed through Canvas Announcements. Please check your email regularly to ensure you have the latest announcements for the course.\n\n\nEmail\nIf you have questions about assignment extensions, accommodations, or any other matter not appropriate for the class discussion forum, please email me directly at marie.neubrander@duke.edu. If you do so, please include “STA 199” in the subject line. Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours, Monday through Friday. Response time may be slower for emails sent Friday evening through Sunday.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#five-tips-for-success",
-    "href": "course-syllabus.html#five-tips-for-success",
-    "title": "STA 199: Intro to Data Science and Statistical Thinking",
-    "section": "Five tips for success",
-    "text": "Five tips for success\nYour success in this course depends very much on you and the effort you put into it. The course team will help you by providing you with materials answering questions, and setting a pace, but for this to work, you must do the following:\n\nComplete all the preparation work before class.\nAsk questions. As often as you can. In class, out of class. Ask me, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you’re not sure about the lab, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.\nDo the readings!\nDo the lab! The earlier you start, the better. It’s not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material and imagine how they might be changed (to make questions for an exam, for example).\nDon’t procrastinate. The content builds upon what was taught in previous weeks, so if something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, etc. Don’t let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours and work with a member of the teaching team to help you identify a good (re)starting point.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#getting-help",
-    "href": "course-syllabus.html#getting-help",
-    "title": "STA 199: Intro to Data Science and Statistical Thinking",
-    "section": "Getting help",
-    "text": "Getting help\n\nIf you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking, you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nOutside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, Ed Discussion. There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!\n\nCheck out the Support tab for more resources.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#course-policies",
-    "href": "course-syllabus.html#course-policies",
-    "title": "STA 199: Intro to Data Science and Statistical Thinking",
-    "section": "Course policies",
-    "text": "Course policies\n\nDuke Community Standard\nAs a student in this course, you have agreed to uphold the Duke Community Standard (video here!) and the practices specific to this course.\n\n\nAcademic honesty\nTL;DR: Don’t cheat!\nPlease abide by the following as you work on assignments in this course:\n\nCollaboration: Only work that is clearly assigned as teamwork should be completed collaboratively.\n\nYou may discuss lab assignments with other students; however, you may not directly share (or copy) code or write-up with other students. For team assignments, you may collaborate freely within your team. You may discuss the assignment with other teams; however, you may not directly share (or copy) code or write-up with another team. Unauthorized sharing (or copying) of the code or write-up will be considered a violation for all students involved.\nYou may not discuss or otherwise work with others on the exams. Unauthorized collaboration or using unauthorized materials will be considered a violation for all students involved. More details will be given closer to the exam date.\nCollaboration within teams is not only allowed but expected for the project. Communication between teams at a high level is also allowed; however, you may not share code or project components across teams.\nOn individual assignments, you may not directly share work (including code) with another student in this class; on team assignments, you may not directly share work (including code) with another team.\n\nOnline resources: I know that a huge volume of code is available online to solve any number of problems. Unless I explicitly tell you not to use something, the course’s policy is that you may make use of any online resources (e.g., StackOverflow), but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nUse of generative artificial intelligence (AI): You should treat generative AI, such as ChatGPT, like other online resources. Two guiding principles govern how to use AI in this course:\n\nCognitive dimension: Working with AI should not reduce your thinking ability. We will practice using AI to facilitate—rather than hinder—learning.\nEthical dimension: Students using AI should be transparent about their use and ensure it aligns with academic integrity.\n\n\n AI tools for code: You may use the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use these guidelines to cite AI-generated content. The bare minimum citation must include the AI tool you’re using (e.g., ChatGPT) and your prompt. The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.\n AI tools for narrative: Unless instructed otherwise, you may not use generative AI to generate a narrative that you then copy-paste verbatim into an assignment or edit and then insert into your assignment.\n AI tools for learning: You’re welcomed to ask AI tools questions that might help your learning and understanding in this course.\n\nIn general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content. Identifying AI-generated content is fairly straightforward. Any code identified as AI-generated but not cited as such and any narrative identified as AI-generated will be considered plagiarism and treated as such.\n\nIf you are unsure if using a particular resource complies with the academic honesty policy, please ask a teaching team member.\nRegardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one’s own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at conduct@duke.edu.\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will\n\nautomatically results in a 0 for the relevant portion or the entire assignment,\ncan further impact your overall course grade, and\nwill be reported to the Office of Student Conduct & Community Standards for further action.\n\n\n\nLate work & extensions\nThe due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback in a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline. Note that the lowest lab assignment will be dropped to accommodate such circumstances.\n\nLabs may be submitted up to 3 days late. A 5% deduction will be applied for each 24-hour period during which the assignment is late.\nNo late work is accepted for application exercises since these are designed to help you prepare for other assessments in the course.\nNo late work is accepted for exams.\nNo late work is accepted for projects.\n\n\n\nWaiver for extenuating circumstances\nIf circumstances prevent you from completing a lab by the stated due date, you may email the course coordinator, Dr. Mary Knox, before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide an explanation. This waiver may only be used once a semester, so only use it for a truly extenuating circumstance.\nIf circumstances have a longer-term impact on your academic performance, please let your academic dean know. They can be a resource. Please let me know if you need help contacting your academic dean.\n\n\nRegrade requests\nRegrade requests must be submitted on Gradescope within a week after an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Regrade requests are also not a mechanism for asking for clarification on feedback, those questions should be brought to office hours. Note that by submitting a regrade request, the entire assignment may be regraded, which could potentially result in losing points.\nNo grades will be changed after the final exam has been administered.\n\n\nAttendance policy\nEvery student is expected to attend and participate in lecture and labs. There may be times, however, when you cannot attend class. If you miss a lecture, make sure to review the material and complete the application exercise, if applicable, before the next lecture. Labs are dedicated to completing the lab assignment and collaborating with your classmates and lab instructor. If you miss a lab session, make sure to communicate with your lab instructor about how you can make up your contribution. If you know you’re going to miss a lab session and you’re feeling well enough to do so, notify your lab TA and teammates ahead of time.\nMore details on Trinity attendance policies are available here.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#accommodations",
-    "href": "course-syllabus.html#accommodations",
-    "title": "STA 199: Intro to Data Science and Statistical Thinking",
-    "section": "Accommodations",
-    "text": "Accommodations\n\nAcademic accommodations\nIf you need accommodations for this class, you will need to register with the Student Disability Access Office (SDAO) and provide them with documentation related to your needs. SDAO will work with you to determine what accommodations are appropriate for your situation. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu.\n\n\nReligious accommodations\nStudents are permitted by university policy to be absent from class to observe a religious holiday. Accordingly, Trinity College of Arts & Sciences and the Pratt School of Engineering have established procedures to be followed by students for notifying their instructors of an absence necessitated by the observance of a religious holiday. Please submit requests for religious accommodations at the beginning of the semester so that we can work to make suitable arrangements well ahead of time. You can find the policy and relevant notification form here: trinity.duke.edu/undergraduate/academic-policies/religious-holidays",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
+      "Computing",
+      "Troubleshooting"
     ]
   },
   {
@@ -173,14 +74,66 @@
     "text": "Footnotes\n\n\nFormerly known as Blue Devils Care.↩︎"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STA 199: Intro to Data Science and Statistical Thinking",
+    "objectID": "course-faq.html",
+    "href": "course-faq.html",
+    "title": "FAQ",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester! Entries for future dates are tentative; the timeline of topics, assignments, and due dates might be changed throughout the session at the instructor’s discretion. All material changes will be communicated with the students in a timely manner.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nMATERIALS\nDUE\nPREPARE\n\n\n\n1\nWed, May 14\nWelcome\n🖥️ slides 00  ⌨️ ae 00\nGithub Survey - End of Lecture\n\n\n\n\nThu, May 15\nLab 0\n💻 lab 0\nLab 0 - End of Lecture\n\n\n\n\nThu, May 15\nMeet the Toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto \n\n\n\nFri, May 16\nGrammar of Data Visualization\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 02  ✅ ae 02\n\n📗 r4ds - chp 1  📘 ims - chp 4 \n\n\n2\nMon, May 19\nMore Data visualization\n🖥️ slides 03  🗒️ notes 03  ⌨️ ae 03  ✅ ae 03\n\n📘 ims - chp 5 🎥 Visualizing Quantitative Data 🎥 Visualizing Categorical Data\n\n\n\nMon, May 19\nLab 1\n💻 lab 1\n\n📗 r4ds - chp 2  📘 ims - chp 5\n\n\n\nTue, May 20\nGrammar of Data Transformation\n🖥️ slides 04  🗒️ notes 04  ⌨️ ae 04  ✅ ae 04\n\n📗 r4ds - chp 3.1-3.5 \n\n\n\nWed, May 21\nMore Data Transformation\n🖥️ slides 05  🗒️ notes 05  ⌨️ ae 05  ✅ ae 05\nLab 1 - 11:59PM ET\n📗 r4ds - chp 3.6-3.7  🎥 Working with a single data frame\n\n\n\nThu, May 22\nTidying Data\n🖥️ slides 06  🗒️ notes 06  ⌨️ ae 06  ✅ ae 06\n\n📗 r4ds - chp 5 📘 ims - chp 6\n\n\n\nThu, May 22\nLab 2\n💻 lab 2\n\n📗 r4ds - chp 4 🎥 Tidy data 🎥 Tidying data 🎥 Code Along: Population over time\n\n\n\nFri, May 23\nJoining Data\n🖥️ slides 07  🗒️ notes 07  ⌨️ ae 07  ✅ ae 07\n\n🎥 Joining data  🎥 Code along :: Continent populations  📗 r4ds - chp 19.1-19.3\n\n\n\nSun, May 25\n\n\n\n\n\n\n3\nMon, May 26\nNO CLASS - Memorial Day\n\n\n\n\n\n\nTue, May 27\nData Types and Classes\n🖥️ slides 08  🗒️ notes 08  ⌨️ ae 08  ✅ ae 08\n\n🎥 Data types  🎥 Data classes  🎥 Code along :: That’s my type  📗 r4ds - chp 16\n\n\n\nWed, May 28\nImporting and Recoding Data\n🖥️ slides 09  🗒️ notes 09  ⌨️ ae 09  ✅ ae 09\nLab 2 - 11:59PM ET\n🎥 Importing data  🎥 Code along :: Student survey  📗 r4ds - chp 7\n\n\n\nThu, May 29\nMore Practice + Midterm Review\n🖥️ slides 10  🗒️ notes 10  ⌨️ ae 10  ✅ ae 10\n\n\n\n\n\nThu, May 29\nLab 3\n💻 lab 3 ✅ lab 3\n\n\n\n\n\nFri, May 30\nMidterm Review\n🖥️ slides 11  🗒️ notes 11  📊 Kahoot!! \n\n\n\n\n\nSun, Jun 1\n\n\nLab 3 - 11:59PM ET\n\n\n\n4\nMon, Jun 2\nData Science Ethics\n🖥️ slides 12  🗒️ notes 12 \n\n📕 mdsr - chp 8  📝 How to make a racist AI in R without really trying  🎥 Alberto Cairo - How charts lie  🎥 Joy Buolamwini - How I’m fighting bias in algorithms\n\n\n\nMon, Jun 2\nProject Milestone 1 - Collaboration\n💻 Project Milestone 1\nProject Milestone 1 - 12:30PM ET\n\n\n\n\nTue, Jun 3\nMidterm\n\n\n\n\n\n\nWed, Jun 4\nThe Language of Models\n🖥️ slides 13  🗒️ notes 13  ⌨️ ae 11  ✅ ae 11\nMidterm Takehome - 9:30AM ET\n🎥 The language of models  📘 ims - chp 7.1 🎥 Fitting and interpreting models  🎥 Modeling nonlinear relationships  📘 ims - chp 7.2\n\n\n\nThu, Jun 5\nSimple Linear Regression\n🖥️ slides 14  🗒️ notes 14  ⌨️ ae 12  ✅ ae 12\n\n\n\n\n\nThu, Jun 5\nProject Milestone 2 - Proposals\n\n\n\n\n\n\nFri, Jun 6\nMultiple Linear Regression 1\n🖥️ slides 15  🗒️ notes 15 \n\n🎥 Models with multiple predictors  🎥 More models with multiple predictors  📘 ims - chp 8.1-8.2\n\n\n\nSun, Jun 8\n\n\nProject Milestone 2 - 11:59PM ET\n\n\n\n5\nMon, Jun 9\nMultiple Linear Regression 2\n🖥️ slides 16  🗒️ notes 16  ⌨️ ae 13 \n\n📘 ims - chp 8.3-8.5\n\n\n\nMon, Jun 9\nLab 4\n💻 lab 4\n\n\n\n\n\nTue, Jun 10\nModel Selection\n🖥️ slides 17  🗒️ notes 17  ⌨️ ae 13  ✅ ae 13\n\n\n\n\n\nWed, Jun 11\nLogistic Regression1\n🖥️ slides 18  🗒️ notes 18  ⌨️ ae 14  ✅ ae 14\nLab 4 - 11:59PM ET Peer Feedback Survey- 11:59 PM ET\n📘 ims - chp 9\n\n\n\nThu, Jun 12\nLogistic Regression 2\n🖥️ slides 19  🗒️ notes 19  ⌨️ ae 15  ✅ae 15 \n\n🎥 Logistic regression  🎥 Prediction and overfitting\n\n\n\nThu, Jun 12\nLab 5\n💻 lab 5\n\n\n\n\n\nFri, Jun 13\nIntervals\n🖥️ slides 20  🗒️ notes 20  ⌨️ ae 16  ✅ae 16 \nProject Milestone 3 - 11:59PM ET\n🎥 Quantifying uncertainty  🎥 Bootstrapping  📘 ims - chp 12\n\n\n\nSun, Jun 15\n\n\nLab 5 - 11:59PM ET \n\n\n\n6\nMon, Jun 16\nHypothesis Testing\n🖥️ slides 21  🗒️ notes 21  ⌨️ ae 17  ✅ae 17 \n\n📘 ims - chp 11\n\n\n\nMon, Jun 16\nProject Milestone 4 - Peer Review\n💻 Code Options\nProject Milestone 4 - 12:30PM ET\n\n\n\n\nTue, Jun 17\nMore Inference\n🖥️ slides 22  🗒️ notes 22 \n\n\n\n\n\nWed, Jun 18\nMore Inference\n🖥️ slides 23  🗒️ notes 23  ⌨️ ae 18  ✅ae 18 \n\n\n\n\n\nThu, Jun 19\nNO CLASS - Juneteenth\n\n\n\n\n\n\nFri, Jun 20\nLab 6\n💻 lab 6 ⌨️ Final Review Survey 🖥️ Announcements\n\n\n\n\n\nSun, Jun 22\n\n\n\n\n\n\n7\nMon, Jun 23\nProject Milestone 5 - Presentations + Final Review\n\nProject - 9:30 AM Lab 6 - 11:59PM ET\n\n\n\n\nMon, Jun 23\nFinal Review\n🖥️ slides 25  🗒️ notes 25  📊 Kahoot!!  💯 Grade Calculator\n\n\n\n\n\nThu, Jun 26\nFINAL EXAM (2pm - 5pm)",
+    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder)."
+  },
+  {
+    "objectID": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
+    "href": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
+    "title": "FAQ",
+    "section": "",
+    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder)."
+  },
+  {
+    "objectID": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
+    "href": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
+    "title": "FAQ",
+    "section": "How can I submit my assignment to Gradescope?",
+    "text": "How can I submit my assignment to Gradescope?\nThe instructions for submitting your assignment to Gradescope can be found here. In a nutshell, you’ll upload your PDF and them mark the page(s) where each question can be found. It’s OK if a question spans multiple pages, just mark them all. It’s also OK if a page includes multiple questions."
+  },
+  {
+    "objectID": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
+    "href": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
+    "title": "FAQ",
+    "section": "Can I use a local install of R and RStudio instead of using the RStudio containers?",
+    "text": "Can I use a local install of R and RStudio instead of using the RStudio containers?\nThe short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.4.1: https://cran.r-project.org/\nDownload and install RStudio: https://posit.co/download/rstudio-desktop/\nInstall Quarto 1.5.56 or higher: https://quarto.org/docs/get-started/\nInstall Git: https://happygitwithr.com/install-git.html\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here."
+  },
+  {
+    "objectID": "computing-code-alongs.html",
+    "href": "computing-code-alongs.html",
+    "title": "Code alongs",
+    "section": "",
+    "text": "The following videos feature “code alongs” as an additional resource for getting coding practice."
+  },
+  {
+    "objectID": "computing-code-alongs.html#data-visualization-and-transformation",
+    "href": "computing-code-alongs.html#data-visualization-and-transformation",
+    "title": "Code alongs",
+    "section": "Data visualization and transformation",
+    "text": "Data visualization and transformation\n\nUN Votes\nFirst look at R amd RStudio.\n\n\n\nFirst look at Palmer Penguins\nFirst look at data science with the tidyverse.\n\n\n\nFlights and pipes\nData transformation\n\n\n\nStarwars characters\nData visualization\n\n\n\nDiving deeper with Palmer Penguins\nData visualization and transformation"
+  },
+  {
+    "objectID": "lab.html",
+    "href": "lab.html",
+    "title": "Labs",
+    "section": "",
+    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\nNo.\nTitle\nDue date\n\n\n\n\n\nNo matching items",
     "crumbs": [
-      "Course information",
-      "Schedule"
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "computing-access.html",
+    "href": "computing-access.html",
+    "title": "Computing access",
+    "section": "",
+    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA198-199 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA198-199 under My reservations to access the RStudio instance you’ll use for the course.",
+    "crumbs": [
+      "Computing",
+      "Access"
     ]
   },
   {
@@ -397,7 +350,7 @@
     "href": "coding-principles-oh.html#example-1",
     "title": "Intro to Coding Principles",
     "section": "Example 1",
-    "text": "Example 1\n\nmidwest |&gt;\n  sumarize(avg_pop_dens = mean(popdensity))\n\nError in `sumarize()`:\n! could not find function \"sumarize\"\n\n\n\n\n\n\n\n\nWhat’s wrong with this code?\n\n\n\n\n\nIn this case, we just have a simple spelling error! It may seem trivial, but this will constitute at least half of the errors that you have. Make this the first thing you check - you will never meet a programmer who doesn’t have a story of the time they spent at least 30 minutes debugging a function, just to realize it was a typo all along.",
+    "text": "Example 1\n\nmidwest |&gt;\n  sumarize(avg_pop_dens = mean(popdensity))\n\nError in `sumarize()`:\n! could not find function \"sumarize\"\n\n\n\n\n\n\n\n\nTipWhat’s wrong with this code?\n\n\n\n\n\nIn this case, we just have a simple spelling error! It may seem trivial, but this will constitute at least half of the errors that you have. Make this the first thing you check - you will never meet a programmer who doesn’t have a story of the time they spent at least 30 minutes debugging a function, just to realize it was a typo all along.",
     "crumbs": [
       "Computing",
       "Coding principles"
@@ -408,7 +361,7 @@
     "href": "coding-principles-oh.html#example-2",
     "title": "Intro to Coding Principles",
     "section": "Example 2",
-    "text": "Example 2\n\nggplot(midwest, aes(x = poptotal, y = popdensity,)) |&gt;\n  geom_point() |&gt;\n  labs(x = \"Total Population\", y = \"Population Density\")\n\nError in `geom_point()`:\n! `mapping` must be created by `aes()`.\n✖ You've supplied a &lt;ggplot2::ggplot&gt; object.\nℹ Did you use `%&gt;%` or `|&gt;` instead of `+`?\n\n\n\n\n\n\n\n\nWhat’s wrong with this code?\n\n\n\n\n\nThis one should be pretty obvious, since it’s a common enough error that R gives an extremely helpful error message. When you’re building a ggplot object, you use + rather than |&gt; to add additional lines!\nThere’s a second error here, that R knew well enough to handle here, but which could become an issue in more complicated code chunks. Did anyone spot it?",
+    "text": "Example 2\n\nggplot(midwest, aes(x = poptotal, y = popdensity,)) |&gt;\n  geom_point() |&gt;\n  labs(x = \"Total Population\", y = \"Population Density\")\n\nError in `geom_point()`:\n! `mapping` must be created by `aes()`.\n✖ You've supplied a &lt;ggplot2::ggplot&gt; object.\nℹ Did you use `%&gt;%` or `|&gt;` instead of `+`?\n\n\n\n\n\n\n\n\nTipWhat’s wrong with this code?\n\n\n\n\n\nThis one should be pretty obvious, since it’s a common enough error that R gives an extremely helpful error message. When you’re building a ggplot object, you use + rather than |&gt; to add additional lines!\nThere’s a second error here, that R knew well enough to handle here, but which could become an issue in more complicated code chunks. Did anyone spot it?",
     "crumbs": [
       "Computing",
       "Coding principles"
@@ -419,43 +372,10 @@
     "href": "coding-principles-oh.html#example-3",
     "title": "Intro to Coding Principles",
     "section": "Example 3",
-    "text": "Example 3\n\nggplot(midwest, aes(x = state, y = poptotal, fill = state)) +\n  geom_bar() +\n  theme_bw() +\n  scale_y_continuous(labels = scales::unit_format(unit = \"M\", scale = 1e-6)) +\n  labs(\n    x = \"State\",\n    y = \"Total Population\\n(Millions)\",\n    title = \"Total Population by State\"\n  ) +\n  theme(\n    plot.title = element_text(hjust = 0.5),\n    panel.grid.major.x = element_blank(),\n    legend.position = \"none\"\n  ) +\n  scale_fill_viridis_d()\n\nError in `geom_bar()`:\n! Problem while computing stat.\nℹ Error occurred in the 1st layer.\nCaused by error in `setup_params()`:\n! `stat_count()` must only have an x or y aesthetic.\n\n\nThere’s a lot going on here, so it might not be obvious at first where the issue is! The error has something to do with the function stat_count(), but that’s not a function we used (explicitly) anywhere in this code. This is why you should iterate on your code, running it intermittently, so that you can catch errors when they pop up.\nMy first thought would be to run rlang::last_trace(), as suggested by the error message. This is sometimes helpful - it can reference certain functions and even lines of code, especially when you’re executing something more complex. Frequently, though, it’s too complicated to understand. In this case, I would certainly say I can’t make any sense of that.\nMy next thought is to google the error message. It can be a little tricky to know what to google from the error message. You want to look for anything that seems general enough that other people might have asked, but specific enough that it will apply to your situation. Let’s go line by line:\n\n“Error in geom_bar()”: Probably too general to bother googling. There are a lot of possible errors with geom_bar(), and it would take too long to look through them all to get to your specific problem!\n“Problem while computing stat.”: This is more helpful, because it gives a little more direction as to the source of the error, but it is still too general - what stat are we computing? What problem?\n“Error occured in the 1st layer”: This can be helpful for you, if you know the order of ggplot layers. However, it is probably not helpful to google, since people could have built their layers in a different order before encountering this error.\n“Caused by error in setup_params()”: Closer! This is getting more and more specific, and this might be good enough to google. However, it still doesn’t say what the error is, it just says that there was one.\n“stat_count() must only have an x or y aesthetic”: Bingo! This is the one we’re looking for, which tells us exactly what the issue is. Now, it may be possible to interpret manually, but let’s say you can’t. Here’s where we go now:\n\nI would copy-paste the entire final line into google. You don’t want to copy-paste the full error message, since that’s probably too specific, and you might not find any results. At the same time, you don’t want to copy-paste only a couple of words, since that might not be specific enough, and you could be stuck looking through a lot of links. If you google just that line, you are likely to find someone on stack exchange who has posted a question with this exact (or almost this exact) error message. You can also help your google out by throwing in some relevant key words:\n\nggplot\nR\nerror\n\nTake a couple minutes to google this, and see if you can figure out what’s wrong with the code! Then, remember to cite the source where you found this answer! In general, it’s okay to google your error messages for help, but not to use someone else’s solution without credit.\n\n\n\n\n\n\nWhat’s wrong with this code?\n\n\n\n\n\nI looked at https://stackoverflow.com/questions/61068031/error-stat-count-can-only-have-an-x-or-y-aesthetic for my answer. There’s a few different suggestions on this page, all of which could be useful! This page definitely suggests to me that the issue with my plot is in the geom_bar() line - which makes sense, since this is layer 1 of the plot. While they have a couple simple fixes, here’s the actual error I wrote: geom_bar() is expecting only one variable. If you want two variables, like this, you should use geom_col() instead.",
+    "text": "Example 3\n\nggplot(midwest, aes(x = state, y = poptotal, fill = state)) +\n  geom_bar() +\n  theme_bw() +\n  scale_y_continuous(labels = scales::unit_format(unit = \"M\", scale = 1e-6)) +\n  labs(\n    x = \"State\",\n    y = \"Total Population\\n(Millions)\",\n    title = \"Total Population by State\"\n  ) +\n  theme(\n    plot.title = element_text(hjust = 0.5),\n    panel.grid.major.x = element_blank(),\n    legend.position = \"none\"\n  ) +\n  scale_fill_viridis_d()\n\nError in `geom_bar()`:\n! Problem while computing stat.\nℹ Error occurred in the 1st layer.\nCaused by error in `setup_params()`:\n! `stat_count()` must only have an x or y aesthetic.\n\n\nThere’s a lot going on here, so it might not be obvious at first where the issue is! The error has something to do with the function stat_count(), but that’s not a function we used (explicitly) anywhere in this code. This is why you should iterate on your code, running it intermittently, so that you can catch errors when they pop up.\nMy first thought would be to run rlang::last_trace(), as suggested by the error message. This is sometimes helpful - it can reference certain functions and even lines of code, especially when you’re executing something more complex. Frequently, though, it’s too complicated to understand. In this case, I would certainly say I can’t make any sense of that.\nMy next thought is to google the error message. It can be a little tricky to know what to google from the error message. You want to look for anything that seems general enough that other people might have asked, but specific enough that it will apply to your situation. Let’s go line by line:\n\n“Error in geom_bar()”: Probably too general to bother googling. There are a lot of possible errors with geom_bar(), and it would take too long to look through them all to get to your specific problem!\n“Problem while computing stat.”: This is more helpful, because it gives a little more direction as to the source of the error, but it is still too general - what stat are we computing? What problem?\n“Error occured in the 1st layer”: This can be helpful for you, if you know the order of ggplot layers. However, it is probably not helpful to google, since people could have built their layers in a different order before encountering this error.\n“Caused by error in setup_params()”: Closer! This is getting more and more specific, and this might be good enough to google. However, it still doesn’t say what the error is, it just says that there was one.\n“stat_count() must only have an x or y aesthetic”: Bingo! This is the one we’re looking for, which tells us exactly what the issue is. Now, it may be possible to interpret manually, but let’s say you can’t. Here’s where we go now:\n\nI would copy-paste the entire final line into google. You don’t want to copy-paste the full error message, since that’s probably too specific, and you might not find any results. At the same time, you don’t want to copy-paste only a couple of words, since that might not be specific enough, and you could be stuck looking through a lot of links. If you google just that line, you are likely to find someone on stack exchange who has posted a question with this exact (or almost this exact) error message. You can also help your google out by throwing in some relevant key words:\n\nggplot\nR\nerror\n\nTake a couple minutes to google this, and see if you can figure out what’s wrong with the code! Then, remember to cite the source where you found this answer! In general, it’s okay to google your error messages for help, but not to use someone else’s solution without credit.\n\n\n\n\n\n\nTipWhat’s wrong with this code?\n\n\n\n\n\nI looked at https://stackoverflow.com/questions/61068031/error-stat-count-can-only-have-an-x-or-y-aesthetic for my answer. There’s a few different suggestions on this page, all of which could be useful! This page definitely suggests to me that the issue with my plot is in the geom_bar() line - which makes sense, since this is layer 1 of the plot. While they have a couple simple fixes, here’s the actual error I wrote: geom_bar() is expecting only one variable. If you want two variables, like this, you should use geom_col() instead.",
     "crumbs": [
       "Computing",
       "Coding principles"
-    ]
-  },
-  {
-    "objectID": "computing-access.html",
-    "href": "computing-access.html",
-    "title": "Computing access",
-    "section": "",
-    "text": "To access computing resources for the introductory data science courses offered by the Duke University Department of Statistical Science, go to the Duke Container Manager website, cmgr.oit.duke.edu/containers.\nIf this is your first time accessing the containers, click on reserve STA198-199 on the Reservations available menu on the right. You only need to do this once, and when you do, you’ll see this container moved to the My reservations menu on the left.\nNext, click on STA198-199 under My reservations to access the RStudio instance you’ll use for the course.",
-    "crumbs": [
-      "Computing",
-      "Access"
-    ]
-  },
-  {
-    "objectID": "computing-troubleshooting.html",
-    "href": "computing-troubleshooting.html",
-    "title": "Computing troubleshooting",
-    "section": "",
-    "text": "If you’re having difficulty launching an RStudio session from your reserved container, go to status.oit.duke.edu and scroll down to Teaching and Learning Tools. Under this heading you’ll find an entry called Container Manager (CMGR Coursework Containers).\n\nIf the status shows something other than Operational, this means there is a known incident with the containers. Check back later to see if it’s been resolved. If there’s a deadline coming up soon, post on the Ed Discussions to let us know that there’s an issue. We can look into how quickly it might get resolved and decide on what to do about the deadline accordingly. Note: We don’t anticipate this to happen regularly, the systems are Operational a huge majority of the time!\nIf the status shows Operational, this means the system is expected to be working. If you’re still having trouble, follow the steps in the order given below:\n\nRestart your browser.\nMake sure there are no updates pending for your browser. If there are, install those updates and restart your browser again.\nRequest a restart of your container – To do so, select your container as you usually do and then, instead of Login, click on Request Restart. Read the warning in the next page, and then click once more to restart your container.\nClear your browser cache and restart your browser again.\nRestart your computer to ensure a fresh new connection.\nIf your issue persists, post on the course forum with details on what you’ve tried and the errors you see (including verbatim errors and/or screenshots).",
-    "crumbs": [
-      "Computing",
-      "Troubleshooting"
-    ]
-  },
-  {
-    "objectID": "computing-cheatsheets.html",
-    "href": "computing-cheatsheets.html",
-    "title": "R cheatsheets",
-    "section": "",
-    "text": "The following cheatsheets come from https://www.rstudio.com/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.",
-    "crumbs": [
-      "Computing",
-      "Cheatsheets"
     ]
   },
   {
@@ -463,34 +383,10 @@
     "href": "ae.html",
     "title": "Application Exercises",
     "section": "",
-    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 10:45 am) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\nMore AEs to be added as the semester progresses.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n\nNo matching items",
+    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 10:45 am) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\nMore AEs to be added as the semester progresses.\n\n\n\n\n\nTitle\nSubtitle\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Application Exercises"
     ]
-  },
-  {
-    "objectID": "lab.html",
-    "href": "lab.html",
-    "title": "Labs",
-    "section": "",
-    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\nNo.\n\n\nTitle\n\n\nDue date\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Labs"
-    ]
-  },
-  {
-    "objectID": "computing-code-alongs.html",
-    "href": "computing-code-alongs.html",
-    "title": "Code alongs",
-    "section": "",
-    "text": "The following videos feature “code alongs” as an additional resource for getting coding practice."
-  },
-  {
-    "objectID": "computing-code-alongs.html#data-visualization-and-transformation",
-    "href": "computing-code-alongs.html#data-visualization-and-transformation",
-    "title": "Code alongs",
-    "section": "Data visualization and transformation",
-    "text": "Data visualization and transformation\n\nUN Votes\nFirst look at R amd RStudio.\n\n\n\nFirst look at Palmer Penguins\nFirst look at data science with the tidyverse.\n\n\n\nFlights and pipes\nData transformation\n\n\n\nStarwars characters\nData visualization\n\n\n\nDiving deeper with Palmer Penguins\nData visualization and transformation"
   },
   {
     "objectID": "course-overview.html",
@@ -530,39 +426,22 @@
     "href": "course-overview.html#office-hours",
     "title": "STA 199Summer 2025",
     "section": "Office hours",
-    "text": "Office hours\n\n\n\nName\nLocation\nTime\n\n\n\n\nMarie Neubrander\nOld Chem 203A\nTu 3:30PM - 5:30PM\nF 1PM - 3PM\n\n\nMary Knox\nZoom\nW 2PM - 3PM\n\n\nKatie Solarz\nOld Chem 203A\nW 5:30-7:30 PM\n\n\n\n\n\n\n\n\n\nOn May 21 (W), Marie will run Katie’s office hours. Katie will run Marie’s on May 23 (F). This week, Katie’s office hours will be on Zoom at https://duke.zoom.us/j/95513369376",
+    "text": "Office hours\n\n\n\nName\nLocation\nTime\n\n\n\n\nMarie Neubrander\nOld Chem 203A\nTu 3:30PM - 5:30PM\nF 1PM - 3PM\n\n\nMary Knox\nZoom\nW 2PM - 3PM\n\n\nKatie Solarz\nOld Chem 203A\nW 5:30-7:30 PM\n\n\n\n\n\n\n\n\n\nNoteOn May 21 (W), Marie will run Katie’s office hours. Katie will run Marie’s on May 23 (F). This week, Katie’s office hours will be on Zoom at https://duke.zoom.us/j/95513369376",
     "crumbs": [
       "Course information",
       "Overview"
     ]
   },
   {
-    "objectID": "course-faq.html",
-    "href": "course-faq.html",
-    "title": "FAQ",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STA 199: Intro to Data Science and Statistical Thinking",
     "section": "",
-    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder)."
-  },
-  {
-    "objectID": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
-    "href": "course-faq.html#how-do-i-export-my-assignment-pdf-from-rstudio-to-upload-to-gradescope",
-    "title": "FAQ",
-    "section": "",
-    "text": "Go to your Files tab, check the box next to the file you want to download, then click on the blue gear icon on the Files tab to reveal the drop down menu, and select Export… If you have selected multiple files to export, RStudio will zip them up into a single zip file for you. If you’ve selected just a single file, it will only download that. The downloaded file will go to wherever files you download off the internet goes on your computer (usually your Downloads folder)."
-  },
-  {
-    "objectID": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
-    "href": "course-faq.html#how-can-i-submit-my-assignment-to-gradescope",
-    "title": "FAQ",
-    "section": "How can I submit my assignment to Gradescope?",
-    "text": "How can I submit my assignment to Gradescope?\nThe instructions for submitting your assignment to Gradescope can be found here. In a nutshell, you’ll upload your PDF and them mark the page(s) where each question can be found. It’s OK if a question spans multiple pages, just mark them all. It’s also OK if a page includes multiple questions."
-  },
-  {
-    "objectID": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
-    "href": "course-faq.html#can-i-use-a-local-install-of-r-and-rstudio-instead-of-using-the-rstudio-containers",
-    "title": "FAQ",
-    "section": "Can I use a local install of R and RStudio instead of using the RStudio containers?",
-    "text": "Can I use a local install of R and RStudio instead of using the RStudio containers?\nThe short answer is, I’d rather you didn’t, to save yourself some headache. But, the long answer is, sure! But you will need to install a specific versions of R and RStudio for everything to work as expected. You will also need to install the R packages we’re using as well as have Git installed on your computer. These are not extremely challenging things to get right, but they are not trivial either, particularly on certain operating systems. Myself and the TAs are always happy to provide help with any computational questions when you’re working in the containers we have provided for you. If you’re working on your local setup, we can’t guarantee being able to resolve your issues, though we’re happy to try.\nIf you want to take this path, here is what you need to do:\n\nDownload and install R 4.4.1: https://cran.r-project.org/\nDownload and install RStudio: https://posit.co/download/rstudio-desktop/\nInstall Quarto 1.5.56 or higher: https://quarto.org/docs/get-started/\nInstall Git: https://happygitwithr.com/install-git.html\nInstall any necessary packages with install.packages(\"___\")\n\nAnd I’d like to reiterate again that successful installation of these software is not a learning goal of this course. So if any of this seems tedious or intimidating in any way, just use the computing environment we have set up for you. More on that here."
+    "text": "This page contains an outline of the topics, content, and assignments for the semester! Entries for future dates are tentative; the timeline of topics, assignments, and due dates might be changed throughout the session at the instructor’s discretion. All material changes will be communicated with the students in a timely manner.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nMATERIALS\nDUE\nPREPARE\n\n\n\n1\nWed, May 14\nWelcome\n🖥️ slides 00  ⌨️ ae 00\n\nGithub Survey - End of Lecture\n\n\n\n\nThu, May 15\nLab 0\n💻 lab 0\n\nLab 0 - End of Lecture\n\n\n\n\nThu, May 15\nMeet the Toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto \n\n\n\n\nFri, May 16\nGrammar of Data Visualization\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 02  ✅ ae 02\n\n\n📗 r4ds - chp 1  📘 ims - chp 4 \n\n\n\n2\nMon, May 19\nMore Data visualization\n🖥️ slides 03  🗒️ notes 03  ⌨️ ae 03  ✅ ae 03\n\n\n📘 ims - chp 5 🎥 Visualizing Quantitative Data 🎥 Visualizing Categorical Data\n\n\n\n\nMon, May 19\nLab 1\n💻 lab 1\n\n\n📗 r4ds - chp 2  📘 ims - chp 5\n\n\n\n\nTue, May 20\nGrammar of Data Transformation\n🖥️ slides 04  🗒️ notes 04  ⌨️ ae 04  ✅ ae 04\n\n\n📗 r4ds - chp 3.1-3.5 \n\n\n\n\nWed, May 21\nMore Data Transformation\n🖥️ slides 05  🗒️ notes 05  ⌨️ ae 05  ✅ ae 05\n\nLab 1 - 11:59PM ET\n📗 r4ds - chp 3.6-3.7  🎥 Working with a single data frame\n\n\n\n\nThu, May 22\nTidying Data\n🖥️ slides 06  🗒️ notes 06  ⌨️ ae 06  ✅ ae 06\n\n\n📗 r4ds - chp 5 📘 ims - chp 6\n\n\n\n\nThu, May 22\nLab 2\n💻 lab 2\n\n\n📗 r4ds - chp 4 🎥 Tidy data 🎥 Tidying data 🎥 Code Along: Population over time\n\n\n\n\nFri, May 23\nJoining Data\n🖥️ slides 07  🗒️ notes 07  ⌨️ ae 07  ✅ ae 07\n\n\n🎥 Joining data  🎥 Code along :: Continent populations  📗 r4ds - chp 19.1-19.3\n\n\n\n\nSun, May 25\n\n\n\n\n\n\n3\nMon, May 26\nNO CLASS - Memorial Day\n\n\n\n\n\n\nTue, May 27\nData Types and Classes\n🖥️ slides 08  🗒️ notes 08  ⌨️ ae 08  ✅ ae 08\n\n\n🎥 Data types  🎥 Data classes  🎥 Code along :: That’s my type  📗 r4ds - chp 16\n\n\n\n\nWed, May 28\nImporting and Recoding Data\n🖥️ slides 09  🗒️ notes 09  ⌨️ ae 09  ✅ ae 09\n\nLab 2 - 11:59PM ET\n🎥 Importing data  🎥 Code along :: Student survey  📗 r4ds - chp 7\n\n\n\n\nThu, May 29\nMore Practice + Midterm Review\n🖥️ slides 10  🗒️ notes 10  ⌨️ ae 10  ✅ ae 10\n\n\n\n\n\n\nThu, May 29\nLab 3\n💻 lab 3 ✅ lab 3\n\n\n\n\n\n\nFri, May 30\nMidterm Review\n🖥️ slides 11  🗒️ notes 11  📊 Kahoot!! \n\n\n\n\n\n\nSun, Jun 1\n\n\nLab 3 - 11:59PM ET\n\n\n\n4\nMon, Jun 2\nData Science Ethics\n🖥️ slides 12  🗒️ notes 12 \n\n\n📕 mdsr - chp 8  📝 How to make a racist AI in R without really trying  🎥 Alberto Cairo - How charts lie  🎥 Joy Buolamwini - How I’m fighting bias in algorithms\n\n\n\n\nMon, Jun 2\nProject Milestone 1 - Collaboration\n💻 Project Milestone 1\n\nProject Milestone 1 - 12:30PM ET\n\n\n\n\nTue, Jun 3\nMidterm\n\n\n\n\n\n\nWed, Jun 4\nThe Language of Models\n🖥️ slides 13  🗒️ notes 13  ⌨️ ae 11  ✅ ae 11\n\nMidterm Takehome - 9:30AM ET\n🎥 The language of models  📘 ims - chp 7.1 🎥 Fitting and interpreting models  🎥 Modeling nonlinear relationships  📘 ims - chp 7.2\n\n\n\n\nThu, Jun 5\nSimple Linear Regression\n🖥️ slides 14  🗒️ notes 14  ⌨️ ae 12  ✅ ae 12\n\n\n\n\n\n\nThu, Jun 5\nProject Milestone 2 - Proposals\n\n\n\n\n\n\nFri, Jun 6\nMultiple Linear Regression 1\n🖥️ slides 15  🗒️ notes 15 \n\n\n🎥 Models with multiple predictors  🎥 More models with multiple predictors  📘 ims - chp 8.1-8.2\n\n\n\n\nSun, Jun 8\n\n\nProject Milestone 2 - 11:59PM ET\n\n\n\n5\nMon, Jun 9\nMultiple Linear Regression 2\n🖥️ slides 16  🗒️ notes 16  ⌨️ ae 13 \n\n\n📘 ims - chp 8.3-8.5\n\n\n\n\nMon, Jun 9\nLab 4\n💻 lab 4\n\n\n\n\n\n\nTue, Jun 10\nModel Selection\n🖥️ slides 17  🗒️ notes 17  ⌨️ ae 13  ✅ ae 13\n\n\n\n\n\n\nWed, Jun 11\nLogistic Regression1\n🖥️ slides 18  🗒️ notes 18  ⌨️ ae 14  ✅ ae 14\n\nLab 4 - 11:59PM ET Peer Feedback Survey- 11:59 PM ET\n📘 ims - chp 9\n\n\n\n\nThu, Jun 12\nLogistic Regression 2\n🖥️ slides 19  🗒️ notes 19  ⌨️ ae 15  ✅ae 15 \n\n\n🎥 Logistic regression  🎥 Prediction and overfitting\n\n\n\n\nThu, Jun 12\nLab 5\n💻 lab 5\n\n\n\n\n\n\nFri, Jun 13\nIntervals\n🖥️ slides 20  🗒️ notes 20  ⌨️ ae 16  ✅ae 16 \n\nProject Milestone 3 - 11:59PM ET\n🎥 Quantifying uncertainty  🎥 Bootstrapping  📘 ims - chp 12\n\n\n\n\nSun, Jun 15\n\n\nLab 5 - 11:59PM ET \n\n\n\n\n6\nMon, Jun 16\nHypothesis Testing\n🖥️ slides 21  🗒️ notes 21  ⌨️ ae 17  ✅ae 17 \n\n\n📘 ims - chp 11\n\n\n\n\nMon, Jun 16\nProject Milestone 4 - Peer Review\n💻 Code Options\n\nProject Milestone 4 - 12:30PM ET\n\n\n\n\nTue, Jun 17\nMore Inference\n🖥️ slides 22  🗒️ notes 22 \n\n\n\n\n\n\nWed, Jun 18\nMore Inference\n🖥️ slides 23  🗒️ notes 23  ⌨️ ae 18  ✅ae 18 \n\n\n\n\n\n\nThu, Jun 19\nNO CLASS - Juneteenth\n\n\n\n\n\n\nFri, Jun 20\nLab 6\n💻 lab 6 ⌨️ Final Review Survey 🖥️ Announcements\n\n\n\n\n\n\nSun, Jun 22\n\n\n\n\n\n\n7\nMon, Jun 23\nProject Milestone 5 - Presentations + Final Review\n\nProject - 9:30 AM Lab 6 - 11:59PM ET\n\n\n\n\nMon, Jun 23\nFinal Review\n🖥️ slides 25  🗒️ notes 25  📊 Kahoot!!  💯 Grade Calculator\n\n\n\n\n\n\nThu, Jun 26\nFINAL EXAM (2pm - 5pm)",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
   },
   {
     "objectID": "course-team.html",
@@ -584,6 +463,127 @@
     "crumbs": [
       "Course information",
       "Team"
+    ]
+  },
+  {
+    "objectID": "computing-cheatsheets.html",
+    "href": "computing-cheatsheets.html",
+    "title": "R cheatsheets",
+    "section": "",
+    "text": "The following cheatsheets come from https://www.rstudio.com/resources/cheatsheets. We haven’t covered every function and functionality listed on them, but you might still find them useful as references.",
+    "crumbs": [
+      "Computing",
+      "Cheatsheets"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html",
+    "href": "course-syllabus.html",
+    "title": "STA 199: Intro to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "By the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to communicate results through written assignments and project presentation effectively",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-learning-objectives",
+    "href": "course-syllabus.html#course-learning-objectives",
+    "title": "STA 199: Intro to Data Science and Statistical Thinking",
+    "section": "",
+    "text": "By the end of the semester, you will…\n\nlearn to explore, visualize, and analyze data in a reproducible and shareable manner using R and RStudio\ngain experience in data wrangling and munging, exploratory data analysis, predictive modeling, and data visualization\nwork on problems and case studies inspired by and based on real-world questions and data\nlearn to communicate results through written assignments and project presentation effectively",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-materials",
+    "href": "course-syllabus.html#course-materials",
+    "title": "STA 199: Intro to Data Science and Statistical Thinking",
+    "section": "Course materials",
+    "text": "Course materials\n\nTextbooks\nAll books are freely available online.\n\nR for Data Science, 2e, Wickham, Çetinkaya-Rundel, Grolemund. O’Reilly, 2nd edition, 2023. Hard copy available on Amazon.\nIntroduction to Modern Statistics, Çetinkaya-Rundel, Hardin. OpenIntro Inc., 2nd Edition, 2023. Hard copy available on Amazon.\n\n\n\nComputing\nYou will need a laptop you can bring to lecture and lab for this course. We will use the statistical software R. Students will be able to access R through Docker containers provided by Duke Office of Information Technology. See the computing page for more information.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-components",
+    "href": "course-syllabus.html#course-components",
+    "title": "STA 199: Intro to Data Science and Statistical Thinking",
+    "section": "Course components",
+    "text": "Course components\n\nLectures and labs\nLectures and labs are designed to be interactive, so you gain experience applying new concepts and learning from each other. My role as instructor is to introduce you to new methods, tools, and techniques, but it is up to you to take them and use them. A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing. Therefore, as much as possible, you will work on various tasks and activities throughout each lecture and lab. You are expected to prepare for class by completing assigned readings, attending lectures and lab sessions, and meaningfully contributing to in-class exercises and discussions. Additionally, most lectures will feature application exercises that will be graded based on completing what we do in class.\nYou are expected to bring a laptop (or Chromebook) to each class so that you can participate in the in-class exercises. Please ensure your device is fully charged before you come to class, as the number of outlets in the classroom will not be sufficient to accommodate everyone. A tablet also works, but the user experience will be much smoother on a laptop.\n\n\nActivities & Assessment\nYou will be assessed based on five components: application exercises, labs, exams, project, and teamwork.\n\nLabs\nIn labs, you will apply what you’ve learned in the videos and during lectures to complete data analysis tasks. You may discuss lab assignments with other students; however, the lab should be completed and submitted individually. Lab assignments must be typed up using Quarto, all work must be pushed to your GitHub repository for the lab, and the lab’s PDF output must be submitted on Gradescope by the deadline.\nLabs are due at 11:59pm ET on the indicated due date. Generally, for Monday labs, this is the following Wednesday; for Thursday labs, this is the following Sunday.\nThe lowest lab grade will be dropped at the end of the semester.\n\n\nExams\nThis course will have two exams: a midterm and a final. The midterm will include an in-class component (with a cheat sheet) and an open-note take-home component, while the final will include only an in-class component (with a cheat sheet).\nYou can demonstrate what you’ve learned in the course thus far through these exams. The exams will focus on both conceptual understanding of the content and application through analysis and computational tasks. The exam’s content will be related to the content in videos and reading assignments, lectures, application exercises, and labs.\nMore details about the exams will be given during the semester.\n\n\nProject\nThe project aims to apply what you’ve learned throughout the semester to analyze an interesting data-driven research question. The project will be completed in teams, and each team will present their work in the last lab session of the semester. The write-up will be due on the same day.\nYou cannot pass this course if you have not completed the project.\nMore information about the project will be provided during the semester.\n\n\nApplication exercises\nParts of some lectures will be dedicated to working on Application Exercises (AEs). These exercises allow you to apply the statistical concepts and code introduced in the preparation materials. These AEs are due by 10:45 am ET on the day of the lecture they are covered. To submit the AEs, you only need to push your work to your GitHub repo.\nBecause these AEs are for practice, they will be graded based on attempt, i.e., a good-faith effort has been made in attempting all parts.\nSuccessful on-time completion of at least 80% of AEs will result in full credit for AEs in the final course grade.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#grading",
+    "href": "course-syllabus.html#grading",
+    "title": "STA 199: Intro to Data Science and Statistical Thinking",
+    "section": "Grading",
+    "text": "Grading\nThe final course grade will be calculated as follows:\n\n\n\nCategory\nPercentage\n\n\n\n\nLabs\n30%\n\n\nProject\n20%\n\n\nMidterm\n20%\n\n\nFinal\n20%\n\n\nApplication Exercises\n5%\n\n\nLab Attendance\n5%\n\n\n\nThe final letter grade will be determined based on the following thresholds:\n\n\n\nLetter Grade\nFinal Course Grade\n\n\n\n\nA\n&gt;= 93\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n73 - 76.99\n\n\nC-\n70 - 72.99\n\n\nD+\n67 - 69.99\n\n\nD\n63 - 66.99\n\n\nD-\n60 - 62.99\n\n\nF\n&lt; 60",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-community",
+    "href": "course-syllabus.html#course-community",
+    "title": "STA 199: Intro to Data Science and Statistical Thinking",
+    "section": "Course community",
+    "text": "Course community\n\nInclusive community\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit. I intend to present materials and activities that respect diversity and align with Duke’s Commitment to Diversity and Inclusion. Furthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives, and experiences and honors their identities. To help accomplish this:\n\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If anything was said in class (by anyone) that made you feel uncomfortable, please let me or a teaching team member know.\n\n\n\nPersonal pronouns\nPronouns are meaningful tools to communicate identities and experiences, and using pronouns supports a campus environment where all community members can thrive. You can update your gender pronouns in Duke Hub and learn more about personal pronouns at the Center for Sexual and Gender Diversity’s website.\n\n\nAccessibility\nIf any portion of the course is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.\nThe Student Disability Access Office (SDAO) is available to ensure that students can engage with their courses and related assignments. Students should contact the SDAO to request or update accommodations under these circumstances.\n\n\nCommunication\nAll lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website: sta199-su25.github.io.\nAnnouncements will periodically be emailed through Canvas Announcements. Please check your email regularly to ensure you have the latest announcements for the course.\n\n\nEmail\nIf you have questions about assignment extensions, accommodations, or any other matter not appropriate for the class discussion forum, please email me directly at marie.neubrander@duke.edu. If you do so, please include “STA 199” in the subject line. Barring extenuating circumstances, I will respond to STA 199 emails within 48 hours, Monday through Friday. Response time may be slower for emails sent Friday evening through Sunday.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#five-tips-for-success",
+    "href": "course-syllabus.html#five-tips-for-success",
+    "title": "STA 199: Intro to Data Science and Statistical Thinking",
+    "section": "Five tips for success",
+    "text": "Five tips for success\nYour success in this course depends very much on you and the effort you put into it. The course team will help you by providing you with materials answering questions, and setting a pace, but for this to work, you must do the following:\n\nComplete all the preparation work before class.\nAsk questions. As often as you can. In class, out of class. Ask me, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you’re not sure about the lab, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.\nDo the readings!\nDo the lab! The earlier you start, the better. It’s not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material and imagine how they might be changed (to make questions for an exam, for example).\nDon’t procrastinate. The content builds upon what was taught in previous weeks, so if something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, etc. Don’t let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours and work with a member of the teaching team to help you identify a good (re)starting point.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#getting-help",
+    "href": "course-syllabus.html#getting-help",
+    "title": "STA 199: Intro to Data Science and Statistical Thinking",
+    "section": "Getting help",
+    "text": "Getting help\n\nIf you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking, you will create a learning opportunity for everyone.\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!\nOutside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, Ed Discussion. There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!\n\nCheck out the Support tab for more resources.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-policies",
+    "href": "course-syllabus.html#course-policies",
+    "title": "STA 199: Intro to Data Science and Statistical Thinking",
+    "section": "Course policies",
+    "text": "Course policies\n\nDuke Community Standard\nAs a student in this course, you have agreed to uphold the Duke Community Standard (video here!) and the practices specific to this course.\n\n\nAcademic honesty\nTL;DR: Don’t cheat!\nPlease abide by the following as you work on assignments in this course:\n\nCollaboration: Only work that is clearly assigned as teamwork should be completed collaboratively.\n\nYou may discuss lab assignments with other students; however, you may not directly share (or copy) code or write-up with other students. For team assignments, you may collaborate freely within your team. You may discuss the assignment with other teams; however, you may not directly share (or copy) code or write-up with another team. Unauthorized sharing (or copying) of the code or write-up will be considered a violation for all students involved.\nYou may not discuss or otherwise work with others on the exams. Unauthorized collaboration or using unauthorized materials will be considered a violation for all students involved. More details will be given closer to the exam date.\nCollaboration within teams is not only allowed but expected for the project. Communication between teams at a high level is also allowed; however, you may not share code or project components across teams.\nOn individual assignments, you may not directly share work (including code) with another student in this class; on team assignments, you may not directly share work (including code) with another team.\n\nOnline resources: I know that a huge volume of code is available online to solve any number of problems. Unless I explicitly tell you not to use something, the course’s policy is that you may make use of any online resources (e.g., StackOverflow), but you must explicitly cite where you obtained any code you directly use (or use as inspiration). Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.\nUse of generative artificial intelligence (AI): You should treat generative AI, such as ChatGPT, like other online resources. Two guiding principles govern how to use AI in this course:\n\nCognitive dimension: Working with AI should not reduce your thinking ability. We will practice using AI to facilitate—rather than hinder—learning.\nEthical dimension: Students using AI should be transparent about their use and ensure it aligns with academic integrity.\n\n\n AI tools for code: You may use the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code. Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism. You may use these guidelines to cite AI-generated content. The bare minimum citation must include the AI tool you’re using (e.g., ChatGPT) and your prompt. The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.\n AI tools for narrative: Unless instructed otherwise, you may not use generative AI to generate a narrative that you then copy-paste verbatim into an assignment or edit and then insert into your assignment.\n AI tools for learning: You’re welcomed to ask AI tools questions that might help your learning and understanding in this course.\n\nIn general, you may use generative AI as a resource as you complete assignments but not to answer the exercises for you. You are ultimately responsible for the work you turn in; it should reflect your understanding of the course content. Identifying AI-generated content is fairly straightforward. Any code identified as AI-generated but not cited as such and any narrative identified as AI-generated will be considered plagiarism and treated as such.\n\nIf you are unsure if using a particular resource complies with the academic honesty policy, please ask a teaching team member.\nRegardless of course delivery format, it is the responsibility of all students to understand and follow all Duke policies, including academic integrity (e.g., completing one’s own work, following proper citation of sources, adhering to guidance around group work projects, and more). Ignoring these requirements is a violation of the Duke Community Standard. Any questions and/or concerns regarding academic integrity can be directed to the Office of Student Conduct and Community Standards at conduct@duke.edu.\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will\n\nautomatically results in a 0 for the relevant portion or the entire assignment,\ncan further impact your overall course grade, and\nwill be reported to the Office of Student Conduct & Community Standards for further action.\n\n\n\nLate work & extensions\nThe due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback in a timely manner. We understand that things come up periodically that could make it difficult to submit an assignment by the deadline. Note that the lowest lab assignment will be dropped to accommodate such circumstances.\n\nLabs may be submitted up to 3 days late. A 5% deduction will be applied for each 24-hour period during which the assignment is late.\nNo late work is accepted for application exercises since these are designed to help you prepare for other assessments in the course.\nNo late work is accepted for exams.\nNo late work is accepted for projects.\n\n\n\nWaiver for extenuating circumstances\nIf circumstances prevent you from completing a lab by the stated due date, you may email the course coordinator, Dr. Mary Knox, before the deadline to waive the late penalty. In your email, you only need to request the waiver; you do not need to provide an explanation. This waiver may only be used once a semester, so only use it for a truly extenuating circumstance.\nIf circumstances have a longer-term impact on your academic performance, please let your academic dean know. They can be a resource. Please let me know if you need help contacting your academic dean.\n\n\nRegrade requests\nRegrade requests must be submitted on Gradescope within a week after an assignment is returned. Regrade requests will be considered if there was an error in the grade calculation or if a correct answer was mistakenly marked as incorrect. Requests to dispute the number of points deducted for an incorrect response will not be considered. Regrade requests are also not a mechanism for asking for clarification on feedback, those questions should be brought to office hours. Note that by submitting a regrade request, the entire assignment may be regraded, which could potentially result in losing points.\nNo grades will be changed after the final exam has been administered.\n\n\nAttendance policy\nEvery student is expected to attend and participate in lecture and labs. There may be times, however, when you cannot attend class. If you miss a lecture, make sure to review the material and complete the application exercise, if applicable, before the next lecture. Labs are dedicated to completing the lab assignment and collaborating with your classmates and lab instructor. If you miss a lab session, make sure to communicate with your lab instructor about how you can make up your contribution. If you know you’re going to miss a lab session and you’re feeling well enough to do so, notify your lab TA and teammates ahead of time.\nMore details on Trinity attendance policies are available here.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#accommodations",
+    "href": "course-syllabus.html#accommodations",
+    "title": "STA 199: Intro to Data Science and Statistical Thinking",
+    "section": "Accommodations",
+    "text": "Accommodations\n\nAcademic accommodations\nIf you need accommodations for this class, you will need to register with the Student Disability Access Office (SDAO) and provide them with documentation related to your needs. SDAO will work with you to determine what accommodations are appropriate for your situation. Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me. Please contact SDAO for more information: sdao@duke.edu or access.duke.edu.\n\n\nReligious accommodations\nStudents are permitted by university policy to be absent from class to observe a religious holiday. Accordingly, Trinity College of Arts & Sciences and the Pratt School of Engineering have established procedures to be followed by students for notifying their instructors of an absence necessitated by the observance of a religious holiday. Please submit requests for religious accommodations at the beginning of the semester so that we can work to make suitable arrangements well ahead of time. You can find the policy and relevant notification form here: trinity.duke.edu/undergraduate/academic-policies/religious-holidays",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
     ]
   }
 ]
