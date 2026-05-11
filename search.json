@@ -633,7 +633,7 @@
     "href": "course-team.html",
     "title": "Teaching Team",
     "section": "",
-    "text": "Katie Solarz is a graduate of the Master’s in Statistical Science program (’26), Department of Statistical Science at Duke University, and is the instructor for this course. Katie is an incoming PhD student in the Department of Biostatistics at the Harvard T.H. Chan School of Public Health. Her research interests include Bayesian hierarchical modeling, (Bayesian) survival analysis, study design, and causal inference. Her personal website can be found at KatieSolarz.\nYou can contact Katie at (katie.solarz@duke.edu) with any questions regarding this course.\nOffice Hours: TBD",
+    "text": "Katie Solarz is a graduate of the Master’s in Statistical Science program (’26), Department of Statistical Science at Duke University, and is the instructor for this course. Katie is an incoming PhD student in the Department of Biostatistics at the Harvard T.H. Chan School of Public Health. Her research interests include Bayesian hierarchical modeling, (Bayesian) survival analysis, study design, and causal inference. Her personal website can be found at Katie Solarz.\nYou can contact Katie at (katie.solarz@duke.edu) with any questions regarding this course.\nOffice Hours: TBD",
     "crumbs": [
       "Course Information",
       "Team"
@@ -644,7 +644,18 @@
     "href": "course-team.html#instructor",
     "title": "Teaching Team",
     "section": "",
-    "text": "Katie Solarz is a graduate of the Master’s in Statistical Science program (’26), Department of Statistical Science at Duke University, and is the instructor for this course. Katie is an incoming PhD student in the Department of Biostatistics at the Harvard T.H. Chan School of Public Health. Her research interests include Bayesian hierarchical modeling, (Bayesian) survival analysis, study design, and causal inference. Her personal website can be found at KatieSolarz.\nYou can contact Katie at (katie.solarz@duke.edu) with any questions regarding this course.\nOffice Hours: TBD",
+    "text": "Katie Solarz is a graduate of the Master’s in Statistical Science program (’26), Department of Statistical Science at Duke University, and is the instructor for this course. Katie is an incoming PhD student in the Department of Biostatistics at the Harvard T.H. Chan School of Public Health. Her research interests include Bayesian hierarchical modeling, (Bayesian) survival analysis, study design, and causal inference. Her personal website can be found at Katie Solarz.\nYou can contact Katie at (katie.solarz@duke.edu) with any questions regarding this course.\nOffice Hours: TBD",
+    "crumbs": [
+      "Course Information",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "course-team.html#teaching-assistant",
+    "href": "course-team.html#teaching-assistant",
+    "title": "Teaching Team",
+    "section": "Teaching Assistant",
+    "text": "Teaching Assistant\n\nKenna Roberts, a rising 2nd-year student in the Master’s in Statistical Science program, is the teaching assistant for this course.\nOffice hours: TBD",
     "crumbs": [
       "Course Information",
       "Team"
