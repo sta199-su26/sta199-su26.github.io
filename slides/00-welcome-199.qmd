@@ -1,7 +1,7 @@
 ---
 title: "Welcome to STA 199!"
 subtitle: "Lecture 0"
-date: "2025-05-14"
+date: "2026-05-13"
 format: 
   revealjs:
     output-file: 00-welcome-199-slides.html
@@ -15,22 +15,9 @@ auto-stretch: false
 
 ```
 
-## Meet the team
+## Meet your instructor
 
-<hr>
-
-***Instructor\
-***Marie Neubrander\
-Old Chem 203\
-marie.neubrander\@duke.edu
-
-<hr>
-
-***Course Coordinator, Lab Instructor\
-***Dr. Mary Knox\
-mary.knox\@duke.edu
-
-<hr>
+![](img/ks_timeline vF.png){fig-alt="About me!" fig-align="center"}
 
 ## Meet each other!
 
@@ -280,7 +267,6 @@ Make sure I get a letter, and make your appointments in the Testing Center now.
 >
 > -   I will act if the Standard is compromised.
 
-
 # GitHub
 
 ![](images/github-logo.png){fig-align="center"}
@@ -293,9 +279,7 @@ More on this tomorrow - basically, it is the Google Drive of coding!
 
 ## AE0: Make your GitHub account
 
-<br><br>
-Find AE0 on the course website!
-
+<br><br> Find AE0 on the course website!
 
 ## This week's tasks
 

@@ -1,11 +1,11 @@
 date-format: long
 format:
   revealjs:
-    footer: "[🔗 sta199-su25.github.io](https://sta199-su25.github.io/)"
+    footer: "[🔗 sta199-su26.github.io](https://sta199-su26.github.io/)"
     theme: slides.scss
     transition: fade
     slide-number: true
-    logo: "images/logo.png" 
+    logo: "img/pfp.png" 
     toc: false
     webr:
       cell-options:
