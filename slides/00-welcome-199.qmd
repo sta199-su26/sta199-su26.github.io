@@ -122,33 +122,42 @@ The manager is going to make wildly different decisions about campaign strategy 
 
 # Syllabus highlights
 
+## Homepage
+
+[https://sta199-su26.github.io](https://sta199-su26.github.io/){.uri}
+
+-   All course materials
+-   Links to Canvas, GitHub, RStudio containers, etc.
+
 ## Activities {.smaller}
 
 -   Introduce new content and prepare for lectures by watching the videos and completing the readings
--   Attend and actively participate in lectures and labs, office hours, team meetings
--   Practice with application exercises during lecture
--   Use what you've learned to analyze real-world data
-    -   Lab assignments x 6
-    -   Exams x 2
-    -   Term project
+-   Attend and actively participate in lectures (and ask / answer questions for participation credit) and labs, office hours, team meetings
+-   Practice applying statistical concepts and computing with application exercises during lecture
+-   Put together what you've learned to analyze real-world data
+    -   Lab assignments
+    -   Exams
+    -   Term project (completed in teams)
 
 ## Application exercises
 
--   Daily-ish in lecture
+-   Roughly one per lecture
 
--   "Graded" for attempt, not accuracy
+-   Graded for good-faith attempt, not accuracy
 
 -   Practice this week; graded thereafter
 
--   At least one commit by 10:45am of the day of lecture
+-   At least one commit to your AE repo by 10:45am of the day of lecture
 
--   Turn in at least 80% for full credit
+-   Complete 80% for full lecutre attendance credit
 
-## Labs
+## Labs {.smaller}
 
--   Monday and Thursday; right after lecture
+-   Lab session formally takes place on Mondays and Thursdays following lecture (11:00am - 12:15pm)
 
--   Start in lab session, complete at home
+-   Labs are to be started during the lab session & completed at home by the posted due date
+
+-   I encourage you to make the most of lab sessions, as you have access to both your peers and Kenna, the course TA, during this time
 
 -   Due dates (typically):
 
@@ -158,24 +167,20 @@ The manager is going to make wildly different decisions about campaign strategy 
 
 -   Discussion with classmates = 🤩 ; Copying = ❌
 
--   Lowest score dropped
+-   Lowest lab score is dropped
 
 ## Exams {.smaller}
 
--   Two exams, each 20%
+-   Two exams, each 25%
 
--   Midterm (June 3) has two parts:
+-   Midterm: June 1, during lecture + lab (tentatively)
 
-    -   In class: 75 minute in-class exam.
-        Closed book, one sheet of notes ("cheat sheet") -- 70% of the grade
+-   Final: June 24, 9am - 12pm
 
-    -   Take home: After the in class exam; analyze a dataset -- 30% of the grade
-
--   Final (June 26): Closed book, one sheet of notes ("cheat sheet").
+-   You will be permitted a "cheat sheet" (both sides of a single 8.5” x 11” piece of paper)
 
 ::: callout-caution
-Exam dates cannot be changed.
-If you cannot take the exams on these dates, please have a discussion with me ***today***.
+It's possible the first midterm gets bumped to June 2; this will be communicated by next Wednesday, 5/20. The final exam date is above my pay grade & cannot be changed. If you cannot take the exams on these dates, please have a discussion with me ***today***.
 :::
 
 ## Project {.smaller}
@@ -186,20 +191,20 @@ If you cannot take the exams on these dates, please have a discussion with me **
 
 -   Presentation and write-up
 
--   Presentations in the last lab (June 23)
+-   Presentations will take place in the last lab (June 22)
 
 -   Interim deadlines, peer review on content, peer evaluation for team contribution
 
--   Some lab sessions allocated to project progress
+-   Some lab sessions allocated to project progress 
 
 ::: callout-caution
-Final presentation date cannot be changed; you must complete the project to pass this class.
+Final presentation date cannot be changed; you must complete the project and participate in project presentations to pass this class.
 :::
 
-## Teams {.smaller}
+## Project teams {.smaller}
 
--   Assigned by me
--   Project
+-   Assigned by me (& influenced by communicated topics / areas of interest)
+-   3-4 members per team
 -   Peer evaluation during teamwork and after completion
 -   Expectations and roles
     -   Everyone is expected to contribute equal *effort*
@@ -210,49 +215,42 @@ Final presentation date cannot be changed; you must complete the project to pass
 
 | Category              | Percentage |
 |-----------------------|------------|
-| Labs                  | 30%        |
+| Labs                  | 20%        |
 | Project               | 20%        |
-| Exam 1                | 20%        |
-| Exam 2                | 20%        |
+| Exam 1                | 25%        |
+| Exam 2                | 25%        |
 | Application Exercises | 5%         |
-| Lab attendance        | 5%         |
+| Lab Attendance        | 5%         |
 
-<br><br> See [course syllabus](https://sta199-su25.github.io/syllabus/) for how the final letter grade will be determined.
+<br><br> See [course syllabus](https://sta199-su26.github.io/syllabus/) for how the final letter grade will be determined.
 
 ## Support
 
 -   Attend office hours
 -   Ask and answer questions on the Ed discussion board
--   Reserve email for questions on personal matters and/or grades
+-   Reserve email for questions on personal matters and / or grades
 
 ## Office Hours
 
-***Marie: Old Chem 203***
+***Katie: Old Chem 203***
 
--   Tuesday 3:30PM - 5:30PM
+-   Tuesday 11:00AM - 1:00PM
 
--   Friday 1:00 - 3:00 PM
+-   Sunday 1:00 - 3:00PM
 
-***Mary: Zoom\
-**Time TBD*
+***Kenna:***
+Time & Location TBD
 
 ## Announcements
 
 -   Posted on Canvas (Announcements tool) and sent via email, be sure to check both regularly
--   All information is on the course website - please refer to it often!
-
-## Homepage
-
-<https://sta199-su25.github.io>
-
--   All course materials
--   Links to Canvas, GitHub, RStudio containers, etc.
+-   All information is on the course website - please pin to your browser of choice & refer to it often!
 
 ## Course toolkit
 
 All linked from the course website:
 
--   GitHub organization: [github.com/sta199-su25](github.com/sta199-su25)
+-   GitHub organization: [github.com/sta199-su26](github.com/sta199-su26)
 -   RStudio containers: [cmgr.oit.duke.edu/containers](https://cmgr.oit.duke.edu/containers)
 -   Communication: Ed Discussion
 -   Assignment submission and feedback: Gradescope
@@ -261,14 +259,14 @@ All linked from the course website:
 
 -   The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) is available to ensure that students are able to engage with their courses and related assignments.
 
--   I am committed to making all course materials accessible and I'm always learning how to do this better!
+-   I am committed to making all course materials accessible, and I'm always open to feedback on how to do this better!
 
 # Course policies
 
 ## Late work, waivers, regrades policy
 
 -   We have policies!
--   Read about them on the [course syllabus](https://sta199-su25.github.io/syllabus/) and refer back to them when you need it
+-   Read about them on the [course syllabus](https://sta199-su26.github.io/course-syllabus.html) and refer back to them when you need it
 
 ::: callout-note
 ## If you need testing accommodations
@@ -278,24 +276,27 @@ Make sure I get a letter, and make your appointments in the Testing Center now.
 
 ## Collaboration
 
--   **Labs**: discussing and helping is fine.
-    Sharing your solutions and copying others is not;
+-   **Labs**: discussing and helping one another is fine;
+    sharing your solutions via text, email, AirDrop, carrier pigeon, or any other method, and / or copying from others is not permitted;
 
--   **Exams**: collaboration of any kind is completely forbidden on any part of any exam;
+-   **Exams**: collaboration of any kind is completely forbidden
 
--   **Projects**: collaboration of any kind is enthusiastically encouraged *within your team*.
-    Between teams, it's the same as labs; do not directly share your stuff or copy off of others.
+-   **Projects**: collaboration of all kinds is enthusiastically encouraged *within your team*; between teams, it's the same as labs; do not directly share your materials or copy from others.
 
-## Use of AI tools
+## Use of AI tools {.smaller}
 
 -   {{< fa check >}} **AI tools for code:**
 
-    -   Sure, but be careful/critical! Working code `!=` correct/good code.
+    -   Sure, but be careful/critical! Working code `!=` correct / good code.
     -   Must explicitly cite with a direct url linking to the conversation you had.
 
 -   {{< fa ban >}} **AI tools for narrative:** Absolutely not!
 
 -   {{< fa check >}} **AI tools for learning:** Sure, but be careful/critical!
+
+::: callout-caution
+**Exception:** Use of AI tools is ***completely forbidden*** during lab session. When you are in lab, you have far better tools / resources available to you - Kenna, our TA, and each other! Blatant disregard for this policy will result in a 0 for the current lab assignment. 
+:::
 
 ## Academic integrity {.smaller}
 
