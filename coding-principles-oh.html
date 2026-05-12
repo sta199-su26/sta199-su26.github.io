@@ -1053,8 +1053,7 @@ $ category             &lt;chr&gt; "AAR", "LHR", "AAR", "ALU", "AAR", "AAR", "LA
 <div class="sourceCode" id="cb91"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">midwest</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">sumarize</span><span class="op">(</span>avg_pop_dens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">popdensity</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in `sumarize()`:
-! could not find function "sumarize"</code></pre>
+<pre><code>Error in sumarize(midwest, avg_pop_dens = mean(popdensity)): could not find function "sumarize"</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1081,7 +1080,6 @@ What’s wrong with this code?
 <div class="cell-output cell-output-error">
 <pre><code>Error in `geom_point()`:
 ! `mapping` must be created by `aes()`.
-✖ You've supplied a &lt;ggplot2::ggplot&gt; object.
 ℹ Did you use `%&gt;%` or `|&gt;` instead of `+`?</code></pre>
 </div>
 </div>
