@@ -213,7 +213,7 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science & Statistical Thinking",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester! Entries for future dates are tentative; the timeline of topics, assignments, and due dates might be changed throughout the session at the instructor’s discretion. All material changes will be communicated with the students in a timely manner.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nMATERIALS\nDUE\nPREPARE\n\n\n\n1\nWed, May 13\nWelcome\n🖥️ slides 00  ⌨️ ae 00\nGithub Survey - End of Lecture\n\n\n\n\nThu, May 14\nLab 0\n💻 lab 0\nLab 0 - End of Lab\n\n\n\n\nThu, May 14\nMeet the Toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto \n\n\n\nFri, May 15\nGrammar of Data Visualization\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 02  ✅ ae 02\n\n📗 r4ds - chp 1  📘 ims - chp 4 \n\n\n2\nMon, May 18\nMore Data visualization\n🖥️ slides 03  🗒️ notes 03  ⌨️ ae 03  ✅ ae 03\n\n📘 ims - chp 5 🎥 Visualizing Quantitative Data 🎥 Visualizing Categorical Data\n\n\n\nMon, May 18\nLab 1\n💻 lab 1\n\n📗 r4ds - chp 2  📘 ims - chp 5\n\n\n\nTue, May 19\nGrammar of Data Transformation\n🖥️ slides 04  🗒️ notes 04  ⌨️ ae 04  ✅ ae 04\n\n📗 r4ds - chp 3.1-3.5 \n\n\n\nWed, May 20\nMore Data Transformation\n🖥️ slides 05  🗒️ notes 05  ⌨️ ae 05  ✅ ae 05\nLab 1 - 11:59PM ET\n📗 r4ds - chp 3.6-3.7  🎥 Working with a single data frame\n\n\n\nThu, May 21\nTidying Data\n🖥️ slides 06  🗒️ notes 06  ⌨️ ae 06  ✅ ae 06\n\n📗 r4ds - chp 5 📘 ims - chp 6\n\n\n\nThu, May 21\nLab 2\n💻 lab 2\n\n📗 r4ds - chp 4 🎥 Tidy data 🎥 Tidying data 🎥 Code Along: Population over time\n\n\n\nFri, May 22\nJoining Data\n🖥️ slides 07  🗒️ notes 07  ⌨️ ae 07  ✅ ae 07\n\n🎥 Joining data  🎥 Code along :: Continent populations  📗 r4ds - chp 19.1-19.3\n\n\n\nSun, May 24\n\n\n\n\n\n\n3\nMon, May 25\nNO CLASS - Memorial Day\n\n\n\n\n\n\nTue, May 26\nData Types and Classes\n🖥️ slides 08  🗒️ notes 08  ⌨️ ae 08  ✅ ae 08\n\n🎥 Data types  🎥 Data classes  🎥 Code along :: That’s my type  📗 r4ds - chp 16\n\n\n\nWed, May 27\nImporting and Recoding Data\n🖥️ slides 09  🗒️ notes 09  ⌨️ ae 09  ✅ ae 09\nLab 2 - 11:59PM ET\n🎥 Importing data  🎥 Code along :: Student survey  📗 r4ds - chp 7\n\n\n\nThu, May 28\nMore Practice + Midterm Review\n🖥️ slides 10  🗒️ notes 10  ⌨️ ae 10  ✅ ae 10\n\n\n\n\n\nThu, May 28\nLab 3\n💻 lab 3 ✅ lab 3\n\n\n\n\n\nFri, May 29\nMidterm Review\n🖥️ slides 11  🗒️ notes 11  📊 Kahoot!! \n\n\n\n\n\nSun, May 31\n\n\nLab 3 - 11:59PM ET\n\n\n\n4\nMon, Jun 1\nData Science Ethics\n🖥️ slides 12  🗒️ notes 12 \n\n📕 mdsr - chp 8  📝 How to make a racist AI in R without really trying  🎥 Alberto Cairo - How charts lie  🎥 Joy Buolamwini - How I’m fighting bias in algorithms\n\n\n\nMon, Jun 1\nProject Milestone 1 - Collaboration\n💻 Project Milestone 1\nProject Milestone 1 - 12:30PM ET\n\n\n\n\nTue, Jun 2\nMidterm\n\n\n\n\n\n\nWed, Jun 3\nThe Language of Models\n🖥️ slides 13  🗒️ notes 13  ⌨️ ae 11  ✅ ae 11\nMidterm Takehome - 9:30AM ET\n🎥 The language of models  📘 ims - chp 7.1 🎥 Fitting and interpreting models  🎥 Modeling nonlinear relationships  📘 ims - chp 7.2\n\n\n\nThu, Jun 4\nSimple Linear Regression\n🖥️ slides 14  🗒️ notes 14  ⌨️ ae 12  ✅ ae 12\n\n\n\n\n\nThu, Jun 4\nProject Milestone 2 - Proposals\n\n\n\n\n\n\nFri, Jun 5\nMultiple Linear Regression 1\n🖥️ slides 15  🗒️ notes 15 \n\n🎥 Models with multiple predictors  🎥 More models with multiple predictors  📘 ims - chp 8.1-8.2\n\n\n\nSun, Jun 7\n\n\nProject Milestone 2 - 11:59PM ET\n\n\n\n5\nMon, Jun 8\nMultiple Linear Regression 2\n🖥️ slides 16  🗒️ notes 16  ⌨️ ae 13 \n\n📘 ims - chp 8.3-8.5\n\n\n\nMon, Jun 8\nLab 4\n💻 lab 4\n\n\n\n\n\nTue, Jun 9\nModel Selection\n🖥️ slides 17  🗒️ notes 17  ⌨️ ae 13  ✅ ae 13\n\n\n\n\n\nWed, Jun 10\nLogistic Regression1\n🖥️ slides 18  🗒️ notes 18  ⌨️ ae 14  ✅ ae 14\nLab 4 - 11:59PM ET Peer Feedback Survey- 11:59 PM ET\n📘 ims - chp 9\n\n\n\nThu, Jun 11\nLogistic Regression 2\n🖥️ slides 19  🗒️ notes 19  ⌨️ ae 15  ✅ae 15 \n\n🎥 Logistic regression  🎥 Prediction and overfitting\n\n\n\nThu, Jun 11\nLab 5\n💻 lab 5\n\n\n\n\n\nFri, Jun 12\nIntervals\n🖥️ slides 20  🗒️ notes 20  ⌨️ ae 16  ✅ ae 16 \nProject Milestone 3 - 11:59PM ET\n🎥 Quantifying uncertainty  🎥 Bootstrapping  📘 ims - chp 12\n\n\n\nSun, Jun 14\n\n\nLab 5 - 11:59PM ET \n\n\n\n6\nMon, Jun 15\nHypothesis Testing\n🖥️ slides 21  🗒️ notes 21  ⌨️ ae 17  ✅ ae 17 \n\n📘 ims - chp 11\n\n\n\nMon, Jun 15\nProject Milestone 4 - Peer Review\n💻 Code Options\nProject Milestone 4 - 12:30PM ET\n\n\n\n\nTue, Jun 16\nMore Inference\n🖥️ slides 22  🗒️ notes 22 \n\n\n\n\n\nWed, Jun 17\nMore Inference\n🖥️ slides 23  🗒️ notes 23  ⌨️ ae 18  ✅ ae 18 \n\n\n\n\n\nThu, Jun 18\nLab 6\n💻 lab 6\n\n\n\n\n\nFri, Jun 19\nNO CLASS - Juneteenth\n\n\n\n\n\n\nSun, Jun 21\n\n\n\n\n\n\n7\nMon, Jun 22\nProject Milestone 5 - Presentations + Final Review\n\nProject - 9:30 AM Lab 6 - 11:59PM ET\n\n\n\n\nMon, Jun 22\nFinal Review\n🖥️ slides 25  🗒️ notes 25  💯 Grade Calculator\n\n\n\n\n\nWed, Jun 24\nFINAL EXAM (9am - 12pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester! Entries for future dates are tentative; the timeline of topics, assignments, and due dates might be changed throughout the session at the instructor’s discretion. All material changes will be communicated with the students in a timely manner.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nMATERIALS\nDUE\nPREPARE\n\n\n\n1\nWed, May 13\nWelcome\n🖥️ slides 00  ⌨️ ae 00\nGitHub username - End of Lecture\n\n\n\n\nThu, May 14\nLab 0\n\nLab 0 - End of Lab\n\n\n\n\nThu, May 14\nMeet the Toolkit\n\n\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto \n\n\n\nFri, May 15\nGrammar of Data Visualization\n\n\n📗 r4ds - chp 1  📘 ims - chp 4 \n\n\n2\nMon, May 18\nMore Data visualization\n\n\n📘 ims - chp 5 🎥 Visualizing Quantitative Data 🎥 Visualizing Categorical Data\n\n\n\nMon, May 18\nLab 1\n\n\n📗 r4ds - chp 2  📘 ims - chp 5\n\n\n\nTue, May 19\nGrammar of Data Transformation\n\n\n📗 r4ds - chp 3.1-3.5 \n\n\n\nWed, May 20\nMore Data Transformation\n\nLab 1 - 11:59PM ET\n📗 r4ds - chp 3.6-3.7  🎥 Working with a single data frame\n\n\n\nThu, May 21\nTidying Data\n\n\n📗 r4ds - chp 5 📘 ims - chp 6\n\n\n\nThu, May 21\nLab 2\n\n\n📗 r4ds - chp 4 🎥 Tidy data 🎥 Tidying data 🎥 Code Along: Population over time\n\n\n\nFri, May 22\nJoining Data\n\n\n🎥 Joining data  🎥 Code along :: Continent populations  📗 r4ds - chp 19.1-19.3\n\n\n\nSun, May 24\n\n\n\n\n\n\n3\nMon, May 25\nNO CLASS - Memorial Day\n\n\n\n\n\n\nTue, May 26\nData Types and Classes\n\n\n🎥 Data types  🎥 Data classes  🎥 Code along :: That’s my type  📗 r4ds - chp 16\n\n\n\nWed, May 27\nImporting and Recoding Data\n\nLab 2 - 11:59PM ET\n🎥 Importing data  🎥 Code along :: Student survey  📗 r4ds - chp 7\n\n\n\nThu, May 28\nMore Practice + Midterm Review\n\n\n\n\n\n\nThu, May 28\nLab 3\n\n\n\n\n\n\nFri, May 29\nData Ethics + Midterm Review\n\n\n\n\n\n\nSun, May 31\n\n\nLab 3 - 11:59PM ET\n\n\n\n4\nMon, Jun 1\nMidterm\n\n\n\n\n\n\nMon, Jun 1\nMidterm\n\n\n\n\n\n\nTue, Jun 2\nProject Milestone 1 - Collaboration\n\nProject Milestone 1 - 12:30PM ET\n\n\n\n\nWed, Jun 3\nThe Language of Models\n\nMidterm Takehome - 9:30AM ET\n🎥 The language of models  📘 ims - chp 7.1 🎥 Fitting and interpreting models  🎥 Modeling nonlinear relationships  📘 ims - chp 7.2\n\n\n\nThu, Jun 4\nSimple Linear Regression\n\n\n\n\n\n\nThu, Jun 4\nProject Milestone 2 - Proposals\n\n\n\n\n\n\nFri, Jun 5\nMultiple Linear Regression 1\n\n\n🎥 Models with multiple predictors  🎥 More models with multiple predictors  📘 ims - chp 8.1-8.2\n\n\n\nSun, Jun 7\n\n\nProject Milestone 2 - 11:59PM ET\n\n\n\n5\nMon, Jun 8\nMultiple Linear Regression 2\n\n\n📘 ims - chp 8.3-8.5\n\n\n\nMon, Jun 8\nLab 4\n\n\n\n\n\n\nTue, Jun 9\nModel Selection\n\n\n\n\n\n\nWed, Jun 10\nLogistic Regression1\n\nLab 4 - 11:59PM ET  Peer Feedback Survey - 11:59 PM ET\n📘 ims - chp 9\n\n\n\nThu, Jun 11\nLogistic Regression 2\n\n\n🎥 Logistic regression  🎥 Prediction and overfitting\n\n\n\nThu, Jun 11\nLab 5\n\n\n\n\n\n\nFri, Jun 12\nIntervals\n\nProject Milestone 3 - 11:59PM ET\n🎥 Quantifying uncertainty  🎥 Bootstrapping  📘 ims - chp 12\n\n\n\nSun, Jun 14\n\n\nLab 5 - 11:59PM ET \n\n\n\n6\nMon, Jun 15\nHypothesis Testing\n\n\n📘 ims - chp 11\n\n\n\nMon, Jun 15\nProject Milestone 4 - Peer Review\n\nProject Milestone 4 - 12:30PM ET\n\n\n\n\nTue, Jun 16\nMore Inference\n\n\n\n\n\n\nWed, Jun 17\nMore Inference\n\n\n\n\n\n\nThu, Jun 18\nLab 6\n\n\n\n\n\n\nFri, Jun 19\nNO CLASS - Juneteenth\n\n\n\n\n\n\nSun, Jun 21\n\n\nLab 6 - 11:59pm ET\n\n\n\n7\nMon, Jun 22\nProject Milestone 5 - Presentations + Final Review\n\nProject - 9:30 AM\n\n\n\n\nMon, Jun 22\nFinal Review\n\n\n\n\n\n\nWed, Jun 24\nFINAL EXAM (9am - 12pm)",
     "crumbs": [
       "Course Information",
       "Schedule"
@@ -582,95 +582,95 @@
     "text": "R"
   },
   {
+    "objectID": "slides/00-welcome-199.html#homepage",
+    "href": "slides/00-welcome-199.html#homepage",
+    "title": "Welcome to STA 199!",
+    "section": "Homepage",
+    "text": "Homepage\nhttps://sta199-su26.github.io\n\nAll course materials\nLinks to Canvas, GitHub, RStudio containers, etc."
+  },
+  {
     "objectID": "slides/00-welcome-199.html#activities",
     "href": "slides/00-welcome-199.html#activities",
     "title": "Welcome to STA 199!",
     "section": "Activities",
-    "text": "Activities\n\nIntroduce new content and prepare for lectures by watching the videos and completing the readings\nAttend and actively participate in lectures and labs, office hours, team meetings\nPractice with application exercises during lecture\nUse what you’ve learned to analyze real-world data\n\nLab assignments x 6\nExams x 2\nTerm project"
+    "text": "Activities\n\nIntroduce new content and prepare for lectures by watching the videos and completing the readings\nAttend and actively participate in lectures (and ask / answer questions for participation credit) and labs, office hours, team meetings\nPractice applying statistical concepts and computing with application exercises during lecture\nPut together what you’ve learned to analyze real-world data\n\nLab assignments\nExams\nTerm project (completed in teams)"
   },
   {
     "objectID": "slides/00-welcome-199.html#application-exercises",
     "href": "slides/00-welcome-199.html#application-exercises",
     "title": "Welcome to STA 199!",
     "section": "Application exercises",
-    "text": "Application exercises\n\nDaily-ish in lecture\n“Graded” for attempt, not accuracy\nPractice this week; graded thereafter\nAt least one commit by 10:45am of the day of lecture\nTurn in at least 80% for full credit"
+    "text": "Application exercises\n\nRoughly one per lecture\nGraded for good-faith attempt, not accuracy\nPractice this week; graded thereafter\nAt least one commit to your AE repo by 10:45am of the day of lecture\nComplete 80% for full lecutre attendance credit"
   },
   {
     "objectID": "slides/00-welcome-199.html#labs",
     "href": "slides/00-welcome-199.html#labs",
     "title": "Welcome to STA 199!",
     "section": "Labs",
-    "text": "Labs\n\nMonday and Thursday; right after lecture\nStart in lab session, complete at home\n\nDue dates (typically):\n\nMonday Lab: Due Wednesday at 11:59 PM\nThursday Lab: Due Sunday at 11:59 PM\n\n\nDiscussion with classmates = 🤩 ; Copying = ❌\nLowest score dropped"
+    "text": "Labs\n\nLab session formally takes place on Mondays and Thursdays following lecture (11:00am - 12:15pm)\nLabs are to be started during the lab session & completed at home by the posted due date\nI encourage you to make the most of lab sessions, as you have access to both your peers and Kenna, the course TA, during this time\n\nDue dates (typically):\n\nMonday Lab: Due Wednesday at 11:59 PM\nThursday Lab: Due Sunday at 11:59 PM\n\n\nDiscussion with classmates = 🤩 ; Copying = ❌\nLowest lab score is dropped"
   },
   {
     "objectID": "slides/00-welcome-199.html#exams",
     "href": "slides/00-welcome-199.html#exams",
     "title": "Welcome to STA 199!",
     "section": "Exams",
-    "text": "Exams\n\nTwo exams, each 20%\n\nMidterm (June 3) has two parts:\n\nIn class: 75 minute in-class exam. Closed book, one sheet of notes (“cheat sheet”) – 70% of the grade\nTake home: After the in class exam; analyze a dataset – 30% of the grade\n\n\nFinal (June 26): Closed book, one sheet of notes (“cheat sheet”).\n\n\n\n\n\n\n\nCaution\n\n\n\nExam dates cannot be changed. If you cannot take the exams on these dates, please have a discussion with me today."
+    "text": "Exams\n\nTwo exams, each 25%\nMidterm: June 1, during lecture + lab (tentatively)\nFinal: June 24, 9am - 12pm\nYou will be permitted a “cheat sheet” (both sides of a single 8.5” x 11” piece of paper)\n\n\n\n\n\n\n\nCaution\n\n\n\nIt’s possible the first midterm gets bumped to June 2; this will be communicated by next Wednesday, 5/20. The final exam date is above my pay grade & cannot be changed. If you cannot take the exams on these dates, please have a discussion with me today."
   },
   {
     "objectID": "slides/00-welcome-199.html#project",
     "href": "slides/00-welcome-199.html#project",
     "title": "Welcome to STA 199!",
     "section": "Project",
-    "text": "Project\n\nDataset of your choice, method of your choice\nTeamwork\nPresentation and write-up\nPresentations in the last lab (June 23)\nInterim deadlines, peer review on content, peer evaluation for team contribution\nSome lab sessions allocated to project progress\n\n\n\n\n\n\n\nCaution\n\n\n\nFinal presentation date cannot be changed; you must complete the project to pass this class."
+    "text": "Project\n\nDataset of your choice, method of your choice\nTeamwork\nPresentation and write-up\nPresentations will take place in the last lab (June 22)\nInterim deadlines, peer review on content, peer evaluation for team contribution\nSome lab sessions allocated to project progress\n\n\n\n\n\n\n\nCaution\n\n\n\nFinal presentation date cannot be changed; you must complete the project and participate in project presentations to pass this class."
   },
   {
-    "objectID": "slides/00-welcome-199.html#teams",
-    "href": "slides/00-welcome-199.html#teams",
+    "objectID": "slides/00-welcome-199.html#project-teams",
+    "href": "slides/00-welcome-199.html#project-teams",
     "title": "Welcome to STA 199!",
-    "section": "Teams",
-    "text": "Teams\n\nAssigned by me\nProject\nPeer evaluation during teamwork and after completion\nExpectations and roles\n\nEveryone is expected to contribute equal effort\n\nEveryone is expected to understand all code turned in\nIndividual contribution evaluated by peer evaluation, commits, etc."
+    "section": "Project teams",
+    "text": "Project teams\n\nAssigned by me (& influenced by communicated topics / areas of interest)\n3-4 members per team\nPeer evaluation during teamwork and after completion\nExpectations and roles\n\nEveryone is expected to contribute equal effort\n\nEveryone is expected to understand all code turned in\nIndividual contribution evaluated by peer evaluation, commits, etc."
   },
   {
     "objectID": "slides/00-welcome-199.html#grading",
     "href": "slides/00-welcome-199.html#grading",
     "title": "Welcome to STA 199!",
     "section": "Grading",
-    "text": "Grading\n\n\nCategory\nPercentage\n\n\n\nLabs\n30%\n\n\nProject\n20%\n\n\nExam 1\n20%\n\n\nExam 2\n20%\n\n\nApplication Exercises\n5%\n\n\nLab attendance\n5%\n\n\n\n See course syllabus for how the final letter grade will be determined."
+    "text": "Grading\n\n\nCategory\nPercentage\n\n\n\nLabs\n20%\n\n\nProject\n20%\n\n\nExam 1\n25%\n\n\nExam 2\n25%\n\n\nApplication Exercises\n5%\n\n\nLab Attendance\n5%\n\n\n\n See course syllabus for how the final letter grade will be determined."
   },
   {
     "objectID": "slides/00-welcome-199.html#support",
     "href": "slides/00-welcome-199.html#support",
     "title": "Welcome to STA 199!",
     "section": "Support",
-    "text": "Support\n\nAttend office hours\nAsk and answer questions on the Ed discussion board\nReserve email for questions on personal matters and/or grades"
+    "text": "Support\n\nAttend office hours\nAsk and answer questions on the Ed discussion board\nReserve email for questions on personal matters and / or grades"
   },
   {
     "objectID": "slides/00-welcome-199.html#office-hours",
     "href": "slides/00-welcome-199.html#office-hours",
     "title": "Welcome to STA 199!",
     "section": "Office Hours",
-    "text": "Office Hours\nMarie: Old Chem 203\n\nTuesday 3:30PM - 5:30PM\nFriday 1:00 - 3:00 PM\n\nMary: ZoomTime TBD"
+    "text": "Office Hours\nKatie: Old Chem 203\n\nTuesday 11:00AM - 1:00PM\nSunday 1:00 - 3:00PM\n\nKenna: Time & Location TBD"
   },
   {
     "objectID": "slides/00-welcome-199.html#announcements",
     "href": "slides/00-welcome-199.html#announcements",
     "title": "Welcome to STA 199!",
     "section": "Announcements",
-    "text": "Announcements\n\nPosted on Canvas (Announcements tool) and sent via email, be sure to check both regularly\nAll information is on the course website - please refer to it often!"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#homepage",
-    "href": "slides/00-welcome-199.html#homepage",
-    "title": "Welcome to STA 199!",
-    "section": "Homepage",
-    "text": "Homepage\nhttps://sta199-su25.github.io\n\nAll course materials\nLinks to Canvas, GitHub, RStudio containers, etc."
+    "text": "Announcements\n\nPosted on Canvas (Announcements tool) and sent via email, be sure to check both regularly\nAll information is on the course website - please pin to your browser of choice & refer to it often!"
   },
   {
     "objectID": "slides/00-welcome-199.html#course-toolkit",
     "href": "slides/00-welcome-199.html#course-toolkit",
     "title": "Welcome to STA 199!",
     "section": "Course toolkit",
-    "text": "Course toolkit\nAll linked from the course website:\n\nGitHub organization: github.com/sta199-su25\n\nRStudio containers: cmgr.oit.duke.edu/containers\n\nCommunication: Ed Discussion\nAssignment submission and feedback: Gradescope"
+    "text": "Course toolkit\nAll linked from the course website:\n\nGitHub organization: github.com/sta199-su26\n\nRStudio containers: cmgr.oit.duke.edu/containers\n\nCommunication: Ed Discussion\nAssignment submission and feedback: Gradescope"
   },
   {
     "objectID": "slides/00-welcome-199.html#accessibility",
     "href": "slides/00-welcome-199.html#accessibility",
     "title": "Welcome to STA 199!",
     "section": "Accessibility",
-    "text": "Accessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nI am committed to making all course materials accessible and I’m always learning how to do this better!"
+    "text": "Accessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nI am committed to making all course materials accessible, and I’m always open to feedback on how to do this better!"
   },
   {
     "objectID": "slides/00-welcome-199.html#late-work-waivers-regrades-policy",
@@ -684,14 +684,14 @@
     "href": "slides/00-welcome-199.html#collaboration",
     "title": "Welcome to STA 199!",
     "section": "Collaboration",
-    "text": "Collaboration\n\nLabs: discussing and helping is fine. Sharing your solutions and copying others is not;\nExams: collaboration of any kind is completely forbidden on any part of any exam;\nProjects: collaboration of any kind is enthusiastically encouraged within your team. Between teams, it’s the same as labs; do not directly share your stuff or copy off of others."
+    "text": "Collaboration\n\nLabs: discussing and helping one another is fine; sharing your solutions via text, email, AirDrop, carrier pigeon, or any other method, and / or copying from others is not permitted;\nExams: collaboration of any kind is completely forbidden\nProjects: collaboration of all kinds is enthusiastically encouraged within your team; between teams, it’s the same as labs; do not directly share your materials or copy from others."
   },
   {
     "objectID": "slides/00-welcome-199.html#use-of-ai-tools",
     "href": "slides/00-welcome-199.html#use-of-ai-tools",
     "title": "Welcome to STA 199!",
     "section": "Use of AI tools",
-    "text": "Use of AI tools\n\n\n AI tools for code:\n\nSure, but be careful/critical! Working code != correct/good code.\nMust explicitly cite with a direct url linking to the conversation you had.\n\n\n AI tools for narrative: Absolutely not!\n AI tools for learning: Sure, but be careful/critical!"
+    "text": "Use of AI tools\n\n\n AI tools for code:\n\nSure, but be careful/critical! Working code != correct / good code.\nMust explicitly cite with a direct url linking to the conversation you had.\n\n\n AI tools for narrative: Absolutely not!\n AI tools for learning: Sure, but be careful/critical!\n\n\n\n\n\n\n\nCaution\n\n\n\nException: Use of AI tools is completely forbidden during lab session. When you are in lab, you have far better tools / resources available to you - Kenna, our TA, and each other! Blatant disregard for this policy will result in a 0 for the current lab assignment."
   },
   {
     "objectID": "slides/00-welcome-199.html#academic-integrity",
@@ -771,95 +771,95 @@
     "text": "R"
   },
   {
+    "objectID": "slides/00-welcome-199-slides.html#homepage",
+    "href": "slides/00-welcome-199-slides.html#homepage",
+    "title": "Welcome to STA 199!",
+    "section": "Homepage",
+    "text": "Homepage\nhttps://sta199-su26.github.io\n\nAll course materials\nLinks to Canvas, GitHub, RStudio containers, etc."
+  },
+  {
     "objectID": "slides/00-welcome-199-slides.html#activities",
     "href": "slides/00-welcome-199-slides.html#activities",
     "title": "Welcome to STA 199!",
     "section": "Activities",
-    "text": "Activities\n\nIntroduce new content and prepare for lectures by watching the videos and completing the readings\nAttend and actively participate in lectures and labs, office hours, team meetings\nPractice with application exercises during lecture\nUse what you’ve learned to analyze real-world data\n\nLab assignments x 6\nExams x 2\nTerm project"
+    "text": "Activities\n\nIntroduce new content and prepare for lectures by watching the videos and completing the readings\nAttend and actively participate in lectures (and ask / answer questions for participation credit) and labs, office hours, team meetings\nPractice applying statistical concepts and computing with application exercises during lecture\nPut together what you’ve learned to analyze real-world data\n\nLab assignments\nExams\nTerm project (completed in teams)"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#application-exercises",
     "href": "slides/00-welcome-199-slides.html#application-exercises",
     "title": "Welcome to STA 199!",
     "section": "Application exercises",
-    "text": "Application exercises\n\nDaily-ish in lecture\n“Graded” for attempt, not accuracy\nPractice this week; graded thereafter\nAt least one commit by 10:45am of the day of lecture\nTurn in at least 80% for full credit"
+    "text": "Application exercises\n\nRoughly one per lecture\nGraded for good-faith attempt, not accuracy\nPractice this week; graded thereafter\nAt least one commit to your AE repo by 10:45am of the day of lecture\nComplete 80% for full lecutre attendance credit"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#labs",
     "href": "slides/00-welcome-199-slides.html#labs",
     "title": "Welcome to STA 199!",
     "section": "Labs",
-    "text": "Labs\n\nMonday and Thursday; right after lecture\nStart in lab session, complete at home\n\nDue dates (typically):\n\nMonday Lab: Due Wednesday at 11:59 PM\nThursday Lab: Due Sunday at 11:59 PM\n\n\nDiscussion with classmates = 🤩 ; Copying = ❌\nLowest score dropped"
+    "text": "Labs\n\nLab session formally takes place on Mondays and Thursdays following lecture (11:00am - 12:15pm)\nLabs are to be started during the lab session & completed at home by the posted due date\nI encourage you to make the most of lab sessions, as you have access to both your peers and Kenna, the course TA, during this time\n\nDue dates (typically):\n\nMonday Lab: Due Wednesday at 11:59 PM\nThursday Lab: Due Sunday at 11:59 PM\n\n\nDiscussion with classmates = 🤩 ; Copying = ❌\nLowest lab score is dropped"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#exams",
     "href": "slides/00-welcome-199-slides.html#exams",
     "title": "Welcome to STA 199!",
     "section": "Exams",
-    "text": "Exams\n\nTwo exams, each 20%\n\nMidterm (June 3) has two parts:\n\nIn class: 75 minute in-class exam. Closed book, one sheet of notes (“cheat sheet”) – 70% of the grade\nTake home: After the in class exam; analyze a dataset – 30% of the grade\n\n\nFinal (June 26): Closed book, one sheet of notes (“cheat sheet”).\n\n\n\n\n\n\n\nCaution\n\n\nExam dates cannot be changed. If you cannot take the exams on these dates, please have a discussion with me today."
+    "text": "Exams\n\nTwo exams, each 25%\nMidterm: June 1, during lecture + lab (tentatively)\nFinal: June 24, 9am - 12pm\nYou will be permitted a “cheat sheet” (both sides of a single 8.5” x 11” piece of paper)\n\n\n\n\n\n\n\nCaution\n\n\nIt’s possible the first midterm gets bumped to June 2; this will be communicated by next Wednesday, 5/20. The final exam date is above my pay grade & cannot be changed. If you cannot take the exams on these dates, please have a discussion with me today."
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#project",
     "href": "slides/00-welcome-199-slides.html#project",
     "title": "Welcome to STA 199!",
     "section": "Project",
-    "text": "Project\n\nDataset of your choice, method of your choice\nTeamwork\nPresentation and write-up\nPresentations in the last lab (June 23)\nInterim deadlines, peer review on content, peer evaluation for team contribution\nSome lab sessions allocated to project progress\n\n\n\n\n\n\n\nCaution\n\n\nFinal presentation date cannot be changed; you must complete the project to pass this class."
+    "text": "Project\n\nDataset of your choice, method of your choice\nTeamwork\nPresentation and write-up\nPresentations will take place in the last lab (June 22)\nInterim deadlines, peer review on content, peer evaluation for team contribution\nSome lab sessions allocated to project progress\n\n\n\n\n\n\n\nCaution\n\n\nFinal presentation date cannot be changed; you must complete the project and participate in project presentations to pass this class."
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#teams",
-    "href": "slides/00-welcome-199-slides.html#teams",
+    "objectID": "slides/00-welcome-199-slides.html#project-teams",
+    "href": "slides/00-welcome-199-slides.html#project-teams",
     "title": "Welcome to STA 199!",
-    "section": "Teams",
-    "text": "Teams\n\nAssigned by me\nProject\nPeer evaluation during teamwork and after completion\nExpectations and roles\n\nEveryone is expected to contribute equal effort\n\nEveryone is expected to understand all code turned in\nIndividual contribution evaluated by peer evaluation, commits, etc."
+    "section": "Project teams",
+    "text": "Project teams\n\nAssigned by me (& influenced by communicated topics / areas of interest)\n3-4 members per team\nPeer evaluation during teamwork and after completion\nExpectations and roles\n\nEveryone is expected to contribute equal effort\n\nEveryone is expected to understand all code turned in\nIndividual contribution evaluated by peer evaluation, commits, etc."
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#grading",
     "href": "slides/00-welcome-199-slides.html#grading",
     "title": "Welcome to STA 199!",
     "section": "Grading",
-    "text": "Grading\n\n\nCategory\nPercentage\n\n\n\nLabs\n30%\n\n\nProject\n20%\n\n\nExam 1\n20%\n\n\nExam 2\n20%\n\n\nApplication Exercises\n5%\n\n\nLab attendance\n5%\n\n\n\n See course syllabus for how the final letter grade will be determined."
+    "text": "Grading\n\n\nCategory\nPercentage\n\n\n\nLabs\n20%\n\n\nProject\n20%\n\n\nExam 1\n25%\n\n\nExam 2\n25%\n\n\nApplication Exercises\n5%\n\n\nLab Attendance\n5%\n\n\n\n See course syllabus for how the final letter grade will be determined."
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#support",
     "href": "slides/00-welcome-199-slides.html#support",
     "title": "Welcome to STA 199!",
     "section": "Support",
-    "text": "Support\n\nAttend office hours\nAsk and answer questions on the Ed discussion board\nReserve email for questions on personal matters and/or grades"
+    "text": "Support\n\nAttend office hours\nAsk and answer questions on the Ed discussion board\nReserve email for questions on personal matters and / or grades"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#office-hours",
     "href": "slides/00-welcome-199-slides.html#office-hours",
     "title": "Welcome to STA 199!",
     "section": "Office Hours",
-    "text": "Office Hours\nMarie: Old Chem 203\n\nTuesday 3:30PM - 5:30PM\nFriday 1:00 - 3:00 PM\n\nMary: ZoomTime TBD"
+    "text": "Office Hours\nKatie: Old Chem 203\n\nTuesday 11:00AM - 1:00PM\nSunday 1:00 - 3:00PM\n\nKenna: Time & Location TBD"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#announcements",
     "href": "slides/00-welcome-199-slides.html#announcements",
     "title": "Welcome to STA 199!",
     "section": "Announcements",
-    "text": "Announcements\n\nPosted on Canvas (Announcements tool) and sent via email, be sure to check both regularly\nAll information is on the course website - please refer to it often!"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#homepage",
-    "href": "slides/00-welcome-199-slides.html#homepage",
-    "title": "Welcome to STA 199!",
-    "section": "Homepage",
-    "text": "Homepage\nhttps://sta199-su25.github.io\n\nAll course materials\nLinks to Canvas, GitHub, RStudio containers, etc."
+    "text": "Announcements\n\nPosted on Canvas (Announcements tool) and sent via email, be sure to check both regularly\nAll information is on the course website - please pin to your browser of choice & refer to it often!"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#course-toolkit",
     "href": "slides/00-welcome-199-slides.html#course-toolkit",
     "title": "Welcome to STA 199!",
     "section": "Course toolkit",
-    "text": "Course toolkit\nAll linked from the course website:\n\nGitHub organization: github.com/sta199-su25\n\nRStudio containers: cmgr.oit.duke.edu/containers\n\nCommunication: Ed Discussion\nAssignment submission and feedback: Gradescope"
+    "text": "Course toolkit\nAll linked from the course website:\n\nGitHub organization: github.com/sta199-su26\n\nRStudio containers: cmgr.oit.duke.edu/containers\n\nCommunication: Ed Discussion\nAssignment submission and feedback: Gradescope"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#accessibility",
     "href": "slides/00-welcome-199-slides.html#accessibility",
     "title": "Welcome to STA 199!",
     "section": "Accessibility",
-    "text": "Accessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nI am committed to making all course materials accessible and I’m always learning how to do this better!"
+    "text": "Accessibility\n\nThe Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.\nI am committed to making all course materials accessible, and I’m always open to feedback on how to do this better!"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#late-work-waivers-regrades-policy",
@@ -873,14 +873,14 @@
     "href": "slides/00-welcome-199-slides.html#collaboration",
     "title": "Welcome to STA 199!",
     "section": "Collaboration",
-    "text": "Collaboration\n\nLabs: discussing and helping is fine. Sharing your solutions and copying others is not;\nExams: collaboration of any kind is completely forbidden on any part of any exam;\nProjects: collaboration of any kind is enthusiastically encouraged within your team. Between teams, it’s the same as labs; do not directly share your stuff or copy off of others."
+    "text": "Collaboration\n\nLabs: discussing and helping one another is fine; sharing your solutions via text, email, AirDrop, carrier pigeon, or any other method, and / or copying from others is not permitted;\nExams: collaboration of any kind is completely forbidden\nProjects: collaboration of all kinds is enthusiastically encouraged within your team; between teams, it’s the same as labs; do not directly share your materials or copy from others."
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#use-of-ai-tools",
     "href": "slides/00-welcome-199-slides.html#use-of-ai-tools",
     "title": "Welcome to STA 199!",
     "section": "Use of AI tools",
-    "text": "Use of AI tools\n\n\n AI tools for code:\n\nSure, but be careful/critical! Working code != correct/good code.\nMust explicitly cite with a direct url linking to the conversation you had.\n\n\n AI tools for narrative: Absolutely not!\n AI tools for learning: Sure, but be careful/critical!"
+    "text": "Use of AI tools\n\n\n AI tools for code:\n\nSure, but be careful/critical! Working code != correct / good code.\nMust explicitly cite with a direct url linking to the conversation you had.\n\n\n AI tools for narrative: Absolutely not!\n AI tools for learning: Sure, but be careful/critical!\n\n\n\n\n\n\n\nCaution\n\n\nException: Use of AI tools is completely forbidden during lab session. When you are in lab, you have far better tools / resources available to you - Kenna, our TA, and each other! Blatant disregard for this policy will result in a 0 for the current lab assignment."
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#academic-integrity",
