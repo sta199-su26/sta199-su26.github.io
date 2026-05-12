@@ -537,28 +537,42 @@
     "href": "slides/00-welcome-199.html",
     "title": "Welcome to STA 199!",
     "section": "",
-    "text": "Name\nYear\nHometown\nSomething you plan to do this summer\n\n\nData science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge."
+    "text": "InstructorKatie Solarz\nkatie.solarz@duke.edu\n\nTA, Lab InstructorKenna Roberts\nmakenna.roberts@duke.edu\n\n\n\n\n\n\n\nName\nYear\nMajor(s) (or, potential major(s) if undecided!)\nHometown\nSomething you plan to do this summer when STA 199 ends 💔\n\nFirst half:\n\n\n\n\n\n\nData science\n\n\n\n\nTransforming messy, incomplete, imperfect data into knowledge;\n\nKnowledge often takes the form of pictures and a concise set of numerical summaries.\n\n\n\n. . .\nSecond half:\n\n\n\n\n\n\nStatistical thinking\n\n\n\nQuantifying our uncertainty about that knowledge.\n\n\n\n. . .\nCampaign manager: What is the probability that our candidate wins the election?\n. . .\n(A flurry of analysis takes place.)\n. . .\nData scientist: Our best guess is 54%.\n. . .\nCampaign manager: How reliable is that estimate? How confident are we in that? What’s the margin of error?\n. . .\n\n\nParallel Universe 1\nData scientist: It’s 54% give or take 3%.\n\n\nParallel Universe 2\nData scientist: It’s 54% give or take 20%.\n\n\n\n. . .\n\n\n\n\n\n\nIt’s all about decision-making under uncertainty\n\n\n\nThe manager is going to make wildly different decisions about campaign strategy and spending depending on how uncertain the environment is."
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#meet-your-teaching-team",
+    "href": "slides/00-welcome-199.html#meet-your-teaching-team",
+    "title": "Welcome to STA 199!",
+    "section": "",
+    "text": "InstructorKatie Solarz\nkatie.solarz@duke.edu\n\nTA, Lab InstructorKenna Roberts\nmakenna.roberts@duke.edu"
   },
   {
     "objectID": "slides/00-welcome-199.html#meet-each-other",
     "href": "slides/00-welcome-199.html#meet-each-other",
     "title": "Welcome to STA 199!",
     "section": "",
-    "text": "Name\nYear\nHometown\nSomething you plan to do this summer"
+    "text": "Name\nYear\nMajor(s) (or, potential major(s) if undecided!)\nHometown\nSomething you plan to do this summer when STA 199 ends 💔"
   },
   {
-    "objectID": "slides/00-welcome-199.html#meet-data-science",
-    "href": "slides/00-welcome-199.html#meet-data-science",
+    "objectID": "slides/00-welcome-199.html#what-are-we-studying",
+    "href": "slides/00-welcome-199.html#what-are-we-studying",
     "title": "Welcome to STA 199!",
     "section": "",
-    "text": "Data science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge."
+    "text": "First half:\n\n\n\n\n\n\nData science\n\n\n\n\nTransforming messy, incomplete, imperfect data into knowledge;\n\nKnowledge often takes the form of pictures and a concise set of numerical summaries.\n\n\n\n. . .\nSecond half:\n\n\n\n\n\n\nStatistical thinking\n\n\n\nQuantifying our uncertainty about that knowledge."
   },
   {
-    "objectID": "slides/00-welcome-199.html#excel---not",
-    "href": "slides/00-welcome-199.html#excel---not",
+    "objectID": "slides/00-welcome-199.html#imagine-this-dialog",
+    "href": "slides/00-welcome-199.html#imagine-this-dialog",
     "title": "Welcome to STA 199!",
-    "section": "Excel - not…",
-    "text": "Excel - not…"
+    "section": "",
+    "text": ". . .\nCampaign manager: What is the probability that our candidate wins the election?\n. . .\n(A flurry of analysis takes place.)\n. . .\nData scientist: Our best guess is 54%.\n. . .\nCampaign manager: How reliable is that estimate? How confident are we in that? What’s the margin of error?\n. . .\n\n\nParallel Universe 1\nData scientist: It’s 54% give or take 3%.\n\n\nParallel Universe 2\nData scientist: It’s 54% give or take 20%.\n\n\n\n. . .\n\n\n\n\n\n\nIt’s all about decision-making under uncertainty\n\n\n\nThe manager is going to make wildly different decisions about campaign strategy and spending depending on how uncertain the environment is."
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#excel",
+    "href": "slides/00-welcome-199.html#excel",
+    "title": "Welcome to STA 199!",
+    "section": "Excel… 👎",
+    "text": "Excel… 👎"
   },
   {
     "objectID": "slides/00-welcome-199.html#r",
@@ -566,69 +580,6 @@
     "title": "Welcome to STA 199!",
     "section": "R",
     "text": "R"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#data-science-life-cycle-1",
-    "href": "slides/00-welcome-199.html#data-science-life-cycle-1",
-    "title": "Welcome to STA 199!",
-    "section": "Data science life cycle",
-    "text": "Data science life cycle"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#import",
-    "href": "slides/00-welcome-199.html#import",
-    "title": "Welcome to STA 199!",
-    "section": "Import",
-    "text": "Import"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#tidy-transform",
-    "href": "slides/00-welcome-199.html#tidy-transform",
-    "title": "Welcome to STA 199!",
-    "section": "Tidy + transform",
-    "text": "Tidy + transform"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#visualize",
-    "href": "slides/00-welcome-199.html#visualize",
-    "title": "Welcome to STA 199!",
-    "section": "Visualize",
-    "text": "Visualize"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#model",
-    "href": "slides/00-welcome-199.html#model",
-    "title": "Welcome to STA 199!",
-    "section": "Model",
-    "text": "Model"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#understand",
-    "href": "slides/00-welcome-199.html#understand",
-    "title": "Welcome to STA 199!",
-    "section": "Understand",
-    "text": "Understand"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#communicate",
-    "href": "slides/00-welcome-199.html#communicate",
-    "title": "Welcome to STA 199!",
-    "section": "Communicate",
-    "text": "Communicate"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#understand-communicate",
-    "href": "slides/00-welcome-199.html#understand-communicate",
-    "title": "Welcome to STA 199!",
-    "section": "Understand + communicate",
-    "text": "Understand + communicate"
-  },
-  {
-    "objectID": "slides/00-welcome-199.html#program",
-    "href": "slides/00-welcome-199.html#program",
-    "title": "Welcome to STA 199!",
-    "section": "Program",
-    "text": "Program"
   },
   {
     "objectID": "slides/00-welcome-199.html#activities",
@@ -771,32 +722,46 @@
     "text": "This week’s tasks\n\nComplete Lab 0\n\nComputational setup\nGetting to know you survey\n\n\nRead the syllabus\nGet started with data science!"
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#meet-your-instructor",
-    "href": "slides/00-welcome-199-slides.html#meet-your-instructor",
+    "objectID": "slides/00-welcome-199-slides.html#meet-your-teaching-team",
+    "href": "slides/00-welcome-199-slides.html#meet-your-teaching-team",
     "title": "Welcome to STA 199!",
-    "section": "Meet your instructor",
-    "text": "Meet your instructor"
+    "section": "Meet your teaching team",
+    "text": "Meet your teaching team\n\nInstructorKatie Solarz\nkatie.solarz@duke.edu\n\nTA, Lab InstructorKenna Roberts\nmakenna.roberts@duke.edu"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#about-me",
+    "href": "slides/00-welcome-199-slides.html#about-me",
+    "title": "Welcome to STA 199!",
+    "section": "About me!",
+    "text": "About me!"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#meet-each-other",
     "href": "slides/00-welcome-199-slides.html#meet-each-other",
     "title": "Welcome to STA 199!",
     "section": "Meet each other!",
-    "text": "Meet each other!\n\nName\nYear\nHometown\nSomething you plan to do this summer"
+    "text": "Meet each other!\n\nName\nYear\nMajor(s) (or, potential major(s) if undecided!)\nHometown\nSomething you plan to do this summer when STA 199 ends 💔"
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#meet-data-science",
-    "href": "slides/00-welcome-199-slides.html#meet-data-science",
+    "objectID": "slides/00-welcome-199-slides.html#what-are-we-studying",
+    "href": "slides/00-welcome-199-slides.html#what-are-we-studying",
     "title": "Welcome to STA 199!",
-    "section": "Meet data science",
-    "text": "Meet data science\n\nData science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge."
+    "section": "What are we studying?",
+    "text": "What are we studying?\nFirst half:\n\n\n\n\n\n\nData science\n\n\n\nTransforming messy, incomplete, imperfect data into knowledge;\n\nKnowledge often takes the form of pictures and a concise set of numerical summaries.\n\n\n\n\n\nSecond half:\n\n\n\n\n\n\nStatistical thinking\n\n\nQuantifying our uncertainty about that knowledge."
   },
   {
-    "objectID": "slides/00-welcome-199-slides.html#excel---not",
-    "href": "slides/00-welcome-199-slides.html#excel---not",
+    "objectID": "slides/00-welcome-199-slides.html#imagine-this-dialog",
+    "href": "slides/00-welcome-199-slides.html#imagine-this-dialog",
     "title": "Welcome to STA 199!",
-    "section": "Excel - not…",
-    "text": "Excel - not…"
+    "section": "Imagine this dialog",
+    "text": "Imagine this dialog\n\nCampaign manager: What is the probability that our candidate wins the election?\n\n\n(A flurry of analysis takes place.)\n\n\nData scientist: Our best guess is 54%.\n\n\nCampaign manager: How reliable is that estimate? How confident are we in that? What’s the margin of error?\n\n\n\n\nParallel Universe 1\nData scientist: It’s 54% give or take 3%.\n\n\nParallel Universe 2\nData scientist: It’s 54% give or take 20%.\n\n\n\n\n\n\n\n\n\n\nIt’s all about decision-making under uncertainty\n\n\nThe manager is going to make wildly different decisions about campaign strategy and spending depending on how uncertain the environment is."
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#excel",
+    "href": "slides/00-welcome-199-slides.html#excel",
+    "title": "Welcome to STA 199!",
+    "section": "Excel… 👎",
+    "text": "Excel… 👎"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#r",
@@ -804,69 +769,6 @@
     "title": "Welcome to STA 199!",
     "section": "R",
     "text": "R"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#data-science-life-cycle-1",
-    "href": "slides/00-welcome-199-slides.html#data-science-life-cycle-1",
-    "title": "Welcome to STA 199!",
-    "section": "Data science life cycle",
-    "text": "Data science life cycle"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#import",
-    "href": "slides/00-welcome-199-slides.html#import",
-    "title": "Welcome to STA 199!",
-    "section": "Import",
-    "text": "Import"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#tidy-transform",
-    "href": "slides/00-welcome-199-slides.html#tidy-transform",
-    "title": "Welcome to STA 199!",
-    "section": "Tidy + transform",
-    "text": "Tidy + transform"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#visualize",
-    "href": "slides/00-welcome-199-slides.html#visualize",
-    "title": "Welcome to STA 199!",
-    "section": "Visualize",
-    "text": "Visualize"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#model",
-    "href": "slides/00-welcome-199-slides.html#model",
-    "title": "Welcome to STA 199!",
-    "section": "Model",
-    "text": "Model"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#understand",
-    "href": "slides/00-welcome-199-slides.html#understand",
-    "title": "Welcome to STA 199!",
-    "section": "Understand",
-    "text": "Understand"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#communicate",
-    "href": "slides/00-welcome-199-slides.html#communicate",
-    "title": "Welcome to STA 199!",
-    "section": "Communicate",
-    "text": "Communicate"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#understand-communicate",
-    "href": "slides/00-welcome-199-slides.html#understand-communicate",
-    "title": "Welcome to STA 199!",
-    "section": "Understand + communicate",
-    "text": "Understand + communicate"
-  },
-  {
-    "objectID": "slides/00-welcome-199-slides.html#program",
-    "href": "slides/00-welcome-199-slides.html#program",
-    "title": "Welcome to STA 199!",
-    "section": "Program",
-    "text": "Program"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#activities",
