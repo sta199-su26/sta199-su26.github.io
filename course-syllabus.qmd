@@ -53,11 +53,12 @@ A tablet also works, but the user experience will be much smoother on a laptop.
 
 ### Activities & Assessment
 
-You will be assessed based on five components: application exercises, labs, exams, project, and teamwork.
+You will be assessed based on five components: application exercises, labs (assignments + attendance), exams, project, and teamwork.
 
 #### Labs
 
-In labs, you will apply what you've learned in the videos and during lectures to complete data analysis tasks.
+In lab, you will apply what you've learned in the videos and during lectures to complete data analysis tasks & eventually perform statistical inference.
+Lab sessions serve as a forum for discussion with your peers and the course TA; these sessions offer an opportunity to make progress on lab assignments, which will be submitted for a grade.\
 You may discuss lab assignments with other students; however, the lab should be completed and submitted individually.
 Lab assignments must be typed up using Quarto, all work must be pushed to your GitHub repository for the lab, and the lab's PDF output must be submitted on Gradescope by the deadline.
 
@@ -66,10 +67,16 @@ Generally, for Monday labs, this is the following Wednesday; for Thursday labs, 
 
 [*The lowest lab grade will be dropped at the end of the semester.*]{.underline}
 
+In addition to the graded "labs", your attendance in lab sessions also contributes to your course grade (worth 5% in total).
+There are 6 lab sessions in which a lab assignment will be the focus; attending at least 5 of these sessions will earn full marks for the "lab attendance" component of your final grade.
+Attending 4 sessions will earn 80%, 3 will earn 60%, and so forth.
+Attendance will also be assessed in project-focused lab sessions (denoted in the course schedule), but this will funnel into your individual project grade.
+
 #### Exams
 
 This course will have two exams: a midterm and a final.
-The midterm will include an in-class component (with a cheat sheet) and an open-note take-home component, while the final will include only an in-class component (with a cheat sheet).
+More information on the format of these exams will be communicated by (a) May 20th for the midterm, and (b) June 10th for the final.
+Appropriate exam review & preparatory materials will be disseminated in advance of each exam.
 
 You can demonstrate what you've learned in the course thus far through these exams.
 The exams will focus on both conceptual understanding of the content and application through analysis and computational tasks.
@@ -198,7 +205,7 @@ The course team will help you by providing you with materials answering question
 
 -   If you have a question during the lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking, you will create a learning opportunity for everyone.
 -   The teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!
--   Outside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, [Ed Discussion](https://edstem.org/us/courses/62468/discussion/). There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!
+-   Outside of class and office hours, any general questions about course content or assignments should be posted on the class discussion forum, [Ed Discussion](https://edstem.org/us/courses/98380/discussion). There is a chance another student has already asked a similar question, so please check the other posts on the forum before adding a new question. If you know the answer to a question, I encourage you to respond!
 
 Check out the [Support](https://sta199-su26.github.io/course-support.html) tab for more resources.
 
@@ -242,8 +249,12 @@ Please abide by the following as you work on assignments in this course:
 
     2.  *Ethical dimension***:** Students using AI should be transparent about their use and ensure it aligns with academic integrity.
 
-    -   {{< fa check >}} **AI tools for code:** You may use the technology for coding examples on assignments; if you do so, you must explicitly cite where you obtained the code.
-        Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.
+    -   {{< fa ban >}} **AI tools during lab & office hours:** Unless otherwise stated (i.e., explicitly stated in assignment instructions), use of AI tools is ***completely forbidden*** during lab session.
+        When you are in lab, you have far better tools / resources available to you - Kenna, our TA, and each other!
+        Blatant disregard for this policy will result in a 0 for the current lab assignment.
+
+    -   {{< fa check >}} **AI tools for code on your own:** You may use the technology when working on lab assignments outside of lab and / or office hours; if you do so, you must explicitly cite where you obtained the code.
+        Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism; accordingly, your answer to the corresponding question will receive a grade of 0.
         You may use [these guidelines](https://guides.lib.monash.edu/c.php?g=219786&p=6972087) to cite AI-generated content.
         **The bare minimum citation must include the AI tool you're using (e.g., ChatGPT) and your prompt.** The prompt you use cannot be copied and pasted directly from the assignment; you must create a prompt yourself.
 
@@ -276,7 +287,7 @@ The due dates for assignments are there to help you keep up with the course mate
 We understand that things come up periodically that could make it difficult to submit an assignment by the deadline.
 Note that the lowest lab assignment will be dropped to accommodate such circumstances.
 
--   Labs may be submitted up to 3 days late. A 5% deduction will be applied for each 24-hour period during which the assignment is late.
+-   Labs may be submitted up to 2 days late. A 5% deduction will be applied for each 24-hour period during which the assignment is late.
 -   No late work is accepted for application exercises since these are designed to help you prepare for other assessments in the course.
 -   No late work is accepted for exams.
 -   No late work is accepted for projects.
@@ -297,8 +308,7 @@ Every student is expected to attend and participate in lecture and labs.
 There may be times, however, when you cannot attend class.
 If you miss a lecture, make sure to review the material and complete the application exercise, if applicable, before the next lecture.
 Labs are dedicated to completing the lab assignment and collaborating with your classmates and lab instructor.
-If you miss a lab session, make sure to communicate with your lab instructor about how you can make up your contribution.
-If you know you're going to miss a lab session and you're feeling well enough to do so, notify your lab TA and teammates ahead of time.
+Please refer to the above **Labs** section for the lab attendance policy .
 
 More details on Trinity attendance policies are available [here](https://trinity.duke.edu/undergraduate/academic-policies/class-attendance-and-missed-work).
 
