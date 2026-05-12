@@ -310,7 +310,7 @@ Make sure I get a letter, and make your appointments in the Testing Center now.
 
 # GitHub
 
-![](images/github-logo.png){fig-align="center"}
+![](img/00/github-logo.png){fig-align="center" width=75%}
 
 ## What is GitHub?
 
@@ -318,10 +318,10 @@ Make sure I get a letter, and make your appointments in the Testing Center now.
 
 More on this tomorrow - basically, it is the Google Drive of coding!
 
-## AE0: Make your GitHub account
+## AE 00: Make your GitHub account
 
-<br><br> Find AE0 on the course website!
-
+<br><br> Find AE 00 on the course website!
+ 
 ## This week's tasks
 
 -   Complete Lab 0
