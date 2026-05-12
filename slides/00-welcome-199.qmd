@@ -15,72 +15,112 @@ auto-stretch: false
 
 ```
 
-## Meet your instructor
+## Meet your teaching team
 
-![](img/ks_timeline vF.png){fig-alt="About me!" fig-align="center"}
+<hr>
+
+***Instructor\
+***Katie Solarz\
+katie.solarz\@duke.edu
+
+<hr>
+
+***TA, Lab Instructor\
+***Kenna Roberts\
+makenna.roberts\@duke.edu
+
+<hr>
+
+## About me!
+
+![](img/ks_timeline%20vF.png){fig-alt="About me!" fig-align="center"}
 
 ## Meet each other!
 
 -   Name
 -   Year
+-   Major(s) (or, potential major(s) if undecided!)
 -   Hometown
--   Something you plan to do this summer
+-   Something you plan to do this summer when STA 199 ends 💔
 
-## Meet data science
+## What are we studying?
 
-<br><br>
+First half:
 
-Data science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge.
+::: callout-note
+## Data science
+
+-   Transforming messy, incomplete, imperfect data into *knowledge*;
+-   *Knowledge* often takes the form of pictures and a concise set of numerical summaries.
+:::
+
+. . .
+
+Second half:
+
+::: callout-warning
+## Statistical thinking
+
+Quantifying our uncertainty about that knowledge.
+:::
+
+## Imagine this dialog {.small}
+
+. . .
+
+[**Campaign manager**]{style="color:blue;"}: What is the probability that our candidate wins the election?
+
+. . .
+
+(A flurry of analysis takes place.)
+
+. . .
+
+[**Data scientist**]{style="color:red;"}: Our best guess is 54%.
+
+. . .
+
+[**Campaign manager**]{style="color:blue;"}: How reliable is that estimate?
+How confident are we in that?
+What's the margin of error?
+
+. . .
+
+:::::: columns
+::: {.column width="50%"}
+**Parallel Universe 1**
+
+[**Data scientist**]{style="color:red;"}: It's 54% give or take 3%.
+:::
+
+:::: {.column width="50%"}
+::: fragment
+**Parallel Universe 2**
+
+[**Data scientist**]{style="color:red;"}: It's 54% give or take 20%.
+:::
+::::
+::::::
+
+. . .
+
+::: callout-note
+## It's all about decision-making under uncertainty
+
+The manager is going to make wildly different decisions about campaign strategy and spending depending on how uncertain the environment is.
+:::
 
 # Software
 
-## Excel - not...
+## Excel... 👎
 
-![](images/excel.png){fig-alt="An Excel window with data about countries" fig-align="center"}
+![](img/00/excel.png){fig-alt="An Excel window with data about countries" fig-align="center" width="80%"}
 
 ## R
 
-![](images/r.png){fig-alt="An R shell" fig-align="center"}
+![](img/00/r_intro.png){fig-alt="An R shell" fig-align="center" width="75%"}
 
-# Data science life cycle
-
-## Data science life cycle
-
-![](images/data-science-cycle/data-science-cycle.001.png){fig-alt="Data science life cycle"}
-
-## Import
-
-![](images/data-science-cycle/data-science-cycle.002.png){fig-alt="Data science life cycle, with import highlighted"}
-
-## Tidy + transform
-
-![](images/data-science-cycle/data-science-cycle.003.png){fig-alt="Data science life cycle, with tidy and transform highlighted"}
-
-## Visualize
-
-![](images/data-science-cycle/data-science-cycle.004.png){fig-alt="Data science life cycle, with visualize highlighted"}
-
-## Model
-
-![](images/data-science-cycle/data-science-cycle.005.png){fig-alt="Data science life cycle, with model highlighted"}
-
-## Understand
-
-![](images/data-science-cycle/data-science-cycle.006.png){fig-alt="Data science life cycle, with understand highlighted"}
-
-## Communicate
-
-![](images/data-science-cycle/data-science-cycle.007.png){fig-alt="Data science life cycle, with communicate highlighted"}
-
-## Understand + communicate
-
-![](images/data-science-cycle/data-science-cycle.008.png){fig-alt="Data science life cycle, with understand and communicate highlighted"}
-
-## Program
-
-![](images/data-science-cycle/data-science-cycle.009.png){fig-alt="Data science life cycle, with program highlighted"}
-
-# Course overview
+# Syllabus highlights
 
 ## Activities {.smaller}
 

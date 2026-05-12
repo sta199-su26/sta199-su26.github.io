@@ -10,7 +10,7 @@
 $font-family: "Roboto", sans-serif;
 
 $presentation-heading-color: #5D737E;
-$presentation-title-slide-text-align: "left";
+$presentation-title-slide-text-align: "right";
 $link-color: #5D737E;
 $code-color: #5D737E;
 $code-block-font-size: 0.6em;
@@ -29,12 +29,13 @@ details>summary {
   text-align: left;
 }
 
-.reveal #title-slide .author {
-  text-align: left;
-}
+.reveal #title-slide .quarto-title-author,
 
-.reveal #title-slide .institute {
-  text-align: left;
+.reveal #title-slide .quarto-title-affiliation,
+
+.reveal #title-slide .date {
+  width: 100%;
+  text-align: right;
 }
 
 .center-align {

@@ -1,4 +1,6 @@
 date-format: long
+institute: "Duke University <br> STA 199 Summer 2026: Session I"
+author: "Katie Solarz"
 format:
   revealjs:
     footer: "[🔗 sta199-su26.github.io](https://sta199-su26.github.io/)"
