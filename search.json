@@ -701,6 +701,111 @@
     "text": "Academic integrity\n\nTo uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
   },
   {
+    "objectID": "slides/00-welcome-199.html#april-20th-deadly-day-for-car-crashes",
+    "href": "slides/00-welcome-199.html#april-20th-deadly-day-for-car-crashes",
+    "title": "Welcome to STA 199!",
+    "section": "“April 20th: Deadly Day for Car Crashes?”",
+    "text": "“April 20th: Deadly Day for Car Crashes?”\nThe text below can be found at this link, which is a post on the website of a personal injury law firm. Suppose we want to investigate the validity of their claim… What data might we want? What methods are appropriate? How will we perform our analysis? How can we best communicate our findings?"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#the-data-science-life-cycle",
+    "href": "slides/00-welcome-199.html#the-data-science-life-cycle",
+    "title": "Welcome to STA 199!",
+    "section": "The data science life cycle",
+    "text": "The data science life cycle"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#the-data-science-life-cycle-1",
+    "href": "slides/00-welcome-199.html#the-data-science-life-cycle-1",
+    "title": "Welcome to STA 199!",
+    "section": "The data science life cycle",
+    "text": "The data science life cycle"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#load-the-data-in",
+    "href": "slides/00-welcome-199.html#load-the-data-in",
+    "title": "Welcome to STA 199!",
+    "section": "Load the data in",
+    "text": "Load the data in\nOn 4/22/2025, TidyTuesday posted a tidy version of the raw data analyzed in Harper and Palayew’s (2019) study, “The annual cannabis holiday and fatal traffic crashes,” available here.\nLet’s load this data into R…\n\nlibrary(tidyverse)\n\ndaily_accidents_420 &lt;- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-04-22/daily_accidents_420.csv')"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#the-data-science-life-cycle-2",
+    "href": "slides/00-welcome-199.html#the-data-science-life-cycle-2",
+    "title": "Welcome to STA 199!",
+    "section": "The data science life cycle",
+    "text": "The data science life cycle"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#if-we-hadnt-had-access-to-our-tidy-data",
+    "href": "slides/00-welcome-199.html#if-we-hadnt-had-access-to-our-tidy-data",
+    "title": "Welcome to STA 199!",
+    "section": "If we hadn’t had access to our tidy data…",
+    "text": "If we hadn’t had access to our tidy data…"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#still-we-can-tidy-some-more",
+    "href": "slides/00-welcome-199.html#still-we-can-tidy-some-more",
+    "title": "Welcome to STA 199!",
+    "section": "Still, we can tidy some more…",
+    "text": "Still, we can tidy some more…\n\ndaily_accidents_420 &lt;- daily_accidents_420 |&gt;\n  filter(!is.na(e420)) |&gt;\n  mutate(e420 = if_else(e420 == TRUE, \"4/20\", \"Not 4/20\"))"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#the-data-science-life-cycle-3",
+    "href": "slides/00-welcome-199.html#the-data-science-life-cycle-3",
+    "title": "Welcome to STA 199!",
+    "section": "The data science life cycle",
+    "text": "The data science life cycle"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#babys-first-graphic",
+    "href": "slides/00-welcome-199.html#babys-first-graphic",
+    "title": "Welcome to STA 199!",
+    "section": "Baby’s first graphic",
+    "text": "Baby’s first graphic\n\nggplot(daily_accidents_420, aes(fatalities_count, fill = e420))"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#babys-first-graphic-1",
+    "href": "slides/00-welcome-199.html#babys-first-graphic-1",
+    "title": "Welcome to STA 199!",
+    "section": "Baby’s first graphic",
+    "text": "Baby’s first graphic\n\nggplot(daily_accidents_420, aes(fatalities_count, fill = e420)) +\n    geom_histogram()"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#babys-first-graphic-2",
+    "href": "slides/00-welcome-199.html#babys-first-graphic-2",
+    "title": "Welcome to STA 199!",
+    "section": "Baby’s first graphic",
+    "text": "Baby’s first graphic\n\nggplot(daily_accidents_420, aes(fatalities_count, fill = e420)) +\n  geom_histogram() +\n  facet_wrap(~ e420, ncol = 1, scales = \"free_y\")"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#babys-first-graphic-3",
+    "href": "slides/00-welcome-199.html#babys-first-graphic-3",
+    "title": "Welcome to STA 199!",
+    "section": "Baby’s first graphic",
+    "text": "Baby’s first graphic\n\nggplot(daily_accidents_420, aes(fatalities_count, fill = e420)) +\n  geom_histogram() +\n  facet_wrap(~ e420, ncol = 1, scales = \"free_y\") +\n  labs(title = \"Histogram of Daily Traffic Accident Fatality Count, 1992-2016\",\n       subtitle = \"On the 'High Holiday' (4/20), vs. Not\",\n       x = \"Daily Traffic Accident Fatality Count (1992 - 2016)\",\n       y = \"Count of Observations\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#the-data-science-life-cycle-4",
+    "href": "slides/00-welcome-199.html#the-data-science-life-cycle-4",
+    "title": "Welcome to STA 199!",
+    "section": "The data science life cycle",
+    "text": "The data science life cycle"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#in-reality",
+    "href": "slides/00-welcome-199.html#in-reality",
+    "title": "Welcome to STA 199!",
+    "section": "In reality…",
+    "text": "In reality…"
+  },
+  {
+    "objectID": "slides/00-welcome-199.html#course-themes",
+    "href": "slides/00-welcome-199.html#course-themes",
+    "title": "Welcome to STA 199!",
+    "section": "Course themes",
+    "text": "Course themes\n\n\nStatistical literacy matters\n\nHeadlines, social media posts, advertisements, and even “expert” sources can misrepresent scientific findings\nData-driven claims should be evaluated critically, not accepted at face value\nUnderstanding how conclusions are reached is an important skill!\n\n\n\nReproducibility is essential\n\nCredible analyses should clearly describe: where the data came from, how the data were processed, and how the analysis was performed\nReproducible work allows others to verify, critique, and build upon scientific findings\n\n\n\nData science is an iterative process\n\nCuriosity keeps the wheel turning!"
+  },
+  {
     "objectID": "slides/00-welcome-199.html#what-is-github",
     "href": "slides/00-welcome-199.html#what-is-github",
     "title": "Welcome to STA 199!",
@@ -888,6 +993,111 @@
     "title": "Welcome to STA 199!",
     "section": "Academic integrity",
     "text": "Academic integrity\n\nTo uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#april-20th-deadly-day-for-car-crashes",
+    "href": "slides/00-welcome-199-slides.html#april-20th-deadly-day-for-car-crashes",
+    "title": "Welcome to STA 199!",
+    "section": "“April 20th: Deadly Day for Car Crashes?”",
+    "text": "“April 20th: Deadly Day for Car Crashes?”\nThe text below can be found at this link, which is a post on the website of a personal injury law firm. Suppose we want to investigate the validity of their claim… What data might we want? What methods are appropriate? How will we perform our analysis? How can we best communicate our findings?"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#the-data-science-life-cycle",
+    "href": "slides/00-welcome-199-slides.html#the-data-science-life-cycle",
+    "title": "Welcome to STA 199!",
+    "section": "The data science life cycle",
+    "text": "The data science life cycle"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#the-data-science-life-cycle-1",
+    "href": "slides/00-welcome-199-slides.html#the-data-science-life-cycle-1",
+    "title": "Welcome to STA 199!",
+    "section": "The data science life cycle",
+    "text": "The data science life cycle"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#load-the-data-in",
+    "href": "slides/00-welcome-199-slides.html#load-the-data-in",
+    "title": "Welcome to STA 199!",
+    "section": "Load the data in",
+    "text": "Load the data in\nOn 4/22/2025, TidyTuesday posted a tidy version of the raw data analyzed in Harper and Palayew’s (2019) study, “The annual cannabis holiday and fatal traffic crashes,” available here.\nLet’s load this data into R…\n\nlibrary(tidyverse)\n\ndaily_accidents_420 &lt;- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-04-22/daily_accidents_420.csv')"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#the-data-science-life-cycle-2",
+    "href": "slides/00-welcome-199-slides.html#the-data-science-life-cycle-2",
+    "title": "Welcome to STA 199!",
+    "section": "The data science life cycle",
+    "text": "The data science life cycle"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#if-we-hadnt-had-access-to-our-tidy-data",
+    "href": "slides/00-welcome-199-slides.html#if-we-hadnt-had-access-to-our-tidy-data",
+    "title": "Welcome to STA 199!",
+    "section": "If we hadn’t had access to our tidy data…",
+    "text": "If we hadn’t had access to our tidy data…"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#still-we-can-tidy-some-more",
+    "href": "slides/00-welcome-199-slides.html#still-we-can-tidy-some-more",
+    "title": "Welcome to STA 199!",
+    "section": "Still, we can tidy some more…",
+    "text": "Still, we can tidy some more…\n\ndaily_accidents_420 &lt;- daily_accidents_420 |&gt;\n  filter(!is.na(e420)) |&gt;\n  mutate(e420 = if_else(e420 == TRUE, \"4/20\", \"Not 4/20\"))"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#the-data-science-life-cycle-3",
+    "href": "slides/00-welcome-199-slides.html#the-data-science-life-cycle-3",
+    "title": "Welcome to STA 199!",
+    "section": "The data science life cycle",
+    "text": "The data science life cycle"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#babys-first-graphic",
+    "href": "slides/00-welcome-199-slides.html#babys-first-graphic",
+    "title": "Welcome to STA 199!",
+    "section": "Baby’s first graphic",
+    "text": "Baby’s first graphic\n\nggplot(daily_accidents_420, aes(fatalities_count, fill = e420))"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#babys-first-graphic-1",
+    "href": "slides/00-welcome-199-slides.html#babys-first-graphic-1",
+    "title": "Welcome to STA 199!",
+    "section": "Baby’s first graphic",
+    "text": "Baby’s first graphic\n\nggplot(daily_accidents_420, aes(fatalities_count, fill = e420)) +\n    geom_histogram()"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#babys-first-graphic-2",
+    "href": "slides/00-welcome-199-slides.html#babys-first-graphic-2",
+    "title": "Welcome to STA 199!",
+    "section": "Baby’s first graphic",
+    "text": "Baby’s first graphic\n\nggplot(daily_accidents_420, aes(fatalities_count, fill = e420)) +\n  geom_histogram() +\n  facet_wrap(~ e420, ncol = 1, scales = \"free_y\")"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#babys-first-graphic-3",
+    "href": "slides/00-welcome-199-slides.html#babys-first-graphic-3",
+    "title": "Welcome to STA 199!",
+    "section": "Baby’s first graphic",
+    "text": "Baby’s first graphic\n\nggplot(daily_accidents_420, aes(fatalities_count, fill = e420)) +\n  geom_histogram() +\n  facet_wrap(~ e420, ncol = 1, scales = \"free_y\") +\n  labs(title = \"Histogram of Daily Traffic Accident Fatality Count, 1992-2016\",\n       subtitle = \"On the 'High Holiday' (4/20), vs. Not\",\n       x = \"Daily Traffic Accident Fatality Count (1992 - 2016)\",\n       y = \"Count of Observations\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#the-data-science-life-cycle-4",
+    "href": "slides/00-welcome-199-slides.html#the-data-science-life-cycle-4",
+    "title": "Welcome to STA 199!",
+    "section": "The data science life cycle",
+    "text": "The data science life cycle"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#in-reality",
+    "href": "slides/00-welcome-199-slides.html#in-reality",
+    "title": "Welcome to STA 199!",
+    "section": "In reality…",
+    "text": "In reality…"
+  },
+  {
+    "objectID": "slides/00-welcome-199-slides.html#course-themes",
+    "href": "slides/00-welcome-199-slides.html#course-themes",
+    "title": "Welcome to STA 199!",
+    "section": "Course themes",
+    "text": "Course themes\n\n\nStatistical literacy matters\n\nHeadlines, social media posts, advertisements, and even “expert” sources can misrepresent scientific findings\nData-driven claims should be evaluated critically, not accepted at face value\nUnderstanding how conclusions are reached is an important skill!\n\n\n\nReproducibility is essential\n\nCredible analyses should clearly describe: where the data came from, how the data were processed, and how the analysis was performed\nReproducible work allows others to verify, critique, and build upon scientific findings\n\n\n\nData science is an iterative process\n\nCuriosity keeps the wheel turning!"
   },
   {
     "objectID": "slides/00-welcome-199-slides.html#what-is-github",

@@ -31,6 +31,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
 <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-1f377f1ccadea7e9b0e26a49b7195540.css">
 <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -477,7 +542,125 @@ makenna.roberts@duke.edu</p>
 <li><p>I will act if the Standard is compromised.</p></li>
 </ul>
 </blockquote>
-</section></section><section><section id="github" class="title-slide slide level1 center"><h1>GitHub</h1>
+</section></section><section id="questions" class="title-slide slide level1 center"><h1>Questions?</h1>
+
+</section><section><section id="data-science-statistics-in-the-wild" class="title-slide slide level1 center"><h1>Data science (&amp; statistics!) in the wild</h1>
+
+</section><section id="april-20th-deadly-day-for-car-crashes" class="slide level2 smaller"><h2>“April 20th: Deadly Day for Car Crashes?”</h2>
+<p>The text below can be found at this <a href="https://martinmontilino.com/april-20th-deadly-day-for-car-crashes/">link</a>, which is a post on the website of a personal injury law firm. Suppose we want to investigate the validity of their claim… What data might we want? What methods are appropriate? How will we perform our analysis? How can we best communicate our findings?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/00/personal_inj.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</section><section id="the-data-science-life-cycle" class="slide level2"><h2>The data science life cycle</h2>
+<p><img data-src="img/00/data-science-cycle.001.png"></p>
+</section><section id="the-data-science-life-cycle-1" class="slide level2"><h2>The data science life cycle</h2>
+<p><img data-src="img/00/data-science-cycle-import.png"></p>
+</section><section id="load-the-data-in" class="slide level2"><h2>Load the data in</h2>
+<p>On 4/22/2025, <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday</a> posted a <strong><em>tidy</em></strong> version of the raw data analyzed in Harper and Palayew’s (2019) study, “The annual cannabis holiday and fatal traffic crashes,” available <a href="https://osf.io/qnrg6/">here</a>.</p>
+<p>Let’s load this data into R…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>daily_accidents_420 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-04-22/daily_accidents_420.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="the-data-science-life-cycle-2" class="slide level2"><h2>The data science life cycle</h2>
+<p><img data-src="img/00/data-science-cycle.003.png"></p>
+</section><section id="if-we-hadnt-had-access-to-our-tidy-data" class="slide level2"><h2>If we hadn’t had access to our tidy data…</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/00/tidying_data.png" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
+</figure>
+</div>
+</section><section id="still-we-can-tidy-some-more" class="slide level2"><h2>Still, we can tidy some more…</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>daily_accidents_420 <span class="ot">&lt;-</span> daily_accidents_420 <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(e420)) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a></a>  <span class="fu">mutate</span>(<span class="at">e420 =</span> <span class="fu">if_else</span>(e420 <span class="sc">==</span> <span class="cn">TRUE</span>, <span class="st">"4/20"</span>, <span class="st">"Not 4/20"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="the-data-science-life-cycle-3" class="slide level2"><h2>The data science life cycle</h2>
+<p><img data-src="img/00/data-science-cycle-visualize.png"></p>
+</section><section id="babys-first-graphic" class="slide level2 medium"><h2>Baby’s first graphic</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(daily_accidents_420, <span class="fu">aes</span>(fatalities_count, <span class="at">fill =</span> e420))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="00-welcome-199_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="babys-first-graphic-1" class="slide level2 medium"><h2>Baby’s first graphic</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(daily_accidents_420, <span class="fu">aes</span>(fatalities_count, <span class="at">fill =</span> e420)) <span class="sc">+</span></span>
+<span id="cb4-2"><a></a>    <span class="fu">geom_histogram</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="00-welcome-199_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="babys-first-graphic-2" class="slide level2 medium"><h2>Baby’s first graphic</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(daily_accidents_420, <span class="fu">aes</span>(fatalities_count, <span class="at">fill =</span> e420)) <span class="sc">+</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb5-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> e420, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="00-welcome-199_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="babys-first-graphic-3" class="slide level2 scrollable medium"><h2>Baby’s first graphic</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(daily_accidents_420, <span class="fu">aes</span>(fatalities_count, <span class="at">fill =</span> e420)) <span class="sc">+</span></span>
+<span id="cb6-2"><a></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb6-3"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> e420, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histogram of Daily Traffic Accident Fatality Count, 1992-2016"</span>,</span>
+<span id="cb6-5"><a></a>       <span class="at">subtitle =</span> <span class="st">"On the 'High Holiday' (4/20), vs. Not"</span>,</span>
+<span id="cb6-6"><a></a>       <span class="at">x =</span> <span class="st">"Daily Traffic Accident Fatality Count (1992 - 2016)"</span>,</span>
+<span id="cb6-7"><a></a>       <span class="at">y =</span> <span class="st">"Count of Observations"</span>) <span class="sc">+</span></span>
+<span id="cb6-8"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-9"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="00-welcome-199_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="the-data-science-life-cycle-4" class="slide level2"><h2>The data science life cycle</h2>
+<p><img data-src="img/00/data-science-cycle.008.png"></p>
+</section><section id="in-reality" class="slide level2"><h2>In reality…</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/00/communicate.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</section><section id="course-themes" class="slide level2 scrollable smaller"><h2>Course themes</h2>
+<ul>
+<li>
+<strong>Statistical literacy matters</strong>
+<ul>
+<li>Headlines, social media posts, advertisements, and even “expert” sources can misrepresent scientific findings</li>
+<li>Data-driven claims should be evaluated critically, not accepted at face value</li>
+<li>Understanding how conclusions are reached is an important skill!</li>
+</ul>
+</li>
+<li>
+<strong>Reproducibility is essential</strong>
+<ul>
+<li>Credible analyses should clearly describe: where the data came from, how the data were processed, and how the analysis was performed</li>
+<li>Reproducible work allows others to verify, critique, and build upon scientific findings</li>
+</ul>
+</li>
+<li>
+<strong>Data science is an iterative process</strong>
+<ul>
+<li>Curiosity keeps the wheel turning!</li>
+</ul>
+</li>
+</ul></section></section><section><section id="github" class="title-slide slide level1 center"><h1>GitHub</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img data-src="img/00/github-logo.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
 </figure>
