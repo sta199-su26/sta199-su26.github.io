@@ -1,7 +1,7 @@
 ---
 title: "Lab 0"
 subtitle: "Hello, World and STA 199!"
-description: "End of lab on May 15"
+description: "End of lab on May 14"
 categories: "Lab"
 execute:
   eval: false
@@ -147,7 +147,7 @@ The following video walks you through the steps outlined in the SSH key generati
 
 A GitHub repository (repo) is a collection of files hosted on GitHub. Repos are the main way we will distribute files to you during the semester. When you copy the files in a repo to your local computing environment (your container, in this case), that's called "cloning". So, let's clone our first repo: 
 
--   Go to the course organization at [github.com/sta199-su25](https://github.com/sta199-su25) organization on GitHub. Click on the repo with the prefix **ae**. This is your application exercise (AE) repo. It contains the starter documents you need to complete your AE for today's lecture (and will contain the starter files for future AEs).
+-   Go to the course organization at [github.com/sta199-su26](https://github.com/sta199-su26) organization on GitHub. Click on the repo with the prefix **ae**. This is your application exercise (AE) repo. It contains the starter documents you need to complete your AE for today's lecture (and will contain the starter files for future AEs).
 
 -   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
 
