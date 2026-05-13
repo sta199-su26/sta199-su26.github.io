@@ -1,0 +1,166 @@
+---
+title: "AE 01: Meet the penguins"
+execute:
+  error: true
+---
+
+The goal of this application exercise is to get exposure to using the computational toolkit.
+Let's get started!
+
+## Quarto Code Chunks
+
+-   Code goes in **"code chunks"**: these are grey boxes and can be recognized by '{r}'
+-   To **run a code chunk**, click the little green right facing arrow; to run a code chunk and *all preceding* code chunks, use the downward pointing arrow.
+-   Text goes outside of the code chunks!
+
+```{r}
+#| label: code-chunk
+
+# this is a code chunk
+```
+
+::: callout-note
+## What's going on?
+
+What's that text in the code chunk?
+
+-   #\| label: code-chunk : this blue text at the top is a label: basically, it names the code chunk for easy reference.
+    Code chunk names cannot be repeated!
+
+-   \\# this is a code chunk : this green text is a comment.
+    A comment goes in a code chunk, but functions like normal text
+:::
+
+## Load Packages
+
+For this application exercise, we'll use the **tidyverse** and **palmerpenguins** packages.
+
+```{r}
+#| label: load-packages
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Examine Data
+
+The dataset we will use is called `penguins`; it was loaded with the **palmerpenguins** package.
+You'll notice it's *not* visible yet in the environment pane - let's put it there.
+
+```{r}
+data("penguins")
+```
+
+Two useful functions to examine it are `glimpse()` and `View()`
+
+Let's `glimpse()` at it.
+
+-   **Your turn:** Replace `#add code here` with the code for "glimpse" ing at the data `penguins` data frame -- `glimpse(penguins)`. Render the document and view the output.
+
+```{r}
+#| label: glimpse-penguins
+# add code here
+```
+
+Now, let's `View()` it.
+
+-   **Your turn:** Replace `#add code here` with the code for "view" ing at the data `penguins` data frame -- `View(penguins)`.
+
+```{r}
+#| label: view-penguins
+# add code here
+```
+
+What information can you see from these two operations?
+How are they different?
+
+## Some R Fundamentals
+
+You just used some functions above - `library()`, `data()`, `glimpse()`, and `view()`.
+Let's practice with some more!
+
+### Getting Help
+
+There is a function that tells you how many rows are in the data frame: `nrow()`.
+Perhaps this is your first time using it and you aren't sure how it works: you can use `?` to see the documentation.
+
+-   **Your turn:** Write code to get help with the `nrow` function
+
+```{r}
+#| label: nrow-help
+
+#add code here
+```
+
+*(This works for any function, not just `nrow`!)*
+
+-   **Your Turn:** Now, let's compute the number of rows in the data frame:
+
+```{r}
+#| label: nrow-penguins
+
+#add code here
+```
+
+### Oh no!! Errors!!
+
+Unfortunately, not every time you run a function it will work correctly.
+
+What happens if you run `mean()` on the data frame?
+Does this even make sense???
+
+-   **Your turn:** try running this function on the `penguins` data frame and see what happens!
+
+```{r}
+#| label: error-mean
+
+# add code here
+```
+
+### Accessing Columns
+
+As we saw with the `mean` example, not every function works on a full data frame.
+Sometimes, you need to access just one column.
+To do that, we can use `$` as `dataframe$column_name`.
+
+-   **Your turn:** In the code chunk below, compute the mean of the `bill_depth_mm` variable in the `penguins` data frame.
+
+```{r}
+#| label: mean-1
+
+#add code here
+```
+
+Hmmm... something weird is still happening!
+What does this NA value mean??
+Do you have any guesses???
+How can we fix this?
+
+### \>1 Argument
+
+To fix our issue with mean, we need to tell the function something else (that is, use more than one *argument)*.
+
+-   **Your turn:** First, get help with the `?` . Then, try to compute the `mean` value, ignoring the NA values
+
+```{r}
+#| label: mean-2
+
+#add code here
+```
+
+## How is the document looking?
+
+Click **render** to see!
+
+## Let's push our changes to GitHub!
+
+Remember:
+
+-   Stage changes with the checkboxes
+
+-   Commit with a message
+
+-   Push!
+
+## Miscellaneous:
+
+If there is extra time in class, we'll add some other tips here!
