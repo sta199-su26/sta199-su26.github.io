@@ -132,7 +132,10 @@ But, it's best if you can get it right today!
 ::: callout-note
 ## How do I know if I did it right?
 
-When you input the `usethis::use_git_config(...)` command into the console and hit enter/return, it will appear as if nothing happened. To verify that everything worked, you can briefly switch over to the **Terminal** tab (should be to the right of **Console**) and type the commands `git config user.name` and `git config user.email`. If all is well, these will return whatever text you originally provided. If you notice a mistake or typo, you can just go back to the Console and rerun `usethis::use_git_config(...)` with modified inputs.
+When you input the `usethis::use_git_config(...)` command into the console and hit enter/return, it will appear as if nothing happened.
+To verify that everything worked, you can briefly switch over to the **Terminal** tab (should be to the right of **Console**) and type the commands `git config user.name` and `git config user.email`.
+If all is well, these will return whatever text you originally provided.
+If you notice a mistake or typo, you can just go back to the Console and rerun `usethis::use_git_config(...)` with modified inputs.
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -145,11 +148,18 @@ The following video walks you through the steps outlined in the SSH key generati
 
 ## Clone first repo
 
-A GitHub repository (repo) is a collection of files hosted on GitHub. Repos are the main way we will distribute files to you during the semester. When you copy the files in a repo to your local computing environment (your container, in this case), that's called "cloning". So, let's clone our first repo: 
+A GitHub repository (repo) is a collection of files hosted on GitHub.
+Repos are the main way we will distribute files to you during the semester.
+When you copy the files in a repo to your local computing environment (your container, in this case), that's called "cloning".
+So, let's clone our first repo:
 
--   Go to the course organization at [github.com/sta199-su26](https://github.com/sta199-su26) organization on GitHub. Click on the repo with the prefix **ae**. This is your application exercise (AE) repo. It contains the starter documents you need to complete your AE for today's lecture (and will contain the starter files for future AEs).
+-   Go to the course organization at [github.com/sta199-su26](https://github.com/sta199-su26) organization on GitHub.
+    Click on the repo with the prefix **ae**.
+    This is your application exercise (AE) repo.
+    It contains the starter documents you need to complete your AE for today's lecture (and will contain the starter files for future AEs).
 
--   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
+-   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**).
+    Click on the clipboard icon to copy the repo URL.
 
 -   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
 
@@ -161,6 +171,6 @@ You will need to get used to these steps, because you'll probably clone at least
 
 # Hello STA 199!
 
-Fill out the course "Getting to know you" [survey](https://canvas.duke.edu/courses/56756/quizzes/35368) on Canvas.
+Fill out the course "Getting to know you" [survey](https://canvas.duke.edu/courses/78571/quizzes/47322) on Canvas.
 
 We will use the information collected in this survey for a variety of goals, including getting to know you as a person and your course goals and concerns.
