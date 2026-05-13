@@ -99,7 +99,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script><link rel="stylesheet" href="../style/sta199.scss">
 <meta property="og:title" content="Lab 0 – STA 199">
 <meta property="og:description" content="End of lab on May 14">
+<meta property="og:image" content="https://sta199-su26.github.io/lab/img/lab-0/lab-0-repo.png">
 <meta property="og:site_name" content="STA 199">
+<meta property="og:image:alt" content="Clone with SSH button in GitHub repository page.">
 <meta name="twitter:title" content="Lab 0 – STA 199">
 <meta name="twitter:description" content="End of lab on May 14">
 <meta name="twitter:image" content="https://sta199-su26.github.io/lab/img/twitter-card-ks.pdf">
@@ -246,14 +248,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <a href="#hello-world" id="toc-hello-world" class="nav-link active" data-scroll-target="#hello-world"><code>Hello, World!</code></a>
   <ul class="collapse">
-<li><a href="#access-r-and-rstudio" id="toc-access-r-and-rstudio" class="nav-link" data-scroll-target="#access-r-and-rstudio">Access R and RStudio</a></li>
-  <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link" data-scroll-target="#create-a-github-account">Create a GitHub account</a></li>
-  <li><a href="#set-up-your-ssh-key" id="toc-set-up-your-ssh-key" class="nav-link" data-scroll-target="#set-up-your-ssh-key">Set up your SSH key</a></li>
-  <li><a href="#configure-git-to-introduce-yourself" id="toc-configure-git-to-introduce-yourself" class="nav-link" data-scroll-target="#configure-git-to-introduce-yourself">Configure Git to introduce yourself</a></li>
-  <li><a href="#clone-first-repo" id="toc-clone-first-repo" class="nav-link" data-scroll-target="#clone-first-repo">Clone first repo</a></li>
+<li><a href="#access-r-and-rstudio" id="toc-access-r-and-rstudio" class="nav-link" data-scroll-target="#access-r-and-rstudio">1. Access R and RStudio</a></li>
+  <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link" data-scroll-target="#create-a-github-account">2. Create a GitHub account</a></li>
+  <li><a href="#set-up-your-ssh-key" id="toc-set-up-your-ssh-key" class="nav-link" data-scroll-target="#set-up-your-ssh-key">3. Set up your SSH key</a></li>
+  <li><a href="#configure-git-to-introduce-yourself" id="toc-configure-git-to-introduce-yourself" class="nav-link" data-scroll-target="#configure-git-to-introduce-yourself">4. Configure Git to introduce yourself</a></li>
+  <li><a href="#babys-first-repo" id="toc-babys-first-repo" class="nav-link" data-scroll-target="#babys-first-repo">5. Baby’s first repo</a></li>
+  <li><a href="#hello-sta-199" id="toc-hello-sta-199" class="nav-link" data-scroll-target="#hello-sta-199">6. Hello STA 199!</a></li>
   </ul>
 </li>
-  <li><a href="#hello-sta-199" id="toc-hello-sta-199" class="nav-link" data-scroll-target="#hello-sta-199">Hello STA 199!</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/lab/lab-0.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -283,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header><p>This lab will set you up for the computing workflow and give you an opportunity to introduce yourselves to each other and the teaching team.</p>
 <section id="hello-world" class="level1"><h1><code>Hello, World!</code></h1>
-<p>You may have heard/seen this phrase, <code>Hello, World!</code>, elsewhere before. It’s usually the first thing you learn in programming – to learn to write a computer program to print this sentence to screen. Things will be different in this course, as it’s not a programming, but a data science course. So, starting tomorrow in class, you’ll learn to use a computer program (called R) to work with data.</p>
+<p>You may have heard/seen this phrase, <code>Hello, World!</code>, elsewhere before. It’s usually the first thing you learn in programming – to learn to write a computer program to print this sentence to screen. Things will be different in this course, as it’s not a programming, but a data science course. So, starting today in class, you’ll learn to use a computer program (called R) to work with data.</p>
 <p>But today, we need to set you up for success! Let’s first briefly review the components of the computational toolkit for the course:</p>
 <ol type="1">
 <li><p>R: The programming language you’ll learn in this course.</p></li>
@@ -335,12 +337,13 @@ Note
 <p>Git is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).</p>
 </div>
 </div>
-<section id="access-r-and-rstudio" class="level2"><h2 class="anchored" data-anchor-id="access-r-and-rstudio">Access R and RStudio</h2>
+<p>Version control software like Git and GitHub is indispensable in modern data science practice, and learning how to use it is one of the things that distinguishes STA 199 from a similar course like STA 101.</p>
+<section id="access-r-and-rstudio" class="level2"><h2 class="anchored" data-anchor-id="access-r-and-rstudio">1. Access R and RStudio</h2>
 <ul>
 <li>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and login with your Duke NetID and Password.</li>
-<li>Click <code>STA198-199</code> to log into the Docker container. You should now see the RStudio environment.</li>
+<li>Click <code>STA199</code> to log into the Docker container. You should now see the RStudio environment.</li>
 </ul>
-<p>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and under <em>Reservations available</em> click on <em>reserve STA 198-199</em> to reserve a container for yourself.</p>
+<p>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and under <em>Reservations available</em> click on <em>reserve STA199</em> to reserve a container for yourself.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -356,9 +359,9 @@ Note
 </div>
 <p>Once you’ve reserved the container you’ll see that it will show up under <em>My reservations</em>.</p>
 <p>To launch your container click on it under My reservations, then click <em>Login</em>, and then <em>Start</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-</section><section id="create-a-github-account" class="level2"><h2 class="anchored" data-anchor-id="create-a-github-account">Create a GitHub account</h2>
+</section><section id="create-a-github-account" class="level2"><h2 class="anchored" data-anchor-id="create-a-github-account">2. Create a GitHub account</h2>
 <p>You should have already done this yesterday during class! Go ahead and check to make sure you remember what email address you used with your GitHub account.</p>
-</section><section id="set-up-your-ssh-key" class="level2"><h2 class="anchored" data-anchor-id="set-up-your-ssh-key">Set up your SSH key</h2>
+</section><section id="set-up-your-ssh-key" class="level2"><h2 class="anchored" data-anchor-id="set-up-your-ssh-key">3. Set up your SSH key</h2>
 <p>You will authenticate GitHub using SSH (Secure Shell Protocol – it doesn’t really matter what this means for the purpose of this course). Below is an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -380,7 +383,7 @@ Note
 <li>You may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., <code>sta199</code>).</li>
 </ul>
 <p>You can find more detailed instructions <a href="https://github.com/DukeStatSci/github_auth_guide">here</a> if you’re interested.</p>
-</section><section id="configure-git-to-introduce-yourself" class="level2"><h2 class="anchored" data-anchor-id="configure-git-to-introduce-yourself">Configure Git to introduce yourself</h2>
+</section><section id="configure-git-to-introduce-yourself" class="level2"><h2 class="anchored" data-anchor-id="configure-git-to-introduce-yourself">4. Configure Git to introduce yourself</h2>
 <p>There is one more thing we need to do before getting started on the assignment. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.</p>
 <p>To do so, you will use the <code>use_git_config()</code> function from the <code>usethis</code> package.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -406,8 +409,8 @@ Note
 <p>For example, mine would be</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_git_config.html">use_git_config</a></span><span class="op">(</span></span>
-<span>  user.name <span class="op">=</span> <span class="st">"Marie Neubrander"</span>, </span>
-<span>  user.email <span class="op">=</span> <span class="st">"mneubrander@crimson.ua.edu"</span></span>
+<span>  user.name <span class="op">=</span> <span class="st">"Katie Solarz"</span>, </span>
+<span>  user.email <span class="op">=</span> <span class="st">"katiesolarz@gmail.com"</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -420,7 +423,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>I used my Alabama email because that is the one I used to create my GitHub account. You should also be using the email address you used to create your GitHub account, even if it isn’t your Duke email.</p>
+<p>I used my personal email because that is the one I used to create my GitHub account. <strong>You must use the exact same email address that you used to create your GitHub account, even if it isn’t your Duke email.</strong></p>
 </div>
 </div>
 <p>You are now ready interact with GitHub via RStudio!</p>
@@ -435,7 +438,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Well, a more accurate statement would be that we will be reaching out to you to get things right during the first few weeks of classes. But, it’s best if you can get it right today!</p>
+<p>Well, a more accurate statement would be that we will be reaching out to you to get things right during the first few days of class. But, it’s best if you can get it right today!</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -468,22 +471,42 @@ Need a recap? Watch this video!
 </div>
 </div>
 </div>
-</section><section id="clone-first-repo" class="level2"><h2 class="anchored" data-anchor-id="clone-first-repo">Clone first repo</h2>
+</section><section id="babys-first-repo" class="level2"><h2 class="anchored" data-anchor-id="babys-first-repo">5. Baby’s first repo</h2>
 <p>A GitHub repository (repo) is a collection of files hosted on GitHub. Repos are the main way we will distribute files to you during the semester. When you copy the files in a repo to your local computing environment (your container, in this case), that’s called “cloning”. So, let’s clone our first repo:</p>
 <ul>
-<li><p>Go to the course organization at <a href="https://github.com/sta199-su26">github.com/sta199-su26</a> organization on GitHub. Click on the repo with the prefix <strong>ae</strong>. This is your application exercise (AE) repo. It contains the starter documents you need to complete your AE for today’s lecture (and will contain the starter files for future AEs).</p></li>
-<li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
+<li><p>Go to the repository for <strong>lab-0</strong> in the course GitHub organization: <a href="https://github.com/sta199-su26/lab-0" class="uri">https://github.com/sta199-su26/lab-0</a>.</p></li>
+<li>
+<p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/lab-0/lab-0-repo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Clone with SSH button in GitHub repository page." width="600"></p>
+</figure>
+</div>
+</li>
 <li><p>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</p></li>
 <li><p>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</p></li>
-<li><p>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
+<li>
+<p>Click <em>Create Project</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/lab-0/lab-0-clone.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Cloning a GitHub repository in RStudio." width="600"></p>
+</figure>
+</div>
+</li>
+<li>
+<p>Since this is the first time you are connecting to GitHub from this RStudio instance, you will be asked to confirm the authenticity of the host. This will happen in a pop-up window like the one below. Type <strong>yes</strong> in the box and hit <em>Enter</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/lab-0/authenticity-of-host.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Authenticity of host pop-up window asking to confirm the authenticity of the host. Type 'yes' in the box and hit Enter." width="400"></p>
+</figure>
+</div>
+</li>
+<li><p>RStudio will now clone the repo and create a new RStudio project for you. This might take a few seconds. Once done, the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
 </ul>
 <p>You will need to get used to these steps, because you’ll probably clone at least one new repo every week.</p>
-</section></section><section id="hello-sta-199" class="level1"><h1>Hello STA 199!</h1>
+</section><section id="hello-sta-199" class="level2"><h2 class="anchored" data-anchor-id="hello-sta-199">6. Hello STA 199!</h2>
 <p>Fill out the course “Getting to know you” <a href="https://canvas.duke.edu/courses/56756/quizzes/35368">survey</a> on Canvas.</p>
-<p>We will use the information collected in this survey for a variety of goals, including getting to know you as a person and your course goals and concerns.</p>
+<p>We will use the information collected in this survey for a variety of goals, including getting to know you as a person and your course goals and concerns, as well as pair you with project teammates with similar interests, be it personal or professional.</p>
 
 
-</section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 <ol>
 <li id="fn1"><p>Yes, it’s too many steps. I don’t know why! But it works, and you’ll get used to it. Trust me, it beats downloading and installing everything you need on your computers!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
