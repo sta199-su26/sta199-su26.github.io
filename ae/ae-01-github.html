@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.39">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>Application Exercises – STA 199</title>
+<title>AE 01: Meet the penguins – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,30 +17,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./lab.html" rel="prev">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-389cffa847aaba16d6661ddf3cdd3c98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-389cffa847aaba16d6661ddf3cdd3c98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -69,104 +95,35 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-ae-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-ae-listing'] = new List('listing-ae-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="style/sta199.scss">
-<meta property="og:title" content="Application Exercises – STA 199">
+}</script><link rel="stylesheet" href="../style/sta199.scss">
+<meta property="og:title" content="AE 01: Meet the penguins – STA 199">
 <meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Application Exercises – STA 199">
+<meta name="twitter:title" content="AE 01: Meet the penguins – STA 199">
 <meta name="twitter:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
-<meta name="twitter:image" content="https://sta199-su26.github.io/img/twitter-card-ks.pdf">
+<meta name="twitter:image" content="https://sta199-su26.github.io/ae/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ae.html">Application Exercises</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 01: Meet the penguins</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main">
     <a href="https://github.com/sta199-su26" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
@@ -179,7 +136,7 @@ window.Quarto = {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course Information</span></a>
@@ -187,45 +144,45 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-team.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Couse Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-links.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-links.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Useful Links</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -234,63 +191,78 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cheatsheets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-principles-oh.html" class="sidebar-item-text sidebar-link">
+  <a href="../coding-principles-oh.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Coding principles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Troubleshooting</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
  <span class="menu-text">Project</span></span>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab.html" class="sidebar-item-text sidebar-link">
+  <a href="../lab.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Labs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ae.html" class="sidebar-item-text sidebar-link active">
+  <a href="../ae.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Application Exercises</span></a>
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#quarto-code-chunks" id="toc-quarto-code-chunks" class="nav-link active" data-scroll-target="#quarto-code-chunks">Quarto Code Chunks</a></li>
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link" data-scroll-target="#load-packages">Load Packages</a></li>
+  <li><a href="#examine-data" id="toc-examine-data" class="nav-link" data-scroll-target="#examine-data">Examine Data</a></li>
+  <li>
+<a href="#some-r-fundamentals" id="toc-some-r-fundamentals" class="nav-link" data-scroll-target="#some-r-fundamentals">Some R Fundamentals</a>
+  <ul class="collapse">
+<li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
+  <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">Inline code</a></li>
+  <li><a href="#oh-no-errors" id="toc-oh-no-errors" class="nav-link" data-scroll-target="#oh-no-errors">Oh no!! Errors!!</a></li>
+  <li><a href="#accessing-columns" id="toc-accessing-columns" class="nav-link" data-scroll-target="#accessing-columns">Accessing Columns</a></li>
+  <li><a href="#adding-arguments" id="toc-adding-arguments" class="nav-link" data-scroll-target="#adding-arguments">Adding arguments</a></li>
+  </ul>
+</li>
+  <li><a href="#how-is-the-document-looking" id="toc-how-is-the-document-looking" class="nav-link" data-scroll-target="#how-is-the-document-looking">How is the document looking?</a></li>
+  <li><a href="#lets-push-our-changes-to-github" id="toc-lets-push-our-changes-to-github" class="nav-link" data-scroll-target="#lets-push-our-changes-to-github">Let’s push our changes to GitHub!</a></li>
+  <li><a href="#miscellaneous" id="toc-miscellaneous" class="nav-link" data-scroll-target="#miscellaneous">Miscellaneous:</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae/ae-01-github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Application Exercises</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">AE 01: Meet the penguins</h1>
 </div>
 
 
@@ -304,54 +276,150 @@ window.Quarto = {
   
 
 
-</header>
-
-
-<p>All application exercises (AEs) are due by the end of lecture (or, precisely, by 10:45 am) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, <strong>commit and then push</strong> your change to your AE repo. AEs are graded for engagement, not accuracy.</p>
-<p>More AEs to be added as the semester progresses.</p>
-<p><br></p>
-<div id="listing-ae-listing" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Title
-</th>
-<th>
-Subtitle
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1778709860827" data-listing-reading-time-sort="2" data-listing-word-count-sort="398" data-listing-title-sort="AE 00: Make a GitHub" data-listing-filename-sort="ae-00-github.qmd">
-<td>
-<a href="./ae/ae-00-github.html" class="title listing-title">AE 00: Make a GitHub</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-file-modified-sort="1778709860827" data-listing-reading-time-sort="4" data-listing-word-count-sort="751" data-listing-title-sort="AE 01: Meet the penguins" data-listing-filename-sort="ae-01-github.qmd">
-<td>
-<a href="./ae/ae-01-github.html" class="title listing-title">AE 01: Meet the penguins</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
+</header><p>The goal of this application exercise is to get exposure to using the computational toolkit. Let’s get started!</p>
+<section id="quarto-code-chunks" class="level2"><h2 class="anchored" data-anchor-id="quarto-code-chunks">Quarto Code Chunks</h2>
+<ul>
+<li>Code goes in <strong>“code chunks”</strong>: these are grey boxes and can be recognized by ‘{r}’</li>
+<li>To <strong>run a code chunk</strong>, click the little green right facing arrow; to run a code chunk and <em>all preceding</em> code chunks, use the downward pointing arrow.</li>
+<li>To <strong>run a subset of a code chunk</strong>, highlight the lines of code you wish to run and press <strong>⌘</strong> <strong>⏎</strong> (cmd + return) or PC equivalent (Cntrl + Enter)</li>
+<li>Text goes outside of the code chunks!</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># this is a code chunk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What’s going on?
 </div>
 </div>
-<p><br></p>
+<div class="callout-body-container callout-body">
+<p>What’s that text in the code chunk?</p>
+<ul>
+<li><p>#| label: code-chunk : this blue text at the top is a label: basically, it names the code chunk for easy reference. Code chunk names cannot be repeated!</p></li>
+<li><p>\# this is a code chunk : this green text is a comment. A comment goes in a code chunk, but functions like normal text</p></li>
+</ul>
+</div>
+</div>
+</section><section id="load-packages" class="level2"><h2 class="anchored" data-anchor-id="load-packages">Load Packages</h2>
+<p>For this application exercise, we’ll use the <strong>tidyverse</strong> and <strong>palmerpenguins</strong> packages.</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="examine-data" class="level2"><h2 class="anchored" data-anchor-id="examine-data">Examine Data</h2>
+<p>The dataset we will use is called <code>penguins</code>; it was loaded with the <strong>palmerpenguins</strong> package. You’ll notice it’s <em>not</em> visible yet in the environment pane - let’s put it there.</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins</span> <span class="op">&lt;-</span> <span class="fu">palmerpenguins</span><span class="fu">::</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/reference/penguins.html">penguins</a></span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Two useful functions to examine it are <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> and <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code></p>
+<p>Let’s <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> at it.</p>
+<ul>
+<li>
+<strong>Your turn:</strong> Replace <code>#add code here</code> with the code for “glimpse” ing at the data <code>penguins</code> data frame – <code>glimpse(penguins)</code>. Render the document and view the output.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, let’s <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> it.</p>
+<ul>
+<li>
+<strong>Your turn:</strong> In your console, type code for “view” ing at the data <code>penguins</code> data frame – <code>View(penguins)</code>.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why in the console?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that the use of <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> opens a new tab in your data viewer pane, rather than printing information to your screen. As a best practice, avoid using the <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> function in a Quarto code chunk, as this will cause downstream rendering errors. Reserve use of <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> for the console.</p>
+</div>
+</div>
+<p>::: What information can you see from these two operations? How are they different?</p>
+</section><section id="some-r-fundamentals" class="level2"><h2 class="anchored" data-anchor-id="some-r-fundamentals">Some R Fundamentals</h2>
+<p>You just used some functions above - <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>, <code><a href="https://rdrr.io/r/utils/data.html">data()</a></code>, <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code>, and <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code>. Let’s practice with some more!</p>
+<section id="getting-help" class="level3"><h3 class="anchored" data-anchor-id="getting-help">Getting Help</h3>
+<p>There is a function that tells you how many rows are in the data frame: <code><a href="https://rdrr.io/r/base/nrow.html">nrow()</a></code>. Perhaps this is your first time using it and you aren’t sure how it works: you can use <code>?</code> to see the documentation.</p>
+<ul>
+<li>
+<strong>Your turn:</strong> Write code to get help with the <code>nrow</code> function</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>(This works for any function, not just <code>nrow</code>!)</em></p>
+<ul>
+<li>
+<strong>Your Turn:</strong> Now, let’s compute the number of rows in the data frame:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="inline-code" class="level3"><h3 class="anchored" data-anchor-id="inline-code">Inline code</h3>
+<p>Inline code in Quarto allows you to execute code within your narrative, e.g.&nbsp;to automatically use the most up-to-date computations in your narrative. The syntax for inline code is similar to code blocks, except you use a single tick (`) rather than triple ticks (```). Let’s practice using inline code by filling in the blanks:</p>
+<p>The penguins dataset has ___ rows and ___ columns.</p>
+<p>Click <strong>render</strong> to see whether your inline code has worked!</p>
+</section><section id="oh-no-errors" class="level3"><h3 class="anchored" data-anchor-id="oh-no-errors">Oh no!! Errors!!</h3>
+<p>Unfortunately, functions might not run correctly every time you run them.</p>
+<p>What happens if you run <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> on the data frame? Does this even make sense???</p>
+<ul>
+<li>
+<strong>Your turn:</strong> try running this function on the <code>penguins</code> data frame and see what happens!</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="accessing-columns" class="level3"><h3 class="anchored" data-anchor-id="accessing-columns">Accessing Columns</h3>
+<p>As we saw with the <code>mean</code> example, not every function works on a full data frame. Sometimes, you need to access just one column. To do that, we can use <code>$</code> as <code>dataframe$column_name</code>.</p>
+<ul>
+<li>
+<strong>Your turn:</strong> In the code chunk below, compute the mean of the <code>bill_depth_mm</code> variable in the <code>penguins</code> data frame.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Hmmm… something weird is still happening! What does this NA value mean? Do you have any guesses? How can we fix this?</p>
+</section><section id="adding-arguments" class="level3"><h3 class="anchored" data-anchor-id="adding-arguments">Adding arguments</h3>
+<p>To fix our issue with mean, we need to tell the function something else (that is, use more than one <em>argument)</em>.</p>
+<ul>
+<li>
+<strong>Your turn:</strong> First, get help with the <code>?</code> . Then, try to compute the <code>mean</code> value, ignoring the NA values</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section><section id="how-is-the-document-looking" class="level2"><h2 class="anchored" data-anchor-id="how-is-the-document-looking">How is the document looking?</h2>
+<p>Click <strong>render</strong> to see!</p>
+</section><section id="lets-push-our-changes-to-github" class="level2"><h2 class="anchored" data-anchor-id="lets-push-our-changes-to-github">Let’s push our changes to GitHub!</h2>
+<p>Remember:</p>
+<ul>
+<li><p>Stage changes with the checkboxes</p></li>
+<li><p>Commit with an informative message</p></li>
+<li><p>Push!</p></li>
+</ul></section><section id="miscellaneous" class="level2"><h2 class="anchored" data-anchor-id="miscellaneous">Miscellaneous:</h2>
+<p>If there is extra time in class, we’ll add some other tips here!</p>
 
 
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -768,31 +836,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./lab.html" class="pagination-link" aria-label="Labs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Labs</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2026, Mine Çetinkaya-Rundel, Marie Neubrander, John Zito, Katie Solarz</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae/ae-01-github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #f21118;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>

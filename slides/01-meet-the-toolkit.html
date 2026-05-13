@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.6.39">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Katie Solarz">
-<meta name="dcterms.date" content="2026-01-12">
+<meta name="dcterms.date" content="2026-05-14">
 <title>Meet the toolkit – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
@@ -125,8 +125,9 @@ window.Quarto = {
 </script><link rel="stylesheet" href="../style/sta199.scss">
 <meta property="og:title" content="Meet the toolkit – STA 199">
 <meta property="og:description" content="Lecture 1">
-<meta property="og:image" content="https://sta199-su26.github.io/slides/images/00/data-science-cycle-cropped.png">
+<meta property="og:image" content="https://sta199-su26.github.io/slides/img/01/1.jpg">
 <meta property="og:site_name" content="STA 199">
+<meta property="og:image:alt" content="R">
 <meta name="twitter:title" content="Meet the toolkit – STA 199">
 <meta name="twitter:description" content="Lecture 1">
 <meta name="twitter:image" content="https://sta199-su26.github.io/slides/img/twitter-card-ks.pdf">
@@ -270,23 +271,11 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li>
-<a href="#preliminaries" id="toc-preliminaries" class="nav-link active" data-scroll-target="#preliminaries">Preliminaries</a>
-  <ul class="collapse">
-<li><a href="#reminders" id="toc-reminders" class="nav-link" data-scroll-target="#reminders">Reminders</a></li>
-  <li><a href="#updates" id="toc-updates" class="nav-link" data-scroll-target="#updates">Updates</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions?</a></li>
-  <li><a href="#how-do-we-pronounce-this" id="toc-how-do-we-pronounce-this" class="nav-link" data-scroll-target="#how-do-we-pronounce-this">How do we pronounce this?</a></li>
-  <li><a href="#last-time" id="toc-last-time" class="nav-link" data-scroll-target="#last-time">Last time</a></li>
-  <li><a href="#the-data-science-life-cycle" id="toc-the-data-science-life-cycle" class="nav-link" data-scroll-target="#the-data-science-life-cycle">The data science life cycle</a></li>
-  <li><a href="#managing-expectations" id="toc-managing-expectations" class="nav-link" data-scroll-target="#managing-expectations">Managing expectations</a></li>
-  <li><a href="#today-and-for-forever" id="toc-today-and-for-forever" class="nav-link" data-scroll-target="#today-and-for-forever">Today and for forever</a></li>
-  </ul>
-</li>
+<li><a href="#reminders" id="toc-reminders" class="nav-link active" data-scroll-target="#reminders">Reminders</a></li>
   <li>
-<a href="#course-toolkit" id="toc-course-toolkit" class="nav-link" data-scroll-target="#course-toolkit">Course toolkit</a>
+<a href="#today-course-toolkit" id="toc-today-course-toolkit" class="nav-link" data-scroll-target="#today-course-toolkit">Today: Course Toolkit</a>
   <ul class="collapse">
-<li><a href="#course-toolkit-1" id="toc-course-toolkit-1" class="nav-link" data-scroll-target="#course-toolkit-1">Course toolkit</a></li>
+<li><a href="#course-toolkit" id="toc-course-toolkit" class="nav-link" data-scroll-target="#course-toolkit">Course Toolkit</a></li>
   </ul>
 </li>
   <li>
@@ -309,7 +298,6 @@ window.Quarto = {
   <ul class="collapse">
 <li><a href="#r-and-rstudio-1" id="toc-r-and-rstudio-1" class="nav-link" data-scroll-target="#r-and-rstudio-1">R and RStudio</a></li>
   <li><a href="#r-vs.-rstudio" id="toc-r-vs.-rstudio" class="nav-link" data-scroll-target="#r-vs.-rstudio">R vs.&nbsp;RStudio</a></li>
-  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R packages</a></li>
   <li><a href="#tour-r-rstudio" id="toc-tour-r-rstudio" class="nav-link" data-scroll-target="#tour-r-rstudio">Tour: R + RStudio</a></li>
   <li><a href="#tour-recap-r-rstudio" id="toc-tour-recap-r-rstudio" class="nav-link" data-scroll-target="#tour-recap-r-rstudio">Tour recap: R + RStudio</a></li>
   </ul>
@@ -317,7 +305,8 @@ window.Quarto = {
   <li>
 <a href="#a-short-list-for-now-of-r-essentials" id="toc-a-short-list-for-now-of-r-essentials" class="nav-link" data-scroll-target="#a-short-list-for-now-of-r-essentials">A short list<br>(for now)<br>of R essentials</a>
   <ul class="collapse">
-<li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+<li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R packages</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#data-frames-and-variables" id="toc-data-frames-and-variables" class="nav-link" data-scroll-target="#data-frames-and-variables">Data frames and variables</a></li>
   <li><a href="#penguins-data-frame" id="toc-penguins-data-frame" class="nav-link" data-scroll-target="#penguins-data-frame"><code>penguins</code> data frame</a></li>
   <li><a href="#bill_length_mm" id="toc-bill_length_mm" class="nav-link" data-scroll-target="#bill_length_mm"><code>bill_length_mm</code></a></li>
@@ -325,7 +314,6 @@ window.Quarto = {
   <li><a href="#flipper_length_mm" id="toc-flipper_length_mm" class="nav-link" data-scroll-target="#flipper_length_mm"><code>flipper_length_mm</code></a></li>
   <li><a href="#functionargument" id="toc-functionargument" class="nav-link" data-scroll-target="#functionargument"><code>function(argument)</code></a></li>
   <li><a href="#mean" id="toc-mean" class="nav-link" data-scroll-target="#mean"><code>mean()</code></a></li>
-  <li><a href="#mean-1" id="toc-mean-1" class="nav-link" data-scroll-target="#mean-1"><code>mean()</code></a></li>
   <li><a href="#help" id="toc-help" class="nav-link" data-scroll-target="#help">Help</a></li>
   <li><a href="#summary-of-r-essentials" id="toc-summary-of-r-essentials" class="nav-link" data-scroll-target="#summary-of-r-essentials">Summary of R essentials</a></li>
   <li><a href="#summary-of-r-essentials-continued" id="toc-summary-of-r-essentials-continued" class="nav-link" data-scroll-target="#summary-of-r-essentials-continued">Summary of R essentials (continued)</a></li>
@@ -390,7 +378,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 12, 2026</p>
+      <p class="date">May 14, 2026</p>
     </div>
   </div>
   
@@ -399,77 +387,20 @@ window.Quarto = {
   
 
 
-</header><section id="preliminaries" class="level1"><h1>Preliminaries</h1>
-<section id="reminders" class="level2"><h2 class="anchored" data-anchor-id="reminders">Reminders</h2>
+</header><section id="reminders" class="level2"><h2 class="anchored" data-anchor-id="reminders">Reminders</h2>
 <div class="incremental">
 <ul class="incremental">
-<li>Complete Lab 0 ASAP;</li>
-<li>Don’t forget the <code>Getting to know you</code> survey;</li>
-<li>Accept your GitHub invitation pronto;</li>
-<li>Submit your SDAO letters and make testing center appointments now;</li>
-<li>Start lurking on Ed. Questions are being answered!</li>
+<li>If you have not yet finished the <code>Getting to know you</code> survey, please do so ASAP</li>
+<li>Any lingering syllabus questions?</li>
 </ul>
 </div>
-</section><section id="updates" class="level2"><h2 class="anchored" data-anchor-id="updates">Updates</h2>
-<div class="incremental">
-<ul class="incremental">
-<li>There will be <del>eight</del> seven homeworks. HW 1 appears next week;</li>
-<li>Office hours are posted and begin today.</li>
-</ul>
-</div>
-</section><section id="questions" class="level2"><h2 class="anchored" data-anchor-id="questions">Questions?</h2>
-</section><section id="how-do-we-pronounce-this" class="level2 large"><h2 class="large anchored" data-anchor-id="how-do-we-pronounce-this">How do we pronounce this?</h2>
-<p><br></p>
-<p><br></p>
-<p>STA 199</p>
-</section><section id="last-time" class="level2 medium"><h2 class="medium anchored" data-anchor-id="last-time">Last time</h2>
-<p>Spring break splits the class into two parts:</p>
-<div class="incremental">
-<ul class="incremental">
-<li>Data science:
-<ul class="incremental">
-<li>convert data into knowledge;</li>
-<li>take a spreadsheet and compress it into pictures and a concise set of numerical summaries;</li>
-<li>try to teach a reader about the world or convince them of a claim;</li>
-</ul>
-</li>
-<li>Statistical thinking:
-<ul class="incremental">
-<li>quantify our uncertainty about the results produced above;</li>
-<li>use this to make tricky decisions.</li>
-</ul>
-</li>
-</ul>
-</div>
-</section><section id="the-data-science-life-cycle" class="level2 medium"><h2 class="medium anchored" data-anchor-id="the-data-science-life-cycle">The data science life cycle</h2>
-<p>You will learn how to use a computer to actually <em>do</em> the following:</p>
-<p>. . .</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/00/data-science-cycle-cropped.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p>. . .</p>
-<p>We emphasize <em>technique</em> (how do you make literally anything happen), but we also want you to develop <em>good taste</em> so that you can do these things well and convincingly.</p>
-</section><section id="managing-expectations" class="level2"><h2 class="anchored" data-anchor-id="managing-expectations">Managing expectations</h2>
-<ul>
-<li>Today is the first time all 300+ of us are attempting to access our containers simultaneously;</li>
-<li>I have yet to see this work the first time;</li>
-<li>After we get over the hump: smooth sailing;</li>
-<li>Until then: blood bath;</li>
-<li>Raise your hand if you need anything;</li>
-<li>If today is not your day, just sit back and watch.</li>
-</ul></section><section id="today-and-for-forever" class="level2 large"><h2 class="large anchored" data-anchor-id="today-and-for-forever">Today and for forever</h2>
-<p>Please ask questions!</p>
-<ul>
-<li>Ask JZ: general interest questions about the presentation;</li>
-<li>Ask TA: technical questions about your particular computer.</li>
-</ul></section></section><section id="course-toolkit" class="level1"><h1>Course toolkit</h1>
-<section id="course-toolkit-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="course-toolkit-1">Course toolkit</h2>
+</section><section id="today-course-toolkit" class="level1"><h1>Today: Course Toolkit</h1>
+<section id="course-toolkit" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="course-toolkit">Course Toolkit</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Course operation</strong></p>
 <ul>
-<li>Materials: <a href="https://sta199-s26.github.io/">sta199-s26.github.io</a>
+<li>Materials: <a href="https://sta199-su26.github.io/">sta199-su26.github.io</a>
 </li>
 <li>Submission: Gradescope (in Canvas)</li>
 <li>Content Q&amp;A: Ed Discussion (in Canvas)</li>
@@ -531,7 +462,7 @@ window.Quarto = {
 </ul>
 <p>. . .</p>
 <p>Our tools will help you achieve the first, which is necessary (but not sufficient!) for the second.</p>
-</section><section id="reproducibility-checklist" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="reproducibility-checklist">Reproducibility checklist</h2>
+</section><section id="reproducibility-checklist" class="level2 scrollable smaller"><h2 class="scrollable smaller anchored" data-anchor-id="reproducibility-checklist">Reproducibility checklist</h2>
 <div class="question">
 <p>What does it mean for a data analysis to be “reproducible”?</p>
 </div>
@@ -547,11 +478,17 @@ window.Quarto = {
 <ul>
 <li>Can the code be used for other data?</li>
 <li>Can you extend the code to do other things?</li>
+</ul>
+<p><strong>Some best practices from the American Statistical Association</strong></p>
+<ul>
+<li>End-to-end scripting of research</li>
+<li>Use of version control and documentation</li>
+<li>Publication of code along with data</li>
 </ul></section><section id="toolkit-for-reproducibility" class="level2"><h2 class="anchored" data-anchor-id="toolkit-for-reproducibility">Toolkit for reproducibility</h2>
 <div class="incremental">
 <ul class="incremental">
 <li>Scriptability – Coding instead of point-and-click <span class="math inline">\(\rightarrow\)</span> R</li>
-<li>Literate programming – code, written text, results all in one place instead of error-prone copy-paste <span class="math inline">\(\rightarrow\)</span> Quarto</li>
+<li>Literate programming – Code, written text, results all in one place instead of error-prone copy-paste <span class="math inline">\(\rightarrow\)</span> Quarto</li>
 <li>Version control – Track changes with brief messages that describe those changes <span class="math inline">\(\rightarrow\)</span> Git / GitHub</li>
 </ul>
 </div>
@@ -565,21 +502,21 @@ window.Quarto = {
 </div>
 </section><section id="an-analogy-to-english" class="level2"><h2 class="anchored" data-anchor-id="an-analogy-to-english">An Analogy to English</h2>
 <p>. . .</p>
-<p><img src="images/01/1.jpg" class="img-fluid" alt="R"></p>
+<p><img src="img/01/1.jpg" class="img-fluid" alt="R"></p>
 </section><section id="an-analogy-to-english-1" class="level2"><h2 class="anchored" data-anchor-id="an-analogy-to-english-1">An Analogy to English</h2>
-<p><img src="images/01/2.jpg" class="img-fluid" alt="Rstudio"></p>
+<p><img src="img/01/2.jpg" class="img-fluid" alt="Rstudio"></p>
 </section><section id="an-analogy-to-english-2" class="level2"><h2 class="anchored" data-anchor-id="an-analogy-to-english-2">An Analogy to English</h2>
-<p><img src="images/01/3.jpg" class="img-fluid" alt="Quarto"></p>
+<p><img src="img/01/3.jpg" class="img-fluid" alt="Quarto"></p>
 </section><section id="an-analogy-to-english-3" class="level2"><h2 class="anchored" data-anchor-id="an-analogy-to-english-3">An Analogy to English</h2>
-<p><img src="images/01/4.jpg" class="img-fluid" alt="git"></p>
+<p><img src="img/01/4.jpg" class="img-fluid" alt="git"></p>
 </section><section id="an-analogy-to-english-4" class="level2"><h2 class="anchored" data-anchor-id="an-analogy-to-english-4">An Analogy to English</h2>
-<p><img src="images/01/5.jpg" class="img-fluid" alt="github"></p>
+<p><img src="img/01/5.jpg" class="img-fluid" alt="github"></p>
 </section></section><section id="r-and-rstudio" class="level1 page-columns page-full"><h1>R and RStudio</h1>
 <section id="r-and-rstudio-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="r-and-rstudio-1">R and RStudio</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/01/r-logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R logo"></p>
+<figure class="figure"><p><img src="img/01/r-logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="R logo"></p>
 </figure>
 </div>
 <ul>
@@ -591,7 +528,7 @@ window.Quarto = {
 </ul>
 </div>
 <div class="column fragment" style="width:50%;">
-<p><img src="images/01/rstudio-logo.png" class="img-fluid" alt="RStudio logo"></p>
+<p><img src="img/01/rstudio-logo.png" class="img-fluid" alt="RStudio logo"></p>
 <ul>
 <li>RStudio is a convenient interface for R called an <strong>IDE</strong> (integrated development environment), e.g.&nbsp;<em>“I write R code in the RStudio IDE”</em>
 </li>
@@ -601,24 +538,12 @@ window.Quarto = {
 </div>
 </section><section id="r-vs.-rstudio" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="r-vs.-rstudio">R vs.&nbsp;RStudio</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://moderndive.com/1-getting-started.html"><img src="images/01/r_vs_rstudio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="On the left: a car engine. On the right: a car dashboard. The engine is labelled R. The dashboard is labelled RStudio." width="1001"></a></p>
+<figure class="figure"><p><a href="https://moderndive.com/1-getting-started.html"><img src="img/01/r_vs_rstudio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="On the left: a car engine. On the right: a car dashboard. The engine is labelled R. The dashboard is labelled RStudio." width="1001"></a></p>
 </figure>
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Source: <a href="https://moderndive.com/1-getting-started.html">Modern Dive</a>.</p>
-</div></div></section><section id="r-packages" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="r-packages">R packages</h2>
-<div class="incremental">
-<ul class="incremental">
-<li><p><strong>Packages</strong>: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data<sup>1</sup></p></li>
-<li><p>As of 27 August 2025, there are 22,578 R packages available on <strong>CRAN</strong> (the Comprehensive R Archive Network)<sup>2</sup></p></li>
-<li><p>We’re going to work with a small (but important) subset of these!</p></li>
-</ul>
-</div>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p><sup>1</sup> Wickham and Bryan, <a href="https://r-pkgs.org/">R Packages</a>.</p>
-<p><sup>2</sup><a href="https://cran.r-project.org/web/packages/">CRAN contributed packages</a>.</p>
 </div></div></section><section id="tour-r-rstudio" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="tour-r-rstudio">Tour: R + RStudio</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -634,9 +559,21 @@ window.Quarto = {
 </div>
 </div>
 </section><section id="tour-recap-r-rstudio" class="level2"><h2 class="anchored" data-anchor-id="tour-recap-r-rstudio">Tour recap: R + RStudio</h2>
-<p><img src="images/01/tour-r-rstudio.png" class="img-fluid"></p>
-</section></section><section id="a-short-list-for-now-of-r-essentials" class="level1"><h1>A short list<br>(for now)<br>of R essentials</h1>
-<section id="packages" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="packages">Packages</h2>
+<p><img src="img/01/tour-r-rstudio.png" class="img-fluid"></p>
+</section></section><section id="a-short-list-for-now-of-r-essentials" class="level1 page-columns page-full"><h1>A short list<br>(for now)<br>of R essentials</h1>
+<section id="r-packages" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="r-packages">R packages</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p><strong>Packages</strong>: Fundamental units of reproducible R code, including reusable R functions, the documentation that describes how to use them, and sample data<sup>1</sup></p></li>
+<li><p>As of 13 May 2026, there are 23,731 R packages available on <strong>CRAN</strong> (the Comprehensive R Archive Network)<sup>2</sup></p></li>
+<li><p>We’re going to work with a small (but important) subset of these!</p></li>
+</ul>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><sup>1</sup> Wickham and Bryan, <a href="https://r-pkgs.org/">R Packages</a>.</p>
+<p><sup>2</sup><a href="https://cran.r-project.org/web/packages/">CRAN contributed packages</a>.</p>
+</div></div></section><section id="packages" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="packages">Packages</h2>
 <ul>
 <li>Installed with <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code>, once per system:</li>
 </ul>
@@ -793,40 +730,18 @@ Note
 <pre><code>[1] 5</code></pre>
 </div>
 </div>
-</section><section id="mean-1" class="level2"><h2 class="anchored" data-anchor-id="mean-1"><code>mean()</code></h2>
-<div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">$</span><span class="va">flipper_length_mm</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] NA</code></pre>
-</div>
-</div>
-<p>. . .</p>
-<p>Wut?</p>
-<p>. . .</p>
-<div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">$</span><span class="va">flipper_length_mm</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 181 186 195  NA 193 190</code></pre>
-</div>
-</div>
-<p>. . .</p>
-<p>There’s a <em>missing value</em> (<code>NA</code> stands for “not available”).</p>
-<p>. . .</p>
-<div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">$</span><span class="va">flipper_length_mm</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 200.9152</code></pre>
-</div>
-</div>
 </section><section id="help" class="level2"><h2 class="anchored" data-anchor-id="help">Help</h2>
 <p>Object documentation can be accessed with <code>?</code></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="op">?</span><span class="va">mean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="op">?</span><span class="va">mean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
-<p><video src="images/01/mean-docs.mov" class="img-fluid" alt="Documentation for mean function in R." controls=""><a href="images/01/mean-docs.mov">Video</a></video></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/01/mean_help.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="help file for `mean()`"></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="summary-of-r-essentials" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="summary-of-r-essentials">Summary of R essentials</h2>
@@ -834,7 +749,7 @@ Note
 <li>Functions are (most often) verbs, followed by what they will be applied to in parentheses:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">do_this</span><span class="op">(</span><span class="va">to_this</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">do_this</span><span class="op">(</span><span class="va">to_this</span><span class="op">)</span></span>
 <span><span class="fu">do_that</span><span class="op">(</span><span class="va">to_this</span>, <span class="va">to_that</span>, <span class="va">with_those</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
@@ -842,7 +757,7 @@ Note
 <li>Packages are installed with the <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> function and loaded with the <code>library</code> function, once per session:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"package_name"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"package_name"</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">package_name</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Your containers come “fully loaded,” so you may not have to install any new packages.</p>
@@ -854,19 +769,19 @@ Note
 <li>Each column of a data frame is a <strong>variable</strong>
 </li>
 </ul>
-<p><img src="images/01/df.png" class="img-fluid"></p>
+<p><img src="img/01/df.png" class="img-fluid"></p>
 </section><section id="summary-of-r-essentials-continued-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="summary-of-r-essentials-continued-1">Summary of R essentials (continued)</h2>
 <ul>
 <li>Use the question mark <code>?</code> to get help with objects (like data frames and functions):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="op">?</span><span class="va">function_name</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="op">?</span><span class="va">function_name</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Use the dollar sign <code>$</code> to access columns</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dataframe</span><span class="op">$</span><span class="va">column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dataframe</span><span class="op">$</span><span class="va">column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -886,7 +801,7 @@ Note
 <li>Use the arrow <code>&lt;-</code> or equals sign <code>=</code> to save objects</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="va">some_thing</span></span>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="va">some_thing</span></span>
 <span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">some_other_thing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -938,7 +853,7 @@ Note
 </div>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><a href="https://tidyverse.org"><img src="images/01/tidyverse.png" class="img-fluid" alt="Hex logos for dplyr, ggplot2, forcats, tibble, readr, stringr, tidyr, and purrr"></a></p>
+<p><a href="https://tidyverse.org"><img src="img/01/tidyverse.png" class="img-fluid" alt="Hex logos for dplyr, ggplot2, forcats, tibble, readr, stringr, tidyr, and purrr"></a></p>
 </div>
 <div class="column fragment" style="width:60%;">
 <p><a href="https://www.tidyverse.org/">tidyverse.org</a></p>
@@ -953,7 +868,7 @@ Note
 <div class="columns">
 <div class="column fragment" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/01/git-logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Git logo" width="150"></p>
+<figure class="figure"><p><img src="img/01/git-logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Git logo" width="150"></p>
 </figure>
 </div>
 <ul>
@@ -963,7 +878,7 @@ Note
 </div>
 <div class="column fragment" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/01/github-logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GitHub logo" width="150"></p>
+<figure class="figure"><p><img src="img/01/github-logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GitHub logo" width="150"></p>
 </figure>
 </div>
 <ul>
@@ -974,12 +889,12 @@ Note
 </div>
 </section><section id="versioning---done-badly" class="level2"><h2 class="anchored" data-anchor-id="versioning---done-badly">Versioning - done badly</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/01/phd_comics_vc.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/01/phd_comics_vc.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="versioning---done-better" class="level2"><h2 class="anchored" data-anchor-id="versioning---done-better">Versioning - done better</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/01/lego-steps.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/01/lego-steps.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="versioning---done-even-better" class="level2"><h2 class="anchored" data-anchor-id="versioning---done-even-better">Versioning - done even better</h2>
@@ -987,27 +902,27 @@ Note
 <p>with human readable messages</p>
 </div>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/01/lego-steps-commit-messages.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/01/lego-steps-commit-messages.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="how-will-we-use-git-and-github" class="level2"><h2 class="anchored" data-anchor-id="how-will-we-use-git-and-github">How will we use Git and GitHub?</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/01/whole-game-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/01/whole-game-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="how-will-we-use-git-and-github-1" class="level2"><h2 class="anchored" data-anchor-id="how-will-we-use-git-and-github-1">How will we use Git and GitHub?</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/01/whole-game-02.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/01/whole-game-02.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="how-will-we-use-git-and-github-2" class="level2"><h2 class="anchored" data-anchor-id="how-will-we-use-git-and-github-2">How will we use Git and GitHub?</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/01/whole-game-03.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/01/whole-game-03.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="how-will-we-use-git-and-github-3" class="level2"><h2 class="anchored" data-anchor-id="how-will-we-use-git-and-github-3">How will we use Git and GitHub?</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/01/whole-game-04.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/01/whole-game-04.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="git-and-github-tips" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="git-and-github-tips">Git and GitHub tips</h2>
@@ -1041,7 +956,7 @@ Note
 </div><div class="column" style="width:50%;">
 <div class="appex">
 <p><strong>Option 2:</strong></p>
-<p>Go to the <a href="https://github.com/sta199-s26">course GitHub organization</a> and clone <code>ae-YOUR-GITHUB-NAME</code> repo to <a href="https://cmgr.oit.duke.edu/containers">your container</a>.</p>
+<p>Go to the <a href="https://github.com/sta199-su26">course GitHub organization</a> and clone <code>ae-your-github-username</code> repo to <a href="https://cmgr.oit.duke.edu/containers">your container</a>.</p>
 </div>
 </div>
 </div>
@@ -1049,11 +964,11 @@ Note
 <details><summary>
 Tour recap: Git + GitHub
 </summary><ul>
-<li><p>Find your application repo, that will always be named using the naming convention <code>assignment_title-YOUR-GITHUB-NAME</code>, e.g., <code>ae-johnczito</code> or <code>lab-1-johnczito</code>.</p></li>
+<li><p>Find your application exercise repo, that will always be named using the naming convention <code>assignment_title-your-github-username</code>, e.g., <code>ae-kgsolarz</code> or <code>lab-1-kgsolarz</code>.</p></li>
 <li><p>Click on the green “Code” button, make sure SSH is selected, copy the repo URL</p></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/01/tour-git-github-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
+<figure class="figure"><p><img src="img/01/tour-git-github-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
 </figure>
 </div>
 <ul>
@@ -1062,10 +977,9 @@ Tour recap: Git + GitHub
 <li><p><strong>If you haven’t done Lab 0</strong>, <strong>for one time only</strong>, type <code>yes</code> in the pop-up dialogue</p></li>
 </ul></details></section><section id="what-could-have-gone-wrong" class="level2"><h2 class="anchored" data-anchor-id="what-could-have-gone-wrong">What could have gone wrong?</h2>
 <ul>
-<li><p>Never received GitHub invite <span class="math inline">\(\rightarrow\)</span> Fill out “Getting to know you survey</p></li>
 <li><p>Never accepted GitHub invite <span class="math inline">\(\rightarrow\)</span> Look for it in your email and accept it</p></li>
 <li><p>Cloning repo fails <span class="math inline">\(\rightarrow\)</span> Review/redo Lab 0 steps for setting up SSH key</p></li>
-<li><p>Still no luck? Stay after class today or come by my office hours tomorrow or post on Ed for help</p></li>
+<li><p>Still no luck? Stay after class today or come by my office hours this weekend or post on Ed for help</p></li>
 </ul></section></section><section id="quarto" class="level1"><h1>Quarto</h1>
 <section id="quarto-1" class="level2"><h2 class="anchored" data-anchor-id="quarto-1">Quarto</h2>
 <div class="incremental">
@@ -1098,7 +1012,7 @@ Note
 </div><div class="column" style="width:50%;">
 <div class="appex">
 <p><strong>Option 2:</strong></p>
-<p>Go to RStudio and open the document <code>ae-01-income-inequality.qmd</code>.</p>
+<p>Go to RStudio and open the document <code>ae-01-meet-the-penguins.qmd</code>.</p>
 </div>
 </div>
 </div>
@@ -1106,7 +1020,7 @@ Note
 <details><summary>
 Tour recap: Quarto
 </summary><div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/02/tour-quarto.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code cell."></p>
+<figure class="figure"><p><img src="img/01/tour-quarto.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code cell."></p>
 </figure>
 </div>
 </details><p><br></p>
