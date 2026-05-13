@@ -180,7 +180,9 @@ The manager is going to make wildly different decisions about campaign strategy 
 -   You will be permitted a "cheat sheet" (both sides of a single 8.5” x 11” piece of paper)
 
 ::: callout-caution
-It's possible the first midterm gets bumped to June 2; this will be communicated by next Wednesday, 5/20. The final exam date is above my pay grade & cannot be changed. If you cannot take the exams on these dates, please have a discussion with me ***today***.
+It's possible the first midterm gets bumped to June 2; this will be communicated by next Wednesday, 5/20.
+The final exam date is above my pay grade & cannot be changed.
+If you cannot take the exams on these dates, please have a discussion with me ***today***.
 :::
 
 ## Project {.smaller}
@@ -195,7 +197,7 @@ It's possible the first midterm gets bumped to June 2; this will be communicated
 
 -   Interim deadlines, peer review on content, peer evaluation for team contribution
 
--   Some lab sessions allocated to project progress 
+-   Some lab sessions allocated to project progress
 
 ::: callout-caution
 Final presentation date cannot be changed; you must complete the project and participate in project presentations to pass this class.
@@ -238,8 +240,7 @@ Final presentation date cannot be changed; you must complete the project and par
 
 -   Sunday 1:00 - 3:00PM
 
-***Kenna:***
-Time & Location TBD
+***Kenna:*** Time & Location TBD
 
 ## Announcements
 
@@ -276,8 +277,7 @@ Make sure I get a letter, and make your appointments in the Testing Center now.
 
 ## Collaboration
 
--   **Labs**: discussing and helping one another is fine;
-    sharing your solutions via text, email, AirDrop, carrier pigeon, or any other method, and / or copying from others is not permitted;
+-   **Labs**: discussing and helping one another is fine; sharing your solutions via text, email, AirDrop, carrier pigeon, or any other method, and / or copying from others is not permitted;
 
 -   **Exams**: collaboration of any kind is completely forbidden
 
@@ -295,7 +295,9 @@ Make sure I get a letter, and make your appointments in the Testing Center now.
 -   {{< fa check >}} **AI tools for learning:** Sure, but be careful/critical!
 
 ::: callout-caution
-**Exception:** Use of AI tools is ***completely forbidden*** during lab session. When you are in lab, you have far better tools / resources available to you - Kenna, our TA, and each other! Blatant disregard for this policy will result in a 0 for the current lab assignment. 
+**Exception:** Use of AI tools is ***completely forbidden*** during lab session.
+When you are in lab, you have far better tools / resources available to you - Kenna, our TA, and each other!
+Blatant disregard for this policy will result in a 0 for the current lab assignment.
 :::
 
 ## Academic integrity {.smaller}
@@ -308,9 +310,145 @@ Make sure I get a letter, and make your appointments in the Testing Center now.
 >
 > -   I will act if the Standard is compromised.
 
+# Questions?
+
+# Data science (& statistics!) in the wild
+
+## "April 20th: Deadly Day for Car Crashes?" {.smaller}
+
+The text below can be found at this [link](https://martinmontilino.com/april-20th-deadly-day-for-car-crashes/), which is a post on the website of a personal injury law firm.
+Suppose we want to investigate the validity of their claim...
+What data might we want?
+What methods are appropriate?
+How will we perform our analysis?
+How can we best communicate our findings?
+
+![](img/00/personal_inj.png){fig-align="center" width="70%"}
+
+## The data science life cycle
+
+![](img/00/data-science-cycle.001.png)
+
+## The data science life cycle
+
+![](img/00/data-science-cycle-import.png)
+
+## Load the data in
+
+On 4/22/2025, [TidyTuesday](https://github.com/rfordatascience/tidytuesday) posted a ***tidy*** version of the raw data analyzed in Harper and Palayew’s (2019) study, “The annual cannabis holiday and fatal traffic crashes," available [here](https://osf.io/qnrg6/).
+
+Let's load this data into R...
+
+```{r}
+#| message: false 
+#| warning: false
+
+library(tidyverse)
+
+daily_accidents_420 <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-04-22/daily_accidents_420.csv')
+```
+
+## The data science life cycle
+
+![](img/00/data-science-cycle.003.png)
+
+## If we hadn't had access to our tidy data...
+
+![](img/00/tidying_data.png){fig-align="center" width="45%"}
+
+## Still, we can tidy some more...
+
+```{r}
+#| message: false 
+#| warning: false
+
+daily_accidents_420 <- daily_accidents_420 |>
+  filter(!is.na(e420)) |>
+  mutate(e420 = if_else(e420 == TRUE, "4/20", "Not 4/20"))
+
+```
+
+## The data science life cycle
+
+![](img/00/data-science-cycle-visualize.png)
+
+## Baby's first graphic {.medium}
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(daily_accidents_420, aes(fatalities_count, fill = e420))
+
+```
+
+## Baby's first graphic {.medium}
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(daily_accidents_420, aes(fatalities_count, fill = e420)) +
+    geom_histogram() 
+
+```
+
+## Baby's first graphic {.medium}
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(daily_accidents_420, aes(fatalities_count, fill = e420)) +
+  geom_histogram() +
+  facet_wrap(~ e420, ncol = 1, scales = "free_y")
+
+```
+
+## Baby's first graphic {.scrollable .medium}
+
+```{r}
+#| warning: false
+#| message: false
+
+ggplot(daily_accidents_420, aes(fatalities_count, fill = e420)) +
+  geom_histogram() +
+  facet_wrap(~ e420, ncol = 1, scales = "free_y") +
+  labs(title = "Histogram of Daily Traffic Accident Fatality Count, 1992-2016",
+       subtitle = "On the 'High Holiday' (4/20), vs. Not",
+       x = "Daily Traffic Accident Fatality Count (1992 - 2016)",
+       y = "Count of Observations") +
+  theme_minimal() +
+  theme(legend.position = "none") 
+  
+```
+
+
+## The data science life cycle
+
+![](img/00/data-science-cycle.008.png)
+
+## In reality...
+
+![](img/00/communicate.png){fig-align="center" width="80%"}
+
+## Course themes {.scrollable .smaller}
+
+-   **Statistical literacy matters**
+    -   Headlines, social media posts, advertisements, and even “expert” sources can misrepresent scientific findings 
+    -   Data-driven claims should be evaluated critically, not accepted at face value 
+    -   Understanding how conclusions are reached is an important skill!
+    
+-   **Reproducibility is essential**
+    -   Credible analyses should clearly describe: where the data came from, how the data were processed, and how the analysis was performed
+    -   Reproducible work allows others to verify, critique, and build upon scientific findings
+    
+-   **Data science is an iterative process**
+    - Curiosity keeps the wheel turning!
+
 # GitHub
 
-![](img/00/github-logo.png){fig-align="center" width=75%}
+![](img/00/github-logo.png){fig-align="center" width="75%"}
 
 ## What is GitHub?
 
@@ -321,7 +459,7 @@ More on this tomorrow - basically, it is the Google Drive of coding!
 ## AE 00: Make your GitHub account
 
 <br><br> Find AE 00 on the course website!
- 
+
 ## This week's tasks
 
 -   Complete Lab 0
