@@ -13,12 +13,12 @@ Her personal website can be found at [Katie Solarz](https://kgsolarz.github.io/)
 
 You can contact Katie at ([katie.solarz\@duke.edu](mailto:katie.solarz@duke.edu)) with any questions regarding this course.
 
-*Office Hours: TBD*
+*Office Hours: Tuesdays 11:00am - 1:00pm, Sundays 1:00pm - 3:00pm in Old Chem 203B*
 
 ## Teaching Assistant
 
-![](img/kenna.jpg){style="float:right; width:150px; height:150px; border-radius: 50%; object-fit: cover;" fig-alt="Headshot of Kenna Roberts"}
+![](img/kenna_new.png){style="float:right; width:150px; height:150px; border-radius: 50%; object-fit: cover;" fig-alt="Headshot of Kenna Roberts"}
 
 Kenna Roberts, a rising 2nd-year student in the Master's in Statistical Science program, is the teaching assistant for this course.
 
-*Office hours: TBD*
+*Office Hours: TBD*
