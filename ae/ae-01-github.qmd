@@ -11,6 +11,7 @@ Let's get started!
 
 -   Code goes in **"code chunks"**: these are grey boxes and can be recognized by '{r}'
 -   To **run a code chunk**, click the little green right facing arrow; to run a code chunk and *all preceding* code chunks, use the downward pointing arrow.
+-   To **run a subset of a code chunk**, highlight the lines of code you wish to run and press **⌘** **⏎** (cmd + return) or PC equivalent (Cntrl + Enter)
 -   Text goes outside of the code chunks!
 
 ```{r}
@@ -47,7 +48,8 @@ The dataset we will use is called `penguins`; it was loaded with the **palmerpen
 You'll notice it's *not* visible yet in the environment pane - let's put it there.
 
 ```{r}
-data("penguins")
+#| label: load-data
+penguins <- palmerpenguins::penguins
 ```
 
 Two useful functions to examine it are `glimpse()` and `View()`
@@ -63,19 +65,22 @@ Let's `glimpse()` at it.
 
 Now, let's `View()` it.
 
--   **Your turn:** Replace `#add code here` with the code for "view" ing at the data `penguins` data frame -- `View(penguins)`.
+-   **Your turn:** In your console, type code for "view" ing at the data `penguins` data frame -- `View(penguins)`.
 
-```{r}
-#| label: view-penguins
-# add code here
-```
+::: callout-note
+## Why in the console?
 
-What information can you see from these two operations?
+Note that the use of `View()` opens a new tab in your data viewer pane, rather than printing information to your screen.
+As a best practice, avoid using the `View()` function in a Quarto code chunk, as this will cause downstream rendering errors.
+Reserve use of `View()` for the console.
+:::
+
+::: What information can you see from these two operations?
 How are they different?
 
 ## Some R Fundamentals
 
-You just used some functions above - `library()`, `data()`, `glimpse()`, and `view()`.
+You just used some functions above - `library()`, `data()`, `glimpse()`, and `View()`.
 Let's practice with some more!
 
 ### Getting Help
@@ -101,9 +106,19 @@ Perhaps this is your first time using it and you aren't sure how it works: you c
 #add code here
 ```
 
+### Inline code
+
+Inline code in Quarto allows you to execute code within your narrative, e.g. to automatically use the most up-to-date computations in your narrative.
+The syntax for inline code is similar to code blocks, except you use a single tick (\`) rather than triple ticks (\`\`\`).
+Let's practice using inline code by filling in the blanks:
+
+The penguins dataset has \_\_\_ rows and \_\_\_ columns.
+
+Click **render** to see whether your inline code has worked!
+
 ### Oh no!! Errors!!
 
-Unfortunately, not every time you run a function it will work correctly.
+Unfortunately, functions might not run correctly every time you run them. 
 
 What happens if you run `mean()` on the data frame?
 Does this even make sense???
@@ -130,12 +145,13 @@ To do that, we can use `$` as `dataframe$column_name`.
 #add code here
 ```
 
-Hmmm... something weird is still happening!
-What does this NA value mean??
-Do you have any guesses???
+Hmmm...
+something weird is still happening!
+What does this NA value mean?
+Do you have any guesses?
 How can we fix this?
 
-### \>1 Argument
+### Adding arguments
 
 To fix our issue with mean, we need to tell the function something else (that is, use more than one *argument)*.
 
@@ -157,7 +173,7 @@ Remember:
 
 -   Stage changes with the checkboxes
 
--   Commit with a message
+-   Commit with an informative message
 
 -   Push!
 
