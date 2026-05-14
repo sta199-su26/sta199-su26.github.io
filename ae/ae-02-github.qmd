@@ -28,7 +28,7 @@ In the code chunk below, plot a histogram of the body mass of the penguins. Let'
 ::: callout-note
 All plots created in this course **must** be properly labeled (i.e., human readable labels)!
 This means both x- and y-axes (when appropriate) and an informative but concise title!
-Double check your rendered document to ensure your plot labels are fully visible.
+Double check your rendered document to ensure your plot labels are fully visible. 
 :::
 
 ```{r}
