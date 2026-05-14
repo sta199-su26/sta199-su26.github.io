@@ -1,0 +1,51 @@
+---
+title: "AE 02: Penguin peekaboo"
+author: Your Name
+---
+
+For this application exercise, we'll use the **tidyverse** and **palmerpenguins** packages.
+
+```{r}
+#| label: load-packages
+library(tidyverse)
+library(palmerpenguins)
+```
+
+The dataset we will visualize is called `penguins`.
+Let's `glimpse()` at it.
+
+-   **Your turn:** Replace `# add code here` with the code for "glimpse"ing at the data `penguins` data frame – `glimpse(penguins)`. Render the document and view the output.
+
+```{r}
+#| label: glimpse-penguins
+# add code here
+```
+
+-   **Demo:** First, replace the blank below with the number of rows in the `penguins` data frame based on the output of the chunk below. Then, replace it with "inline code" and render again.
+
+```{r}
+#| label: nrow-penguins
+nrow(penguins)
+```
+
+There are \_\_\_ penguins in the `penguins` data frame.
+
+# Task 1
+
+In the code chunk below, plot a histogram of the body mass of the penguins:
+
+```{r}
+#| label: mass-hist
+
+# add code here
+```
+
+# Task 2
+
+In the code chunk below, plot a scatterplot with body mass on the horizontal and flipper length on the vertical:
+
+```{r}
+#| label: mass-flipper-scatter
+
+# add code here
+```
