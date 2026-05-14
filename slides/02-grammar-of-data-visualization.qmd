@@ -1,11 +1,11 @@
 ---
-title: "Grammar of data visualization"
+title: "Grammar of Data Visualization"
 subtitle: "Lecture 2"
-date: "2026-01-14"
+date: "2026-05-15"
 format: 
   revealjs: 
     output-file: 02-grammar-of-data-visualization-slides.html
-    footer: "[🔗 sta199-s26.github.io](https://sta199-s26.github.io/)"
+    footer: "[🔗 sta199-su26.github.io](https://sta199-su26.github.io/)"
     theme: slides.scss
     transition: fade
     slide-number: true
@@ -15,28 +15,9 @@ format:
     code-link: true
 ---
 
-# Warm-up
+## Outline {.scrollable .medium}
 
-## Lab tomorrow {.medium}
-
-What to expect:
-
-
-::: incremental
-- Your first graded assignment;
-- We are taking attendance;
-- You will work in randomly-assigned teams;
-- Each student submits their own work;
-- Assignment due *at the end of your lab*;
-- You will have a new repo to clone;
-- TA will review setup and workflow (same as we did in lecture this week);
-- We know it's early days. Do not panic about your progress.
-:::
-
-
-## Outline {.medium}
-
--   Last time:
+-   Yesterday:
 
     -   We introduced you to the course toolkit;
 
@@ -46,7 +27,7 @@ What to expect:
 
 -   Today:
 
-    -   We will finish the application exercise, and get an introduction to Git, GitHub, and Quarto;
+    -   We will finish yesterday's AE, and get an introduction to Git, GitHub, and Quarto;
 
     -   We will introduce data visualization;
 
@@ -57,38 +38,38 @@ What to expect:
 ## Tour: Quarto (and more Git + GitHub) {.smaller .scrollable}
 
 ::: appex
-**Option 2:**
-
-Go to RStudio and open the document `ae-01-income-inequality.qmd`.
+Go to RStudio and open the document `ae-01-meet-the-penguins.qmd`.
 :::
 
 <br>
 
 <details>
+
 <summary>Tour recap: Quarto</summary>
 
-![](images/02/tour-quarto.png){fig-alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code cell." fig-align="center"}
+![](img/02/tour-quarto.png){fig-alt="RStudio IDE with a Quarto document, source code on the left and output on the right. Annotated to show the YAML, a link, a header, and a code cell." fig-align="center"}
 
 </details>
 
 <br>
 
 <details>
+
 <summary>Tour recap: Git + GitHub</summary>
 
 Once we made changes to our Quarto document, we
 
-- went to the Git pane in RStudio
+-   went to the Git pane in RStudio
 
-- staged our changes by clicking the checkboxes next to the relevant files
+-   staged our changes by clicking the checkboxes next to the relevant files
 
-- committed our changes with an informative commit message
+-   committed our changes with an informative commit message
 
-- pulled from GitHub to make sure we had the latest version of our repo
+-   pulled from GitHub to make sure we had the latest version of our repo
 
-- pushed our changes to our application exercise repos
+-   pushed our changes to our application exercise repos
 
-- confirmed on GitHub that we could see our changes pushed from RStudio
+-   confirmed on GitHub that we could see our changes pushed from RStudio
 
 </details>
 
@@ -100,35 +81,33 @@ Once we made changes to our Quarto document, we
 
 # Data visualization
 
-## What does this picture communicate?  {.smaller}
-
+## What does this picture communicate? {.smaller}
 
 Remember this visualization from the code along video -- what was it about?
 
+![](img/02/un-data-viz.png)
 
-![](images/02/un-data-viz.png)
-
-## Data science lessons
+## Data science lessons {.scrollable}
 
 ::: question
 Are you asking a question that your data could actually answer?
 :::
 
-- A "Yes" vote is not necessarily an *approving* vote. It depends how the resolution was worded;
-- If your question is "where do countries stand on these issues, both relative to one another and over time," the picture doesn't actually have an answer;
-- It's only useful for seeing if countries are in agreement with one another or not;
-- Precisely what they are agreeing *about* is ambiguous.
+-   A "Yes" vote is not necessarily an *approving* vote. It depends how the resolution was worded;
+-   If your question is "where do countries stand on these issues, both relative to one another and over time," the picture doesn't actually have an answer;
+-   It's only useful for seeing if countries are in agreement with one another or not;
+-   Precisely what they are agreeing *about* is ambiguous.
 
-## Data science lessons (continued)
+## Data science lessons (continued) {.scrollable}
 
 ::: question
-This class is about technique bolstered by *good taste*.
+This class is about technique bolstered by *good taste* and *aesthetics*.
 :::
 
-- The plot is fairly technically sophisticated (lots of moving parts), and it looks rather attractive;
-- We certainly want you to learn how to create something like that;
-- But after you're done admiring it, your good taste should kick in;
-- Is this picture *actually* communicating effectively.
+-   The plot is fairly technically sophisticated (lots of moving parts), and it looks rather attractive;
+-   We certainly want you to learn how to create something *aesthetic* like that;
+-   But after you're done admiring it, your *good taste* should kick in;
+-   Is this picture *actually* communicating what I want it to effectively?
 
 ## Data science lessons (continued)
 
@@ -136,8 +115,8 @@ This class is about technique bolstered by *good taste*.
 If a reader has to squint at your picture for more than 30 seconds (and that's being generous) in order to understand it, you need to start over.
 :::
 
-- If you make the reader work too hard, they will take the path of least resistance: skip the picture altogether or default to the most facile interpretation;
-- On the UN pic, many reckless readers might assume Yes = Approve and misread.
+-   If you make the reader work too hard, they will take the path of least resistance: skip the picture altogether or default to the most facile interpretation;
+-   On the UN pic, many reckless readers might assume Yes = Approve and misread.
 
 ## Let' see... {.center}
 
@@ -153,6 +132,14 @@ how the sausage is made!
 library(unvotes)
 library(tidyverse)
 library(ggthemes)
+```
+
+## Take a peek at the data {.scrollable .smaller}
+```{r}
+#| label: glimpse-data
+glimpse(un_votes)
+glimpse(un_roll_calls)
+glimpse(un_roll_call_issues)
 ```
 
 ## Prepare the data {.smaller}
@@ -211,9 +198,9 @@ ggplot(
   theme_minimal()
 ```
 
-## The bottom line, at the top
+## The bottom line, at the top {.smaller}
 
-Each line of code adds an element to the plot. 
+Each line of code adds an element to the plot.
 
 ```{r}
 #| label: full-monty
@@ -273,7 +260,7 @@ ggplot(data = us_uk_tr_votes, mapping = aes(x = year, y = percent_yes))
 
 -   In the *grammar of graphics*, variables from the data frame are **map**ped to aesthetics
 
-![](images/02/aesthetic-mapping.gif){fig-align="center"}
+![](img/02/aesthetic-mapping.gif){fig-align="center"}
 
 ## Argument names {.smaller}
 
@@ -305,6 +292,10 @@ with a `geom`
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes)) +
   geom_point()
 ```
+
+::: callout-note
+Functionally, the `geom` layer(s) tell R what type of plot you want to create. In particular, `geom_point()` corresponds to a *scatterplot*. 
+:::
 
 ## Step 5. Map variables to aesthetics {.smaller}
 
@@ -359,7 +350,7 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point() +
   geom_smooth() +
-  facet_wrap(~issue)
+  facet_wrap(~ issue)
 ```
 
 ## Step 8. Use a different color scale
@@ -373,7 +364,7 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point() +
   geom_smooth() +
-  facet_wrap(~issue) +
+  facet_wrap(~ issue) +
   scale_color_colorblind()
 ```
 
@@ -388,7 +379,7 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point() +
   geom_smooth() +
-  facet_wrap(~issue) +
+  facet_wrap(~ issue) +
   scale_color_colorblind() +
   theme_minimal()
 ```
@@ -404,7 +395,7 @@ ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point() +
   geom_smooth() +
-  facet_wrap(~issue) +
+  facet_wrap(~ issue) +
   scale_color_colorblind() +
   theme_minimal() +
   labs(x = "Year", y = "% yes", color = "Country")
@@ -423,7 +414,7 @@ with `alpha`
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point(alpha = 0.5) +
   geom_smooth() +
-  facet_wrap(~issue) +
+  facet_wrap(~ issue) +
   scale_color_colorblind() +
   theme_minimal() +
   labs(x = "Year", y = "% yes", color = "Country")
@@ -442,17 +433,16 @@ with `se = FALSE`
 ggplot(us_uk_tr_votes, aes(x = year, y = percent_yes, color = country)) +
   geom_point(alpha = 0.5) +
   geom_smooth(se = FALSE) +
-  facet_wrap(~issue) +
+  facet_wrap(~ issue) +
   scale_color_colorblind() +
   theme_minimal() +
   labs(x = "Year", y = "% yes", color = "Country")
 ```
 
-## Data viz with ggplot is like building a cake
+## Data viz with ggplot is like building a cake {.scrollable}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
-
 ```{r}
 #| label: final
 #| eval: false
@@ -462,7 +452,7 @@ ggplot(
   ) +
   geom_point(alpha = 0.5) +
   geom_smooth(se = FALSE) +
-  facet_wrap(~issue) +
+  facet_wrap(~ issue) +
   scale_color_colorblind() +
   labs(
     x = "Year", 
@@ -471,23 +461,21 @@ ggplot(
   ) +
   theme_minimal()
 ```
-
 :::
 
 ::: {.column width="50%"}
-
-![](images/02/cake.png)
+![](img/02/cake.jpg){width="65%"}
 :::
-
-:::
+:::::
 
 . . .
 
-The commands are the layers of sponge, and the plus signs are the icing. Don't forget the icing!
+The commands are the layers of sponge, and the plus signs are the icing.
+Don't forget the icing!
 
 ## Grammar of graphics {.smaller}
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 We built a plot layer-by-layer
 
@@ -496,17 +484,16 @@ We built a plot layer-by-layer
 :::
 
 ::: {.column width="20%"}
-![](images/02/gg-book.png)
+![](img/02/gg-book.png)
 :::
 
 ::: {.column width="30%"}
-![](images/02/gg-layers.png)
+![](img/02/gg-layers.png)
 :::
-:::
-
+::::::
 
 ## Now you try
 
-- On GitHub, your AE repo should now have a new file in it called `ae-02-penguin-peekaboo.qmd`;
-- In other words, the *remote* version of your repo in the cloud (GitHub) has updates that your local repo (container) does not yet have;
-- So *pull* them!
+-   On GitHub, your AE repo should now have a new file in it called `ae-02-penguin-peekaboo.qmd`;
+-   In other words, the *remote* version of your repo in the cloud (GitHub) has updates that your local repo (container) does not yet have;
+-   So *pull* them!
