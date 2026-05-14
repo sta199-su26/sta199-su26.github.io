@@ -11,28 +11,25 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-The dataset we will visualize is called `penguins`.
-Let's `glimpse()` at it.
+We will again be working with the `penguins` dataset for this application exercise.
+Let's `glimpse()` at the dataset to remind ourselves of what data we have at our fingertips.
 
--   **Your turn:** Replace `# add code here` with the code for "glimpse"ing at the data `penguins` data frame – `glimpse(penguins)`. Render the document and view the output.
+-   **Your turn:** Replace `# add code here` with the code for "glimpse"ing at the data `penguins` data frame – `glimpse(penguins)`.
 
 ```{r}
 #| label: glimpse-penguins
 # add code here
 ```
 
--   **Demo:** First, replace the blank below with the number of rows in the `penguins` data frame based on the output of the chunk below. Then, replace it with "inline code" and render again.
-
-```{r}
-#| label: nrow-penguins
-nrow(penguins)
-```
-
-There are \_\_\_ penguins in the `penguins` data frame.
-
 # Task 1
 
-In the code chunk below, plot a histogram of the body mass of the penguins:
+In the code chunk below, plot a histogram of the body mass of the penguins. Let's also *facet* by island:
+
+::: callout-note
+All plots created in this course **must** be properly labeled (i.e., human readable labels)!
+This means both x- and y-axes (when appropriate) and an informative but concise title!
+Double check your rendered document to ensure your plot labels are fully visible.
+:::
 
 ```{r}
 #| label: mass-hist
@@ -42,7 +39,7 @@ In the code chunk below, plot a histogram of the body mass of the penguins:
 
 # Task 2
 
-In the code chunk below, plot a scatterplot with body mass on the horizontal and flipper length on the vertical:
+In the code chunk below, plot a scatterplot with body mass on the horizontal and flipper length on the vertical, colored by species:
 
 ```{r}
 #| label: mass-flipper-scatter
