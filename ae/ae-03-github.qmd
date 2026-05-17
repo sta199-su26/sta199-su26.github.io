@@ -240,7 +240,7 @@ flights |>
 # add code here
 ```
 
--   **Your turn:** What is the median departure delay for each airports around NYC (`origin`)? Which airport has the shortest median departure delay?
+-   **Your turn:** What is the median departure delay for each airport around NYC (`origin`)?
 
 ```{r}
 #| label: median-dep-dely-origin
