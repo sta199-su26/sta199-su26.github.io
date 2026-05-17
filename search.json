@@ -251,7 +251,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Catch Me If Yo…  2002  667941536    67349319  9.92 FAIL   notalk    \n2 Man of Steel     2013  979045036   225000000  4.35 PASS   ok        \n3 Super 8          2011  400916075    51784539  7.74 PASS   ok        \n4 You Again        2010   62535358    21364637  2.93 PASS   ok        \n5 Reservoir Dogs   1992    9404304     1992417  4.72 FAIL   nowomen"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Player       1992   83985017    13282778 6.32  PASS   ok        \n2 Dinner for Sch…  2010  170727845    73707997 2.32  FAIL   notalk    \n3 As Good as It …  1997  671328148    72561906 9.25  PASS   ok        \n4 Transformers: …  2011 1528870809   201959703 7.57  PASS   ok        \n5 Synecdoche, Ne…  2008    8081290    21645126 0.373 FAIL   dubious"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
@@ -510,7 +510,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Catch Me If Yo…  2002  667941536    67349319  9.92 FAIL   notalk    \n2 Man of Steel     2013  979045036   225000000  4.35 PASS   ok        \n3 Super 8          2011  400916075    51784539  7.74 PASS   ok        \n4 You Again        2010   62535358    21364637  2.93 PASS   ok        \n5 Reservoir Dogs   1992    9404304     1992417  4.72 FAIL   nowomen"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Player       1992   83985017    13282778 6.32  PASS   ok        \n2 Dinner for Sch…  2010  170727845    73707997 2.32  FAIL   notalk    \n3 As Good as It …  1997  671328148    72561906 9.25  PASS   ok        \n4 Transformers: …  2011 1528870809   201959703 7.57  PASS   ok        \n5 Synecdoche, Ne…  2008    8081290    21645126 0.373 FAIL   dubious"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
@@ -1664,7 +1664,7 @@
     "href": "ae.html",
     "title": "Application Exercises",
     "section": "",
-    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 10:45 am) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\nMore AEs to be added as the semester progresses.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nAE 00: Make a GitHub\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Penguin peekaboo\n\n\n \n\n\n\n\nAE 04: NYC flights + data wrangling\n\n\n \n\n\n\n\n\nNo matching items",
+    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 10:45 am) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\nMore AEs to be added as the semester progresses.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nAE 00: Make a GitHub\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Penguin peekaboo\n\n\n \n\n\n\n\nAE 03: NYC flights + data wrangling\n\n\n \n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Application Exercises"
     ]
@@ -3014,87 +3014,87 @@
     "text": "Miscellaneous:\nIf there is extra time in class, we’ll add some other tips here!"
   },
   {
-    "objectID": "ae/ae-04-github.html",
-    "href": "ae/ae-04-github.html",
-    "title": "AE 04: NYC flights + data wrangling",
+    "objectID": "ae/ae-03-github.html",
+    "href": "ae/ae-03-github.html",
+    "title": "AE 03: NYC flights + data wrangling",
     "section": "",
     "text": "library(tidyverse)\nlibrary(nycflights13)"
   },
   {
-    "objectID": "ae/ae-04-github.html#nyc-flights",
-    "href": "ae/ae-04-github.html#nyc-flights",
-    "title": "AE 04: NYC flights + data wrangling",
+    "objectID": "ae/ae-03-github.html#nyc-flights",
+    "href": "ae/ae-03-github.html#nyc-flights",
+    "title": "AE 03: NYC flights + data wrangling",
     "section": "NYC Flights",
     "text": "NYC Flights\n\nTo demonstrate data wrangling we will use flights, a tibble in the nycflights13 R package.\nThe data set includes characteristics of all flights departing from New York City (JFK, LGA, EWR) in 2013."
   },
   {
-    "objectID": "ae/ae-04-github.html#exercise-1",
-    "href": "ae/ae-04-github.html#exercise-1",
-    "title": "AE 04: NYC flights + data wrangling",
+    "objectID": "ae/ae-03-github.html#exercise-1",
+    "href": "ae/ae-03-github.html#exercise-1",
+    "title": "AE 03: NYC flights + data wrangling",
     "section": "Exercise 1",
     "text": "Exercise 1\nYour turn: Fill in the blanks:\nThe flights data frame has ___ rows. Each row represents a ___."
   },
   {
-    "objectID": "ae/ae-04-github.html#exercise-2",
-    "href": "ae/ae-04-github.html#exercise-2",
-    "title": "AE 04: NYC flights + data wrangling",
+    "objectID": "ae/ae-03-github.html#exercise-2",
+    "href": "ae/ae-03-github.html#exercise-2",
+    "title": "AE 03: NYC flights + data wrangling",
     "section": "Exercise 2",
     "text": "Exercise 2\nYour turn: What are the names of the variables in flights.\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-04-github.html#exercise-3---select",
-    "href": "ae/ae-04-github.html#exercise-3---select",
-    "title": "AE 04: NYC flights + data wrangling",
+    "objectID": "ae/ae-03-github.html#exercise-3---select",
+    "href": "ae/ae-03-github.html#exercise-3---select",
+    "title": "AE 03: NYC flights + data wrangling",
     "section": "Exercise 3 - select()\n",
-    "text": "Exercise 3 - select()\n\n\nDemo: Make a data frame that only contains the variables dep_delay and arr_delay.\n\n\n# add code here\n\n\nDemo: Make a data frame that keeps every variable except dep_delay.\n\n\n# add code here\n\n\nDemo: Make a data frame that includes all variables between year through dep_delay (inclusive). These are all variables that provide information about the departure of each flight.\n\n\n# add code here\n\n\nDemo: Use the select helper contains() to make a data frame that includes the variables associated with the arrival, i.e., contains the string \"arr\\_\" in the name.\n\n\n# add code here"
+    "text": "Exercise 3 - select()\n\n\nDemo: Print a data frame that only contains the variables dep_delay and arr_delay.\n\n\n# add code here\n\n\nDemo: Print a data frame that keeps every variable except dep_delay.\n\n\n# add code here\n\n\nDemo: Print a data frame that includes all variables between year through dep_delay (inclusive). These are all variables that provide information about the departure of each flight.\n\n\n# add code here\n\n\nDemo: Use the select helper contains() to print a data frame that includes the variables associated with the arrival, i.e., contains the string \"arr\\_\" in the name.\n\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-04-github.html#exercise-4---slice",
-    "href": "ae/ae-04-github.html#exercise-4---slice",
-    "title": "AE 04: NYC flights + data wrangling",
+    "objectID": "ae/ae-03-github.html#exercise-4---slice",
+    "href": "ae/ae-03-github.html#exercise-4---slice",
+    "title": "AE 03: NYC flights + data wrangling",
     "section": "Exercise 4 - slice()\n",
     "text": "Exercise 4 - slice()\n\n\nDemo: Display the first five rows of the flights data frame.\n\n\n# add code here\n\n\nDemo: Display the last two rows of the flights data frame.\n\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-04-github.html#exercise-5---arrange",
-    "href": "ae/ae-04-github.html#exercise-5---arrange",
-    "title": "AE 04: NYC flights + data wrangling",
+    "objectID": "ae/ae-03-github.html#exercise-5---arrange",
+    "href": "ae/ae-03-github.html#exercise-5---arrange",
+    "title": "AE 03: NYC flights + data wrangling",
     "section": "Exercise 5 - arrange()\n",
-    "text": "Exercise 5 - arrange()\n\n\nDemo: Let’s arrange the data by departure delay, so the flights with the shortest departure delays will be at the top of the data frame.\n\n\n# add code here\n\n\nQuestion: What does it mean for the dep_delay to have a negative value?\n\nAdd your response here.\n\nDemo: Arrange the data by descending departure delay, so the flights with the longest departure delays will be at the top.\n\n\n# add code here\n\n\n\nYour turn: Create a data frame that only includes the plane tail number (tailnum), carrier (carrier), and departure delay for the flight with the longest departure delay. What is the plane tail number (tailnum) for this flight?\n\n\n# add code here"
+    "text": "Exercise 5 - arrange()\n\n\nDemo: Let’s arrange the data by departure delay, so the flights with the shortest departure delays will be at the top of the data frame.\n\n\n# add code here\n\n\nQuestion: What does it mean for the dep_delay to have a negative value?\n\nAdd your response here.\n\nDemo: Arrange the data by descending departure delay, so the flights with the longest departure delays will be at the top.\n\n\n# add code here\n\n\n\nYour turn: Print a data frame that only includes the plane tail number (tailnum), carrier (carrier), and departure delay for the flight with the longest departure delay. What is the plane tail number (tailnum) for this flight?\n\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-04-github.html#exercise-6---filter",
-    "href": "ae/ae-04-github.html#exercise-6---filter",
-    "title": "AE 04: NYC flights + data wrangling",
+    "objectID": "ae/ae-03-github.html#exercise-6---filter",
+    "href": "ae/ae-03-github.html#exercise-6---filter",
+    "title": "AE 03: NYC flights + data wrangling",
     "section": "Exercise 6 - filter()\n",
-    "text": "Exercise 6 - filter()\n\n\nDemo: Filter for all rows where the destination airport is RDU.\n\n\n# add code here\n\n\nDemo: Filter for all rows where the destination airport is RDU and the arrival delay is less than 0.\n\n\n# add code here\n\n\n\nYour turn: Describe what the code is doing in words.\n\nAdd response here.\n\nflights |&gt;\n  filter(\n    dest %in% c(\"RDU\", \"GSO\"),\n    arr_delay &lt; 0 | dep_delay &lt; 0\n  )\n\n# A tibble: 6,203 × 19\n    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time\n   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;\n 1  2013     1     1      800            810       -10      949            955\n 2  2013     1     1      832            840        -8     1006           1030\n 3  2013     1     1      851            851         0     1032           1036\n 4  2013     1     1      917            920        -3     1052           1108\n 5  2013     1     1     1024           1030        -6     1204           1215\n 6  2013     1     1     1127           1129        -2     1303           1309\n 7  2013     1     1     1157           1205        -8     1342           1345\n 8  2013     1     1     1317           1325        -8     1454           1505\n 9  2013     1     1     1449           1450        -1     1651           1640\n10  2013     1     1     1505           1510        -5     1654           1655\n# ℹ 6,193 more rows\n# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,\n#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,\n#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;\n\n\nHint: Logical operators in R:\n\n\n\n\n\n\noperator\ndefinition\n\n\n\n&lt;\nis less than?\n\n\n&lt;=\nis less than or equal to?\n\n\n&gt;\nis greater than?\n\n\n&gt;=\nis greater than or equal to?\n\n\n==\nis exactly equal to?\n\n\n!=\nis not equal to?\n\n\nx & y\nis x AND y?\n\n\nx | y\nis x OR y?\n\n\nis.na(x)\nis x NA?\n\n\n!is.na(x)\nis x not NA?\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
+    "text": "Exercise 6 - filter()\n\n\nDemo: Filter for all rows where the destination airport is RDU.\n\n\n# add code here\n\n\nDemo: Filter for all rows where the destination airport is RDU and the arrival delay is less than 0.\n\n\n# add code here\n\n\n\nYour turn: Describe what the code is doing in words.\n\nAdd response here.\n\nflights |&gt;\n  filter(\n    (dest %in% c(\"RDU\", \"GSO\")) &\n    (arr_delay &lt; 0 | dep_delay &lt; 0)\n  )\n\n# A tibble: 6,203 × 19\n    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time\n   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;\n 1  2013     1     1      800            810       -10      949            955\n 2  2013     1     1      832            840        -8     1006           1030\n 3  2013     1     1      851            851         0     1032           1036\n 4  2013     1     1      917            920        -3     1052           1108\n 5  2013     1     1     1024           1030        -6     1204           1215\n 6  2013     1     1     1127           1129        -2     1303           1309\n 7  2013     1     1     1157           1205        -8     1342           1345\n 8  2013     1     1     1317           1325        -8     1454           1505\n 9  2013     1     1     1449           1450        -1     1651           1640\n10  2013     1     1     1505           1510        -5     1654           1655\n# ℹ 6,193 more rows\n# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,\n#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,\n#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;\n\n\nHint: Logical operators in R:\n\n\n\n\n\n\noperator\ndefinition\n\n\n\n&lt;\nis less than?\n\n\n&lt;=\nis less than or equal to?\n\n\n&gt;\nis greater than?\n\n\n&gt;=\nis greater than or equal to?\n\n\n==\nis exactly equal to?\n\n\n!=\nis not equal to?\n\n\nx & y\nis x AND y?\n\n\nx | y\nis x OR y?\n\n\nis.na(x)\nis x NA?\n\n\n!is.na(x)\nis x not NA?\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
   },
   {
-    "objectID": "ae/ae-04-github.html#exercise-7---count",
-    "href": "ae/ae-04-github.html#exercise-7---count",
-    "title": "AE 04: NYC flights + data wrangling",
+    "objectID": "ae/ae-03-github.html#exercise-7---count",
+    "href": "ae/ae-03-github.html#exercise-7---count",
+    "title": "AE 03: NYC flights + data wrangling",
     "section": "Exercise 7 - count()\n",
     "text": "Exercise 7 - count()\n\n\nDemo: Create a frequency table of the destination locations for flights from New York.\n\n\n# add code here\n\n\nDemo: In which month was there the fewest number of flights? How many flights were there in that month?\n\n\n# add code here\n\n\n\nYour turn: On which date (month + day) was there the largest number of flights? How many flights were there on that day?\n\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-04-github.html#exercise-8---mutate",
-    "href": "ae/ae-04-github.html#exercise-8---mutate",
-    "title": "AE 04: NYC flights + data wrangling",
+    "objectID": "ae/ae-03-github.html#exercise-8---mutate",
+    "href": "ae/ae-03-github.html#exercise-8---mutate",
+    "title": "AE 03: NYC flights + data wrangling",
     "section": "Exercise 8 - mutate()\n",
     "text": "Exercise 8 - mutate()\n\n\nDemo: Convert air_time (minutes in the air) to hours and then create a new variable, mph, the miles per hour of the flight.\n\n\n# add code here\n\n\n\nYour turn: First, count the number of flights each month, and then calculate the proportion of flights in each month. What proportion of flights take place in July?\n\n\n# add code here\n\n\nDemo: Create a new variable, rdu_bound, which indicates whether the flight is to RDU or not. Then, for each departure airport (origin), calculate what proportion of flights originating from that airport are to RDU.\n\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-04-github.html#exercise-9---summarize",
-    "href": "ae/ae-04-github.html#exercise-9---summarize",
-    "title": "AE 04: NYC flights + data wrangling",
+    "objectID": "ae/ae-03-github.html#exercise-9---summarize",
+    "href": "ae/ae-03-github.html#exercise-9---summarize",
+    "title": "AE 03: NYC flights + data wrangling",
     "section": "Exercise 9 - summarize()\n",
     "text": "Exercise 9 - summarize()\n\n\nDemo: Find mean arrival delay for all flights.\n\n\n# add code here"
   },
   {
-    "objectID": "ae/ae-04-github.html#exercise-10---group_by",
-    "href": "ae/ae-04-github.html#exercise-10---group_by",
-    "title": "AE 04: NYC flights + data wrangling",
+    "objectID": "ae/ae-03-github.html#exercise-10---group_by",
+    "href": "ae/ae-03-github.html#exercise-10---group_by",
+    "title": "AE 03: NYC flights + data wrangling",
     "section": "Exercise 10 - group_by()\n",
-    "text": "Exercise 10 - group_by()\n\n\nDemo: Find mean arrival delay for for each month.\n\n\n# add code here\n\n\n\nYour turn: What is the median departure delay for each airports around NYC (origin)? Which airport has the shortest median departure delay?\n\n\n# add code here"
+    "text": "Exercise 10 - group_by()\n\n\nDemo: Find mean arrival delay for for each month.\n\n\n# add code here\n\n\n\nYour turn: What is the median departure delay for each airport around NYC (origin)?\n\n\n# add code here"
   }
 ]
