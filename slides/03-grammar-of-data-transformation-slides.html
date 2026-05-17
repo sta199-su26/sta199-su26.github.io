@@ -525,13 +525,13 @@ Katie Solarz
 <span id="cb15-2"><a></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 7
-  title           year gross_2013 budget_2013    roi binary clean_test
-  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
-1 Virus           1999   62423681   104884652  0.595 FAIL   dubious   
-2 The Skeleton …  2005  167221051    47721325  3.50  PASS   ok        
-3 Kung Fu Hustle  2004  145651594    24663858  5.91  FAIL   nowomen   
-4 Spider-Man      2002 1586946504   180029911  8.81  FAIL   notalk    
-5 The Last Exor…  2010  118787648     1922817 61.8   PASS   ok        </code></pre>
+  title            year gross_2013 budget_2013   roi binary clean_test
+  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+1 Shaun of the D…  2004   54106657     6165964 8.78  PASS   ok        
+2 Frost/Nixon      2008   50613467    31385433 1.61  FAIL   notalk    
+3 She's the Man    2006  103060935    28894909 3.57  FAIL   men       
+4 13 Going on 30   2004  189393078    36995786 5.12  PASS   ok        
+5 Pandorum         2009   29710268    43429264 0.684 FAIL   notalk    </code></pre>
 </div>
 </div>
 </section><section id="filter" class="slide level2 scrollable smaller"><h2><code>filter()</code></h2>
@@ -1043,6 +1043,110 @@ Katie Solarz
   &lt;chr&gt;        &lt;dbl&gt;
 1 FAIL     65877024.
 2 PASS     46913086.</code></pre>
+</div>
+</div>
+</section><section id="the-pipe-in-action" class="slide level2 smaller"><h2>The pipe, in action</h2>
+<div class="task">
+<p>Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.</p>
+</div>
+<div class="fragment">
+<p>Start with the <code>bechdel</code> data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,615 × 7
+   title          year gross_2013 budget_2013    roi binary clean_test
+   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 21 &amp; Over      2013   67878146    13000000  5.22  FAIL   notalk    
+ 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        
+ 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    
+ 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    
+ 5 42             2013  190040426    40000000  4.75  FAIL   men       
+ 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       
+ 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    
+ 8 About Time     2013  102648667    12000000  8.55  PASS   ok        
+ 9 Admission      2013   36014634    13000000  2.77  PASS   ok        
+10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    
+# ℹ 1,605 more rows</code></pre>
+</div>
+</div>
+</div>
+</section><section id="the-pipe-in-action-1" class="slide level2 scrollable smaller"><h2>The pipe, in action</h2>
+<div class="task">
+<p>Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.</p>
+</div>
+<p>Filter for rows where <code>binary</code> is equal to <code>"PASS"</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb62-2"><a></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 753 × 7
+   title           year gross_2013 budget_2013   roi binary clean_test
+   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 Dredd 3D        2012   55078343    45658735  1.21 PASS   ok        
+ 2 About Time      2013  102648667    12000000  8.55 PASS   ok        
+ 3 Admission       2013   36014634    13000000  2.77 PASS   ok        
+ 4 American Hust…  2013  397915817    40000000  9.95 PASS   ok        
+ 5 August: Osage…  2013   87609748    25000000  3.50 PASS   ok        
+ 6 Beautiful Cre…  2013   75392809    50000000  1.51 PASS   ok        
+ 7 Blue Jasmine    2013  101793664    18000000  5.66 PASS   ok        
+ 8 Carrie          2013  120268278    30000000  4.01 PASS   ok        
+ 9 Despicable Me…  2013 1338831390    76000000 17.6  PASS   ok        
+10 Elysium         2013  379242208   120000000  3.16 PASS   ok        
+# ℹ 743 more rows</code></pre>
+</div>
+</div>
+</section><section id="the-pipe-in-action-2" class="slide level2 scrollable smaller"><h2>The pipe, in action</h2>
+<div class="task">
+<p>Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.</p>
+</div>
+<p>Arrange the rows in <code>desc</code>ending order of <code>roi</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb64-2"><a></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb64-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(roi))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 753 × 7
+   title           year gross_2013 budget_2013   roi binary clean_test
+   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 The Blair Wit…  1999  543776715      839077 648.  PASS   ok        
+ 2 The Devil Ins…  2012  157289709     1014639 155.  PASS   ok        
+ 3 My Big Fat Gr…  2002  768922942     6475896 119.  PASS   ok        
+ 4 Chasing Amy     1997   39417963      362810 109.  PASS   ok        
+ 5 Slacker         1991    4200140       39349 107.  PASS   ok        
+ 6 Insidious       2010  164379554     1602348 103.  PASS   ok        
+ 7 Paranormal Ac…  2010  280159759     3204696  87.4 PASS   ok        
+ 8 Paranormal Ac…  2011  322170936     5178454  62.2 PASS   ok        
+ 9 The Last Exor…  2010  118787648     1922817  61.8 PASS   ok        
+10 Cinderella      1997  246710482     4208591  58.6 PASS   ok        
+# ℹ 743 more rows</code></pre>
+</div>
+</div>
+</section><section id="the-pipe-in-action-3" class="slide level2 scrollable smaller"><h2>The pipe, in action</h2>
+<div class="task">
+<p>Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.</p>
+</div>
+<p>Select columns <code>title</code> and <code>roi</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb66-2"><a></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb66-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(roi)) <span class="sc">|&gt;</span></span>
+<span id="cb66-4"><a></a>  <span class="fu">select</span>(title, roi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 753 × 2
+   title                      roi
+   &lt;chr&gt;                    &lt;dbl&gt;
+ 1 The Blair Witch Project  648. 
+ 2 The Devil Inside         155. 
+ 3 My Big Fat Greek Wedding 119. 
+ 4 Chasing Amy              109. 
+ 5 Slacker                  107. 
+ 6 Insidious                103. 
+ 7 Paranormal Activity 2     87.4
+ 8 Paranormal Activity 3     62.2
+ 9 The Last Exorcism         61.8
+10 Cinderella                58.6
+# ℹ 743 more rows</code></pre>
 </div>
 </div>
 </section></section><section id="ae-03" class="title-slide slide level1 center"><h1>AE 03</h1>
