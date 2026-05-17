@@ -3,16 +3,9 @@ title: "Grammar of Data Visualization"
 subtitle: "Lecture 2"
 date: "2026-05-15"
 format: 
-  revealjs: 
+  revealjs:
     output-file: 02-grammar-of-data-visualization-slides.html
-    footer: "[🔗 sta199-su26.github.io](https://sta199-su26.github.io/)"
-    theme: slides.scss
-    transition: fade
-    slide-number: true
-    logo: images/logo.png
-    toc: false
-  html: 
-    code-link: true
+auto-stretch: false
 ---
 
 ## Outline {.scrollable .medium}
