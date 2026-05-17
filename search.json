@@ -2365,42 +2365,56 @@
     "href": "slides/03-grammar-of-data-transformation.html",
     "title": "Grammar of Data Transformation",
     "section": "",
-    "text": "Lab is due tomorrow night!!\nCome to office hours and/or post on Ed for help!"
+    "text": "First “official” lab takes place immediately after this lecture (well, 15 mins after… stretch your legs & touch grass in between)\nOffice hours start tomorrow; you can find time / location details here\nCome to office hours and / or post on Ed for help!"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation.html#announcementsreminders",
-    "href": "slides/03-grammar-of-data-transformation.html#announcementsreminders",
+    "objectID": "slides/03-grammar-of-data-transformation.html#announcements-reminders",
+    "href": "slides/03-grammar-of-data-transformation.html#announcements-reminders",
     "title": "Grammar of Data Transformation",
     "section": "",
-    "text": "Lab is due tomorrow night!!\nCome to office hours and/or post on Ed for help!"
+    "text": "First “official” lab takes place immediately after this lecture (well, 15 mins after… stretch your legs & touch grass in between)\nOffice hours start tomorrow; you can find time / location details here\nCome to office hours and / or post on Ed for help!"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation.html#lab-code-style-do-these-things",
-    "href": "slides/03-grammar-of-data-transformation.html#lab-code-style-do-these-things",
+    "objectID": "slides/03-grammar-of-data-transformation.html#lab-assignments-exams-code-style-do-these-things",
+    "href": "slides/03-grammar-of-data-transformation.html#lab-assignments-exams-code-style-do-these-things",
     "title": "Grammar of Data Transformation",
-    "section": "Lab: Code Style (Do these things!!!)",
-    "text": "Lab: Code Style (Do these things!!!)\nWhich of these pieces of code is easier to read?\n\nggplot(bechdel, aes(x=budget_2013,y=gross_2013,color=binary,size=roi)) +\ngeom_point(alpha = 0.5) + facet_wrap(~clean_test) \n\n\n\nggplot(bechdel, aes(x = budget_2013, y = gross_2013,\n                    color = binary, size = roi)) +\n  geom_point(alpha = 0.5) + \n  facet_wrap(~clean_test)"
+    "section": "Lab Assignments (& Exams): Code Style (Do these things!)",
+    "text": "Lab Assignments (& Exams): Code Style (Do these things!)\nWhich of these pieces of code is easier to read?\n\nggplot(bechdel, aes(x=budget_2013,y=gross_2013,color=binary,size=roi)) +\ngeom_point(alpha = 0.5) + facet_wrap(~ clean_test) \n\n\n\nggplot(bechdel, aes(x = budget_2013, y = gross_2013,\n                    color = binary, size = roi)) +\n  geom_point(alpha = 0.5) + \n  facet_wrap(~ clean_test)"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation.html#lab-code-style-do-these-things-1",
-    "href": "slides/03-grammar-of-data-transformation.html#lab-code-style-do-these-things-1",
+    "objectID": "slides/03-grammar-of-data-transformation.html#lab-assignments-exams-code-style-do-these-things-1",
+    "href": "slides/03-grammar-of-data-transformation.html#lab-assignments-exams-code-style-do-these-things-1",
     "title": "Grammar of Data Transformation",
-    "section": "Lab: Code Style (Do these things!!!)",
-    "text": "Lab: Code Style (Do these things!!!)\nCode should follow the tidyverse style:\n\nthere should be spaces before and line breaks after each + when building a ggplot\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline\ncode should be properly indented\nspaces around = signs and spaces after commas\n\nAll code should be visible in the PDF output (should not run off the page)! Use line breaks to prevent this."
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#survey-responses",
-    "href": "slides/03-grammar-of-data-transformation.html#survey-responses",
-    "title": "Grammar of Data Transformation",
-    "section": "Survey Responses",
-    "text": "Survey Responses\n\n\n\nConcerns: first time coding + the quick pace of the course\n\n\nBest way to succeed? Come to class/labs and ask for help!!!\n\n\nGrading:\n\nIs the midterm take-home individual or collaborative?\nIndividual!!\n\nIs the class curved or absolute?\nWe will only curve up – your absolute grade is the minimum you can get\n\n\n\nWhat is statistics/this class???"
+    "section": "Lab Assignments (& Exams): Code Style (Do these things!)",
+    "text": "Lab Assignments (& Exams): Code Style (Do these things!)\nCode should follow the tidyverse style:\n\nthere should be spaces before and line breaks after each + when building a ggplot\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline (we will introduce the “pipe” today!)\ncode should be properly indented (check: Code -&gt; Reindent Lines; equivalently, ⌘I)\nspaces around = signs and spaces after commas\nyou can find all tidyverse style guidelines here\n\nAll code should be visible in the PDF output (should not run off the page)! Use line breaks to prevent this."
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#outline",
     "href": "slides/03-grammar-of-data-transformation.html#outline",
     "title": "Grammar of Data Transformation",
     "section": "Outline",
-    "text": "Outline\n\nLast Time: Learned about more types of plots\nToday: Grammar of ‘data wrangling’"
+    "text": "Outline\n\nLast Time: Grammar of data viz in R (via ggplot())\nToday: Grammar of ‘data wrangling’"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation.html#alison-bechdel",
+    "href": "slides/03-grammar-of-data-transformation.html#alison-bechdel",
+    "title": "Grammar of Data Transformation",
+    "section": "Alison Bechdel",
+    "text": "Alison Bechdel"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation.html#the-bechdel-test",
+    "href": "slides/03-grammar-of-data-transformation.html#the-bechdel-test",
+    "title": "Grammar of Data Transformation",
+    "section": "The Bechdel Test",
+    "text": "The Bechdel Test\n\n\n (Dykes to Watch Out For - 1985)\n\n\nFilm passes if it has…\n\ntwo (named) female characters;\nwho talk to each other;\nabout something besides a man."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation.html#recent-releases",
+    "href": "slides/03-grammar-of-data-transformation.html#recent-releases",
+    "title": "Grammar of Data Transformation",
+    "section": "Recent releases",
+    "text": "Recent releases\n\n\nTitle\nYear\nBechdel\nDirector\n\n\n\nDune 2\n2024\n❌\nM\n\n\nConclave\n2024\n❌\nM\n\n\nWicked 1\n2024\n✅\nM\n\n\nBugonia\n2025\n❌\nM\n\n\nWicked 2\n2025\n✅\nM\n\n\nMarty Supreme\n2025\n❌\nM\n\n\nWuthering Heights\n2026\n✅\nF\n\n\nThe Devil Wears Prada 2\n2026\n✅\nM"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#dplyr",
@@ -2414,81 +2428,67 @@
     "href": "slides/03-grammar-of-data-transformation.html#what-is-data-transformation",
     "title": "Grammar of Data Transformation",
     "section": "What is data transformation?",
-    "text": "What is data transformation?\n\n\nMaking new variables (example: garage in AE03)\nRenaming/reordering your data frame\nSummarizing information about your variables\nAnd more!"
+    "text": "What is data transformation?\n\n\nCreating new variables (perhaps as a function of some existing variables, but not necessarily so…)\nReshaping your data frame\nSummarizing information about your variables\nAnd more!"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#the-pipe",
     "href": "slides/03-grammar-of-data-transformation.html#the-pipe",
     "title": "Grammar of Data Transformation",
     "section": "The pipe",
-    "text": "The pipe\n\n\nThe pipe, |&gt;, is an operator (a tool) for passing information from one process to another.\nUse |&gt; to pass the output of the previous line of code as the first input of the next line of code.\nWhen reading code “in English”, say “and then” whenever you see a pipe."
+    "text": "The pipe\n\n\nThe pipe, |&gt;, is an operator (a tool) that allows us to link two functions together in a way that is readable from left to right\nUse |&gt; to pass the output of the previous line of code as the first argument to the function in the following line of code.\nWhen reading code “in English”, say “(and) then” whenever you see a pipe.\nYou can string multiple pipes together to continue passing upstream outputs along to downstream functions; a string of pipes is still referred to as a “single pipeline”"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation.html#row-operations-1",
-    "href": "slides/03-grammar-of-data-transformation.html#row-operations-1",
+    "objectID": "slides/03-grammar-of-data-transformation.html#readability",
+    "href": "slides/03-grammar-of-data-transformation.html#readability",
     "title": "Grammar of Data Transformation",
-    "section": "Row Operations",
-    "text": "Row Operations\n\n\nslice(): chooses rows based on location\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
+    "section": "Readability",
+    "text": "Readability\nConsider the following sequence of actions that describe the process of getting to campus in the morning:\nI need to find my key, then unlock my car, then start my car, then drive to school, then park.\n. . .\n\nExpressed as a set of nested functions in R pseudocode this would look like:\n\npark(drive(start_car(find(\"keys\")), to=\"campus\"))\n\n. . .\nWriting it out using pipes give it a more natural (and easier to read) structure:\n\nfind(\"keys\") |&gt;\n    start_car() |&gt;\n    drive(to=\"campus\") |&gt;\n    park()"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation.html#row-operations-2",
-    "href": "slides/03-grammar-of-data-transformation.html#row-operations-2",
+    "objectID": "slides/03-grammar-of-data-transformation.html#a-grammar-of-data-manipulation",
+    "href": "slides/03-grammar-of-data-transformation.html#a-grammar-of-data-manipulation",
     "title": "Grammar of Data Transformation",
-    "section": "Row Operations",
-    "text": "Row Operations\n\n\nfilter():chooses rows based on column values\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#row-operations-3",
-    "href": "slides/03-grammar-of-data-transformation.html#row-operations-3",
-    "title": "Grammar of Data Transformation",
-    "section": "Row Operations",
-    "text": "Row Operations\n\n\narrange(): changes the order of the rows\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#row-operations-4",
-    "href": "slides/03-grammar-of-data-transformation.html#row-operations-4",
-    "title": "Grammar of Data Transformation",
-    "section": "Row Operations",
-    "text": "Row Operations\n\n\nsample_n(): take a random subset of the rows\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
+    "section": "A Grammar of Data Manipulation",
+    "text": "A Grammar of Data Manipulation\n\ndplyr is based on the concepts of functions as verbs that manipulate data frames.\nCore single data frame functions / verbs:\n\n\nfilter() / slice() - pick rows based on criteria\n\nselect() / rename() - select columns by name\n\npull() - grab a column as a vector\n\narrange() - reorder rows\n\nmutate() / transmute() - create or modify columns\n\ndistinct() - filter for unique rows\n\nsummarize() / count() - reduce variables to values\n\ngroup_by() / ungroup() - modify other verbs to act on subsets\n\nrelocate() - change column order\n… (many more)"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#slice",
     "href": "slides/03-grammar-of-data-transformation.html#slice",
     "title": "Grammar of Data Transformation",
     "section": "slice()",
-    "text": "slice()\nDisplay the first five rows of bechdel:\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "slice()\n\n\nslice(): chooses rows based on location\n\nEx: Display the first five rows of bechdel:\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  slice(1:5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 21 & Over        2013   67878146    13000000  5.22 FAIL   notalk    \n2 Dredd 3D         2012   55078343    45658735  1.21 PASS   ok        \n3 12 Years a Sla…  2013  211714070    20000000 10.6  FAIL   notalk    \n4 2 Guns           2013  208105475    61000000  3.41 FAIL   notalk    \n5 42               2013  190040426    40000000  4.75 FAIL   men"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation.html#slice-1",
-    "href": "slides/03-grammar-of-data-transformation.html#slice-1",
+    "objectID": "slides/03-grammar-of-data-transformation.html#arrange",
+    "href": "slides/03-grammar-of-data-transformation.html#arrange",
     "title": "Grammar of Data Transformation",
-    "section": "slice()",
-    "text": "slice()\nDisplay the first five rows of bechdel:\n\nbechdel |&gt;\n  slice(1:5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 21 & Over        2013   67878146    13000000  5.22 FAIL   notalk    \n2 Dredd 3D         2012   55078343    45658735  1.21 PASS   ok        \n3 12 Years a Sla…  2013  211714070    20000000 10.6  FAIL   notalk    \n4 2 Guns           2013  208105475    61000000  3.41 FAIL   notalk    \n5 42               2013  190040426    40000000  4.75 FAIL   men"
+    "section": "arrange()",
+    "text": "arrange()\n\n\narrange(): changes the order of the rows; default is ascending order\n\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  arrange(year)\n\n# A tibble: 1,615 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 Back to the F…  1990  590818548    71319016  8.28 FAIL   notalk    \n 2 Child's Play 2  1990  108888347    23178680  4.70 PASS   ok        \n 3 Dark Angel (I…  1990   15592338    12480828  1.25 FAIL   nowomen   \n 4 Die Hard 2      1990  636768095   124808278  5.10 FAIL   dubious   \n 5 Edward Scisso…  1990  192479280    35659508  5.40 PASS   ok        \n 6 Flatliners      1990  218621858    46357360  4.72 PASS   ok        \n 7 Ghost           1990 1310899333    39225459 33.4  FAIL   men       \n 8 Goodfellas      1990  166686124    44574385  3.74 FAIL   men       \n 9 Home Alone      1990 1359422317    26744631 50.8  FAIL   men       \n10 Nikita          1990   17893838    12480828  1.43 PASS   ok        \n# ℹ 1,605 more rows"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation.html#sample_n",
+    "href": "slides/03-grammar-of-data-transformation.html#sample_n",
+    "title": "Grammar of Data Transformation",
+    "section": "sample_n()",
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title           year gross_2013 budget_2013    roi binary clean_test\n  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Virus           1999   62423681   104884652  0.595 FAIL   dubious   \n2 The Skeleton …  2005  167221051    47721325  3.50  PASS   ok        \n3 Kung Fu Hustle  2004  145651594    24663858  5.91  FAIL   nowomen   \n4 Spider-Man      2002 1586946504   180029911  8.81  FAIL   notalk    \n5 The Last Exor…  2010  118787648     1922817 61.8   PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
     "href": "slides/03-grammar-of-data-transformation.html#filter",
     "title": "Grammar of Data Transformation",
     "section": "filter()",
-    "text": "filter()\nKeep only the rows ofbechdel that pass the test:\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "filter()\n\n\nfilter():chooses rows based on column values\nYou should think of the logic you provide within a filter() function call as telling R what observations it should keep\n\n\nKeep only the rows of bechdel that pass the test:\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  filter(binary == \"PASS\")\n\n# A tibble: 753 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 Dredd 3D        2012   55078343    45658735  1.21 PASS   ok        \n 2 About Time      2013  102648667    12000000  8.55 PASS   ok        \n 3 Admission       2013   36014634    13000000  2.77 PASS   ok        \n 4 American Hust…  2013  397915817    40000000  9.95 PASS   ok        \n 5 August: Osage…  2013   87609748    25000000  3.50 PASS   ok        \n 6 Beautiful Cre…  2013   75392809    50000000  1.51 PASS   ok        \n 7 Blue Jasmine    2013  101793664    18000000  5.66 PASS   ok        \n 8 Carrie          2013  120268278    30000000  4.01 PASS   ok        \n 9 Despicable Me…  2013 1338831390    76000000 17.6  PASS   ok        \n10 Elysium         2013  379242208   120000000  3.16 PASS   ok        \n# ℹ 743 more rows"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter-1",
     "href": "slides/03-grammar-of-data-transformation.html#filter-1",
     "title": "Grammar of Data Transformation",
     "section": "filter()",
-    "text": "filter()\nKeep only the rows ofbechdel that pass the test:\n\nbechdel |&gt;\n  filter(binary == \"PASS\")\n\n# A tibble: 753 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 Dredd 3D        2012   55078343    45658735  1.21 PASS   ok        \n 2 About Time      2013  102648667    12000000  8.55 PASS   ok        \n 3 Admission       2013   36014634    13000000  2.77 PASS   ok        \n 4 American Hust…  2013  397915817    40000000  9.95 PASS   ok        \n 5 August: Osage…  2013   87609748    25000000  3.50 PASS   ok        \n 6 Beautiful Cre…  2013   75392809    50000000  1.51 PASS   ok        \n 7 Blue Jasmine    2013  101793664    18000000  5.66 PASS   ok        \n 8 Carrie          2013  120268278    30000000  4.01 PASS   ok        \n 9 Despicable Me…  2013 1338831390    76000000 17.6  PASS   ok        \n10 Elysium         2013  379242208   120000000  3.16 PASS   ok        \n# ℹ 743 more rows"
+    "text": "filter()\nKeep only the movies released before 2000\n\nbechdel |&gt;\n  filter(year &lt; 2000)\n\n# A tibble: 337 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 10 Things I H…  1999  137877156    18180006  7.58 PASS   ok        \n 2 8MM             1999  185774868    55938481  3.32 FAIL   notalk    \n 3 American Beau…  1999  680094591    20976930 32.4  PASS   ok        \n 4 American Pie    1999  470616170    16781544 28.0  FAIL   men       \n 5 Analyze This    1999  396843410    41953861  9.46 FAIL   notalk    \n 6 Anna and the …  1999  109782424   104884652  1.05 FAIL   men       \n 7 Anywhere But …  1999   52172744    32164627  1.62 FAIL   dubious   \n 8 Austin Powers…  1999  722127642    48946171 14.8  FAIL   notalk    \n 9 Being John Ma…  1999   77252870    18180006  4.25 PASS   ok        \n10 Black and Whi…  1999   14659560    13984620  1.05 PASS   ok        \n# ℹ 327 more rows"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter-2",
     "href": "slides/03-grammar-of-data-transformation.html#filter-2",
-    "title": "Grammar of Data Transformation",
-    "section": "filter()",
-    "text": "filter()\nKeep only the movies from before 2000\n\nbechdel |&gt;\n  filter(year &lt; 2000)\n\n# A tibble: 337 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 10 Things I H…  1999  137877156    18180006  7.58 PASS   ok        \n 2 8MM             1999  185774868    55938481  3.32 FAIL   notalk    \n 3 American Beau…  1999  680094591    20976930 32.4  PASS   ok        \n 4 American Pie    1999  470616170    16781544 28.0  FAIL   men       \n 5 Analyze This    1999  396843410    41953861  9.46 FAIL   notalk    \n 6 Anna and the …  1999  109782424   104884652  1.05 FAIL   men       \n 7 Anywhere But …  1999   52172744    32164627  1.62 FAIL   dubious   \n 8 Austin Powers…  1999  722127642    48946171 14.8  FAIL   notalk    \n 9 Being John Ma…  1999   77252870    18180006  4.25 PASS   ok        \n10 Black and Whi…  1999   14659560    13984620  1.05 PASS   ok        \n# ℹ 327 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#filter-3",
-    "href": "slides/03-grammar-of-data-transformation.html#filter-3",
     "title": "Grammar of Data Transformation",
     "section": "filter()",
     "text": "filter()\nOften (but not always), looks like:\n\nfilter(variable [logical operator] value)\n\nor\n\nfilter(!is.na(variable))"
@@ -2508,172 +2508,81 @@
     "text": "More logical operators\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx & y\nis x AND y?\n\n\nx | y\nis x OR y?\n\n\nis.na(x)\nis x NA?\n\n\n!is.na(x)\nis x not NA?\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation.html#filter-4",
-    "href": "slides/03-grammar-of-data-transformation.html#filter-4",
+    "objectID": "slides/03-grammar-of-data-transformation.html#filter-3",
+    "href": "slides/03-grammar-of-data-transformation.html#filter-3",
     "title": "Grammar of Data Transformation",
     "section": "filter()",
     "text": "filter()\nKeep only the movies from before 2000 AND that pass the test\n\nbechdel |&gt;\n  filter(year &lt; 2000 & binary == \"PASS\")\n\n# A tibble: 147 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 10 Things I …  1999  137877156    18180006  7.58  PASS   ok        \n 2 American Bea…  1999  680094591    20976930 32.4   PASS   ok        \n 3 Being John M…  1999   77252870    18180006  4.25  PASS   ok        \n 4 Black and Wh…  1999   14659560    13984620  1.05  PASS   ok        \n 5 Boys Don't C…  1999   45144602     2796924 16.1   PASS   ok        \n 6 But I'm a Ch…  1999    6761310     1678154  4.03  PASS   ok        \n 7 Carrie 2: Th…  1999   49674054    29367703  1.69  PASS   ok        \n 8 Cruel Intent…  1999  159471926    15383082 10.4   PASS   ok        \n 9 Dick           1999   17555926    18180006  0.966 PASS   ok        \n10 Drop Dead Go…  1999   29567426    13984620  2.11  PASS   ok        \n# ℹ 137 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#sample_n",
-    "href": "slides/03-grammar-of-data-transformation.html#sample_n",
-    "title": "Grammar of Data Transformation",
-    "section": "sample_n()",
-    "text": "sample_n()\nDisplay five random rows ofbechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#sample_n-1",
-    "href": "slides/03-grammar-of-data-transformation.html#sample_n-1",
-    "title": "Grammar of Data Transformation",
-    "section": "sample_n()",
-    "text": "sample_n()\nDisplay five random rows ofbechdel:\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title        year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Safe         1995   89643489    50449722 1.78  PASS   ok        \n2 S.W.A.T.     2003  410253125    88626087 4.63  PASS   ok        \n3 Warrior      2011   39224199    25892270 1.51  FAIL   notalk    \n4 The Postman  1997   51230750   116099050 0.441 FAIL   notalk    \n5 Doomsday     2008   35313978    35714458 0.989 PASS   ok"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#column-operations-1",
-    "href": "slides/03-grammar-of-data-transformation.html#column-operations-1",
-    "title": "Grammar of Data Transformation",
-    "section": "Column operations",
-    "text": "Column operations\n\n\nselect(): changes whether or not a column is included.\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#column-operations-2",
-    "href": "slides/03-grammar-of-data-transformation.html#column-operations-2",
-    "title": "Grammar of Data Transformation",
-    "section": "Column operations",
-    "text": "Column operations\n\n\nrename(): changes the name of columns.\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#column-operations-3",
-    "href": "slides/03-grammar-of-data-transformation.html#column-operations-3",
-    "title": "Grammar of Data Transformation",
-    "section": "Column operations",
-    "text": "Column operations\n\n\nmutate(): changes the values of columns and creates new columns.\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#select",
     "href": "slides/03-grammar-of-data-transformation.html#select",
     "title": "Grammar of Data Transformation",
     "section": "select()",
-    "text": "select()\nKeep only the title and test status.\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "select()\n\n\nselect(): changes whether or not a column is included.\n\nKeep only the title and test status.\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  select(title, clean_test)\n\n# A tibble: 1,615 × 2\n   title                  clean_test\n   &lt;chr&gt;                  &lt;chr&gt;     \n 1 21 & Over              notalk    \n 2 Dredd 3D               ok        \n 3 12 Years a Slave       notalk    \n 4 2 Guns                 notalk    \n 5 42                     men       \n 6 47 Ronin               men       \n 7 A Good Day to Die Hard notalk    \n 8 About Time             ok        \n 9 Admission              ok        \n10 After Earth            notalk    \n# ℹ 1,605 more rows"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#select-1",
     "href": "slides/03-grammar-of-data-transformation.html#select-1",
     "title": "Grammar of Data Transformation",
     "section": "select()",
-    "text": "select()\nKeep only the title and test status.\n\nbechdel |&gt;\n  select(title, clean_test)\n\n# A tibble: 1,615 × 2\n   title                  clean_test\n   &lt;chr&gt;                  &lt;chr&gt;     \n 1 21 & Over              notalk    \n 2 Dredd 3D               ok        \n 3 12 Years a Slave       notalk    \n 4 2 Guns                 notalk    \n 5 42                     men       \n 6 47 Ronin               men       \n 7 A Good Day to Die Hard notalk    \n 8 About Time             ok        \n 9 Admission              ok        \n10 After Earth            notalk    \n# ℹ 1,605 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#mutate",
-    "href": "slides/03-grammar-of-data-transformation.html#mutate",
-    "title": "Grammar of Data Transformation",
-    "section": "mutate()",
-    "text": "mutate()\nCreate a new variable for the budget in millions\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#mutate-1",
-    "href": "slides/03-grammar-of-data-transformation.html#mutate-1",
-    "title": "Grammar of Data Transformation",
-    "section": "mutate()",
-    "text": "mutate()\nKeep only the title and test status.\n\nbechdel |&gt;\n  mutate(budget_million = budget_2013/1000000)\n\n# A tibble: 1,615 × 8\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n# ℹ 1 more variable: budget_million &lt;dbl&gt;"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#mutate-2",
-    "href": "slides/03-grammar-of-data-transformation.html#mutate-2",
-    "title": "Grammar of Data Transformation",
-    "section": "mutate()",
-    "text": "mutate()\nGenerally, looks like:\n\nmutate(new_variable_name = function(existing_variable))"
+    "text": "select()\n\n\nselect() also allows you to exclude particular columns using the - symbol\n\nAgain, keep only the title and test status but this time by explicitly excluding all other columns\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  select(-(2:6))\n\n# A tibble: 1,615 × 2\n   title                  clean_test\n   &lt;chr&gt;                  &lt;chr&gt;     \n 1 21 & Over              notalk    \n 2 Dredd 3D               ok        \n 3 12 Years a Slave       notalk    \n 4 2 Guns                 notalk    \n 5 42                     men       \n 6 47 Ronin               men       \n 7 A Good Day to Die Hard notalk    \n 8 About Time             ok        \n 9 Admission              ok        \n10 After Earth            notalk    \n# ℹ 1,605 more rows"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#rename",
     "href": "slides/03-grammar-of-data-transformation.html#rename",
     "title": "Grammar of Data Transformation",
     "section": "rename()",
-    "text": "rename()\nRename clean_test to test_result\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "rename()\n\n\nrename(): changes the name of columns.\n\nRename clean_test to test_result\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  rename(test_result = clean_test)\n\n# A tibble: 1,615 × 7\n   title         year gross_2013 budget_2013    roi binary test_result\n   &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      \n 1 21 & Over     2013   67878146    13000000  5.22  FAIL   notalk     \n 2 Dredd 3D      2012   55078343    45658735  1.21  PASS   ok         \n 3 12 Years a …  2013  211714070    20000000 10.6   FAIL   notalk     \n 4 2 Guns        2013  208105475    61000000  3.41  FAIL   notalk     \n 5 42            2013  190040426    40000000  4.75  FAIL   men        \n 6 47 Ronin      2013  184166317   225000000  0.819 FAIL   men        \n 7 A Good Day …  2013  371598396    92000000  4.04  FAIL   notalk     \n 8 About Time    2013  102648667    12000000  8.55  PASS   ok         \n 9 Admission     2013   36014634    13000000  2.77  PASS   ok         \n10 After Earth   2013  304895295   130000000  2.35  FAIL   notalk     \n# ℹ 1,605 more rows"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#rename-1",
     "href": "slides/03-grammar-of-data-transformation.html#rename-1",
     "title": "Grammar of Data Transformation",
     "section": "rename()",
-    "text": "rename()\nRename clean_test to test_result\n\nbechdel |&gt;\n  rename(test_result = clean_test)\n\n# A tibble: 1,615 × 7\n   title         year gross_2013 budget_2013    roi binary test_result\n   &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      \n 1 21 & Over     2013   67878146    13000000  5.22  FAIL   notalk     \n 2 Dredd 3D      2012   55078343    45658735  1.21  PASS   ok         \n 3 12 Years a …  2013  211714070    20000000 10.6   FAIL   notalk     \n 4 2 Guns        2013  208105475    61000000  3.41  FAIL   notalk     \n 5 42            2013  190040426    40000000  4.75  FAIL   men        \n 6 47 Ronin      2013  184166317   225000000  0.819 FAIL   men        \n 7 A Good Day …  2013  371598396    92000000  4.04  FAIL   notalk     \n 8 About Time    2013  102648667    12000000  8.55  PASS   ok         \n 9 Admission     2013   36014634    13000000  2.77  PASS   ok         \n10 After Earth   2013  304895295   130000000  2.35  FAIL   notalk     \n# ℹ 1,605 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#rename-2",
-    "href": "slides/03-grammar-of-data-transformation.html#rename-2",
-    "title": "Grammar of Data Transformation",
-    "section": "rename()",
     "text": "rename()\nGenerally, looks like:\n\nselect(new_variable_name = old_variable_name)"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation.html#groups-of-rows-1",
-    "href": "slides/03-grammar-of-data-transformation.html#groups-of-rows-1",
+    "objectID": "slides/03-grammar-of-data-transformation.html#mutate",
+    "href": "slides/03-grammar-of-data-transformation.html#mutate",
     "title": "Grammar of Data Transformation",
-    "section": "Groups of rows",
-    "text": "Groups of rows\n\n\ncount(): count unique values of one or more variables.\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
+    "section": "mutate()",
+    "text": "mutate()\n\n\nmutate(): changes the values of columns (i.e., modifies existing columns) and creates new columns.\n\nCreate a new variable for the budget in millions\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  mutate(budget_million = budget_2013/1000000)\n\n# A tibble: 1,615 × 8\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n# ℹ 1 more variable: budget_million &lt;dbl&gt;"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation.html#groups-of-rows-2",
-    "href": "slides/03-grammar-of-data-transformation.html#groups-of-rows-2",
+    "objectID": "slides/03-grammar-of-data-transformation.html#mutate-1",
+    "href": "slides/03-grammar-of-data-transformation.html#mutate-1",
     "title": "Grammar of Data Transformation",
-    "section": "Groups of rows",
-    "text": "Groups of rows\n\n\ngroup_by(): group separately for each value of a variable\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#groups-of-rows-3",
-    "href": "slides/03-grammar-of-data-transformation.html#groups-of-rows-3",
-    "title": "Grammar of Data Transformation",
-    "section": "Groups of rows",
-    "text": "Groups of rows\n\n\nsummarize(): collapses a group into a single row.\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
+    "section": "mutate()",
+    "text": "mutate()\nGenerally, looks like:\n\nmutate(new_variable_name = function(existing_variable))"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#count",
     "href": "slides/03-grammar-of-data-transformation.html#count",
     "title": "Grammar of Data Transformation",
     "section": "count()",
-    "text": "count()\nCount how many movies pass or fail the Bechdel test.\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#count-1",
-    "href": "slides/03-grammar-of-data-transformation.html#count-1",
-    "title": "Grammar of Data Transformation",
-    "section": "count()",
-    "text": "count()\nCount how many movies pass or fail the Bechdel test.\n\nbechdel |&gt;\n  count(binary)\n\n# A tibble: 2 × 2\n  binary     n\n  &lt;chr&gt;  &lt;int&gt;\n1 FAIL     862\n2 PASS     753"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#summarize",
-    "href": "slides/03-grammar-of-data-transformation.html#summarize",
-    "title": "Grammar of Data Transformation",
-    "section": "summarize()",
-    "text": "summarize()\nCompute average budget\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#summarize-1",
-    "href": "slides/03-grammar-of-data-transformation.html#summarize-1",
-    "title": "Grammar of Data Transformation",
-    "section": "summarize()",
-    "text": "summarize()\nCompute average budget\n\nbechdel |&gt;\n  summarize(mean_budget = mean(budget_2013))\n\n# A tibble: 1 × 1\n  mean_budget\n        &lt;dbl&gt;\n1   57035015."
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation.html#summarize-2",
-    "href": "slides/03-grammar-of-data-transformation.html#summarize-2",
-    "title": "Grammar of Data Transformation",
-    "section": "summarize()",
-    "text": "summarize()\nGenerally, looks like:\n\nsummarize(resut_variable_name = function(existing_variable))"
+    "text": "count()\n\n\ncount(): count unique values of one or more variables.\n\nCount how many movies pass or fail the Bechdel test.\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  count(binary)\n\n# A tibble: 2 × 2\n  binary     n\n  &lt;chr&gt;  &lt;int&gt;\n1 FAIL     862\n2 PASS     753"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#group_by",
     "href": "slides/03-grammar-of-data-transformation.html#group_by",
     "title": "Grammar of Data Transformation",
     "section": "group_by()",
-    "text": "group_by()\nGroup by movies passing or failing the test\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "group_by()\n\n\ngroup_by(): group separately for each value of a variable\n\nGroup by movies passing or failing the test\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  group_by(binary)\n\n# A tibble: 1,615 × 7\n# Groups:   binary [2]\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation.html#group_by-1",
-    "href": "slides/03-grammar-of-data-transformation.html#group_by-1",
+    "objectID": "slides/03-grammar-of-data-transformation.html#summarize",
+    "href": "slides/03-grammar-of-data-transformation.html#summarize",
     "title": "Grammar of Data Transformation",
-    "section": "group_by()",
-    "text": "group_by()\nGroup by movies passing or failing the test\n\nbechdel |&gt;\n  group_by(binary)\n\n# A tibble: 1,615 × 7\n# Groups:   binary [2]\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "section": "summarize()",
+    "text": "summarize()\n\n\nsummarize(): collapses a group into a single row.\n\nCompute average budget\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  summarize(mean_budget = mean(budget_2013))\n\n# A tibble: 1 × 1\n  mean_budget\n        &lt;dbl&gt;\n1   57035015."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation.html#summarize-1",
+    "href": "slides/03-grammar-of-data-transformation.html#summarize-1",
+    "title": "Grammar of Data Transformation",
+    "section": "summarize()",
+    "text": "summarize()\nGenerally, looks like:\n\nsummarize(resut_variable_name = function(existing_variable))"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#group_by-summarize",
@@ -2683,46 +2592,53 @@
     "text": "group_by() + summarize()\nGroup by movies passing/failing and compute within-group average budget\n\nbechdel |&gt;\n  group_by(binary) |&gt;\n  summarize(mean_budget = mean(budget_2013))\n\n# A tibble: 2 × 2\n  binary mean_budget\n  &lt;chr&gt;        &lt;dbl&gt;\n1 FAIL     65877024.\n2 PASS     46913086."
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation.html#where-can-i-find-all-of-this",
-    "href": "slides/03-grammar-of-data-transformation.html#where-can-i-find-all-of-this",
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#announcements-reminders",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#announcements-reminders",
     "title": "Grammar of Data Transformation",
-    "section": "Where can I find all of this??!",
-    "text": "Where can I find all of this??!"
+    "section": "Announcements / Reminders",
+    "text": "Announcements / Reminders\n\nFirst “official” lab takes place immediately after this lecture (well, 15 mins after… stretch your legs & touch grass in between)\nOffice hours start tomorrow; you can find time / location details here\nCome to office hours and / or post on Ed for help!"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#announcementsreminders",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#announcementsreminders",
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#lab-assignments-exams-code-style-do-these-things",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#lab-assignments-exams-code-style-do-these-things",
     "title": "Grammar of Data Transformation",
-    "section": "Announcements/Reminders",
-    "text": "Announcements/Reminders\n\nLab is due tomorrow night!!\nCome to office hours and/or post on Ed for help!"
+    "section": "Lab Assignments (& Exams): Code Style (Do these things!)",
+    "text": "Lab Assignments (& Exams): Code Style (Do these things!)\nWhich of these pieces of code is easier to read?\n\nggplot(bechdel, aes(x=budget_2013,y=gross_2013,color=binary,size=roi)) +\ngeom_point(alpha = 0.5) + facet_wrap(~ clean_test) \n\n\n\nggplot(bechdel, aes(x = budget_2013, y = gross_2013,\n                    color = binary, size = roi)) +\n  geom_point(alpha = 0.5) + \n  facet_wrap(~ clean_test)"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#lab-code-style-do-these-things",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#lab-code-style-do-these-things",
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#lab-assignments-exams-code-style-do-these-things-1",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#lab-assignments-exams-code-style-do-these-things-1",
     "title": "Grammar of Data Transformation",
-    "section": "Lab: Code Style (Do these things!!!)",
-    "text": "Lab: Code Style (Do these things!!!)\nWhich of these pieces of code is easier to read?\n\nggplot(bechdel, aes(x=budget_2013,y=gross_2013,color=binary,size=roi)) +\ngeom_point(alpha = 0.5) + facet_wrap(~clean_test) \n\n\n\nggplot(bechdel, aes(x = budget_2013, y = gross_2013,\n                    color = binary, size = roi)) +\n  geom_point(alpha = 0.5) + \n  facet_wrap(~clean_test)"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#lab-code-style-do-these-things-1",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#lab-code-style-do-these-things-1",
-    "title": "Grammar of Data Transformation",
-    "section": "Lab: Code Style (Do these things!!!)",
-    "text": "Lab: Code Style (Do these things!!!)\nCode should follow the tidyverse style:\n\nthere should be spaces before and line breaks after each + when building a ggplot\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline\ncode should be properly indented\nspaces around = signs and spaces after commas\n\nAll code should be visible in the PDF output (should not run off the page)! Use line breaks to prevent this."
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#survey-responses",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#survey-responses",
-    "title": "Grammar of Data Transformation",
-    "section": "Survey Responses",
-    "text": "Survey Responses\n\n\n\nConcerns: first time coding + the quick pace of the course\n\n\nBest way to succeed? Come to class/labs and ask for help!!!\n\n\nGrading:\n\nIs the midterm take-home individual or collaborative?\nIndividual!!\n\nIs the class curved or absolute?\nWe will only curve up – your absolute grade is the minimum you can get\n\n\n\nWhat is statistics/this class???"
+    "section": "Lab Assignments (& Exams): Code Style (Do these things!)",
+    "text": "Lab Assignments (& Exams): Code Style (Do these things!)\nCode should follow the tidyverse style:\n\nthere should be spaces before and line breaks after each + when building a ggplot\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline (we will introduce the “pipe” today!)\ncode should be properly indented (check: Code -&gt; Reindent Lines; equivalently, ⌘I)\nspaces around = signs and spaces after commas\nyou can find all tidyverse style guidelines here\n\nAll code should be visible in the PDF output (should not run off the page)! Use line breaks to prevent this."
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#outline",
     "href": "slides/03-grammar-of-data-transformation-slides.html#outline",
     "title": "Grammar of Data Transformation",
     "section": "Outline",
-    "text": "Outline\n\nLast Time: Learned about more types of plots\nToday: Grammar of ‘data wrangling’"
+    "text": "Outline\n\nLast Time: Grammar of data viz in R (via ggplot())\nToday: Grammar of ‘data wrangling’"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#alison-bechdel",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#alison-bechdel",
+    "title": "Grammar of Data Transformation",
+    "section": "Alison Bechdel",
+    "text": "Alison Bechdel"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#the-bechdel-test",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#the-bechdel-test",
+    "title": "Grammar of Data Transformation",
+    "section": "The Bechdel Test",
+    "text": "The Bechdel Test\n\n\n (Dykes to Watch Out For - 1985)\n\n\nFilm passes if it has…\n\ntwo (named) female characters;\nwho talk to each other;\nabout something besides a man."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#recent-releases",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#recent-releases",
+    "title": "Grammar of Data Transformation",
+    "section": "Recent releases",
+    "text": "Recent releases\n\n\nTitle\nYear\nBechdel\nDirector\n\n\n\nDune 2\n2024\n❌\nM\n\n\nConclave\n2024\n❌\nM\n\n\nWicked 1\n2024\n✅\nM\n\n\nBugonia\n2025\n❌\nM\n\n\nWicked 2\n2025\n✅\nM\n\n\nMarty Supreme\n2025\n❌\nM\n\n\nWuthering Heights\n2026\n✅\nF\n\n\nThe Devil Wears Prada 2\n2026\n✅\nM"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#dplyr",
@@ -2736,81 +2652,67 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#what-is-data-transformation",
     "title": "Grammar of Data Transformation",
     "section": "What is data transformation?",
-    "text": "What is data transformation?\n\n\nMaking new variables (example: garage in AE03)\nRenaming/reordering your data frame\nSummarizing information about your variables\nAnd more!"
+    "text": "What is data transformation?\n\n\nCreating new variables (perhaps as a function of some existing variables, but not necessarily so…)\nReshaping your data frame\nSummarizing information about your variables\nAnd more!"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#the-pipe",
     "href": "slides/03-grammar-of-data-transformation-slides.html#the-pipe",
     "title": "Grammar of Data Transformation",
     "section": "The pipe",
-    "text": "The pipe\n\n\nThe pipe, |&gt;, is an operator (a tool) for passing information from one process to another.\nUse |&gt; to pass the output of the previous line of code as the first input of the next line of code.\nWhen reading code “in English”, say “and then” whenever you see a pipe."
+    "text": "The pipe\n\n\nThe pipe, |&gt;, is an operator (a tool) that allows us to link two functions together in a way that is readable from left to right\nUse |&gt; to pass the output of the previous line of code as the first argument to the function in the following line of code.\nWhen reading code “in English”, say “(and) then” whenever you see a pipe.\nYou can string multiple pipes together to continue passing upstream outputs along to downstream functions; a string of pipes is still referred to as a “single pipeline”"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#row-operations-1",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#row-operations-1",
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#readability",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#readability",
     "title": "Grammar of Data Transformation",
-    "section": "Row Operations",
-    "text": "Row Operations\n\n\nslice(): chooses rows based on location\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
+    "section": "Readability",
+    "text": "Readability\nConsider the following sequence of actions that describe the process of getting to campus in the morning:\nI need to find my key, then unlock my car, then start my car, then drive to school, then park.\n\n\nExpressed as a set of nested functions in R pseudocode this would look like:\n\npark(drive(start_car(find(\"keys\")), to=\"campus\"))\n\n\n\nWriting it out using pipes give it a more natural (and easier to read) structure:\n\nfind(\"keys\") |&gt;\n    start_car() |&gt;\n    drive(to=\"campus\") |&gt;\n    park()"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#row-operations-2",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#row-operations-2",
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#a-grammar-of-data-manipulation",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#a-grammar-of-data-manipulation",
     "title": "Grammar of Data Transformation",
-    "section": "Row Operations",
-    "text": "Row Operations\n\n\nfilter():chooses rows based on column values\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#row-operations-3",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#row-operations-3",
-    "title": "Grammar of Data Transformation",
-    "section": "Row Operations",
-    "text": "Row Operations\n\n\narrange(): changes the order of the rows\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#row-operations-4",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#row-operations-4",
-    "title": "Grammar of Data Transformation",
-    "section": "Row Operations",
-    "text": "Row Operations\n\n\nsample_n(): take a random subset of the rows\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
+    "section": "A Grammar of Data Manipulation",
+    "text": "A Grammar of Data Manipulation\n\ndplyr is based on the concepts of functions as verbs that manipulate data frames.\nCore single data frame functions / verbs:\n\n\nfilter() / slice() - pick rows based on criteria\n\nselect() / rename() - select columns by name\n\npull() - grab a column as a vector\n\narrange() - reorder rows\n\nmutate() / transmute() - create or modify columns\n\ndistinct() - filter for unique rows\n\nsummarize() / count() - reduce variables to values\n\ngroup_by() / ungroup() - modify other verbs to act on subsets\n\nrelocate() - change column order\n… (many more)"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#slice",
     "href": "slides/03-grammar-of-data-transformation-slides.html#slice",
     "title": "Grammar of Data Transformation",
     "section": "slice()",
-    "text": "slice()\nDisplay the first five rows of bechdel:\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "slice()\n\n\nslice(): chooses rows based on location\n\nEx: Display the first five rows of bechdel:\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  slice(1:5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 21 & Over        2013   67878146    13000000  5.22 FAIL   notalk    \n2 Dredd 3D         2012   55078343    45658735  1.21 PASS   ok        \n3 12 Years a Sla…  2013  211714070    20000000 10.6  FAIL   notalk    \n4 2 Guns           2013  208105475    61000000  3.41 FAIL   notalk    \n5 42               2013  190040426    40000000  4.75 FAIL   men"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#slice-1",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#slice-1",
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#arrange",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#arrange",
     "title": "Grammar of Data Transformation",
-    "section": "slice()",
-    "text": "slice()\nDisplay the first five rows of bechdel:\n\nbechdel |&gt;\n  slice(1:5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 21 & Over        2013   67878146    13000000  5.22 FAIL   notalk    \n2 Dredd 3D         2012   55078343    45658735  1.21 PASS   ok        \n3 12 Years a Sla…  2013  211714070    20000000 10.6  FAIL   notalk    \n4 2 Guns           2013  208105475    61000000  3.41 FAIL   notalk    \n5 42               2013  190040426    40000000  4.75 FAIL   men"
+    "section": "arrange()",
+    "text": "arrange()\n\n\narrange(): changes the order of the rows; default is ascending order\n\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  arrange(year)\n\n# A tibble: 1,615 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 Back to the F…  1990  590818548    71319016  8.28 FAIL   notalk    \n 2 Child's Play 2  1990  108888347    23178680  4.70 PASS   ok        \n 3 Dark Angel (I…  1990   15592338    12480828  1.25 FAIL   nowomen   \n 4 Die Hard 2      1990  636768095   124808278  5.10 FAIL   dubious   \n 5 Edward Scisso…  1990  192479280    35659508  5.40 PASS   ok        \n 6 Flatliners      1990  218621858    46357360  4.72 PASS   ok        \n 7 Ghost           1990 1310899333    39225459 33.4  FAIL   men       \n 8 Goodfellas      1990  166686124    44574385  3.74 FAIL   men       \n 9 Home Alone      1990 1359422317    26744631 50.8  FAIL   men       \n10 Nikita          1990   17893838    12480828  1.43 PASS   ok        \n# ℹ 1,605 more rows"
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
+    "title": "Grammar of Data Transformation",
+    "section": "sample_n()",
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title           year gross_2013 budget_2013    roi binary clean_test\n  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Virus           1999   62423681   104884652  0.595 FAIL   dubious   \n2 The Skeleton …  2005  167221051    47721325  3.50  PASS   ok        \n3 Kung Fu Hustle  2004  145651594    24663858  5.91  FAIL   nowomen   \n4 Spider-Man      2002 1586946504   180029911  8.81  FAIL   notalk    \n5 The Last Exor…  2010  118787648     1922817 61.8   PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
     "href": "slides/03-grammar-of-data-transformation-slides.html#filter",
     "title": "Grammar of Data Transformation",
     "section": "filter()",
-    "text": "filter()\nKeep only the rows ofbechdel that pass the test:\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "filter()\n\n\nfilter():chooses rows based on column values\nYou should think of the logic you provide within a filter() function call as telling R what observations it should keep\n\n\nKeep only the rows of bechdel that pass the test:\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  filter(binary == \"PASS\")\n\n# A tibble: 753 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 Dredd 3D        2012   55078343    45658735  1.21 PASS   ok        \n 2 About Time      2013  102648667    12000000  8.55 PASS   ok        \n 3 Admission       2013   36014634    13000000  2.77 PASS   ok        \n 4 American Hust…  2013  397915817    40000000  9.95 PASS   ok        \n 5 August: Osage…  2013   87609748    25000000  3.50 PASS   ok        \n 6 Beautiful Cre…  2013   75392809    50000000  1.51 PASS   ok        \n 7 Blue Jasmine    2013  101793664    18000000  5.66 PASS   ok        \n 8 Carrie          2013  120268278    30000000  4.01 PASS   ok        \n 9 Despicable Me…  2013 1338831390    76000000 17.6  PASS   ok        \n10 Elysium         2013  379242208   120000000  3.16 PASS   ok        \n# ℹ 743 more rows"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter-1",
     "href": "slides/03-grammar-of-data-transformation-slides.html#filter-1",
     "title": "Grammar of Data Transformation",
     "section": "filter()",
-    "text": "filter()\nKeep only the rows ofbechdel that pass the test:\n\nbechdel |&gt;\n  filter(binary == \"PASS\")\n\n# A tibble: 753 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 Dredd 3D        2012   55078343    45658735  1.21 PASS   ok        \n 2 About Time      2013  102648667    12000000  8.55 PASS   ok        \n 3 Admission       2013   36014634    13000000  2.77 PASS   ok        \n 4 American Hust…  2013  397915817    40000000  9.95 PASS   ok        \n 5 August: Osage…  2013   87609748    25000000  3.50 PASS   ok        \n 6 Beautiful Cre…  2013   75392809    50000000  1.51 PASS   ok        \n 7 Blue Jasmine    2013  101793664    18000000  5.66 PASS   ok        \n 8 Carrie          2013  120268278    30000000  4.01 PASS   ok        \n 9 Despicable Me…  2013 1338831390    76000000 17.6  PASS   ok        \n10 Elysium         2013  379242208   120000000  3.16 PASS   ok        \n# ℹ 743 more rows"
+    "text": "filter()\nKeep only the movies released before 2000\n\nbechdel |&gt;\n  filter(year &lt; 2000)\n\n# A tibble: 337 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 10 Things I H…  1999  137877156    18180006  7.58 PASS   ok        \n 2 8MM             1999  185774868    55938481  3.32 FAIL   notalk    \n 3 American Beau…  1999  680094591    20976930 32.4  PASS   ok        \n 4 American Pie    1999  470616170    16781544 28.0  FAIL   men       \n 5 Analyze This    1999  396843410    41953861  9.46 FAIL   notalk    \n 6 Anna and the …  1999  109782424   104884652  1.05 FAIL   men       \n 7 Anywhere But …  1999   52172744    32164627  1.62 FAIL   dubious   \n 8 Austin Powers…  1999  722127642    48946171 14.8  FAIL   notalk    \n 9 Being John Ma…  1999   77252870    18180006  4.25 PASS   ok        \n10 Black and Whi…  1999   14659560    13984620  1.05 PASS   ok        \n# ℹ 327 more rows"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter-2",
     "href": "slides/03-grammar-of-data-transformation-slides.html#filter-2",
-    "title": "Grammar of Data Transformation",
-    "section": "filter()",
-    "text": "filter()\nKeep only the movies from before 2000\n\nbechdel |&gt;\n  filter(year &lt; 2000)\n\n# A tibble: 337 × 7\n   title           year gross_2013 budget_2013   roi binary clean_test\n   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 10 Things I H…  1999  137877156    18180006  7.58 PASS   ok        \n 2 8MM             1999  185774868    55938481  3.32 FAIL   notalk    \n 3 American Beau…  1999  680094591    20976930 32.4  PASS   ok        \n 4 American Pie    1999  470616170    16781544 28.0  FAIL   men       \n 5 Analyze This    1999  396843410    41953861  9.46 FAIL   notalk    \n 6 Anna and the …  1999  109782424   104884652  1.05 FAIL   men       \n 7 Anywhere But …  1999   52172744    32164627  1.62 FAIL   dubious   \n 8 Austin Powers…  1999  722127642    48946171 14.8  FAIL   notalk    \n 9 Being John Ma…  1999   77252870    18180006  4.25 PASS   ok        \n10 Black and Whi…  1999   14659560    13984620  1.05 PASS   ok        \n# ℹ 327 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter-3",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#filter-3",
     "title": "Grammar of Data Transformation",
     "section": "filter()",
     "text": "filter()\nOften (but not always), looks like:\n\nfilter(variable [logical operator] value)\n\nor\n\nfilter(!is.na(variable))"
@@ -2830,172 +2732,81 @@
     "text": "More logical operators\n\n\n\n\n\n\noperator\ndefinition\n\n\n\nx & y\nis x AND y?\n\n\nx | y\nis x OR y?\n\n\nis.na(x)\nis x NA?\n\n\n!is.na(x)\nis x not NA?\n\n\nx %in% y\nis x in y?\n\n\n!(x %in% y)\nis x not in y?\n\n\n!x\nis not x? (only makes sense if x is TRUE or FALSE)"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter-4",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#filter-4",
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter-3",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#filter-3",
     "title": "Grammar of Data Transformation",
     "section": "filter()",
     "text": "filter()\nKeep only the movies from before 2000 AND that pass the test\n\nbechdel |&gt;\n  filter(year &lt; 2000 & binary == \"PASS\")\n\n# A tibble: 147 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 10 Things I …  1999  137877156    18180006  7.58  PASS   ok        \n 2 American Bea…  1999  680094591    20976930 32.4   PASS   ok        \n 3 Being John M…  1999   77252870    18180006  4.25  PASS   ok        \n 4 Black and Wh…  1999   14659560    13984620  1.05  PASS   ok        \n 5 Boys Don't C…  1999   45144602     2796924 16.1   PASS   ok        \n 6 But I'm a Ch…  1999    6761310     1678154  4.03  PASS   ok        \n 7 Carrie 2: Th…  1999   49674054    29367703  1.69  PASS   ok        \n 8 Cruel Intent…  1999  159471926    15383082 10.4   PASS   ok        \n 9 Dick           1999   17555926    18180006  0.966 PASS   ok        \n10 Drop Dead Go…  1999   29567426    13984620  2.11  PASS   ok        \n# ℹ 137 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
-    "title": "Grammar of Data Transformation",
-    "section": "sample_n()",
-    "text": "sample_n()\nDisplay five random rows ofbechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#sample_n-1",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n-1",
-    "title": "Grammar of Data Transformation",
-    "section": "sample_n()",
-    "text": "sample_n()\nDisplay five random rows ofbechdel:\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title        year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Safe         1995   89643489    50449722 1.78  PASS   ok        \n2 S.W.A.T.     2003  410253125    88626087 4.63  PASS   ok        \n3 Warrior      2011   39224199    25892270 1.51  FAIL   notalk    \n4 The Postman  1997   51230750   116099050 0.441 FAIL   notalk    \n5 Doomsday     2008   35313978    35714458 0.989 PASS   ok"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#column-operations-1",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#column-operations-1",
-    "title": "Grammar of Data Transformation",
-    "section": "Column operations",
-    "text": "Column operations\n\n\nselect(): changes whether or not a column is included.\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#column-operations-2",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#column-operations-2",
-    "title": "Grammar of Data Transformation",
-    "section": "Column operations",
-    "text": "Column operations\n\n\nrename(): changes the name of columns.\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#column-operations-3",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#column-operations-3",
-    "title": "Grammar of Data Transformation",
-    "section": "Column operations",
-    "text": "Column operations\n\n\nmutate(): changes the values of columns and creates new columns.\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#select",
     "href": "slides/03-grammar-of-data-transformation-slides.html#select",
     "title": "Grammar of Data Transformation",
     "section": "select()",
-    "text": "select()\nKeep only the title and test status.\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "select()\n\n\nselect(): changes whether or not a column is included.\n\nKeep only the title and test status.\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  select(title, clean_test)\n\n# A tibble: 1,615 × 2\n   title                  clean_test\n   &lt;chr&gt;                  &lt;chr&gt;     \n 1 21 & Over              notalk    \n 2 Dredd 3D               ok        \n 3 12 Years a Slave       notalk    \n 4 2 Guns                 notalk    \n 5 42                     men       \n 6 47 Ronin               men       \n 7 A Good Day to Die Hard notalk    \n 8 About Time             ok        \n 9 Admission              ok        \n10 After Earth            notalk    \n# ℹ 1,605 more rows"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#select-1",
     "href": "slides/03-grammar-of-data-transformation-slides.html#select-1",
     "title": "Grammar of Data Transformation",
     "section": "select()",
-    "text": "select()\nKeep only the title and test status.\n\nbechdel |&gt;\n  select(title, clean_test)\n\n# A tibble: 1,615 × 2\n   title                  clean_test\n   &lt;chr&gt;                  &lt;chr&gt;     \n 1 21 & Over              notalk    \n 2 Dredd 3D               ok        \n 3 12 Years a Slave       notalk    \n 4 2 Guns                 notalk    \n 5 42                     men       \n 6 47 Ronin               men       \n 7 A Good Day to Die Hard notalk    \n 8 About Time             ok        \n 9 Admission              ok        \n10 After Earth            notalk    \n# ℹ 1,605 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#mutate",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#mutate",
-    "title": "Grammar of Data Transformation",
-    "section": "mutate()",
-    "text": "mutate()\nCreate a new variable for the budget in millions\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#mutate-1",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#mutate-1",
-    "title": "Grammar of Data Transformation",
-    "section": "mutate()",
-    "text": "mutate()\nKeep only the title and test status.\n\nbechdel |&gt;\n  mutate(budget_million = budget_2013/1000000)\n\n# A tibble: 1,615 × 8\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n# ℹ 1 more variable: budget_million &lt;dbl&gt;"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#mutate-2",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#mutate-2",
-    "title": "Grammar of Data Transformation",
-    "section": "mutate()",
-    "text": "mutate()\nGenerally, looks like:\n\nmutate(new_variable_name = function(existing_variable))"
+    "text": "select()\n\n\nselect() also allows you to exclude particular columns using the - symbol\n\nAgain, keep only the title and test status but this time by explicitly excluding all other columns\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  select(-(2:6))\n\n# A tibble: 1,615 × 2\n   title                  clean_test\n   &lt;chr&gt;                  &lt;chr&gt;     \n 1 21 & Over              notalk    \n 2 Dredd 3D               ok        \n 3 12 Years a Slave       notalk    \n 4 2 Guns                 notalk    \n 5 42                     men       \n 6 47 Ronin               men       \n 7 A Good Day to Die Hard notalk    \n 8 About Time             ok        \n 9 Admission              ok        \n10 After Earth            notalk    \n# ℹ 1,605 more rows"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#rename",
     "href": "slides/03-grammar-of-data-transformation-slides.html#rename",
     "title": "Grammar of Data Transformation",
     "section": "rename()",
-    "text": "rename()\nRename clean_test to test_result\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "rename()\n\n\nrename(): changes the name of columns.\n\nRename clean_test to test_result\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  rename(test_result = clean_test)\n\n# A tibble: 1,615 × 7\n   title         year gross_2013 budget_2013    roi binary test_result\n   &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      \n 1 21 & Over     2013   67878146    13000000  5.22  FAIL   notalk     \n 2 Dredd 3D      2012   55078343    45658735  1.21  PASS   ok         \n 3 12 Years a …  2013  211714070    20000000 10.6   FAIL   notalk     \n 4 2 Guns        2013  208105475    61000000  3.41  FAIL   notalk     \n 5 42            2013  190040426    40000000  4.75  FAIL   men        \n 6 47 Ronin      2013  184166317   225000000  0.819 FAIL   men        \n 7 A Good Day …  2013  371598396    92000000  4.04  FAIL   notalk     \n 8 About Time    2013  102648667    12000000  8.55  PASS   ok         \n 9 Admission     2013   36014634    13000000  2.77  PASS   ok         \n10 After Earth   2013  304895295   130000000  2.35  FAIL   notalk     \n# ℹ 1,605 more rows"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#rename-1",
     "href": "slides/03-grammar-of-data-transformation-slides.html#rename-1",
     "title": "Grammar of Data Transformation",
     "section": "rename()",
-    "text": "rename()\nRename clean_test to test_result\n\nbechdel |&gt;\n  rename(test_result = clean_test)\n\n# A tibble: 1,615 × 7\n   title         year gross_2013 budget_2013    roi binary test_result\n   &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      \n 1 21 & Over     2013   67878146    13000000  5.22  FAIL   notalk     \n 2 Dredd 3D      2012   55078343    45658735  1.21  PASS   ok         \n 3 12 Years a …  2013  211714070    20000000 10.6   FAIL   notalk     \n 4 2 Guns        2013  208105475    61000000  3.41  FAIL   notalk     \n 5 42            2013  190040426    40000000  4.75  FAIL   men        \n 6 47 Ronin      2013  184166317   225000000  0.819 FAIL   men        \n 7 A Good Day …  2013  371598396    92000000  4.04  FAIL   notalk     \n 8 About Time    2013  102648667    12000000  8.55  PASS   ok         \n 9 Admission     2013   36014634    13000000  2.77  PASS   ok         \n10 After Earth   2013  304895295   130000000  2.35  FAIL   notalk     \n# ℹ 1,605 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#rename-2",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#rename-2",
-    "title": "Grammar of Data Transformation",
-    "section": "rename()",
     "text": "rename()\nGenerally, looks like:\n\nselect(new_variable_name = old_variable_name)"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#groups-of-rows-1",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#groups-of-rows-1",
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#mutate",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#mutate",
     "title": "Grammar of Data Transformation",
-    "section": "Groups of rows",
-    "text": "Groups of rows\n\n\ncount(): count unique values of one or more variables.\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
+    "section": "mutate()",
+    "text": "mutate()\n\n\nmutate(): changes the values of columns (i.e., modifies existing columns) and creates new columns.\n\nCreate a new variable for the budget in millions\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  mutate(budget_million = budget_2013/1000000)\n\n# A tibble: 1,615 × 8\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n# ℹ 1 more variable: budget_million &lt;dbl&gt;"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#groups-of-rows-2",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#groups-of-rows-2",
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#mutate-1",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#mutate-1",
     "title": "Grammar of Data Transformation",
-    "section": "Groups of rows",
-    "text": "Groups of rows\n\n\ngroup_by(): group separately for each value of a variable\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#groups-of-rows-3",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#groups-of-rows-3",
-    "title": "Grammar of Data Transformation",
-    "section": "Groups of rows",
-    "text": "Groups of rows\n\n\nsummarize(): collapses a group into a single row.\n\n\n\n\nVariable1\nVariable2\nVariable3\n\n\n\n1\nA\nYes\n\n\n2\nB\nYes\n\n\n5\nA\nNo\n\n\n2\nB\nNo\n\n\n1\nA\nNo\n\n\n4\nB\nNo"
+    "section": "mutate()",
+    "text": "mutate()\nGenerally, looks like:\n\nmutate(new_variable_name = function(existing_variable))"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#count",
     "href": "slides/03-grammar-of-data-transformation-slides.html#count",
     "title": "Grammar of Data Transformation",
     "section": "count()",
-    "text": "count()\nCount how many movies pass or fail the Bechdel test.\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#count-1",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#count-1",
-    "title": "Grammar of Data Transformation",
-    "section": "count()",
-    "text": "count()\nCount how many movies pass or fail the Bechdel test.\n\nbechdel |&gt;\n  count(binary)\n\n# A tibble: 2 × 2\n  binary     n\n  &lt;chr&gt;  &lt;int&gt;\n1 FAIL     862\n2 PASS     753"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#summarize",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#summarize",
-    "title": "Grammar of Data Transformation",
-    "section": "summarize()",
-    "text": "summarize()\nCompute average budget\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#summarize-1",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#summarize-1",
-    "title": "Grammar of Data Transformation",
-    "section": "summarize()",
-    "text": "summarize()\nCompute average budget\n\nbechdel |&gt;\n  summarize(mean_budget = mean(budget_2013))\n\n# A tibble: 1 × 1\n  mean_budget\n        &lt;dbl&gt;\n1   57035015."
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#summarize-2",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#summarize-2",
-    "title": "Grammar of Data Transformation",
-    "section": "summarize()",
-    "text": "summarize()\nGenerally, looks like:\n\nsummarize(resut_variable_name = function(existing_variable))"
+    "text": "count()\n\n\ncount(): count unique values of one or more variables.\n\nCount how many movies pass or fail the Bechdel test.\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  count(binary)\n\n# A tibble: 2 × 2\n  binary     n\n  &lt;chr&gt;  &lt;int&gt;\n1 FAIL     862\n2 PASS     753"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#group_by",
     "href": "slides/03-grammar-of-data-transformation-slides.html#group_by",
     "title": "Grammar of Data Transformation",
     "section": "group_by()",
-    "text": "group_by()\nGroup by movies passing or failing the test\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "group_by()\n\n\ngroup_by(): group separately for each value of a variable\n\nGroup by movies passing or failing the test\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  group_by(binary)\n\n# A tibble: 1,615 × 7\n# Groups:   binary [2]\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
   },
   {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#group_by-1",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#group_by-1",
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#summarize",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#summarize",
     "title": "Grammar of Data Transformation",
-    "section": "group_by()",
-    "text": "group_by()\nGroup by movies passing or failing the test\n\nbechdel |&gt;\n  group_by(binary)\n\n# A tibble: 1,615 × 7\n# Groups:   binary [2]\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "section": "summarize()",
+    "text": "summarize()\n\n\nsummarize(): collapses a group into a single row.\n\nCompute average budget\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  summarize(mean_budget = mean(budget_2013))\n\n# A tibble: 1 × 1\n  mean_budget\n        &lt;dbl&gt;\n1   57035015."
+  },
+  {
+    "objectID": "slides/03-grammar-of-data-transformation-slides.html#summarize-1",
+    "href": "slides/03-grammar-of-data-transformation-slides.html#summarize-1",
+    "title": "Grammar of Data Transformation",
+    "section": "summarize()",
+    "text": "summarize()\nGenerally, looks like:\n\nsummarize(resut_variable_name = function(existing_variable))"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#group_by-summarize",
@@ -3003,13 +2814,6 @@
     "title": "Grammar of Data Transformation",
     "section": "group_by() + summarize()",
     "text": "group_by() + summarize()\nGroup by movies passing/failing and compute within-group average budget\n\nbechdel |&gt;\n  group_by(binary) |&gt;\n  summarize(mean_budget = mean(budget_2013))\n\n# A tibble: 2 × 2\n  binary mean_budget\n  &lt;chr&gt;        &lt;dbl&gt;\n1 FAIL     65877024.\n2 PASS     46913086."
-  },
-  {
-    "objectID": "slides/03-grammar-of-data-transformation-slides.html#where-can-i-find-all-of-this",
-    "href": "slides/03-grammar-of-data-transformation-slides.html#where-can-i-find-all-of-this",
-    "title": "Grammar of Data Transformation",
-    "section": "Where can I find all of this??!",
-    "text": "Where can I find all of this??!"
   },
   {
     "objectID": "course-overview.html",

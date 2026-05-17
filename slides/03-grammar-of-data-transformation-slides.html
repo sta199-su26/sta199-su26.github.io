@@ -215,269 +215,208 @@ Katie Solarz
 </div>
 
   <p class="date">May 18, 2025</p>
-</section><section id="announcementsreminders" class="slide level2 smaller"><h2>Announcements/Reminders</h2>
+</section><section id="announcements-reminders" class="slide level2 smaller"><h2>Announcements / Reminders</h2>
 <ul>
-<li><p>Lab is due tomorrow night!!</p></li>
-<li><p>Come to office hours and/or post on Ed for help!</p></li>
-</ul></section><section id="lab-code-style-do-these-things" class="slide level2"><h2>Lab: Code Style (Do these things!!!)</h2>
+<li><p>First “official” lab takes place immediately after this lecture (well, 15 mins after… stretch your legs &amp; touch grass in between)</p></li>
+<li><p>Office hours start <strong>tomorrow</strong>; you can find time / location details <a href="https://sta199-su26.github.io/course-team.html">here</a></p></li>
+<li><p>Come to office hours and / or post on Ed for help!</p></li>
+</ul></section><section id="lab-assignments-exams-code-style-do-these-things" class="slide level2"><h2>Lab Assignments (&amp; Exams): Code Style (Do these things!)</h2>
 <p><em>Which of these pieces of code is easier to read?</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">ggplot</span>(bechdel, <span class="fu">aes</span>(<span class="at">x=</span>budget_2013,<span class="at">y=</span>gross_2013,<span class="at">color=</span>binary,<span class="at">size=</span>roi)) <span class="sc">+</span></span>
-<span id="cb1-2"><a></a><span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>clean_test) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a></a><span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span> clean_test) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(bechdel, <span class="fu">aes</span>(<span class="at">x =</span> budget_2013, <span class="at">y =</span> gross_2013,</span>
 <span id="cb2-2"><a></a>                    <span class="at">color =</span> binary, <span class="at">size =</span> roi)) <span class="sc">+</span></span>
 <span id="cb2-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
-<span id="cb2-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>clean_test) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> clean_test) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="lab-code-style-do-these-things-1" class="slide level2 smaller incremental"><h2>Lab: Code Style (Do these things!!!)</h2>
+</section><section id="lab-assignments-exams-code-style-do-these-things-1" class="slide level2 smaller incremental"><h2>Lab Assignments (&amp; Exams): Code Style (Do these things!)</h2>
 <p>Code should follow the <strong>tidyverse</strong> style:</p>
 <ul>
 <li><p>there should be spaces before and line breaks after each&nbsp;<code>+</code>&nbsp;when building a&nbsp;<code>ggplot</code></p></li>
-<li><p>there should also be spaces before and line breaks after each&nbsp;<code>|&gt;</code>&nbsp;in a data transformation pipeline</p></li>
-<li><p>code should be properly indented</p></li>
+<li><p>there should also be spaces before and line breaks after each&nbsp;<code>|&gt;</code>&nbsp;in a data transformation pipeline (we will introduce the “pipe” today!)</p></li>
+<li><p>code should be properly indented (check: Code -&gt; Reindent Lines; equivalently, <strong>⌘I</strong>)</p></li>
 <li><p>spaces around&nbsp;<code>=</code>&nbsp;signs and spaces after commas</p></li>
+<li><p>you can find all <strong>tidyverse</strong> style guidelines <a href="https://style.tidyverse.org/">here</a></p></li>
 </ul>
 <p>All code should be visible in the PDF output (should not run off the page)! Use line breaks to prevent this.</p>
-</section><section id="survey-responses" class="slide level2 smaller"><h2>Survey Responses</h2>
-<div>
-<ul>
-<li class="fragment">
-<strong>Concerns:</strong> first time coding + the quick pace of the course<br>
-</li>
-<li class="fragment">
-<strong>Best way to succeed?</strong> Come to class/labs and ask for help!!!<br>
-</li>
-<li class="fragment">
-<strong>Grading:</strong>
-<ul>
-<li class="fragment">Is the midterm take-home individual or collaborative?<br>
-Individual!!<br>
-</li>
-<li class="fragment">Is the class curved or absolute?<br>
-We will only curve up – your absolute grade is the minimum you can get<br>
-</li>
-</ul>
-</li>
-<li class="fragment"><strong>What is statistics/this class???</strong></li>
-</ul>
-</div>
 </section><section id="outline" class="slide level2 smaller"><h2>Outline</h2>
 <ul>
-<li><p><strong><em>Last Time:</em></strong> Learned about more types of plots</p></li>
+<li><p><strong><em>Last Time:</em></strong> Grammar of data viz in R (via <code>ggplot()</code>)</p></li>
 <li><p><strong><em>Today:</em></strong> Grammar of ‘data wrangling’</p></li>
-</ul></section><section id="ae-02-any-questions" class="title-slide slide level1 center"><h1>AE-02: Any questions?</h1>
+</ul></section><section id="alison-bechdel" class="slide level2"><h2>Alison Bechdel</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/03/alison.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/03/fun_home.jpg" class="quarto-figure quarto-figure-center" style="width:76.0%"></p>
+</figure>
+</div>
+</div></div>
+</section><section id="the-bechdel-test" class="slide level2"><h2>The Bechdel Test</h2>
+<div class="columns">
+<div class="column" style="width:68%;">
+<p><img data-src="img/03/bechdel.png" class="quarto-figure quarto-figure-center"> (<em>Dykes to Watch Out For</em> - 1985)</p>
+</div><div class="column" style="width:25%;">
+<div style="font-size: 35px;">
+<p>Film passes if it has…</p>
+<ol type="1">
+<li>two (named) female characters;</li>
+<li>who talk to each other;</li>
+<li>about something besides a man.</li>
+</ol>
+</div>
+</div></div>
+</section><section id="recent-releases" class="slide level2 smaller"><h2>Recent releases</h2>
+<table class="caption-top">
+<thead><tr class="header">
+<th>Title</th>
+<th>Year</th>
+<th>Bechdel</th>
+<th>Director</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><em>Dune 2</em></td>
+<td>2024</td>
+<td>❌</td>
+<td>M</td>
+</tr>
+<tr class="even">
+<td><em>Conclave</em></td>
+<td>2024</td>
+<td>❌</td>
+<td>M</td>
+</tr>
+<tr class="odd">
+<td><em>Wicked 1</em></td>
+<td>2024</td>
+<td>✅</td>
+<td>M</td>
+</tr>
+<tr class="even">
+<td><em>Bugonia</em></td>
+<td>2025</td>
+<td>❌</td>
+<td>M</td>
+</tr>
+<tr class="odd">
+<td><em>Wicked 2</em></td>
+<td>2025</td>
+<td>✅</td>
+<td>M</td>
+</tr>
+<tr class="even">
+<td><em>Marty Supreme</em></td>
+<td>2025</td>
+<td>❌</td>
+<td>M</td>
+</tr>
+<tr class="odd">
+<td><em>Wuthering Heights</em></td>
+<td>2026</td>
+<td>✅</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td><em>The Devil Wears Prada 2</em></td>
+<td>2026</td>
+<td>✅</td>
+<td>M</td>
+</tr>
+</tbody>
+</table></section><section><section id="data-transformation" class="title-slide slide level1 center"><h1>Data Transformation</h1>
 
-</section><section><section id="data-transformation" class="title-slide slide level1 center"><h1>Data Transformation</h1>
-
-</section><section id="dplyr" class="slide level2"><h2>dplyr</h2>
+</section><section id="dplyr" class="slide level2 smaller"><h2>dplyr</h2>
 <p>Primary package in the <strong>tidyverse</strong> for data wrangling and transformation</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><a href="https://dplyr.tidyverse.org">dplyr.tidyverse.org</a></p>
-<iframe width="600" height="375" src="https://dplyr.tidyverse.org/" title="dplyr home page"></iframe>
 </div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/03/hex-dplyr.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
+</figure>
+</div>
 </section><section id="what-is-data-transformation" class="slide level2"><h2>What is data transformation?</h2>
 <div>
 <ul>
-<li class="fragment"><p>Making new variables (example: garage in AE03)</p></li>
-<li class="fragment"><p>Renaming/reordering your data frame</p></li>
+<li class="fragment"><p>Creating new variables (perhaps as a function of some existing variables, but not necessarily so…)</p></li>
+<li class="fragment"><p>Reshaping your data frame</p></li>
 <li class="fragment"><p>Summarizing information about your variables</p></li>
 <li class="fragment"><p>And more!</p></li>
 </ul>
 </div>
-</section><section id="the-pipe" class="slide level2 incremental"><h2>The pipe</h2>
+</section><section id="the-pipe" class="slide level2 scrollable incremental"><h2>The pipe</h2>
 <div>
 <ul>
-<li class="fragment"><p>The <strong>pipe</strong>, <code>|&gt;</code>, is an operator (a tool) for passing information from one process to another.</p></li>
-<li class="fragment"><p>Use <code>|&gt;</code> to pass the output of the previous line of code as the first input of the next line of code.</p></li>
-<li class="fragment"><p>When reading code “in English”, say “and then” whenever you see a pipe.</p></li>
+<li class="fragment"><p>The <strong>pipe</strong>, <code>|&gt;</code>, is an operator (a tool) that allows us to link two functions together in a way that is readable from left to right</p></li>
+<li class="fragment"><p>Use <code>|&gt;</code> to pass the output of the previous line of code as the first argument to the function in the following line of code.</p></li>
+<li class="fragment"><p>When reading code “in English”, say “(and) then” whenever you see a pipe.</p></li>
+<li class="fragment"><p>You can string multiple pipes together to continue passing upstream outputs along to downstream functions; a string of pipes is still referred to as a “single pipeline”</p></li>
+</ul>
+</div>
+</section><section id="readability" class="slide level2 scrollable"><h2>Readability</h2>
+<p>Consider the following sequence of actions that describe the process of getting to campus in the morning:</p>
+<p>I need to find my key, then unlock my car, then start my car, then drive to school, then park.</p>
+<div class="fragment">
+<p><br></p>
+<p>Expressed as a set of nested functions in R pseudocode this would look like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">park</span>(<span class="fu">drive</span>(<span class="fu">start_car</span>(<span class="fu">find</span>(<span class="st">"keys"</span>)), <span class="at">to=</span><span class="st">"campus"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Writing it out using pipes give it a more natural (and easier to read) structure:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">find</span>(<span class="st">"keys"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a></a>    <span class="fu">start_car</span>() <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a></a>    <span class="fu">drive</span>(<span class="at">to=</span><span class="st">"campus"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a></a>    <span class="fu">park</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section><section id="a-grammar-of-data-manipulation" class="slide level2 scrollable smaller"><h2>A Grammar of Data Manipulation</h2>
+<div class="medium">
+<p>dplyr is based on the concepts of functions as verbs that manipulate data frames.</p>
+<p>Core single data frame functions / verbs:</p>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> / <code>slice()</code> - pick rows based on criteria</li>
+<li>
+<code>select()</code> / <code>rename()</code> - select columns by name</li>
+<li>
+<code>pull()</code> - grab a column as a vector</li>
+<li>
+<code>arrange()</code> - reorder rows</li>
+<li>
+<code>mutate()</code> / <code>transmute()</code> - create or modify columns</li>
+<li>
+<code>distinct()</code> - filter for unique rows</li>
+<li>
+<code>summarize()</code> / <code>count()</code> - reduce variables to values</li>
+<li>
+<code>group_by()</code> / <code>ungroup()</code> - modify other verbs to act on subsets</li>
+<li>
+<code>relocate()</code> - change column order</li>
+<li>… (many more)</li>
 </ul>
 </div>
 </section></section><section><section id="row-operations" class="title-slide slide level1 center"><h1>Row Operations</h1>
 
-</section><section id="row-operations-1" class="slide level2 smaller"><h2>Row Operations</h2>
+</section><section id="slice" class="slide level2 scrollable smaller"><h2><code>slice()</code></h2>
 <ul>
 <li>
 <code>slice()</code>: chooses rows based on location</li>
 </ul>
-<p><br></p>
-<table class="caption-top">
-<thead><tr class="header">
-<th>Variable1</th>
-<th>Variable2</th>
-<th>Variable3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>B</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></section><section id="row-operations-2" class="slide level2 smaller"><h2>Row Operations</h2>
-<ul>
-<li>
-<code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>:chooses rows based on column values</li>
-</ul>
-<p><br></p>
-<table class="caption-top">
-<thead><tr class="header">
-<th>Variable1</th>
-<th>Variable2</th>
-<th>Variable3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>B</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></section><section id="row-operations-3" class="slide level2 smaller"><h2>Row Operations</h2>
-<ul>
-<li>
-<code>arrange()</code>: changes the order of the rows</li>
-</ul>
-<p><br></p>
-<table class="caption-top">
-<thead><tr class="header">
-<th>Variable1</th>
-<th>Variable2</th>
-<th>Variable3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>B</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></section><section id="row-operations-4" class="slide level2 smaller"><h2>Row Operations</h2>
-<ul>
-<li>
-<code>sample_n()</code>: take a random subset of the rows</li>
-</ul>
-<p><br></p>
-<table class="caption-top">
-<thead><tr class="header">
-<th>Variable1</th>
-<th>Variable2</th>
-<th>Variable3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>B</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></section><section id="slice" class="slide level2 smaller"><h2><code>slice()</code></h2>
-<p>Display the first five rows of <code>bechdel</code>:</p>
+<p>Ex: Display the first five rows of <code>bechdel</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="|1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="|1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,615 × 7
    title          year gross_2013 budget_2013    roi binary clean_test
@@ -495,11 +434,10 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 # ℹ 1,605 more rows</code></pre>
 </div>
 </div>
-</section><section id="slice-1" class="slide level2 smaller"><h2><code>slice()</code></h2>
-<p>Display the first five rows of <code>bechdel</code>:</p>
+<p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 7
   title            year gross_2013 budget_2013   roi binary clean_test
@@ -511,10 +449,13 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 5 42               2013  190040426    40000000  4.75 FAIL   men       </code></pre>
 </div>
 </div>
-</section><section id="filter" class="slide level2 smaller"><h2><code>filter()</code></h2>
-<p>Keep only the rows of<code>bechdel</code> that pass the test:</p>
+</section><section id="arrange" class="slide level2 scrollable smaller"><h2><code>arrange()</code></h2>
+<ul>
+<li>
+<code>arrange()</code>: changes the order of the rows; default is <em>ascending</em> order</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="|1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,615 × 7
    title          year gross_2013 budget_2013    roi binary clean_test
@@ -532,11 +473,98 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 # ℹ 1,605 more rows</code></pre>
 </div>
 </div>
-</section><section id="filter-1" class="slide level2 smaller"><h2><code>filter()</code></h2>
-<p>Keep only the rows of<code>bechdel</code> that pass the test:</p>
+<p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">arrange</span>(year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,615 × 7
+   title           year gross_2013 budget_2013   roi binary clean_test
+   &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 Back to the F…  1990  590818548    71319016  8.28 FAIL   notalk    
+ 2 Child's Play 2  1990  108888347    23178680  4.70 PASS   ok        
+ 3 Dark Angel (I…  1990   15592338    12480828  1.25 FAIL   nowomen   
+ 4 Die Hard 2      1990  636768095   124808278  5.10 FAIL   dubious   
+ 5 Edward Scisso…  1990  192479280    35659508  5.40 PASS   ok        
+ 6 Flatliners      1990  218621858    46357360  4.72 PASS   ok        
+ 7 Ghost           1990 1310899333    39225459 33.4  FAIL   men       
+ 8 Goodfellas      1990  166686124    44574385  3.74 FAIL   men       
+ 9 Home Alone      1990 1359422317    26744631 50.8  FAIL   men       
+10 Nikita          1990   17893838    12480828  1.43 PASS   ok        
+# ℹ 1,605 more rows</code></pre>
+</div>
+</div>
+</section><section id="sample_n" class="slide level2 scrollable smaller"><h2><code>sample_n()</code></h2>
+<ul>
+<li>
+<code>sample_n()</code>: take a random subset of the rows</li>
+</ul>
+<p>Display five random rows of <code>bechdel</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>bechdel </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,615 × 7
+   title          year gross_2013 budget_2013    roi binary clean_test
+   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 21 &amp; Over      2013   67878146    13000000  5.22  FAIL   notalk    
+ 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        
+ 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    
+ 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    
+ 5 42             2013  190040426    40000000  4.75  FAIL   men       
+ 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       
+ 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    
+ 8 About Time     2013  102648667    12000000  8.55  PASS   ok        
+ 9 Admission      2013   36014634    13000000  2.77  PASS   ok        
+10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    
+# ℹ 1,605 more rows</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 7
+  title           year gross_2013 budget_2013    roi binary clean_test
+  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+1 Virus           1999   62423681   104884652  0.595 FAIL   dubious   
+2 The Skeleton …  2005  167221051    47721325  3.50  PASS   ok        
+3 Kung Fu Hustle  2004  145651594    24663858  5.91  FAIL   nowomen   
+4 Spider-Man      2002 1586946504   180029911  8.81  FAIL   notalk    
+5 The Last Exor…  2010  118787648     1922817 61.8   PASS   ok        </code></pre>
+</div>
+</div>
+</section><section id="filter" class="slide level2 scrollable smaller"><h2><code>filter()</code></h2>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>:chooses rows based on column values</li>
+<li>You should think of the logic you provide within a <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> function call as telling R what observations it should <em>keep</em>
+</li>
+</ul>
+<p>Keep only the rows of <code>bechdel</code> that pass the test:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,615 × 7
+   title          year gross_2013 budget_2013    roi binary clean_test
+   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 21 &amp; Over      2013   67878146    13000000  5.22  FAIL   notalk    
+ 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        
+ 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    
+ 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    
+ 5 42             2013  190040426    40000000  4.75  FAIL   men       
+ 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       
+ 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    
+ 8 About Time     2013  102648667    12000000  8.55  PASS   ok        
+ 9 Admission      2013   36014634    13000000  2.77  PASS   ok        
+10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    
+# ℹ 1,605 more rows</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a></a>  <span class="fu">filter</span>(binary <span class="sc">==</span> <span class="st">"PASS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 753 × 7
    title           year gross_2013 budget_2013   roi binary clean_test
@@ -554,11 +582,11 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 # ℹ 743 more rows</code></pre>
 </div>
 </div>
-</section><section id="filter-2" class="slide level2 smaller"><h2><code>filter()</code></h2>
-<p>Keep only the movies from before 2000</p>
+</section><section id="filter-1" class="slide level2 smaller"><h2><code>filter()</code></h2>
+<p>Keep only the movies released before 2000</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a></a>  <span class="fu">filter</span>(year <span class="sc">&lt;</span> <span class="dv">2000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a></a>  <span class="fu">filter</span>(year <span class="sc">&lt;</span> <span class="dv">2000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 337 × 7
    title           year gross_2013 budget_2013   roi binary clean_test
@@ -576,14 +604,14 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 # ℹ 327 more rows</code></pre>
 </div>
 </div>
-</section><section id="filter-3" class="slide level2 smaller"><h2><code>filter()</code></h2>
+</section><section id="filter-2" class="slide level2 smaller"><h2><code>filter()</code></h2>
 <p>Often (but not always), looks like:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">filter</span>(variable [logical operator] value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">filter</span>(variable [logical operator] value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>or</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(variable))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(variable))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="some-logical-operators" class="slide level2 smaller"><h2>Some logical operators</h2>
 <table class="caption-top">
@@ -657,11 +685,11 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 <td style="text-align: left;">is not x? (only makes sense if <code>x</code> is <code>TRUE</code> or <code>FALSE</code>)</td>
 </tr>
 </tbody>
-</table></section><section id="filter-4" class="slide level2 smaller"><h2><code>filter()</code></h2>
+</table></section><section id="filter-3" class="slide level2 smaller"><h2><code>filter()</code></h2>
 <p>Keep only the movies from before 2000 AND that pass the test</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">filter</span>(year <span class="sc">&lt;</span> <span class="dv">2000</span> <span class="sc">&amp;</span> binary <span class="sc">==</span> <span class="st">"PASS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb25-2"><a></a>  <span class="fu">filter</span>(year <span class="sc">&lt;</span> <span class="dv">2000</span> <span class="sc">&amp;</span> binary <span class="sc">==</span> <span class="st">"PASS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 147 × 7
    title          year gross_2013 budget_2013    roi binary clean_test
@@ -679,181 +707,16 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 # ℹ 137 more rows</code></pre>
 </div>
 </div>
-</section><section id="sample_n" class="slide level2 smaller"><h2><code>sample_n()</code></h2>
-<p>Display five random rows of<code>bechdel</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>bechdel </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,615 × 7
-   title          year gross_2013 budget_2013    roi binary clean_test
-   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
- 1 21 &amp; Over      2013   67878146    13000000  5.22  FAIL   notalk    
- 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        
- 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    
- 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    
- 5 42             2013  190040426    40000000  4.75  FAIL   men       
- 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       
- 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    
- 8 About Time     2013  102648667    12000000  8.55  PASS   ok        
- 9 Admission      2013   36014634    13000000  2.77  PASS   ok        
-10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    
-# ℹ 1,605 more rows</code></pre>
-</div>
-</div>
-</section><section id="sample_n-1" class="slide level2 smaller"><h2><code>sample_n()</code></h2>
-<p>Display five random rows of<code>bechdel</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb19-2"><a></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 7
-  title        year gross_2013 budget_2013   roi binary clean_test
-  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
-1 Safe         1995   89643489    50449722 1.78  PASS   ok        
-2 S.W.A.T.     2003  410253125    88626087 4.63  PASS   ok        
-3 Warrior      2011   39224199    25892270 1.51  FAIL   notalk    
-4 The Postman  1997   51230750   116099050 0.441 FAIL   notalk    
-5 Doomsday     2008   35313978    35714458 0.989 PASS   ok        </code></pre>
-</div>
-</div>
 </section></section><section><section id="column-operations" class="title-slide slide level1 center"><h1>Column Operations</h1>
 
-</section><section id="column-operations-1" class="slide level2 smaller"><h2>Column operations</h2>
+</section><section id="select" class="slide level2 scrollable smaller"><h2><code>select()</code></h2>
 <ul>
 <li>
 <code>select()</code>: changes whether or not a column is included.</li>
 </ul>
-<p><br></p>
-<table class="caption-top">
-<thead><tr class="header">
-<th>Variable1</th>
-<th>Variable2</th>
-<th>Variable3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>B</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></section><section id="column-operations-2" class="slide level2 smaller"><h2>Column operations</h2>
-<ul>
-<li>
-<code>rename()</code>: changes the name of columns.</li>
-</ul>
-<p><br></p>
-<table class="caption-top">
-<thead><tr class="header">
-<th>Variable1</th>
-<th>Variable2</th>
-<th>Variable3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>B</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></section><section id="column-operations-3" class="slide level2 smaller"><h2>Column operations</h2>
-<ul>
-<li>
-<code>mutate()</code>: changes the values of columns and creates new columns.</li>
-</ul>
-<p><br></p>
-<table class="caption-top">
-<thead><tr class="header">
-<th>Variable1</th>
-<th>Variable2</th>
-<th>Variable3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>B</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></section><section id="select" class="slide level2 smaller"><h2><code>select()</code></h2>
 <p>Keep only the title and test status.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,615 × 7
    title          year gross_2013 budget_2013    roi binary clean_test
@@ -871,11 +734,10 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 # ℹ 1,605 more rows</code></pre>
 </div>
 </div>
-</section><section id="select-1" class="slide level2 smaller"><h2><code>select()</code></h2>
-<p>Keep only the title and test status.</p>
+<p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb23-2"><a></a>  <span class="fu">select</span>(title, clean_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb29-2"><a></a>  <span class="fu">select</span>(title, clean_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,615 × 2
    title                  clean_test
@@ -893,10 +755,14 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 # ℹ 1,605 more rows</code></pre>
 </div>
 </div>
-</section><section id="mutate" class="slide level2 smaller"><h2><code>mutate()</code></h2>
-<p>Create a new variable for the budget in millions</p>
+</section><section id="select-1" class="slide level2 scrollable smaller"><h2><code>select()</code></h2>
+<ul>
+<li>
+<code>select()</code> also allows you to exclude particular columns using the <code>-</code> symbol</li>
+</ul>
+<p>Again, keep only the title and test status but this time by explicitly excluding all other columns</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,615 × 7
    title          year gross_2013 budget_2013    roi binary clean_test
@@ -914,218 +780,33 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 # ℹ 1,605 more rows</code></pre>
 </div>
 </div>
-</section><section id="mutate-1" class="slide level2 smaller"><h2><code>mutate()</code></h2>
-<p>Keep only the title and test status.</p>
+<p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb27-2"><a></a>  <span class="fu">mutate</span>(<span class="at">budget_million =</span> budget_2013<span class="sc">/</span><span class="dv">1000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,615 × 8
-   title          year gross_2013 budget_2013    roi binary clean_test
-   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
- 1 21 &amp; Over      2013   67878146    13000000  5.22  FAIL   notalk    
- 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        
- 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    
- 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    
- 5 42             2013  190040426    40000000  4.75  FAIL   men       
- 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       
- 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    
- 8 About Time     2013  102648667    12000000  8.55  PASS   ok        
- 9 Admission      2013   36014634    13000000  2.77  PASS   ok        
-10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    
-# ℹ 1,605 more rows
-# ℹ 1 more variable: budget_million &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 1,615 × 2
+   title                  clean_test
+   &lt;chr&gt;                  &lt;chr&gt;     
+ 1 21 &amp; Over              notalk    
+ 2 Dredd 3D               ok        
+ 3 12 Years a Slave       notalk    
+ 4 2 Guns                 notalk    
+ 5 42                     men       
+ 6 47 Ronin               men       
+ 7 A Good Day to Die Hard notalk    
+ 8 About Time             ok        
+ 9 Admission              ok        
+10 After Earth            notalk    
+# ℹ 1,605 more rows</code></pre>
 </div>
 </div>
-</section><section id="mutate-2" class="slide level2 smaller"><h2><code>mutate()</code></h2>
-<p>Generally, looks like:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">mutate</span>(<span class="at">new_variable_name =</span> <span class="cf">function</span>(existing_variable))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="rename" class="slide level2 smaller"><h2><code>rename()</code></h2>
+</section><section id="rename" class="slide level2 scrollable smaller"><h2><code>rename()</code></h2>
+<ul>
+<li>
+<code>rename()</code>: changes the name of columns.</li>
+</ul>
 <p>Rename <code>clean_test</code> to <code>test_result</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,615 × 7
-   title          year gross_2013 budget_2013    roi binary clean_test
-   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
- 1 21 &amp; Over      2013   67878146    13000000  5.22  FAIL   notalk    
- 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        
- 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    
- 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    
- 5 42             2013  190040426    40000000  4.75  FAIL   men       
- 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       
- 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    
- 8 About Time     2013  102648667    12000000  8.55  PASS   ok        
- 9 Admission      2013   36014634    13000000  2.77  PASS   ok        
-10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    
-# ℹ 1,605 more rows</code></pre>
-</div>
-</div>
-</section><section id="rename-1" class="slide level2 smaller"><h2><code>rename()</code></h2>
-<p>Rename <code>clean_test</code> to <code>test_result</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb32-2"><a></a>  <span class="fu">rename</span>(<span class="at">test_result =</span> clean_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,615 × 7
-   title         year gross_2013 budget_2013    roi binary test_result
-   &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      
- 1 21 &amp; Over     2013   67878146    13000000  5.22  FAIL   notalk     
- 2 Dredd 3D      2012   55078343    45658735  1.21  PASS   ok         
- 3 12 Years a …  2013  211714070    20000000 10.6   FAIL   notalk     
- 4 2 Guns        2013  208105475    61000000  3.41  FAIL   notalk     
- 5 42            2013  190040426    40000000  4.75  FAIL   men        
- 6 47 Ronin      2013  184166317   225000000  0.819 FAIL   men        
- 7 A Good Day …  2013  371598396    92000000  4.04  FAIL   notalk     
- 8 About Time    2013  102648667    12000000  8.55  PASS   ok         
- 9 Admission     2013   36014634    13000000  2.77  PASS   ok         
-10 After Earth   2013  304895295   130000000  2.35  FAIL   notalk     
-# ℹ 1,605 more rows</code></pre>
-</div>
-</div>
-</section><section id="rename-2" class="slide level2 smaller"><h2><code>rename()</code></h2>
-<p>Generally, looks like:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">select</span>(<span class="at">new_variable_name =</span> old_variable_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section></section><section><section id="groups-of-rows" class="title-slide slide level1 center"><h1>Groups of rows</h1>
-
-</section><section id="groups-of-rows-1" class="slide level2"><h2>Groups of rows</h2>
-<ul>
-<li>
-<code>count()</code>: count unique values of one or more variables.</li>
-</ul>
-<p><br></p>
-<table class="caption-top">
-<thead><tr class="header">
-<th>Variable1</th>
-<th>Variable2</th>
-<th>Variable3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>B</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></section><section id="groups-of-rows-2" class="slide level2"><h2>Groups of rows</h2>
-<ul>
-<li>
-<code>group_by()</code>: group separately for each value of a variable</li>
-</ul>
-<p><br></p>
-<table class="caption-top">
-<thead><tr class="header">
-<th>Variable1</th>
-<th>Variable2</th>
-<th>Variable3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>B</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></section><section id="groups-of-rows-3" class="slide level2"><h2>Groups of rows</h2>
-<ul>
-<li>
-<code>summarize()</code>: collapses a group into a single row.</li>
-</ul>
-<p><br></p>
-<table class="caption-top">
-<thead><tr class="header">
-<th>Variable1</th>
-<th>Variable2</th>
-<th>Variable3</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>B</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>A</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>B</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></section><section id="count" class="slide level2 smaller"><h2><code>count()</code></h2>
-<p>Count how many movies pass or fail the Bechdel test.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1145,11 +826,115 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 # ℹ 1,605 more rows</code></pre>
 </div>
 </div>
-</section><section id="count-1" class="slide level2 smaller"><h2><code>count()</code></h2>
-<p>Count how many movies pass or fail the Bechdel test.</p>
+<p><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb37-2"><a></a>  <span class="fu">count</span>(binary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-2"><a></a>  <span class="fu">rename</span>(<span class="at">test_result =</span> clean_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,615 × 7
+   title         year gross_2013 budget_2013    roi binary test_result
+   &lt;chr&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;      
+ 1 21 &amp; Over     2013   67878146    13000000  5.22  FAIL   notalk     
+ 2 Dredd 3D      2012   55078343    45658735  1.21  PASS   ok         
+ 3 12 Years a …  2013  211714070    20000000 10.6   FAIL   notalk     
+ 4 2 Guns        2013  208105475    61000000  3.41  FAIL   notalk     
+ 5 42            2013  190040426    40000000  4.75  FAIL   men        
+ 6 47 Ronin      2013  184166317   225000000  0.819 FAIL   men        
+ 7 A Good Day …  2013  371598396    92000000  4.04  FAIL   notalk     
+ 8 About Time    2013  102648667    12000000  8.55  PASS   ok         
+ 9 Admission     2013   36014634    13000000  2.77  PASS   ok         
+10 After Earth   2013  304895295   130000000  2.35  FAIL   notalk     
+# ℹ 1,605 more rows</code></pre>
+</div>
+</div>
+</section><section id="rename-1" class="slide level2 smaller"><h2><code>rename()</code></h2>
+<p>Generally, looks like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">select</span>(<span class="at">new_variable_name =</span> old_variable_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="mutate" class="slide level2 scrollable smaller"><h2><code>mutate()</code></h2>
+<ul>
+<li>
+<code>mutate()</code>: changes the values of columns (i.e., <em>modifies</em> existing columns) and creates new columns.</li>
+</ul>
+<p>Create a new variable for the budget in millions</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,615 × 7
+   title          year gross_2013 budget_2013    roi binary clean_test
+   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 21 &amp; Over      2013   67878146    13000000  5.22  FAIL   notalk    
+ 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        
+ 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    
+ 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    
+ 5 42             2013  190040426    40000000  4.75  FAIL   men       
+ 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       
+ 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    
+ 8 About Time     2013  102648667    12000000  8.55  PASS   ok        
+ 9 Admission      2013   36014634    13000000  2.77  PASS   ok        
+10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    
+# ℹ 1,605 more rows</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb42-2"><a></a>  <span class="fu">mutate</span>(<span class="at">budget_million =</span> budget_2013<span class="sc">/</span><span class="dv">1000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,615 × 8
+   title          year gross_2013 budget_2013    roi binary clean_test
+   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 21 &amp; Over      2013   67878146    13000000  5.22  FAIL   notalk    
+ 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        
+ 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    
+ 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    
+ 5 42             2013  190040426    40000000  4.75  FAIL   men       
+ 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       
+ 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    
+ 8 About Time     2013  102648667    12000000  8.55  PASS   ok        
+ 9 Admission      2013   36014634    13000000  2.77  PASS   ok        
+10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    
+# ℹ 1,605 more rows
+# ℹ 1 more variable: budget_million &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section><section id="mutate-1" class="slide level2 smaller"><h2><code>mutate()</code></h2>
+<p>Generally, looks like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">mutate</span>(<span class="at">new_variable_name =</span> <span class="cf">function</span>(existing_variable))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section><section><section id="groups-of-rows" class="title-slide slide level1 center"><h1>Groups of rows</h1>
+
+</section><section id="count" class="slide level2 scrollable smaller"><h2><code>count()</code></h2>
+<ul>
+<li>
+<code>count()</code>: count unique values of one or more variables.</li>
+</ul>
+<p>Count how many movies pass or fail the Bechdel test.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,615 × 7
+   title          year gross_2013 budget_2013    roi binary clean_test
+   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 21 &amp; Over      2013   67878146    13000000  5.22  FAIL   notalk    
+ 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        
+ 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    
+ 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    
+ 5 42             2013  190040426    40000000  4.75  FAIL   men       
+ 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       
+ 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    
+ 8 About Time     2013  102648667    12000000  8.55  PASS   ok        
+ 9 Admission      2013   36014634    13000000  2.77  PASS   ok        
+10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    
+# ℹ 1,605 more rows</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb47-2"><a></a>  <span class="fu">count</span>(binary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   binary     n
@@ -1158,10 +943,14 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 2 PASS     753</code></pre>
 </div>
 </div>
-</section><section id="summarize" class="slide level2 smaller"><h2><code>summarize()</code></h2>
-<p>Compute average budget</p>
+</section><section id="group_by" class="slide level2 scrollable smaller"><h2><code>group_by()</code></h2>
+<ul>
+<li>
+<code>group_by()</code>: group separately for each value of a variable</li>
+</ul>
+<p>Group by movies passing or failing the test</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>bechdel </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,615 × 7
    title          year gross_2013 budget_2013    roi binary clean_test
@@ -1179,49 +968,10 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 # ℹ 1,605 more rows</code></pre>
 </div>
 </div>
-</section><section id="summarize-1" class="slide level2 smaller"><h2><code>summarize()</code></h2>
-<p>Compute average budget</p>
+<p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb41-2"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_budget =</span> <span class="fu">mean</span>(budget_2013))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 1
-  mean_budget
-        &lt;dbl&gt;
-1   57035015.</code></pre>
-</div>
-</div>
-</section><section id="summarize-2" class="slide level2 smaller"><h2><code>summarize()</code></h2>
-<p>Generally, looks like:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">summarize</span>(<span class="at">resut_variable_name =</span> <span class="cf">function</span>(existing_variable))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="group_by" class="slide level2 smaller"><h2><code>group_by()</code></h2>
-<p>Group by movies passing or failing the test</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>bechdel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,615 × 7
-   title          year gross_2013 budget_2013    roi binary clean_test
-   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
- 1 21 &amp; Over      2013   67878146    13000000  5.22  FAIL   notalk    
- 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        
- 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    
- 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    
- 5 42             2013  190040426    40000000  4.75  FAIL   men       
- 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       
- 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    
- 8 About Time     2013  102648667    12000000  8.55  PASS   ok        
- 9 Admission      2013   36014634    13000000  2.77  PASS   ok        
-10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    
-# ℹ 1,605 more rows</code></pre>
-</div>
-</div>
-</section><section id="group_by-1" class="slide level2 smaller"><h2><code>group_by()</code></h2>
-<p>Group by movies passing or failing the test</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb46-2"><a></a>  <span class="fu">group_by</span>(binary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb51-2"><a></a>  <span class="fu">group_by</span>(binary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,615 × 7
 # Groups:   binary [2]
@@ -1240,12 +990,53 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 # ℹ 1,605 more rows</code></pre>
 </div>
 </div>
+</section><section id="summarize" class="slide level2 scrollable smaller"><h2><code>summarize()</code></h2>
+<ul>
+<li>
+<code>summarize()</code>: collapses a group into a single row.</li>
+</ul>
+<p>Compute average budget</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>bechdel </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,615 × 7
+   title          year gross_2013 budget_2013    roi binary clean_test
+   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
+ 1 21 &amp; Over      2013   67878146    13000000  5.22  FAIL   notalk    
+ 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        
+ 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    
+ 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    
+ 5 42             2013  190040426    40000000  4.75  FAIL   men       
+ 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       
+ 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    
+ 8 About Time     2013  102648667    12000000  8.55  PASS   ok        
+ 9 Admission      2013   36014634    13000000  2.77  PASS   ok        
+10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    
+# ℹ 1,605 more rows</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb55-2"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_budget =</span> <span class="fu">mean</span>(budget_2013))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  mean_budget
+        &lt;dbl&gt;
+1   57035015.</code></pre>
+</div>
+</div>
+</section><section id="summarize-1" class="slide level2 smaller"><h2><code>summarize()</code></h2>
+<p>Generally, looks like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="fu">summarize</span>(<span class="at">resut_variable_name =</span> <span class="cf">function</span>(existing_variable))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section><section id="group_by-summarize" class="slide level2 smaller"><h2><code>group_by() + summarize()</code></h2>
 <p>Group by movies passing/failing and compute within-group average budget</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
-<span id="cb48-2"><a></a>  <span class="fu">group_by</span>(binary) <span class="sc">|&gt;</span></span>
-<span id="cb48-3"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_budget =</span> <span class="fu">mean</span>(budget_2013))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a>bechdel <span class="sc">|&gt;</span></span>
+<span id="cb58-2"><a></a>  <span class="fu">group_by</span>(binary) <span class="sc">|&gt;</span></span>
+<span id="cb58-3"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_budget =</span> <span class="fu">mean</span>(budget_2013))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   binary mean_budget
@@ -1254,8 +1045,7 @@ We will only curve up – your absolute grade is the minimum you can get<br>
 2 PASS     46913086.</code></pre>
 </div>
 </div>
-</section><section id="where-can-i-find-all-of-this" class="slide level2"><h2>Where can I find all of this??!</h2>
-</section></section><section id="ae-04" class="title-slide slide level1 center"><h1>AE 04</h1>
+</section></section><section id="ae-03" class="title-slide slide level1 center"><h1>AE 03</h1>
 
 
 </section>
