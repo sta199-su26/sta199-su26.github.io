@@ -565,4 +565,60 @@ bechdel |>
   summarize(mean_budget = mean(budget_2013))
 ```
 
+## The pipe, in action {.smaller}
+
+::: task
+Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.
+:::
+
+. . .
+
+Start with the `bechdel` data frame:
+
+```{r}
+bechdel
+```
+
+## The pipe, in action {.scrollable .smaller}
+
+::: task
+Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.
+:::
+
+Filter for rows where `binary` is equal to `"PASS"`:
+
+```{r}
+bechdel |>
+  filter(binary == "PASS")
+```
+
+## The pipe, in action {.scrollable .smaller}
+
+::: task
+Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.
+:::
+
+Arrange the rows in `desc`ending order of `roi`:
+
+```{r}
+bechdel |>
+  filter(binary == "PASS") |>
+  arrange(desc(roi))
+```
+
+## The pipe, in action {.scrollable .smaller}
+
+::: task
+Find movies that pass the Bechdel test and display their titles and ROIs in descending order of ROI.
+:::
+
+Select columns `title` and `roi`:
+
+```{r}
+bechdel |>
+  filter(binary == "PASS") |>
+  arrange(desc(roi)) |>
+  select(title, roi)
+```
+
 # AE 03
