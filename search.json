@@ -2526,7 +2526,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n-1",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\nDisplay five random rows ofbechdel:\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Fantastic Four   2005  579113981   104390399  5.55 FAIL   notalk    \n2 Blue Valentine   2010   28098911     1068232 26.3  FAIL   men       \n3 The Kids Are A…  2010   60981974     4272927 14.3  PASS   ok        \n4 Assault on Pre…  2005   66907434    35790994  1.87 PASS   ok        \n5 The Beach        2000  107633600    67645419  1.59 FAIL   notalk"
+    "text": "sample_n()\nDisplay five random rows ofbechdel:\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Matrix       1999  883492175    90900032 9.72  PASS   ok        \n2 Bon Cop, Bad C…  2006   29290884     9246371 3.17  FAIL   notalk    \n3 The Adventures…  2002   14902458   129517922 0.115 FAIL   men       \n4 Priest           2011  117334084    62141447 1.89  FAIL   notalk    \n5 Lilo and Stitch  2002  507155303   103614337 4.89  PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#column-operations-1",
@@ -2848,7 +2848,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n-1",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\nDisplay five random rows ofbechdel:\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Fantastic Four   2005  579113981   104390399  5.55 FAIL   notalk    \n2 Blue Valentine   2010   28098911     1068232 26.3  FAIL   men       \n3 The Kids Are A…  2010   60981974     4272927 14.3  PASS   ok        \n4 Assault on Pre…  2005   66907434    35790994  1.87 PASS   ok        \n5 The Beach        2000  107633600    67645419  1.59 FAIL   notalk"
+    "text": "sample_n()\nDisplay five random rows ofbechdel:\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Matrix       1999  883492175    90900032 9.72  PASS   ok        \n2 Bon Cop, Bad C…  2006   29290884     9246371 3.17  FAIL   notalk    \n3 The Adventures…  2002   14902458   129517922 0.115 FAIL   men       \n4 Priest           2011  117334084    62141447 1.89  FAIL   notalk    \n5 Lilo and Stitch  2002  507155303   103614337 4.89  PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#column-operations-1",
