@@ -2526,7 +2526,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n-1",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\nDisplay five random rows ofbechdel:\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Chernobyl Diar…  2012   57336881     1014639 56.5  FAIL   notalk    \n2 The Grey         2012  137909503    25365964  5.44 FAIL   nowomen   \n3 The Visitor      2007   32135415     4494174  7.15 FAIL   dubious   \n4 Hostel: Part II  2007   57470621     8426576  6.82 PASS   ok        \n5 Appaloosa        2008   51890801    21645126  2.40 FAIL   notalk"
+    "text": "sample_n()\nDisplay five random rows ofbechdel:\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title        year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Safe         1995   89643489    50449722 1.78  PASS   ok        \n2 S.W.A.T.     2003  410253125    88626087 4.63  PASS   ok        \n3 Warrior      2011   39224199    25892270 1.51  FAIL   notalk    \n4 The Postman  1997   51230750   116099050 0.441 FAIL   notalk    \n5 Doomsday     2008   35313978    35714458 0.989 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#column-operations-1",
@@ -2848,7 +2848,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n-1",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\nDisplay five random rows ofbechdel:\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Chernobyl Diar…  2012   57336881     1014639 56.5  FAIL   notalk    \n2 The Grey         2012  137909503    25365964  5.44 FAIL   nowomen   \n3 The Visitor      2007   32135415     4494174  7.15 FAIL   dubious   \n4 Hostel: Part II  2007   57470621     8426576  6.82 PASS   ok        \n5 Appaloosa        2008   51890801    21645126  2.40 FAIL   notalk"
+    "text": "sample_n()\nDisplay five random rows ofbechdel:\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title        year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Safe         1995   89643489    50449722 1.78  PASS   ok        \n2 S.W.A.T.     2003  410253125    88626087 4.63  PASS   ok        \n3 Warrior      2011   39224199    25892270 1.51  FAIL   notalk    \n4 The Postman  1997   51230750   116099050 0.441 FAIL   notalk    \n5 Doomsday     2008   35313978    35714458 0.989 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#column-operations-1",
