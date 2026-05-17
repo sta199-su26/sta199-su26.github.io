@@ -8,21 +8,29 @@ format:
 auto-stretch: false
 ---
 
-## Announcements/Reminders {.smaller}
+```{r}
+#| include: false
+library(tidyverse)
+library(ggplot2)
+bechdel <- read_csv("data/bechdel.csv")
+```
 
--   Lab is due tomorrow night!!
+## Announcements / Reminders {.smaller}
 
--   Come to office hours and/or post on Ed for help!
+-   First "official" lab takes place immediately after this lecture (well, 15 mins after... stretch your legs & touch grass in between)
 
-## Lab: Code Style (Do these things!!!)
+-   Office hours start **tomorrow**; you can find time / location details [here](https://sta199-su26.github.io/course-team.html)
+
+-   Come to office hours and / or post on Ed for help!
+
+## Lab Assignments (& Exams): Code Style (Do these things!)
 
 *Which of these pieces of code is easier to read?*
 
 ```{r}
 #| eval: false
-
 ggplot(bechdel, aes(x=budget_2013,y=gross_2013,color=binary,size=roi)) +
-geom_point(alpha = 0.5) + facet_wrap(~clean_test) 
+geom_point(alpha = 0.5) + facet_wrap(~ clean_test) 
 ```
 
 <br> <br>
@@ -33,40 +41,29 @@ geom_point(alpha = 0.5) + facet_wrap(~clean_test)
 ggplot(bechdel, aes(x = budget_2013, y = gross_2013,
                     color = binary, size = roi)) +
   geom_point(alpha = 0.5) + 
-  facet_wrap(~clean_test) 
+  facet_wrap(~ clean_test) 
 ```
 
-## Lab: Code Style (Do these things!!!) {.smaller .incremental}
+## Lab Assignments (& Exams): Code Style (Do these things!) {.smaller .incremental}
 
 Code should follow the **tidyverse** style:
 
 -   there should be spaces before and line breaks after each `+` when building a `ggplot`
 
--   there should also be spaces before and line breaks after each `|>` in a data transformation pipeline
+-   there should also be spaces before and line breaks after each `|>` in a data transformation pipeline (we will introduce the "pipe" today!)
 
--   code should be properly indented
+-   code should be properly indented (check: Code -\> Reindent Lines; equivalently, **⌘I**)
 
 -   spaces around `=` signs and spaces after commas
+
+-   you can find all **tidyverse** style guidelines [here](https://style.tidyverse.org/)
 
 All code should be visible in the PDF output (should not run off the page)!
 Use line breaks to prevent this.
 
-## Survey Responses {.smaller}
-
-::: incremental
--   **Concerns:** first time coding + the quick pace of the course\
--   **Best way to succeed?** Come to class/labs and ask for help!!!\
--   **Grading:**
-    -   Is the midterm take-home individual or collaborative?\
-        Individual!!\
-    -   Is the class curved or absolute?\
-        We will only curve up -- your absolute grade is the minimum you can get\
--   **What is statistics/this class???**
-:::
-
 ## Outline {.smaller}
 
--   ***Last Time:*** Learned about more types of plots
+-   ***Last Time:*** Grammar of data viz in R (via `ggplot()`)
 
 -   ***Today:*** Grammar of 'data wrangling'
 
@@ -81,111 +78,141 @@ library(tidyverse)
 bechdel <- read_csv("data/bechdel.csv")
 ```
 
-# AE-02: Any questions?
+## Alison Bechdel
+
+::::: columns
+::: {.column width="50%"}
+![](img/03/alison.png){fig-align="center" width="80%"}
+:::
+
+::: {.column width="50%"}
+![](img/03/fun_home.jpg){fig-align="center" width="76%"}
+:::
+:::::
+
+## The Bechdel Test
+
+:::::: columns
+::: {.column width="68%"}
+![](img/03/bechdel.png){fig-align="center"} (*Dykes to Watch Out For* - 1985)
+:::
+
+:::: {.column width="25%"}
+::: {style="font-size: 35px;"}
+Film passes if it has...
+
+1.  two (named) female characters;
+2.  who talk to each other;
+3.  about something besides a man.
+:::
+::::
+::::::
+
+## Recent releases {.smaller}
+
+| Title                     | Year | Bechdel | Director |
+|---------------------------|------|---------|----------|
+| *Dune 2*                  | 2024 | ❌      | M        |
+| *Conclave*                | 2024 | ❌      | M        |
+| *Wicked 1*                | 2024 | ✅      | M        |
+| *Bugonia*                 | 2025 | ❌      | M        |
+| *Wicked 2*                | 2025 | ✅      | M        |
+| *Marty Supreme*           | 2025 | ❌      | M        |
+| *Wuthering Heights*       | 2026 | ✅      | F        |
+| *The Devil Wears Prada 2* | 2026 | ✅      | M        |
 
 # Data Transformation
 
-## dplyr
+## dplyr {.smaller}
 
 Primary package in the **tidyverse** for data wrangling and transformation
 
-::: columns
+:::: columns
 ::: {.column width="50%"}
 [dplyr.tidyverse.org](https://dplyr.tidyverse.org)
+:::
+::::
 
-```{=html}
-<iframe width=600 height=375 src="https://dplyr.tidyverse.org/" title="dplyr home page"></iframe>
-```
-:::
-:::
+![](img/03/hex-dplyr.png){fig-align="center" width="40%"}
 
 ## What is data transformation?
 
 ::: incremental
--   Making new variables (example: garage in AE03)
+-   Creating new variables (perhaps as a function of some existing variables, but not necessarily so...)
 
--   Renaming/reordering your data frame
+-   Reshaping your data frame
 
 -   Summarizing information about your variables
 
 -   And more!
 :::
 
-## The pipe {.incremental}
+## The pipe {.scrollable .incremental}
 
 ::: incremental
--   The **pipe**, `|>`, is an operator (a tool) for passing information from one process to another.
+-   The **pipe**, `|>`, is an operator (a tool) that allows us to link two functions together in a way that is readable from left to right
 
--   Use `|>` to pass the output of the previous line of code as the first input of the next line of code.
+-   Use `|>` to pass the output of the previous line of code as the first argument to the function in the following line of code.
 
--   When reading code "in English", say "and then" whenever you see a pipe.
+-   When reading code "in English", say "(and) then" whenever you see a pipe.
+
+-   You can string multiple pipes together to continue passing upstream outputs along to downstream functions; a string of pipes is still referred to as a "single pipeline"
+:::
+
+## Readability {.scrollable}
+Consider the following sequence of actions that describe the process of getting to campus in the morning:
+
+I need to find my key, then unlock my car, then start my car, then drive to school, then park.
+
+. . .
+
+<br/>
+
+Expressed as a set of nested functions in R pseudocode this would look like:
+
+```{r}
+#| eval: false
+park(drive(start_car(find("keys")), to="campus"))
+```
+
+. . .
+
+Writing it out using pipes give it a more natural (and easier to read) structure:
+
+```{r}
+#| eval: false
+find("keys") |>
+    start_car() |>
+    drive(to="campus") |>
+    park()
+```
+
+## A Grammar of Data Manipulation {.scrollable .smaller}
+
+::: {.medium}
+dplyr is based on the concepts of functions as verbs that manipulate data frames.
+
+Core single data frame functions / verbs:
+
+* `filter()` / `slice()` - pick rows based on criteria
+* `select()` / `rename()` - select columns by name
+* `pull()` - grab a column as a vector
+* `arrange()` - reorder rows
+* `mutate()` / `transmute()` - create or modify columns
+* `distinct()` - filter for unique rows
+* `summarize()` / `count()` - reduce variables to values
+* `group_by()` / `ungroup()` - modify other verbs to act on subsets
+* `relocate()` - change column order
+* ... (many more)
 :::
 
 # Row Operations
 
-## Row Operations {.smaller}
+## `slice()` {.scrollable .smaller}
 
 -   `slice()`: chooses rows based on location
 
-<br>
-
-| Variable1 | Variable2 | Variable3 |
-|-----------|-----------|-----------|
-| 1         | A         | Yes       |
-| 2         | B         | Yes       |
-| 5         | A         | No        |
-| 2         | B         | No        |
-| 1         | A         | No        |
-| 4         | B         | No        |
-
-## Row Operations {.smaller}
-
--   `filter()`:chooses rows based on column values
-
-<br>
-
-| Variable1 | Variable2 | Variable3 |
-|-----------|-----------|-----------|
-| 1         | A         | Yes       |
-| 2         | B         | Yes       |
-| 5         | A         | No        |
-| 2         | B         | No        |
-| 1         | A         | No        |
-| 4         | B         | No        |
-
-## Row Operations {.smaller}
-
--   `arrange()`: changes the order of the rows
-
-<br>
-
-| Variable1 | Variable2 | Variable3 |
-|-----------|-----------|-----------|
-| 1         | A         | Yes       |
-| 2         | B         | Yes       |
-| 5         | A         | No        |
-| 2         | B         | No        |
-| 1         | A         | No        |
-| 4         | B         | No        |
-
-## Row Operations {.smaller}
-
--   `sample_n()`: take a random subset of the rows
-
-<br>
-
-| Variable1 | Variable2 | Variable3 |
-|-----------|-----------|-----------|
-| 1         | A         | Yes       |
-| 2         | B         | Yes       |
-| 5         | A         | No        |
-| 2         | B         | No        |
-| 1         | A         | No        |
-| 4         | B         | No        |
-
-## `slice()` {.smaller}
-
-Display the first five rows of `bechdel`:
+Ex: Display the first five rows of `bechdel`:
 
 ```{r}
 #| label: slice-b
@@ -194,9 +221,7 @@ Display the first five rows of `bechdel`:
 bechdel
 ```
 
-## `slice()` {.smaller}
-
-Display the first five rows of `bechdel`:
+<br>
 
 ```{r}
 #| label: slice-b-2
@@ -206,9 +231,55 @@ bechdel |>
   slice(1:5)
 ```
 
-## `filter()` {.smaller}
+## `arrange()` {.scrollable .smaller}
 
-Keep only the rows of`bechdel` that pass the test:
+-   `arrange()`: changes the order of the rows; default is *ascending* order
+
+```{r}
+#| label: arrange-b
+#| code-line-numbers: "|1|2"
+
+bechdel
+```
+
+<br>
+
+```{r}
+#| label: arrange-b-2
+#| code-line-numbers: "2"
+
+bechdel |>
+  arrange(year)
+```
+
+## `sample_n()` {.scrollable .smaller}
+
+-   `sample_n()`: take a random subset of the rows
+
+Display five random rows of `bechdel`:
+
+```{r}
+#| label: sample_n-0
+
+bechdel 
+```
+
+<br>
+
+```{r}
+#| label: sample_n
+#| code-line-numbers: "2"
+
+bechdel |>
+  sample_n(5)
+```
+
+## `filter()` {.scrollable .smaller}
+
+-   `filter()`:chooses rows based on column values
+-   You should think of the logic you provide within a `filter()` function call as telling R what observations it should *keep*
+
+Keep only the rows of `bechdel` that pass the test:
 
 ```{r}
 #| label: filter
@@ -216,9 +287,7 @@ Keep only the rows of`bechdel` that pass the test:
 bechdel
 ```
 
-## `filter()` {.smaller}
-
-Keep only the rows of`bechdel` that pass the test:
+<br>
 
 ```{r}
 #| label: filter-2
@@ -230,7 +299,7 @@ bechdel |>
 
 ## `filter()` {.smaller}
 
-Keep only the movies from before 2000
+Keep only the movies released before 2000
 
 ```{r}
 #| label: filter-3
@@ -293,76 +362,12 @@ bechdel |>
   filter(year < 2000 & binary == "PASS")
 ```
 
-## `sample_n()` {.smaller}
-
-Display five random rows of`bechdel`:
-
-```{r}
-#| label: sample_n-0
-
-bechdel 
-```
-
-## `sample_n()` {.smaller}
-
-Display five random rows of`bechdel`:
-
-```{r}
-#| label: sample_n
-#| code-line-numbers: "2"
-
-bechdel |>
-  sample_n(5)
-```
 
 # Column Operations
 
-## Column operations {.smaller}
+## `select()` {.scrollable .smaller}
 
 -   `select()`: changes whether or not a column is included.
-
-<br>
-
-| Variable1 | Variable2 | Variable3 |
-|-----------|-----------|-----------|
-| 1         | A         | Yes       |
-| 2         | B         | Yes       |
-| 5         | A         | No        |
-| 2         | B         | No        |
-| 1         | A         | No        |
-| 4         | B         | No        |
-
-## Column operations {.smaller}
-
--   `rename()`: changes the name of columns.
-
-<br>
-
-| Variable1 | Variable2 | Variable3 |
-|-----------|-----------|-----------|
-| 1         | A         | Yes       |
-| 2         | B         | Yes       |
-| 5         | A         | No        |
-| 2         | B         | No        |
-| 1         | A         | No        |
-| 4         | B         | No        |
-
-## Column operations {.smaller}
-
--   `mutate()`: changes the values of columns and creates new columns.
-
-<br>
-
-| Variable1 | Variable2 | Variable3 |
-|-----------|-----------|-----------|
-| 1         | A         | Yes       |
-| 2         | B         | Yes       |
-| 5         | A         | No        |
-| 2         | B         | No        |
-| 1         | A         | No        |
-| 4         | B         | No        |
-
-## `select()` {.smaller}
 
 Keep only the title and test status.
 
@@ -372,9 +377,7 @@ Keep only the title and test status.
 bechdel
 ```
 
-## `select()` {.smaller}
-
-Keep only the title and test status.
+<br>
 
 ```{r}
 #| label: select-2
@@ -384,39 +387,31 @@ bechdel |>
   select(title, clean_test)
 ```
 
-## `mutate()` {.smaller}
+## `select()` {.scrollable .smaller}
 
-Create a new variable for the budget in millions
+-   `select()` also allows you to exclude particular columns using the `-` symbol
+
+Again, keep only the title and test status but this time by explicitly excluding all other columns
 
 ```{r}
-#| label: mutate
+#| label: select-exclude
 
 bechdel
 ```
 
-## `mutate()` {.smaller}
-
-Keep only the title and test status.
+<br>
 
 ```{r}
-#| label: mutate-2
+#| label: select-exclude-2
 #| code-line-numbers: "2"
 
 bechdel |>
-  mutate(budget_million = budget_2013/1000000)
+  select(-(2:6))
 ```
 
-## `mutate()` {.smaller}
+## `rename()` {.scrollable .smaller}
 
-Generally, looks like:
-
-```{r}
-#| eval: false
-
-mutate(new_variable_name = function(existing_variable))
-```
-
-## `rename()` {.smaller}
+-   `rename()`: changes the name of columns.
 
 Rename `clean_test` to `test_result`
 
@@ -426,9 +421,7 @@ Rename `clean_test` to `test_result`
 bechdel
 ```
 
-## `rename()` {.smaller}
-
-Rename `clean_test` to `test_result`
+<br>
 
 ```{r}
 #| label: rename-2
@@ -448,54 +441,44 @@ Generally, looks like:
 select(new_variable_name = old_variable_name)
 ```
 
+
+## `mutate()` {.scrollable .smaller}
+
+-   `mutate()`: changes the values of columns (i.e., *modifies* existing columns) and creates new columns.
+
+Create a new variable for the budget in millions
+
+```{r}
+#| label: mutate
+
+bechdel
+```
+
+<br>
+
+```{r}
+#| label: mutate-2
+#| code-line-numbers: "2"
+
+bechdel |>
+  mutate(budget_million = budget_2013/1000000)
+```
+
+## `mutate()` {.smaller}
+
+Generally, looks like:
+
+```{r}
+#| eval: false
+
+mutate(new_variable_name = function(existing_variable))
+```
+
 # Groups of rows
 
-## Groups of rows
+## `count()` {.scrollable .smaller}
 
 -   `count()`: count unique values of one or more variables.
-
-<br>
-
-| Variable1 | Variable2 | Variable3 |
-|-----------|-----------|-----------|
-| 1         | A         | Yes       |
-| 2         | B         | Yes       |
-| 5         | A         | No        |
-| 2         | B         | No        |
-| 1         | A         | No        |
-| 4         | B         | No        |
-
-## Groups of rows
-
--   `group_by()`: group separately for each value of a variable
-
-<br>
-
-| Variable1 | Variable2 | Variable3 |
-|-----------|-----------|-----------|
-| 1         | A         | Yes       |
-| 2         | B         | Yes       |
-| 5         | A         | No        |
-| 2         | B         | No        |
-| 1         | A         | No        |
-| 4         | B         | No        |
-
-## Groups of rows
-
--   `summarize()`: collapses a group into a single row.
-
-<br>
-
-| Variable1 | Variable2 | Variable3 |
-|-----------|-----------|-----------|
-| 1         | A         | Yes       |
-| 2         | B         | Yes       |
-| 5         | A         | No        |
-| 2         | B         | No        |
-| 1         | A         | No        |
-| 4         | B         | No        |
-
-## `count()` {.smaller}
 
 Count how many movies pass or fail the Bechdel test.
 
@@ -505,9 +488,7 @@ Count how many movies pass or fail the Bechdel test.
 bechdel
 ```
 
-## `count()` {.smaller}
-
-Count how many movies pass or fail the Bechdel test.
+<br>
 
 ```{r}
 #| label: count-2
@@ -517,7 +498,31 @@ bechdel |>
   count(binary)
 ```
 
-## `summarize()` {.smaller}
+## `group_by()` {.scrollable .smaller}
+
+-   `group_by()`: group separately for each value of a variable
+
+Group by movies passing or failing the test
+
+```{r}
+#| label: gb
+
+bechdel
+```
+
+<br>
+
+```{r}
+#| label: gb-2
+
+bechdel |>
+  group_by(binary)
+```
+
+
+## `summarize()` {.scrollable .smaller}
+
+-   `summarize()`: collapses a group into a single row.
 
 Compute average budget
 
@@ -527,9 +532,7 @@ Compute average budget
 bechdel 
 ```
 
-## `summarize()` {.smaller}
-
-Compute average budget
+<br>
 
 ```{r}
 #| label: sm-2
@@ -549,26 +552,6 @@ Generally, looks like:
 summarize(resut_variable_name = function(existing_variable))
 ```
 
-## `group_by()` {.smaller}
-
-Group by movies passing or failing the test
-
-```{r}
-#| label: gb
-
-bechdel
-```
-
-## `group_by()` {.smaller}
-
-Group by movies passing or failing the test
-
-```{r}
-#| label: gb-2
-
-bechdel |>
-  group_by(binary)
-```
 
 ## `group_by() + summarize()` {.smaller}
 
@@ -582,6 +565,4 @@ bechdel |>
   summarize(mean_budget = mean(budget_2013))
 ```
 
-## Where can I find all of this??!
-
-# AE 04
+# AE 03
