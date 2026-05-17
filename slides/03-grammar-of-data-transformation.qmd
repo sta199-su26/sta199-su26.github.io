@@ -1,10 +1,10 @@
 ---
 title: "Grammar of Data Transformation"
-subtitle: "Lecture 4"
-date: "2025-05-19"
+subtitle: "Lecture 3"
+date: "2025-05-18"
 format: 
   revealjs:
-    output-file: 04-data-transform-slides.html
+    output-file: 03-grammar-of-data-transformation-slides.html
 auto-stretch: false
 ---
 
