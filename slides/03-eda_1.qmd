@@ -1,0 +1,1015 @@
+---
+title: "Visualizing Different Types of Data"
+subtitle: "Lecture 3"
+date: "2025-05-19"
+format: 
+  revealjs:
+    output-file: 03-more-vis-slides.html
+auto-stretch: false
+---
+
+## Announcements/Reminders {.smaller}
+
+-   Check the office hours schedule!
+    Updates are on the course overview page.
+
+-   Answers to your survey questions will come tomorrow!
+
+-   Today is your first 'real' lab ... any questions?
+
+-   Make sure you push changes to AE03 today - more on that later.
+
+-   Do the preparation reading!!!
+
+## Outline {.smaller}
+
+-   ***Last Time:*** Learned how to plot with a focus on *scatter plots.*
+
+-   ***Today:***
+
+    -   Discuss different methods for visualizing numerical and categorical data
+
+    -   Demonstrate code to plot these data
+
+# Warm-Up:
+
+Review AE-02
+
+# Plotting Different Types of Data
+
+## Types of Data
+
+-   ***Numerical Data:***
+
+    -   Takes a wide range of numerical values
+
+    -   Makes sense to add, subtract, etc.
+
+-   ***Categorical Data:***
+
+    -   Values can be thought of as distinct categories
+
+    -   The possible values are called ***levels***
+
+## Identifying variable types
+
+-   Favorite food
+
+-   Number of classes you're in this semester
+
+-   Zip code
+
+-   Age
+
+## Numerical Data: Some Key Terms {.smaller}
+
+-   **Center**: Shows a 'typical' value of a data entry
+
+    -   Mean, median, mode...
+
+-   **Variability:** How different are the data points from each other?
+
+    -   Quartiles, IQR, Skew...
+
+[*And so much more!*](https://openintro-ims.netlify.app/explore-numerical)
+
+## Visualizing `penguins` {.smaller}
+
+::: columns
+::: {.column width="70%"}
+::: {style="font-size: 20px;"}
+```{r,echo=TRUE, warning = FALSE}
+
+library(tidyverse)
+library(palmerpenguins)
+library(ggthemes)
+
+penguins
+```
+:::
+:::
+
+::: {.column width="30%"}
+![](images/penguins.png){fig-align="center"}
+:::
+:::
+
+::: aside
+Artwork by \@allison_horst.
+:::
+
+# Univariate analysis
+
+## Univariate analysis
+
+Analyzing a single variable:
+
+-   Numerical: histogram, box plot, density plot, etc.
+
+-   Categorical: bar plot, pie chart, etc.
+
+## Histogram - Step 1
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-hist-1
+#| fig-show: hide
+#| echo: true
+
+ggplot(
+  penguins
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-hist-1
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+```
+:::
+:::
+
+## Histogram - Step 2
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-hist-2
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "3"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-hist-2
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Histogram - Step 3
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-hist-3
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "5"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  ) +
+  geom_histogram()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-hist-3
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Histogram - Step 4
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-hist-4
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "6"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  ) +
+  geom_histogram(
+    binwidth = 250
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-hist-4
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Histogram - Step 4
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-hist-45
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "6"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  ) +
+  geom_histogram(
+    binwidth = 1000
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-hist-45
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Histogram - Step 5
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-hist-5
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "8-12"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  ) +
+  geom_histogram(
+    binwidth = 250
+  ) +
+  labs(
+    title = "Weights of penguins",
+    x = "Weight (grams)",
+    y = "Count"
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-hist-5
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Boxplot - Step 1
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-box-1
+#| fig-show: hide
+#| echo: true
+#| warning: false
+
+ggplot(
+  penguins
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-box-1
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Boxplot - Step 2
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-box-2
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "3"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-box-2
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Boxplot - Step 3
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-box-3
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "5"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  ) +
+  geom_boxplot()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-box-3
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Boxplot - Step 3
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-box-4
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "3"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(y = body_mass_g)
+  ) +
+  geom_boxplot()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-box-4
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Boxplot - Step 3
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-box-33
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "3"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  ) +
+  geom_boxplot()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-box-33
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Boxplot - Step 4
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-box-5
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "6-9"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  ) +
+  geom_boxplot() +
+  labs(
+    x = "Weight (grams)",
+    y = NULL
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-box-5
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Density plot - Step 1
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-density-1
+#| fig-show: hide
+#| echo: true
+#| warning: false
+
+ggplot(
+  penguins
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-density-1
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Density plot - Step 2
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-density-2
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "3"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-density-2
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Density plot - Step 3
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-density-3
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "5"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  ) +
+  geom_density()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-density-3
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Density plot - Step 4
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-density-4
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "6"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  ) +
+  geom_density(
+    fill = "lightblue1"
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-density-4
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Density plot - Step 5
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-density-5
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "7"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  ) +
+  geom_density(
+    fill = "lightblue1",
+    linewidth = 2
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-density-5
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+
+```
+:::
+:::
+
+## Density plot - Step 6
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-density-6
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "8"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(x = body_mass_g)
+  ) +
+  geom_density(
+    fill = "lightblue1",
+    linewidth = 2,
+    color = "darkorchid3"
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-density-6
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Let's Discuss
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-hist-4
+#| fig-width: 5
+#| fig.asp: 0.6
+#| echo: false
+#| warning: false
+```
+:::
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-box-3
+#| fig-width: 5
+#| fig.asp: 0.6
+#| echo: false
+#| warning: false
+```
+:::
+:::
+
+::: columns
+::: {.column width="100%"}
+```{r}
+#| ref.label: penguins-density-6
+#| fig-width: 5
+#| fig.asp: 0.6
+#| echo: false
+#| warning: false
+```
+:::
+:::
+
+
+## Bar Charts - Step 1
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-bar-1
+#| fig-show: hide
+#| echo: true
+#| warning: false
+
+ggplot(
+  penguins
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-bar-1
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Bar Charts - Step 2
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-bar-2
+#| fig-show: hide
+#| echo: true
+#| warning: false
+
+ggplot(
+  penguins, 
+  aes(x = species)
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-bar-2
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Bar Charts - Step 3
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-bar-3
+#| fig-show: hide
+#| echo: true
+#| warning: false
+
+ggplot(
+  penguins, 
+  aes(x = species)
+  ) +
+geom_bar()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-bar-3
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+# Bivariate analysis
+
+## Bivariate analysis
+
+Analyzing the relationship between two variables:
+
+-   **Numerical + numerical:** scatterplot
+
+-   **Numerical + categorical**: side-by-side box plots, violin plots, etc.
+
+-   **Categorical + categorical**: stacked bar plots
+
+-   Using an aesthetic (e.g., fill, color, shape, etc.) or facets to represent the second variable in any plot
+
+## Side-by-side box plots
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-side-by-side-box-1
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "|2|3-6|4|5|8"
+#| warning: false
+ 
+ggplot(
+  penguins,
+  aes(
+    x = body_mass_g,
+    y = species
+    )
+  ) +
+  geom_boxplot()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-side-by-side-box-1
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Density plots
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-density-color-1
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "|4|5|8"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(
+    x = body_mass_g,
+    color = species
+    )
+  ) +
+  geom_density()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-density-color-1
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Density plots
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-density-color-2
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "6"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(
+    x = body_mass_g,
+    color = species,
+    fill = species
+    )
+  ) +
+  geom_density()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-density-color-2
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Density plots
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-density-color-3
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "10"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(
+    x = body_mass_g,
+    color = species,
+    fill = species
+    )
+  ) +
+  geom_density(
+    alpha = 0.5
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-density-color-3
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+## Density plots
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-density-color-4
+#| fig-show: hide
+#| echo: true
+#| code-line-numbers: "12-14"
+#| warning: false
+
+ggplot(
+  penguins,
+  aes(
+    x = body_mass_g,
+    color = species,
+    fill = species
+    )
+  ) +
+  geom_density(
+    alpha = 0.5
+  ) +
+  theme(
+    legend.position = "bottom"
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-density-color-4
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+```{r}
+#| echo: false
+library(ggthemes)
+library(tidyverse)
+
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 16))
+```
+
+## Bar Charts
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: penguins-bar-bar-1
+#| fig-show: hide
+#| echo: true
+#| warning: false
+
+ggplot(
+  penguins, 
+  aes(x = species, 
+      fill = island)
+  ) +
+geom_bar()
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| ref.label: penguins-bar-bar-1
+#| echo: false
+#| fig-width: 5
+#| fig-asp: 0.8
+#| warning: false
+```
+:::
+:::
+
+# Application exercise
+
+## How to push
+
+-   You must commit and push changes to the *current AE document before the end of class*
+
+-   ***Today, check your github folder for changes to AE-03 with a commit message by you!!***
