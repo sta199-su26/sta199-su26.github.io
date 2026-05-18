@@ -3,7 +3,8 @@ title: Lab 1
 subtitle: From the Midwest to North Carolina
 categories: Lab
 description: "Due to Gradescope by Wed. May 20 11:59 PM"
-draft: false
+execute:
+  eval: false
 ---
 
 # Introduction
