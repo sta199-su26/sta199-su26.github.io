@@ -1088,6 +1088,17 @@
       ],
       "Hash": "4f50122dc256b1b6996a4703fecea821"
     },
+    "nycflights13": {
+      "Package": "nycflights13",
+      "Version": "1.0.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "tibble"
+      ],
+      "Hash": "61eb941328b49a62d7f9816dfed7d959"
+    },
     "openssl": {
       "Package": "openssl",
       "Version": "2.4.0",
@@ -1669,6 +1680,17 @@
         "R"
       ],
       "Hash": "71608579c8b607fb79c7468c1cf090b3"
+    },
+    "usdata": {
+      "Package": "usdata",
+      "Version": "0.3.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "tibble"
+      ],
+      "Hash": "924b597b270e2f6a84387f563abadb39"
     },
     "usethis": {
       "Package": "usethis",

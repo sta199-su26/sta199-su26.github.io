@@ -1,18 +1,11 @@
 ---
-title: "Exploring data I"
+title: "Exploratory Data Analysis I"
 subtitle: "Lecture 4"
-date: "2026-01-26"
+date: "2026-05-19"
 format: 
-  revealjs: 
-    output-file: 04-exploring-data-1-slides.html
-    footer: "[🔗 sta199-s26.github.io](https://sta199-s26.github.io/)"
-    theme: slides.scss
-    transition: fade
-    slide-number: true
-    logo: images/logo.png
-    toc: false
-  html: 
-    code-link: true
+  revealjs:
+    output-file: 04-exploratory-data-analysis-I-slides.html
+auto-stretch: false
 ---
 
 <!-- begin: ae definition -->
@@ -24,36 +17,21 @@ todays_ae <- "ae-04-gerrymander-explore-I"
 
 <!-- end: ae definition -->
 
-## While you wait... {.medium}
+## While you wait... {.scrollable .medium}
 
 Prepare for today's application exercise: **`{r} todays_ae`**
 
 -   Switch to your `ae` project in RStudio;
 
--   Make sure all of your changes up to this point are committed (ie there's nothing left in your Git pane);
+-   Make sure all of your changes up to this point are committed (i.e., there's nothing left in your Git pane);
 
 -   Click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
-
--   Then push. So **Render \> Commit \> Pull \> Push**.
 
 -   (To see the new file, you may have to refresh the Files pane by clicking "Home")
 
 -   Wait till the you're prompted to work on the application exercise during class before editing the file.
 
-# Exploratory data analysis
-
-## So far...
-
-| Data set | Occasion | Source | A row was a... |
-|----------|----------|--------|----------------|
-| `age_guesses` | Lecture 0 | file | STAAWANANA student  |
-| `penguins` | Lecture 1 | package | penguin |
-| `unvotes` | Lecture 2 | package | year-issue-country |
-| `nc_county` | Lab, HW | file | NC county |
-| `bechdel` | Lecture 3 | file | film |
-| `gerrymander` | Lecture 4 | package | district |
-
-## Packages
+## Packages {.smaller}
 
 -   For the data: [**usdata**](https://openintrostat.github.io/usdata/)
 
@@ -61,13 +39,12 @@ Prepare for today's application exercise: **`{r} todays_ae`**
 library(usdata)
 ```
 
--   For the analysis: [**tidyverse**](https://www.tidyverse.org/packages/) and [**ggthemes**](https://jrnold.github.io/ggthemes/)
+-   For the exploratory data analysis (EDA): [**tidyverse**](https://www.tidyverse.org/packages/) and [**ggthemes**](https://jrnold.github.io/ggthemes/)
 
 ```{r}
 library(tidyverse)
 library(ggthemes)
 ```
-
 
 ## Data: `gerrymander` {.small}
 
@@ -77,27 +54,17 @@ gerrymander
 
 ## What is gerrymandering?
 
+::: {style="display: flex; justify-content: center;"}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bGLRJ12uqmk?si=DAoLH-0Cwd2yg1LL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 
 </iframe>
+:::
 
-## JZ's tour of the USA
+## (Latest) Gerrymandering in NC
 
-![](images/04/ohio.png){fig-align="center" width="75%"}
+![](img/04/gerry_NC_2.jpeg){fig-align="center" width="50%"}
 
-## JZ's tour of the USA
-
-![](images/04/tn.png){fig-align="center" width="70%"}
-
-## JZ's tour of the USA
-
-![](images/04/tx.png){fig-align="center"}
-
-## JZ's tour of the USA
-
-![](images/04/nc.png){fig-align="center" width="70%"}
-
-## Data: `gerrymander` {.scrollable .smaller}
+## Data: `gerrymander` {.scrollable .smaller .incremental}
 
 ::: question
 What is a good first function to use to get to know a dataset?
@@ -107,7 +74,7 @@ What is a good first function to use to get to know a dataset?
 glimpse(gerrymander)
 ```
 
-## Data: `gerrymander`
+## Data: `gerrymander` {.scrollable .medium}
 
 -   Rows: Congressional districts
 
@@ -123,152 +90,150 @@ glimpse(gerrymander)
 
     -   Prevalence of gerrymandering: low, mid, and high
 
+## Overview of Data Types {.scrollable .medium}
+
+-   ***Numerical Data:***
+
+    -   Takes a wide range of numerical values
+
+    -   Makes sense to add, subtract, etc.
+
+    -   Can be either discrete (e.g., integers) or continuous
+
+-   ***Categorical Data:***
+
+    -   Values can be thought of as distinct categories
+
+    -   The possible values are called ***levels***
+
+    -   Binary data is a subset of categorical data with 2 levels (e.g., 0/1, T/F, yes/no)
+
+    -   Ordinal data is a subset of categorical data in which there is some inherent "ordering" to the levels (e.g., pain, where pain can be "low", "medium", or "high"; letter grades, where A \> B \> C \> ... \> F)
+
 ## Variable types: `district`
 
-::: columns
-
+::::: columns
 ::: {.column .xsmall}
-
-| Variable     | Type                               |
-|--------------|------------------------------------|
-| `district`   | [categorical, ID]{.fragment}       |
-| `last_name`  |                                    |
-| `first_name` |                                    |
-| `party16`    |                                    |
-| `clinton16`  |                                    |
-| `trump16`    |                                    |
-| `dem16`      |                                    |
-| `state`      |                                    |
-| `party18`    |                                    |
-| `dem18`      |                                    |
-| `flip18`     |                                    |
-| `gerry`      |                                    |
-
+| Variable     | Type                         |
+|--------------|------------------------------|
+| `district`   | [categorical, ID]{.fragment} |
+| `last_name`  |                              |
+| `first_name` |                              |
+| `party16`    |                              |
+| `clinton16`  |                              |
+| `trump16`    |                              |
+| `dem16`      |                              |
+| `state`      |                              |
+| `party18`    |                              |
+| `dem18`      |                              |
+| `flip18`     |                              |
+| `gerry`      |                              |
 :::
 
 ::: {.column .small}
-
 Congressional district:
 
 ```{r}
 gerrymander |>
   select(district)
 ```
-
 :::
-:::
+:::::
 
 ## Variable types: `last_name`
 
-::: columns
-
+::::: columns
 ::: {.column .xsmall}
-
-| Variable     | Type                               |
-|--------------|------------------------------------|
-| `district`   | categorical, ID                    |
-| `last_name`  | [categorical, ID]{.fragment}       |
-| `first_name` |                                    |
-| `party16`    |                                    |
-| `clinton16`  |                                    |
-| `trump16`    |                                    |
-| `dem16`      |                                    |
-| `state`      |                                    |
-| `party18`    |                                    |
-| `dem18`      |                                    |
-| `flip18`     |                                    |
-| `gerry`      |                                    |
-
+| Variable     | Type                         |
+|--------------|------------------------------|
+| `district`   | categorical, ID              |
+| `last_name`  | [categorical, ID]{.fragment} |
+| `first_name` |                              |
+| `party16`    |                              |
+| `clinton16`  |                              |
+| `trump16`    |                              |
+| `dem16`      |                              |
+| `state`      |                              |
+| `party18`    |                              |
+| `dem18`      |                              |
+| `flip18`     |                              |
+| `gerry`      |                              |
 :::
 
 ::: {.column .small}
-
 Last name of 2016 election winner:
 
 ```{r}
 gerrymander |>
   select(last_name)
 ```
-
 :::
-:::
+:::::
 
 ## Variable types: `first_name`
 
-::: columns
-
+::::: columns
 ::: {.column .xsmall}
-
-| Variable     | Type                               |
-|--------------|------------------------------------|
-| `district`   | categorical, ID                    |
-| `last_name`  | categorical, ID                    |
-| `first_name` | [categorical, ID]{.fragment}       |
-| `party16`    |                                    |
-| `clinton16`  |                                    |
-| `trump16`    |                                    |
-| `dem16`      |                                    |
-| `state`      |                                    |
-| `party18`    |                                    |
-| `dem18`      |                                    |
-| `flip18`     |                                    |
-| `gerry`      |                                    |
-
+| Variable     | Type                         |
+|--------------|------------------------------|
+| `district`   | categorical, ID              |
+| `last_name`  | categorical, ID              |
+| `first_name` | [categorical, ID]{.fragment} |
+| `party16`    |                              |
+| `clinton16`  |                              |
+| `trump16`    |                              |
+| `dem16`      |                              |
+| `state`      |                              |
+| `party18`    |                              |
+| `dem18`      |                              |
+| `flip18`     |                              |
+| `gerry`      |                              |
 :::
 
 ::: {.column .small}
-
 First name of 2016 election winner:
 
 ```{r}
 gerrymander |>
   select(first_name)
 ```
-
 :::
-:::
+:::::
 
 ## Variable types: `party16`
 
-::: columns
-
+::::: columns
 ::: {.column .xsmall}
-
-| Variable     | Type                               |
-|--------------|------------------------------------|
-| `district`   | categorical, ID                    |
-| `last_name`  | categorical, ID                    |
-| `first_name` | categorical, ID                    |
-| `party16`    | [categorical]{.fragment}           |
-| `clinton16`  |                                    |
-| `trump16`    |                                    |
-| `dem16`      |                                    |
-| `state`      |                                    |
-| `party18`    |                                    |
-| `dem18`      |                                    |
-| `flip18`     |                                    |
-| `gerry`      |                                    |
-
+| Variable     | Type                     |
+|--------------|--------------------------|
+| `district`   | categorical, ID          |
+| `last_name`  | categorical, ID          |
+| `first_name` | categorical, ID          |
+| `party16`    | [categorical]{.fragment} |
+| `clinton16`  |                          |
+| `trump16`    |                          |
+| `dem16`      |                          |
+| `state`      |                          |
+| `party18`    |                          |
+| `dem18`      |                          |
+| `flip18`     |                          |
+| `gerry`      |                          |
 :::
 
 ::: {.column .small}
-
 Political party of 2016 election winner:
 
 ```{r}
 gerrymander |>
   select(party16)
 ```
-
 :::
-:::
+:::::
 
 ## Variable types: `clinton16`
 
-::: columns
-
+::::: columns
 ::: {.column .xsmall}
-
 | Variable     | Type                               |
 |--------------|------------------------------------|
 | `district`   | categorical, ID                    |
@@ -283,27 +248,22 @@ gerrymander |>
 | `dem18`      |                                    |
 | `flip18`     |                                    |
 | `gerry`      |                                    |
-
 :::
 
 ::: {.column .small}
-
 Percent of vote received by Clinton in 2016 Presidential Election:
 
 ```{r}
 gerrymander |>
   select(clinton16)
 ```
-
 :::
-:::
+:::::
 
 ## Variable types: `trump16`
 
-::: columns
-
+::::: columns
 ::: {.column .xsmall}
-
 | Variable     | Type                               |
 |--------------|------------------------------------|
 | `district`   | categorical, ID                    |
@@ -318,230 +278,199 @@ gerrymander |>
 | `dem18`      |                                    |
 | `flip18`     |                                    |
 | `gerry`      |                                    |
-
 :::
 
 ::: {.column .small}
-
 Percent of vote received by Trump in 2016 Presidential Election:
 
 ```{r}
 gerrymander |>
   select(trump16)
 ```
-
 :::
-:::
+:::::
 
 ## Variable types: `dem16`
 
-::: columns
-
+::::: columns
 ::: {.column .xsmall}
-
-| Variable     | Type                               |
-|--------------|------------------------------------|
-| `district`   | categorical, ID                    |
-| `last_name`  | categorical, ID                    |
-| `first_name` | categorical, ID                    |
-| `party16`    | categorical                        |
-| `clinton16`  | numerical, continuous              |
-| `trump16`    | numerical, continuous              |
-| `dem16`      | [categorical]{.fragment}           |
-| `state`      |                                    |
-| `party18`    |                                    |
-| `dem18`      |                                    |
-| `flip18`     |                                    |
-| `gerry`      |                                    |
-
+| Variable     | Type                             |
+|--------------|----------------------------------|
+| `district`   | categorical, ID                  |
+| `last_name`  | categorical, ID                  |
+| `first_name` | categorical, ID                  |
+| `party16`    | categorical                      |
+| `clinton16`  | numerical, continuous            |
+| `trump16`    | numerical, continuous            |
+| `dem16`      | [categorical, binary]{.fragment} |
+| `state`      |                                  |
+| `party18`    |                                  |
+| `dem18`      |                                  |
+| `flip18`     |                                  |
+| `gerry`      |                                  |
 :::
 
 ::: {.column .small}
-
-Did a Democrat win the 2016 House election. Levels of 1 (yes) and 0 (no):
+Did a Democrat win the 2016 House election.
+Levels of 1 (yes) and 0 (no):
 
 ```{r}
 gerrymander |>
   select(dem16)
 ```
-
 :::
-:::
+:::::
 
 ## Variable types: `state`
 
-::: columns
-
+::::: columns
 ::: {.column .xsmall}
-
-| Variable     | Type                               |
-|--------------|------------------------------------|
-| `district`   | categorical, ID                    |
-| `last_name`  | categorical, ID                    |
-| `first_name` | categorical, ID                    |
-| `party16`    | categorical                        |
-| `clinton16`  | numerical, continuous              |
-| `trump16`    | numerical, continuous              |
-| `dem16`      | categorical                        |
-| `state`      | [categorical]{.fragment}           |
-| `party18`    |                                    |
-| `dem18`      |                                    |
-| `flip18`     |                                    |
-| `gerry`      |                                    |
-
+| Variable     | Type                     |
+|--------------|--------------------------|
+| `district`   | categorical, ID          |
+| `last_name`  | categorical, ID          |
+| `first_name` | categorical, ID          |
+| `party16`    | categorical              |
+| `clinton16`  | numerical, continuous    |
+| `trump16`    | numerical, continuous    |
+| `dem16`      | categorical, binary      |
+| `state`      | [categorical]{.fragment} |
+| `party18`    |                          |
+| `dem18`      |                          |
+| `flip18`     |                          |
+| `gerry`      |                          |
 :::
 
 ::: {.column .small}
-
 State the Representative is from:
 
 ```{r}
 gerrymander |>
   select(state)
 ```
-
 :::
-:::
+:::::
 
 ## Variable types: `party18`
 
-::: columns
-
+::::: columns
 ::: {.column .xsmall}
-
-| Variable     | Type                               |
-|--------------|------------------------------------|
-| `district`   | categorical, ID                    |
-| `last_name`  | categorical, ID                    |
-| `first_name` | categorical, ID                    |
-| `party16`    | categorical                        |
-| `clinton16`  | numerical, continuous              |
-| `trump16`    | numerical, continuous              |
-| `dem16`      | categorical                        |
-| `state`      | categorical                        |
-| `party18`    | [categorical]{.fragment}           |
-| `dem18`      |                                    |
-| `flip18`     |                                    |
-| `gerry`      |                                    |
-
+| Variable     | Type                             |
+|--------------|----------------------------------|
+| `district`   | categorical, ID                  |
+| `last_name`  | categorical, ID                  |
+| `first_name` | categorical, ID                  |
+| `party16`    | categorical                      |
+| `clinton16`  | numerical, continuous            |
+| `trump16`    | numerical, continuous            |
+| `dem16`      | categorical, binary              |
+| `state`      | categorical                      |
+| `party18`    | [categorical, binary]{.fragment} |
+| `dem18`      |                                  |
+| `flip18`     |                                  |
+| `gerry`      |                                  |
 :::
 
 ::: {.column .small}
-
 Political Party of the 2018 election winner:
 
 ```{r}
 gerrymander |>
   select(party18)
 ```
-
 :::
-:::
+:::::
 
 ## Variable types: `dem18`
 
-::: columns
-
+::::: columns
 ::: {.column .xsmall}
-
-| Variable     | Type                               |
-|--------------|------------------------------------|
-| `district`   | categorical, ID                    |
-| `last_name`  | categorical, ID                    |
-| `first_name` | categorical, ID                    |
-| `party16`    | categorical                        |
-| `clinton16`  | numerical, continuous              |
-| `trump16`    | numerical, continuous              |
-| `dem16`      | categorical                        |
-| `state`      | categorical                        |
-| `party18`    | categorical                        |
-| `dem18`      | [categorical]{.fragment}           |
-| `flip18`     |                                    |
-| `gerry`      |                                    |
-
+| Variable     | Type                             |
+|--------------|----------------------------------|
+| `district`   | categorical, ID                  |
+| `last_name`  | categorical, ID                  |
+| `first_name` | categorical, ID                  |
+| `party16`    | categorical                      |
+| `clinton16`  | numerical, continuous            |
+| `trump16`    | numerical, continuous            |
+| `dem16`      | categorical, binary              |
+| `state`      | categorical                      |
+| `party18`    | categorical, binary              |
+| `dem18`      | [categorical, binary]{.fragment} |
+| `flip18`     |                                  |
+| `gerry`      |                                  |
 :::
 
 ::: {.column .small}
-
-Did a Democrat win the 2018 House election. Levels of 1 (yes) and 0 (no):
+Did a Democrat win the 2018 House election.
+Levels of 1 (yes) and 0 (no):
 
 ```{r}
 gerrymander |>
   select(dem18)
 ```
-
 :::
-:::
+:::::
 
 ## Variable types: `flip18`
 
-::: columns
-
+::::: columns
 ::: {.column .xsmall}
-
-| Variable     | Type                               |
-|--------------|------------------------------------|
-| `district`   | categorical, ID                    |
-| `last_name`  | categorical, ID                    |
-| `first_name` | categorical, ID                    |
-| `party16`    | categorical                        |
-| `clinton16`  | numerical, continuous              |
-| `trump16`    | numerical, continuous              |
-| `dem16`      | categorical                        |
-| `state`      | categorical                        |
-| `party18`    | categorical                        |
-| `dem18`      | categorical                        |
-| `flip18`     | [categorical]{.fragment}           |
-| `gerry`      |                                    |
-
+| Variable     | Type                             |
+|--------------|----------------------------------|
+| `district`   | categorical, ID                  |
+| `last_name`  | categorical, ID                  |
+| `first_name` | categorical, ID                  |
+| `party16`    | categorical                      |
+| `clinton16`  | numerical, continuous            |
+| `trump16`    | numerical, continuous            |
+| `dem16`      | categorical, binary              |
+| `state`      | categorical                      |
+| `party18`    | categorical, binary              |
+| `dem18`      | categorical, binary              |
+| `flip18`     | [categorical, binary]{.fragment} |
+| `gerry`      |                                  |
 :::
 
 ::: {.column .small}
-
 In the 2018 election, did the seat flip from D to R (-1), from R to D (1), or not change (0)?
 
 ```{r}
 gerrymander |>
   select(flip18)
 ```
-
 :::
-:::
+:::::
 
 ## Variable types: `gerry`
 
-::: columns
-
+::::: columns
 ::: {.column .xsmall}
-
-| Variable     | Type                               |
-|--------------|------------------------------------|
-| `district`   | categorical, ID                    |
-| `last_name`  | categorical, ID                    |
-| `first_name` | categorical, ID                    |
-| `party16`    | categorical                        |
-| `clinton16`  | numerical, continuous              |
-| `trump16`    | numerical, continuous              |
-| `dem16`      | categorical                        |
-| `state`      | categorical                        |
-| `party18`    | categorical                        |
-| `dem18`      | categorical                        |
-| `flip18`     | categorical                        |
-| `gerry`      | [categorical, ordinal]{.fragment}  |
-
+| Variable     | Type                              |
+|--------------|-----------------------------------|
+| `district`   | categorical, ID                   |
+| `last_name`  | categorical, ID                   |
+| `first_name` | categorical, ID                   |
+| `party16`    | categorical                       |
+| `clinton16`  | numerical, continuous             |
+| `trump16`    | numerical, continuous             |
+| `dem16`      | categorical, binary               |
+| `state`      | categorical                       |
+| `party18`    | categorical, binary               |
+| `dem18`      | categorical, binary               |
+| `flip18`     | categorical, binary               |
+| `gerry`      | [categorical, ordinal]{.fragment} |
 :::
 
 ::: {.column .small}
-
 Categorical variable for prevalence of gerrymandering with levels of low, mid and high:
 
 ```{r}
 gerrymander |>
   select(gerry)
 ```
-
 :::
-:::
+:::::
 
 # Univariate analysis
 
@@ -617,6 +546,319 @@ ggplot(gerrymander, aes(x = trump16)) +
   )
 ```
 
+## Density plot - Step 1 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander)
+```
+
+## Density plot - Step 2 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander, aes(x = trump16))
+```
+
+## Density plot - Step 3 {.smaller .scrollable}
+
+```{r}
+#| code-line-numbers: "2"
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density()
+```
+
+## Contrast that with the histogram {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_histogram(aes(y = after_stat(density))) + 
+  geom_density(color = "red")
+  
+```
+
+Prettier.
+Smooths out the lumps and bumps.
+There are still defaults you could learn to override.
+
+## Density plot - Step 4 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density(color = "red")
+```
+
+## Density plot - Step 5 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density(color = "firebrick", fill = "firebrick1")
+```
+
+## Density plot - Step 6 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density(color = "firebrick", fill = "firebrick1", alpha = 1)
+```
+
+## Density plot - Step 6 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density(color = "firebrick", fill = "firebrick1", alpha = 0)
+```
+
+## Density plot - Step 6 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density(color = "firebrick", fill = "firebrick1", alpha = 0.5)
+```
+
+## Density plot - Step 7 {.smaller .scrollable}
+
+```{r}
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density(color = "firebrick", fill = "firebrick1", alpha = 0.5, linewidth = 2)
+```
+
+## Density plot - Step 8 {.smaller .scrollable}
+
+```{r}
+#| code-line-numbers: "3-8"
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_density(color = "firebrick", fill = "firebrick1", alpha = 0.5, linewidth = 2) +
+  labs(
+    title = "Percent of vote received by Trump in 2016 Presidential Election",
+    subtitle = "From each Congressional District",
+    x = "Percent of vote",
+    y = "Density"
+  )
+```
+
+## "Describe a distribution"
+
+![](img/04/name_a_woman.jpeg){fig-align="center" width="50%"}
+
+## "Describe a distribution"
+
+::: callout-tip
+When answering a question that prompts you to "describe a distribution", you should ensure that your narrative mentions each of the following:
+
+1)  Center
+2)  Shape (this includes modality & skew)
+3)  Spread
+4)  Any likely outliers
+:::
+
+## Example: The Standard Normal Distribution {.smaller}
+
+```{r}
+#| echo: false
+#| message: false
+#| fig-width: 8
+#| fig-height: 5
+#| dpi: 300
+#| dev: "ragg_png"
+
+normal_data <- tibble(
+  x = rnorm(100000, mean = 0, sd = 1)
+)
+
+mean_x <- mean(normal_data$x)
+median_x <- median(normal_data$x)
+
+ggplot(normal_data, aes(x = x)) +
+  geom_histogram(
+    aes(y = after_stat(density)),
+    alpha = 0.5
+  ) +
+  geom_density(
+    color = "deeppink",
+    linewidth = 1.2
+  ) +
+  geom_vline(
+    xintercept = mean_x,
+    color = "blue",
+    linewidth = 1,
+    linetype = "dashed"
+  ) +
+  geom_vline(
+    xintercept = median_x,
+    color = "purple",
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  labs(
+    title = "Histogram of Simulated Standard Normal Data",
+    subtitle = "Density curve overlaid",
+    x = "Value",
+    y = "Density"
+  ) +
+  annotate(
+    "text",
+    x = mean_x,
+    y = 0.42,
+    label = "Mean",
+    color = "blue",
+    hjust = -0.1
+  ) +
+  annotate(
+    "text",
+    x = median_x,
+    y = 0.38,
+    label = "Median",
+    color = "purple",
+    hjust = -0.1
+  ) +
+  theme_minimal()
+```
+## Example: The Standard Normal Distribution {.smaller}
+:::: {.columns}
+
+::: {.column width="55%"}
+
+```{r}
+#| echo: false
+#| message: false
+#| fig-width: 5
+#| fig-height: 3.5
+#| dpi: 300
+#| dev: "ragg_png"
+#| out-width: 100%
+
+normal_data <- tibble(
+  x = rnorm(100000, mean = 0, sd = 1)
+)
+
+mean_x <- mean(normal_data$x)
+median_x <- median(normal_data$x)
+
+ggplot(normal_data, aes(x = x)) +
+  geom_histogram(
+    aes(y = after_stat(density)),
+    alpha = 0.5
+  ) +
+  geom_density(
+    color = "deeppink",
+    linewidth = 1
+  ) +
+  geom_vline(
+    xintercept = mean_x,
+    color = "blue",
+    linewidth = 1,
+    linetype = "dashed"
+  ) +
+  geom_vline(
+    xintercept = median_x,
+    color = "purple",
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  labs(
+    title = "Histogram of Simulated Standard Normal Data",
+    subtitle = "Density curve overlaid",
+    x = "Value",
+    y = "Density"
+  ) +
+  annotate(
+    "text",
+    x = mean_x,
+    y = 0.42,
+    label = "Mean",
+    color = "blue",
+    hjust = -0.1
+  ) +
+  annotate(
+    "text",
+    x = median_x,
+    y = 0.38,
+    label = "Median",
+    color = "purple",
+    hjust = -0.1
+  ) +
+  theme_minimal()
+```
+
+:::
+
+::: {.column width="45%"}
+
+::: incremental
+
+1.  Centered at 0 (mean and median agree)
+2.  Symmetric (about it's center); unimodal (one peak)
+3.  Values range between -3 and +3, roughly
+4.  No apparent outliers
+
+:::
+
+:::
+
+::::
+
+## Back to Gerry
+
+```{r}
+#| echo: false
+#| message: false 
+
+mean_x <- mean(gerrymander$trump16)
+median_x <- median(gerrymander$trump16)
+
+ggplot(gerrymander, aes(x = trump16)) +
+  geom_histogram(aes(y = after_stat(density))) + 
+  geom_density(color = "red") +
+  geom_vline(
+    xintercept = mean_x,
+    color = "cornflowerblue",
+    linewidth = 1,
+    linetype = "dashed"
+  ) +
+  geom_vline(
+    xintercept = median_x,
+    color = "blue",
+    linewidth = 1,
+    linetype = "dotted"
+  ) +
+  annotate(
+    "text",
+    x = mean_x,
+    y = 0.04,
+    label = "Mean",
+    color = "cornflowerblue",
+    hjust = -0.1
+  ) +
+  annotate(
+    "text",
+    x = median_x,
+    y = 0.0375,
+    label = "Median",
+    color = "blue",
+    hjust = -0.1
+  ) +
+  theme_minimal()
+  
+```
+
+
+## "Skewed" data
+:::: {.columns}
+
+::: {.column width="47.5%"}
+
+![](img/04/left-skew.png){fig-align="center" width="90%"}
+
+:::
+
+::: {.column width="45%"}
+
+![](img/04/right-skew.jpg){fig-align="center" width="100%"}
+
+:::
+
+::::
+
+
 ## Box plot - Step 1 {.smaller .scrollable}
 
 ```{r}
@@ -660,7 +902,8 @@ ggplot(gerrymander, aes(x = trump16)) +
 
 ## Whence the box? {.medium .scrollable}
 
-The middle of the box is the **median**. 50% of the data are below, and 50% are above:
+The middle of the box is the **median**.
+50% of the data are below, and 50% are above:
 
 ```{r}
 #| echo: false
@@ -703,7 +946,8 @@ ggplot(df_long, aes(x = trump16)) +
 
 ## Whence the box? {.medium .scrollable}
 
-The lower edge of the box is the **25% quantile**. 25% of the data are below, and 75% are above:
+The lower edge of the box is the **25% quantile**.
+25% of the data are below, and 75% are above:
 
 ```{r}
 #| echo: false
@@ -746,7 +990,8 @@ ggplot(df_long, aes(x = trump16)) +
 
 ## Whence the box? {.medium .scrollable}
 
-The upper edge of the box is the **75% quantile**. 75% of the data are below, and 25% are above:
+The upper edge of the box is the **75% quantile**.
+75% of the data are below, and 25% are above:
 
 ```{r}
 #| echo: false
@@ -787,14 +1032,16 @@ ggplot(df_long, aes(x = trump16)) +
 
 ```
 
-## Box plot facts {.small}
+## Box plot facts {.scrollable .small}
 
-- A box plot is easier to read quickly than a histogram because it eliminates clutter and immediately draws your eye to those main features: center, spread, and skew;
-- The box spans the middle 50% of the data;
-- The width of the box is called the inner quartile range (IQR) and it measures spread;
-- From the docs (`?geom_boxplot`):
+-   A box plot is easier to read quickly than a histogram because it eliminates clutter and immediately draws your eye to those main features: center, spread, and skew;
+-   The box spans the middle 50% of the data;
+-   The width of the box is called the inner quartile range (IQR) and it measures spread;
+-   From the docs (`?geom_boxplot`):
 
-> The upper whisker extends from the hinge to the largest value no further than 1.5 * IQR from the hinge (where IQR is the inter-quartile range, or distance between the first and third quartiles). The lower whisker extends from the hinge to the smallest value at most 1.5 * IQR of the hinge. Data beyond the end of the whiskers are called "outlying" points and are plotted individually.
+> The upper whisker extends from the hinge to the largest value no further than 1.5 \* IQR from the hinge (where IQR is the inter-quartile range, or distance between the first and third quartiles).
+> The lower whisker extends from the hinge to the smallest value at most 1.5 \* IQR of the hinge.
+> Data beyond the end of the whiskers are called "outlying" points and are plotted individually.
 
 ## Box plots obscure modality
 
@@ -875,92 +1122,6 @@ ggplot(df_long, aes(x = y)) +
   coord_cartesian(xlim = c(min(df), max(df)))
 ```
 
-## Density plot - Step 1 {.smaller .scrollable}
-
-```{r}
-ggplot(gerrymander)
-```
-
-## Density plot - Step 2 {.smaller .scrollable}
-
-```{r}
-ggplot(gerrymander, aes(x = trump16))
-```
-
-## Density plot - Step 3 {.smaller .scrollable}
-
-```{r}
-#| code-line-numbers: "2"
-ggplot(gerrymander, aes(x = trump16)) +
-  geom_density()
-```
-
-## Contrast that with the histogram {.smaller .scrollable}
-
-```{r}
-ggplot(gerrymander, aes(x = trump16)) +
-  geom_histogram(aes(y = after_stat(density))) + 
-  geom_density(color = "red")
-  
-```
-
-Prettier. Smooths out the lumps and bumps. There are still defaults you could learn to override.
-
-## Density plot - Step 4 {.smaller .scrollable}
-
-```{r}
-ggplot(gerrymander, aes(x = trump16)) +
-  geom_density(color = "red")
-```
-
-## Density plot - Step 5 {.smaller .scrollable}
-
-```{r}
-ggplot(gerrymander, aes(x = trump16)) +
-  geom_density(color = "firebrick", fill = "firebrick1")
-```
-
-## Density plot - Step 6 {.smaller .scrollable}
-
-```{r}
-ggplot(gerrymander, aes(x = trump16)) +
-  geom_density(color = "firebrick", fill = "firebrick1", alpha = 1)
-```
-
-## Density plot - Step 6 {.smaller .scrollable}
-
-```{r}
-ggplot(gerrymander, aes(x = trump16)) +
-  geom_density(color = "firebrick", fill = "firebrick1", alpha = 0)
-```
-
-## Density plot - Step 6 {.smaller .scrollable}
-
-```{r}
-ggplot(gerrymander, aes(x = trump16)) +
-  geom_density(color = "firebrick", fill = "firebrick1", alpha = 0.5)
-```
-
-## Density plot - Step 7 {.smaller .scrollable}
-
-```{r}
-ggplot(gerrymander, aes(x = trump16)) +
-  geom_density(color = "firebrick", fill = "firebrick1", alpha = 0.5, linewidth = 2)
-```
-
-## Density plot - Step 8 {.smaller .scrollable}
-
-```{r}
-#| code-line-numbers: "3-8"
-ggplot(gerrymander, aes(x = trump16)) +
-  geom_density(color = "firebrick", fill = "firebrick1", alpha = 0.5, linewidth = 2) +
-  labs(
-    title = "Percent of vote received by Trump in 2016 Presidential Election",
-    subtitle = "From each Congressional District",
-    x = "Percent of vote",
-    y = "Density"
-  )
-```
 
 ## Summary statistics
 
@@ -976,7 +1137,7 @@ gerrymander |>
   )
 ```
 
-## What does this code do? {.small}
+## What does this code do? {.scrollable .small}
 
 ```{r}
 gerrymander |>
@@ -986,13 +1147,13 @@ gerrymander |>
   )
 ```
 
-- `summarize` creates a *new* data frame that stores the summaries;
-- You can compute as many summaries as you want;
-- To the left of the equal signs are your choice of *column names* in the new data frame you are creating. You can type whatever you want here (within reason);
-- To the right of the equal signs is `R` code that computes the summaries. You must use the correct command names (case sensitive): `mean`, `median`, `quantile`, `sd`, `var`, etc;
-- If you want to learn what these do, read the documentation (eg `?quantile`).
+-   `summarize` creates a *new* data frame that stores the summaries;
+-   You can compute as many summaries as you want;
+-   To the left of the equal signs are your choice of *column names* in the new data frame you are creating. You can type whatever you want here (within reason);
+-   To the right of the equal signs is `R` code that computes the summaries. You must use the correct command names (case sensitive): `mean`, `median`, `quantile`, `sd`, `var`, etc;
+-   If you want to learn what these do, read the documentation (eg `?quantile`).
 
-## Distribution of votes for Trump in the 2016 election {.medium}
+## Distribution of votes for Trump in the 2016 election {.scrollable .smaller}
 
 ::: question
 Describe the distribution of percent of vote received by Trump in 2016 Presidential Election from Congressional Districts.
@@ -1138,7 +1299,7 @@ ggplot(
   geom_density()
 ```
 
-## Better filled density plots
+## Better filled density plots {.smaller}
 
 ```{r}
 #| code-line-numbers: "5"
@@ -1154,6 +1315,7 @@ ggplot(
 ```{r}
 #| code-line-numbers: "7-8"
 #| output-location: column
+#| warning: false
 ggplot(
   gerrymander, 
   aes(x = trump16, color = gerry, fill = gerry)
@@ -1221,7 +1383,7 @@ ggplot(
 
 # Multivariate analysis
 
-## Multivariate analysis {.medium}
+## Multivariate analysis {.scrollable .smaller}
 
 Analyzing the relationship between multiple variables:
 
@@ -1239,7 +1401,7 @@ Analyzing the relationship between multiple variables:
     -   Conditioning can be done via grouping (e.g., correlation between `y` and `x1`, grouped by levels of `x2` and `x3`)
 :::
 
-# Application exercise
+# Application exercise {.smaller}
 
 ## `{r} todays_ae`
 
@@ -1250,5 +1412,5 @@ Analyzing the relationship between multiple variables:
 
 -   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
 
--   Work through the application exercise in class, and render, commit, and push your edits by the end of class.
+-   Work through the AE and RCP your edits by the end of class.
 :::
