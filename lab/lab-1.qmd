@@ -26,7 +26,7 @@ Before we get to that stage, however, you need to build some basic fluency in R.
 Today we begin with the fundamental building blocks of R and RStudio: the interface, reading in data, and basic commands.
 
 ::: callout-warning
-This lab assumes that you have already completed [Lab 0](/labs/lab-0.html).
+This lab assumes that you have already completed [Lab 0](https://sta199-su26.github.io/lab/lab-0.html).
 If you have not, please go back and do that first before proceeding.
 :::
 
@@ -38,17 +38,18 @@ By the end of the lab, you will...
 -   Gain practice writing a reproducible report using Quarto
 -   Practice version control using Git and GitHub
 -   Be able to create data visualizations using `ggplot2`
+-   Practice piping to string together sequences of functions for *tidying* data
 
 ## Getting started
 
 ### Log in to RStudio
 
 -   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
--   Click `STA198-199` under My reservations to log into your container. You should now see the RStudio environment.
+-   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
 
 ### Clone the repo & start new RStudio project
 
--   Go to the course organization at [github.com/sta199-summer24](https://github.com/sta199-summer24) organization on GitHub.
+-   Go to the course GitHub organization at <https://github.com/sta199-su26/>.
     Click on the repo with the prefix **lab-1**.
     It contains the starter documents you need to complete the lab.
 
@@ -68,11 +69,11 @@ By the end of the lab, you will...
 
 Below are the components of the RStudio IDE.
 
-![](images/lab-1/rstudio.png){fig-alt="RStudio IDE"}
+![](img/lab-1/tour-r-rstudio.png){fig-alt="RStudio IDE"}
 
 Below are the components of a Quarto (.qmd) file.
 
-![](images/lab-1/quarto.png){fig-alt="Quarto document"}
+![](img/lab-1/tour-quarto.png){fig-alt="Quarto document"}
 
 ### YAML
 
@@ -153,20 +154,21 @@ When you load it you get nine packages loaded for you:
 
 The message that's printed when you load the package tells you which versions of these packages are loaded as well as any conflicts they may have introduced, e.g., the `filter()` function from dplyr has now masked (overwritten) the `filter()` function available in base R (and that's ok, we'll use `dplyr::filter()` anyway).
 
-You can now **Render** your template document and see the results.
-
 ## Guidelines
 
 As we've discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.
 
-In addition, the code should all the code should be be able to be read (not run off the page) when you render to PDF.
+In addition, the all code should be fully visible & readable (i.e., code should not run outside of the grey shaded box, and certainly not off the page, in the rendered PDF).
 Make sure that is the case, and add line breaks where the code is running off the page.[^1]
+As a reminder, when working in "Source" mode, you can refer to the thin, vertical grey line to visually assess whether or not your code will remain in the grey shaded box when rendered.
+Written narratives auto-wrap and do not require line breaks.
 
 [^1]: Remember, haikus not novellas when writing code!
 
 Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course.
 There will be periodic reminders in this assignment to remind you to **render, commit, and push** your changes to GitHub.
-You should have at least 3 commits with meaningful commit messages by the end of the assignment.
+You should have **at least 3 commits** with meaningful commit messages by the end of the assignment.
+Commit count will be assessed for workflow points when grading.
 
 # Questions
 
@@ -197,9 +199,10 @@ ggplot(midwest, aes(x = popdensity)) +
   )
 ```
 
-You will need to make four different histograms.
+You will need to make four different histograms; you should note that the code for the first plot has been provided for you, and you should add code for the remaining 3 plots in the same code chunk above.
+Be sure to leave an empty line of code in between each plot item for readability.
 Make sure to set informative titles and axis labels for each of your plots.
-Then, comment on which binwidth is most appropriate for these data and why.
+Then, comment on which binwidth is most appropriate for these data & why.
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 1".
@@ -211,8 +214,21 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 Visualize the distribution of population density of counties again, this time using a boxplot with `geom_boxplot()`.
 Make sure to set informative titles and axis labels for your plot.
-Then, using information as needed from the box plot as well as the histogram from Question 1, describe the distribution of population density of counties and comment on any potential outliers, making sure to identify at least one county that is a clear outlier by name in your narrative and commenting on whether it makes sense to you that this county is an outlier.
-You can use the data viewer to identify the outliers interactively, you do not have to write code to identify them.
+Then, using information as needed from the boxplot as well as the histogram (of your preferred binwidth) from Question 1, describe the distribution of population density of Midwest counties and comment on any outliers, making sure to identify at least one county that is a clear outlier by name in your narrative and commenting on whether it makes sense to you that this county is an outlier.
+You should use a single pipeline to identify the outlier(s) you mention in your narrative, though you should confirm your findings by using the data viewer to identify these outliers interactively.
+
+::: callout-tip
+## Hint:
+
+When answering a question that prompts you to "describe a distribution", you should ensure that your narrative mentions each of the following:
+
+1)  Center
+2)  Shape (this includes modality & skew)
+3)  Spread
+4)  Any likely outliers
+
+If you are stuck, read through [IMS - Ch. 5](https://openintrostat.github.io/ims/explore-numerical.html) for an overview of how to interpret plots for numerical data.
+:::
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 2".
@@ -224,9 +240,11 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 Create a scatterplot of the percentage below poverty (`percbelowpoverty` on the y-axis) versus percentage of people with a college degree (`percollege` on the x-axis), where the color [**and**]{.underline} shape of points are determined by `state`.
 Make sure to set informative titles, axis, and legend labels for your plot.
-First, describe the overall relationship between percentage of people with a college degree and percentage below poverty in Midwestern states, making sure to identify at least one county that is a clear outlier by name in your narrative.
-You can use the data viewer to identify the outliers interactively, you do not have to write code to identify them.
+First, describe the **overall** relationship between the percentage of people with a college degree and the percentage of people below the poverty line across all counties in the Midwest.
 Then, comment on whether you can identify how this relationship varies across states.
+
+If you have plotted correctly, you should notice a clear outlier in the state of Wisconsin; using a single pipeline, identify the county corresponding to this data point.
+Again, you should confirm your findings by using the data viewer to identify this outlier interactively.
 
 ::: render-commit-push
 Render, commit, and push your changes to GitHub with the commit message "Added answer for Question 3".
@@ -236,8 +254,8 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ### Question 4
 
-Now, let's examine the relationship between the same two variables, once again using different colors and shapes to represent each state, and using a separate plot for each state, i.e., with faceting with `facet_wrap()`.
-In addition to points (`geom_point()`), represent the data with a smooth curve fit to the data with `geom_smooth()` with the argument `se = FALSE`.
+Now, let's examine the relationship between the same two variables, once again using different colors and shapes to represent each state, and using a separate plot for each state, i.e., by faceting with `facet_wrap()`.
+In addition to representing the data with points (`geom_point()`), include a smooth curve fit to the data with `geom_smooth()`; be sure to remove the standard error bars.
 Make sure to set informative titles, axis, and legend labels for your plot.
 Which plot do you prefer - this plot or the plot in Question 3?
 Briefly explain your choice.
@@ -256,19 +274,38 @@ Make sure to commit and push all changed files so that your Git pane is empty af
 
 ### Question 5
 
-*Do some states have counties that tend to be geographically larger than others?*
+Recreate the plot below, and then give it a title.
+You will need to create the variable plotted on the y-axis; name this variable `percabovepoverty` and create it using the `mutate()` function.
 
-To explore this question, create side-by-side boxplots of area (`area`) of a county based on state (`state`).
-How do typical county area sizes compare across states?
-How do variabilities of county sizes compare across states?
-Which state has the single largest county?
-Identify the name of this county.
-You can use the data viewer to identify it interactively, you do not have to write code.
+```{r}
+#| eval: true
+#| echo: false
 
-::: render-commit-push
-Now is another good time to render, commit, and push your changes to GitHub with a meaningful commit message.
+midwest <- midwest |>
+  mutate(percabovepoverty = 100 - percbelowpoverty)
 
-Once again, make sure to commit and push all changed files so that your Git pane is empty afterwards.
+ggplot(
+  midwest,
+  aes(x = perchsd, y = percabovepoverty, color = percwhite)
+) +
+  geom_point(size = 2, alpha = 0.5) +
+  facet_wrap(~ state) +
+  theme_minimal() +
+  labs(
+    title = "ADD TITLE",
+    x = "% high school degree",
+    y = "% above poverty line",
+    color = "% white"
+  )
+```
+
+::: callout-tip
+## Hint
+
+-   [The `ggplot2` reference for themes](https://ggplot2.tidyverse.org/reference/ggtheme.html) will be helpful in determining the theme.
+-   The `size` of the points is 2.
+-   The transparency (`alpha`) of the points is 0.5.
+-   You can put line breaks in labels with `\n`.
 :::
 
 ### Question 6
@@ -284,7 +321,6 @@ Make sure to supplement your narrative with rough estimates of these percentages
 ## Hint
 
 For this question, you should begin with the data wrangling pipeline below.
-We will learn more about data wrangling in the coming weeks, so this is a mini-preview.
 This pipeline creates a new variable called `metro` based on the value of the existing variable called `inmetro`.
 If the value of `inmetro` is equal to 1 (`inmetro == 1`), it sets the value of `metro` to `"Yes"`, and if not, it sets the value of `metro` to `"No"`.
 The resulting data frame is assigned back to `midwest`, overwriting the existing `midwest` data frame with a version that includes the new `metro` variable.
@@ -301,7 +337,7 @@ midwest <- midwest |>
 ::: callout-tip
 # Another Hint
 
-This question might be a bit tricky - I[MS section 4.1](https://openintro-ims.netlify.app/explore-categorical) has good conceptual advice and [R4DS section 9.6](https://r4ds.hadley.nz/layers.html) has some good coding advice.
+This question might be a bit tricky - [IMS section 4.1](https://openintro-ims.netlify.app/explore-categorical) has good conceptual advice and [R4DS section 9.6](https://r4ds.hadley.nz/layers.html) has some good coding advice.
 You might notice that this chapter has lots of other coding tips - feel free to take a look (a lot of it is helpful!), but don't freak out - you *do not need to read this whole chapter.*
 :::
 
@@ -314,96 +350,55 @@ We keep repeating this because it's important and because we see students forget
 So take a moment to make sure you're following along with the version control instructions.
 :::
 
-### Question 7
-
-Recreate the plot below, and then give it a title.
-Then, identify at least one county that is a clear outlier in Wisconsin (WI) by name.
-You can use the data viewer to identify them interactively, you do not have to write code.
-Comment on the population composition of this county by investigating the percentage of other races living there.
-
-```{r}
-#| eval: true
-#| echo: false
-
-ggplot(
-  midwest,
-  aes(x = percollege, y = percbelowpoverty, color = percwhite)
-) +
-  geom_point(size = 2, alpha = 0.5) +
-  facet_wrap(~state) +
-  theme_minimal() +
-  labs(
-    title = "ADD TITLE",
-    x = "% college educated",
-    y = "% below poverty line",
-    color = "% white"
-  )
-```
-
-::: callout-tip
-## Hint
-
--   [The `ggplot2` reference for themes](https://ggplot2.tidyverse.org/reference/ggtheme.html) will be helpful in determining the theme.
--   The `size` of the points is 2.
--   The transparency (`alpha`) of the points is 0.5.
--   You can put line breaks in labels with `\n`.
-:::
-
-::: render-commit-push
-Render, commit, and push your final changes to GitHub with a meaningful commit message.
-
-Make sure to commit and push all changed files so that your Git pane is empty afterwards.
-:::
-
 ## Part 2
 
 **Enough about the Midwest!**
 
-In this part we will use a new, more recent, and potentially more relevant dataset on counties in North Carolina.
-
-This dataset is stored in a file called `nc-county.csv` in the `data` folder of your project/repository.
+For this task you will be working with a synthetic data set of sales records for Lego construction sets.
 
 You can read this file into R with the following code:
 
 ```{r}
 #| eval: false
 
-nc_county <- read_csv("data/nc-county.csv")
+lego_sales <- read_csv("data/lego_sales")
 ```
 
-This will read the CSV (comma separated values) file from the `data` folder and store the dataset as a data frame called `nc_county` in R.
+This will read the CSV (comma separated values) file from the `data` folder and store the dataset as a data frame called `lego_sales` in R.
 
-The variables in the dataset and their descriptions are as follows:
+This dataset contains basic information about the purchaser (name, age, phone number, etc.) as well as their purchase history.
 
--   `county`: Name of county.
--   `state_abb`: State abbreviation (NC).
--   `state_name`: State name (North Carolina).
--   `land_area_m2`: Land area of county in meters-squared, based on the 2020 census.
--   `land_area_mi2`: Land area of county in miles-squared, based on the 2020 census.
--   `population`: Population of county, based on the 2020 census.
--   `density`: Population density calculated as population divided by land area in miles-squared.
+### Question 7
 
-In addition to being more recent and more relevant, this dataset is also more complete in the sense that we know the units of population density: people per mile-squared!
+a.  How many observations are in the dataset? How many variables are there? Use inline code to answer these questions, filling in the blanks below. Describe what each observation represents.
+
+There are \_\_\_ observations and \_\_\_ variables in this dataset.
+
+b.  Make a dataframe where each row represents a unique customer present in the `lego_sales` dataframe and his / her age; in particular, this should be a df with 3 variables: `first_name`, `last_name`, and `age`.
+    Save this dataframe as `purchaser_ages`.
+
+c.  Visualize the distribution of purchaser age using a histogram with `geom_histogram()`; describe the distribution.
+    Quiet the warning by including a `binwidth =` argument in `geom_histogram()`; you should choose a reasonable binwidth based on the scale of the data.
 
 ### Question 8
 
-First, guess what the relationship between population density and land area might be -- positive?
-negative?
-no relationship?
+Fill in the code skeleton provided below to identify the three Lego themes that have generated the most revenue for Lego.
+Your code should result in a printed tibble with 2 variables: `Theme` and `total_revenue`, where `total_revenue` is a variable you create.
+Revenue can be calculated as `USPrice` $\times$ `Quantity`.
 
-Then, make a scatter plot of population density (`density` on the y-axis) vs. land area in miles-squared (`land_area_mi2` on the x-axis).
-Make sure to set an informative title and axis labels for your plot.
-Describe the relationship.
-Was your guess correct?
+```{r}
+#| eval: false
+
+df |>
+  mutate(revenue = ___) |>
+  group_by(Theme) |>
+  summarize(total_revenue = ___) |>
+  arrange(desc(___)) |>
+  slice(___)
+
+```
 
 ### Question 9
-
-Now make a scatter plot of population density (`density` on the y-axis) vs. land area in meters-squared (`land_area_m2` on the x-axis).
-Make sure to set an informative title and axis labels for your plot.
-Comment on how this scatterplot compares to the one in Exercise 8 --- is the relationship displayed same or different?
-Explain why.
-
-### Question 10
 
 Did you select your pages on Gradescope?
 You don't need to write an answer for this question, if you select your pages when you upload your lab to Gradescope, you'll get full points on this question.
@@ -444,7 +439,3 @@ Make sure you have:
 -   uploaded your PDF to Gradescope
 -   selected pages associated with each question on Gradescope
 :::
-
-## Grading
-
-The lab is graded out of a total of 100 points at 10 points per question.
