@@ -160,6 +160,7 @@ Primary package in the **tidyverse** for data wrangling and transformation
 :::
 
 ## Readability {.scrollable}
+
 Consider the following sequence of actions that describe the process of getting to campus in the morning:
 
 I need to find my key, then unlock my car, then start my car, then drive to school, then park.
@@ -189,21 +190,21 @@ find("keys") |>
 
 ## A Grammar of Data Manipulation {.scrollable .smaller}
 
-::: {.medium}
+::: medium
 dplyr is based on the concepts of functions as verbs that manipulate data frames.
 
 Core single data frame functions / verbs:
 
-* `filter()` / `slice()` - pick rows based on criteria
-* `select()` / `rename()` - select columns by name
-* `pull()` - grab a column as a vector
-* `arrange()` - reorder rows
-* `mutate()` / `transmute()` - create or modify columns
-* `distinct()` - filter for unique rows
-* `summarize()` / `count()` - reduce variables to values
-* `group_by()` / `ungroup()` - modify other verbs to act on subsets
-* `relocate()` - change column order
-* ... (many more)
+-   `filter()` / `slice()` - pick rows based on criteria
+-   `select()` / `rename()` - select columns by name
+-   `pull()` - grab a column as a vector
+-   `arrange()` - reorder rows
+-   `mutate()` / `transmute()` - create or modify columns
+-   `distinct()` - filter for unique rows
+-   `summarize()` / `count()` - reduce variables to values
+-   `group_by()` / `ungroup()` - modify other verbs to act on subsets
+-   `relocate()` - change column order
+-   ... (many more)
 :::
 
 # Row Operations
@@ -362,7 +363,6 @@ bechdel |>
   filter(year < 2000 & binary == "PASS")
 ```
 
-
 # Column Operations
 
 ## `select()` {.scrollable .smaller}
@@ -438,9 +438,8 @@ Generally, looks like:
 ```{r}
 #| eval: false
 
-select(new_variable_name = old_variable_name)
+rename(new_variable_name = old_variable_name)
 ```
-
 
 ## `mutate()` {.scrollable .smaller}
 
@@ -519,7 +518,6 @@ bechdel |>
   group_by(binary)
 ```
 
-
 ## `summarize()` {.scrollable .smaller}
 
 -   `summarize()`: collapses a group into a single row.
@@ -549,9 +547,8 @@ Generally, looks like:
 ```{r}
 #| eval: false
 
-summarize(resut_variable_name = function(existing_variable))
+summarize(result_variable_name = function(existing_variable))
 ```
-
 
 ## `group_by() + summarize()` {.smaller}
 
