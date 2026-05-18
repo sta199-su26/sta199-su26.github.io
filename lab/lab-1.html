@@ -124,9 +124,11 @@ window.Quarto = {
 </script><link rel="stylesheet" href="../style/sta199.scss">
 <meta property="og:title" content="Lab 1 – STA 199">
 <meta property="og:description" content="Due to Gradescope by Wed. May 20 11:59 PM">
-<meta property="og:image" content="https://sta199-su26.github.io/lab/images/lab-1/rstudio.png">
+<meta property="og:image" content="https://sta199-su26.github.io/lab/img/lab-1/tour-r-rstudio.png">
 <meta property="og:site_name" content="STA 199">
 <meta property="og:image:alt" content="RStudio IDE">
+<meta property="og:image:height" content="879">
+<meta property="og:image:width" content="1651">
 <meta name="twitter:title" content="Lab 1 – STA 199">
 <meta name="twitter:description" content="Due to Gradescope by Wed. May 20 11:59 PM">
 <meta name="twitter:image" content="https://sta199-su26.github.io/lab/img/twitter-card-ks.pdf">
@@ -301,15 +303,14 @@ window.Quarto = {
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
-  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   </ul>
 </li>
   <li>
 <a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a>
   <ul class="collapse">
-<li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+<li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
   <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
-  <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
   </ul>
 </li>
   </ul>
@@ -318,7 +319,6 @@ window.Quarto = {
 <a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap-up</a>
   <ul class="collapse">
 <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/lab/lab-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -388,7 +388,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This lab assumes that you have already completed <a href="../labs/lab-0.html">Lab 0</a>. If you have not, please go back and do that first before proceeding.</p>
+<p>This lab assumes that you have already completed <a href="https://sta199-su26.github.io/lab/lab-0.html">Lab 0</a>. If you have not, please go back and do that first before proceeding.</p>
 </div>
 </div>
 <section id="learning-objectives" class="level2"><h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
@@ -399,14 +399,15 @@ Warning
 <li>Practice version control using Git and GitHub</li>
 <li>Be able to create data visualizations using <code>ggplot2</code>
 </li>
+<li>Practice piping to string together sequences of functions for <em>tidying</em> data</li>
 </ul></section><section id="getting-started" class="level2"><h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <section id="log-in-to-rstudio" class="level3"><h3 class="anchored" data-anchor-id="log-in-to-rstudio">Log in to RStudio</h3>
 <ul>
 <li>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and login with your Duke NetID and Password.</li>
-<li>Click <code>STA198-199</code> under My reservations to log into your container. You should now see the RStudio environment.</li>
+<li>Click <code>STA199</code> under My reservations to log into your container. You should now see the RStudio environment.</li>
 </ul></section><section id="clone-the-repo-start-new-rstudio-project" class="level3"><h3 class="anchored" data-anchor-id="clone-the-repo-start-new-rstudio-project">Clone the repo &amp; start new RStudio project</h3>
 <ul>
-<li><p>Go to the course organization at <a href="https://github.com/sta199-summer24">github.com/sta199-summer24</a> organization on GitHub. Click on the repo with the prefix <strong>lab-1</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Go to the course GitHub organization at <a href="https://github.com/sta199-su26/" class="uri">https://github.com/sta199-su26/</a>. Click on the repo with the prefix <strong>lab-1</strong>. It contains the starter documents you need to complete the lab.</p></li>
 <li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
 <li><p>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</p></li>
 <li><p>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</p></li>
@@ -414,9 +415,9 @@ Warning
 <li><p>Click <em>lab-1.qmd</em> to open the template Quarto file. This is where you will write up your code and narrative for the lab.</p></li>
 </ul></section><section id="r-and-r-studio" class="level3"><h3 class="anchored" data-anchor-id="r-and-r-studio">R and R Studio</h3>
 <p>Below are the components of the RStudio IDE.</p>
-<p><img src="images/lab-1/rstudio.png" class="img-fluid" alt="RStudio IDE"></p>
+<p><img src="img/lab-1/tour-r-rstudio.png" class="img-fluid" alt="RStudio IDE"></p>
 <p>Below are the components of a Quarto (.qmd) file.</p>
-<p><img src="images/lab-1/quarto.png" class="img-fluid" alt="Quarto document"></p>
+<p><img src="img/lab-1/tour-quarto.png" class="img-fluid" alt="Quarto document"></p>
 </section><section id="yaml" class="level3"><h3 class="anchored" data-anchor-id="yaml">YAML</h3>
 <p>The top portion of your R Markdown file (between the three dashed lines) is called <strong>YAML</strong>. It stands for “YAML Ain’t Markup Language”. It is a human friendly data representation for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -483,11 +484,10 @@ Note
 <strong>tidyr</strong>: for data tidying and rectangling</li>
 </ul>
 <p>The message that’s printed when you load the package tells you which versions of these packages are loaded as well as any conflicts they may have introduced, e.g., the <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> function from dplyr has now masked (overwritten) the <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> function available in base R (and that’s ok, we’ll use <code><a href="https://dplyr.tidyverse.org/reference/filter.html">dplyr::filter()</a></code> anyway).</p>
-<p>You can now <strong>Render</strong> your template document and see the results.</p>
 </section><section id="guidelines" class="level2"><h2 class="anchored" data-anchor-id="guidelines">Guidelines</h2>
 <p>As we’ve discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.</p>
-<p>In addition, the code should all the code should be be able to be read (not run off the page) when you render to PDF. Make sure that is the case, and add line breaks where the code is running off the page.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course. There will be periodic reminders in this assignment to remind you to <strong>render, commit, and push</strong> your changes to GitHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.</p>
+<p>In addition, the all code should be fully visible &amp; readable (i.e., code should not run outside of the grey shaded box, and certainly not off the page, in the rendered PDF). Make sure that is the case, and add line breaks where the code is running off the page.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> As a reminder, when working in “Source” mode, you can refer to the thin, vertical grey line to visually assess whether or not your code will remain in the grey shaded box when rendered. Written narratives auto-wrap and do not require line breaks.</p>
+<p>Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete the lab and other assignments in this course. There will be periodic reminders in this assignment to remind you to <strong>render, commit, and push</strong> your changes to GitHub. You should have <strong>at least 3 commits</strong> with meaningful commit messages by the end of the assignment. Commit count will be assessed for workflow points when grading.</p>
 </section></section><section id="questions" class="level1"><h1>Questions</h1>
 <section id="part-1" class="level2"><h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
 <p><strong>Let’s take a trip to the Midwest!</strong></p>
@@ -512,25 +512,46 @@ Note
 </div>
 </div>
 </div>
-<p>You will need to make four different histograms. Make sure to set informative titles and axis labels for each of your plots. Then, comment on which binwidth is most appropriate for these data and why.</p>
+<p>You will need to make four different histograms; you should note that the code for the first plot has been provided for you, and you should add code for the remaining 3 plots in the same code chunk above. Be sure to leave an empty line of code in between each plot item for readability. Make sure to set informative titles and axis labels for each of your plots. Then, comment on which binwidth is most appropriate for these data &amp; why.</p>
 <div class="render-commit-push">
 <p>Render, commit, and push your changes to GitHub with the commit message “Added answer for Question 1”.</p>
 <p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
 </div>
 </section><section id="question-2" class="level3"><h3 class="anchored" data-anchor-id="question-2">Question 2</h3>
-<p>Visualize the distribution of population density of counties again, this time using a boxplot with <code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot()</a></code>. Make sure to set informative titles and axis labels for your plot. Then, using information as needed from the box plot as well as the histogram from Question 1, describe the distribution of population density of counties and comment on any potential outliers, making sure to identify at least one county that is a clear outlier by name in your narrative and commenting on whether it makes sense to you that this county is an outlier. You can use the data viewer to identify the outliers interactively, you do not have to write code to identify them.</p>
+<p>Visualize the distribution of population density of counties again, this time using a boxplot with <code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot()</a></code>. Make sure to set informative titles and axis labels for your plot. Then, using information as needed from the boxplot as well as the histogram (of your preferred binwidth) from Question 1, describe the distribution of population density of Midwest counties and comment on any outliers, making sure to identify at least one county that is a clear outlier by name in your narrative and commenting on whether it makes sense to you that this county is an outlier. You should use a single pipeline to identify the outlier(s) you mention in your narrative, though you should confirm your findings by using the data viewer to identify these outliers interactively.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When answering a question that prompts you to “describe a distribution”, you should ensure that your narrative mentions each of the following:</p>
+<ol type="1">
+<li>Center</li>
+<li>Shape (this includes modality &amp; skew)</li>
+<li>Spread</li>
+<li>Any likely outliers</li>
+</ol>
+<p>If you are stuck, read through <a href="https://openintrostat.github.io/ims/explore-numerical.html">IMS - Ch. 5</a> for an overview of how to interpret plots for numerical data.</p>
+</div>
+</div>
 <div class="render-commit-push">
 <p>Render, commit, and push your changes to GitHub with the commit message “Added answer for Question 2”.</p>
 <p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
 </div>
 </section><section id="question-3" class="level3"><h3 class="anchored" data-anchor-id="question-3">Question 3</h3>
-<p>Create a scatterplot of the percentage below poverty (<code>percbelowpoverty</code> on the y-axis) versus percentage of people with a college degree (<code>percollege</code> on the x-axis), where the color <u><strong>and</strong></u> shape of points are determined by <code>state</code>. Make sure to set informative titles, axis, and legend labels for your plot. First, describe the overall relationship between percentage of people with a college degree and percentage below poverty in Midwestern states, making sure to identify at least one county that is a clear outlier by name in your narrative. You can use the data viewer to identify the outliers interactively, you do not have to write code to identify them. Then, comment on whether you can identify how this relationship varies across states.</p>
+<p>Create a scatterplot of the percentage below poverty (<code>percbelowpoverty</code> on the y-axis) versus percentage of people with a college degree (<code>percollege</code> on the x-axis), where the color <u><strong>and</strong></u> shape of points are determined by <code>state</code>. Make sure to set informative titles, axis, and legend labels for your plot. First, describe the <strong>overall</strong> relationship between the percentage of people with a college degree and the percentage of people below the poverty line across all counties in the Midwest. Then, comment on whether you can identify how this relationship varies across states.</p>
+<p>If you have plotted correctly, you should notice a clear outlier in the state of Wisconsin; using a single pipeline, identify the county corresponding to this data point. Again, you should confirm your findings by using the data viewer to identify this outlier interactively.</p>
 <div class="render-commit-push">
 <p>Render, commit, and push your changes to GitHub with the commit message “Added answer for Question 3”.</p>
 <p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
 </div>
 </section><section id="question-4" class="level3"><h3 class="anchored" data-anchor-id="question-4">Question 4</h3>
-<p>Now, let’s examine the relationship between the same two variables, once again using different colors and shapes to represent each state, and using a separate plot for each state, i.e., with faceting with <code><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap()</a></code>. In addition to points (<code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>), represent the data with a smooth curve fit to the data with <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> with the argument <code>se = FALSE</code>. Make sure to set informative titles, axis, and legend labels for your plot. Which plot do you prefer - this plot or the plot in Question 3? Briefly explain your choice.</p>
+<p>Now, let’s examine the relationship between the same two variables, once again using different colors and shapes to represent each state, and using a separate plot for each state, i.e., by faceting with <code><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap()</a></code>. In addition to representing the data with points (<code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>), include a smooth curve fit to the data with <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code>; be sure to remove the standard error bars. Make sure to set informative titles, axis, and legend labels for your plot. Which plot do you prefer - this plot or the plot in Question 3? Briefly explain your choice.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -549,52 +570,7 @@ Note
 <p>Make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
 </div>
 </section><section id="question-5" class="level3"><h3 class="anchored" data-anchor-id="question-5">Question 5</h3>
-<p><em>Do some states have counties that tend to be geographically larger than others?</em></p>
-<p>To explore this question, create side-by-side boxplots of area (<code>area</code>) of a county based on state (<code>state</code>). How do typical county area sizes compare across states? How do variabilities of county sizes compare across states? Which state has the single largest county? Identify the name of this county. You can use the data viewer to identify it interactively, you do not have to write code.</p>
-<div class="render-commit-push">
-<p>Now is another good time to render, commit, and push your changes to GitHub with a meaningful commit message.</p>
-<p>Once again, make sure to commit and push all changed files so that your Git pane is empty afterwards.</p>
-</div>
-</section><section id="question-6" class="level3"><h3 class="anchored" data-anchor-id="question-6">Question 6</h3>
-<p><em>Do some states have a higher percentage of their counties located in a metropolitan area?</em></p>
-<p>Create a segmented bar chart with one bar per state and the bar filled with colors according to the value of <code>metro</code> – one color indicating <code>Yes</code> and the other color indicating <code>No</code> for whether a county is considered to be a metro area. The y-axis of the segmented barplot should range from 0 to 1, indicating proportions. Compare the percentage of counties in metro areas across the states based on this plot. Make sure to supplement your narrative with rough estimates of these percentages.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For this question, you should begin with the data wrangling pipeline below. We will learn more about data wrangling in the coming weeks, so this is a mini-preview. This pipeline creates a new variable called <code>metro</code> based on the value of the existing variable called <code>inmetro</code>. If the value of <code>inmetro</code> is equal to 1 (<code>inmetro == 1</code>), it sets the value of <code>metro</code> to <code>"Yes"</code>, and if not, it sets the value of <code>metro</code> to <code>"No"</code>. The resulting data frame is assigned back to <code>midwest</code>, overwriting the existing <code>midwest</code> data frame with a version that includes the new <code>metro</code> variable.</p>
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">midwest</span> <span class="op">&lt;-</span> <span class="va">midwest</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>metro <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">inmetro</span> <span class="op">==</span> <span class="fl">1</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Another Hint
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This question might be a bit tricky - I<a href="https://openintro-ims.netlify.app/explore-categorical">MS section 4.1</a> has good conceptual advice and <a href="https://r4ds.hadley.nz/layers.html">R4DS section 9.6</a> has some good coding advice. You might notice that this chapter has lots of other coding tips - feel free to take a look (a lot of it is helpful!), but don’t freak out - you <em>do not need to read this whole chapter.</em></p>
-</div>
-</div>
-<div class="render-commit-push">
-<p>Now is another good time to render, commit, and push your changes to GitHub with a meaningful commit message.</p>
-<p>And once again, make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
-<p>We keep repeating this because it’s important and because we see students forget to do this. So take a moment to make sure you’re following along with the version control instructions.</p>
-</div>
-</section><section id="question-7" class="level3"><h3 class="anchored" data-anchor-id="question-7">Question 7</h3>
-<p>Recreate the plot below, and then give it a title. Then, identify at least one county that is a clear outlier in Wisconsin (WI) by name. You can use the data viewer to identify them interactively, you do not have to write code. Comment on the population composition of this county by investigating the percentage of other races living there.</p>
+<p>Recreate the plot below, and then give it a title. You will need to create the variable plotted on the y-axis; name this variable <code>percabovepoverty</code> and create it using the <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> function.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -622,43 +598,72 @@ Hint
 </ul>
 </div>
 </div>
+</section><section id="question-6" class="level3"><h3 class="anchored" data-anchor-id="question-6">Question 6</h3>
+<p><em>Do some states have a higher percentage of their counties located in a metropolitan area?</em></p>
+<p>Create a segmented bar chart with one bar per state and the bar filled with colors according to the value of <code>metro</code> – one color indicating <code>Yes</code> and the other color indicating <code>No</code> for whether a county is considered to be a metro area. The y-axis of the segmented barplot should range from 0 to 1, indicating proportions. Compare the percentage of counties in metro areas across the states based on this plot. Make sure to supplement your narrative with rough estimates of these percentages.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For this question, you should begin with the data wrangling pipeline below. This pipeline creates a new variable called <code>metro</code> based on the value of the existing variable called <code>inmetro</code>. If the value of <code>inmetro</code> is equal to 1 (<code>inmetro == 1</code>), it sets the value of <code>metro</code> to <code>"Yes"</code>, and if not, it sets the value of <code>metro</code> to <code>"No"</code>. The resulting data frame is assigned back to <code>midwest</code>, overwriting the existing <code>midwest</code> data frame with a version that includes the new <code>metro</code> variable.</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">midwest</span> <span class="op">&lt;-</span> <span class="va">midwest</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>metro <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">inmetro</span> <span class="op">==</span> <span class="fl">1</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Another Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This question might be a bit tricky - <a href="https://openintro-ims.netlify.app/explore-categorical">IMS section 4.1</a> has good conceptual advice and <a href="https://r4ds.hadley.nz/layers.html">R4DS section 9.6</a> has some good coding advice. You might notice that this chapter has lots of other coding tips - feel free to take a look (a lot of it is helpful!), but don’t freak out - you <em>do not need to read this whole chapter.</em></p>
+</div>
+</div>
 <div class="render-commit-push">
-<p>Render, commit, and push your final changes to GitHub with a meaningful commit message.</p>
-<p>Make sure to commit and push all changed files so that your Git pane is empty afterwards.</p>
+<p>Now is another good time to render, commit, and push your changes to GitHub with a meaningful commit message.</p>
+<p>And once again, make sure to commit and push all changed files so that your Git pane is empty afterward.</p>
+<p>We keep repeating this because it’s important and because we see students forget to do this. So take a moment to make sure you’re following along with the version control instructions.</p>
 </div>
 </section></section><section id="part-2" class="level2"><h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
 <p><strong>Enough about the Midwest!</strong></p>
-<p>In this part we will use a new, more recent, and potentially more relevant dataset on counties in North Carolina.</p>
-<p>This dataset is stored in a file called <code>nc-county.csv</code> in the <code>data</code> folder of your project/repository.</p>
+<p>For this task you will be working with a synthetic data set of sales records for Lego construction sets.</p>
 <p>You can read this file into R with the following code:</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nc_county</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/nc-county.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lego_sales</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/lego_sales"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This will read the CSV (comma separated values) file from the <code>data</code> folder and store the dataset as a data frame called <code>nc_county</code> in R.</p>
-<p>The variables in the dataset and their descriptions are as follows:</p>
-<ul>
-<li>
-<code>county</code>: Name of county.</li>
-<li>
-<code>state_abb</code>: State abbreviation (NC).</li>
-<li>
-<code>state_name</code>: State name (North Carolina).</li>
-<li>
-<code>land_area_m2</code>: Land area of county in meters-squared, based on the 2020 census.</li>
-<li>
-<code>land_area_mi2</code>: Land area of county in miles-squared, based on the 2020 census.</li>
-<li>
-<code>population</code>: Population of county, based on the 2020 census.</li>
-<li>
-<code>density</code>: Population density calculated as population divided by land area in miles-squared.</li>
-</ul>
-<p>In addition to being more recent and more relevant, this dataset is also more complete in the sense that we know the units of population density: people per mile-squared!</p>
-<section id="question-8" class="level3"><h3 class="anchored" data-anchor-id="question-8">Question 8</h3>
-<p>First, guess what the relationship between population density and land area might be – positive? negative? no relationship?</p>
-<p>Then, make a scatter plot of population density (<code>density</code> on the y-axis) vs.&nbsp;land area in miles-squared (<code>land_area_mi2</code> on the x-axis). Make sure to set an informative title and axis labels for your plot. Describe the relationship. Was your guess correct?</p>
+<p>This will read the CSV (comma separated values) file from the <code>data</code> folder and store the dataset as a data frame called <code>lego_sales</code> in R.</p>
+<p>This dataset contains basic information about the purchaser (name, age, phone number, etc.) as well as their purchase history.</p>
+<section id="question-7" class="level3"><h3 class="anchored" data-anchor-id="question-7">Question 7</h3>
+<ol type="a">
+<li>How many observations are in the dataset? How many variables are there? Use inline code to answer these questions, filling in the blanks below. Describe what each observation represents.</li>
+</ol>
+<p>There are ___ observations and ___ variables in this dataset.</p>
+<ol start="2" type="a">
+<li><p>Make a dataframe where each row represents a unique customer present in the <code>lego_sales</code> dataframe and his / her age; in particular, this should be a df with 3 variables: <code>first_name</code>, <code>last_name</code>, and <code>age</code>. Save this dataframe as <code>purchaser_ages</code>.</p></li>
+<li><p>Visualize the distribution of purchaser age using a histogram with <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code>; describe the distribution. Quiet the warning by including a <code>binwidth =</code> argument in <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code>; you should choose a reasonable binwidth based on the scale of the data.</p></li>
+</ol></section><section id="question-8" class="level3"><h3 class="anchored" data-anchor-id="question-8">Question 8</h3>
+<p>Fill in the code skeleton provided below to identify the three Lego themes that have generated the most revenue for Lego. Your code should result in a printed tibble with 2 variables: <code>Theme</code> and <code>total_revenue</code>, where <code>total_revenue</code> is a variable you create. Revenue can be calculated as <code>USPrice</code> <span class="math inline">\(\times\)</span> <code>Quantity</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">revenue =</span> ___) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Theme) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_revenue =</span> ___) <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(___)) <span class="sc">|&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(___)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section><section id="question-9" class="level3"><h3 class="anchored" data-anchor-id="question-9">Question 9</h3>
-<p>Now make a scatter plot of population density (<code>density</code> on the y-axis) vs.&nbsp;land area in meters-squared (<code>land_area_m2</code> on the x-axis). Make sure to set an informative title and axis labels for your plot. Comment on how this scatterplot compares to the one in Exercise 8 — is the relationship displayed same or different? Explain why.</p>
-</section><section id="question-10" class="level3"><h3 class="anchored" data-anchor-id="question-10">Question 10</h3>
 <p>Did you select your pages on Gradescope? You don’t need to write an answer for this question, if you select your pages when you upload your lab to Gradescope, you’ll get full points on this question. Otherwise, you’ll get a 0 on this question.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </section></section></section><section id="wrap-up" class="level1"><h1>Wrap-up</h1>
 <section id="submission" class="level2"><h2 class="anchored" data-anchor-id="submission">Submission</h2>
@@ -705,8 +710,6 @@ Checklist
 </ul>
 </div>
 </div>
-</section><section id="grading" class="level2"><h2 class="anchored" data-anchor-id="grading">Grading</h2>
-<p>The lab is graded out of a total of 100 points at 10 points per question.</p>
 
 
 </section></section><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
