@@ -527,11 +527,11 @@ Katie Solarz
 <pre><code># A tibble: 5 × 7
   title            year gross_2013 budget_2013   roi binary clean_test
   &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
-1 The Day the Ea…  2008  338133621    86580505  3.91 PASS   ok        
-2 Stepmom          1998  358544918    71456616  5.02 PASS   ok        
-3 Crooklyn         1994   40939256    22003306  1.86 PASS   ok        
-4 Star Trek: Ins…  1998  268659236   100039262  2.69 PASS   ok        
-5 Hope Floats      1998  202421319    42873969  4.72 PASS   ok        </code></pre>
+1 Remember the T…  2000  341421899    40587251  8.41 FAIL   notalk    
+2 The Frozen Gro…  2013         NA    19200000 NA    FAIL   nowomen   
+3 Iron Man 2       2010  999859302   181599413  5.51 PASS   ok        
+4 Scream           1996  410044124    22277474 18.4  PASS   ok        
+5 Young Adult      2011   40456078    12428289  3.26 PASS   ok        </code></pre>
 </div>
 </div>
 </section><section id="filter" class="slide level2 scrollable smaller"><h2><code>filter()</code></h2>
@@ -850,7 +850,7 @@ Katie Solarz
 </section><section id="rename-1" class="slide level2 smaller"><h2><code>rename()</code></h2>
 <p>Generally, looks like:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">select</span>(<span class="at">new_variable_name =</span> old_variable_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">rename</span>(<span class="at">new_variable_name =</span> old_variable_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="mutate" class="slide level2 scrollable smaller"><h2><code>mutate()</code></h2>
 <ul>
@@ -1029,7 +1029,7 @@ Katie Solarz
 </section><section id="summarize-1" class="slide level2 smaller"><h2><code>summarize()</code></h2>
 <p>Generally, looks like:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="fu">summarize</span>(<span class="at">resut_variable_name =</span> <span class="cf">function</span>(existing_variable))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="fu">summarize</span>(<span class="at">result_variable_name =</span> <span class="cf">function</span>(existing_variable))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="group_by-summarize" class="slide level2 smaller"><h2><code>group_by() + summarize()</code></h2>
 <p>Group by movies passing/failing and compute within-group average budget</p>
