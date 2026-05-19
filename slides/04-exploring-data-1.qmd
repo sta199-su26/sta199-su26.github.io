@@ -5,6 +5,8 @@ date: "2026-05-19"
 format: 
   revealjs:
     output-file: 04-exploratory-data-analysis-I-slides.html
+  html:
+    output-file: 04-exploratory-data-analysis-I.html
 auto-stretch: false
 ---
 
