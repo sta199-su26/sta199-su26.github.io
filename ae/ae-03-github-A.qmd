@@ -24,7 +24,7 @@ library(nycflights13)
 **Your turn:** Fill in the blanks:
 
 The `flights` data frame has *`{r} nrow(flights)`* rows.
-Each row represents a \_flight\_.
+Each row represents a flight.
 
 ## Exercise 2
 
@@ -33,7 +33,7 @@ Each row represents a \_flight\_.
 ```{r}
 #| label: column-names
 
-names(flights)
+colnames(flights)
 ```
 
 ## Exercise 3 - `select()`
@@ -91,7 +91,7 @@ flights |>
 #| label: last-two
 
 flights |>
-  slice((n()-1):n())
+  slice_tail(n = 2)
 ```
 
 ## Exercise 5 - `arrange()`
@@ -124,7 +124,7 @@ flights |>
 #| label: longest-delay
 
 flights |>
-  select(tailnum, carrier, dep_delay) %>%
+  select(tailnum, carrier, dep_delay) |>
   arrange(desc(dep_delay)) |>
   slice(1)
 ```
@@ -146,19 +146,21 @@ flights |>
 #| label: rdu-ontime
 
 flights |>
-  filter(dest == "RDU", arr_delay < 0)
+  filter(dest == "RDU" & arr_delay < 0)
 ```
 
 -   **Your turn:** Describe what the code is doing in words.
+
+    This code is filtering for flights that landed at either RDU (Raleigh) or GSO (Greensboro) **AND** either took off early **OR** landed early.
 
 ```{r}
 #| label: nc-early
 
 flights |>
   filter(
-    dest %in% c("RDU", "GSO"),
-    arr_delay < 0 | dep_delay < 0
-    )
+    (dest %in% c("RDU", "GSO")) &
+    (arr_delay < 0 | dep_delay < 0)
+  )
 ```
 
 **Hint:** Logical operators in R:
@@ -172,7 +174,7 @@ flights |>
 | `==`          | is exactly equal to?                                     |
 | `!=`          | is not equal to?                                         |
 | `x & y`       | is x AND y?                                              |
-| `x | y`      | is x OR y?                                               |
+| `x | y`       | is x OR y?                                               |
 | `is.na(x)`    | is x NA?                                                 |
 | `!is.na(x)`   | is x not NA?                                             |
 | `x %in% y`    | is x in y?                                               |
@@ -271,7 +273,7 @@ flights |>
   summarize(mean_arr_delay = mean(arr_delay, na.rm = TRUE))
 ```
 
--   **Your turn:** What is the median departure delay for each airports around NYC (`origin`)? Which airport has the shortest median departure delay?
+-   **Your turn:** What is the median departure delay for each airports around NYC (`origin`)?
 
 ```{r}
 #| label: median-dep-dely-origin
@@ -279,22 +281,4 @@ flights |>
 flights |>
   group_by(origin) |>
   summarize(med_dep_delay = median(dep_delay, na.rm = TRUE))
-```
-
-# Additional Practice
-
-1.  Create a new dataset that only contains flights that do not have a missing departure time. Include the columns `year`, `month`, `day`, `dep_time`, `dep_delay`, and `dep_delay_hours` (the departure delay in hours). *Hint: Note you may need to use `mutate()` to make one or more of these variables.*
-
-```{r}
-#| label: add-practice-1
-
-# add code here
-```
-
-2.  For each airplane (uniquely identified by `tailnum`), use a `group_by()` paired with `summarize()` to find the sample size, mean, and standard deviation of flight distances. Then include only the top 5 and bottom 5 airplanes in terms of mean distance traveled per flight in the final data frame.
-
-```{r}
-#| label: add-practice-2
-
-# add code here
 ```
