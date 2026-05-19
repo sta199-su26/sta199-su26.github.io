@@ -743,7 +743,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 A Very Long En…  2004   81112527    67825608  1.20 PASS   ok        \n2 8MM              1999  185774868    55938481  3.32 FAIL   notalk    \n3 The To Do List   2013    6983338     1500000  4.66 PASS   ok        \n4 Invictus         2009  175869765    53200848  3.31 FAIL   notalk    \n5 Into the Wild    2007   83984389    22470870  3.74 FAIL   notalk"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Day the Ea…  2008  338133621    86580505  3.91 PASS   ok        \n2 Stepmom          1998  358544918    71456616  5.02 PASS   ok        \n3 Crooklyn         1994   40939256    22003306  1.86 PASS   ok        \n4 Star Trek: Ins…  1998  268659236   100039262  2.69 PASS   ok        \n5 Hope Floats      1998  202421319    42873969  4.72 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
@@ -1002,7 +1002,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 A Very Long En…  2004   81112527    67825608  1.20 PASS   ok        \n2 8MM              1999  185774868    55938481  3.32 FAIL   notalk    \n3 The To Do List   2013    6983338     1500000  4.66 PASS   ok        \n4 Invictus         2009  175869765    53200848  3.31 FAIL   notalk    \n5 Into the Wild    2007   83984389    22470870  3.74 FAIL   notalk"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Day the Ea…  2008  338133621    86580505  3.91 PASS   ok        \n2 Stepmom          1998  358544918    71456616  5.02 PASS   ok        \n3 Crooklyn         1994   40939256    22003306  1.86 PASS   ok        \n4 Star Trek: Ins…  1998  268659236   100039262  2.69 PASS   ok        \n5 Hope Floats      1998  202421319    42873969  4.72 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
@@ -2752,1045 +2752,1087 @@
   {
     "objectID": "slides/04-exploring-data-1.html",
     "href": "slides/04-exploring-data-1.html",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "",
-    "text": "Prepare for today’s application exercise: ae-04-gerrymander-explore-I\n\nSwitch to your ae project in RStudio;\nMake sure all of your changes up to this point are committed (ie there’s nothing left in your Git pane);\nClick Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\nThen push. So Render &gt; Commit &gt; Pull &gt; Push.\n(To see the new file, you may have to refresh the Files pane by clicking “Home”)\nWait till the you’re prompted to work on the application exercise during class before editing the file."
+    "text": "Prepare for today’s application exercise: ae-04-gerrymander-explore-I\n\nSwitch to your ae project in RStudio;\nMake sure all of your changes up to this point are committed (i.e., there’s nothing left in your Git pane);\nClick Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\n(To see the new file, you may have to refresh the Files pane by clicking “Home”)\nWait till the you’re prompted to work on the application exercise during class before editing the file."
   },
   {
     "objectID": "slides/04-exploring-data-1.html#while-you-wait",
     "href": "slides/04-exploring-data-1.html#while-you-wait",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "",
-    "text": "Prepare for today’s application exercise: ae-04-gerrymander-explore-I\n\nSwitch to your ae project in RStudio;\nMake sure all of your changes up to this point are committed (ie there’s nothing left in your Git pane);\nClick Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\nThen push. So Render &gt; Commit &gt; Pull &gt; Push.\n(To see the new file, you may have to refresh the Files pane by clicking “Home”)\nWait till the you’re prompted to work on the application exercise during class before editing the file."
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#so-far",
-    "href": "slides/04-exploring-data-1.html#so-far",
-    "title": "Exploring data I",
-    "section": "So far…",
-    "text": "So far…\n\n\nData set\nOccasion\nSource\nA row was a…\n\n\n\nage_guesses\nLecture 0\nfile\nSTAAWANANA student\n\n\npenguins\nLecture 1\npackage\npenguin\n\n\nunvotes\nLecture 2\npackage\nyear-issue-country\n\n\nnc_county\nLab, HW\nfile\nNC county\n\n\nbechdel\nLecture 3\nfile\nfilm\n\n\ngerrymander\nLecture 4\npackage\ndistrict"
+    "text": "Prepare for today’s application exercise: ae-04-gerrymander-explore-I\n\nSwitch to your ae project in RStudio;\nMake sure all of your changes up to this point are committed (i.e., there’s nothing left in your Git pane);\nClick Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\n(To see the new file, you may have to refresh the Files pane by clicking “Home”)\nWait till the you’re prompted to work on the application exercise during class before editing the file."
   },
   {
     "objectID": "slides/04-exploring-data-1.html#packages",
     "href": "slides/04-exploring-data-1.html#packages",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Packages",
-    "text": "Packages\n\nFor the data: usdata\n\n\n\nlibrary(usdata)\n\n\nFor the analysis: tidyverse and ggthemes\n\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ──────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(ggthemes)"
+    "text": "Packages\n\nFor the data: usdata\n\n\n\nlibrary(usdata)\n\n\nFor the exploratory data analysis (EDA): tidyverse and ggthemes\n\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ──────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(ggthemes)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#data-gerrymander",
     "href": "slides/04-exploring-data-1.html#data-gerrymander",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Data: gerrymander\n",
     "text": "Data: gerrymander\n\n\ngerrymander\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#what-is-gerrymandering",
     "href": "slides/04-exploring-data-1.html#what-is-gerrymandering",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "What is gerrymandering?",
     "text": "What is gerrymandering?"
   },
   {
-    "objectID": "slides/04-exploring-data-1.html#jzs-tour-of-the-usa",
-    "href": "slides/04-exploring-data-1.html#jzs-tour-of-the-usa",
-    "title": "Exploring data I",
-    "section": "JZ’s tour of the USA",
-    "text": "JZ’s tour of the USA"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#jzs-tour-of-the-usa-1",
-    "href": "slides/04-exploring-data-1.html#jzs-tour-of-the-usa-1",
-    "title": "Exploring data I",
-    "section": "JZ’s tour of the USA",
-    "text": "JZ’s tour of the USA"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#jzs-tour-of-the-usa-2",
-    "href": "slides/04-exploring-data-1.html#jzs-tour-of-the-usa-2",
-    "title": "Exploring data I",
-    "section": "JZ’s tour of the USA",
-    "text": "JZ’s tour of the USA"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#jzs-tour-of-the-usa-3",
-    "href": "slides/04-exploring-data-1.html#jzs-tour-of-the-usa-3",
-    "title": "Exploring data I",
-    "section": "JZ’s tour of the USA",
-    "text": "JZ’s tour of the USA"
+    "objectID": "slides/04-exploring-data-1.html#latest-gerrymandering-in-nc",
+    "href": "slides/04-exploring-data-1.html#latest-gerrymandering-in-nc",
+    "title": "Exploratory Data Analysis I",
+    "section": "(Latest) Gerrymandering in NC",
+    "text": "(Latest) Gerrymandering in NC"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#data-gerrymander-1",
     "href": "slides/04-exploring-data-1.html#data-gerrymander-1",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Data: gerrymander\n",
     "text": "Data: gerrymander\n\n\nWhat is a good first function to use to get to know a dataset?\n\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 3…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 6…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#data-gerrymander-2",
     "href": "slides/04-exploring-data-1.html#data-gerrymander-2",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Data: gerrymander\n",
     "text": "Data: gerrymander\n\n\nRows: Congressional districts\n\nColumns:\n\nCongressional district and state\n2016 election: winning party, % for Clinton, % for Trump, whether a Democrat won the House election, name of election winner\n2018 election: winning party, whether a Democrat won the 2018 House election\nWhether a Democrat flipped the seat in the 2018 election\nPrevalence of gerrymandering: low, mid, and high"
   },
   {
+    "objectID": "slides/04-exploring-data-1.html#overview-of-data-types",
+    "href": "slides/04-exploring-data-1.html#overview-of-data-types",
+    "title": "Exploratory Data Analysis I",
+    "section": "Overview of Data Types",
+    "text": "Overview of Data Types\n\n\nNumerical Data:\n\nTakes a wide range of numerical values\nMakes sense to add, subtract, etc.\nCan be either discrete (e.g., integers) or continuous\n\n\n\nCategorical Data:\n\nValues can be thought of as distinct categories\nThe possible values are called levels\nBinary data is a subset of categorical data with 2 levels (e.g., 0/1, T/F, yes/no)\nOrdinal data is a subset of categorical data in which there is some inherent “ordering” to the levels (e.g., pain, where pain can be “low”, “medium”, or “high”; letter grades, where A &gt; B &gt; C &gt; … &gt; F)"
+  },
+  {
     "objectID": "slides/04-exploring-data-1.html#variable-types-district",
     "href": "slides/04-exploring-data-1.html#variable-types-district",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: district\n",
     "text": "Variable types: district\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\n\n\n\nfirst_name\n\n\n\nparty16\n\n\n\nclinton16\n\n\n\ntrump16\n\n\n\ndem16\n\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nCongressional district:\n\ngerrymander |&gt;\n  select(district)\n\n# A tibble: 435 × 1\n   district\n   &lt;chr&gt;   \n 1 AK-AL   \n 2 AL-01   \n 3 AL-02   \n 4 AL-03   \n 5 AL-04   \n 6 AL-05   \n 7 AL-06   \n 8 AL-07   \n 9 AR-01   \n10 AR-02   \n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#variable-types-last_name",
     "href": "slides/04-exploring-data-1.html#variable-types-last_name",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: last_name\n",
     "text": "Variable types: last_name\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\n\n\n\nparty16\n\n\n\nclinton16\n\n\n\ntrump16\n\n\n\ndem16\n\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nLast name of 2016 election winner:\n\ngerrymander |&gt;\n  select(last_name)\n\n# A tibble: 435 × 1\n   last_name\n   &lt;chr&gt;    \n 1 Young    \n 2 Byrne    \n 3 Roby     \n 4 Rogers   \n 5 Aderholt \n 6 Brooks   \n 7 Palmer   \n 8 Sewell   \n 9 Crawford \n10 Hill     \n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#variable-types-first_name",
     "href": "slides/04-exploring-data-1.html#variable-types-first_name",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: first_name\n",
     "text": "Variable types: first_name\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\n\n\n\nclinton16\n\n\n\ntrump16\n\n\n\ndem16\n\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nFirst name of 2016 election winner:\n\ngerrymander |&gt;\n  select(first_name)\n\n# A tibble: 435 × 1\n   first_name\n   &lt;chr&gt;     \n 1 Don       \n 2 Bradley   \n 3 Martha    \n 4 Mike D.   \n 5 Rob       \n 6 Mo        \n 7 Gary      \n 8 Terri     \n 9 Rick      \n10 French    \n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#variable-types-party16",
     "href": "slides/04-exploring-data-1.html#variable-types-party16",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: party16\n",
     "text": "Variable types: party16\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\n\n\n\ntrump16\n\n\n\ndem16\n\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nPolitical party of 2016 election winner:\n\ngerrymander |&gt;\n  select(party16)\n\n# A tibble: 435 × 1\n   party16\n   &lt;chr&gt;  \n 1 R      \n 2 R      \n 3 R      \n 4 R      \n 5 R      \n 6 R      \n 7 R      \n 8 D      \n 9 R      \n10 R      \n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#variable-types-clinton16",
     "href": "slides/04-exploring-data-1.html#variable-types-clinton16",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: clinton16\n",
     "text": "Variable types: clinton16\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\n\n\n\ndem16\n\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nPercent of vote received by Clinton in 2016 Presidential Election:\n\ngerrymander |&gt;\n  select(clinton16)\n\n# A tibble: 435 × 1\n   clinton16\n       &lt;dbl&gt;\n 1      37.6\n 2      34.1\n 3      33  \n 4      32.3\n 5      17.4\n 6      31.3\n 7      26.1\n 8      69.8\n 9      30.2\n10      41.7\n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#variable-types-trump16",
     "href": "slides/04-exploring-data-1.html#variable-types-trump16",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: trump16\n",
     "text": "Variable types: trump16\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\n\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nPercent of vote received by Trump in 2016 Presidential Election:\n\ngerrymander |&gt;\n  select(trump16)\n\n# A tibble: 435 × 1\n   trump16\n     &lt;dbl&gt;\n 1    52.8\n 2    63.5\n 3    64.9\n 4    65.3\n 5    80.4\n 6    64.7\n 7    70.8\n 8    28.6\n 9    65  \n10    52.4\n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#variable-types-dem16",
     "href": "slides/04-exploring-data-1.html#variable-types-dem16",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: dem16\n",
-    "text": "Variable types: dem16\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nDid a Democrat win the 2016 House election. Levels of 1 (yes) and 0 (no):\n\ngerrymander |&gt;\n  select(dem16)\n\n# A tibble: 435 × 1\n   dem16\n   &lt;dbl&gt;\n 1     0\n 2     0\n 3     0\n 4     0\n 5     0\n 6     0\n 7     0\n 8     1\n 9     0\n10     0\n# ℹ 425 more rows"
+    "text": "Variable types: dem16\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical, binary\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nDid a Democrat win the 2016 House election. Levels of 1 (yes) and 0 (no):\n\ngerrymander |&gt;\n  select(dem16)\n\n# A tibble: 435 × 1\n   dem16\n   &lt;dbl&gt;\n 1     0\n 2     0\n 3     0\n 4     0\n 5     0\n 6     0\n 7     0\n 8     1\n 9     0\n10     0\n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#variable-types-state",
     "href": "slides/04-exploring-data-1.html#variable-types-state",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: state\n",
-    "text": "Variable types: state\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\ncategorical\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nState the Representative is from:\n\ngerrymander |&gt;\n  select(state)\n\n# A tibble: 435 × 1\n   state\n   &lt;chr&gt;\n 1 AK   \n 2 AL   \n 3 AL   \n 4 AL   \n 5 AL   \n 6 AL   \n 7 AL   \n 8 AL   \n 9 AR   \n10 AR   \n# ℹ 425 more rows"
+    "text": "Variable types: state\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical, binary\n\n\nstate\ncategorical\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nState the Representative is from:\n\ngerrymander |&gt;\n  select(state)\n\n# A tibble: 435 × 1\n   state\n   &lt;chr&gt;\n 1 AK   \n 2 AL   \n 3 AL   \n 4 AL   \n 5 AL   \n 6 AL   \n 7 AL   \n 8 AL   \n 9 AR   \n10 AR   \n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#variable-types-party18",
     "href": "slides/04-exploring-data-1.html#variable-types-party18",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: party18\n",
-    "text": "Variable types: party18\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\ncategorical\n\n\nparty18\ncategorical\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nPolitical Party of the 2018 election winner:\n\ngerrymander |&gt;\n  select(party18)\n\n# A tibble: 435 × 1\n   party18\n   &lt;chr&gt;  \n 1 R      \n 2 R      \n 3 R      \n 4 R      \n 5 R      \n 6 R      \n 7 R      \n 8 D      \n 9 R      \n10 R      \n# ℹ 425 more rows"
+    "text": "Variable types: party18\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical, binary\n\n\nstate\ncategorical\n\n\nparty18\ncategorical, binary\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nPolitical Party of the 2018 election winner:\n\ngerrymander |&gt;\n  select(party18)\n\n# A tibble: 435 × 1\n   party18\n   &lt;chr&gt;  \n 1 R      \n 2 R      \n 3 R      \n 4 R      \n 5 R      \n 6 R      \n 7 R      \n 8 D      \n 9 R      \n10 R      \n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#variable-types-dem18",
     "href": "slides/04-exploring-data-1.html#variable-types-dem18",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: dem18\n",
-    "text": "Variable types: dem18\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\ncategorical\n\n\nparty18\ncategorical\n\n\ndem18\ncategorical\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nDid a Democrat win the 2018 House election. Levels of 1 (yes) and 0 (no):\n\ngerrymander |&gt;\n  select(dem18)\n\n# A tibble: 435 × 1\n   dem18\n   &lt;dbl&gt;\n 1     0\n 2     0\n 3     0\n 4     0\n 5     0\n 6     0\n 7     0\n 8     1\n 9     0\n10     0\n# ℹ 425 more rows"
+    "text": "Variable types: dem18\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical, binary\n\n\nstate\ncategorical\n\n\nparty18\ncategorical, binary\n\n\ndem18\ncategorical, binary\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\n\nDid a Democrat win the 2018 House election. Levels of 1 (yes) and 0 (no):\n\ngerrymander |&gt;\n  select(dem18)\n\n# A tibble: 435 × 1\n   dem18\n   &lt;dbl&gt;\n 1     0\n 2     0\n 3     0\n 4     0\n 5     0\n 6     0\n 7     0\n 8     1\n 9     0\n10     0\n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#variable-types-flip18",
     "href": "slides/04-exploring-data-1.html#variable-types-flip18",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: flip18\n",
-    "text": "Variable types: flip18\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\ncategorical\n\n\nparty18\ncategorical\n\n\ndem18\ncategorical\n\n\nflip18\ncategorical\n\n\ngerry\n\n\n\n\n\n\nIn the 2018 election, did the seat flip from D to R (-1), from R to D (1), or not change (0)?\n\ngerrymander |&gt;\n  select(flip18)\n\n# A tibble: 435 × 1\n   flip18\n    &lt;dbl&gt;\n 1      0\n 2      0\n 3      0\n 4      0\n 5      0\n 6      0\n 7      0\n 8      0\n 9      0\n10      0\n# ℹ 425 more rows"
+    "text": "Variable types: flip18\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical, binary\n\n\nstate\ncategorical\n\n\nparty18\ncategorical, binary\n\n\ndem18\ncategorical, binary\n\n\nflip18\ncategorical, binary\n\n\ngerry\n\n\n\n\n\n\nIn the 2018 election, did the seat flip from D to R (-1), from R to D (1), or not change (0)?\n\ngerrymander |&gt;\n  select(flip18)\n\n# A tibble: 435 × 1\n   flip18\n    &lt;dbl&gt;\n 1      0\n 2      0\n 3      0\n 4      0\n 5      0\n 6      0\n 7      0\n 8      0\n 9      0\n10      0\n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#variable-types-gerry",
     "href": "slides/04-exploring-data-1.html#variable-types-gerry",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: gerry\n",
-    "text": "Variable types: gerry\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\ncategorical\n\n\nparty18\ncategorical\n\n\ndem18\ncategorical\n\n\nflip18\ncategorical\n\n\ngerry\ncategorical, ordinal\n\n\n\n\n\nCategorical variable for prevalence of gerrymandering with levels of low, mid and high:\n\ngerrymander |&gt;\n  select(gerry)\n\n# A tibble: 435 × 1\n   gerry\n   &lt;fct&gt;\n 1 mid  \n 2 high \n 3 high \n 4 high \n 5 high \n 6 high \n 7 high \n 8 high \n 9 mid  \n10 mid  \n# ℹ 425 more rows"
+    "text": "Variable types: gerry\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical, binary\n\n\nstate\ncategorical\n\n\nparty18\ncategorical, binary\n\n\ndem18\ncategorical, binary\n\n\nflip18\ncategorical, binary\n\n\ngerry\ncategorical, ordinal\n\n\n\n\n\nCategorical variable for prevalence of gerrymandering with levels of low, mid and high:\n\ngerrymander |&gt;\n  select(gerry)\n\n# A tibble: 435 × 1\n   gerry\n   &lt;fct&gt;\n 1 mid  \n 2 high \n 3 high \n 4 high \n 5 high \n 6 high \n 7 high \n 8 high \n 9 mid  \n10 mid  \n# ℹ 425 more rows"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#univariate-analysis-1",
     "href": "slides/04-exploring-data-1.html#univariate-analysis-1",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Univariate analysis",
     "text": "Univariate analysis\nAnalyzing a single variable:\n\n\nNumerical: histogram, box plot, density plot, etc.\nCategorical: bar plot, pie chart, etc."
   },
   {
     "objectID": "slides/04-exploring-data-1.html#histogram---step-1",
     "href": "slides/04-exploring-data-1.html#histogram---step-1",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 1",
     "text": "Histogram - Step 1\n\nggplot(gerrymander)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#histogram---step-2",
     "href": "slides/04-exploring-data-1.html#histogram---step-2",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 2",
     "text": "Histogram - Step 2\n\nggplot(gerrymander, aes(x = trump16))"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#histogram---step-3",
     "href": "slides/04-exploring-data-1.html#histogram---step-3",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 3",
     "text": "Histogram - Step 3\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`."
   },
   {
     "objectID": "slides/04-exploring-data-1.html#histogram---step-4",
     "href": "slides/04-exploring-data-1.html#histogram---step-4",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 4",
     "text": "Histogram - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(binwidth = 1)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#histogram---step-4-1",
     "href": "slides/04-exploring-data-1.html#histogram---step-4-1",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 4",
     "text": "Histogram - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(binwidth = 100)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#histogram---step-4-2",
     "href": "slides/04-exploring-data-1.html#histogram---step-4-2",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 4",
     "text": "Histogram - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(binwidth = 3)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#histogram---step-4-3",
     "href": "slides/04-exploring-data-1.html#histogram---step-4-3",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 4",
     "text": "Histogram - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(binwidth = 5)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#histogram---step-5",
     "href": "slides/04-exploring-data-1.html#histogram---step-5",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 5",
     "text": "Histogram - Step 5\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(binwidth = 5) +\n  labs(\n    title = \"Percent of vote received by Trump in 2016 Presidential Election\",\n    subtitle = \"From each Congressional District\",\n    x = \"Percent of vote\",\n    y = \"Count\"\n  )"
   },
   {
-    "objectID": "slides/04-exploring-data-1.html#box-plot---step-1",
-    "href": "slides/04-exploring-data-1.html#box-plot---step-1",
-    "title": "Exploring data I",
-    "section": "Box plot - Step 1",
-    "text": "Box plot - Step 1\n\nggplot(gerrymander)"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#box-plot---step-2",
-    "href": "slides/04-exploring-data-1.html#box-plot---step-2",
-    "title": "Exploring data I",
-    "section": "Box plot - Step 2",
-    "text": "Box plot - Step 2\n\nggplot(gerrymander, aes(x = trump16))"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#box-plot---step-3",
-    "href": "slides/04-exploring-data-1.html#box-plot---step-3",
-    "title": "Exploring data I",
-    "section": "Box plot - Step 3",
-    "text": "Box plot - Step 3\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_boxplot()"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#box-plot---alternative-step-2-3",
-    "href": "slides/04-exploring-data-1.html#box-plot---alternative-step-2-3",
-    "title": "Exploring data I",
-    "section": "Box plot - Alternative Step 2 + 3",
-    "text": "Box plot - Alternative Step 2 + 3\n\nggplot(gerrymander, aes(y = trump16)) +\n  geom_boxplot()"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#box-plot---step-4",
-    "href": "slides/04-exploring-data-1.html#box-plot---step-4",
-    "title": "Exploring data I",
-    "section": "Box plot - Step 4",
-    "text": "Box plot - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_boxplot() +\n  labs(\n    title = \"Percent of vote received by Trump in 2016 Presidential Election\",\n    subtitle = \"From each Congressional District\",\n    x = \"Percent of vote\",\n    y = NULL\n  )"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#whence-the-box",
-    "href": "slides/04-exploring-data-1.html#whence-the-box",
-    "title": "Exploring data I",
-    "section": "Whence the box?",
-    "text": "Whence the box?\nThe middle of the box is the median. 50% of the data are below, and 50% are above:"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#whence-the-box-1",
-    "href": "slides/04-exploring-data-1.html#whence-the-box-1",
-    "title": "Exploring data I",
-    "section": "Whence the box?",
-    "text": "Whence the box?\nThe lower edge of the box is the 25% quantile. 25% of the data are below, and 75% are above:"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#whence-the-box-2",
-    "href": "slides/04-exploring-data-1.html#whence-the-box-2",
-    "title": "Exploring data I",
-    "section": "Whence the box?",
-    "text": "Whence the box?\nThe upper edge of the box is the 75% quantile. 75% of the data are below, and 25% are above:"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#box-plot-facts",
-    "href": "slides/04-exploring-data-1.html#box-plot-facts",
-    "title": "Exploring data I",
-    "section": "Box plot facts",
-    "text": "Box plot facts\n\nA box plot is easier to read quickly than a histogram because it eliminates clutter and immediately draws your eye to those main features: center, spread, and skew;\nThe box spans the middle 50% of the data;\nThe width of the box is called the inner quartile range (IQR) and it measures spread;\nFrom the docs (?geom_boxplot):\n\n\nThe upper whisker extends from the hinge to the largest value no further than 1.5 * IQR from the hinge (where IQR is the inter-quartile range, or distance between the first and third quartiles). The lower whisker extends from the hinge to the smallest value at most 1.5 * IQR of the hinge. Data beyond the end of the whiskers are called “outlying” points and are plotted individually."
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#box-plots-obscure-modality",
-    "href": "slides/04-exploring-data-1.html#box-plots-obscure-modality",
-    "title": "Exploring data I",
-    "section": "Box plots obscure modality",
-    "text": "Box plots obscure modality\nSame box plot:"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1.html#box-plots-obscure-modality-1",
-    "href": "slides/04-exploring-data-1.html#box-plots-obscure-modality-1",
-    "title": "Exploring data I",
-    "section": "Box plots obscure modality",
-    "text": "Box plots obscure modality\nVery different distributions:"
-  },
-  {
     "objectID": "slides/04-exploring-data-1.html#density-plot---step-1",
     "href": "slides/04-exploring-data-1.html#density-plot---step-1",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 1",
     "text": "Density plot - Step 1\n\nggplot(gerrymander)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#density-plot---step-2",
     "href": "slides/04-exploring-data-1.html#density-plot---step-2",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 2",
     "text": "Density plot - Step 2\n\nggplot(gerrymander, aes(x = trump16))"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#density-plot---step-3",
     "href": "slides/04-exploring-data-1.html#density-plot---step-3",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 3",
     "text": "Density plot - Step 3\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density()"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#contrast-that-with-the-histogram",
     "href": "slides/04-exploring-data-1.html#contrast-that-with-the-histogram",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Contrast that with the histogram",
     "text": "Contrast that with the histogram\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(aes(y = after_stat(density))) + \n  geom_density(color = \"red\")\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\nPrettier. Smooths out the lumps and bumps. There are still defaults you could learn to override."
   },
   {
     "objectID": "slides/04-exploring-data-1.html#density-plot---step-4",
     "href": "slides/04-exploring-data-1.html#density-plot---step-4",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 4",
     "text": "Density plot - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"red\")"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#density-plot---step-5",
     "href": "slides/04-exploring-data-1.html#density-plot---step-5",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 5",
     "text": "Density plot - Step 5\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\")"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#density-plot---step-6",
     "href": "slides/04-exploring-data-1.html#density-plot---step-6",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 6",
     "text": "Density plot - Step 6\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\", alpha = 1)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#density-plot---step-6-1",
     "href": "slides/04-exploring-data-1.html#density-plot---step-6-1",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 6",
     "text": "Density plot - Step 6\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\", alpha = 0)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#density-plot---step-6-2",
     "href": "slides/04-exploring-data-1.html#density-plot---step-6-2",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 6",
     "text": "Density plot - Step 6\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\", alpha = 0.5)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#density-plot---step-7",
     "href": "slides/04-exploring-data-1.html#density-plot---step-7",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 7",
     "text": "Density plot - Step 7\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\", alpha = 0.5, linewidth = 2)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#density-plot---step-8",
     "href": "slides/04-exploring-data-1.html#density-plot---step-8",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 8",
     "text": "Density plot - Step 8\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\", alpha = 0.5, linewidth = 2) +\n  labs(\n    title = \"Percent of vote received by Trump in 2016 Presidential Election\",\n    subtitle = \"From each Congressional District\",\n    x = \"Percent of vote\",\n    y = \"Density\"\n  )"
   },
   {
+    "objectID": "slides/04-exploring-data-1.html#describe-a-distribution",
+    "href": "slides/04-exploring-data-1.html#describe-a-distribution",
+    "title": "Exploratory Data Analysis I",
+    "section": "“Describe a distribution”",
+    "text": "“Describe a distribution”"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#describe-a-distribution-1",
+    "href": "slides/04-exploring-data-1.html#describe-a-distribution-1",
+    "title": "Exploratory Data Analysis I",
+    "section": "“Describe a distribution”",
+    "text": "“Describe a distribution”\n\n\n\n\n\n\nTip\n\n\n\nWhen answering a question that prompts you to “describe a distribution”, you should ensure that your narrative mentions each of the following:\n\nCenter\nShape (this includes modality & skew)\nSpread\nAny likely outliers"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#example-the-standard-normal-distribution",
+    "href": "slides/04-exploring-data-1.html#example-the-standard-normal-distribution",
+    "title": "Exploratory Data Analysis I",
+    "section": "Example: The Standard Normal Distribution",
+    "text": "Example: The Standard Normal Distribution"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#example-the-standard-normal-distribution-1",
+    "href": "slides/04-exploring-data-1.html#example-the-standard-normal-distribution-1",
+    "title": "Exploratory Data Analysis I",
+    "section": "Example: The Standard Normal Distribution",
+    "text": "Example: The Standard Normal Distribution\n\n\n\n\n\n\n\n\n\n\n\n\n\nCentered at 0 (mean and median agree)\nSymmetric (about it’s center); unimodal (one peak)\nValues range between -3 and +3, roughly\nNo apparent outliers"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#back-to-gerry",
+    "href": "slides/04-exploring-data-1.html#back-to-gerry",
+    "title": "Exploratory Data Analysis I",
+    "section": "Back to Gerry",
+    "text": "Back to Gerry"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#skewed-data",
+    "href": "slides/04-exploring-data-1.html#skewed-data",
+    "title": "Exploratory Data Analysis I",
+    "section": "“Skewed” data",
+    "text": "“Skewed” data"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#box-plot---step-1",
+    "href": "slides/04-exploring-data-1.html#box-plot---step-1",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plot - Step 1",
+    "text": "Box plot - Step 1\n\nggplot(gerrymander)"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#box-plot---step-2",
+    "href": "slides/04-exploring-data-1.html#box-plot---step-2",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plot - Step 2",
+    "text": "Box plot - Step 2\n\nggplot(gerrymander, aes(x = trump16))"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#box-plot---step-3",
+    "href": "slides/04-exploring-data-1.html#box-plot---step-3",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plot - Step 3",
+    "text": "Box plot - Step 3\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#box-plot---alternative-step-2-3",
+    "href": "slides/04-exploring-data-1.html#box-plot---alternative-step-2-3",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plot - Alternative Step 2 + 3",
+    "text": "Box plot - Alternative Step 2 + 3\n\nggplot(gerrymander, aes(y = trump16)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#box-plot---step-4",
+    "href": "slides/04-exploring-data-1.html#box-plot---step-4",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plot - Step 4",
+    "text": "Box plot - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_boxplot() +\n  labs(\n    title = \"Percent of vote received by Trump in 2016 Presidential Election\",\n    subtitle = \"From each Congressional District\",\n    x = \"Percent of vote\",\n    y = NULL\n  )"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#whence-the-box",
+    "href": "slides/04-exploring-data-1.html#whence-the-box",
+    "title": "Exploratory Data Analysis I",
+    "section": "Whence the box?",
+    "text": "Whence the box?\nThe middle of the box is the median. 50% of the data are below, and 50% are above:"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#whence-the-box-1",
+    "href": "slides/04-exploring-data-1.html#whence-the-box-1",
+    "title": "Exploratory Data Analysis I",
+    "section": "Whence the box?",
+    "text": "Whence the box?\nThe lower edge of the box is the 25% quantile. 25% of the data are below, and 75% are above:"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#whence-the-box-2",
+    "href": "slides/04-exploring-data-1.html#whence-the-box-2",
+    "title": "Exploratory Data Analysis I",
+    "section": "Whence the box?",
+    "text": "Whence the box?\nThe upper edge of the box is the 75% quantile. 75% of the data are below, and 25% are above:"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#box-plot-facts",
+    "href": "slides/04-exploring-data-1.html#box-plot-facts",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plot facts",
+    "text": "Box plot facts\n\nA box plot is easier to read quickly than a histogram because it eliminates clutter and immediately draws your eye to those main features: center, spread, and skew;\nThe box spans the middle 50% of the data;\nThe width of the box is called the inner quartile range (IQR) and it measures spread;\nFrom the docs (?geom_boxplot):\n\n\nThe upper whisker extends from the hinge to the largest value no further than 1.5 * IQR from the hinge (where IQR is the inter-quartile range, or distance between the first and third quartiles). The lower whisker extends from the hinge to the smallest value at most 1.5 * IQR of the hinge. Data beyond the end of the whiskers are called “outlying” points and are plotted individually."
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#box-plots-obscure-modality",
+    "href": "slides/04-exploring-data-1.html#box-plots-obscure-modality",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plots obscure modality",
+    "text": "Box plots obscure modality\nSame box plot:"
+  },
+  {
+    "objectID": "slides/04-exploring-data-1.html#box-plots-obscure-modality-1",
+    "href": "slides/04-exploring-data-1.html#box-plots-obscure-modality-1",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plots obscure modality",
+    "text": "Box plots obscure modality\nVery different distributions:"
+  },
+  {
     "objectID": "slides/04-exploring-data-1.html#summary-statistics",
     "href": "slides/04-exploring-data-1.html#summary-statistics",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Summary statistics",
     "text": "Summary statistics\n\ngerrymander |&gt;\n  summarize(\n    mean_trump_perc = mean(trump16),\n    median_trump_perc = median(trump16),\n    sd = sd(trump16),\n    iqr = IQR(trump16),\n    q25 = quantile(trump16, 0.25),\n    q75 = quantile(trump16, 0.75)\n  )\n\n# A tibble: 1 × 6\n  mean_trump_perc median_trump_perc    sd   iqr   q25   q75\n            &lt;dbl&gt;             &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1            45.9              48.7  16.8  23.3  34.8  58.1"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#what-does-this-code-do",
     "href": "slides/04-exploring-data-1.html#what-does-this-code-do",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "What does this code do?",
     "text": "What does this code do?\n\ngerrymander |&gt;\n  summarize(\n    gimme_my_mean = mean(trump16),\n    gimme_my_median = median(trump16)\n  )\n\n# A tibble: 1 × 2\n  gimme_my_mean gimme_my_median\n          &lt;dbl&gt;           &lt;dbl&gt;\n1          45.9            48.7\n\n\n\n\nsummarize creates a new data frame that stores the summaries;\nYou can compute as many summaries as you want;\nTo the left of the equal signs are your choice of column names in the new data frame you are creating. You can type whatever you want here (within reason);\nTo the right of the equal signs is R code that computes the summaries. You must use the correct command names (case sensitive): mean, median, quantile, sd, var, etc;\nIf you want to learn what these do, read the documentation (eg ?quantile)."
   },
   {
     "objectID": "slides/04-exploring-data-1.html#distribution-of-votes-for-trump-in-the-2016-election",
     "href": "slides/04-exploring-data-1.html#distribution-of-votes-for-trump-in-the-2016-election",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Distribution of votes for Trump in the 2016 election",
     "text": "Distribution of votes for Trump in the 2016 election\n\nDescribe the distribution of percent of vote received by Trump in 2016 Presidential Election from Congressional Districts.\n\n\nShape: The distribution of votes for Trump in the 2016 election from Congressional Districts is unimodal and left-skewed.\nCenter: The percent of vote received by Trump in the 2016 Presidential Election from a typical Congressional Districts is 48.7%.\nSpread: In the middle 50% of Congressional Districts, 34.8% to 58.1% of voters voted for Trump in the 2016 Presidential Election.\nUnusual observations: -"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#bivariate-analysis-1",
     "href": "slides/04-exploring-data-1.html#bivariate-analysis-1",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Bivariate analysis",
     "text": "Bivariate analysis\nAnalyzing the relationship between two variables:\n\n\nNumerical + numerical: scatterplot\nNumerical + categorical: side-by-side box plots, violin plots, etc.\nCategorical + categorical: stacked bar plots\nUsing an aesthetic (e.g., fill, color, shape, etc.) or facets to represent the second variable in any plot"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#side-by-side-box-plots",
     "href": "slides/04-exploring-data-1.html#side-by-side-box-plots",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Side-by-side box plots",
     "text": "Side-by-side box plots\n\nggplot(\n  gerrymander, \n  aes(\n    x = trump16, \n    y = gerry\n    )\n  ) +\n  geom_boxplot()"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#summary-statistics-1",
     "href": "slides/04-exploring-data-1.html#summary-statistics-1",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Summary statistics",
     "text": "Summary statistics\n\ngerrymander |&gt;\n  # do the following for each level of gerry\n  summarize(\n    min = min(trump16),\n    q25 = quantile(trump16, 0.25),\n    median = median(trump16),\n    q75 = quantile(trump16, 0.75),\n    max = max(trump16),\n  )\n\n# A tibble: 1 × 5\n    min   q25 median   q75   max\n  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1   4.9  34.8   48.7  58.1  80.4"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#summary-statistics-2",
     "href": "slides/04-exploring-data-1.html#summary-statistics-2",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Summary statistics",
     "text": "Summary statistics\n\ngerrymander |&gt;\n  filter(gerry == \"low\") |&gt;\n  summarize(\n    min = min(trump16),\n    q25 = quantile(trump16, 0.25),\n    median = median(trump16),\n    q75 = quantile(trump16, 0.75),\n    max = max(trump16),\n  )\n\n# A tibble: 1 × 5\n    min   q25 median   q75   max\n  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1   4.9  36.3   48.4  54.7  74.9"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#summary-statistics-3",
     "href": "slides/04-exploring-data-1.html#summary-statistics-3",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Summary statistics",
     "text": "Summary statistics\n\ngerrymander |&gt;\n  filter(gerry == \"mid\") |&gt;\n  summarize(\n    min = min(trump16),\n    q25 = quantile(trump16, 0.25),\n    median = median(trump16),\n    q75 = quantile(trump16, 0.75),\n    max = max(trump16),\n  )\n\n# A tibble: 1 × 5\n    min   q25 median   q75   max\n  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1   6.8  34.8   48.0  57.9  79.9"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#summary-statistics-4",
     "href": "slides/04-exploring-data-1.html#summary-statistics-4",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Summary statistics",
     "text": "Summary statistics\n\ngerrymander |&gt;\n  filter(gerry == \"high\") |&gt;\n  summarize(\n    min = min(trump16),\n    q25 = quantile(trump16, 0.25),\n    median = median(trump16),\n    q75 = quantile(trump16, 0.75),\n    max = max(trump16),\n  )\n\n# A tibble: 1 × 5\n    min   q25 median   q75   max\n  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1   9.2  33.5   50.5  60.8  80.4"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#summary-statistics-5",
     "href": "slides/04-exploring-data-1.html#summary-statistics-5",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Summary statistics",
     "text": "Summary statistics\n\ngerrymander |&gt;\n  group_by(gerry) |&gt;\n  summarize(\n    min = min(trump16),\n    q25 = quantile(trump16, 0.25),\n    median = median(trump16),\n    q75 = quantile(trump16, 0.75),\n    max = max(trump16),\n  )\n\n# A tibble: 3 × 6\n  gerry   min   q25 median   q75   max\n  &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 low     4.9  36.3   48.4  54.7  74.9\n2 mid     6.8  34.8   48.0  57.9  79.9\n3 high    9.2  33.5   50.5  60.8  80.4"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#density-plots",
     "href": "slides/04-exploring-data-1.html#density-plots",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plots",
     "text": "Density plots\n\nggplot(\n  gerrymander, \n  aes(\n    x = trump16, \n    color = gerry\n    )\n  ) +\n  geom_density()"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#filled-density-plots",
     "href": "slides/04-exploring-data-1.html#filled-density-plots",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Filled density plots",
     "text": "Filled density plots\n\nggplot(\n  gerrymander, \n  aes(\n    x = trump16, \n    color = gerry,\n    fill = gerry\n    )\n  ) +\n  geom_density()"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#better-filled-density-plots",
     "href": "slides/04-exploring-data-1.html#better-filled-density-plots",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Better filled density plots",
     "text": "Better filled density plots\n\nggplot(\n  gerrymander, \n  aes(x = trump16, color = gerry, fill = gerry)\n  ) +\n  geom_density(alpha = 0.5)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#better-colors",
     "href": "slides/04-exploring-data-1.html#better-colors",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Better colors",
-    "text": "Better colors\n\nggplot(\n  gerrymander, \n  aes(x = trump16, color = gerry, fill = gerry)\n  ) +\n  geom_density(alpha = 0.5) +\n  scale_color_colorblind() +\n  scale_fill_colorblind()\n\nWarning: `scale_fill_colorblind()` was deprecated in ggthemes 5.2.0."
+    "text": "Better colors\n\nggplot(\n  gerrymander, \n  aes(x = trump16, color = gerry, fill = gerry)\n  ) +\n  geom_density(alpha = 0.5) +\n  scale_color_colorblind() +\n  scale_fill_colorblind()"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#violin-plots",
     "href": "slides/04-exploring-data-1.html#violin-plots",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Violin plots",
     "text": "Violin plots\n\nggplot(\n  gerrymander, \n  aes(x = trump16, y = gerry, color = gerry)\n  ) +\n  geom_violin() +\n  scale_color_colorblind() +\n  scale_fill_colorblind()"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#multiple-geoms",
     "href": "slides/04-exploring-data-1.html#multiple-geoms",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Multiple geoms",
     "text": "Multiple geoms\n\nggplot(\n  gerrymander, \n  aes(x = trump16, y = gerry, color = gerry)\n  ) +\n  geom_violin() +\n  geom_point() +\n  scale_color_colorblind() +\n  scale_fill_colorblind()"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#multiple-geoms-1",
     "href": "slides/04-exploring-data-1.html#multiple-geoms-1",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Multiple geoms",
     "text": "Multiple geoms\n\nggplot(\n  gerrymander, \n  aes(x = trump16, y = gerry, color = gerry)\n  ) +\n  geom_violin() +\n  geom_jitter() +\n  scale_color_colorblind() +\n  scale_fill_colorblind()"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#remove-legend",
     "href": "slides/04-exploring-data-1.html#remove-legend",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Remove legend",
     "text": "Remove legend\n\nggplot(\n  gerrymander, \n  aes(x = trump16, y = gerry, color = gerry)\n  ) +\n  geom_violin() +\n  geom_jitter() +\n  scale_color_colorblind() +\n  scale_fill_colorblind() +\n  theme(legend.position = \"none\")"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#multivariate-analysis-1",
     "href": "slides/04-exploring-data-1.html#multivariate-analysis-1",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "Multivariate analysis",
     "text": "Multivariate analysis\nAnalyzing the relationship between multiple variables:\n\n\nIn general, one variable is identified as the outcome of interest\nThe remaining variables are predictors or explanatory variables\n\nPlots for exploring multivariate relationships are the same as those for bivariate relationships, but conditional on one or more variables\n\nConditioning can be done via faceting or aesthetic mappings (e.g., scatterplot of y vs. x1, colored by x2, faceted by x3)\n\n\n\nSummary statistics for exploring multivariate relationships are the same as those for bivariate relationships, but conditional on one or more variables\n\nConditioning can be done via grouping (e.g., correlation between y and x1, grouped by levels of x2 and x3)"
   },
   {
     "objectID": "slides/04-exploring-data-1.html#ae-04-gerrymander-explore-i",
     "href": "slides/04-exploring-data-1.html#ae-04-gerrymander-explore-i",
-    "title": "Exploring data I",
+    "title": "Exploratory Data Analysis I",
     "section": "ae-04-gerrymander-explore-I",
-    "text": "ae-04-gerrymander-explore-I\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
+    "text": "ae-04-gerrymander-explore-I\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\nWork through the AE and RCP your edits by the end of class."
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#while-you-wait",
-    "href": "slides/04-exploring-data-1-slides.html#while-you-wait",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#while-you-wait",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#while-you-wait",
+    "title": "Exploratory Data Analysis I",
     "section": "While you wait…",
-    "text": "While you wait…\nPrepare for today’s application exercise: ae-04-gerrymander-explore-I\n\nSwitch to your ae project in RStudio;\nMake sure all of your changes up to this point are committed (ie there’s nothing left in your Git pane);\nClick Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\nThen push. So Render &gt; Commit &gt; Pull &gt; Push.\n(To see the new file, you may have to refresh the Files pane by clicking “Home”)\nWait till the you’re prompted to work on the application exercise during class before editing the file."
+    "text": "While you wait…\nPrepare for today’s application exercise: ae-04-gerrymander-explore-I\n\nSwitch to your ae project in RStudio;\nMake sure all of your changes up to this point are committed (i.e., there’s nothing left in your Git pane);\nClick Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\n(To see the new file, you may have to refresh the Files pane by clicking “Home”)\nWait till the you’re prompted to work on the application exercise during class before editing the file."
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#so-far",
-    "href": "slides/04-exploring-data-1-slides.html#so-far",
-    "title": "Exploring data I",
-    "section": "So far…",
-    "text": "So far…\n\n\nData set\nOccasion\nSource\nA row was a…\n\n\n\nage_guesses\nLecture 0\nfile\nSTAAWANANA student\n\n\npenguins\nLecture 1\npackage\npenguin\n\n\nunvotes\nLecture 2\npackage\nyear-issue-country\n\n\nnc_county\nLab, HW\nfile\nNC county\n\n\nbechdel\nLecture 3\nfile\nfilm\n\n\ngerrymander\nLecture 4\npackage\ndistrict"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#packages",
-    "href": "slides/04-exploring-data-1-slides.html#packages",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#packages",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#packages",
+    "title": "Exploratory Data Analysis I",
     "section": "Packages",
-    "text": "Packages\n\nFor the data: usdata\n\n\n\nlibrary(usdata)\n\n\nFor the analysis: tidyverse and ggthemes\n\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ──────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(ggthemes)"
+    "text": "Packages\n\nFor the data: usdata\n\n\n\nlibrary(usdata)\n\n\nFor the exploratory data analysis (EDA): tidyverse and ggthemes\n\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ──────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(ggthemes)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#data-gerrymander",
-    "href": "slides/04-exploring-data-1-slides.html#data-gerrymander",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#data-gerrymander",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#data-gerrymander",
+    "title": "Exploratory Data Analysis I",
     "section": "Data: gerrymander\n",
     "text": "Data: gerrymander\n\n\ngerrymander\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#what-is-gerrymandering",
-    "href": "slides/04-exploring-data-1-slides.html#what-is-gerrymandering",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#what-is-gerrymandering",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#what-is-gerrymandering",
+    "title": "Exploratory Data Analysis I",
     "section": "What is gerrymandering?",
     "text": "What is gerrymandering?"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#jzs-tour-of-the-usa",
-    "href": "slides/04-exploring-data-1-slides.html#jzs-tour-of-the-usa",
-    "title": "Exploring data I",
-    "section": "JZ’s tour of the USA",
-    "text": "JZ’s tour of the USA"
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#latest-gerrymandering-in-nc",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#latest-gerrymandering-in-nc",
+    "title": "Exploratory Data Analysis I",
+    "section": "(Latest) Gerrymandering in NC",
+    "text": "(Latest) Gerrymandering in NC"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#jzs-tour-of-the-usa-1",
-    "href": "slides/04-exploring-data-1-slides.html#jzs-tour-of-the-usa-1",
-    "title": "Exploring data I",
-    "section": "JZ’s tour of the USA",
-    "text": "JZ’s tour of the USA"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#jzs-tour-of-the-usa-2",
-    "href": "slides/04-exploring-data-1-slides.html#jzs-tour-of-the-usa-2",
-    "title": "Exploring data I",
-    "section": "JZ’s tour of the USA",
-    "text": "JZ’s tour of the USA"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#jzs-tour-of-the-usa-3",
-    "href": "slides/04-exploring-data-1-slides.html#jzs-tour-of-the-usa-3",
-    "title": "Exploring data I",
-    "section": "JZ’s tour of the USA",
-    "text": "JZ’s tour of the USA"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#data-gerrymander-1",
-    "href": "slides/04-exploring-data-1-slides.html#data-gerrymander-1",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#data-gerrymander-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#data-gerrymander-1",
+    "title": "Exploratory Data Analysis I",
     "section": "Data: gerrymander\n",
     "text": "Data: gerrymander\n\n\nWhat is a good first function to use to get to know a dataset?\n\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 3…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 6…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#data-gerrymander-2",
-    "href": "slides/04-exploring-data-1-slides.html#data-gerrymander-2",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#data-gerrymander-2",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#data-gerrymander-2",
+    "title": "Exploratory Data Analysis I",
     "section": "Data: gerrymander\n",
     "text": "Data: gerrymander\n\n\nRows: Congressional districts\n\nColumns:\n\nCongressional district and state\n2016 election: winning party, % for Clinton, % for Trump, whether a Democrat won the House election, name of election winner\n2018 election: winning party, whether a Democrat won the 2018 House election\nWhether a Democrat flipped the seat in the 2018 election\nPrevalence of gerrymandering: low, mid, and high"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#variable-types-district",
-    "href": "slides/04-exploring-data-1-slides.html#variable-types-district",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#overview-of-data-types",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#overview-of-data-types",
+    "title": "Exploratory Data Analysis I",
+    "section": "Overview of Data Types",
+    "text": "Overview of Data Types\n\n\nNumerical Data:\n\nTakes a wide range of numerical values\nMakes sense to add, subtract, etc.\nCan be either discrete (e.g., integers) or continuous\n\n\n\nCategorical Data:\n\nValues can be thought of as distinct categories\nThe possible values are called levels\nBinary data is a subset of categorical data with 2 levels (e.g., 0/1, T/F, yes/no)\nOrdinal data is a subset of categorical data in which there is some inherent “ordering” to the levels (e.g., pain, where pain can be “low”, “medium”, or “high”; letter grades, where A &gt; B &gt; C &gt; … &gt; F)"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-district",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-district",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: district\n",
     "text": "Variable types: district\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\n\n\n\nfirst_name\n\n\n\nparty16\n\n\n\nclinton16\n\n\n\ntrump16\n\n\n\ndem16\n\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nCongressional district:\n\ngerrymander |&gt;\n  select(district)\n\n# A tibble: 435 × 1\n   district\n   &lt;chr&gt;   \n 1 AK-AL   \n 2 AL-01   \n 3 AL-02   \n 4 AL-03   \n 5 AL-04   \n 6 AL-05   \n 7 AL-06   \n 8 AL-07   \n 9 AR-01   \n10 AR-02   \n# ℹ 425 more rows"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#variable-types-last_name",
-    "href": "slides/04-exploring-data-1-slides.html#variable-types-last_name",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-last_name",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-last_name",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: last_name\n",
     "text": "Variable types: last_name\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\n\n\n\nparty16\n\n\n\nclinton16\n\n\n\ntrump16\n\n\n\ndem16\n\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nLast name of 2016 election winner:\n\ngerrymander |&gt;\n  select(last_name)\n\n# A tibble: 435 × 1\n   last_name\n   &lt;chr&gt;    \n 1 Young    \n 2 Byrne    \n 3 Roby     \n 4 Rogers   \n 5 Aderholt \n 6 Brooks   \n 7 Palmer   \n 8 Sewell   \n 9 Crawford \n10 Hill     \n# ℹ 425 more rows"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#variable-types-first_name",
-    "href": "slides/04-exploring-data-1-slides.html#variable-types-first_name",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-first_name",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-first_name",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: first_name\n",
     "text": "Variable types: first_name\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\n\n\n\nclinton16\n\n\n\ntrump16\n\n\n\ndem16\n\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nFirst name of 2016 election winner:\n\ngerrymander |&gt;\n  select(first_name)\n\n# A tibble: 435 × 1\n   first_name\n   &lt;chr&gt;     \n 1 Don       \n 2 Bradley   \n 3 Martha    \n 4 Mike D.   \n 5 Rob       \n 6 Mo        \n 7 Gary      \n 8 Terri     \n 9 Rick      \n10 French    \n# ℹ 425 more rows"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#variable-types-party16",
-    "href": "slides/04-exploring-data-1-slides.html#variable-types-party16",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-party16",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-party16",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: party16\n",
     "text": "Variable types: party16\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\n\n\n\ntrump16\n\n\n\ndem16\n\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nPolitical party of 2016 election winner:\n\ngerrymander |&gt;\n  select(party16)\n\n# A tibble: 435 × 1\n   party16\n   &lt;chr&gt;  \n 1 R      \n 2 R      \n 3 R      \n 4 R      \n 5 R      \n 6 R      \n 7 R      \n 8 D      \n 9 R      \n10 R      \n# ℹ 425 more rows"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#variable-types-clinton16",
-    "href": "slides/04-exploring-data-1-slides.html#variable-types-clinton16",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-clinton16",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-clinton16",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: clinton16\n",
     "text": "Variable types: clinton16\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\n\n\n\ndem16\n\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nPercent of vote received by Clinton in 2016 Presidential Election:\n\ngerrymander |&gt;\n  select(clinton16)\n\n# A tibble: 435 × 1\n   clinton16\n       &lt;dbl&gt;\n 1      37.6\n 2      34.1\n 3      33  \n 4      32.3\n 5      17.4\n 6      31.3\n 7      26.1\n 8      69.8\n 9      30.2\n10      41.7\n# ℹ 425 more rows"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#variable-types-trump16",
-    "href": "slides/04-exploring-data-1-slides.html#variable-types-trump16",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-trump16",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-trump16",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: trump16\n",
     "text": "Variable types: trump16\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\n\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nPercent of vote received by Trump in 2016 Presidential Election:\n\ngerrymander |&gt;\n  select(trump16)\n\n# A tibble: 435 × 1\n   trump16\n     &lt;dbl&gt;\n 1    52.8\n 2    63.5\n 3    64.9\n 4    65.3\n 5    80.4\n 6    64.7\n 7    70.8\n 8    28.6\n 9    65  \n10    52.4\n# ℹ 425 more rows"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#variable-types-dem16",
-    "href": "slides/04-exploring-data-1-slides.html#variable-types-dem16",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-dem16",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-dem16",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: dem16\n",
-    "text": "Variable types: dem16\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nDid a Democrat win the 2016 House election. Levels of 1 (yes) and 0 (no):\n\ngerrymander |&gt;\n  select(dem16)\n\n# A tibble: 435 × 1\n   dem16\n   &lt;dbl&gt;\n 1     0\n 2     0\n 3     0\n 4     0\n 5     0\n 6     0\n 7     0\n 8     1\n 9     0\n10     0\n# ℹ 425 more rows"
+    "text": "Variable types: dem16\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical, binary\n\n\nstate\n\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nDid a Democrat win the 2016 House election. Levels of 1 (yes) and 0 (no):\n\ngerrymander |&gt;\n  select(dem16)\n\n# A tibble: 435 × 1\n   dem16\n   &lt;dbl&gt;\n 1     0\n 2     0\n 3     0\n 4     0\n 5     0\n 6     0\n 7     0\n 8     1\n 9     0\n10     0\n# ℹ 425 more rows"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#variable-types-state",
-    "href": "slides/04-exploring-data-1-slides.html#variable-types-state",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-state",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-state",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: state\n",
-    "text": "Variable types: state\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\ncategorical\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nState the Representative is from:\n\ngerrymander |&gt;\n  select(state)\n\n# A tibble: 435 × 1\n   state\n   &lt;chr&gt;\n 1 AK   \n 2 AL   \n 3 AL   \n 4 AL   \n 5 AL   \n 6 AL   \n 7 AL   \n 8 AL   \n 9 AR   \n10 AR   \n# ℹ 425 more rows"
+    "text": "Variable types: state\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical, binary\n\n\nstate\ncategorical\n\n\nparty18\n\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nState the Representative is from:\n\ngerrymander |&gt;\n  select(state)\n\n# A tibble: 435 × 1\n   state\n   &lt;chr&gt;\n 1 AK   \n 2 AL   \n 3 AL   \n 4 AL   \n 5 AL   \n 6 AL   \n 7 AL   \n 8 AL   \n 9 AR   \n10 AR   \n# ℹ 425 more rows"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#variable-types-party18",
-    "href": "slides/04-exploring-data-1-slides.html#variable-types-party18",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-party18",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-party18",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: party18\n",
-    "text": "Variable types: party18\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\ncategorical\n\n\nparty18\ncategorical\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nPolitical Party of the 2018 election winner:\n\ngerrymander |&gt;\n  select(party18)\n\n# A tibble: 435 × 1\n   party18\n   &lt;chr&gt;  \n 1 R      \n 2 R      \n 3 R      \n 4 R      \n 5 R      \n 6 R      \n 7 R      \n 8 D      \n 9 R      \n10 R      \n# ℹ 425 more rows"
+    "text": "Variable types: party18\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical, binary\n\n\nstate\ncategorical\n\n\nparty18\ncategorical, binary\n\n\ndem18\n\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nPolitical Party of the 2018 election winner:\n\ngerrymander |&gt;\n  select(party18)\n\n# A tibble: 435 × 1\n   party18\n   &lt;chr&gt;  \n 1 R      \n 2 R      \n 3 R      \n 4 R      \n 5 R      \n 6 R      \n 7 R      \n 8 D      \n 9 R      \n10 R      \n# ℹ 425 more rows"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#variable-types-dem18",
-    "href": "slides/04-exploring-data-1-slides.html#variable-types-dem18",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-dem18",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-dem18",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: dem18\n",
-    "text": "Variable types: dem18\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\ncategorical\n\n\nparty18\ncategorical\n\n\ndem18\ncategorical\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nDid a Democrat win the 2018 House election. Levels of 1 (yes) and 0 (no):\n\ngerrymander |&gt;\n  select(dem18)\n\n# A tibble: 435 × 1\n   dem18\n   &lt;dbl&gt;\n 1     0\n 2     0\n 3     0\n 4     0\n 5     0\n 6     0\n 7     0\n 8     1\n 9     0\n10     0\n# ℹ 425 more rows"
+    "text": "Variable types: dem18\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical, binary\n\n\nstate\ncategorical\n\n\nparty18\ncategorical, binary\n\n\ndem18\ncategorical, binary\n\n\nflip18\n\n\n\ngerry\n\n\n\n\n\nDid a Democrat win the 2018 House election. Levels of 1 (yes) and 0 (no):\n\ngerrymander |&gt;\n  select(dem18)\n\n# A tibble: 435 × 1\n   dem18\n   &lt;dbl&gt;\n 1     0\n 2     0\n 3     0\n 4     0\n 5     0\n 6     0\n 7     0\n 8     1\n 9     0\n10     0\n# ℹ 425 more rows"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#variable-types-flip18",
-    "href": "slides/04-exploring-data-1-slides.html#variable-types-flip18",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-flip18",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-flip18",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: flip18\n",
-    "text": "Variable types: flip18\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\ncategorical\n\n\nparty18\ncategorical\n\n\ndem18\ncategorical\n\n\nflip18\ncategorical\n\n\ngerry\n\n\n\n\n\nIn the 2018 election, did the seat flip from D to R (-1), from R to D (1), or not change (0)?\n\ngerrymander |&gt;\n  select(flip18)\n\n# A tibble: 435 × 1\n   flip18\n    &lt;dbl&gt;\n 1      0\n 2      0\n 3      0\n 4      0\n 5      0\n 6      0\n 7      0\n 8      0\n 9      0\n10      0\n# ℹ 425 more rows"
+    "text": "Variable types: flip18\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical, binary\n\n\nstate\ncategorical\n\n\nparty18\ncategorical, binary\n\n\ndem18\ncategorical, binary\n\n\nflip18\ncategorical, binary\n\n\ngerry\n\n\n\n\n\nIn the 2018 election, did the seat flip from D to R (-1), from R to D (1), or not change (0)?\n\ngerrymander |&gt;\n  select(flip18)\n\n# A tibble: 435 × 1\n   flip18\n    &lt;dbl&gt;\n 1      0\n 2      0\n 3      0\n 4      0\n 5      0\n 6      0\n 7      0\n 8      0\n 9      0\n10      0\n# ℹ 425 more rows"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#variable-types-gerry",
-    "href": "slides/04-exploring-data-1-slides.html#variable-types-gerry",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-gerry",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#variable-types-gerry",
+    "title": "Exploratory Data Analysis I",
     "section": "Variable types: gerry\n",
-    "text": "Variable types: gerry\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical\n\n\nstate\ncategorical\n\n\nparty18\ncategorical\n\n\ndem18\ncategorical\n\n\nflip18\ncategorical\n\n\ngerry\ncategorical, ordinal\n\n\n\n\nCategorical variable for prevalence of gerrymandering with levels of low, mid and high:\n\ngerrymander |&gt;\n  select(gerry)\n\n# A tibble: 435 × 1\n   gerry\n   &lt;fct&gt;\n 1 mid  \n 2 high \n 3 high \n 4 high \n 5 high \n 6 high \n 7 high \n 8 high \n 9 mid  \n10 mid  \n# ℹ 425 more rows"
+    "text": "Variable types: gerry\n\n\n\n\n\nVariable\nType\n\n\n\ndistrict\ncategorical, ID\n\n\nlast_name\ncategorical, ID\n\n\nfirst_name\ncategorical, ID\n\n\nparty16\ncategorical\n\n\nclinton16\nnumerical, continuous\n\n\ntrump16\nnumerical, continuous\n\n\ndem16\ncategorical, binary\n\n\nstate\ncategorical\n\n\nparty18\ncategorical, binary\n\n\ndem18\ncategorical, binary\n\n\nflip18\ncategorical, binary\n\n\ngerry\ncategorical, ordinal\n\n\n\n\nCategorical variable for prevalence of gerrymandering with levels of low, mid and high:\n\ngerrymander |&gt;\n  select(gerry)\n\n# A tibble: 435 × 1\n   gerry\n   &lt;fct&gt;\n 1 mid  \n 2 high \n 3 high \n 4 high \n 5 high \n 6 high \n 7 high \n 8 high \n 9 mid  \n10 mid  \n# ℹ 425 more rows"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#univariate-analysis-1",
-    "href": "slides/04-exploring-data-1-slides.html#univariate-analysis-1",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#univariate-analysis-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#univariate-analysis-1",
+    "title": "Exploratory Data Analysis I",
     "section": "Univariate analysis",
     "text": "Univariate analysis\nAnalyzing a single variable:\n\n\nNumerical: histogram, box plot, density plot, etc.\nCategorical: bar plot, pie chart, etc."
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#histogram---step-1",
-    "href": "slides/04-exploring-data-1-slides.html#histogram---step-1",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-1",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 1",
     "text": "Histogram - Step 1\n\nggplot(gerrymander)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#histogram---step-2",
-    "href": "slides/04-exploring-data-1-slides.html#histogram---step-2",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-2",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-2",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 2",
     "text": "Histogram - Step 2\n\nggplot(gerrymander, aes(x = trump16))"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#histogram---step-3",
-    "href": "slides/04-exploring-data-1-slides.html#histogram---step-3",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-3",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-3",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 3",
     "text": "Histogram - Step 3\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`."
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#histogram---step-4",
-    "href": "slides/04-exploring-data-1-slides.html#histogram---step-4",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-4",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-4",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 4",
     "text": "Histogram - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(binwidth = 1)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#histogram---step-4-1",
-    "href": "slides/04-exploring-data-1-slides.html#histogram---step-4-1",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-4-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-4-1",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 4",
     "text": "Histogram - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(binwidth = 100)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#histogram---step-4-2",
-    "href": "slides/04-exploring-data-1-slides.html#histogram---step-4-2",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-4-2",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-4-2",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 4",
     "text": "Histogram - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(binwidth = 3)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#histogram---step-4-3",
-    "href": "slides/04-exploring-data-1-slides.html#histogram---step-4-3",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-4-3",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-4-3",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 4",
     "text": "Histogram - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(binwidth = 5)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#histogram---step-5",
-    "href": "slides/04-exploring-data-1-slides.html#histogram---step-5",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-5",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#histogram---step-5",
+    "title": "Exploratory Data Analysis I",
     "section": "Histogram - Step 5",
     "text": "Histogram - Step 5\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(binwidth = 5) +\n  labs(\n    title = \"Percent of vote received by Trump in 2016 Presidential Election\",\n    subtitle = \"From each Congressional District\",\n    x = \"Percent of vote\",\n    y = \"Count\"\n  )"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#box-plot---step-1",
-    "href": "slides/04-exploring-data-1-slides.html#box-plot---step-1",
-    "title": "Exploring data I",
-    "section": "Box plot - Step 1",
-    "text": "Box plot - Step 1\n\nggplot(gerrymander)"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#box-plot---step-2",
-    "href": "slides/04-exploring-data-1-slides.html#box-plot---step-2",
-    "title": "Exploring data I",
-    "section": "Box plot - Step 2",
-    "text": "Box plot - Step 2\n\nggplot(gerrymander, aes(x = trump16))"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#box-plot---step-3",
-    "href": "slides/04-exploring-data-1-slides.html#box-plot---step-3",
-    "title": "Exploring data I",
-    "section": "Box plot - Step 3",
-    "text": "Box plot - Step 3\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_boxplot()"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#box-plot---alternative-step-2-3",
-    "href": "slides/04-exploring-data-1-slides.html#box-plot---alternative-step-2-3",
-    "title": "Exploring data I",
-    "section": "Box plot - Alternative Step 2 + 3",
-    "text": "Box plot - Alternative Step 2 + 3\n\nggplot(gerrymander, aes(y = trump16)) +\n  geom_boxplot()"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#box-plot---step-4",
-    "href": "slides/04-exploring-data-1-slides.html#box-plot---step-4",
-    "title": "Exploring data I",
-    "section": "Box plot - Step 4",
-    "text": "Box plot - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_boxplot() +\n  labs(\n    title = \"Percent of vote received by Trump in 2016 Presidential Election\",\n    subtitle = \"From each Congressional District\",\n    x = \"Percent of vote\",\n    y = NULL\n  )"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#whence-the-box",
-    "href": "slides/04-exploring-data-1-slides.html#whence-the-box",
-    "title": "Exploring data I",
-    "section": "Whence the box?",
-    "text": "Whence the box?\nThe middle of the box is the median. 50% of the data are below, and 50% are above:"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#whence-the-box-1",
-    "href": "slides/04-exploring-data-1-slides.html#whence-the-box-1",
-    "title": "Exploring data I",
-    "section": "Whence the box?",
-    "text": "Whence the box?\nThe lower edge of the box is the 25% quantile. 25% of the data are below, and 75% are above:"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#whence-the-box-2",
-    "href": "slides/04-exploring-data-1-slides.html#whence-the-box-2",
-    "title": "Exploring data I",
-    "section": "Whence the box?",
-    "text": "Whence the box?\nThe upper edge of the box is the 75% quantile. 75% of the data are below, and 25% are above:"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#box-plot-facts",
-    "href": "slides/04-exploring-data-1-slides.html#box-plot-facts",
-    "title": "Exploring data I",
-    "section": "Box plot facts",
-    "text": "Box plot facts\n\nA box plot is easier to read quickly than a histogram because it eliminates clutter and immediately draws your eye to those main features: center, spread, and skew;\nThe box spans the middle 50% of the data;\nThe width of the box is called the inner quartile range (IQR) and it measures spread;\nFrom the docs (?geom_boxplot):\n\n\nThe upper whisker extends from the hinge to the largest value no further than 1.5 * IQR from the hinge (where IQR is the inter-quartile range, or distance between the first and third quartiles). The lower whisker extends from the hinge to the smallest value at most 1.5 * IQR of the hinge. Data beyond the end of the whiskers are called “outlying” points and are plotted individually."
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#box-plots-obscure-modality",
-    "href": "slides/04-exploring-data-1-slides.html#box-plots-obscure-modality",
-    "title": "Exploring data I",
-    "section": "Box plots obscure modality",
-    "text": "Box plots obscure modality\nSame box plot:"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#box-plots-obscure-modality-1",
-    "href": "slides/04-exploring-data-1-slides.html#box-plots-obscure-modality-1",
-    "title": "Exploring data I",
-    "section": "Box plots obscure modality",
-    "text": "Box plots obscure modality\nVery different distributions:"
-  },
-  {
-    "objectID": "slides/04-exploring-data-1-slides.html#density-plot---step-1",
-    "href": "slides/04-exploring-data-1-slides.html#density-plot---step-1",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-1",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 1",
     "text": "Density plot - Step 1\n\nggplot(gerrymander)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#density-plot---step-2",
-    "href": "slides/04-exploring-data-1-slides.html#density-plot---step-2",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-2",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-2",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 2",
     "text": "Density plot - Step 2\n\nggplot(gerrymander, aes(x = trump16))"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#density-plot---step-3",
-    "href": "slides/04-exploring-data-1-slides.html#density-plot---step-3",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-3",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-3",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 3",
     "text": "Density plot - Step 3\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density()"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#contrast-that-with-the-histogram",
-    "href": "slides/04-exploring-data-1-slides.html#contrast-that-with-the-histogram",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#contrast-that-with-the-histogram",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#contrast-that-with-the-histogram",
+    "title": "Exploratory Data Analysis I",
     "section": "Contrast that with the histogram",
-    "text": "Contrast that with the histogram\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(aes(y = after_stat(density))) + \n  geom_density(color = \"red\")\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\nPrettier. Smooths out the lumps and bumps. There are still defaults you could learn to override."
+    "text": "Contrast that with the histogram\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_histogram(aes(y = after_stat(density))) + \n  geom_density(color = \"red\")\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\nPrettier. Smooths out the lumps and bumps. There are still defaults you could learn to override."
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#density-plot---step-4",
-    "href": "slides/04-exploring-data-1-slides.html#density-plot---step-4",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-4",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-4",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 4",
     "text": "Density plot - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"red\")"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#density-plot---step-5",
-    "href": "slides/04-exploring-data-1-slides.html#density-plot---step-5",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-5",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-5",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 5",
     "text": "Density plot - Step 5\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\")"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#density-plot---step-6",
-    "href": "slides/04-exploring-data-1-slides.html#density-plot---step-6",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-6",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-6",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 6",
     "text": "Density plot - Step 6\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\", alpha = 1)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#density-plot---step-6-1",
-    "href": "slides/04-exploring-data-1-slides.html#density-plot---step-6-1",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-6-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-6-1",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 6",
     "text": "Density plot - Step 6\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\", alpha = 0)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#density-plot---step-6-2",
-    "href": "slides/04-exploring-data-1-slides.html#density-plot---step-6-2",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-6-2",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-6-2",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 6",
     "text": "Density plot - Step 6\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\", alpha = 0.5)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#density-plot---step-7",
-    "href": "slides/04-exploring-data-1-slides.html#density-plot---step-7",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-7",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-7",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 7",
     "text": "Density plot - Step 7\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\", alpha = 0.5, linewidth = 2)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#density-plot---step-8",
-    "href": "slides/04-exploring-data-1-slides.html#density-plot---step-8",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-8",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#density-plot---step-8",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plot - Step 8",
     "text": "Density plot - Step 8\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_density(color = \"firebrick\", fill = \"firebrick1\", alpha = 0.5, linewidth = 2) +\n  labs(\n    title = \"Percent of vote received by Trump in 2016 Presidential Election\",\n    subtitle = \"From each Congressional District\",\n    x = \"Percent of vote\",\n    y = \"Density\"\n  )"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#summary-statistics",
-    "href": "slides/04-exploring-data-1-slides.html#summary-statistics",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#describe-a-distribution",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#describe-a-distribution",
+    "title": "Exploratory Data Analysis I",
+    "section": "“Describe a distribution”",
+    "text": "“Describe a distribution”"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#describe-a-distribution-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#describe-a-distribution-1",
+    "title": "Exploratory Data Analysis I",
+    "section": "“Describe a distribution”",
+    "text": "“Describe a distribution”\n\n\n\n\n\n\nTip\n\n\nWhen answering a question that prompts you to “describe a distribution”, you should ensure that your narrative mentions each of the following:\n\nCenter\nShape (this includes modality & skew)\nSpread\nAny likely outliers"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#example-the-standard-normal-distribution",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#example-the-standard-normal-distribution",
+    "title": "Exploratory Data Analysis I",
+    "section": "Example: The Standard Normal Distribution",
+    "text": "Example: The Standard Normal Distribution"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#example-the-standard-normal-distribution-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#example-the-standard-normal-distribution-1",
+    "title": "Exploratory Data Analysis I",
+    "section": "Example: The Standard Normal Distribution",
+    "text": "Example: The Standard Normal Distribution\n\n\n\n\n\n\n\n\n\n\n\n\n\nCentered at 0 (mean and median agree)\nSymmetric (about it’s center); unimodal (one peak)\nValues range between -3 and +3, roughly\nNo apparent outliers"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#back-to-gerry",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#back-to-gerry",
+    "title": "Exploratory Data Analysis I",
+    "section": "Back to Gerry",
+    "text": "Back to Gerry"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#skewed-data",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#skewed-data",
+    "title": "Exploratory Data Analysis I",
+    "section": "“Skewed” data",
+    "text": "“Skewed” data"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#box-plot---step-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#box-plot---step-1",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plot - Step 1",
+    "text": "Box plot - Step 1\n\nggplot(gerrymander)"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#box-plot---step-2",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#box-plot---step-2",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plot - Step 2",
+    "text": "Box plot - Step 2\n\nggplot(gerrymander, aes(x = trump16))"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#box-plot---step-3",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#box-plot---step-3",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plot - Step 3",
+    "text": "Box plot - Step 3\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#box-plot---alternative-step-2-3",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#box-plot---alternative-step-2-3",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plot - Alternative Step 2 + 3",
+    "text": "Box plot - Alternative Step 2 + 3\n\nggplot(gerrymander, aes(y = trump16)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#box-plot---step-4",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#box-plot---step-4",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plot - Step 4",
+    "text": "Box plot - Step 4\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_boxplot() +\n  labs(\n    title = \"Percent of vote received by Trump in 2016 Presidential Election\",\n    subtitle = \"From each Congressional District\",\n    x = \"Percent of vote\",\n    y = NULL\n  )"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#whence-the-box",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#whence-the-box",
+    "title": "Exploratory Data Analysis I",
+    "section": "Whence the box?",
+    "text": "Whence the box?\nThe middle of the box is the median. 50% of the data are below, and 50% are above:"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#whence-the-box-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#whence-the-box-1",
+    "title": "Exploratory Data Analysis I",
+    "section": "Whence the box?",
+    "text": "Whence the box?\nThe lower edge of the box is the 25% quantile. 25% of the data are below, and 75% are above:"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#whence-the-box-2",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#whence-the-box-2",
+    "title": "Exploratory Data Analysis I",
+    "section": "Whence the box?",
+    "text": "Whence the box?\nThe upper edge of the box is the 75% quantile. 75% of the data are below, and 25% are above:"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#box-plot-facts",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#box-plot-facts",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plot facts",
+    "text": "Box plot facts\n\nA box plot is easier to read quickly than a histogram because it eliminates clutter and immediately draws your eye to those main features: center, spread, and skew;\nThe box spans the middle 50% of the data;\nThe width of the box is called the inner quartile range (IQR) and it measures spread;\nFrom the docs (?geom_boxplot):\n\n\nThe upper whisker extends from the hinge to the largest value no further than 1.5 * IQR from the hinge (where IQR is the inter-quartile range, or distance between the first and third quartiles). The lower whisker extends from the hinge to the smallest value at most 1.5 * IQR of the hinge. Data beyond the end of the whiskers are called “outlying” points and are plotted individually."
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#box-plots-obscure-modality",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#box-plots-obscure-modality",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plots obscure modality",
+    "text": "Box plots obscure modality\nSame box plot:"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#box-plots-obscure-modality-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#box-plots-obscure-modality-1",
+    "title": "Exploratory Data Analysis I",
+    "section": "Box plots obscure modality",
+    "text": "Box plots obscure modality\nVery different distributions:"
+  },
+  {
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#summary-statistics",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#summary-statistics",
+    "title": "Exploratory Data Analysis I",
     "section": "Summary statistics",
     "text": "Summary statistics\n\ngerrymander |&gt;\n  summarize(\n    mean_trump_perc = mean(trump16),\n    median_trump_perc = median(trump16),\n    sd = sd(trump16),\n    iqr = IQR(trump16),\n    q25 = quantile(trump16, 0.25),\n    q75 = quantile(trump16, 0.75)\n  )\n\n# A tibble: 1 × 6\n  mean_trump_perc median_trump_perc    sd   iqr   q25   q75\n            &lt;dbl&gt;             &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1            45.9              48.7  16.8  23.3  34.8  58.1"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#what-does-this-code-do",
-    "href": "slides/04-exploring-data-1-slides.html#what-does-this-code-do",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#what-does-this-code-do",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#what-does-this-code-do",
+    "title": "Exploratory Data Analysis I",
     "section": "What does this code do?",
     "text": "What does this code do?\n\ngerrymander |&gt;\n  summarize(\n    gimme_my_mean = mean(trump16),\n    gimme_my_median = median(trump16)\n  )\n\n# A tibble: 1 × 2\n  gimme_my_mean gimme_my_median\n          &lt;dbl&gt;           &lt;dbl&gt;\n1          45.9            48.7\n\n\n\n\nsummarize creates a new data frame that stores the summaries;\nYou can compute as many summaries as you want;\nTo the left of the equal signs are your choice of column names in the new data frame you are creating. You can type whatever you want here (within reason);\nTo the right of the equal signs is R code that computes the summaries. You must use the correct command names (case sensitive): mean, median, quantile, sd, var, etc;\nIf you want to learn what these do, read the documentation (eg ?quantile)."
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#distribution-of-votes-for-trump-in-the-2016-election",
-    "href": "slides/04-exploring-data-1-slides.html#distribution-of-votes-for-trump-in-the-2016-election",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#distribution-of-votes-for-trump-in-the-2016-election",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#distribution-of-votes-for-trump-in-the-2016-election",
+    "title": "Exploratory Data Analysis I",
     "section": "Distribution of votes for Trump in the 2016 election",
     "text": "Distribution of votes for Trump in the 2016 election\n\nDescribe the distribution of percent of vote received by Trump in 2016 Presidential Election from Congressional Districts.\n\n\nShape: The distribution of votes for Trump in the 2016 election from Congressional Districts is unimodal and left-skewed.\nCenter: The percent of vote received by Trump in the 2016 Presidential Election from a typical Congressional Districts is 48.7%.\nSpread: In the middle 50% of Congressional Districts, 34.8% to 58.1% of voters voted for Trump in the 2016 Presidential Election.\nUnusual observations: -"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#bivariate-analysis-1",
-    "href": "slides/04-exploring-data-1-slides.html#bivariate-analysis-1",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#bivariate-analysis-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#bivariate-analysis-1",
+    "title": "Exploratory Data Analysis I",
     "section": "Bivariate analysis",
     "text": "Bivariate analysis\nAnalyzing the relationship between two variables:\n\n\nNumerical + numerical: scatterplot\nNumerical + categorical: side-by-side box plots, violin plots, etc.\nCategorical + categorical: stacked bar plots\nUsing an aesthetic (e.g., fill, color, shape, etc.) or facets to represent the second variable in any plot"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#side-by-side-box-plots",
-    "href": "slides/04-exploring-data-1-slides.html#side-by-side-box-plots",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#side-by-side-box-plots",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#side-by-side-box-plots",
+    "title": "Exploratory Data Analysis I",
     "section": "Side-by-side box plots",
     "text": "Side-by-side box plots\n\n\nggplot(\n  gerrymander, \n  aes(\n    x = trump16, \n    y = gerry\n    )\n  ) +\n  geom_boxplot()"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#summary-statistics-1",
-    "href": "slides/04-exploring-data-1-slides.html#summary-statistics-1",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#summary-statistics-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#summary-statistics-1",
+    "title": "Exploratory Data Analysis I",
     "section": "Summary statistics",
     "text": "Summary statistics\n\ngerrymander |&gt;\n  # do the following for each level of gerry\n  summarize(\n    min = min(trump16),\n    q25 = quantile(trump16, 0.25),\n    median = median(trump16),\n    q75 = quantile(trump16, 0.75),\n    max = max(trump16),\n  )\n\n# A tibble: 1 × 5\n    min   q25 median   q75   max\n  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1   4.9  34.8   48.7  58.1  80.4"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#summary-statistics-2",
-    "href": "slides/04-exploring-data-1-slides.html#summary-statistics-2",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#summary-statistics-2",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#summary-statistics-2",
+    "title": "Exploratory Data Analysis I",
     "section": "Summary statistics",
     "text": "Summary statistics\n\ngerrymander |&gt;\n  filter(gerry == \"low\") |&gt;\n  summarize(\n    min = min(trump16),\n    q25 = quantile(trump16, 0.25),\n    median = median(trump16),\n    q75 = quantile(trump16, 0.75),\n    max = max(trump16),\n  )\n\n# A tibble: 1 × 5\n    min   q25 median   q75   max\n  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1   4.9  36.3   48.4  54.7  74.9"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#summary-statistics-3",
-    "href": "slides/04-exploring-data-1-slides.html#summary-statistics-3",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#summary-statistics-3",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#summary-statistics-3",
+    "title": "Exploratory Data Analysis I",
     "section": "Summary statistics",
     "text": "Summary statistics\n\ngerrymander |&gt;\n  filter(gerry == \"mid\") |&gt;\n  summarize(\n    min = min(trump16),\n    q25 = quantile(trump16, 0.25),\n    median = median(trump16),\n    q75 = quantile(trump16, 0.75),\n    max = max(trump16),\n  )\n\n# A tibble: 1 × 5\n    min   q25 median   q75   max\n  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1   6.8  34.8   48.0  57.9  79.9"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#summary-statistics-4",
-    "href": "slides/04-exploring-data-1-slides.html#summary-statistics-4",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#summary-statistics-4",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#summary-statistics-4",
+    "title": "Exploratory Data Analysis I",
     "section": "Summary statistics",
     "text": "Summary statistics\n\ngerrymander |&gt;\n  filter(gerry == \"high\") |&gt;\n  summarize(\n    min = min(trump16),\n    q25 = quantile(trump16, 0.25),\n    median = median(trump16),\n    q75 = quantile(trump16, 0.75),\n    max = max(trump16),\n  )\n\n# A tibble: 1 × 5\n    min   q25 median   q75   max\n  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1   9.2  33.5   50.5  60.8  80.4"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#summary-statistics-5",
-    "href": "slides/04-exploring-data-1-slides.html#summary-statistics-5",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#summary-statistics-5",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#summary-statistics-5",
+    "title": "Exploratory Data Analysis I",
     "section": "Summary statistics",
     "text": "Summary statistics\n\ngerrymander |&gt;\n  group_by(gerry) |&gt;\n  summarize(\n    min = min(trump16),\n    q25 = quantile(trump16, 0.25),\n    median = median(trump16),\n    q75 = quantile(trump16, 0.75),\n    max = max(trump16),\n  )\n\n# A tibble: 3 × 6\n  gerry   min   q25 median   q75   max\n  &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 low     4.9  36.3   48.4  54.7  74.9\n2 mid     6.8  34.8   48.0  57.9  79.9\n3 high    9.2  33.5   50.5  60.8  80.4"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#density-plots",
-    "href": "slides/04-exploring-data-1-slides.html#density-plots",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#density-plots",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#density-plots",
+    "title": "Exploratory Data Analysis I",
     "section": "Density plots",
     "text": "Density plots\n\n\nggplot(\n  gerrymander, \n  aes(\n    x = trump16, \n    color = gerry\n    )\n  ) +\n  geom_density()"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#filled-density-plots",
-    "href": "slides/04-exploring-data-1-slides.html#filled-density-plots",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#filled-density-plots",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#filled-density-plots",
+    "title": "Exploratory Data Analysis I",
     "section": "Filled density plots",
     "text": "Filled density plots\n\n\nggplot(\n  gerrymander, \n  aes(\n    x = trump16, \n    color = gerry,\n    fill = gerry\n    )\n  ) +\n  geom_density()"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#better-filled-density-plots",
-    "href": "slides/04-exploring-data-1-slides.html#better-filled-density-plots",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#better-filled-density-plots",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#better-filled-density-plots",
+    "title": "Exploratory Data Analysis I",
     "section": "Better filled density plots",
     "text": "Better filled density plots\n\nggplot(\n  gerrymander, \n  aes(x = trump16, color = gerry, fill = gerry)\n  ) +\n  geom_density(alpha = 0.5)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#better-colors",
-    "href": "slides/04-exploring-data-1-slides.html#better-colors",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#better-colors",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#better-colors",
+    "title": "Exploratory Data Analysis I",
     "section": "Better colors",
-    "text": "Better colors\n\n\nggplot(\n  gerrymander, \n  aes(x = trump16, color = gerry, fill = gerry)\n  ) +\n  geom_density(alpha = 0.5) +\n  scale_color_colorblind() +\n  scale_fill_colorblind()\n\n\nWarning: `scale_fill_colorblind()` was deprecated in ggthemes 5.2.0."
+    "text": "Better colors\n\n\nggplot(\n  gerrymander, \n  aes(x = trump16, color = gerry, fill = gerry)\n  ) +\n  geom_density(alpha = 0.5) +\n  scale_color_colorblind() +\n  scale_fill_colorblind()"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#violin-plots",
-    "href": "slides/04-exploring-data-1-slides.html#violin-plots",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#violin-plots",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#violin-plots",
+    "title": "Exploratory Data Analysis I",
     "section": "Violin plots",
     "text": "Violin plots\n\nggplot(\n  gerrymander, \n  aes(x = trump16, y = gerry, color = gerry)\n  ) +\n  geom_violin() +\n  scale_color_colorblind() +\n  scale_fill_colorblind()"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#multiple-geoms",
-    "href": "slides/04-exploring-data-1-slides.html#multiple-geoms",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#multiple-geoms",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#multiple-geoms",
+    "title": "Exploratory Data Analysis I",
     "section": "Multiple geoms",
     "text": "Multiple geoms\n\nggplot(\n  gerrymander, \n  aes(x = trump16, y = gerry, color = gerry)\n  ) +\n  geom_violin() +\n  geom_point() +\n  scale_color_colorblind() +\n  scale_fill_colorblind()"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#multiple-geoms-1",
-    "href": "slides/04-exploring-data-1-slides.html#multiple-geoms-1",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#multiple-geoms-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#multiple-geoms-1",
+    "title": "Exploratory Data Analysis I",
     "section": "Multiple geoms",
     "text": "Multiple geoms\n\nggplot(\n  gerrymander, \n  aes(x = trump16, y = gerry, color = gerry)\n  ) +\n  geom_violin() +\n  geom_jitter() +\n  scale_color_colorblind() +\n  scale_fill_colorblind()"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#remove-legend",
-    "href": "slides/04-exploring-data-1-slides.html#remove-legend",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#remove-legend",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#remove-legend",
+    "title": "Exploratory Data Analysis I",
     "section": "Remove legend",
     "text": "Remove legend\n\nggplot(\n  gerrymander, \n  aes(x = trump16, y = gerry, color = gerry)\n  ) +\n  geom_violin() +\n  geom_jitter() +\n  scale_color_colorblind() +\n  scale_fill_colorblind() +\n  theme(legend.position = \"none\")"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#multivariate-analysis-1",
-    "href": "slides/04-exploring-data-1-slides.html#multivariate-analysis-1",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#multivariate-analysis-1",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#multivariate-analysis-1",
+    "title": "Exploratory Data Analysis I",
     "section": "Multivariate analysis",
     "text": "Multivariate analysis\nAnalyzing the relationship between multiple variables:\n\n\nIn general, one variable is identified as the outcome of interest\nThe remaining variables are predictors or explanatory variables\n\nPlots for exploring multivariate relationships are the same as those for bivariate relationships, but conditional on one or more variables\n\nConditioning can be done via faceting or aesthetic mappings (e.g., scatterplot of y vs. x1, colored by x2, faceted by x3)\n\n\n\nSummary statistics for exploring multivariate relationships are the same as those for bivariate relationships, but conditional on one or more variables\n\nConditioning can be done via grouping (e.g., correlation between y and x1, grouped by levels of x2 and x3)"
   },
   {
-    "objectID": "slides/04-exploring-data-1-slides.html#ae-04-gerrymander-explore-i",
-    "href": "slides/04-exploring-data-1-slides.html#ae-04-gerrymander-explore-i",
-    "title": "Exploring data I",
+    "objectID": "slides/04-exploratory-data-analysis-I-slides.html#ae-04-gerrymander-explore-i",
+    "href": "slides/04-exploratory-data-analysis-I-slides.html#ae-04-gerrymander-explore-i",
+    "title": "Exploratory Data Analysis I",
     "section": "ae-04-gerrymander-explore-I",
-    "text": "ae-04-gerrymander-explore-I\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\nWork through the application exercise in class, and render, commit, and push your edits by the end of class."
+    "text": "ae-04-gerrymander-explore-I\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-04-gerrymander-explore-I.qmd.\nWork through the AE and RCP your edits by the end of class."
   },
   {
     "objectID": "slides/01-meet-the-toolkit.html",

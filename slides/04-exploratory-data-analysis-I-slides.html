@@ -10,8 +10,8 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.39">
 <meta name="author" content="Katie Solarz">
-<meta name="dcterms.date" content="2026-01-26">
-<title>STA 199 – Exploring data I</title>
+<meta name="dcterms.date" content="2026-05-19">
+<title>STA 199 – Exploratory Data Analysis I</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -187,10 +187,10 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Exploring data I – STA 199">
+<meta property="og:title" content="Exploratory Data Analysis I – STA 199">
 <meta property="og:description" content="Lecture 4">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Exploring data I – STA 199">
+<meta name="twitter:title" content="Exploratory Data Analysis I – STA 199">
 <meta name="twitter:description" content="Lecture 4">
 <meta name="twitter:image" content="https://sta199-su26.github.io/slides/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
@@ -200,7 +200,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Exploring data I</h1>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Exploratory Data Analysis I</h1>
   <p class="subtitle">Lecture 4</p>
 
 <div class="quarto-title-authors">
@@ -214,65 +214,16 @@ Katie Solarz
     </div>
 </div>
 
-  <p class="date">January 26, 2026</p>
-</section><section class="slide level2"><!-- begin: ae definition --><!-- end: ae definition --></section><section id="while-you-wait" class="slide level2 medium"><h2>While you wait…</h2>
+  <p class="date">May 19, 2026</p>
+</section><section class="slide level2"><!-- begin: ae definition --><!-- end: ae definition --></section><section id="while-you-wait" class="slide level2 scrollable medium"><h2>While you wait…</h2>
 <p>Prepare for today’s application exercise: <strong>ae-04-gerrymander-explore-I</strong></p>
 <ul>
 <li><p>Switch to your <code>ae</code> project in RStudio;</p></li>
-<li><p>Make sure all of your changes up to this point are committed (ie there’s nothing left in your Git pane);</p></li>
+<li><p>Make sure all of your changes up to this point are committed (i.e., there’s nothing left in your Git pane);</p></li>
 <li><p>Click Pull to get today’s application exercise file: <em>ae-04-gerrymander-explore-I.qmd</em>.</p></li>
-<li><p>Then push. So <strong>Render &gt; Commit &gt; Pull &gt; Push</strong>.</p></li>
 <li><p>(To see the new file, you may have to refresh the Files pane by clicking “Home”)</p></li>
 <li><p>Wait till the you’re prompted to work on the application exercise during class before editing the file.</p></li>
-</ul></section><section><section id="exploratory-data-analysis" class="title-slide slide level1 center"><h1>Exploratory data analysis</h1>
-
-</section><section id="so-far" class="slide level2"><h2>So far…</h2>
-<table class="caption-top">
-<thead><tr class="header">
-<th>Data set</th>
-<th>Occasion</th>
-<th>Source</th>
-<th>A row was a…</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><code>age_guesses</code></td>
-<td>Lecture 0</td>
-<td>file</td>
-<td>STAAWANANA student</td>
-</tr>
-<tr class="even">
-<td><code>penguins</code></td>
-<td>Lecture 1</td>
-<td>package</td>
-<td>penguin</td>
-</tr>
-<tr class="odd">
-<td><code>unvotes</code></td>
-<td>Lecture 2</td>
-<td>package</td>
-<td>year-issue-country</td>
-</tr>
-<tr class="even">
-<td><code>nc_county</code></td>
-<td>Lab, HW</td>
-<td>file</td>
-<td>NC county</td>
-</tr>
-<tr class="odd">
-<td><code>bechdel</code></td>
-<td>Lecture 3</td>
-<td>file</td>
-<td>film</td>
-</tr>
-<tr class="even">
-<td><code>gerrymander</code></td>
-<td>Lecture 4</td>
-<td>package</td>
-<td>district</td>
-</tr>
-</tbody>
-</table></section><section id="packages" class="slide level2"><h2>Packages</h2>
+</ul></section><section id="packages" class="slide level2 smaller"><h2>Packages</h2>
 <ul>
 <li>For the data: <a href="https://openintrostat.github.io/usdata/"><strong>usdata</strong></a>
 </li>
@@ -281,7 +232,7 @@ Katie Solarz
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(usdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>For the analysis: <a href="https://www.tidyverse.org/packages/"><strong>tidyverse</strong></a> and <a href="https://jrnold.github.io/ggthemes/"><strong>ggthemes</strong></a>
+<li>For the exploratory data analysis (EDA): <a href="https://www.tidyverse.org/packages/"><strong>tidyverse</strong></a> and <a href="https://jrnold.github.io/ggthemes/"><strong>ggthemes</strong></a>
 </li>
 </ul>
 <div class="cell">
@@ -324,17 +275,16 @@ Katie Solarz
 </div>
 </div>
 </section><section id="what-is-gerrymandering" class="slide level2"><h2>What is gerrymandering?</h2>
+<div style="display: flex; justify-content: center;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bGLRJ12uqmk?si=DAoLH-0Cwd2yg1LL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-</section><section id="jzs-tour-of-the-usa" class="slide level2"><h2>JZ’s tour of the USA</h2>
-
-<img data-src="images/04/ohio.png" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section><section id="jzs-tour-of-the-usa-1" class="slide level2"><h2>JZ’s tour of the USA</h2>
-
-<img data-src="images/04/tn.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section><section id="jzs-tour-of-the-usa-2" class="slide level2"><h2>JZ’s tour of the USA</h2>
-
-<img data-src="images/04/tx.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="jzs-tour-of-the-usa-3" class="slide level2"><h2>JZ’s tour of the USA</h2>
-
-<img data-src="images/04/nc.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section><section id="data-gerrymander-1" class="slide level2 scrollable smaller"><h2>Data: <code>gerrymander</code>
+</div>
+</section><section id="latest-gerrymandering-in-nc" class="slide level2"><h2>(Latest) Gerrymandering in NC</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/04/gerry_NC_2.jpeg" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+</section><section id="data-gerrymander-1" class="slide level2 scrollable smaller incremental"><h2>Data: <code>gerrymander</code>
 </h2>
 <div class="question">
 <p>What is a good first function to use to get to know a dataset?</p>
@@ -358,7 +308,7 @@ $ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0…
 $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</code></pre>
 </div>
 </div>
-</section><section id="data-gerrymander-2" class="slide level2"><h2>Data: <code>gerrymander</code>
+</section><section id="data-gerrymander-2" class="slide level2 scrollable medium"><h2>Data: <code>gerrymander</code>
 </h2>
 <ul>
 <li><p>Rows: Congressional districts</p></li>
@@ -370,6 +320,25 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <li><p>2018 election: winning party, whether a Democrat won the 2018 House election</p></li>
 <li><p>Whether a Democrat flipped the seat in the 2018 election</p></li>
 <li><p>Prevalence of gerrymandering: low, mid, and high</p></li>
+</ul>
+</li>
+</ul></section><section id="overview-of-data-types" class="slide level2 scrollable medium"><h2>Overview of Data Types</h2>
+<ul>
+<li>
+<p><strong><em>Numerical Data:</em></strong></p>
+<ul>
+<li><p>Takes a wide range of numerical values</p></li>
+<li><p>Makes sense to add, subtract, etc.</p></li>
+<li><p>Can be either discrete (e.g., integers) or continuous</p></li>
+</ul>
+</li>
+<li>
+<p><strong><em>Categorical Data:</em></strong></p>
+<ul>
+<li><p>Values can be thought of as distinct categories</p></li>
+<li><p>The possible values are called <strong><em>levels</em></strong></p></li>
+<li><p>Binary data is a subset of categorical data with 2 levels (e.g., 0/1, T/F, yes/no)</p></li>
+<li><p>Ordinal data is a subset of categorical data in which there is some inherent “ordering” to the levels (e.g., pain, where pain can be “low”, “medium”, or “high”; letter grades, where A &gt; B &gt; C &gt; … &gt; F)</p></li>
 </ul>
 </li>
 </ul></section><section id="variable-types-district" class="slide level2"><h2>Variable types: <code>district</code>
@@ -906,7 +875,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </tr>
 <tr class="odd">
 <td><code>dem16</code></td>
-<td><span class="fragment">categorical</span></td>
+<td><span class="fragment">categorical, binary</span></td>
 </tr>
 <tr class="even">
 <td><code>state</code></td>
@@ -989,7 +958,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </tr>
 <tr class="odd">
 <td><code>dem16</code></td>
-<td>categorical</td>
+<td>categorical, binary</td>
 </tr>
 <tr class="even">
 <td><code>state</code></td>
@@ -1072,7 +1041,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </tr>
 <tr class="odd">
 <td><code>dem16</code></td>
-<td>categorical</td>
+<td>categorical, binary</td>
 </tr>
 <tr class="even">
 <td><code>state</code></td>
@@ -1080,7 +1049,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </tr>
 <tr class="odd">
 <td><code>party18</code></td>
-<td><span class="fragment">categorical</span></td>
+<td><span class="fragment">categorical, binary</span></td>
 </tr>
 <tr class="even">
 <td><code>dem18</code></td>
@@ -1155,7 +1124,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </tr>
 <tr class="odd">
 <td><code>dem16</code></td>
-<td>categorical</td>
+<td>categorical, binary</td>
 </tr>
 <tr class="even">
 <td><code>state</code></td>
@@ -1163,11 +1132,11 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </tr>
 <tr class="odd">
 <td><code>party18</code></td>
-<td>categorical</td>
+<td>categorical, binary</td>
 </tr>
 <tr class="even">
 <td><code>dem18</code></td>
-<td><span class="fragment">categorical</span></td>
+<td><span class="fragment">categorical, binary</span></td>
 </tr>
 <tr class="odd">
 <td><code>flip18</code></td>
@@ -1238,7 +1207,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </tr>
 <tr class="odd">
 <td><code>dem16</code></td>
-<td>categorical</td>
+<td>categorical, binary</td>
 </tr>
 <tr class="even">
 <td><code>state</code></td>
@@ -1246,15 +1215,15 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </tr>
 <tr class="odd">
 <td><code>party18</code></td>
-<td>categorical</td>
+<td>categorical, binary</td>
 </tr>
 <tr class="even">
 <td><code>dem18</code></td>
-<td>categorical</td>
+<td>categorical, binary</td>
 </tr>
 <tr class="odd">
 <td><code>flip18</code></td>
-<td><span class="fragment">categorical</span></td>
+<td><span class="fragment">categorical, binary</span></td>
 </tr>
 <tr class="even">
 <td><code>gerry</code></td>
@@ -1321,7 +1290,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </tr>
 <tr class="odd">
 <td><code>dem16</code></td>
-<td>categorical</td>
+<td>categorical, binary</td>
 </tr>
 <tr class="even">
 <td><code>state</code></td>
@@ -1329,15 +1298,15 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </tr>
 <tr class="odd">
 <td><code>party18</code></td>
-<td>categorical</td>
+<td>categorical, binary</td>
 </tr>
 <tr class="even">
 <td><code>dem18</code></td>
-<td>categorical</td>
+<td>categorical, binary</td>
 </tr>
 <tr class="odd">
 <td><code>flip18</code></td>
-<td>categorical</td>
+<td>categorical, binary</td>
 </tr>
 <tr class="even">
 <td><code>gerry</code></td>
@@ -1368,7 +1337,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </div>
 </div>
 </div></div>
-</section></section><section><section id="univariate-analysis" class="title-slide slide level1 center"><h1>Univariate analysis</h1>
+</section><section><section id="univariate-analysis" class="title-slide slide level1 center"><h1>Univariate analysis</h1>
 
 </section><section id="univariate-analysis-1" class="slide level2"><h2>Univariate analysis</h2>
 <p>Analyzing a single variable:</p>
@@ -1381,47 +1350,82 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </section><section id="histogram---step-1" class="slide level2 smaller scrollable"><h2>Histogram - Step 1</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">ggplot</span>(gerrymander)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section><section id="histogram---step-2" class="slide level2 smaller scrollable"><h2>Histogram - Step 2</h2>
+</div>
+</div>
+</section><section id="histogram---step-2" class="slide level2 smaller scrollable"><h2>Histogram - Step 2</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section><section id="histogram---step-3" class="slide level2 smaller scrollable"><h2>Histogram - Step 3</h2>
+</div>
+</div>
+</section><section id="histogram---step-3" class="slide level2 smaller scrollable"><h2>Histogram - Step 3</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
 <span id="cb35-2"><a></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section><section id="histogram---step-4" class="slide level2 smaller scrollable"><h2>Histogram - Step 4</h2>
+</div>
+</div>
+</section><section id="histogram---step-4" class="slide level2 smaller scrollable"><h2>Histogram - Step 4</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
 <span id="cb37-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section><section id="histogram---step-4-1" class="slide level2 smaller scrollable"><h2>Histogram - Step 4</h2>
+</div>
+</div>
+</section><section id="histogram---step-4-1" class="slide level2 smaller scrollable"><h2>Histogram - Step 4</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
 <span id="cb38-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section><section id="histogram---step-4-2" class="slide level2 smaller scrollable"><h2>Histogram - Step 4</h2>
+</div>
+</div>
+</section><section id="histogram---step-4-2" class="slide level2 smaller scrollable"><h2>Histogram - Step 4</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
 <span id="cb39-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section><section id="histogram---step-4-3" class="slide level2 smaller scrollable"><h2>Histogram - Step 4</h2>
+</div>
+</div>
+</section><section id="histogram---step-4-3" class="slide level2 smaller scrollable"><h2>Histogram - Step 4</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
 <span id="cb40-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-24-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section><section id="histogram---step-5" class="slide level2 smaller scrollable"><h2>Histogram - Step 5</h2>
+</div>
+</div>
+</section><section id="histogram---step-5" class="slide level2 smaller scrollable"><h2>Histogram - Step 5</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41" data-code-line-numbers="3-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
 <span id="cb41-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
@@ -1431,52 +1435,310 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <span id="cb41-6"><a></a>    <span class="at">x =</span> <span class="st">"Percent of vote"</span>,</span>
 <span id="cb41-7"><a></a>    <span class="at">y =</span> <span class="st">"Count"</span></span>
 <span id="cb41-8"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section><section id="box-plot---step-1" class="slide level2 smaller scrollable"><h2>Box plot - Step 1</h2>
+</div>
+</div>
+</section><section id="density-plot---step-1" class="slide level2 smaller scrollable"><h2>Density plot - Step 1</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="fu">ggplot</span>(gerrymander)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section><section id="box-plot---step-2" class="slide level2 smaller scrollable"><h2>Box plot - Step 2</h2>
+</div>
+</div>
+</section><section id="density-plot---step-2" class="slide level2 smaller scrollable"><h2>Density plot - Step 2</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-27-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"></section><section id="box-plot---step-3" class="slide level2 smaller scrollable"><h2>Box plot - Step 3</h2>
+</div>
+</div>
+</section><section id="density-plot---step-3" class="slide level2 smaller scrollable"><h2>Density plot - Step 3</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
-<span id="cb44-2"><a></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<span id="cb44-2"><a></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-28-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-28-1.png" width="960" class="r-stretch"></section><section id="box-plot---alternative-step-2-3" class="slide level2 smaller scrollable"><h2>Box plot - Alternative Step 2 + 3</h2>
+</div>
+</div>
+</section><section id="contrast-that-with-the-histogram" class="slide level2 smaller scrollable"><h2>Contrast that with the histogram</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">y =</span> trump16)) <span class="sc">+</span></span>
-<span id="cb45-2"><a></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
+<span id="cb45-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density))) <span class="sc">+</span> </span>
+<span id="cb45-3"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-29-1.png" width="960" class="r-stretch"></section><section id="box-plot---step-4" class="slide level2 smaller scrollable"><h2>Box plot - Step 4</h2>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-29-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Prettier. Smooths out the lumps and bumps. There are still defaults you could learn to override.</p>
+</section><section id="density-plot---step-4" class="slide level2 smaller scrollable"><h2>Density plot - Step 4</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46" data-code-line-numbers="3-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
-<span id="cb46-2"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb46-3"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb46-4"><a></a>    <span class="at">title =</span> <span class="st">"Percent of vote received by Trump in 2016 Presidential Election"</span>,</span>
-<span id="cb46-5"><a></a>    <span class="at">subtitle =</span> <span class="st">"From each Congressional District"</span>,</span>
-<span id="cb46-6"><a></a>    <span class="at">x =</span> <span class="st">"Percent of vote"</span>,</span>
-<span id="cb46-7"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb46-8"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
+<span id="cb47-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-30-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-30-1.png" width="960" class="r-stretch"></section><section id="whence-the-box" class="slide level2 medium scrollable"><h2>Whence the box?</h2>
+</div>
+</div>
+</section><section id="density-plot---step-5" class="slide level2 smaller scrollable"><h2>Density plot - Step 5</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
+<span id="cb48-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">fill =</span> <span class="st">"firebrick1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="density-plot---step-6" class="slide level2 smaller scrollable"><h2>Density plot - Step 6</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
+<span id="cb49-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">fill =</span> <span class="st">"firebrick1"</span>, <span class="at">alpha =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-32-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="density-plot---step-6-1" class="slide level2 smaller scrollable"><h2>Density plot - Step 6</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
+<span id="cb50-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">fill =</span> <span class="st">"firebrick1"</span>, <span class="at">alpha =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-33-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="density-plot---step-6-2" class="slide level2 smaller scrollable"><h2>Density plot - Step 6</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
+<span id="cb51-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">fill =</span> <span class="st">"firebrick1"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-34-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="density-plot---step-7" class="slide level2 smaller scrollable"><h2>Density plot - Step 7</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
+<span id="cb52-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">fill =</span> <span class="st">"firebrick1"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">linewidth =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-35-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="density-plot---step-8" class="slide level2 smaller scrollable"><h2>Density plot - Step 8</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53" data-code-line-numbers="3-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
+<span id="cb53-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">fill =</span> <span class="st">"firebrick1"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb53-3"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb53-4"><a></a>    <span class="at">title =</span> <span class="st">"Percent of vote received by Trump in 2016 Presidential Election"</span>,</span>
+<span id="cb53-5"><a></a>    <span class="at">subtitle =</span> <span class="st">"From each Congressional District"</span>,</span>
+<span id="cb53-6"><a></a>    <span class="at">x =</span> <span class="st">"Percent of vote"</span>,</span>
+<span id="cb53-7"><a></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
+<span id="cb53-8"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-36-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="describe-a-distribution" class="slide level2"><h2>“Describe a distribution”</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/04/name_a_woman.jpeg" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+</section><section id="describe-a-distribution-1" class="slide level2"><h2>“Describe a distribution”</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>When answering a question that prompts you to “describe a distribution”, you should ensure that your narrative mentions each of the following:</p>
+<ol type="1">
+<li>Center</li>
+<li>Shape (this includes modality &amp; skew)</li>
+<li>Spread</li>
+<li>Any likely outliers</li>
+</ol>
+</div>
+</div>
+</div>
+</section><section id="example-the-standard-normal-distribution" class="slide level2 smaller"><h2>Example: The Standard Normal Distribution</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-37-1.png" width="2400"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="example-the-standard-normal-distribution-1" class="slide level2 smaller"><h2>Example: The Standard Normal Distribution</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-38-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:45%;">
+<div>
+<ol type="1">
+<li class="fragment">Centered at 0 (mean and median agree)</li>
+<li class="fragment">Symmetric (about it’s center); unimodal (one peak)</li>
+<li class="fragment">Values range between -3 and +3, roughly</li>
+<li class="fragment">No apparent outliers</li>
+</ol>
+</div>
+</div></div>
+</section><section id="back-to-gerry" class="slide level2"><h2>Back to Gerry</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-39-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="skewed-data" class="slide level2"><h2>“Skewed” data</h2>
+<div class="columns">
+<div class="column" style="width:47.5%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/04/left-skew.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/04/right-skew.jpg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section><section id="box-plot---step-1" class="slide level2 smaller scrollable"><h2>Box plot - Step 1</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a><span class="fu">ggplot</span>(gerrymander)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-40-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="box-plot---step-2" class="slide level2 smaller scrollable"><h2>Box plot - Step 2</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-41-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="box-plot---step-3" class="slide level2 smaller scrollable"><h2>Box plot - Step 3</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
+<span id="cb56-2"><a></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-42-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="box-plot---alternative-step-2-3" class="slide level2 smaller scrollable"><h2>Box plot - Alternative Step 2 + 3</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">y =</span> trump16)) <span class="sc">+</span></span>
+<span id="cb57-2"><a></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-43-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="box-plot---step-4" class="slide level2 smaller scrollable"><h2>Box plot - Step 4</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58" data-code-line-numbers="3-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
+<span id="cb58-2"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb58-3"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb58-4"><a></a>    <span class="at">title =</span> <span class="st">"Percent of vote received by Trump in 2016 Presidential Election"</span>,</span>
+<span id="cb58-5"><a></a>    <span class="at">subtitle =</span> <span class="st">"From each Congressional District"</span>,</span>
+<span id="cb58-6"><a></a>    <span class="at">x =</span> <span class="st">"Percent of vote"</span>,</span>
+<span id="cb58-7"><a></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb58-8"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-44-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="whence-the-box" class="slide level2 medium scrollable"><h2>Whence the box?</h2>
 <p>The middle of the box is the <strong>median</strong>. 50% of the data are below, and 50% are above:</p>
-
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section><section id="whence-the-box-1" class="slide level2 medium scrollable"><h2>Whence the box?</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-45-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="whence-the-box-1" class="slide level2 medium scrollable"><h2>Whence the box?</h2>
 <p>The lower edge of the box is the <strong>25% quantile</strong>. 25% of the data are below, and 75% are above:</p>
-
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section><section id="whence-the-box-2" class="slide level2 medium scrollable"><h2>Whence the box?</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-46-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="whence-the-box-2" class="slide level2 medium scrollable"><h2>Whence the box?</h2>
 <p>The upper edge of the box is the <strong>75% quantile</strong>. 75% of the data are below, and 25% are above:</p>
-
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section><section id="box-plot-facts" class="slide level2 small"><h2>Box plot facts</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-47-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="box-plot-facts" class="slide level2 scrollable small"><h2>Box plot facts</h2>
 <ul>
 <li>A box plot is easier to read quickly than a histogram because it eliminates clutter and immediately draws your eye to those main features: center, spread, and skew;</li>
 <li>The box spans the middle 50% of the data;</li>
@@ -1488,86 +1750,25 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </blockquote>
 </section><section id="box-plots-obscure-modality" class="slide level2"><h2>Box plots obscure modality</h2>
 <p>Same box plot:</p>
-
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-34-1.png" width="960" class="r-stretch"></section><section id="box-plots-obscure-modality-1" class="slide level2"><h2>Box plots obscure modality</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-48-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="box-plots-obscure-modality-1" class="slide level2"><h2>Box plots obscure modality</h2>
 <p>Very different distributions:</p>
-
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-35-1.png" width="960" class="r-stretch"></section><section id="density-plot---step-1" class="slide level2 smaller scrollable"><h2>Density plot - Step 1</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a><span class="fu">ggplot</span>(gerrymander)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-49-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-36-1.png" width="960" class="r-stretch"></section><section id="density-plot---step-2" class="slide level2 smaller scrollable"><h2>Density plot - Step 2</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-37-1.png" width="960" class="r-stretch"></section><section id="density-plot---step-3" class="slide level2 smaller scrollable"><h2>Density plot - Step 3</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb49" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
-<span id="cb49-2"><a></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-38-1.png" width="960" class="r-stretch"></section><section id="contrast-that-with-the-histogram" class="slide level2 smaller scrollable"><h2>Contrast that with the histogram</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
-<span id="cb50-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density))) <span class="sc">+</span> </span>
-<span id="cb50-3"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
-</div>
-
-</div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-39-1.png" width="960" class="r-stretch"><p>Prettier. Smooths out the lumps and bumps. There are still defaults you could learn to override.</p>
-</section><section id="density-plot---step-4" class="slide level2 smaller scrollable"><h2>Density plot - Step 4</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
-<span id="cb52-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-40-1.png" width="960" class="r-stretch"></section><section id="density-plot---step-5" class="slide level2 smaller scrollable"><h2>Density plot - Step 5</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
-<span id="cb53-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">fill =</span> <span class="st">"firebrick1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-41-1.png" width="960" class="r-stretch"></section><section id="density-plot---step-6" class="slide level2 smaller scrollable"><h2>Density plot - Step 6</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
-<span id="cb54-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">fill =</span> <span class="st">"firebrick1"</span>, <span class="at">alpha =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-42-1.png" width="960" class="r-stretch"></section><section id="density-plot---step-6-1" class="slide level2 smaller scrollable"><h2>Density plot - Step 6</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
-<span id="cb55-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">fill =</span> <span class="st">"firebrick1"</span>, <span class="at">alpha =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-43-1.png" width="960" class="r-stretch"></section><section id="density-plot---step-6-2" class="slide level2 smaller scrollable"><h2>Density plot - Step 6</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
-<span id="cb56-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">fill =</span> <span class="st">"firebrick1"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-44-1.png" width="960" class="r-stretch"></section><section id="density-plot---step-7" class="slide level2 smaller scrollable"><h2>Density plot - Step 7</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
-<span id="cb57-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">fill =</span> <span class="st">"firebrick1"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">linewidth =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-45-1.png" width="960" class="r-stretch"></section><section id="density-plot---step-8" class="slide level2 smaller scrollable"><h2>Density plot - Step 8</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb58" data-code-line-numbers="3-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> trump16)) <span class="sc">+</span></span>
-<span id="cb58-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">fill =</span> <span class="st">"firebrick1"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb58-3"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb58-4"><a></a>    <span class="at">title =</span> <span class="st">"Percent of vote received by Trump in 2016 Presidential Election"</span>,</span>
-<span id="cb58-5"><a></a>    <span class="at">subtitle =</span> <span class="st">"From each Congressional District"</span>,</span>
-<span id="cb58-6"><a></a>    <span class="at">x =</span> <span class="st">"Percent of vote"</span>,</span>
-<span id="cb58-7"><a></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
-<span id="cb58-8"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-46-1.png" width="960" class="r-stretch"></section><section id="summary-statistics" class="slide level2"><h2>Summary statistics</h2>
+</section><section id="summary-statistics" class="slide level2"><h2>Summary statistics</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb59-2"><a></a>  <span class="fu">summarize</span>(</span>
@@ -1585,7 +1786,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 1            45.9              48.7  16.8  23.3  34.8  58.1</code></pre>
 </div>
 </div>
-</section><section id="what-does-this-code-do" class="slide level2 small"><h2>What does this code do?</h2>
+</section><section id="what-does-this-code-do" class="slide level2 scrollable small"><h2>What does this code do?</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
 <span id="cb61-2"><a></a>  <span class="fu">summarize</span>(</span>
@@ -1606,7 +1807,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <li>To the left of the equal signs are your choice of <em>column names</em> in the new data frame you are creating. You can type whatever you want here (within reason);</li>
 <li>To the right of the equal signs is <code>R</code> code that computes the summaries. You must use the correct command names (case sensitive): <code>mean</code>, <code>median</code>, <code>quantile</code>, <code>sd</code>, <code>var</code>, etc;</li>
 <li>If you want to learn what these do, read the documentation (eg <code><a href="https://rdrr.io/r/stats/quantile.html">?quantile</a></code>).</li>
-</ul></section><section id="distribution-of-votes-for-trump-in-the-2016-election" class="slide level2 medium"><h2>Distribution of votes for Trump in the 2016 election</h2>
+</ul></section><section id="distribution-of-votes-for-trump-in-the-2016-election" class="slide level2 scrollable smaller"><h2>Distribution of votes for Trump in the 2016 election</h2>
 <div class="question">
 <p>Describe the distribution of percent of vote received by Trump in 2016 Presidential Election from Congressional Districts.</p>
 </div>
@@ -1641,7 +1842,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </div><div class="column">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-49-1.png" width="960"></p>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-52-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1752,7 +1953,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </div><div class="column">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-55-1.png" width="960"></p>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-58-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1772,21 +1973,26 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </div><div class="column">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-56-1.png" width="960"></p>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-59-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></div>
-</section><section id="better-filled-density-plots" class="slide level2"><h2>Better filled density plots</h2>
+</section><section id="better-filled-density-plots" class="slide level2 smaller"><h2>Better filled density plots</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb76" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb76-2"><a></a>  gerrymander, </span>
 <span id="cb76-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> trump16, <span class="at">color =</span> gerry, <span class="at">fill =</span> gerry)</span>
 <span id="cb76-4"><a></a>  ) <span class="sc">+</span></span>
 <span id="cb76-5"><a></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-60-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-57-1.png" width="960" class="r-stretch"></section><section id="better-colors" class="slide level2"><h2>Better colors</h2>
+</div>
+</div>
+</section><section id="better-colors" class="slide level2"><h2>Better colors</h2>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="sourceCode cell-code" id="cb77" data-code-line-numbers="7-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a></a><span class="fu">ggplot</span>(</span>
@@ -1797,67 +2003,84 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <span id="cb77-6"><a></a>  <span class="fu">scale_color_colorblind</span>() <span class="sc">+</span></span>
 <span id="cb77-7"><a></a>  <span class="fu">scale_fill_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: `scale_fill_colorblind()` was deprecated in ggthemes 5.2.0.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-58-1.png" width="960"></p>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-61-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div></div>
 </section><section id="violin-plots" class="slide level2 scrollable"><h2>Violin plots</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb79" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="sourceCode cell-code" id="cb78" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb78-2"><a></a>  gerrymander, </span>
+<span id="cb78-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> trump16, <span class="at">y =</span> gerry, <span class="at">color =</span> gerry)</span>
+<span id="cb78-4"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb78-5"><a></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb78-6"><a></a>  <span class="fu">scale_color_colorblind</span>() <span class="sc">+</span></span>
+<span id="cb78-7"><a></a>  <span class="fu">scale_fill_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-62-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="multiple-geoms" class="slide level2 scrollable"><h2>Multiple geoms</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb79-2"><a></a>  gerrymander, </span>
 <span id="cb79-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> trump16, <span class="at">y =</span> gerry, <span class="at">color =</span> gerry)</span>
 <span id="cb79-4"><a></a>  ) <span class="sc">+</span></span>
 <span id="cb79-5"><a></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
-<span id="cb79-6"><a></a>  <span class="fu">scale_color_colorblind</span>() <span class="sc">+</span></span>
-<span id="cb79-7"><a></a>  <span class="fu">scale_fill_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<span id="cb79-6"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb79-7"><a></a>  <span class="fu">scale_color_colorblind</span>() <span class="sc">+</span></span>
+<span id="cb79-8"><a></a>  <span class="fu">scale_fill_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-63-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-59-1.png" width="960" class="r-stretch"></section><section id="multiple-geoms" class="slide level2 scrollable"><h2>Multiple geoms</h2>
+</div>
+</div>
+</section><section id="multiple-geoms-1" class="slide level2 scrollable"><h2>Multiple geoms</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb80" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb80-2"><a></a>  gerrymander, </span>
 <span id="cb80-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> trump16, <span class="at">y =</span> gerry, <span class="at">color =</span> gerry)</span>
 <span id="cb80-4"><a></a>  ) <span class="sc">+</span></span>
 <span id="cb80-5"><a></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
-<span id="cb80-6"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb80-6"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
 <span id="cb80-7"><a></a>  <span class="fu">scale_color_colorblind</span>() <span class="sc">+</span></span>
 <span id="cb80-8"><a></a>  <span class="fu">scale_fill_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-64-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-60-1.png" width="960" class="r-stretch"></section><section id="multiple-geoms-1" class="slide level2 scrollable"><h2>Multiple geoms</h2>
+</div>
+</div>
+</section><section id="remove-legend" class="slide level2 scrollable"><h2>Remove legend</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="fu">ggplot</span>(</span>
+<div class="sourceCode cell-code" id="cb81" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="fu">ggplot</span>(</span>
 <span id="cb81-2"><a></a>  gerrymander, </span>
 <span id="cb81-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> trump16, <span class="at">y =</span> gerry, <span class="at">color =</span> gerry)</span>
 <span id="cb81-4"><a></a>  ) <span class="sc">+</span></span>
 <span id="cb81-5"><a></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
 <span id="cb81-6"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
 <span id="cb81-7"><a></a>  <span class="fu">scale_color_colorblind</span>() <span class="sc">+</span></span>
-<span id="cb81-8"><a></a>  <span class="fu">scale_fill_colorblind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
+<span id="cb81-8"><a></a>  <span class="fu">scale_fill_colorblind</span>() <span class="sc">+</span></span>
+<span id="cb81-9"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-65-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-61-1.png" width="960" class="r-stretch"></section><section id="remove-legend" class="slide level2 scrollable"><h2>Remove legend</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb82" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a><span class="fu">ggplot</span>(</span>
-<span id="cb82-2"><a></a>  gerrymander, </span>
-<span id="cb82-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> trump16, <span class="at">y =</span> gerry, <span class="at">color =</span> gerry)</span>
-<span id="cb82-4"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb82-5"><a></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
-<span id="cb82-6"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
-<span id="cb82-7"><a></a>  <span class="fu">scale_color_colorblind</span>() <span class="sc">+</span></span>
-<span id="cb82-8"><a></a>  <span class="fu">scale_fill_colorblind</span>() <span class="sc">+</span></span>
-<span id="cb82-9"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
 </div>
-<img data-src="04-exploring-data-1_files/figure-revealjs/unnamed-chunk-62-1.png" width="960" class="r-stretch"></section></section><section><section id="multivariate-analysis" class="title-slide slide level1 center"><h1>Multivariate analysis</h1>
+</div>
+</section></section><section><section id="multivariate-analysis" class="title-slide slide level1 center"><h1>Multivariate analysis</h1>
 
-</section><section id="multivariate-analysis-1" class="slide level2 medium"><h2>Multivariate analysis</h2>
+</section><section id="multivariate-analysis-1" class="slide level2 scrollable smaller"><h2>Multivariate analysis</h2>
 <p>Analyzing the relationship between multiple variables:</p>
 <div>
 <ul>
@@ -1877,7 +2100,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </li>
 </ul>
 </div>
-</section></section><section><section id="application-exercise" class="title-slide slide level1 center"><h1>Application exercise</h1>
+</section></section><section><section id="application-exercise" class="title-slide slide level1 smaller center"><h1>Application exercise</h1>
 
 </section><section id="ae-04-gerrymander-explore-i" class="slide level2"><h2>ae-04-gerrymander-explore-I</h2>
 <div class="appex">
@@ -1885,7 +2108,7 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 <li><p>Go to your ae project in RStudio.</p></li>
 <li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
 <li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-04-gerrymander-explore-I.qmd</em>.</p></li>
-<li><p>Work through the application exercise in class, and render, commit, and push your edits by the end of class.</p></li>
+<li><p>Work through the AE and RCP your edits by the end of class.</p></li>
 </ul>
 </div>
 
@@ -1893,9 +2116,9 @@ $ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…</c
 </section></section>
 </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="images/logo.png" class="slide-logo"></p>
+<p><img src="img/pfp.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://sta199-s26.github.io/">🔗 sta199-s26.github.io</a></p>
+<p><a href="https://sta199-su26.github.io/">🔗 sta199-su26.github.io</a></p>
 </div>
 </div></div>
 
