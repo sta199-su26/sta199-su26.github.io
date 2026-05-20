@@ -430,7 +430,7 @@ gerrymander |>
 | `state`      | categorical                      |
 | `party18`    | categorical, binary              |
 | `dem18`      | categorical, binary              |
-| `flip18`     | [categorical, binary]{.fragment} |
+| `flip18`     | [categorical]{.fragment} |
 | `gerry`      |                                  |
 :::
 
@@ -460,7 +460,7 @@ gerrymander |>
 | `state`      | categorical                       |
 | `party18`    | categorical, binary               |
 | `dem18`      | categorical, binary               |
-| `flip18`     | categorical, binary               |
+| `flip18`     | categorical              |
 | `gerry`      | [categorical, ordinal]{.fragment} |
 :::
 
