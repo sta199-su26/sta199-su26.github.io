@@ -6,7 +6,7 @@ title: "AE 06: Tidying Stat Sci"
 
 Our ultimate goal in this application exercise is to make the following data visualization.
 
-![](images/statsci-majors-2025.png){fig-align="center"}
+![](img/statsci-majors-2025.png){fig-align="center"}
 
 ## Data
 
@@ -31,11 +31,11 @@ statsci
 
 ## Pivoting
 
-- **Demo:** Pivot the `statsci` data frame *longer* such that: 
+-   **Demo:** Pivot the `statsci` data frame *longer* such that:
 
-  - Each row represents a degree type / year combination
-  - `year` and `n`umber of graduates for that year are columns in the data frame
-  - The resulting `year` column is numeric
+    -   Each row represents a degree type / year combination
+    -   `year` and `n`umber of graduates for that year are columns in the data frame
+    -   The resulting `year` column is numeric
 
 ```{r}
 #| label: pivot
@@ -43,9 +43,7 @@ statsci
 # add your code here
 ```
 
-
-
--   **Your Turn:** Now, repeat your code from above, but this time **save the result** to a **new** variable name. 
+-   **Your Turn:** Now, repeat your code from above, but this time **save the result** to a **new** dataframe. 
 
 ```{r}
 #| label: pivot-with-transform-name
@@ -53,12 +51,11 @@ statsci
 # add your code here
 ```
 
-
 ## Plotting
 
--  **Your turn:** Now we will start making our plot, but let's not get too fancy right away. Create the following plot, which will serve as the "first draft" on the way to our [goal]. Which data frame should you use in your plot?
+-   **Your turn:** Now we will start making our plot, but let's not get too fancy right away. Create the following plot, which will serve as the "first draft" on the way to our [goal]. Which data frame should you use in your plot?
 
-![](images/stats-intermediate-plot.png)
+![](img/stats-intermediate-plot.png)
 
 ```{r}
 #| label: plot-draft
@@ -66,7 +63,7 @@ statsci
 # add your code here
 ```
 
-- **Question**:  Why was the pivot necessary in order to create this plot?
+-   **Question**: Why was the pivot necessary in order to create this plot?
 
 *Add your response here!*
 
@@ -113,16 +110,13 @@ statsci
 # add your code here
 ```
 
-
-- **Demo:** Finally, set `fig-width: 10` and `fig-height: 5` for your plot in the chunk options.
+-   **Demo:** Finally, set `fig-width: 10` and `fig-height: 5` for your plot in the chunk options.
 
 ```{r}
 #| label: plot-improve-5
 
 # add your code here
 ```
-
-
 
 ## Let's now pivot wider!
 
