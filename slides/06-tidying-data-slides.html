@@ -10,8 +10,8 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.39">
 <meta name="author" content="Katie Solarz">
-<meta name="dcterms.date" content="2026-02-02">
-<title>STA 199 – Tidying data</title>
+<meta name="dcterms.date" content="2026-05-21">
+<title>STA 199 – Tidying Data 🧹</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -187,10 +187,10 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Tidying data – STA 199">
+<meta property="og:title" content="Tidying Data 🧹 – STA 199">
 <meta property="og:description" content="Lecture 6">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Tidying data – STA 199">
+<meta name="twitter:title" content="Tidying Data 🧹 – STA 199">
 <meta name="twitter:description" content="Lecture 6">
 <meta name="twitter:image" content="https://sta199-su26.github.io/slides/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
@@ -200,7 +200,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title">Tidying data</h1>
+<section id="title-slide" class="quarto-title-block center"><h1 class="title">Tidying Data 🧹</h1>
   <p class="subtitle">Lecture 6</p>
 
 <div class="quarto-title-authors">
@@ -214,398 +214,38 @@ Katie Solarz
     </div>
 </div>
 
-  <p class="date">February 2, 2026</p>
-</section><section><section id="warm-up" class="title-slide slide level1 center"><h1>Warm-up</h1>
-
-</section><section id="while-you-wait" class="slide level2 smaller"><h2>While you wait…</h2>
+  <p class="date">May 21, 2026</p>
+</section><section><section id="ae-05" class="title-slide slide level1 center"><h1>AE-05</h1>
 <!-- begin: ae definition -->
 <!-- end: ae definition -->
-<p>Prepare for today’s application exercise: <strong>ae-06-majors-tidy</strong></p>
-<div class="appex">
-<ul>
-<li><p>Go to your <code>ae</code> project in RStudio.</p></li>
-<li><p>Make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
-<li><p>Click Pull to get today’s application exercise file: <em>ae-06-majors-tidy.qmd</em>.</p></li>
-<li><p>Wait till the you’re prompted to work on the application exercise during class before editing the file.</p></li>
-</ul>
-</div>
-</section><section id="miscellany-logical-operators" class="slide level2"><h2>Miscellany: logical operators</h2>
-<p>Generally useful in a <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> but will come up in various other places as well…</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
-</colgroup>
-<thead><tr class="header">
-<th style="text-align: left;">operator</th>
-<th style="text-align: left;">definition</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>&lt;</code></td>
-<td style="text-align: left;"><span class="fragment">is less than?</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>&lt;=</code></td>
-<td style="text-align: left;"><span class="fragment">is less than or equal to?</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>&gt;</code></td>
-<td style="text-align: left;"><span class="fragment">is greater than?</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>&gt;=</code></td>
-<td style="text-align: left;"><span class="fragment">is greater than or equal to?</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>==</code></td>
-<td style="text-align: left;"><span class="fragment">is exactly equal to?</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>!=</code></td>
-<td style="text-align: left;"><span class="fragment">is not equal to?</span></td>
-</tr>
-</tbody>
-</table></section><section id="miscellany-logical-operators-cont." class="slide level2 medium"><h2>Miscellany: logical operators (cont.)</h2>
-<p>Generally useful in a <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> but will come up in various other places as well…</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
-</colgroup>
-<thead><tr class="header">
-<th style="text-align: left;">operator</th>
-<th style="text-align: left;">definition</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>x &amp; y</code></td>
-<td style="text-align: left;"><span class="fragment">is x AND y?</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>x | y</code></td>
-<td style="text-align: left;"><span class="fragment">is x OR y?</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>is.na(x)</code></td>
-<td style="text-align: left;"><span class="fragment">is x NA?</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>!is.na(x)</code></td>
-<td style="text-align: left;"><span class="fragment">is x not NA?</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>x %in% y</code></td>
-<td style="text-align: left;"><span class="fragment">is x in y?</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>!(x %in% y)</code></td>
-<td style="text-align: left;"><span class="fragment">is x not in y?</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>!x</code></td>
-<td style="text-align: left;"><span class="fragment">is not x? (only makes sense if <code>x</code> is <code>TRUE</code> or <code>FALSE</code>)</span></td>
-</tr>
-</tbody>
-</table></section><section id="miscellany-assignment" class="slide level2"><h2>Miscellany: assignment</h2>
-<p>Let’s make a tiny data frame to use as an example:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>))</span>
-<span id="cb1-2"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-      x y    
-  &lt;dbl&gt; &lt;chr&gt;
-1     1 a    
-2     2 a    
-3     3 b    
-4     4 c    
-5     5 c    </code></pre>
-</div>
-</div>
-</section><section id="miscellany-assignment-1" class="slide level2"><h2>Miscellany: assignment</h2>
-<div class="question">
-<p>Suppose you run the following and <strong>then</strong> you inspect <code>df</code>, will the <code>x</code> variable have values 1, 2, 3, 4, 5 or 2, 4, 6, 8, 10?</p>
-</div>
-<div class="columns">
-<div class="column">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>df <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a></a>  <span class="fu">mutate</span>(<span class="at">x =</span> x <span class="sc">*</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-      x y    
-  &lt;dbl&gt; &lt;chr&gt;
-1     2 a    
-2     4 a    
-3     6 b    
-4     8 c    
-5    10 c    </code></pre>
-</div>
-</div>
-</div><div class="column">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div></div>
-</section><section id="miscellany-assignment-2" class="slide level2"><h2>Miscellany: assignment</h2>
-<div class="question">
-<p>Suppose you run the following and <strong>then</strong> you inspect <code>df</code>, will the <code>x</code> variable have values 1, 2, 3, 4, 5 or 2, 4, 6, 8, 10?</p>
-</div>
-<div class="columns">
-<div class="column">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>df <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a></a>  <span class="fu">mutate</span>(<span class="at">x =</span> x <span class="sc">*</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-      x y    
-  &lt;dbl&gt; &lt;chr&gt;
-1     2 a    
-2     4 a    
-3     6 b    
-4     8 c    
-5    10 c    </code></pre>
-</div>
-</div>
-</div><div class="column">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-      x y    
-  &lt;dbl&gt; &lt;chr&gt;
-1     1 a    
-2     2 a    
-3     3 b    
-4     4 c    
-5     5 c    </code></pre>
-</div>
-</div>
-</div></div>
-<div class="fragment">
-<blockquote>
-<p><strong>Do something and show me</strong></p>
-</blockquote>
-</div>
-</section><section id="miscellany-assignment-3" class="slide level2"><h2>Miscellany: assignment</h2>
-<div class="question">
-<p>Suppose you run the following and <strong>then</strong> you inspect <code>df</code>, will the <code>x</code> variable has values 1, 2, 3, 4, 5 or 2, 4, 6, 8, 10?</p>
-</div>
-<div class="columns">
-<div class="column">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">mutate</span>(<span class="at">x =</span> x <span class="sc">*</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div></div>
-</section><section id="miscellany-assignment-4" class="slide level2"><h2>Miscellany: assignment</h2>
-<div class="question">
-<p>Suppose you run the following and <strong>then</strong> you inspect <code>df</code>, will the <code>x</code> variable has values 1, 2, 3, 4, 5 or 2, 4, 6, 8, 10?</p>
-</div>
-<div class="columns">
-<div class="column">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a></a>  <span class="fu">mutate</span>(<span class="at">x =</span> x <span class="sc">*</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-      x y    
-  &lt;dbl&gt; &lt;chr&gt;
-1     2 a    
-2     4 a    
-3     6 b    
-4     8 c    
-5    10 c    </code></pre>
-</div>
-</div>
-</div></div>
-<div class="fragment">
-<blockquote>
-<p><strong>Do something and save result</strong></p>
-</blockquote>
-</div>
-</section><section id="miscellany-assignment-5" class="slide level2 smaller"><h2>Miscellany: assignment</h2>
-<div class="columns">
-<div class="column fragment" style="width:49%;">
-<blockquote>
-<p><strong>Do something, save result, overwriting original</strong></p>
-</blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="5-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb15-2"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>), </span>
-<span id="cb15-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>)</span>
-<span id="cb15-4"><a></a>)</span>
-<span id="cb15-5"><a></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb15-6"><a></a>  <span class="fu">mutate</span>(<span class="at">x =</span> x <span class="sc">*</span> <span class="dv">2</span>)</span>
-<span id="cb15-7"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-      x y    
-  &lt;dbl&gt; &lt;chr&gt;
-1     2 a    
-2     4 a    
-3     6 b    
-4     8 c    
-5    10 c    </code></pre>
-</div>
-</div>
-</div><div class="column fragment" style="width:49%;">
-<blockquote>
-<p><strong>Do something, save result, <em>not</em> overwriting original</strong></p>
-</blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="5-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb17-2"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>), </span>
-<span id="cb17-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>)</span>
-<span id="cb17-4"><a></a>)</span>
-<span id="cb17-5"><a></a>df_new <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb17-6"><a></a>  <span class="fu">mutate</span>(<span class="at">x =</span> x <span class="sc">*</span> <span class="dv">2</span>)</span>
-<span id="cb17-7"><a></a>df_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-      x y    
-  &lt;dbl&gt; &lt;chr&gt;
-1     2 a    
-2     4 a    
-3     6 b    
-4     8 c    
-5    10 c    </code></pre>
-</div>
-</div>
-</div></div>
-</section><section id="miscellany-assignment-6" class="slide level2 smaller"><h2>Miscellany: assignment</h2>
-<div class="columns">
-<div class="column fragment" style="width:49%;">
-<blockquote>
-<p><strong>Do something, save result, overwriting original <em>when you shouldn’t</em></strong></p>
-</blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="5-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb19-2"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>), </span>
-<span id="cb19-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>)</span>
-<span id="cb19-4"><a></a>)</span>
-<span id="cb19-5"><a></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb19-6"><a></a>  <span class="fu">group_by</span>(y) <span class="sc">|&gt;</span></span>
-<span id="cb19-7"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_x =</span> <span class="fu">mean</span>(x))</span>
-<span id="cb19-8"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 2
-  y     mean_x
-  &lt;chr&gt;  &lt;dbl&gt;
-1 a        1.5
-2 b        3  
-3 c        4.5</code></pre>
-</div>
-</div>
-</div><div class="column fragment" style="width:49%;">
-<blockquote>
-<p><strong>Do something, save result, <em>not</em> overwriting original <em>when you shouldn’t</em></strong></p>
-</blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="5-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb21-2"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>), </span>
-<span id="cb21-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>)</span>
-<span id="cb21-4"><a></a>)</span>
-<span id="cb21-5"><a></a>df_summary <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb21-6"><a></a>  <span class="fu">group_by</span>(y) <span class="sc">|&gt;</span></span>
-<span id="cb21-7"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_x =</span> <span class="fu">mean</span>(x))</span>
-<span id="cb21-8"><a></a>df_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 2
-  y     mean_x
-  &lt;chr&gt;  &lt;dbl&gt;
-1 a        1.5
-2 b        3  
-3 c        4.5</code></pre>
-</div>
-</div>
-</div></div>
-</section><section id="miscellany-assignment-7" class="slide level2 smaller"><h2>Miscellany: assignment</h2>
-<div class="columns">
-<div class="column fragment" style="width:49%;">
-<blockquote>
-<p><strong>Do something, save result, overwriting original</strong><br><strong><em>data frame</em></strong></p>
-</blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="5-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb23-2"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>), </span>
-<span id="cb23-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>)</span>
-<span id="cb23-4"><a></a>)</span>
-<span id="cb23-5"><a></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb23-6"><a></a>  <span class="fu">mutate</span>(<span class="at">z =</span> x <span class="sc">+</span> <span class="dv">2</span>)</span>
-<span id="cb23-7"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 3
-      x y         z
-  &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
-1     1 a         3
-2     2 a         4
-3     3 b         5
-4     4 c         6
-5     5 c         7</code></pre>
-</div>
-</div>
-</div><div class="column fragment" style="width:49%;">
-<blockquote>
-<p><strong>Do something, save result, overwriting original</strong><br><strong><em>column</em></strong></p>
-</blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="5-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb25-2"><a></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>), </span>
-<span id="cb25-3"><a></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>)</span>
-<span id="cb25-4"><a></a>)</span>
-<span id="cb25-5"><a></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb25-6"><a></a>  <span class="fu">mutate</span>(<span class="at">x =</span> x <span class="sc">+</span> <span class="dv">2</span>)</span>
-<span id="cb25-7"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-      x y    
-  &lt;dbl&gt; &lt;chr&gt;
-1     3 a    
-2     4 a    
-3     5 b    
-4     6 c    
-5     7 c    </code></pre>
-</div>
-</div>
-</div></div>
 </section><section id="last-time" class="slide level2 small"><h2>Last time</h2>
 <p>We had to mutate before plotting. Two methods:</p>
 <div class="columns">
 <div class="column fragment" style="width:50%;">
-<p>Do it all at once and don’t store:</p>
+<p>Do it all at once and don’t store intermediately:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
-<span id="cb27-2"><a></a>  <span class="fu">mutate</span>(<span class="at">flip18 =</span> <span class="fu">as_factor</span>(flip18)) <span class="sc">|&gt;</span></span>
-<span id="cb27-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">fill =</span> flip18)) <span class="sc">+</span></span>
-<span id="cb27-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a></a>  <span class="fu">mutate</span>(<span class="at">flip18 =</span> <span class="fu">as_factor</span>(flip18)) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">fill =</span> flip18)) <span class="sc">+</span></span>
+<span id="cb1-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="06-tidying-data_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+<figure><p><img data-src="06-tidying-data_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div><div class="column fragment" style="width:50%;">
-<p>Mutate, store change, then plot</p>
+<p>Mutate, store change; then, plot</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>gerrymander <span class="ot">&lt;-</span> gerrymander <span class="sc">|&gt;</span></span>
-<span id="cb28-2"><a></a>  <span class="fu">mutate</span>(<span class="at">flip18 =</span> <span class="fu">as_factor</span>(flip18))</span>
-<span id="cb28-3"><a></a></span>
-<span id="cb28-4"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">fill =</span> flip18)) <span class="sc">+</span></span>
-<span id="cb28-5"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>gerrymander <span class="ot">&lt;-</span> gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">mutate</span>(<span class="at">flip18 =</span> <span class="fu">as_factor</span>(flip18))</span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a><span class="fu">ggplot</span>(gerrymander, <span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">fill =</span> flip18)) <span class="sc">+</span></span>
+<span id="cb2-5"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="06-tidying-data_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+<figure><p><img data-src="06-tidying-data_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -614,16 +254,16 @@ Katie Solarz
 </section><section id="a-common-mistake" class="slide level2"><h2>A common mistake</h2>
 <p>Why is this a travesty?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>gerrymander <span class="ot">&lt;-</span> gerrymander <span class="sc">|&gt;</span></span>
-<span id="cb29-2"><a></a>  <span class="fu">mutate</span>(<span class="at">flip18 =</span> <span class="fu">as_factor</span>(flip18)) <span class="sc">|&gt;</span></span>
-<span id="cb29-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">fill =</span> flip18)) <span class="sc">+</span></span>
-<span id="cb29-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>gerrymander <span class="ot">&lt;-</span> gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">mutate</span>(<span class="at">flip18 =</span> <span class="fu">as_factor</span>(flip18)) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gerry, <span class="at">fill =</span> flip18)) <span class="sc">+</span></span>
+<span id="cb3-4"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="the-data-are-lost" class="slide level2"><h2>The data are lost!</h2>
 <p><code>gerrymander</code> is no longer a data frame. It’s a plot…thing:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
-<span id="cb30-2"><a></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"TX"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>gerrymander <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"TX"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `UseMethod()`:
 ! no applicable method for 'filter' applied to an object of class "c('ggplot2::ggplot', 'ggplot', 'ggplot2::gg', 'S7_object', 'gg')"</code></pre>
@@ -644,22 +284,22 @@ Katie Solarz
 </div>
 </div>
 </div>
-</section></section><section><section id="data-tidying" class="title-slide slide level1 center"><h1>Data tidying</h1>
+</section></section><section><section id="tidying-data" class="title-slide slide level1 center"><h1>Tidying data</h1>
 
 </section><section id="tidy-data" class="slide level2"><h2>Tidy data</h2>
 <blockquote>
-<p>“Tidy datasets are easy to manipulate, model and visualise, and have a specific structure: each variable is a column, each observation is a row, and each type of observational unit is a table.”</p>
+<p>“Tidy datasets are easy to manipulate, model and visualize, and have a specific structure: each variable is a column, each observation is a row, and each type of observational unit is a table.”</p>
 <p>Tidy Data, <a href="https://vita.had.co.nz/papers/tidy-data.pdf" class="uri">https://vita.had.co.nz/papers/tidy-data.pdf</a></p>
 </blockquote>
 <div class="fragment">
 <p><strong>Note:</strong> “easy to manipulate” = “straightforward to manipulate”</p>
 </div>
 </section><section id="goal" class="slide level2"><h2>Goal</h2>
-<p>Visualize StatSci majors over the years!</p>
-
-<img data-src="images/06/statsci-majors-2025.png" class="r-stretch"></section><section id="data" class="slide level2 smaller"><h2>Data</h2>
+<p>Visualize Duke StatSci majors over the years!</p>
+<p><img data-src="img/06/statsci-majors-2025.png"></p>
+</section><section id="data" class="slide level2 smaller"><h2>Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>statsci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>statsci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 16
   degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
@@ -690,18 +330,18 @@ Katie Solarz
 </div>
 </section><section id="lets-plan" class="slide level2 smaller"><h2>Let’s plan!</h2>
 <p>Review the goal plot and sketch the data frame needed to create it. What would go inside <code>aes</code> when we call <code>ggplot</code>?</p>
-
-<img data-src="images/06/statsci-majors-2025.png" width="500" class="r-stretch"></section><section id="the-goal" class="slide level2 smaller nostretch"><h2>The Goal</h2>
+<p><img data-src="img/06/statsci-majors-2025.png" width="500"></p>
+</section><section id="the-goal" class="slide level2 smaller nostretch"><h2>The Goal</h2>
 <p>We want to write code that starts something like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">ggplot</span>(statsci, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">color =</span> degree_type)) <span class="sc">+</span> </span>
-<span id="cb34-2"><a></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(statsci, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">color =</span> degree_type)) <span class="sc">+</span> </span>
+<span id="cb8-2"><a></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><br></p>
-<p>But our data are not in the right format :(</p>
+<p>But our data are not in the right format as is:(</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>statsci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>statsci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 16
   degree_type `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
@@ -759,7 +399,7 @@ Katie Solarz
 </div>
 </div>
 </div></div>
-</section></section><section><section id="pivot" class="title-slide slide level1 center"><h1>Pivot</h1>
+</section></section><section><section id="pivot" class="title-slide slide level1 center"><h1>Pivot!</h1>
 
 </section><section id="pivot_longer" class="slide level2 smaller scrollable"><h2><code>pivot_longer()</code></h2>
 <div class="columns">
@@ -826,15 +466,15 @@ Katie Solarz
 </div>
 <div class="task fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>statsci <span class="sc">|&gt;</span></span>
-<span id="cb47-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb47-3"><a></a>    </span>
-<span id="cb47-4"><a></a>    <span class="at">cols =</span> ___________________ ,</span>
-<span id="cb47-5"><a></a>    </span>
-<span id="cb47-6"><a></a>    <span class="at">names_to =</span> _______________ ,</span>
-<span id="cb47-7"><a></a>    </span>
-<span id="cb47-8"><a></a>    <span class="at">values_to =</span> ______________</span>
-<span id="cb47-9"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>statsci <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb21-3"><a></a>    </span>
+<span id="cb21-4"><a></a>    <span class="at">cols =</span> ___________________ ,</span>
+<span id="cb21-5"><a></a>    </span>
+<span id="cb21-6"><a></a>    <span class="at">names_to =</span> _______________ ,</span>
+<span id="cb21-7"><a></a>    </span>
+<span id="cb21-8"><a></a>    <span class="at">values_to =</span> ______________</span>
+<span id="cb21-9"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:5%;">
@@ -870,12 +510,12 @@ Katie Solarz
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>statsci <span class="sc">|&gt;</span> </span>
-<span id="cb50-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb50-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
-<span id="cb50-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
-<span id="cb50-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span></span>
-<span id="cb50-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>statsci <span class="sc">|&gt;</span> </span>
+<span id="cb24-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb24-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
+<span id="cb24-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
+<span id="cb24-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span></span>
+<span id="cb24-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 60 × 3
    degree_type year      n
@@ -901,8 +541,8 @@ Katie Solarz
 <div>
 <ul>
 <li class="fragment"><p>It’s a character (<code>chr</code>) variable since the information came from the columns of the original data frame.</p></li>
-<li class="fragment"><p>R cannot know that these character strings represent years.</p></li>
-<li class="fragment"><p>The variable type should be numeric.</p></li>
+<li class="fragment"><p>R does not know that these character strings represent years.</p></li>
+<li class="fragment"><p>The variable type <em>should be</em> numeric.</p></li>
 </ul>
 </div>
 </div>
@@ -915,12 +555,12 @@ Katie Solarz
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a>statsci <span class="sc">|&gt;</span></span>
-<span id="cb52-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb52-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
-<span id="cb52-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
-<span id="cb52-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span></span>
-<span id="cb52-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>statsci <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb26-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
+<span id="cb26-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
+<span id="cb26-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span></span>
+<span id="cb26-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 
@@ -933,13 +573,13 @@ Katie Solarz
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53" data-code-line-numbers="|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>statsci <span class="sc">|&gt;</span></span>
-<span id="cb53-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb53-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
-<span id="cb53-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
-<span id="cb53-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
-<span id="cb53-6"><a></a>    <span class="at">names_transform =</span> as.numeric</span>
-<span id="cb53-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27" data-code-line-numbers="|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>statsci <span class="sc">|&gt;</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb27-3"><a></a>    <span class="at">cols =</span> <span class="sc">-</span>degree_type,</span>
+<span id="cb27-4"><a></a>    <span class="at">values_to =</span> <span class="st">"n"</span>,</span>
+<span id="cb27-5"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb27-6"><a></a>    <span class="at">names_transform =</span> as.numeric</span>
+<span id="cb27-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column fragment" style="width:50%;">
 <div class="cell">
@@ -970,7 +610,7 @@ Katie Solarz
 <li><p>Work through the application exercise in class, and render, commit, and push your edits by the end of class.</p></li>
 </ul>
 </div>
-</section></section><section><section id="pivot-wider" class="title-slide slide level1 center"><h1>Pivot Wider</h1>
+</section></section><section><section id="pivot-wider" class="title-slide slide level1 center"><h1>Pivot wider</h1>
 
 </section><section id="we-pivotted-longer-what-about-wider" class="slide level2 smaller"><h2>We pivotted longer… what about wider?</h2>
 <div class="columns">
@@ -1036,12 +676,12 @@ Katie Solarz
 </div>
 <div class="task">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a>statsci_longer <span class="sc">|&gt;</span> </span>
-<span id="cb61-2"><a></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb61-3"><a></a>    <span class="at">names_from =</span> ____________ ,</span>
-<span id="cb61-4"><a></a>    </span>
-<span id="cb61-5"><a></a>    <span class="at">values_from =</span> ___________ , </span>
-<span id="cb61-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>statsci_longer <span class="sc">|&gt;</span> </span>
+<span id="cb35-2"><a></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb35-3"><a></a>    <span class="at">names_from =</span> ____________ ,</span>
+<span id="cb35-4"><a></a>    </span>
+<span id="cb35-5"><a></a>    <span class="at">values_from =</span> ___________ , </span>
+<span id="cb35-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:5%;">
@@ -1074,8 +714,11 @@ Katie Solarz
 </div>
 </div></div>
 </section><section id="section" class="slide level2 smaller"><h2></h2>
-
-<img data-src="images/06/tidyr-pivoting.gif" class="quarto-figure quarto-figure-center r-stretch"></section><section id="recap-pivot" class="slide level2 smaller"><h2>Recap: Pivot</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/06/tidyr-pivoting.gif" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</section><section id="recap-pivot" class="slide level2 smaller"><h2>Recap: Pivot</h2>
 <div>
 <ul>
 <li class="fragment">
@@ -1098,9 +741,9 @@ Katie Solarz
 </section></section>
 </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="images/logo.png" class="slide-logo"></p>
+<p><img src="img/pfp.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://sta199-s26.github.io/">🔗 sta199-s26.github.io</a></p>
+<p><a href="https://sta199-su26.github.io/">🔗 sta199-su26.github.io</a></p>
 </div>
 </div></div>
 
