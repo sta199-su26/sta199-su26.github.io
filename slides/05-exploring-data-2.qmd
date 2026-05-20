@@ -643,7 +643,7 @@ What is exploratory data analysis (EDA)??
 
 -   Generally, EDA precedes some sort of *more formal* statistical analysis (i.e., hypothesis testing, modeling, etc.); compare your findings from statistical analyses to key takeaways from EDA (do your findings agree? did you discern something that wasn't visually evident (perhaps obscured by other factors not visualized)?)
 
--   You **cannot** make any sort of causal claim / statement from EDA alone (i.e., don't say something like, "from this scatterploy, we see that some change in x **causes** some change in y)
+-   You **cannot** make any sort of causal claim / statement from EDA alone (i.e., don't say something like, "from this scatterplot, we see that some change in x **causes** some change in y)
 
 -   You **can** observe relationships & make hypotheses! 
 
