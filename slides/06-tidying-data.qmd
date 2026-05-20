@@ -1,23 +1,16 @@
 ---
-title: "Tidying data"
+title: "Tidying Data 🧹"
 subtitle: "Lecture 6"
-date: "2026-02-02"
+date: "2026-05-21"
 format: 
-  revealjs: 
+  revealjs:
     output-file: 06-tidying-data-slides.html
-    footer: "[🔗 sta199-s26.github.io](https://sta199-s26.github.io/)"
-    theme: slides.scss
-    transition: fade
-    slide-number: true
-    logo: images/logo.png
-    toc: false
   html: 
-    code-link: true
+    output-file: 06-tidying-data.html
+auto-stretch: false
 ---
 
-# Warm-up
-
-## While you wait... {.smaller}
+# AE-05
 
 <!-- begin: ae definition -->
 
@@ -30,272 +23,14 @@ todays_ae <- "ae-06-majors-tidy"
 
 <!-- end: ae definition -->
 
-Prepare for today's application exercise: **`{r} todays_ae`**
-
-::: appex
--   Go to your `ae` project in RStudio.
-
--   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
-
--   Click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
-
--   Wait till the you're prompted to work on the application exercise during class before editing the file.
-:::
-
-## Miscellany: logical operators
-
-Generally useful in a `filter()` but will come up in various other places as well...
-
-| operator | definition                                |
-|:---------|:------------------------------------------|
-| `<`      | [is less than?]{.fragment}                |
-| `<=`     | [is less than or equal to?]{.fragment}    |
-| `>`      | [is greater than?]{.fragment}             |
-| `>=`     | [is greater than or equal to?]{.fragment} |
-| `==`     | [is exactly equal to?]{.fragment}         |
-| `!=`     | [is not equal to?]{.fragment}             |
-
-: {tbl-colwidths="\[25,75\]"}
-
-## Miscellany: logical operators (cont.) {.medium}
-
-Generally useful in a `filter()` but will come up in various other places as well...
-
-| operator      | definition                                                            |
-|:-----------------|:-----------------------------------------------------|
-| `x & y`       | [is x AND y?]{.fragment}                                              |
-| `x | y`       | [is x OR y?]{.fragment}                                               |
-| `is.na(x)`    | [is x NA?]{.fragment}                                                 |
-| `!is.na(x)`   | [is x not NA?]{.fragment}                                             |
-| `x %in% y`    | [is x in y?]{.fragment}                                               |
-| `!(x %in% y)` | [is x not in y?]{.fragment}                                           |
-| `!x`          | [is not x? (only makes sense if `x` is `TRUE` or `FALSE`)]{.fragment} |
-
-: {tbl-colwidths="\[25,75\]"}
-
-## Miscellany: assignment
-
-Let's make a tiny data frame to use as an example:
-
-```{r}
-df <- tibble(x = c(1, 2, 3, 4, 5), y = c("a", "a", "b", "c", "c"))
-df
-```
-
-## Miscellany: assignment
-
-::: question
-Suppose you run the following and **then** you inspect `df`, will the `x` variable have values 1, 2, 3, 4, 5 or 2, 4, 6, 8, 10?
-:::
-
-::: columns
-::: column
-```{r}
-df |>
-  mutate(x = x * 2)
-```
-:::
-
-::: column
-```{r}
-#| eval: false
-df
-```
-:::
-:::
-
-## Miscellany: assignment
-
-::: question
-Suppose you run the following and **then** you inspect `df`, will the `x` variable have values 1, 2, 3, 4, 5 or 2, 4, 6, 8, 10?
-:::
-
-::: columns
-::: column
-```{r}
-df |>
-  mutate(x = x * 2)
-```
-:::
-
-::: column
-```{r}
-df
-```
-:::
-:::
-
-. . .
-
-> **Do something and show me**
-
-## Miscellany: assignment
-
-::: question
-Suppose you run the following and **then** you inspect `df`, will the `x` variable has values 1, 2, 3, 4, 5 or 2, 4, 6, 8, 10?
-:::
-
-::: columns
-::: column
-```{r}
-df <- df |>
-  mutate(x = x * 2)
-```
-:::
-
-::: column
-```{r}
-#| eval: false
-df
-```
-:::
-:::
-
-## Miscellany: assignment
-
-::: question
-Suppose you run the following and **then** you inspect `df`, will the `x` variable has values 1, 2, 3, 4, 5 or 2, 4, 6, 8, 10?
-:::
-
-::: columns
-::: column
-```{r}
-#| eval: false
-df <- df |>
-  mutate(x = x * 2)
-```
-:::
-
-::: column
-```{r}
-df
-```
-:::
-:::
-
-. . .
-
-> **Do something and save result**
-
-## Miscellany: assignment {.smaller}
-
-::: columns
-::: {.column .fragment width="49%"}
-> **Do something, save result, overwriting original**
-
-```{r}
-#| code-line-numbers: "5-7"
-
-df <- tibble(
-  x = c(1, 2, 3, 4, 5), 
-  y = c("a", "a", "b", "c", "c")
-)
-df <- df |>
-  mutate(x = x * 2)
-df
-```
-:::
-
-::: {.column .fragment width="49%"}
-> **Do something, save result, *not* overwriting original**
-
-```{r}
-#| code-line-numbers: "5-7"
-
-df <- tibble(
-  x = c(1, 2, 3, 4, 5), 
-  y = c("a", "a", "b", "c", "c")
-)
-df_new <- df |>
-  mutate(x = x * 2)
-df_new
-```
-:::
-:::
-
-## Miscellany: assignment {.smaller}
-
-::: columns
-::: {.column .fragment width="49%"}
-> **Do something, save result, overwriting original *when you shouldn't***
-
-```{r}
-#| code-line-numbers: "5-8"
-
-df <- tibble(
-  x = c(1, 2, 3, 4, 5), 
-  y = c("a", "a", "b", "c", "c")
-)
-df <- df |>
-  group_by(y) |>
-  summarize(mean_x = mean(x))
-df
-```
-:::
-
-::: {.column .fragment width="49%"}
-> **Do something, save result, *not* overwriting original *when you shouldn't***
-
-```{r}
-#| code-line-numbers: "5-8"
-
-df <- tibble(
-  x = c(1, 2, 3, 4, 5), 
-  y = c("a", "a", "b", "c", "c")
-)
-df_summary <- df |>
-  group_by(y) |>
-  summarize(mean_x = mean(x))
-df_summary
-```
-:::
-:::
-
-## Miscellany: assignment {.smaller}
-
-::: columns
-::: {.column .fragment width="49%"}
-> **Do something, save result, overwriting original**\
-> ***data frame***
-
-```{r}
-#| code-line-numbers: "5-7"
-
-df <- tibble(
-  x = c(1, 2, 3, 4, 5), 
-  y = c("a", "a", "b", "c", "c")
-)
-df <- df |>
-  mutate(z = x + 2)
-df
-```
-:::
-
-::: {.column .fragment width="49%"}
-> **Do something, save result, overwriting original**\
-> ***column***
-
-```{r}
-#| code-line-numbers: "5-7"
-
-df <- tibble(
-  x = c(1, 2, 3, 4, 5), 
-  y = c("a", "a", "b", "c", "c")
-)
-df <- df |>
-  mutate(x = x + 2)
-df
-```
-:::
-:::
-
 ## Last time {.small}
 
-We had to mutate before plotting. Two methods:
+We had to mutate before plotting.
+Two methods:
 
-::: columns
+::::: columns
 ::: {.column .fragment width="50%"}
-Do it all at once and don't store:
+Do it all at once and don't store intermediately:
 
 ```{r}
 gerrymander |>
@@ -306,7 +41,7 @@ gerrymander |>
 :::
 
 ::: {.column .fragment width="50%"}
-Mutate, store change, then plot
+Mutate, store change; then, plot
 
 ```{r}
 gerrymander <- gerrymander |>
@@ -316,8 +51,7 @@ ggplot(gerrymander, aes(x = gerry, fill = flip18)) +
   geom_bar(position = "fill")
 ```
 :::
-
-:::
+:::::
 
 ## A common mistake
 
@@ -332,7 +66,8 @@ gerrymander <- gerrymander |>
 
 ## The data are lost!
 
-`gerrymander` is no longer a data frame. It's a plot...thing:
+`gerrymander` is no longer a data frame.
+It's a plot...thing:
 
 ```{r}
 #| error: true
@@ -344,14 +79,15 @@ gerrymander |>
 
 ::: callout-tip
 ## Lesson
+
 You can overwrite an object if its identity is preserved; if the rows or columns now mean something totally different, or if it's an entirely different *class* of object, then give it a new name.
 :::
 
-# Data tidying
+# Tidying data
 
 ## Tidy data
 
-> "Tidy datasets are easy to manipulate, model and visualise, and have a specific structure: each variable is a column, each observation is a row, and each type of observational unit is a table."
+> "Tidy datasets are easy to manipulate, model and visualize, and have a specific structure: each variable is a column, each observation is a row, and each type of observational unit is a table."
 >
 > Tidy Data, <https://vita.had.co.nz/papers/tidy-data.pdf>
 
@@ -361,9 +97,9 @@ You can overwrite an object if its identity is preserved; if the rows or columns
 
 ## Goal
 
-Visualize StatSci majors over the years!
+Visualize Duke StatSci majors over the years!
 
-![](images/06/statsci-majors-2025.png)
+![](img/06/statsci-majors-2025.png)
 
 ## Data {.smaller}
 
@@ -377,7 +113,6 @@ statsci <- read_csv("data/statsci_clean.csv")
 
 statsci
 ```
-
 
 ::: incremental
 -   The first column (variable) is the `degree`:
@@ -394,9 +129,10 @@ statsci
 
 ## Let's plan! {.smaller}
 
-Review the goal plot and sketch the data frame needed to create it. What would go inside `aes` when we call `ggplot`?
+Review the goal plot and sketch the data frame needed to create it.
+What would go inside `aes` when we call `ggplot`?
 
-![](images/06/statsci-majors-2025.png){width="500"}
+![](img/06/statsci-majors-2025.png){width="500"}
 
 ## The Goal {.smaller .nostretch}
 
@@ -414,7 +150,7 @@ ggplot(statsci, aes(x = year, y = n, color = degree_type)) +
 
 <br>
 
-But our data are not in the right format :(
+But our data are not in the right format as is:(
 
 ```{r}
 statsci
@@ -422,7 +158,7 @@ statsci
 
 ## The Challenge {.smaller .nostretch}
 
-::: columns
+::::: columns
 ::: {.column width="70%"}
 ***How do we go from this ....***
 
@@ -451,14 +187,14 @@ print(statsci |>
         as.data.frame())
 ```
 :::
-:::
+:::::
 
-# Pivot
+# Pivot!
 
 ## `pivot_longer()` {.smaller .scrollable}
 
-::: columns
-::: {.column width="65%"}
+::::::: columns
+:::: {.column width="65%"}
 ```{r}
 #| echo: false
 cat("# A tibble: 4 x 16")
@@ -472,7 +208,7 @@ Pivot the `statsci` data frame *longer* such that each row represents a degree t
 
 `year` and `n`umber of graduates for that year are columns in the result data frame.
 :::
-:::
+::::
 
 ::: {.column width="5%"}
 ⟶
@@ -492,12 +228,12 @@ print(statsci |>
         as.data.frame())
 ```
 :::
-:::
+:::::::
 
 ## `pivot_longer()` {.smaller .scrollable}
 
-::: columns
-::: {.column width="65%"}
+::::::: columns
+:::: {.column width="65%"}
 ```{r}
 #| echo: false
 cat("# A tibble: 4 x 16")
@@ -521,7 +257,7 @@ statsci |>
   )
 ```
 :::
-:::
+::::
 
 ::: {.column width="5%"}
 ⟶
@@ -541,11 +277,11 @@ print(statsci |>
         as.data.frame())
 ```
 :::
-:::
+:::::::
 
 ## `year` {.smaller}
 
-::: columns
+:::::::: columns
 ::: {.column width="50%"}
 ```{r}
 statsci |> 
@@ -557,22 +293,24 @@ statsci |>
 ```
 :::
 
-::: {.column width="50%"}
+:::::: {.column width="50%"}
 ::: question
-What is the type of the `year` variable? Why? What should it be?
+What is the type of the `year` variable?
+Why?
+What should it be?
 :::
 
-::: fragment
+:::: fragment
 ::: incremental
 -   It's a character (`chr`) variable since the information came from the columns of the original data frame.
 
--   R cannot know that these character strings represent years.
+-   R does not know that these character strings represent years.
 
--   The variable type should be numeric.
+-   The variable type *should be* numeric.
 :::
-:::
-:::
-:::
+::::
+::::::
+::::::::
 
 ## `pivot_longer()` again {.smaller .scrollable}
 
@@ -651,12 +389,12 @@ statsci |>
 -   Work through the application exercise in class, and render, commit, and push your edits by the end of class.
 :::
 
-# Pivot Wider
+# Pivot wider
 
 ## We pivotted longer... what about wider? {.smaller}
 
-::: columns
-::: {.column width="65%"}
+::::::: columns
+:::: {.column width="65%"}
 ```{r}
 #| echo: false
 cat("# A tibble: 4 x 16")
@@ -668,7 +406,7 @@ statsci |>
 ::: {.task .fragment}
 Can we go the other direction?
 :::
-:::
+::::
 
 ::: {.column width="5%"}
 ⟵
@@ -688,12 +426,12 @@ print(statsci |>
         as.data.frame())
 ```
 :::
-:::
+:::::::
 
 ## We pivotted longer... what about wider? {.smaller}
 
-::: columns
-::: {.column width="65%"}
+::::::: columns
+:::: {.column width="65%"}
 ```{r}
 #| echo: false
 cat("# A tibble: 4 x 16")
@@ -713,7 +451,7 @@ statsci_longer |>
   )
 ```
 :::
-:::
+::::
 
 ::: {.column width="5%"}
 ⟵
@@ -733,11 +471,11 @@ print(statsci |>
         as.data.frame())
 ```
 :::
-:::
+:::::::
 
 ##  {.smaller}
 
-![](images/06/tidyr-pivoting.gif){fig-align="center"}
+![](img/06/tidyr-pivoting.gif){fig-align="center"}
 
 ## Recap: Pivot {.smaller}
 
@@ -754,5 +492,3 @@ print(statsci |>
 
 -   However, you should always be critical of defaultsand see if you can improve the plot to better portray your data / results / what you want to communicate.
 :::
-
-
