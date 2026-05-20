@@ -106,6 +106,19 @@
       ],
       "Hash": "5edb675b7baa6e9a0d86dd2c28de1676"
     },
+    "beeswarm": {
+      "Package": "beeswarm",
+      "Version": "0.4.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "grDevices",
+        "graphics",
+        "stats",
+        "utils"
+      ],
+      "Hash": "0f4e9d8caa6feaa7e409ae6c30f2ca66"
+    },
     "bigD": {
       "Package": "bigD",
       "Version": "0.3.1",
@@ -583,6 +596,21 @@
         "zip"
       ],
       "Hash": "8c696f49b5150a2541af009311c2fc83"
+    },
+    "ggbeeswarm": {
+      "Package": "ggbeeswarm",
+      "Version": "0.7.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "beeswarm",
+        "cli",
+        "ggplot2",
+        "lifecycle",
+        "vipor"
+      ],
+      "Hash": "d10c05637cf3619f3f7001fc99c1b1a6"
     },
     "ggplot2": {
       "Package": "ggplot2",
@@ -1757,6 +1785,18 @@
         "rlang"
       ],
       "Hash": "2dcde2d30d3ad67bf1d3a37177457b87"
+    },
+    "vipor": {
+      "Package": "vipor",
+      "Version": "0.4.7",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "graphics",
+        "stats"
+      ],
+      "Hash": "86493c62c14eb78140f1725003958a77"
     },
     "viridisLite": {
       "Package": "viridisLite",
