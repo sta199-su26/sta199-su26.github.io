@@ -54,7 +54,7 @@ Add your response here.
 
 Recreate the following visualization, and then improve it.
 
-![](images/gerrymander-recreate.png)
+![](img/gerrymander-recreate.png)
 
 ```{r}
 #| label: recreate
