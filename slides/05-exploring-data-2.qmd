@@ -1,38 +1,66 @@
 ---
-title: "More Data Transformation"
+title: "Exploratory Data Analysis II"
 subtitle: "Lecture 5"
-date: "2025-05-19"
+date: "2026-05-10"
 format: 
   revealjs:
-    output-file: 05-data-transform-2-slides.html
+    output-file: 05-exploratory-data-analysis-II-slides.html
+  html: 
+    output-file: 05-exploratory-data-analysis-II.html
 auto-stretch: false
 ---
 
-## Announcements/Reminders {.smaller}
+## Announcements/Reminders {.medium}
 
--   Lab is due TONIGHT at 11:59PM
+-   Lab is due TONIGHT at 11:59PM ➞ submit PDF to Gradescope
 
 -   Come to office hours and/or post on Ed for help!
 
--   Office hours are tonight from **5:30-7:30PM** in **Old Chem 203**.
+-   Kenna's office hours are 11:00am - 1:00pm today on Zoom (find link on Canvas)
 
--   AEs need to be pushed by the **END OF CLASS (10:45AM)!!**
+-   Always double check your project (top right-hand corner of screen in your RStudio) & be sure you are in the correct project for the task at hand (AE in lecture, lab in lab / at home when working on assignments)
 
--   Make sure you are in the right repository.
+## Exam Intel {.scrollable .smaller}
+
+-   Midterm Date: Monday, 6/1 (confirmed)
+
+-   Exam will take place during **both** lecture & lab time slots (i.e., you will have from 9:30am - 12:15pm)
+
+-   I am **NOT** writing an exam I expect to take the full 2hr 45min timeframe; having the exam during both lecture & lab is meant to take some of the time pressure away from the exam & allow buffer time in case of any technical issues
+
+-   You are of course entitled to the full 2hr 45min if you need it!
+
+-   Format: written portion (mult. choice) & *live* coding / free response (think about this as a short lab assignment) on your laptop
+
+-   Once you are finished with the written portion, you will turn it in and clone an exam repo
+
+-   Cheatsheet (standard printer paper, both sides, can be hand-written/typed/combo, idc) allowed for both portions of the exam
+
+-   The coding portion of the exam is **open-assignment** in that you will be working in your containers, so you have access to all of your AEs & lab assignments by changing projects (of course, switching between projects and looking through these materials eats away at time, so I wouldn't be entirely reliant on this)
+
+-   The coding portion of the exam will be **closed-internet** (i.e., you cannot open any other tabs on your browser aside from GitHub & your container); myself, Kenna, and potentially one additional person will be proctoring and actively monitoring adherence to this policy (breaking this policy will result in a score of 0 for this portion of the exam)
+
+-   I will provide review materials for both portions ahead of time (likely by next Thursday) -- your labs are the best preparatory materials, so make sure you feel confident with all lab content & review your graded feedback!
+
+-   If you need accommodations and I have not received a letter, please get it to me by EOD today; make your appointment in the testing center!
+
+# Questions??
 
 ## Lab: Narrative {.smaller}
 
 -   ***Boxplots, histograms, density plots:***
 
-    -   Center: Give an idea of a 'typical value' (median, most common range, etc.);
+    -   Center: Give an idea of a 'typical value' (median or mean, most commonly; choose which you think is more appropriate for the data, or mention both!);
 
-    -   Spread: Does the data have a lot of variability?
-        Or just a little?
+    -   Spread: Does the data have a lot of variability ("wide, flat" distribution), or just a little ("narrow" distribution)?
+        What is the primary range of the data?
         (IQR, outliers)
 
-    -   Shape: Is there skew?
-        Which direction?
-        Is it unimodal or multimodal?
+    -   Shape: Is there skew, or is the distribution symmetric?
+        If the data are skewed, in which direction?
+        Is the distribution unimodal, bimodal, or multimodal?
+
+    -   Outliers: Are there any unsual data points (whether via visual or mathematical assessment (i.e., "dots" on a boxplot))
 
 ## Lab: Narrative {.smaller}
 
@@ -43,27 +71,28 @@ auto-stretch: false
 
     -   If there is a relationship, does it seem to be strong or weak?
 
-    -   Is the relationship linear or nonlinear?
+    -   Is the relationship linear or nonlinear (i.e., quadratic, exponential, logarithmic)?
 
 ## Lab: Advice {.smaller}
 
 -   ***Be Specific*** in your narrative.
-    Don't just say "the spread is small and the center is low".
-    What does that mean???
+    Don't just say "the spread is small and the center is low" What does that mean???
     Give numbers, units (if available), etc.
 
--   ***Be Specific*** in your plot labels.
+-   ***Be Specific*** in your plot labels
 
 -   Answer all parts of the question!!
     Statements like "Compare..." mean to do so in the written answer!
 
 -   Written answers should be text outside of code chunks, not comments
 
--   Make sure you can render to PDF early!!!
+-   Make sure you can render to PDF early & often :) This will help you identify / troubleshoot issues with your code that may not be apparent in isolation
 
-## Outline {.smaller}
+## Outline {.medium}
 
--   ***Last Time:*** Started learning about data transformation!
+-   ***Monday:*** Started learning about data transformation & intro to piping
+
+-   ***Yesterday:*** More (gg)plotting & describing distributions
 
 -   ***Today:***
 
@@ -71,7 +100,9 @@ auto-stretch: false
 
     -   More about the pipe
 
-    -   Transformation + plotting
+    -   Transformation + plotting combo
+
+# AE-04
 
 ```{r}
 #| label: slice
@@ -84,9 +115,27 @@ library(tidyverse)
 bechdel <- read_csv("data/bechdel.csv")
 ```
 
+## Quick Review: Data Viz {.smaller}
+
+After a while this is more art than science, but you can narrow down the options based on the *number* and *type* of variables:
+
+. . .
+
+| Variable combo | Options |
+|------------------------------------|------------------------------------|
+| 1 numerical | histogram, density, box plot |
+| 1 categorical | bar chart, ~~pie chart~~ |
+| 2 numerical | scatterplot |
+| numerical/categorical | side-by-side box or violin plots, stacked densities or histograms |
+| 2 categorical | stacked bar plot (today) |
+
+. . .
+
+For three or more variables, the human mind is limited, and you have to start getting creative (play with color, texture, etc).
+
 ## Quick Review: Row operations {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="70%"}
 -   `slice()`: chooses rows based on location\
 -   `filter()`: chooses rows based on column values\
@@ -103,11 +152,11 @@ bechdel <- read_csv("data/bechdel.csv")
 |  7  |  b  | yes |
 |  9  |  a  | yes |
 :::
-:::
+:::::
 
 ## Quick Review: Column operations {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="70%"}
 -   `select()`: changes whether or not a column is included\
 -   `rename()`: changes the name of columns\
@@ -123,11 +172,11 @@ bechdel <- read_csv("data/bechdel.csv")
 |  7  |  b  | yes |
 |  9  |  a  | yes |
 :::
-:::
+:::::
 
 ## Quick Review: Groups of rows {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="70%"}
 -   `summarize()`: collapses a group into a single row\
 -   `count()`: count unique values of one or more variables\
@@ -143,82 +192,357 @@ bechdel <- read_csv("data/bechdel.csv")
 |  7  |  b  | yes |
 |  9  |  a  | yes |
 :::
+:::::
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(usdata)
+```
+
+# Drilling down: <br>`group_by()`, <br> `summarize()`, <br> `count()`
+
+## What does `group_by()` do? {.scrollable}
+
+::: question
+What does `group_by()` do in the following pipeline?
 :::
 
-# AE-04
-
-## Recap: Group by, summarize, mutate {.smaller}
-
-What does group by do here?
-
 ```{r}
-#| label: pipe-plot-25
-bechdel |>
-  group_by(binary) |>
-  summarise(mean_roi = mean(roi, na.rm = TRUE), 
-            mean_budget = mean(budget_2013)) 
+gerrymander |>
+  count(flip18, gerry) |>
+  group_by(flip18) |>
+  mutate(prop = n / sum(n))
 ```
 
-## Recap: Group by, summarize, mutate {.smaller}
+## What does `group_by()` do? {.scrollable}
 
-What does group by do here?
+::: question
+What does `group_by()` do in the following pipeline?
+:::
 
 ```{r}
-#| label: pipe-plot-3
-bechdel |>
-  #group_by(binary) |>
-  summarise(mean_roi = mean(roi, na.rm = TRUE), 
-            mean_budget = mean(budget_2013)) 
+gerrymander |>
+  count(flip18, gerry) |>
+  #group_by(flip18) |>
+  mutate(prop = n / sum(n))
 ```
 
-## Recap: Group by, summarize, mutate {.smaller}
+## Let's simplify! {.scrollable}
 
-What if I change summarize to mutate?
+::: question
+What does `group_by()` do in the following pipeline?
+:::
 
 ```{r}
-#| label: pipe-plot-4
-bechdel |>
-  group_by(binary) |>
-  mutate(mean_roi = mean(roi, na.rm = TRUE), 
-            mean_budget = mean(budget_2013)) 
+gerrymander |>
+  group_by(state) |>
+  summarize(mean_trump16 = mean(trump16))
 ```
 
-## Recap: Group by, summarize, mutate {.smaller}
+## Let's simplify! {.scrollable}
 
-What if I change summarize to mutate?
+::: question
+What does `group_by()` do in the following pipeline?
+:::
 
 ```{r}
-#| label: pipe-plot-5
-bechdel |>
-  group_by(binary) |>
-  mutate(mean_roi = mean(roi, na.rm = TRUE), 
-            mean_budget = mean(budget_2013)) |>
-  select(title, binary, mean_roi, mean_budget)
+gerrymander |>
+  #group_by(state) |>
+  summarize(mean_trump16 = mean(trump16))
 ```
 
-## Recap: Group by, summarize, mutate {.smaller}
+## `group_by()` {.scrollable .medium}
 
-You can group by more than one variable!
+-   it converts a data frame to a grouped data frame, where subsequent operations are performed once per group
+
+-   `ungroup()` removes grouping
 
 ```{r}
-#| label: gb-multi
-bechdel |>
-  group_by(binary, year) |>
-  summarise(mean_roi = mean(roi, na.rm = TRUE), 
-            mean_budget = mean(budget_2013)) 
+gerrymander |>
+  group_by(state)
 ```
 
-## Recap: Group by, summarize, mutate {.smaller}
+## `group_by()` {.scrollable .medium}
 
-You can un group with `ungroup()`
+-   it converts a data frame to a grouped data frame, where subsequent operations are performed once per group
+
+-   `ungroup()` removes grouping
 
 ```{r}
-#| label: gb-multi-ug
-bechdel |>
-  group_by(binary, year) |>
-  summarise(mean_roi = mean(roi, na.rm = TRUE), 
-            mean_budget = mean(budget_2013)) |>
+gerrymander |>
+  group_by(state) |>
   ungroup()
+```
+
+## `group_by() |> summarize()` {.smaller}
+
+A common pipeline is `group_by()` and then `summarize()` to **calculate** summary statistics for each group:
+
+```{r}
+gerrymander |>
+  group_by(state) |>
+  summarize(
+    mean_trump16 = mean(trump16),
+    median_trump16 = median(trump16)
+  )
+```
+
+## `group_by() |> summarize()` {.smaller}
+
+This pipeline can also be used to **count** number of observations for each group:
+
+```{r}
+gerrymander |>
+  group_by(state) |>
+  summarize(n = n())
+```
+
+## `summarize()` {.smaller}
+
+``` r
+... |>
+  summarize(
+    name_of_summary_statistic = summary_function(variable)
+  )
+```
+
+. . .
+
+-   `name_of_summary_statistic`: Anything you want to call it!
+    -   Recommendation: Keep it short and evocative
+-   `summary_function()`:
+    -   `n()`: number of observations
+    -   `mean()`: mean
+    -   `median()`: median
+    -   ...
+
+## `summarize()` {.smaller}
+
+Recall from yesterday...
+
+```{r}
+#| label: sum-stats
+
+gerrymander |>
+  summarize(
+    mean_trump_perc = mean(trump16),
+    median_trump_perc = median(trump16),
+    sd = sd(trump16),
+    iqr = IQR(trump16),
+    q25 = quantile(trump16, 0.25),
+    q75 = quantile(trump16, 0.75)
+  )
+
+```
+
+## `summarize()` {.smaller}
+
+Or, more concisely
+
+```{r}
+#| label: sum-stats-faster
+
+summary(gerrymander$trump16)
+
+```
+
+## `summarize()` {.smaller}
+
+Getting to the point...
+
+```{r}
+#| eval: false
+gerrymander |>
+  summarize(
+    gimme_my_mean = mean(trump16),
+    gimme_my_median = median(trump16)
+  )
+```
+
+-   `summarize()` creates a *new* data frame that stores the summaries;
+-   You can compute as many summaries as you want, and whichever you want, in a single call to `summarize()`;
+-   To the left of the equal signs are your choice of *column names* in the new data frame you are creating. You can type whatever you want here (within reason);
+-   To the right of the equal signs is `R` code that computes the summaries. You must use the correct command names (case sensitive): `mean`, `median`, `quantile`, `sd`, `var`, etc;
+-   If you want to learn what these do, read the documentation (eg `?quantile`).
+
+## Spot the difference {.smaller}
+
+::: question
+What's the difference between the following two pipelines?
+:::
+
+::::: columns
+::: column
+```{r}
+gerrymander |>
+  group_by(state) |>
+  summarize(n = n())
+```
+:::
+
+::: column
+```{r}
+gerrymander |>
+  count(state)
+```
+:::
+:::::
+
+## Spot the difference {.smaller}
+
+![](img/05/pam_meme.jpg){fig-align="center"}
+
+## `count()`
+
+::::: columns
+::: {.column width="40%"}
+``` r
+... |>
+  count(variable)
+```
+:::
+
+::: {.column width="60%"}
+``` r
+... |>
+  count(variable1, variable2)
+```
+:::
+:::::
+
+-   Count the number of observations in each level of variable(s); if you supply more than 1 variable, count the number of observations in each **unique combination** of levels across all variables
+
+-   Place the counts in a variable called `n`; you can access this variable in downstream code
+
+## `count()` and `sort` {.scrollable}
+
+::: question
+What does the following pipeline do?
+Rewrite it with `count()` instead.
+:::
+
+```{r}
+gerrymander |>
+  group_by(state) |>
+  summarize(n = n()) |>
+  arrange(desc(n))
+```
+
+## `count()` and `sort` {.scrollable}
+
+::: question
+What does the following pipeline do?
+Rewrite it with `count()` instead.
+:::
+
+```{r}
+gerrymander |>
+  count(state) |>
+  arrange(desc(n))
+```
+
+## `count()` and `sort` {.scrollable}
+
+::: question
+What does the following pipeline do?
+Rewrite it with `count()` instead.
+:::
+
+```{r}
+gerrymander |>
+  count(state, sort = TRUE)
+```
+
+# `mutate()`
+
+## Flip the question
+
+::: callout-note
+From AE-04: Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?
+:::
+
+vs.
+
+::: callout-note
+Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?
+:::
+
+## Flipping vs. gerrymandering prevalence {.smaller}
+
+::: {.question .xsmall}
+The following code should produce a visualization that answers the question "Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?" However, it produces a `warning` and an unexpected plot.
+What's going on?
+:::
+
+::::: columns
+::: column
+```{r}
+#| label: fill-warning
+#| warning: true
+#| fig-show: hide
+ggplot(
+  gerrymander, 
+  aes(x = gerry, fill = flip18)
+  ) +
+  geom_bar(position = "fill")
+```
+:::
+
+::: column
+```{r}
+#| ref.label: fill-warning
+#| warning: false
+#| echo: false
+```
+:::
+:::::
+
+## Another glimpse at `gerrymander` {.smaller}
+
+```{r}
+glimpse(gerrymander)
+```
+
+## `mutate()`
+
+-   We want to use `flip18` as a categorical variable
+
+-   But it's stored as a numeric
+
+-   So we need to change its type first, before we can use it as a categorical variable (more on this tomorrow!)
+
+-   The `mutate()` function transforms (*mutates*) a data frame by creating a new column or updating an existing one
+
+In this case, we want to use it to update an existing column, `flip18`.
+
+## `mutate()` in action {.scrollable .small}
+
+```{r}
+gerrymander |>
+  mutate(flip18 = as_factor(flip18))
+```
+
+## `mutate()` in action {.scrollable .small}
+
+```{r}
+gerrymander |>
+  mutate(flip18 = as_factor(flip18)) |>
+  relocate(flip18) ## make flip18 the first column in gerrymander
+```
+
+## Revisit the plot {.scrollable .small}
+
+::: question
+"Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?"
+:::
+
+```{r}
+gerrymander |>
+  mutate(flip18 = as_factor(flip18)) |>
+  ggplot(aes(x = gerry, fill = flip18)) +
+  geom_bar(position = "fill")
 ```
 
 ## More about the pipe {.smaller}
@@ -250,7 +574,7 @@ sum(1, 2)
 
 ```{r}
 #| label: pipe-plot
-ggplot(bechdel, aes(x = budget_2013)) +
+ggplot(gerrymander, aes(x = trump16)) +
   geom_boxplot()
 ```
 
@@ -258,45 +582,58 @@ ggplot(bechdel, aes(x = budget_2013)) +
 
 ```{r}
 #| label: pipe-plot-2s
-bechdel |>
-  ggplot(aes(x = budget_2013)) +
+gerrymander |>
+  ggplot(aes(x = trump16)) +
   geom_boxplot()
 ```
 
-## Why is this useful?
-
--   We can do data transformation immediately followed by a plot!
-
--   Normally, even if we are just plotting, we use the pipe with ggplot().
-
 ## Plot + data transform {.smaller}
+
+We can do data transformation immediately followed by a plot!
 
 ```{r}
 #| label: pipe-plot-7
 
-bechdel
+gerrymander
 ```
 
 ## Plot + data transform {.smaller}
+
+We can do data transformation immediately followed by a plot!
 
 ```{r}
 #| label: pipe-plot-8
 
-bechdel |>
-  mutate(budget_in_millions = budget_2013/1000000)
+gerrymander |>
+  mutate(trump16_prop = trump16/100)
 ```
 
 ## Plot + data transform {.smaller}
 
+We can do data transformation immediately followed by a plot!
+
 ```{r}
 #| label: pipe-plot-9
 
-bechdel |>
-  mutate(budget_in_millions = budget_2013/1000000) |>
-  ggplot(aes(x = budget_in_millions))
+gerrymander |>
+  mutate(trump16_prop = trump16/100) |>
+  ggplot(aes(x = trump16_prop))
 ```
 
-## Exploratory Data Analysis
+## Plot + data transform {.smaller}
+
+We can do data transformation immediately followed by a plot!
+
+```{r}
+#| label: pipe-plot-10
+
+gerrymander |>
+  mutate(trump16_prop = trump16/100) |>
+  ggplot(aes(x = trump16_prop)) +
+  geom_boxplot()
+```
+
+## Exploratory Data Analysis {.smaller}
 
 What is exploratory data analysis (EDA)??
 
@@ -304,11 +641,11 @@ What is exploratory data analysis (EDA)??
 
 -   Making plots and computing summary statistics (proportions, means, IQR, etc.) to help *explore* the data
 
-# AE 05 {background-image="images/spirit.png" background-size="cover" background-position="center" background-repeat="no-repeat" background-opacity="0.7" style="margin-top:-16vh;"}
+-   Generally, EDA precedes some sort of *more formal* statistical analysis (i.e., hypothesis testing, modeling, etc.); compare your findings from statistical analyses to key takeaways from EDA (do your findings agree? did you discern something that wasn't visually evident (perhaps obscured by other factors not visualized)?)
 
-::: {style="position:absolute; bottom:15.9em; right:0.01em; font-size:0.4em; color:rgba(255,255,255,0.8);"}
-<a href="https://your.source.link" style="color:inherit; text-decoration:underline;"> Image source </a>
-:::
+-   You **cannot** make any sort of causal claim / statement from EDA alone (i.e., don't say something like, "from this scatterploy, we see that some change in x **causes** some change in y)
+
+-   You **can** observe relationships & make hypotheses! 
 
 ## Assignment {.smaller}
 
@@ -324,9 +661,9 @@ df
 
 ## Assignment {.smaller}
 
-::: columns
+::::: columns
 ::: {.column .fragment width="50%"}
-> **Do something and show me**
+> **Do something and print to screen**
 
 ```{r}
 df |>
@@ -344,11 +681,11 @@ df <- df |>
 df
 ```
 :::
-:::
+:::::
 
 ## Assignment {.smaller}
 
-::: columns
+::::: columns
 ::: {.column .fragment width="50%"}
 > **Do something, save result, overwriting original**
 
@@ -380,11 +717,11 @@ df_new <- df |>
 df_new
 ```
 :::
-:::
+:::::
 
 ## Assignment {.smaller}
 
-::: columns
+::::: columns
 ::: {.column .fragment width="50%"}
 > **Do something, save result, overwriting original *when you shouldn't***
 
@@ -403,7 +740,7 @@ df
 :::
 
 ::: {.column .fragment width="50%"}
-> **Do something, save result, *not* overwriting original *when you shouldn't***
+> **Do something, save result, overwriting original *when you shouldn't***
 
 ```{r}
 #| code-line-numbers: "5-8"
@@ -412,17 +749,18 @@ df <- tibble(
   x = c(1, 2, 3, 4, 5), 
   y = c("a", "a", "b", "c", "c")
 )
-df_summary <- df |>
-  group_by(y) |>
-  summarize(mean_x = mean(x))
-df_summary
+df <- df |>
+  ggplot(aes(x = x)) +
+  geom_boxplot()
+class(df)
+typeof(df)
 ```
 :::
-:::
+:::::
 
 ## Assignment {.smaller}
 
-::: columns
+::::: columns
 ::: {.column .fragment width="50%"}
 > **Do something, save result, overwriting original**\
 > ***data frame***
@@ -456,4 +794,6 @@ df <- df |>
 df
 ```
 :::
-:::
+:::::
+
+# AE-05
