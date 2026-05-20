@@ -879,401 +879,695 @@
     "text": "How will we use Quarto?\n\nEvery application exercise, lab, project, etc. is an Quarto document\nYou’ll always have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#announcementsreminders",
-    "href": "slides/05-data-transform-2-slides.html#announcementsreminders",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#announcementsreminders",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#announcementsreminders",
+    "title": "Exploratory Data Analysis II",
     "section": "Announcements/Reminders",
-    "text": "Announcements/Reminders\n\nLab is due TONIGHT at 11:59PM\nCome to office hours and/or post on Ed for help!\nOffice hours are tonight from 5:30-7:30PM in Old Chem 203.\nAEs need to be pushed by the END OF CLASS (10:45AM)!!\nMake sure you are in the right repository."
+    "text": "Announcements/Reminders\n\nLab is due TONIGHT at 11:59PM ➞ submit PDF to Gradescope\nCome to office hours and/or post on Ed for help!\nKenna’s office hours are 11:00am - 1:00pm today on Zoom (find link on Canvas)\nAlways double check your project (top right-hand corner of screen in your RStudio) & be sure you are in the correct project for the task at hand (AE in lecture, lab in lab / at home when working on assignments)"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#lab-narrative",
-    "href": "slides/05-data-transform-2-slides.html#lab-narrative",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#exam-intel",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#exam-intel",
+    "title": "Exploratory Data Analysis II",
+    "section": "Exam Intel",
+    "text": "Exam Intel\n\nMidterm Date: Monday, 6/1 (confirmed)\nExam will take place during both lecture & lab time slots (i.e., you will have from 9:30am - 12:15pm)\nI am NOT writing an exam I expect to take the full 2hr 45min timeframe; having the exam during both lecture & lab is meant to take some of the time pressure away from the exam & allow buffer time in case of any technical issues\nYou are of course entitled to the full 2hr 45min if you need it!\nFormat: written portion (mult. choice) & live coding / free response (think about this as a short lab assignment) on your laptop\nOnce you are finished with the written portion, you will turn it in and clone an exam repo\nCheatsheet (standard printer paper, both sides, can be hand-written/typed/combo, idc) allowed for both portions of the exam\nThe coding portion of the exam is open-assignment in that you will be working in your containers, so you have access to all of your AEs & lab assignments by changing projects (of course, switching between projects and looking through these materials eats away at time, so I wouldn’t be entirely reliant on this)\nThe coding portion of the exam will be closed-internet (i.e., you cannot open any other tabs on your browser aside from GitHub & your container); myself, Kenna, and potentially one additional person will be proctoring and actively monitoring adherence to this policy (breaking this policy will result in a score of 0 for this portion of the exam)\nI will provide review materials for both portions ahead of time (likely by next Thursday) – your labs are the best preparatory materials, so make sure you feel confident with all lab content & review your graded feedback!\nIf you need accommodations and I have not received a letter, please get it to me by EOD today; make your appointment in the testing center!"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#lab-narrative",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#lab-narrative",
+    "title": "Exploratory Data Analysis II",
     "section": "Lab: Narrative",
-    "text": "Lab: Narrative\n\n\nBoxplots, histograms, density plots:\n\nCenter: Give an idea of a ‘typical value’ (median, most common range, etc.);\nSpread: Does the data have a lot of variability? Or just a little? (IQR, outliers)\nShape: Is there skew? Which direction? Is it unimodal or multimodal?"
+    "text": "Lab: Narrative\n\n\nBoxplots, histograms, density plots:\n\nCenter: Give an idea of a ‘typical value’ (median or mean, most commonly; choose which you think is more appropriate for the data, or mention both!);\nSpread: Does the data have a lot of variability (“wide, flat” distribution), or just a little (“narrow” distribution)? What is the primary range of the data? (IQR, outliers)\nShape: Is there skew, or is the distribution symmetric? If the data are skewed, in which direction? Is the distribution unimodal, bimodal, or multimodal?\nOutliers: Are there any unsual data points (whether via visual or mathematical assessment (i.e., “dots” on a boxplot))"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#lab-narrative-1",
-    "href": "slides/05-data-transform-2-slides.html#lab-narrative-1",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#lab-narrative-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#lab-narrative-1",
+    "title": "Exploratory Data Analysis II",
     "section": "Lab: Narrative",
-    "text": "Lab: Narrative\n\n\nScatter Plots\n\nIs there a relationship between the two variables? Is it positive or negative?\nIf there is a relationship, does it seem to be strong or weak?\nIs the relationship linear or nonlinear?"
+    "text": "Lab: Narrative\n\n\nScatter Plots\n\nIs there a relationship between the two variables? Is it positive or negative?\nIf there is a relationship, does it seem to be strong or weak?\nIs the relationship linear or nonlinear (i.e., quadratic, exponential, logarithmic)?"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#lab-advice",
-    "href": "slides/05-data-transform-2-slides.html#lab-advice",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#lab-advice",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#lab-advice",
+    "title": "Exploratory Data Analysis II",
     "section": "Lab: Advice",
-    "text": "Lab: Advice\n\nBe Specific in your narrative. Don’t just say “the spread is small and the center is low”. What does that mean??? Give numbers, units (if available), etc.\nBe Specific in your plot labels.\nAnswer all parts of the question!! Statements like “Compare…” mean to do so in the written answer!\nWritten answers should be text outside of code chunks, not comments\nMake sure you can render to PDF early!!!"
+    "text": "Lab: Advice\n\nBe Specific in your narrative. Don’t just say “the spread is small and the center is low” What does that mean??? Give numbers, units (if available), etc.\nBe Specific in your plot labels\nAnswer all parts of the question!! Statements like “Compare…” mean to do so in the written answer!\nWritten answers should be text outside of code chunks, not comments\nMake sure you can render to PDF early & often :) This will help you identify / troubleshoot issues with your code that may not be apparent in isolation"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#outline",
-    "href": "slides/05-data-transform-2-slides.html#outline",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#outline",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#outline",
+    "title": "Exploratory Data Analysis II",
     "section": "Outline",
-    "text": "Outline\n\nLast Time: Started learning about data transformation!\n\nToday:\n\nReview from last time + finish AE04\nMore about the pipe\nTransformation + plotting"
+    "text": "Outline\n\nMonday: Started learning about data transformation & intro to piping\nYesterday: More (gg)plotting & describing distributions\n\nToday:\n\nReview from last time + finish AE04\nMore about the pipe\nTransformation + plotting combo"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#quick-review-row-operations",
-    "href": "slides/05-data-transform-2-slides.html#quick-review-row-operations",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#quick-review-data-viz",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#quick-review-data-viz",
+    "title": "Exploratory Data Analysis II",
+    "section": "Quick Review: Data Viz",
+    "text": "Quick Review: Data Viz\nAfter a while this is more art than science, but you can narrow down the options based on the number and type of variables:\n\n\n\n\n\n\n\nVariable combo\nOptions\n\n\n\n1 numerical\nhistogram, density, box plot\n\n\n1 categorical\nbar chart, pie chart\n\n\n\n2 numerical\nscatterplot\n\n\nnumerical/categorical\nside-by-side box or violin plots, stacked densities or histograms\n\n\n2 categorical\nstacked bar plot (today)\n\n\n\n\n\nFor three or more variables, the human mind is limited, and you have to start getting creative (play with color, texture, etc)."
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#quick-review-row-operations",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#quick-review-row-operations",
+    "title": "Exploratory Data Analysis II",
     "section": "Quick Review: Row operations",
     "text": "Quick Review: Row operations\n\n\n\n\nslice(): chooses rows based on location\n\n\nfilter(): chooses rows based on column values\n\n\narrange(): changes the order of the rows\n\n\nsample_n(): take a random subset of the rows\n\n\n\n\n\nX1\nX2\nX3\n\n\n\n1\na\nyes\n\n\n3\nb\nno\n\n\n5\na\nyes\n\n\n7\nb\nyes\n\n\n9\na\nyes"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#quick-review-column-operations",
-    "href": "slides/05-data-transform-2-slides.html#quick-review-column-operations",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#quick-review-column-operations",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#quick-review-column-operations",
+    "title": "Exploratory Data Analysis II",
     "section": "Quick Review: Column operations",
     "text": "Quick Review: Column operations\n\n\n\n\nselect(): changes whether or not a column is included\n\n\nrename(): changes the name of columns\n\n\nmutate(): changes the values of columns and creates new columns\n\n\n\n\n\nX1\nX2\nX3\n\n\n\n1\na\nyes\n\n\n3\nb\nno\n\n\n5\na\nyes\n\n\n7\nb\nyes\n\n\n9\na\nyes"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#quick-review-groups-of-rows",
-    "href": "slides/05-data-transform-2-slides.html#quick-review-groups-of-rows",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#quick-review-groups-of-rows",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#quick-review-groups-of-rows",
+    "title": "Exploratory Data Analysis II",
     "section": "Quick Review: Groups of rows",
     "text": "Quick Review: Groups of rows\n\n\n\n\nsummarize(): collapses a group into a single row\n\n\ncount(): count unique values of one or more variables\n\n\ngroup_by(): perform calculations separately for each value of a variable\n\n\n\n\n\nX1\nX2\nX3\n\n\n\n1\na\nyes\n\n\n3\nb\nno\n\n\n5\na\nyes\n\n\n7\nb\nyes\n\n\n9\na\nyes"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#recap-group-by-summarize-mutate",
-    "href": "slides/05-data-transform-2-slides.html#recap-group-by-summarize-mutate",
-    "title": "More Data Transformation",
-    "section": "Recap: Group by, summarize, mutate",
-    "text": "Recap: Group by, summarize, mutate\nWhat does group by do here?\n\nbechdel |&gt;\n  group_by(binary) |&gt;\n  summarise(mean_roi = mean(roi, na.rm = TRUE), \n            mean_budget = mean(budget_2013)) \n\n# A tibble: 2 × 3\n  binary mean_roi mean_budget\n  &lt;chr&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 FAIL       8.36   65877024.\n2 PASS       7.99   46913086."
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#what-does-group_by-do",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#what-does-group_by-do",
+    "title": "Exploratory Data Analysis II",
+    "section": "What does group_by() do?",
+    "text": "What does group_by() do?\n\nWhat does group_by() do in the following pipeline?\n\n\ngerrymander |&gt;\n  count(flip18, gerry) |&gt;\n  group_by(flip18) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 8 × 4\n# Groups:   flip18 [3]\n  flip18 gerry     n  prop\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1     -1 low       2 0.4  \n2     -1 mid       3 0.6  \n3      0 low      52 0.133\n4      0 mid     242 0.617\n5      0 high     98 0.25 \n6      1 low       8 0.211\n7      1 mid      25 0.658\n8      1 high      5 0.132"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#recap-group-by-summarize-mutate-1",
-    "href": "slides/05-data-transform-2-slides.html#recap-group-by-summarize-mutate-1",
-    "title": "More Data Transformation",
-    "section": "Recap: Group by, summarize, mutate",
-    "text": "Recap: Group by, summarize, mutate\nWhat does group by do here?\n\nbechdel |&gt;\n  #group_by(binary) |&gt;\n  summarise(mean_roi = mean(roi, na.rm = TRUE), \n            mean_budget = mean(budget_2013)) \n\n# A tibble: 1 × 2\n  mean_roi mean_budget\n     &lt;dbl&gt;       &lt;dbl&gt;\n1     8.19   57035015."
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#what-does-group_by-do-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#what-does-group_by-do-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "What does group_by() do?",
+    "text": "What does group_by() do?\n\nWhat does group_by() do in the following pipeline?\n\n\ngerrymander |&gt;\n  count(flip18, gerry) |&gt;\n  #group_by(flip18) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 8 × 4\n  flip18 gerry     n    prop\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt;   &lt;dbl&gt;\n1     -1 low       2 0.00460\n2     -1 mid       3 0.00690\n3      0 low      52 0.120  \n4      0 mid     242 0.556  \n5      0 high     98 0.225  \n6      1 low       8 0.0184 \n7      1 mid      25 0.0575 \n8      1 high      5 0.0115"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#recap-group-by-summarize-mutate-2",
-    "href": "slides/05-data-transform-2-slides.html#recap-group-by-summarize-mutate-2",
-    "title": "More Data Transformation",
-    "section": "Recap: Group by, summarize, mutate",
-    "text": "Recap: Group by, summarize, mutate\nWhat if I change summarize to mutate?\n\nbechdel |&gt;\n  group_by(binary) |&gt;\n  mutate(mean_roi = mean(roi, na.rm = TRUE), \n            mean_budget = mean(budget_2013)) \n\n# A tibble: 1,615 × 9\n# Groups:   binary [2]\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n# ℹ 2 more variables: mean_roi &lt;dbl&gt;, mean_budget &lt;dbl&gt;"
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#lets-simplify",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#lets-simplify",
+    "title": "Exploratory Data Analysis II",
+    "section": "Let’s simplify!",
+    "text": "Let’s simplify!\n\nWhat does group_by() do in the following pipeline?\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(mean_trump16 = mean(trump16))\n\n# A tibble: 50 × 2\n   state mean_trump16\n   &lt;chr&gt;        &lt;dbl&gt;\n 1 AK            52.8\n 2 AL            62.6\n 3 AR            60.9\n 4 AZ            46.9\n 5 CA            31.7\n 6 CO            43.6\n 7 CT            41.0\n 8 DE            41.9\n 9 FL            47.9\n10 GA            51.3\n# ℹ 40 more rows"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#recap-group-by-summarize-mutate-3",
-    "href": "slides/05-data-transform-2-slides.html#recap-group-by-summarize-mutate-3",
-    "title": "More Data Transformation",
-    "section": "Recap: Group by, summarize, mutate",
-    "text": "Recap: Group by, summarize, mutate\nWhat if I change summarize to mutate?\n\nbechdel |&gt;\n  group_by(binary) |&gt;\n  mutate(mean_roi = mean(roi, na.rm = TRUE), \n            mean_budget = mean(budget_2013)) |&gt;\n  select(title, binary, mean_roi, mean_budget)\n\n# A tibble: 1,615 × 4\n# Groups:   binary [2]\n   title                  binary mean_roi mean_budget\n   &lt;chr&gt;                  &lt;chr&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n 1 21 & Over              FAIL       8.36   65877024.\n 2 Dredd 3D               PASS       7.99   46913086.\n 3 12 Years a Slave       FAIL       8.36   65877024.\n 4 2 Guns                 FAIL       8.36   65877024.\n 5 42                     FAIL       8.36   65877024.\n 6 47 Ronin               FAIL       8.36   65877024.\n 7 A Good Day to Die Hard FAIL       8.36   65877024.\n 8 About Time             PASS       7.99   46913086.\n 9 Admission              PASS       7.99   46913086.\n10 After Earth            FAIL       8.36   65877024.\n# ℹ 1,605 more rows"
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#lets-simplify-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#lets-simplify-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "Let’s simplify!",
+    "text": "Let’s simplify!\n\nWhat does group_by() do in the following pipeline?\n\n\ngerrymander |&gt;\n  #group_by(state) |&gt;\n  summarize(mean_trump16 = mean(trump16))\n\n# A tibble: 1 × 1\n  mean_trump16\n         &lt;dbl&gt;\n1         45.9"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#recap-group-by-summarize-mutate-4",
-    "href": "slides/05-data-transform-2-slides.html#recap-group-by-summarize-mutate-4",
-    "title": "More Data Transformation",
-    "section": "Recap: Group by, summarize, mutate",
-    "text": "Recap: Group by, summarize, mutate\nYou can group by more than one variable!\n\nbechdel |&gt;\n  group_by(binary, year) |&gt;\n  summarise(mean_roi = mean(roi, na.rm = TRUE), \n            mean_budget = mean(budget_2013)) \n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by binary and year.\nℹ Output is grouped by binary.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(binary, year))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n# A tibble: 48 × 4\n# Groups:   binary [2]\n   binary  year mean_roi mean_budget\n   &lt;chr&gt;  &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;\n 1 FAIL    1990    13.1    73101991.\n 2 FAIL    1991     6.71   74299353 \n 3 FAIL    1992    46.3    38883983.\n 4 FAIL    1993     6.36   49099374.\n 5 FAIL    1994    23.7    57812022.\n 6 FAIL    1995     5.69   68251510.\n 7 FAIL    1996     3.82   68600475.\n 8 FAIL    1997    16.5    73257554.\n 9 FAIL    1998     6.95   53083540.\n10 FAIL    1999     5.12   72804781.\n# ℹ 38 more rows"
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#group_by",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#group_by",
+    "title": "Exploratory Data Analysis II",
+    "section": "group_by()",
+    "text": "group_by()\n\nit converts a data frame to a grouped data frame, where subsequent operations are performed once per group\nungroup() removes grouping\n\n\ngerrymander |&gt;\n  group_by(state)\n\n# A tibble: 435 × 12\n# Groups:   state [50]\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#recap-group-by-summarize-mutate-5",
-    "href": "slides/05-data-transform-2-slides.html#recap-group-by-summarize-mutate-5",
-    "title": "More Data Transformation",
-    "section": "Recap: Group by, summarize, mutate",
-    "text": "Recap: Group by, summarize, mutate\nYou can un group with ungroup()\n\nbechdel |&gt;\n  group_by(binary, year) |&gt;\n  summarise(mean_roi = mean(roi, na.rm = TRUE), \n            mean_budget = mean(budget_2013)) |&gt;\n  ungroup()\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by binary and year.\nℹ Output is grouped by binary.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(binary, year))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n# A tibble: 48 × 4\n   binary  year mean_roi mean_budget\n   &lt;chr&gt;  &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;\n 1 FAIL    1990    13.1    73101991.\n 2 FAIL    1991     6.71   74299353 \n 3 FAIL    1992    46.3    38883983.\n 4 FAIL    1993     6.36   49099374.\n 5 FAIL    1994    23.7    57812022.\n 6 FAIL    1995     5.69   68251510.\n 7 FAIL    1996     3.82   68600475.\n 8 FAIL    1997    16.5    73257554.\n 9 FAIL    1998     6.95   53083540.\n10 FAIL    1999     5.12   72804781.\n# ℹ 38 more rows"
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#group_by-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#group_by-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "group_by()",
+    "text": "group_by()\n\nit converts a data frame to a grouped data frame, where subsequent operations are performed once per group\nungroup() removes grouping\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  ungroup()\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#more-about-the-pipe",
-    "href": "slides/05-data-transform-2-slides.html#more-about-the-pipe",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#group_by-summarize",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#group_by-summarize",
+    "title": "Exploratory Data Analysis II",
+    "section": "group_by() |> summarize()",
+    "text": "group_by() |&gt; summarize()\nA common pipeline is group_by() and then summarize() to calculate summary statistics for each group:\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(\n    mean_trump16 = mean(trump16),\n    median_trump16 = median(trump16)\n  )\n\n# A tibble: 50 × 3\n   state mean_trump16 median_trump16\n   &lt;chr&gt;        &lt;dbl&gt;          &lt;dbl&gt;\n 1 AK            52.8           52.8\n 2 AL            62.6           64.9\n 3 AR            60.9           63.0\n 4 AZ            46.9           47.7\n 5 CA            31.7           28.4\n 6 CO            43.6           41.3\n 7 CT            41.0           40.4\n 8 DE            41.9           41.9\n 9 FL            47.9           49.6\n10 GA            51.3           56.6\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#group_by-summarize-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#group_by-summarize-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "group_by() |> summarize()",
+    "text": "group_by() |&gt; summarize()\nThis pipeline can also be used to count number of observations for each group:\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n())\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 AK        1\n 2 AL        7\n 3 AR        4\n 4 AZ        9\n 5 CA       53\n 6 CO        7\n 7 CT        5\n 8 DE        1\n 9 FL       27\n10 GA       14\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#summarize",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#summarize",
+    "title": "Exploratory Data Analysis II",
+    "section": "summarize()",
+    "text": "summarize()\n... |&gt;\n  summarize(\n    name_of_summary_statistic = summary_function(variable)\n  )\n\n\n\nname_of_summary_statistic: Anything you want to call it!\n\nRecommendation: Keep it short and evocative\n\n\n\nsummary_function():\n\n\nn(): number of observations\n\nmean(): mean\n\nmedian(): median\n…"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#summarize-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#summarize-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "summarize()",
+    "text": "summarize()\nRecall from yesterday…\n\ngerrymander |&gt;\n  summarize(\n    mean_trump_perc = mean(trump16),\n    median_trump_perc = median(trump16),\n    sd = sd(trump16),\n    iqr = IQR(trump16),\n    q25 = quantile(trump16, 0.25),\n    q75 = quantile(trump16, 0.75)\n  )\n\n# A tibble: 1 × 6\n  mean_trump_perc median_trump_perc    sd   iqr   q25   q75\n            &lt;dbl&gt;             &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1            45.9              48.7  16.8  23.3  34.8  58.1"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#summarize-2",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#summarize-2",
+    "title": "Exploratory Data Analysis II",
+    "section": "summarize()",
+    "text": "summarize()\nOr, more concisely\n\nsummary(gerrymander$trump16)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   4.90   34.85   48.70   45.86   58.10   80.40"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#summarize-3",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#summarize-3",
+    "title": "Exploratory Data Analysis II",
+    "section": "summarize()",
+    "text": "summarize()\nGetting to the point…\n\ngerrymander |&gt;\n  summarize(\n    gimme_my_mean = mean(trump16),\n    gimme_my_median = median(trump16)\n  )\n\n\n\nsummarize() creates a new data frame that stores the summaries;\nYou can compute as many summaries as you want, and whichever you want, in a single call to summarize();\nTo the left of the equal signs are your choice of column names in the new data frame you are creating. You can type whatever you want here (within reason);\nTo the right of the equal signs is R code that computes the summaries. You must use the correct command names (case sensitive): mean, median, quantile, sd, var, etc;\nIf you want to learn what these do, read the documentation (eg ?quantile)."
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#spot-the-difference",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#spot-the-difference",
+    "title": "Exploratory Data Analysis II",
+    "section": "Spot the difference",
+    "text": "Spot the difference\n\nWhat’s the difference between the following two pipelines?\n\n\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n())\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 AK        1\n 2 AL        7\n 3 AR        4\n 4 AZ        9\n 5 CA       53\n 6 CO        7\n 7 CT        5\n 8 DE        1\n 9 FL       27\n10 GA       14\n# ℹ 40 more rows\n\n\n\n\ngerrymander |&gt;\n  count(state)\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 AK        1\n 2 AL        7\n 3 AR        4\n 4 AZ        9\n 5 CA       53\n 6 CO        7\n 7 CT        5\n 8 DE        1\n 9 FL       27\n10 GA       14\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#spot-the-difference-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#spot-the-difference-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "Spot the difference",
+    "text": "Spot the difference"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#count",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#count",
+    "title": "Exploratory Data Analysis II",
+    "section": "count()",
+    "text": "count()\n\n\n... |&gt;\n  count(variable)\n\n... |&gt;\n  count(variable1, variable2)\n\n\nCount the number of observations in each level of variable(s); if you supply more than 1 variable, count the number of observations in each unique combination of levels across all variables\nPlace the counts in a variable called n; you can access this variable in downstream code"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#count-and-sort",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#count-and-sort",
+    "title": "Exploratory Data Analysis II",
+    "section": "\ncount() and sort\n",
+    "text": "count() and sort\n\n\nWhat does the following pipeline do? Rewrite it with count() instead.\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n()) |&gt;\n  arrange(desc(n))\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#count-and-sort-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#count-and-sort-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "\ncount() and sort\n",
+    "text": "count() and sort\n\n\nWhat does the following pipeline do? Rewrite it with count() instead.\n\n\ngerrymander |&gt;\n  count(state) |&gt;\n  arrange(desc(n))\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#count-and-sort-2",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#count-and-sort-2",
+    "title": "Exploratory Data Analysis II",
+    "section": "\ncount() and sort\n",
+    "text": "count() and sort\n\n\nWhat does the following pipeline do? Rewrite it with count() instead.\n\n\ngerrymander |&gt;\n  count(state, sort = TRUE)\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#flip-the-question",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#flip-the-question",
+    "title": "Exploratory Data Analysis II",
+    "section": "Flip the question",
+    "text": "Flip the question\n\n\n\n\n\n\nNote\n\n\nFrom AE-04: Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?\n\n\n\nvs.\n\n\n\n\n\n\nNote\n\n\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#flipping-vs.-gerrymandering-prevalence",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#flipping-vs.-gerrymandering-prevalence",
+    "title": "Exploratory Data Analysis II",
+    "section": "Flipping vs. gerrymandering prevalence",
+    "text": "Flipping vs. gerrymandering prevalence\n\nThe following code should produce a visualization that answers the question “Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?” However, it produces a warning and an unexpected plot. What’s going on?\n\n\n\n\nggplot(\n  gerrymander, \n  aes(x = gerry, fill = flip18)\n  ) +\n  geom_bar(position = \"fill\")\n\nWarning: The following aesthetics were dropped during statistical\ntransformation: fill.\nℹ This can happen when ggplot fails to infer the correct grouping\n  structure in the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a\n  numerical variable into a factor?"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#another-glimpse-at-gerrymander",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#another-glimpse-at-gerrymander",
+    "title": "Exploratory Data Analysis II",
+    "section": "Another glimpse at gerrymander\n",
+    "text": "Another glimpse at gerrymander\n\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 3…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 6…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#mutate-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#mutate-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "mutate()",
+    "text": "mutate()\n\nWe want to use flip18 as a categorical variable\nBut it’s stored as a numeric\nSo we need to change its type first, before we can use it as a categorical variable (more on this tomorrow!)\nThe mutate() function transforms (mutates) a data frame by creating a new column or updating an existing one\n\nIn this case, we want to use it to update an existing column, flip18."
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#mutate-in-action",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#mutate-in-action",
+    "title": "Exploratory Data Analysis II",
+    "section": "\nmutate() in action",
+    "text": "mutate() in action\n\ngerrymander |&gt;\n  mutate(flip18 = as_factor(flip18))\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;fct&gt;,\n#   gerry &lt;fct&gt;"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#mutate-in-action-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#mutate-in-action-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "\nmutate() in action",
+    "text": "mutate() in action\n\ngerrymander |&gt;\n  mutate(flip18 = as_factor(flip18)) |&gt;\n  relocate(flip18) ## make flip18 the first column in gerrymander\n\n# A tibble: 435 × 12\n   flip18 district last_name first_name party16 clinton16 trump16\n   &lt;fct&gt;  &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;\n 1 0      AK-AL    Young     Don        R            37.6    52.8\n 2 0      AL-01    Byrne     Bradley    R            34.1    63.5\n 3 0      AL-02    Roby      Martha     R            33      64.9\n 4 0      AL-03    Rogers    Mike D.    R            32.3    65.3\n 5 0      AL-04    Aderholt  Rob        R            17.4    80.4\n 6 0      AL-05    Brooks    Mo         R            31.3    64.7\n 7 0      AL-06    Palmer    Gary       R            26.1    70.8\n 8 0      AL-07    Sewell    Terri      D            69.8    28.6\n 9 0      AR-01    Crawford  Rick       R            30.2    65  \n10 0      AR-02    Hill      French     R            41.7    52.4\n# ℹ 425 more rows\n# ℹ 5 more variables: dem16 &lt;dbl&gt;, state &lt;chr&gt;, party18 &lt;chr&gt;,\n#   dem18 &lt;dbl&gt;, gerry &lt;fct&gt;"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#revisit-the-plot",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#revisit-the-plot",
+    "title": "Exploratory Data Analysis II",
+    "section": "Revisit the plot",
+    "text": "Revisit the plot\n\n“Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?”\n\n\ngerrymander |&gt;\n  mutate(flip18 = as_factor(flip18)) |&gt;\n  ggplot(aes(x = gerry, fill = flip18)) +\n  geom_bar(position = \"fill\")"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#more-about-the-pipe",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#more-about-the-pipe",
+    "title": "Exploratory Data Analysis II",
     "section": "More about the pipe",
     "text": "More about the pipe\n\nThe pipe operator passes what comes before it into the function that comes after it as the first argument in that function.\n\n\nsum(1, 2)\n\n[1] 3"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#more-about-the-pipe-1",
-    "href": "slides/05-data-transform-2-slides.html#more-about-the-pipe-1",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#more-about-the-pipe-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#more-about-the-pipe-1",
+    "title": "Exploratory Data Analysis II",
     "section": "More about the pipe",
     "text": "More about the pipe\n\nThe pipe operator passes what comes before it into the function that comes after it as the first argument in that function.\n\n\nsum(1, 2)\n\n[1] 3\n\n\n\n\n1 |&gt; \n  sum(2)\n\n[1] 3"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#pipe-ggplot",
-    "href": "slides/05-data-transform-2-slides.html#pipe-ggplot",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#pipe-ggplot",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#pipe-ggplot",
+    "title": "Exploratory Data Analysis II",
     "section": "Pipe + ggplot() !!",
-    "text": "Pipe + ggplot() !!\n\nggplot(bechdel, aes(x = budget_2013)) +\n  geom_boxplot()"
+    "text": "Pipe + ggplot() !!\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_boxplot()"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#pipe-ggplot-1",
-    "href": "slides/05-data-transform-2-slides.html#pipe-ggplot-1",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#pipe-ggplot-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#pipe-ggplot-1",
+    "title": "Exploratory Data Analysis II",
     "section": "Pipe + ggplot() !!",
-    "text": "Pipe + ggplot() !!\n\nbechdel |&gt;\n  ggplot(aes(x = budget_2013)) +\n  geom_boxplot()"
+    "text": "Pipe + ggplot() !!\n\ngerrymander |&gt;\n  ggplot(aes(x = trump16)) +\n  geom_boxplot()"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#why-is-this-useful",
-    "href": "slides/05-data-transform-2-slides.html#why-is-this-useful",
-    "title": "More Data Transformation",
-    "section": "Why is this useful?",
-    "text": "Why is this useful?\n\nWe can do data transformation immediately followed by a plot!\nNormally, even if we are just plotting, we use the pipe with ggplot()."
-  },
-  {
-    "objectID": "slides/05-data-transform-2-slides.html#plot-data-transform",
-    "href": "slides/05-data-transform-2-slides.html#plot-data-transform",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#plot-data-transform",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#plot-data-transform",
+    "title": "Exploratory Data Analysis II",
     "section": "Plot + data transform",
-    "text": "Plot + data transform\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "Plot + data transform\nWe can do data transformation immediately followed by a plot!\n\ngerrymander\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#plot-data-transform-1",
-    "href": "slides/05-data-transform-2-slides.html#plot-data-transform-1",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#plot-data-transform-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#plot-data-transform-1",
+    "title": "Exploratory Data Analysis II",
     "section": "Plot + data transform",
-    "text": "Plot + data transform\n\nbechdel |&gt;\n  mutate(budget_in_millions = budget_2013/1000000)\n\n# A tibble: 1,615 × 8\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n# ℹ 1 more variable: budget_in_millions &lt;dbl&gt;"
+    "text": "Plot + data transform\nWe can do data transformation immediately followed by a plot!\n\ngerrymander |&gt;\n  mutate(trump16_prop = trump16/100)\n\n# A tibble: 435 × 13\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 5 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;, trump16_prop &lt;dbl&gt;"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#plot-data-transform-2",
-    "href": "slides/05-data-transform-2-slides.html#plot-data-transform-2",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#plot-data-transform-2",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#plot-data-transform-2",
+    "title": "Exploratory Data Analysis II",
     "section": "Plot + data transform",
-    "text": "Plot + data transform\n\nbechdel |&gt;\n  mutate(budget_in_millions = budget_2013/1000000) |&gt;\n  ggplot(aes(x = budget_in_millions))"
+    "text": "Plot + data transform\nWe can do data transformation immediately followed by a plot!\n\ngerrymander |&gt;\n  mutate(trump16_prop = trump16/100) |&gt;\n  ggplot(aes(x = trump16_prop))"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#exploratory-data-analysis",
-    "href": "slides/05-data-transform-2-slides.html#exploratory-data-analysis",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#plot-data-transform-3",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#plot-data-transform-3",
+    "title": "Exploratory Data Analysis II",
+    "section": "Plot + data transform",
+    "text": "Plot + data transform\nWe can do data transformation immediately followed by a plot!\n\ngerrymander |&gt;\n  mutate(trump16_prop = trump16/100) |&gt;\n  ggplot(aes(x = trump16_prop)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#exploratory-data-analysis",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#exploratory-data-analysis",
+    "title": "Exploratory Data Analysis II",
     "section": "Exploratory Data Analysis",
-    "text": "Exploratory Data Analysis\nWhat is exploratory data analysis (EDA)??\n\nBasically everything we have done so far\nMaking plots and computing summary statistics (proportions, means, IQR, etc.) to help explore the data"
+    "text": "Exploratory Data Analysis\nWhat is exploratory data analysis (EDA)??\n\nBasically everything we have done so far\nMaking plots and computing summary statistics (proportions, means, IQR, etc.) to help explore the data\nGenerally, EDA precedes some sort of more formal statistical analysis (i.e., hypothesis testing, modeling, etc.); compare your findings from statistical analyses to key takeaways from EDA (do your findings agree? did you discern something that wasn’t visually evident (perhaps obscured by other factors not visualized)?)\nYou cannot make any sort of causal claim / statement from EDA alone (i.e., don’t say something like, “from this scatterploy, we see that some change in x causes some change in y)\nYou can observe relationships & make hypotheses!"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#assignment",
-    "href": "slides/05-data-transform-2-slides.html#assignment",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#assignment",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#assignment",
+    "title": "Exploratory Data Analysis II",
     "section": "Assignment",
     "text": "Assignment\nLet’s make a tiny data frame to use as an example:\n\nlibrary(tidyverse)\ndf &lt;- tibble(x = c(1, 2, 3, 4, 5), y = c(\"a\", \"a\", \"b\", \"c\", \"c\"))\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     1 a    \n2     2 a    \n3     3 b    \n4     4 c    \n5     5 c"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#assignment-1",
-    "href": "slides/05-data-transform-2-slides.html#assignment-1",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#assignment-1",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#assignment-1",
+    "title": "Exploratory Data Analysis II",
     "section": "Assignment",
-    "text": "Assignment\n\n\n\nDo something and show me\n\n\ndf |&gt;\n  mutate(x = x * 2)\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     2 a    \n2     4 a    \n3     6 b    \n4     8 c    \n5    10 c    \n\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     1 a    \n2     2 a    \n3     3 b    \n4     4 c    \n5     5 c    \n\n\n\n\nDo something and save result\n\n\ndf &lt;- df |&gt;\n  mutate(x = x * 2)\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     2 a    \n2     4 a    \n3     6 b    \n4     8 c    \n5    10 c"
+    "text": "Assignment\n\n\n\nDo something and print to screen\n\n\ndf |&gt;\n  mutate(x = x * 2)\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     2 a    \n2     4 a    \n3     6 b    \n4     8 c    \n5    10 c    \n\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     1 a    \n2     2 a    \n3     3 b    \n4     4 c    \n5     5 c    \n\n\n\n\nDo something and save result\n\n\ndf &lt;- df |&gt;\n  mutate(x = x * 2)\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     2 a    \n2     4 a    \n3     6 b    \n4     8 c    \n5    10 c"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#assignment-2",
-    "href": "slides/05-data-transform-2-slides.html#assignment-2",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#assignment-2",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#assignment-2",
+    "title": "Exploratory Data Analysis II",
     "section": "Assignment",
     "text": "Assignment\n\n\n\nDo something, save result, overwriting original\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf &lt;- df |&gt;\n  mutate(x = x * 2)\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     2 a    \n2     4 a    \n3     6 b    \n4     8 c    \n5    10 c    \n\n\n\n\nDo something, save result, not overwriting original\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf_new &lt;- df |&gt;\n  mutate(x = x * 2)\ndf_new\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     2 a    \n2     4 a    \n3     6 b    \n4     8 c    \n5    10 c"
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#assignment-3",
-    "href": "slides/05-data-transform-2-slides.html#assignment-3",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#assignment-3",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#assignment-3",
+    "title": "Exploratory Data Analysis II",
     "section": "Assignment",
-    "text": "Assignment\n\n\n\nDo something, save result, overwriting original when you shouldn’t\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf &lt;- df |&gt;\n  group_by(y) |&gt;\n  summarize(mean_x = mean(x))\ndf\n\n# A tibble: 3 × 2\n  y     mean_x\n  &lt;chr&gt;  &lt;dbl&gt;\n1 a        1.5\n2 b        3  \n3 c        4.5\n\n\n\n\nDo something, save result, not overwriting original when you shouldn’t\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf_summary &lt;- df |&gt;\n  group_by(y) |&gt;\n  summarize(mean_x = mean(x))\ndf_summary\n\n# A tibble: 3 × 2\n  y     mean_x\n  &lt;chr&gt;  &lt;dbl&gt;\n1 a        1.5\n2 b        3  \n3 c        4.5"
+    "text": "Assignment\n\n\n\nDo something, save result, overwriting original when you shouldn’t\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf &lt;- df |&gt;\n  group_by(y) |&gt;\n  summarize(mean_x = mean(x))\ndf\n\n# A tibble: 3 × 2\n  y     mean_x\n  &lt;chr&gt;  &lt;dbl&gt;\n1 a        1.5\n2 b        3  \n3 c        4.5\n\n\n\n\nDo something, save result, overwriting original when you shouldn’t\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf &lt;- df |&gt;\n  ggplot(aes(x = x)) +\n  geom_boxplot()\nclass(df)\n\n[1] \"ggplot2::ggplot\" \"ggplot\"          \"ggplot2::gg\"    \n[4] \"S7_object\"       \"gg\"             \n\ntypeof(df)\n\n[1] \"object\""
   },
   {
-    "objectID": "slides/05-data-transform-2-slides.html#assignment-4",
-    "href": "slides/05-data-transform-2-slides.html#assignment-4",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II-slides.html#assignment-4",
+    "href": "slides/05-exploratory-data-analysis-II-slides.html#assignment-4",
+    "title": "Exploratory Data Analysis II",
     "section": "Assignment",
     "text": "Assignment\n\n\n\nDo something, save result, overwriting originaldata frame\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf &lt;- df |&gt;\n  mutate(z = x + 2)\ndf\n\n# A tibble: 5 × 3\n      x y         z\n  &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;\n1     1 a         3\n2     2 a         4\n3     3 b         5\n4     4 c         6\n5     5 c         7\n\n\n\n\nDo something, save result, overwriting originalcolumn\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf &lt;- df |&gt;\n  mutate(x = x + 2)\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     3 a    \n2     4 a    \n3     5 b    \n4     6 c    \n5     7 c"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html",
-    "href": "slides/05-exploring-data-2.html",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html",
+    "href": "slides/05-exploratory-data-analysis-II.html",
+    "title": "Exploratory Data Analysis II",
     "section": "",
-    "text": "Lab is due TONIGHT at 11:59PM\nCome to office hours and/or post on Ed for help!\nOffice hours are tonight from 5:30-7:30PM in Old Chem 203.\nAEs need to be pushed by the END OF CLASS (10:45AM)!!\nMake sure you are in the right repository."
+    "text": "Lab is due TONIGHT at 11:59PM ➞ submit PDF to Gradescope\nCome to office hours and/or post on Ed for help!\nKenna’s office hours are 11:00am - 1:00pm today on Zoom (find link on Canvas)\nAlways double check your project (top right-hand corner of screen in your RStudio) & be sure you are in the correct project for the task at hand (AE in lecture, lab in lab / at home when working on assignments)"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#announcementsreminders",
-    "href": "slides/05-exploring-data-2.html#announcementsreminders",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#announcementsreminders",
+    "href": "slides/05-exploratory-data-analysis-II.html#announcementsreminders",
+    "title": "Exploratory Data Analysis II",
     "section": "",
-    "text": "Lab is due TONIGHT at 11:59PM\nCome to office hours and/or post on Ed for help!\nOffice hours are tonight from 5:30-7:30PM in Old Chem 203.\nAEs need to be pushed by the END OF CLASS (10:45AM)!!\nMake sure you are in the right repository."
+    "text": "Lab is due TONIGHT at 11:59PM ➞ submit PDF to Gradescope\nCome to office hours and/or post on Ed for help!\nKenna’s office hours are 11:00am - 1:00pm today on Zoom (find link on Canvas)\nAlways double check your project (top right-hand corner of screen in your RStudio) & be sure you are in the correct project for the task at hand (AE in lecture, lab in lab / at home when working on assignments)"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#lab-narrative",
-    "href": "slides/05-exploring-data-2.html#lab-narrative",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#exam-intel",
+    "href": "slides/05-exploratory-data-analysis-II.html#exam-intel",
+    "title": "Exploratory Data Analysis II",
+    "section": "Exam Intel",
+    "text": "Exam Intel\n\nMidterm Date: Monday, 6/1 (confirmed)\nExam will take place during both lecture & lab time slots (i.e., you will have from 9:30am - 12:15pm)\nI am NOT writing an exam I expect to take the full 2hr 45min timeframe; having the exam during both lecture & lab is meant to take some of the time pressure away from the exam & allow buffer time in case of any technical issues\nYou are of course entitled to the full 2hr 45min if you need it!\nFormat: written portion (mult. choice) & live coding / free response (think about this as a short lab assignment) on your laptop\nOnce you are finished with the written portion, you will turn it in and clone an exam repo\nCheatsheet (standard printer paper, both sides, can be hand-written/typed/combo, idc) allowed for both portions of the exam\nThe coding portion of the exam is open-assignment in that you will be working in your containers, so you have access to all of your AEs & lab assignments by changing projects (of course, switching between projects and looking through these materials eats away at time, so I wouldn’t be entirely reliant on this)\nThe coding portion of the exam will be closed-internet (i.e., you cannot open any other tabs on your browser aside from GitHub & your container); myself, Kenna, and potentially one additional person will be proctoring and actively monitoring adherence to this policy (breaking this policy will result in a score of 0 for this portion of the exam)\nI will provide review materials for both portions ahead of time (likely by next Thursday) – your labs are the best preparatory materials, so make sure you feel confident with all lab content & review your graded feedback!\nIf you need accommodations and I have not received a letter, please get it to me by EOD today; make your appointment in the testing center!"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#lab-narrative",
+    "href": "slides/05-exploratory-data-analysis-II.html#lab-narrative",
+    "title": "Exploratory Data Analysis II",
     "section": "Lab: Narrative",
-    "text": "Lab: Narrative\n\n\nBoxplots, histograms, density plots:\n\nCenter: Give an idea of a ‘typical value’ (median, most common range, etc.);\nSpread: Does the data have a lot of variability? Or just a little? (IQR, outliers)\nShape: Is there skew? Which direction? Is it unimodal or multimodal?"
+    "text": "Lab: Narrative\n\n\nBoxplots, histograms, density plots:\n\nCenter: Give an idea of a ‘typical value’ (median or mean, most commonly; choose which you think is more appropriate for the data, or mention both!);\nSpread: Does the data have a lot of variability (“wide, flat” distribution), or just a little (“narrow” distribution)? What is the primary range of the data? (IQR, outliers)\nShape: Is there skew, or is the distribution symmetric? If the data are skewed, in which direction? Is the distribution unimodal, bimodal, or multimodal?\nOutliers: Are there any unsual data points (whether via visual or mathematical assessment (i.e., “dots” on a boxplot))"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#lab-narrative-1",
-    "href": "slides/05-exploring-data-2.html#lab-narrative-1",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#lab-narrative-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#lab-narrative-1",
+    "title": "Exploratory Data Analysis II",
     "section": "Lab: Narrative",
-    "text": "Lab: Narrative\n\n\nScatter Plots\n\nIs there a relationship between the two variables? Is it positive or negative?\nIf there is a relationship, does it seem to be strong or weak?\nIs the relationship linear or nonlinear?"
+    "text": "Lab: Narrative\n\n\nScatter Plots\n\nIs there a relationship between the two variables? Is it positive or negative?\nIf there is a relationship, does it seem to be strong or weak?\nIs the relationship linear or nonlinear (i.e., quadratic, exponential, logarithmic)?"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#lab-advice",
-    "href": "slides/05-exploring-data-2.html#lab-advice",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#lab-advice",
+    "href": "slides/05-exploratory-data-analysis-II.html#lab-advice",
+    "title": "Exploratory Data Analysis II",
     "section": "Lab: Advice",
-    "text": "Lab: Advice\n\nBe Specific in your narrative. Don’t just say “the spread is small and the center is low”. What does that mean??? Give numbers, units (if available), etc.\nBe Specific in your plot labels.\nAnswer all parts of the question!! Statements like “Compare…” mean to do so in the written answer!\nWritten answers should be text outside of code chunks, not comments\nMake sure you can render to PDF early!!!"
+    "text": "Lab: Advice\n\nBe Specific in your narrative. Don’t just say “the spread is small and the center is low” What does that mean??? Give numbers, units (if available), etc.\nBe Specific in your plot labels\nAnswer all parts of the question!! Statements like “Compare…” mean to do so in the written answer!\nWritten answers should be text outside of code chunks, not comments\nMake sure you can render to PDF early & often :) This will help you identify / troubleshoot issues with your code that may not be apparent in isolation"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#outline",
-    "href": "slides/05-exploring-data-2.html#outline",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#outline",
+    "href": "slides/05-exploratory-data-analysis-II.html#outline",
+    "title": "Exploratory Data Analysis II",
     "section": "Outline",
-    "text": "Outline\n\nLast Time: Started learning about data transformation!\n\nToday:\n\nReview from last time + finish AE04\nMore about the pipe\nTransformation + plotting"
+    "text": "Outline\n\nMonday: Started learning about data transformation & intro to piping\nYesterday: More (gg)plotting & describing distributions\n\nToday:\n\nReview from last time + finish AE04\nMore about the pipe\nTransformation + plotting combo"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#quick-review-row-operations",
-    "href": "slides/05-exploring-data-2.html#quick-review-row-operations",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#quick-review-data-viz",
+    "href": "slides/05-exploratory-data-analysis-II.html#quick-review-data-viz",
+    "title": "Exploratory Data Analysis II",
+    "section": "Quick Review: Data Viz",
+    "text": "Quick Review: Data Viz\nAfter a while this is more art than science, but you can narrow down the options based on the number and type of variables:\n. . .\n\n\n\n\n\n\nVariable combo\nOptions\n\n\n\n1 numerical\nhistogram, density, box plot\n\n\n1 categorical\nbar chart, pie chart\n\n\n\n2 numerical\nscatterplot\n\n\nnumerical/categorical\nside-by-side box or violin plots, stacked densities or histograms\n\n\n2 categorical\nstacked bar plot (today)\n\n\n\n. . .\nFor three or more variables, the human mind is limited, and you have to start getting creative (play with color, texture, etc)."
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#quick-review-row-operations",
+    "href": "slides/05-exploratory-data-analysis-II.html#quick-review-row-operations",
+    "title": "Exploratory Data Analysis II",
     "section": "Quick Review: Row operations",
     "text": "Quick Review: Row operations\n\n\n\n\nslice(): chooses rows based on location\n\n\nfilter(): chooses rows based on column values\n\n\narrange(): changes the order of the rows\n\n\nsample_n(): take a random subset of the rows\n\n\n\n\n\nX1\nX2\nX3\n\n\n\n1\na\nyes\n\n\n3\nb\nno\n\n\n5\na\nyes\n\n\n7\nb\nyes\n\n\n9\na\nyes"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#quick-review-column-operations",
-    "href": "slides/05-exploring-data-2.html#quick-review-column-operations",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#quick-review-column-operations",
+    "href": "slides/05-exploratory-data-analysis-II.html#quick-review-column-operations",
+    "title": "Exploratory Data Analysis II",
     "section": "Quick Review: Column operations",
     "text": "Quick Review: Column operations\n\n\n\n\nselect(): changes whether or not a column is included\n\n\nrename(): changes the name of columns\n\n\nmutate(): changes the values of columns and creates new columns\n\n\n\n\n\nX1\nX2\nX3\n\n\n\n1\na\nyes\n\n\n3\nb\nno\n\n\n5\na\nyes\n\n\n7\nb\nyes\n\n\n9\na\nyes"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#quick-review-groups-of-rows",
-    "href": "slides/05-exploring-data-2.html#quick-review-groups-of-rows",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#quick-review-groups-of-rows",
+    "href": "slides/05-exploratory-data-analysis-II.html#quick-review-groups-of-rows",
+    "title": "Exploratory Data Analysis II",
     "section": "Quick Review: Groups of rows",
     "text": "Quick Review: Groups of rows\n\n\n\n\nsummarize(): collapses a group into a single row\n\n\ncount(): count unique values of one or more variables\n\n\ngroup_by(): perform calculations separately for each value of a variable\n\n\n\n\n\nX1\nX2\nX3\n\n\n\n1\na\nyes\n\n\n3\nb\nno\n\n\n5\na\nyes\n\n\n7\nb\nyes\n\n\n9\na\nyes"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#recap-group-by-summarize-mutate",
-    "href": "slides/05-exploring-data-2.html#recap-group-by-summarize-mutate",
-    "title": "More Data Transformation",
-    "section": "Recap: Group by, summarize, mutate",
-    "text": "Recap: Group by, summarize, mutate\nWhat does group by do here?\n\nbechdel |&gt;\n  group_by(binary) |&gt;\n  summarise(mean_roi = mean(roi, na.rm = TRUE), \n            mean_budget = mean(budget_2013)) \n\n# A tibble: 2 × 3\n  binary mean_roi mean_budget\n  &lt;chr&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 FAIL       8.36   65877024.\n2 PASS       7.99   46913086."
+    "objectID": "slides/05-exploratory-data-analysis-II.html#what-does-group_by-do",
+    "href": "slides/05-exploratory-data-analysis-II.html#what-does-group_by-do",
+    "title": "Exploratory Data Analysis II",
+    "section": "What does group_by() do?",
+    "text": "What does group_by() do?\n\nWhat does group_by() do in the following pipeline?\n\n\ngerrymander |&gt;\n  count(flip18, gerry) |&gt;\n  group_by(flip18) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 8 × 4\n# Groups:   flip18 [3]\n  flip18 gerry     n  prop\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1     -1 low       2 0.4  \n2     -1 mid       3 0.6  \n3      0 low      52 0.133\n4      0 mid     242 0.617\n5      0 high     98 0.25 \n6      1 low       8 0.211\n7      1 mid      25 0.658\n8      1 high      5 0.132"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#recap-group-by-summarize-mutate-1",
-    "href": "slides/05-exploring-data-2.html#recap-group-by-summarize-mutate-1",
-    "title": "More Data Transformation",
-    "section": "Recap: Group by, summarize, mutate",
-    "text": "Recap: Group by, summarize, mutate\nWhat does group by do here?\n\nbechdel |&gt;\n  #group_by(binary) |&gt;\n  summarise(mean_roi = mean(roi, na.rm = TRUE), \n            mean_budget = mean(budget_2013)) \n\n# A tibble: 1 × 2\n  mean_roi mean_budget\n     &lt;dbl&gt;       &lt;dbl&gt;\n1     8.19   57035015."
+    "objectID": "slides/05-exploratory-data-analysis-II.html#what-does-group_by-do-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#what-does-group_by-do-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "What does group_by() do?",
+    "text": "What does group_by() do?\n\nWhat does group_by() do in the following pipeline?\n\n\ngerrymander |&gt;\n  count(flip18, gerry) |&gt;\n  #group_by(flip18) |&gt;\n  mutate(prop = n / sum(n))\n\n# A tibble: 8 × 4\n  flip18 gerry     n    prop\n   &lt;dbl&gt; &lt;fct&gt; &lt;int&gt;   &lt;dbl&gt;\n1     -1 low       2 0.00460\n2     -1 mid       3 0.00690\n3      0 low      52 0.120  \n4      0 mid     242 0.556  \n5      0 high     98 0.225  \n6      1 low       8 0.0184 \n7      1 mid      25 0.0575 \n8      1 high      5 0.0115"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#recap-group-by-summarize-mutate-2",
-    "href": "slides/05-exploring-data-2.html#recap-group-by-summarize-mutate-2",
-    "title": "More Data Transformation",
-    "section": "Recap: Group by, summarize, mutate",
-    "text": "Recap: Group by, summarize, mutate\nWhat if I change summarize to mutate?\n\nbechdel |&gt;\n  group_by(binary) |&gt;\n  mutate(mean_roi = mean(roi, na.rm = TRUE), \n            mean_budget = mean(budget_2013)) \n\n# A tibble: 1,615 × 9\n# Groups:   binary [2]\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n# ℹ 2 more variables: mean_roi &lt;dbl&gt;, mean_budget &lt;dbl&gt;"
+    "objectID": "slides/05-exploratory-data-analysis-II.html#lets-simplify",
+    "href": "slides/05-exploratory-data-analysis-II.html#lets-simplify",
+    "title": "Exploratory Data Analysis II",
+    "section": "Let’s simplify!",
+    "text": "Let’s simplify!\n\nWhat does group_by() do in the following pipeline?\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(mean_trump16 = mean(trump16))\n\n# A tibble: 50 × 2\n   state mean_trump16\n   &lt;chr&gt;        &lt;dbl&gt;\n 1 AK            52.8\n 2 AL            62.6\n 3 AR            60.9\n 4 AZ            46.9\n 5 CA            31.7\n 6 CO            43.6\n 7 CT            41.0\n 8 DE            41.9\n 9 FL            47.9\n10 GA            51.3\n# ℹ 40 more rows"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#recap-group-by-summarize-mutate-3",
-    "href": "slides/05-exploring-data-2.html#recap-group-by-summarize-mutate-3",
-    "title": "More Data Transformation",
-    "section": "Recap: Group by, summarize, mutate",
-    "text": "Recap: Group by, summarize, mutate\nWhat if I change summarize to mutate?\n\nbechdel |&gt;\n  group_by(binary) |&gt;\n  mutate(mean_roi = mean(roi, na.rm = TRUE), \n            mean_budget = mean(budget_2013)) |&gt;\n  select(title, binary, mean_roi, mean_budget)\n\n# A tibble: 1,615 × 4\n# Groups:   binary [2]\n   title                  binary mean_roi mean_budget\n   &lt;chr&gt;                  &lt;chr&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n 1 21 & Over              FAIL       8.36   65877024.\n 2 Dredd 3D               PASS       7.99   46913086.\n 3 12 Years a Slave       FAIL       8.36   65877024.\n 4 2 Guns                 FAIL       8.36   65877024.\n 5 42                     FAIL       8.36   65877024.\n 6 47 Ronin               FAIL       8.36   65877024.\n 7 A Good Day to Die Hard FAIL       8.36   65877024.\n 8 About Time             PASS       7.99   46913086.\n 9 Admission              PASS       7.99   46913086.\n10 After Earth            FAIL       8.36   65877024.\n# ℹ 1,605 more rows"
+    "objectID": "slides/05-exploratory-data-analysis-II.html#lets-simplify-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#lets-simplify-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "Let’s simplify!",
+    "text": "Let’s simplify!\n\nWhat does group_by() do in the following pipeline?\n\n\ngerrymander |&gt;\n  #group_by(state) |&gt;\n  summarize(mean_trump16 = mean(trump16))\n\n# A tibble: 1 × 1\n  mean_trump16\n         &lt;dbl&gt;\n1         45.9"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#recap-group-by-summarize-mutate-4",
-    "href": "slides/05-exploring-data-2.html#recap-group-by-summarize-mutate-4",
-    "title": "More Data Transformation",
-    "section": "Recap: Group by, summarize, mutate",
-    "text": "Recap: Group by, summarize, mutate\nYou can group by more than one variable!\n\nbechdel |&gt;\n  group_by(binary, year) |&gt;\n  summarise(mean_roi = mean(roi, na.rm = TRUE), \n            mean_budget = mean(budget_2013)) \n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by binary and year.\nℹ Output is grouped by binary.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(binary, year))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n# A tibble: 48 × 4\n# Groups:   binary [2]\n   binary  year mean_roi mean_budget\n   &lt;chr&gt;  &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;\n 1 FAIL    1990    13.1    73101991.\n 2 FAIL    1991     6.71   74299353 \n 3 FAIL    1992    46.3    38883983.\n 4 FAIL    1993     6.36   49099374.\n 5 FAIL    1994    23.7    57812022.\n 6 FAIL    1995     5.69   68251510.\n 7 FAIL    1996     3.82   68600475.\n 8 FAIL    1997    16.5    73257554.\n 9 FAIL    1998     6.95   53083540.\n10 FAIL    1999     5.12   72804781.\n# ℹ 38 more rows"
+    "objectID": "slides/05-exploratory-data-analysis-II.html#group_by",
+    "href": "slides/05-exploratory-data-analysis-II.html#group_by",
+    "title": "Exploratory Data Analysis II",
+    "section": "group_by()",
+    "text": "group_by()\n\nit converts a data frame to a grouped data frame, where subsequent operations are performed once per group\nungroup() removes grouping\n\n\ngerrymander |&gt;\n  group_by(state)\n\n# A tibble: 435 × 12\n# Groups:   state [50]\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#recap-group-by-summarize-mutate-5",
-    "href": "slides/05-exploring-data-2.html#recap-group-by-summarize-mutate-5",
-    "title": "More Data Transformation",
-    "section": "Recap: Group by, summarize, mutate",
-    "text": "Recap: Group by, summarize, mutate\nYou can un group with ungroup()\n\nbechdel |&gt;\n  group_by(binary, year) |&gt;\n  summarise(mean_roi = mean(roi, na.rm = TRUE), \n            mean_budget = mean(budget_2013)) |&gt;\n  ungroup()\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by binary and year.\nℹ Output is grouped by binary.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(binary, year))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n# A tibble: 48 × 4\n   binary  year mean_roi mean_budget\n   &lt;chr&gt;  &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;\n 1 FAIL    1990    13.1    73101991.\n 2 FAIL    1991     6.71   74299353 \n 3 FAIL    1992    46.3    38883983.\n 4 FAIL    1993     6.36   49099374.\n 5 FAIL    1994    23.7    57812022.\n 6 FAIL    1995     5.69   68251510.\n 7 FAIL    1996     3.82   68600475.\n 8 FAIL    1997    16.5    73257554.\n 9 FAIL    1998     6.95   53083540.\n10 FAIL    1999     5.12   72804781.\n# ℹ 38 more rows"
+    "objectID": "slides/05-exploratory-data-analysis-II.html#group_by-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#group_by-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "group_by()",
+    "text": "group_by()\n\nit converts a data frame to a grouped data frame, where subsequent operations are performed once per group\nungroup() removes grouping\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  ungroup()\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#more-about-the-pipe",
-    "href": "slides/05-exploring-data-2.html#more-about-the-pipe",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#group_by-summarize",
+    "href": "slides/05-exploratory-data-analysis-II.html#group_by-summarize",
+    "title": "Exploratory Data Analysis II",
+    "section": "group_by() |> summarize()",
+    "text": "group_by() |&gt; summarize()\nA common pipeline is group_by() and then summarize() to calculate summary statistics for each group:\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(\n    mean_trump16 = mean(trump16),\n    median_trump16 = median(trump16)\n  )\n\n# A tibble: 50 × 3\n   state mean_trump16 median_trump16\n   &lt;chr&gt;        &lt;dbl&gt;          &lt;dbl&gt;\n 1 AK            52.8           52.8\n 2 AL            62.6           64.9\n 3 AR            60.9           63.0\n 4 AZ            46.9           47.7\n 5 CA            31.7           28.4\n 6 CO            43.6           41.3\n 7 CT            41.0           40.4\n 8 DE            41.9           41.9\n 9 FL            47.9           49.6\n10 GA            51.3           56.6\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#group_by-summarize-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#group_by-summarize-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "group_by() |> summarize()",
+    "text": "group_by() |&gt; summarize()\nThis pipeline can also be used to count number of observations for each group:\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n())\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 AK        1\n 2 AL        7\n 3 AR        4\n 4 AZ        9\n 5 CA       53\n 6 CO        7\n 7 CT        5\n 8 DE        1\n 9 FL       27\n10 GA       14\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#summarize",
+    "href": "slides/05-exploratory-data-analysis-II.html#summarize",
+    "title": "Exploratory Data Analysis II",
+    "section": "summarize()",
+    "text": "summarize()\n... |&gt;\n  summarize(\n    name_of_summary_statistic = summary_function(variable)\n  )\n. . .\n\n\nname_of_summary_statistic: Anything you want to call it!\n\nRecommendation: Keep it short and evocative\n\n\n\nsummary_function():\n\n\nn(): number of observations\n\nmean(): mean\n\nmedian(): median\n…"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#summarize-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#summarize-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "summarize()",
+    "text": "summarize()\nRecall from yesterday…\n\ngerrymander |&gt;\n  summarize(\n    mean_trump_perc = mean(trump16),\n    median_trump_perc = median(trump16),\n    sd = sd(trump16),\n    iqr = IQR(trump16),\n    q25 = quantile(trump16, 0.25),\n    q75 = quantile(trump16, 0.75)\n  )\n\n# A tibble: 1 × 6\n  mean_trump_perc median_trump_perc    sd   iqr   q25   q75\n            &lt;dbl&gt;             &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1            45.9              48.7  16.8  23.3  34.8  58.1"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#summarize-2",
+    "href": "slides/05-exploratory-data-analysis-II.html#summarize-2",
+    "title": "Exploratory Data Analysis II",
+    "section": "summarize()",
+    "text": "summarize()\nOr, more concisely\n\nsummary(gerrymander$trump16)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   4.90   34.85   48.70   45.86   58.10   80.40"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#summarize-3",
+    "href": "slides/05-exploratory-data-analysis-II.html#summarize-3",
+    "title": "Exploratory Data Analysis II",
+    "section": "summarize()",
+    "text": "summarize()\nGetting to the point…\n\ngerrymander |&gt;\n  summarize(\n    gimme_my_mean = mean(trump16),\n    gimme_my_median = median(trump16)\n  )\n\n\n\nsummarize() creates a new data frame that stores the summaries;\nYou can compute as many summaries as you want, and whichever you want, in a single call to summarize();\nTo the left of the equal signs are your choice of column names in the new data frame you are creating. You can type whatever you want here (within reason);\nTo the right of the equal signs is R code that computes the summaries. You must use the correct command names (case sensitive): mean, median, quantile, sd, var, etc;\nIf you want to learn what these do, read the documentation (eg ?quantile)."
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#spot-the-difference",
+    "href": "slides/05-exploratory-data-analysis-II.html#spot-the-difference",
+    "title": "Exploratory Data Analysis II",
+    "section": "Spot the difference",
+    "text": "Spot the difference\n\nWhat’s the difference between the following two pipelines?\n\n\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n())\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 AK        1\n 2 AL        7\n 3 AR        4\n 4 AZ        9\n 5 CA       53\n 6 CO        7\n 7 CT        5\n 8 DE        1\n 9 FL       27\n10 GA       14\n# ℹ 40 more rows\n\n\n\n\ngerrymander |&gt;\n  count(state)\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 AK        1\n 2 AL        7\n 3 AR        4\n 4 AZ        9\n 5 CA       53\n 6 CO        7\n 7 CT        5\n 8 DE        1\n 9 FL       27\n10 GA       14\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#spot-the-difference-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#spot-the-difference-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "Spot the difference",
+    "text": "Spot the difference"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#count",
+    "href": "slides/05-exploratory-data-analysis-II.html#count",
+    "title": "Exploratory Data Analysis II",
+    "section": "count()",
+    "text": "count()\n\n\n... |&gt;\n  count(variable)\n\n... |&gt;\n  count(variable1, variable2)\n\n\n\nCount the number of observations in each level of variable(s); if you supply more than 1 variable, count the number of observations in each unique combination of levels across all variables\nPlace the counts in a variable called n; you can access this variable in downstream code"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#count-and-sort",
+    "href": "slides/05-exploratory-data-analysis-II.html#count-and-sort",
+    "title": "Exploratory Data Analysis II",
+    "section": "\ncount() and sort\n",
+    "text": "count() and sort\n\n\nWhat does the following pipeline do? Rewrite it with count() instead.\n\n\ngerrymander |&gt;\n  group_by(state) |&gt;\n  summarize(n = n()) |&gt;\n  arrange(desc(n))\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#count-and-sort-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#count-and-sort-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "\ncount() and sort\n",
+    "text": "count() and sort\n\n\nWhat does the following pipeline do? Rewrite it with count() instead.\n\n\ngerrymander |&gt;\n  count(state) |&gt;\n  arrange(desc(n))\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#count-and-sort-2",
+    "href": "slides/05-exploratory-data-analysis-II.html#count-and-sort-2",
+    "title": "Exploratory Data Analysis II",
+    "section": "\ncount() and sort\n",
+    "text": "count() and sort\n\n\nWhat does the following pipeline do? Rewrite it with count() instead.\n\n\ngerrymander |&gt;\n  count(state, sort = TRUE)\n\n# A tibble: 50 × 2\n   state     n\n   &lt;chr&gt; &lt;int&gt;\n 1 CA       53\n 2 TX       36\n 3 FL       27\n 4 NY       27\n 5 IL       18\n 6 PA       18\n 7 OH       16\n 8 GA       14\n 9 MI       14\n10 NC       13\n# ℹ 40 more rows"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#flip-the-question",
+    "href": "slides/05-exploratory-data-analysis-II.html#flip-the-question",
+    "title": "Exploratory Data Analysis II",
+    "section": "Flip the question",
+    "text": "Flip the question\n\n\n\n\n\n\nNote\n\n\n\nFrom AE-04: Is a Congressional District more likely to have high prevalence of gerrymandering if a Democrat was able to flip the seat in the 2018 election?\n\n\nvs.\n\n\n\n\n\n\nNote\n\n\n\nIs a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#flipping-vs.-gerrymandering-prevalence",
+    "href": "slides/05-exploratory-data-analysis-II.html#flipping-vs.-gerrymandering-prevalence",
+    "title": "Exploratory Data Analysis II",
+    "section": "Flipping vs. gerrymandering prevalence",
+    "text": "Flipping vs. gerrymandering prevalence\n\nThe following code should produce a visualization that answers the question “Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?” However, it produces a warning and an unexpected plot. What’s going on?\n\n\n\n\nggplot(\n  gerrymander, \n  aes(x = gerry, fill = flip18)\n  ) +\n  geom_bar(position = \"fill\")\n\nWarning: The following aesthetics were dropped during statistical\ntransformation: fill.\nℹ This can happen when ggplot fails to infer the correct grouping\n  structure in the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a\n  numerical variable into a factor?"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#another-glimpse-at-gerrymander",
+    "href": "slides/05-exploratory-data-analysis-II.html#another-glimpse-at-gerrymander",
+    "title": "Exploratory Data Analysis II",
+    "section": "Another glimpse at gerrymander\n",
+    "text": "Another glimpse at gerrymander\n\n\nglimpse(gerrymander)\n\nRows: 435\nColumns: 12\n$ district   &lt;chr&gt; \"AK-AL\", \"AL-01\", \"AL-02\", \"AL-03\", \"AL-04\", \"AL-…\n$ last_name  &lt;chr&gt; \"Young\", \"Byrne\", \"Roby\", \"Rogers\", \"Aderholt\", \"…\n$ first_name &lt;chr&gt; \"Don\", \"Bradley\", \"Martha\", \"Mike D.\", \"Rob\", \"Mo…\n$ party16    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\",…\n$ clinton16  &lt;dbl&gt; 37.6, 34.1, 33.0, 32.3, 17.4, 31.3, 26.1, 69.8, 3…\n$ trump16    &lt;dbl&gt; 52.8, 63.5, 64.9, 65.3, 80.4, 64.7, 70.8, 28.6, 6…\n$ dem16      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0…\n$ state      &lt;chr&gt; \"AK\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"AL\", \"…\n$ party18    &lt;chr&gt; \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"R\", \"D\", \"R\", \"R\",…\n$ dem18      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0…\n$ flip18     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0…\n$ gerry      &lt;fct&gt; mid, high, high, high, high, high, high, high, mi…"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#mutate-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#mutate-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "mutate()",
+    "text": "mutate()\n\nWe want to use flip18 as a categorical variable\nBut it’s stored as a numeric\nSo we need to change its type first, before we can use it as a categorical variable (more on this tomorrow!)\nThe mutate() function transforms (mutates) a data frame by creating a new column or updating an existing one\n\nIn this case, we want to use it to update an existing column, flip18."
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#mutate-in-action",
+    "href": "slides/05-exploratory-data-analysis-II.html#mutate-in-action",
+    "title": "Exploratory Data Analysis II",
+    "section": "\nmutate() in action",
+    "text": "mutate() in action\n\ngerrymander |&gt;\n  mutate(flip18 = as_factor(flip18))\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;fct&gt;,\n#   gerry &lt;fct&gt;"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#mutate-in-action-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#mutate-in-action-1",
+    "title": "Exploratory Data Analysis II",
+    "section": "\nmutate() in action",
+    "text": "mutate() in action\n\ngerrymander |&gt;\n  mutate(flip18 = as_factor(flip18)) |&gt;\n  relocate(flip18) ## make flip18 the first column in gerrymander\n\n# A tibble: 435 × 12\n   flip18 district last_name first_name party16 clinton16 trump16\n   &lt;fct&gt;  &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;\n 1 0      AK-AL    Young     Don        R            37.6    52.8\n 2 0      AL-01    Byrne     Bradley    R            34.1    63.5\n 3 0      AL-02    Roby      Martha     R            33      64.9\n 4 0      AL-03    Rogers    Mike D.    R            32.3    65.3\n 5 0      AL-04    Aderholt  Rob        R            17.4    80.4\n 6 0      AL-05    Brooks    Mo         R            31.3    64.7\n 7 0      AL-06    Palmer    Gary       R            26.1    70.8\n 8 0      AL-07    Sewell    Terri      D            69.8    28.6\n 9 0      AR-01    Crawford  Rick       R            30.2    65  \n10 0      AR-02    Hill      French     R            41.7    52.4\n# ℹ 425 more rows\n# ℹ 5 more variables: dem16 &lt;dbl&gt;, state &lt;chr&gt;, party18 &lt;chr&gt;,\n#   dem18 &lt;dbl&gt;, gerry &lt;fct&gt;"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#revisit-the-plot",
+    "href": "slides/05-exploratory-data-analysis-II.html#revisit-the-plot",
+    "title": "Exploratory Data Analysis II",
+    "section": "Revisit the plot",
+    "text": "Revisit the plot\n\n“Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?”\n\n\ngerrymander |&gt;\n  mutate(flip18 = as_factor(flip18)) |&gt;\n  ggplot(aes(x = gerry, fill = flip18)) +\n  geom_bar(position = \"fill\")"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#more-about-the-pipe",
+    "href": "slides/05-exploratory-data-analysis-II.html#more-about-the-pipe",
+    "title": "Exploratory Data Analysis II",
     "section": "More about the pipe",
     "text": "More about the pipe\n\nThe pipe operator passes what comes before it into the function that comes after it as the first argument in that function.\n\n\nsum(1, 2)\n\n[1] 3"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#more-about-the-pipe-1",
-    "href": "slides/05-exploring-data-2.html#more-about-the-pipe-1",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#more-about-the-pipe-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#more-about-the-pipe-1",
+    "title": "Exploratory Data Analysis II",
     "section": "More about the pipe",
     "text": "More about the pipe\n\nThe pipe operator passes what comes before it into the function that comes after it as the first argument in that function.\n\n\nsum(1, 2)\n\n[1] 3\n\n\n\n\n1 |&gt; \n  sum(2)\n\n[1] 3"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#pipe-ggplot",
-    "href": "slides/05-exploring-data-2.html#pipe-ggplot",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#pipe-ggplot",
+    "href": "slides/05-exploratory-data-analysis-II.html#pipe-ggplot",
+    "title": "Exploratory Data Analysis II",
     "section": "Pipe + ggplot() !!",
-    "text": "Pipe + ggplot() !!\n\nggplot(bechdel, aes(x = budget_2013)) +\n  geom_boxplot()"
+    "text": "Pipe + ggplot() !!\n\nggplot(gerrymander, aes(x = trump16)) +\n  geom_boxplot()"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#pipe-ggplot-1",
-    "href": "slides/05-exploring-data-2.html#pipe-ggplot-1",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#pipe-ggplot-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#pipe-ggplot-1",
+    "title": "Exploratory Data Analysis II",
     "section": "Pipe + ggplot() !!",
-    "text": "Pipe + ggplot() !!\n\nbechdel |&gt;\n  ggplot(aes(x = budget_2013)) +\n  geom_boxplot()"
+    "text": "Pipe + ggplot() !!\n\ngerrymander |&gt;\n  ggplot(aes(x = trump16)) +\n  geom_boxplot()"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#why-is-this-useful",
-    "href": "slides/05-exploring-data-2.html#why-is-this-useful",
-    "title": "More Data Transformation",
-    "section": "Why is this useful?",
-    "text": "Why is this useful?\n\nWe can do data transformation immediately followed by a plot!\nNormally, even if we are just plotting, we use the pipe with ggplot()."
-  },
-  {
-    "objectID": "slides/05-exploring-data-2.html#plot-data-transform",
-    "href": "slides/05-exploring-data-2.html#plot-data-transform",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#plot-data-transform",
+    "href": "slides/05-exploratory-data-analysis-II.html#plot-data-transform",
+    "title": "Exploratory Data Analysis II",
     "section": "Plot + data transform",
-    "text": "Plot + data transform\n\nbechdel\n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows"
+    "text": "Plot + data transform\nWe can do data transformation immediately followed by a plot!\n\ngerrymander\n\n# A tibble: 435 × 12\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 4 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#plot-data-transform-1",
-    "href": "slides/05-exploring-data-2.html#plot-data-transform-1",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#plot-data-transform-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#plot-data-transform-1",
+    "title": "Exploratory Data Analysis II",
     "section": "Plot + data transform",
-    "text": "Plot + data transform\n\nbechdel |&gt;\n  mutate(budget_in_millions = budget_2013/1000000)\n\n# A tibble: 1,615 × 8\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n# ℹ 1 more variable: budget_in_millions &lt;dbl&gt;"
+    "text": "Plot + data transform\nWe can do data transformation immediately followed by a plot!\n\ngerrymander |&gt;\n  mutate(trump16_prop = trump16/100)\n\n# A tibble: 435 × 13\n   district last_name first_name party16 clinton16 trump16 dem16 state\n   &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n 1 AK-AL    Young     Don        R            37.6    52.8     0 AK   \n 2 AL-01    Byrne     Bradley    R            34.1    63.5     0 AL   \n 3 AL-02    Roby      Martha     R            33      64.9     0 AL   \n 4 AL-03    Rogers    Mike D.    R            32.3    65.3     0 AL   \n 5 AL-04    Aderholt  Rob        R            17.4    80.4     0 AL   \n 6 AL-05    Brooks    Mo         R            31.3    64.7     0 AL   \n 7 AL-06    Palmer    Gary       R            26.1    70.8     0 AL   \n 8 AL-07    Sewell    Terri      D            69.8    28.6     1 AL   \n 9 AR-01    Crawford  Rick       R            30.2    65       0 AR   \n10 AR-02    Hill      French     R            41.7    52.4     0 AR   \n# ℹ 425 more rows\n# ℹ 5 more variables: party18 &lt;chr&gt;, dem18 &lt;dbl&gt;, flip18 &lt;dbl&gt;,\n#   gerry &lt;fct&gt;, trump16_prop &lt;dbl&gt;"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#plot-data-transform-2",
-    "href": "slides/05-exploring-data-2.html#plot-data-transform-2",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#plot-data-transform-2",
+    "href": "slides/05-exploratory-data-analysis-II.html#plot-data-transform-2",
+    "title": "Exploratory Data Analysis II",
     "section": "Plot + data transform",
-    "text": "Plot + data transform\n\nbechdel |&gt;\n  mutate(budget_in_millions = budget_2013/1000000) |&gt;\n  ggplot(aes(x = budget_in_millions))"
+    "text": "Plot + data transform\nWe can do data transformation immediately followed by a plot!\n\ngerrymander |&gt;\n  mutate(trump16_prop = trump16/100) |&gt;\n  ggplot(aes(x = trump16_prop))"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#exploratory-data-analysis",
-    "href": "slides/05-exploring-data-2.html#exploratory-data-analysis",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#plot-data-transform-3",
+    "href": "slides/05-exploratory-data-analysis-II.html#plot-data-transform-3",
+    "title": "Exploratory Data Analysis II",
+    "section": "Plot + data transform",
+    "text": "Plot + data transform\nWe can do data transformation immediately followed by a plot!\n\ngerrymander |&gt;\n  mutate(trump16_prop = trump16/100) |&gt;\n  ggplot(aes(x = trump16_prop)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "slides/05-exploratory-data-analysis-II.html#exploratory-data-analysis",
+    "href": "slides/05-exploratory-data-analysis-II.html#exploratory-data-analysis",
+    "title": "Exploratory Data Analysis II",
     "section": "Exploratory Data Analysis",
-    "text": "Exploratory Data Analysis\nWhat is exploratory data analysis (EDA)??\n\nBasically everything we have done so far\nMaking plots and computing summary statistics (proportions, means, IQR, etc.) to help explore the data"
+    "text": "Exploratory Data Analysis\nWhat is exploratory data analysis (EDA)??\n\nBasically everything we have done so far\nMaking plots and computing summary statistics (proportions, means, IQR, etc.) to help explore the data\nGenerally, EDA precedes some sort of more formal statistical analysis (i.e., hypothesis testing, modeling, etc.); compare your findings from statistical analyses to key takeaways from EDA (do your findings agree? did you discern something that wasn’t visually evident (perhaps obscured by other factors not visualized)?)\nYou cannot make any sort of causal claim / statement from EDA alone (i.e., don’t say something like, “from this scatterploy, we see that some change in x causes some change in y)\nYou can observe relationships & make hypotheses!"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#assignment",
-    "href": "slides/05-exploring-data-2.html#assignment",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#assignment",
+    "href": "slides/05-exploratory-data-analysis-II.html#assignment",
+    "title": "Exploratory Data Analysis II",
     "section": "Assignment",
     "text": "Assignment\nLet’s make a tiny data frame to use as an example:\n\nlibrary(tidyverse)\ndf &lt;- tibble(x = c(1, 2, 3, 4, 5), y = c(\"a\", \"a\", \"b\", \"c\", \"c\"))\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     1 a    \n2     2 a    \n3     3 b    \n4     4 c    \n5     5 c"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#assignment-1",
-    "href": "slides/05-exploring-data-2.html#assignment-1",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#assignment-1",
+    "href": "slides/05-exploratory-data-analysis-II.html#assignment-1",
+    "title": "Exploratory Data Analysis II",
     "section": "Assignment",
-    "text": "Assignment\n\n\n\nDo something and show me\n\n\ndf |&gt;\n  mutate(x = x * 2)\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     2 a    \n2     4 a    \n3     6 b    \n4     8 c    \n5    10 c    \n\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     1 a    \n2     2 a    \n3     3 b    \n4     4 c    \n5     5 c    \n\n\n\n\n\nDo something and save result\n\n\ndf &lt;- df |&gt;\n  mutate(x = x * 2)\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     2 a    \n2     4 a    \n3     6 b    \n4     8 c    \n5    10 c"
+    "text": "Assignment\n\n\n\nDo something and print to screen\n\n\ndf |&gt;\n  mutate(x = x * 2)\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     2 a    \n2     4 a    \n3     6 b    \n4     8 c    \n5    10 c    \n\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     1 a    \n2     2 a    \n3     3 b    \n4     4 c    \n5     5 c    \n\n\n\n\n\nDo something and save result\n\n\ndf &lt;- df |&gt;\n  mutate(x = x * 2)\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     2 a    \n2     4 a    \n3     6 b    \n4     8 c    \n5    10 c"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#assignment-2",
-    "href": "slides/05-exploring-data-2.html#assignment-2",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#assignment-2",
+    "href": "slides/05-exploratory-data-analysis-II.html#assignment-2",
+    "title": "Exploratory Data Analysis II",
     "section": "Assignment",
     "text": "Assignment\n\n\n\nDo something, save result, overwriting original\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf &lt;- df |&gt;\n  mutate(x = x * 2)\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     2 a    \n2     4 a    \n3     6 b    \n4     8 c    \n5    10 c    \n\n\n\n\n\nDo something, save result, not overwriting original\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf_new &lt;- df |&gt;\n  mutate(x = x * 2)\ndf_new\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     2 a    \n2     4 a    \n3     6 b    \n4     8 c    \n5    10 c"
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#assignment-3",
-    "href": "slides/05-exploring-data-2.html#assignment-3",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#assignment-3",
+    "href": "slides/05-exploratory-data-analysis-II.html#assignment-3",
+    "title": "Exploratory Data Analysis II",
     "section": "Assignment",
-    "text": "Assignment\n\n\n\nDo something, save result, overwriting original when you shouldn’t\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf &lt;- df |&gt;\n  group_by(y) |&gt;\n  summarize(mean_x = mean(x))\ndf\n\n# A tibble: 3 × 2\n  y     mean_x\n  &lt;chr&gt;  &lt;dbl&gt;\n1 a        1.5\n2 b        3  \n3 c        4.5\n\n\n\n\n\nDo something, save result, not overwriting original when you shouldn’t\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf_summary &lt;- df |&gt;\n  group_by(y) |&gt;\n  summarize(mean_x = mean(x))\ndf_summary\n\n# A tibble: 3 × 2\n  y     mean_x\n  &lt;chr&gt;  &lt;dbl&gt;\n1 a        1.5\n2 b        3  \n3 c        4.5"
+    "text": "Assignment\n\n\n\nDo something, save result, overwriting original when you shouldn’t\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf &lt;- df |&gt;\n  group_by(y) |&gt;\n  summarize(mean_x = mean(x))\ndf\n\n# A tibble: 3 × 2\n  y     mean_x\n  &lt;chr&gt;  &lt;dbl&gt;\n1 a        1.5\n2 b        3  \n3 c        4.5\n\n\n\n\n\nDo something, save result, overwriting original when you shouldn’t\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf &lt;- df |&gt;\n  ggplot(aes(x = x)) +\n  geom_boxplot()\nclass(df)\n\n[1] \"ggplot2::ggplot\" \"ggplot\"          \"ggplot2::gg\"    \n[4] \"S7_object\"       \"gg\"             \n\ntypeof(df)\n\n[1] \"object\""
   },
   {
-    "objectID": "slides/05-exploring-data-2.html#assignment-4",
-    "href": "slides/05-exploring-data-2.html#assignment-4",
-    "title": "More Data Transformation",
+    "objectID": "slides/05-exploratory-data-analysis-II.html#assignment-4",
+    "href": "slides/05-exploratory-data-analysis-II.html#assignment-4",
+    "title": "Exploratory Data Analysis II",
     "section": "Assignment",
     "text": "Assignment\n\n\n\nDo something, save result, overwriting originaldata frame\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf &lt;- df |&gt;\n  mutate(z = x + 2)\ndf\n\n# A tibble: 5 × 3\n      x y         z\n  &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;\n1     1 a         3\n2     2 a         4\n3     3 b         5\n4     4 c         6\n5     5 c         7\n\n\n\n\n\nDo something, save result, overwriting originalcolumn\n\n\ndf &lt;- tibble(\n  x = c(1, 2, 3, 4, 5), \n  y = c(\"a\", \"a\", \"b\", \"c\", \"c\")\n)\ndf &lt;- df |&gt;\n  mutate(x = x + 2)\ndf\n\n# A tibble: 5 × 2\n      x y    \n  &lt;dbl&gt; &lt;chr&gt;\n1     3 a    \n2     4 a    \n3     5 b    \n4     6 c    \n5     7 c"
   },
@@ -1880,7 +2174,7 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science & Statistical Thinking",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester! Entries for future dates are tentative; the timeline of topics, assignments, and due dates might be changed throughout the session at the instructor’s discretion. All material changes will be communicated with the students in a timely manner.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nMATERIALS\nDUE\nPREPARE\n\n\n\n1\nWed, May 13\nWelcome\n🖥️ slides 00  ⌨️ ae 00\n\nGitHub username - End of Lecture\n\n\n\n\nThu, May 14\nLab 0\n💻 lab 0\n\nLab 0 - End of Lab\n\n\n\n\nThu, May 14\nMeet the Toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto \n\n\n\n\nFri, May 15\nGrammar of Data Visualization\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 02\n\n\n📗 r4ds - chp 1  📘 ims - chp 4 \n\n\n\n2\nMon, May 18\nGrammar of Data Transformation\n🖥️ slides 03  🗒️ notes 03  ⌨️ ae 03  ✅ ae 03\n\n\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\nMon, May 18\nLab 1\n💻 lab 1\n\n\n📗 r4ds - chp 2  📘 ims - chp 5\n\n\n\n\nTue, May 19\nExploratory Data Analysis I\n🖥️ slides 04  🗒️ notes 04  ⌨️ ae 04\n\n\n📗 r4ds - chp 3.6-3.7  🎥 Visualizing and summarizing categorical data  🎥 Visualizing and summarizing numerical data  🎥 Visualizing and summarizing relationships  🎥 Code along :: Star Wars characters\n\n\n\n\nWed, May 20\nExploratory Data Analysis II\n\nLab 1 - 11:59PM ET\n📘 ims - chp 5  📘 ims - chp 6  🎥 Code along :: Diving deeper with Palmer Penguins\n\n\n\n\nThu, May 21\nTidying Data\n\n\n📗 r4ds - chp 5  📘 ims - chp 6\n\n\n\n\nThu, May 21\nLab 2\n\n\n📗 r4ds - chp 4 🎥 Tidy data 🎥 Tidying data 🎥 Code Along: Population over time\n\n\n\n\nFri, May 22\nJoining Data\n\n\n🎥 Joining data  🎥 Code along :: Continent populations  📗 r4ds - chp 19.1-19.3\n\n\n\n\nSun, May 24\n\n\n\n\n\n\n3\nMon, May 25\nNO CLASS - Memorial Day\n\n\n\n\n\n\nTue, May 26\nData Types and Classes\n\n\n🎥 Data types  🎥 Data classes  🎥 Code along :: That’s my type  📗 r4ds - chp 16\n\n\n\n\nWed, May 27\nImporting and Recoding Data\n\nLab 2 - 11:59PM ET\n🎥 Importing data  🎥 Code along :: Halving CO2 emissions  🎥 Code along :: Student survey  📗 r4ds - chp 7  📗 r4ds - chp 17.1 - 17.3\n\n\n\n\nThu, May 28\nMore Practice + Midterm Review\n\n\n\n\n\n\nThu, May 28\nLab 3\n\n\n\n\n\n\nFri, May 29\nData Ethics + Midterm Review\n\n\n📕 mdsr - chp 8  📝 How to make a racist AI in R without really trying  🎥 Alberto Cairo - How charts lie  🎥 Joy Buolamwini - How I’m fighting bias in algorithms\n\n\n\n\nSun, May 31\n\n\nLab 3 - 11:59PM ET\n\n\n\n4\nMon, Jun 1\nMidterm (lecture + lab sessions)\n\n\n\n\n\n\nTue, Jun 2\nProject Milestone 1 - Collaboration\n\nProject Milestone 1 - 12:30PM ET\n\n\n\n\nWed, Jun 3\nThe Language of Models\n\n\n🎥 The language of models  📘 ims - chp 7.1  🎥 Fitting and interpreting models  🎥 Modeling nonlinear relationships\n\n\n\n\nThu, Jun 4\nSimple Linear Regression\n\n\n🎥 Linear regression with a categorical predictor  🎥 Outliers in linear regression  🎥 Code along :: Modeling fish  📘 ims - chp 7.2\n\n\n\n\nThu, Jun 4\nProject Milestone 2 - Proposals\n\n\n\n\n\n\nFri, Jun 5\nMultiple Linear Regression I\n\n\n🎥 Linear regression with multiple predictors  🎥 Main and interaction effects  📘 ims - chp 8.1-8.2  📘 ims - chp 8.3-8.5\n\n\n\n\nSun, Jun 7\n\n\nProject Milestone 2 - 11:59PM ET\n\n\n\n5\nMon, Jun 8\nMultiple Linear Regression II\n\n\n🎥 Code along :: Modeling interest rates\n\n\n\n\nMon, Jun 8\nLab 4\n\n\n\n\n\n\nTue, Jun 9\nLinear Regression Diagnostics\n\n\nTBU\n\n\n\nWed, Jun 10\nLogistic Regression I\n\nLab 4 - 11:59PM ET \n\n🎥 Logistic regression  🎥 Code along :: Building a spam filter  📘 ims - chp 9\n\n\n\n\nThu, Jun 11\nLogistic Regression II\n\n\n🎥 Clasification and decision errors  🎥 Overfitting and spending your data\n\n\n\n\nThu, Jun 11\nLab 5\n\n\n\n\n\n\nFri, Jun 12\nInterval Estimation\n\nProject Milestone 3 - 11:59PM ET\n🎥 Quantifying uncertainty  🎥 Bootstrapping  🎥 Code along :: Bootstrapping Duke Forest houses  📘 ims - chp 11  📘 ims - chp 12\n\n\n\n\nSun, Jun 14\n\n\nLab 5 - 11:59PM ET \n\n\n\n\n6\nMon, Jun 15\nHypothesis Testing\n\n\n🎥 Hypothesis testing  📘 ims - chp 11\n\n\n\n\nMon, Jun 15\nProject Milestone 4 - Peer Review\n\nProject Milestone 4 - 12:30PM ET\n\n\n\n\nTue, Jun 16\nMore Inference\n\n\n\n\n\n\nWed, Jun 17\nMore Inference\n\n\n\n\n\n\nThu, Jun 18\nSpecial Topic\n\n\n\n\n\n\nThu, Jun 18\nLab 6\n\n\n\n\n\n\nFri, Jun 19\nNO CLASS - Juneteenth\n\n\n\n\n\n\nSun, Jun 21\n\n\nLab 6 - 11:59pm ET\n\n\n\n7\nMon, Jun 22\nProject Milestone 5 - Presentations + Final Review\n\nProject - 9:30 AM\n\n\n\n\nMon, Jun 22\nFinal Review\n\n\n\n\n\n\nWed, Jun 24\nFINAL EXAM (9am - 12pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester! Entries for future dates are tentative; the timeline of topics, assignments, and due dates might be changed throughout the session at the instructor’s discretion. All material changes will be communicated with the students in a timely manner.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nMATERIALS\nDUE\nPREPARE\n\n\n\n1\nWed, May 13\nWelcome\n🖥️ slides 00  ⌨️ ae 00\n\nGitHub username - End of Lecture\n\n\n\n\nThu, May 14\nLab 0\n💻 lab 0\n\nLab 0 - End of Lab\n\n\n\n\nThu, May 14\nMeet the Toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto \n\n\n\n\nFri, May 15\nGrammar of Data Visualization\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 02\n\n\n📗 r4ds - chp 1  📘 ims - chp 4 \n\n\n\n2\nMon, May 18\nGrammar of Data Transformation\n🖥️ slides 03  🗒️ notes 03  ⌨️ ae 03  ✅ ae 03\n\n\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\nMon, May 18\nLab 1\n💻 lab 1\n\n\n📗 r4ds - chp 2  📘 ims - chp 5\n\n\n\n\nTue, May 19\nExploratory Data Analysis I\n🖥️ slides 04  🗒️ notes 04  ⌨️ ae 04\n\n\n📗 r4ds - chp 3.6-3.7  🎥 Visualizing and summarizing categorical data  🎥 Visualizing and summarizing numerical data  🎥 Visualizing and summarizing relationships  🎥 Code along :: Star Wars characters\n\n\n\n\nWed, May 20\nExploratory Data Analysis II\n🖥️ slides 05  🗒️ notes 05  ⌨️ ae 05 \n\nLab 1 - 11:59PM ET\n📘 ims - chp 5  📘 ims - chp 6  🎥 Code along :: Diving deeper with Palmer Penguins\n\n\n\n\nThu, May 21\nTidying Data\n\n\n📗 r4ds - chp 5  📘 ims - chp 6\n\n\n\n\nThu, May 21\nLab 2\n\n\n📗 r4ds - chp 4 🎥 Tidy data 🎥 Tidying data 🎥 Code Along: Population over time\n\n\n\n\nFri, May 22\nJoining Data\n\n\n🎥 Joining data  🎥 Code along :: Continent populations  📗 r4ds - chp 19.1-19.3\n\n\n\n\nSun, May 24\n\n\n\n\n\n\n3\nMon, May 25\nNO CLASS - Memorial Day\n\n\n\n\n\n\nTue, May 26\nData Types and Classes\n\n\n🎥 Data types  🎥 Data classes  🎥 Code along :: That’s my type  📗 r4ds - chp 16\n\n\n\n\nWed, May 27\nImporting and Recoding Data\n\nLab 2 - 11:59PM ET\n🎥 Importing data  🎥 Code along :: Halving CO2 emissions  🎥 Code along :: Student survey  📗 r4ds - chp 7  📗 r4ds - chp 17.1 - 17.3\n\n\n\n\nThu, May 28\nMore Practice + Midterm Review\n\n\n\n\n\n\nThu, May 28\nLab 3\n\n\n\n\n\n\nFri, May 29\nData Ethics + Midterm Review\n\n\n📕 mdsr - chp 8  📝 How to make a racist AI in R without really trying  🎥 Alberto Cairo - How charts lie  🎥 Joy Buolamwini - How I’m fighting bias in algorithms\n\n\n\n\nSun, May 31\n\n\nLab 3 - 11:59PM ET\n\n\n\n4\nMon, Jun 1\nMidterm (lecture + lab sessions)\n\n\n\n\n\n\nTue, Jun 2\nProject Milestone 1 - Collaboration\n\nProject Milestone 1 - 12:30PM ET\n\n\n\n\nWed, Jun 3\nThe Language of Models\n\n\n🎥 The language of models  📘 ims - chp 7.1  🎥 Fitting and interpreting models  🎥 Modeling nonlinear relationships\n\n\n\n\nThu, Jun 4\nSimple Linear Regression\n\n\n🎥 Linear regression with a categorical predictor  🎥 Outliers in linear regression  🎥 Code along :: Modeling fish  📘 ims - chp 7.2\n\n\n\n\nThu, Jun 4\nProject Milestone 2 - Proposals\n\n\n\n\n\n\nFri, Jun 5\nMultiple Linear Regression I\n\n\n🎥 Linear regression with multiple predictors  🎥 Main and interaction effects  📘 ims - chp 8.1-8.2  📘 ims - chp 8.3-8.5\n\n\n\n\nSun, Jun 7\n\n\nProject Milestone 2 - 11:59PM ET\n\n\n\n5\nMon, Jun 8\nMultiple Linear Regression II\n\n\n🎥 Code along :: Modeling interest rates\n\n\n\n\nMon, Jun 8\nLab 4\n\n\n\n\n\n\nTue, Jun 9\nLinear Regression Diagnostics\n\n\nTBU\n\n\n\nWed, Jun 10\nLogistic Regression I\n\nLab 4 - 11:59PM ET \n\n🎥 Logistic regression  🎥 Code along :: Building a spam filter  📘 ims - chp 9\n\n\n\n\nThu, Jun 11\nLogistic Regression II\n\n\n🎥 Clasification and decision errors  🎥 Overfitting and spending your data\n\n\n\n\nThu, Jun 11\nLab 5\n\n\n\n\n\n\nFri, Jun 12\nInterval Estimation\n\nProject Milestone 3 - 11:59PM ET\n🎥 Quantifying uncertainty  🎥 Bootstrapping  🎥 Code along :: Bootstrapping Duke Forest houses  📘 ims - chp 11  📘 ims - chp 12\n\n\n\n\nSun, Jun 14\n\n\nLab 5 - 11:59PM ET \n\n\n\n\n6\nMon, Jun 15\nHypothesis Testing\n\n\n🎥 Hypothesis testing  📘 ims - chp 11\n\n\n\n\nMon, Jun 15\nProject Milestone 4 - Peer Review\n\nProject Milestone 4 - 12:30PM ET\n\n\n\n\nTue, Jun 16\nMore Inference\n\n\n\n\n\n\nWed, Jun 17\nMore Inference\n\n\n\n\n\n\nThu, Jun 18\nSpecial Topic\n\n\n\n\n\n\nThu, Jun 18\nLab 6\n\n\n\n\n\n\nFri, Jun 19\nNO CLASS - Juneteenth\n\n\n\n\n\n\nSun, Jun 21\n\n\nLab 6 - 11:59pm ET\n\n\n\n7\nMon, Jun 22\nProject Milestone 5 - Presentations + Final Review\n\nProject - 9:30 AM\n\n\n\n\nMon, Jun 22\nFinal Review\n\n\n\n\n\n\nWed, Jun 24\nFINAL EXAM (9am - 12pm)",
     "crumbs": [
       "Course Information",
       "Schedule"
@@ -4070,7 +4364,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title           year gross_2013 budget_2013    roi binary clean_test\n  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Lovely Bo…  2009  150926117   103144502 1.46   PASS   ok        \n2 St. Trinian's   2007   25236548    12808396 1.97   PASS   ok        \n3 All or Nothing  2002     477286    11656613 0.0409 PASS   ok        \n4 Easy Virtue     2008   16573205    15151588 1.09   PASS   ok        \n5 It's Kind of …  2010   13878419     8545855 1.62   FAIL   notalk"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Long Kiss …  1996   99350440    96535720  1.03 FAIL   notalk    \n2 The Conspirator  2010   29318280    26705796  1.10 FAIL   dubious   \n3 Sparkle          2012   49775928    10146386  4.91 PASS   ok        \n4 El laberinto d…  2006  144100278    18492742  7.79 PASS   ok        \n5 The Chronicles…  2005 1241372343   214745963  5.78 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
@@ -4322,7 +4616,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title           year gross_2013 budget_2013    roi binary clean_test\n  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Lovely Bo…  2009  150926117   103144502 1.46   PASS   ok        \n2 St. Trinian's   2007   25236548    12808396 1.97   PASS   ok        \n3 All or Nothing  2002     477286    11656613 0.0409 PASS   ok        \n4 Easy Virtue     2008   16573205    15151588 1.09   PASS   ok        \n5 It's Kind of …  2010   13878419     8545855 1.62   FAIL   notalk"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Long Kiss …  1996   99350440    96535720  1.03 FAIL   notalk    \n2 The Conspirator  2010   29318280    26705796  1.10 FAIL   dubious   \n3 Sparkle          2012   49775928    10146386  4.91 PASS   ok        \n4 El laberinto d…  2006  144100278    18492742  7.79 PASS   ok        \n5 The Chronicles…  2005 1241372343   214745963  5.78 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
