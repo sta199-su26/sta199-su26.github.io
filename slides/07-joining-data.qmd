@@ -1,28 +1,26 @@
 ---
-title: "Data Joining"
+title: "Joining Data"
 subtitle: "Lecture 7"
-date: "2025-05-23"
+date: "2026-05-22"
 format: 
   revealjs:
     output-file: 07-joining-data-slides.html
+  html: 
+    output-file: 07-joining-data.html
 auto-stretch: false
 ---
 
-## Announcements/Reminders {.smaller}
+## Announcements / Reminders {.smaller}
 
--   Office hours are today from **1:00-3:00** on **Zoom**
+-   Office hours are today from **1:00-3:00** on **Zoom**; I will share a link via a Canvas announcement
 
--   AE04... that was a lot
+-   Lab 2 is now due *Monday*, 5/25 at 11:59pm to Gradescope
 
-    -   The first 3 parts that we did in class are what are important!
-
-    -   The rest is a good exercise in data vis.
-
--   Questions about lab?
+-   Questions about / feedback on lab yesterday?
 
 ## Outline {.smaller}
 
--   ***Last Time:*** Started learning about data transformation!
+-   ***Last Time:*** Started learning about data transformation via pivoting!
 
 -   ***Today:***
 
@@ -38,100 +36,20 @@ auto-stretch: false
 #| warning: false
 
 library(tidyverse)
-statsci <- read_csv("data/statsci.csv")
+statsci <- read_csv("data/statsci_clean.csv")
 population <- read_csv("data/world-pop-2022.csv")
 continent <- read_csv("data/continents.csv")
 ```
 
-## Review: Pivot Longer {.smaller}
+# AE-06
 
-::: columns
-::: {.column .fragment width="65%"}
-> How do we go from this...
+## Recap: Pivoting {.smaller}
 
-```{r}
-#| echo: false
-
-statsci |>
-  separate(degree, sep = " \\(", into = c("major", "degree_type")) |>
-  mutate(
-    degree_type = str_remove(degree_type, "\\)"),
-    degree = fct_relevel(degree_type, "BS", "BS2", "AB", "AB2")
-  ) |>
-  select(degree, `2011`, `2012`, `2013`, `2014`, `2015`)
-```
-:::
-
-::: {.column .fragment width="29%"}
-> ...to this?
-
-```{r}
-#| echo: false
-
-statsci |>
-  pivot_longer(
-    cols = -degree,
-    names_to = "year",
-    names_transform = as.numeric,
-    values_to = "n"
-  ) |>
-  separate(degree, sep = " \\(", into = c("major", "degree")) |>
-  mutate(
-    degree = str_remove(degree, "\\)"),
-    degree = fct_relevel(degree, "BS", "BS2", "AB", "AB2")
-  ) |>
-  select(degree, year, n) |>
-  print(n = 5)
-```
-:::
-:::
-
-## Reverse It: Pivot Wider {.smaller}
-
-::: columns
-::: {.column .fragment width="65%"}
-> How do we get back to this...
-
-```{r}
-#| echo: false
-
-statsci |>
-  separate(degree, sep = " \\(", into = c("major", "degree_type")) |>
-  mutate(
-    degree_type = str_remove(degree_type, "\\)"),
-    degree = fct_relevel(degree_type, "BS", "BS2", "AB", "AB2")
-  ) |>
-  select(degree, `2011`, `2012`, `2013`, `2014`, `2015`)
-```
-:::
-
-::: {.column .fragment width="29%"}
-> ... from this?
-
-```{r}
-#| echo: false
-
-statsci |>
-  pivot_longer(
-    cols = -degree,
-    names_to = "year",
-    names_transform = as.numeric,
-    values_to = "n"
-  ) |>
-  separate(degree, sep = " \\(", into = c("major", "degree")) |>
-  mutate(
-    degree = str_remove(degree, "\\)"),
-    degree = fct_relevel(degree, "BS", "BS2", "AB", "AB2")
-  ) |>
-  select(degree, year, n) |>
-  print(n = 5)
-```
-:::
-:::
+![](img/07/tidyr-pivoting.gif){fig-align="center"}
 
 ## Recap: Pivot Functions {.smaller}
 
-::: columns
+::::: columns
 ::: {.column .fragment width="50%"}
 > Pivot longer...
 
@@ -140,37 +58,38 @@ statsci |>
 
 data_set |>
   pivot_longer(
-    cols = colums_to_move,
-    names_to = "var_for_column_names", 
-    values_to = "var_for_values"
+    cols = colums_to_pivot,
+    names_to = "var_name_for_former_column_names", 
+    values_to = "var_name_for_values"
   )
 ```
 :::
 
 ::: {.column .fragment width="50%"}
-> ... or wider
+> ...
+> or wider
 
 ```{r}
 #| eval: false
 
 data_set |>
   pivot_wider( 
-    names_from = var_with_cols, 
-    values_to = var_with_vals
+    names_from = var_name_with_desired_cols, 
+    values_to = var_name_with_desired_vals
   )
 ```
 :::
-:::
+:::::
 
 # Joining Data
 
 ## Joining Data
 
-What happens if we want information from two different data sets?
+What happens if we want to access information from two different data sets at the same time (e.g., for EDA / plotting purposes)?
 
 ## Joining Data: Sample Scenario {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 
@@ -182,13 +101,14 @@ population
 ::: {.column width="50%"}
 -   We want to know about population in different continents.
 
--   We could use mutate to create a continent variable, but that would be terrible....
+-   We could use mutate to create a continent variable, but that would be painful... we would have to manually tell R which continent each country in our df belongs to
+
 :::
-:::
+:::::
 
 ## Joining Data: Sample Scenario {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="44%"}
 ```{r}
 
@@ -204,13 +124,13 @@ continent
 
 ```
 :::
-:::
+:::::
 
 ## Joining: Example Data
 
-::: columns
-::: {.column .fragment width="25%"}
-> df_X
+:::::: columns
+::: {.column .fragment width="50%"}
+> x
 
 | id  | X   |
 |-----|-----|
@@ -219,8 +139,8 @@ continent
 | 3   | X3  |
 :::
 
-::: {.column .fragment width="25%"}
-> df_Y
+::: {.column .fragment width="50%"}
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -229,16 +149,13 @@ continent
 | 4   | Y4  |
 :::
 
-::: {.column .fragment width="50%"}
-![](images/venn-1-empty.png)
-:::
-:::
+::::::
 
 ## Joining: Left Join
 
-::: columns
+:::::: columns
 ::: {.column .fragment width="25%"}
-> df_X
+> x
 
 | id  | X   |
 |-----|-----|
@@ -248,7 +165,7 @@ continent
 :::
 
 ::: {.column .fragment width="25%"}
-> df_Y
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -258,7 +175,7 @@ continent
 :::
 
 ::: {.column .fragment width="50%"}
-> left_join(df_X, df_Y)
+> left_join(x, y)
 
 | id  | X   | Y    |
 |-----|-----|------|
@@ -266,13 +183,13 @@ continent
 | 2   | X2  | Y2   |
 | 3   | X3  | *NA* |
 :::
-:::
+::::::
 
 ## Joining: Left Join
 
-::: columns
+:::::: columns
 ::: {.column width="25%"}
-> df_X
+> x
 
 | id  | X   |
 |-----|-----|
@@ -282,7 +199,7 @@ continent
 :::
 
 ::: {.column width="25%"}
-> df_Y
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -292,7 +209,7 @@ continent
 :::
 
 ::: {.column width="50%"}
-> left_join(df_X, df_Y)
+> left_join(x, y)
 
 | id  | X   | Y    |
 |-----|-----|------|
@@ -300,25 +217,17 @@ continent
 | 2   | X2  | Y2   |
 | 3   | X3  | *NA* |
 :::
-:::
+::::::
 
-<!-- small Venn diagram in the bottom-right -->
-<div style="
-  position: absolute;
-  bottom: 80px;
-  right: -90px;
-  width: 280px;           /* adjust to taste */
-  pointer-events: none;  /* so it never steals clicks */
-">
-  <img src="images/venn-1.png" style="width: 100%; height: auto;" />
+<div style="position: absolute; bottom: 80px; right: -90px; width: 280px; pointer-events: none;">
+  <img src="img/07/left-join.gif" style="width: 100%; height: auto;">
 </div>
-
 
 ## Joining: Right Join
 
-::: columns
+:::::: columns
 ::: {.column .fragment width="25%"}
-> df_X
+> x
 
 | id  | X   |
 |-----|-----|
@@ -328,7 +237,7 @@ continent
 :::
 
 ::: {.column .fragment width="25%"}
-> df_Y
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -338,7 +247,7 @@ continent
 :::
 
 ::: {.column .fragment width="50%"}
-> right_join(df_X, df_Y)
+> right_join(x, y)
 
 | id  | X    | Y   |
 |-----|------|-----|
@@ -346,13 +255,13 @@ continent
 | 2   | X2   | Y2  |
 | 4   | *NA* | Y4  |
 :::
-:::
+::::::
 
 ## Joining: Right Join
 
-::: columns
+:::::: columns
 ::: {.column width="25%"}
-> df_X
+> x
 
 | id  | X   |
 |-----|-----|
@@ -361,8 +270,8 @@ continent
 | 3   | X3  |
 :::
 
-::: {.column  width="25%"}
-> df_Y
+::: {.column width="25%"}
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -372,7 +281,7 @@ continent
 :::
 
 ::: {.column width="50%"}
-> right_join(df_X, df_Y)
+> right_join(x, y)
 
 | id  | X    | Y   |
 |-----|------|-----|
@@ -380,24 +289,17 @@ continent
 | 2   | X2   | Y2  |
 | 4   | *NA* | Y4  |
 :::
-:::
+::::::
 
-<!-- small Venn diagram in the bottom-right -->
-<div style="
-  position: absolute;
-  bottom: 80px;
-  right: -90px;
-  width: 280px;           /* adjust to taste */
-  pointer-events: none;  /* so it never steals clicks */
-">
-  <img src="images/venn-1.png" style="width: 100%; height: auto;" />
+<div style="position: absolute; bottom: 80px; right: -90px; width: 280px; pointer-events: none;">
+  <img src="img/07/right-join.gif" style="width: 100%; height: auto;">
 </div>
 
 ## Joining: Full Join
 
-::: columns
+:::::: columns
 ::: {.column .fragment width="25%"}
-> df_X
+> x
 
 | id  | X   |
 |-----|-----|
@@ -407,7 +309,7 @@ continent
 :::
 
 ::: {.column .fragment width="25%"}
-> df_Y
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -417,22 +319,22 @@ continent
 :::
 
 ::: {.column .fragment width="50%"}
-> right_join(df_X, df_Y)
+> right_join(x, y)
 
-| id  | X    | Y   |
-|-----|------|-----|
-| 1   | X1   | Y1  |
-| 2   | X2   | Y2  |
-| 3   | X3   | *NA*|
-| 4   | *NA* | Y4  |
+| id  | X    | Y    |
+|-----|------|------|
+| 1   | X1   | Y1   |
+| 2   | X2   | Y2   |
+| 3   | X3   | *NA* |
+| 4   | *NA* | Y4   |
 :::
-:::
+::::::
 
 ## Joining: Full Join
 
-::: columns
+:::::: columns
 ::: {.column width="25%"}
-> df_X
+> x
 
 | id  | X   |
 |-----|-----|
@@ -441,8 +343,8 @@ continent
 | 3   | X3  |
 :::
 
-::: {.column  width="25%"}
-> df_Y
+::: {.column width="25%"}
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -452,34 +354,26 @@ continent
 :::
 
 ::: {.column width="50%"}
-> right_join(df_X, df_Y)
+> right_join(x, y)
 
-| id  | X    | Y   |
-|-----|------|-----|
-| 1   | X1   | Y1  |
-| 2   | X2   | Y2  |
-| 3   | X3   | *NA*|
-| 4   | *NA* | Y4  |
+| id  | X    | Y    |
+|-----|------|------|
+| 1   | X1   | Y1   |
+| 2   | X2   | Y2   |
+| 3   | X3   | *NA* |
+| 4   | *NA* | Y4   |
 :::
-:::
+::::::
 
-<!-- small Venn diagram in the bottom-right -->
-<div style="
-  position: absolute;
-  bottom: 80px;
-  right: -90px;
-  width: 280px;           /* adjust to taste */
-  pointer-events: none;  /* so it never steals clicks */
-">
-  <img src="images/venn-1.png" style="width: 100%; height: auto;" />
+<div style="position: absolute; bottom: 80px; right: -90px; width: 280px; pointer-events: none;">
+  <img src="img/07/full-join.gif" style="width: 100%; height: auto;">
 </div>
-
 
 ## Joining: Inner Join
 
-::: columns
+:::::: columns
 ::: {.column .fragment width="25%"}
-> df_X
+> x
 
 | id  | X   |
 |-----|-----|
@@ -489,7 +383,7 @@ continent
 :::
 
 ::: {.column .fragment width="25%"}
-> df_Y
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -499,20 +393,20 @@ continent
 :::
 
 ::: {.column .fragment width="50%"}
-> inner_join(df_X, df_Y)
+> inner_join(x, y)
 
 | id  | X   | Y   |
 |-----|-----|-----|
 | 1   | X1  | Y1  |
 | 2   | X2  | Y2  |
 :::
-:::
+::::::
 
 ## Joining: Inner Join
 
-::: columns
+:::::: columns
 ::: {.column width="25%"}
-> df_X
+> x
 
 | id  | X   |
 |-----|-----|
@@ -522,7 +416,7 @@ continent
 :::
 
 ::: {.column width="25%"}
-> df_Y
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -532,31 +426,24 @@ continent
 :::
 
 ::: {.column width="50%"}
-> inner_join(df_X, df_Y)
+> inner_join(x, y)
 
 | id  | X   | Y   |
 |-----|-----|-----|
 | 1   | X1  | Y1  |
 | 2   | X2  | Y2  |
 :::
-:::
+::::::
 
-<!-- small Venn diagram in the bottom-right -->
-<div style="
-  position: absolute;
-  bottom: 80px;
-  right: -90px;
-  width: 280px;           /* adjust to taste */
-  pointer-events: none;  /* so it never steals clicks */
-">
-  <img src="images/venn-1.png" style="width: 100%; height: auto;" />
+<div style="position: absolute; bottom: 80px; right: -90px; width: 280px; pointer-events: none;">
+  <img src="img/07/inner-join.gif" style="width: 100%; height: auto;">
 </div>
 
 ## Joining: Semi Join
 
-::: columns
+:::::: columns
 ::: {.column .fragment width="25%"}
-> df_X
+> x
 
 | id  | X   |
 |-----|-----|
@@ -566,7 +453,7 @@ continent
 :::
 
 ::: {.column .fragment width="25%"}
-> df_Y
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -576,21 +463,20 @@ continent
 :::
 
 ::: {.column .fragment width="50%"}
-> semi_join(df_X, df_Y)
+> semi_join(x, y)
 
 | id  | X   |
 |-----|-----|
 | 1   | X1  |
 | 2   | X2  |
 :::
-
-:::
+::::::
 
 ## Joining: Semi Join
 
-::: columns
+:::::: columns
 ::: {.column width="25%"}
-> df_X
+> x
 
 | id  | X   |
 |-----|-----|
@@ -600,7 +486,7 @@ continent
 :::
 
 ::: {.column width="25%"}
-> df_Y
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -610,32 +496,24 @@ continent
 :::
 
 ::: {.column width="50%"}
-> semi_join(df_X, df_Y)
+> semi_join(x, y)
 
 | id  | X   |
 |-----|-----|
 | 1   | X1  |
 | 2   | X2  |
 :::
-:::
+::::::
 
-<!-- small Venn diagram in the bottom-right -->
-<div style="
-  position: absolute;
-  bottom: 80px;
-  right: -90px;
-  width: 280px;           /* adjust to taste */
-  pointer-events: none;  /* so it never steals clicks */
-">
-  <img src="images/venn-1.png" style="width: 100%; height: auto;" />
+<div style="position: absolute; bottom: 80px; right: -90px; width: 280px; pointer-events: none;">
+  <img src="img/07/semi-join.gif" style="width: 100%; height: auto;">
 </div>
-
 
 ## Joining: Anti Join
 
-::: columns
+:::::: columns
 ::: {.column .fragment width="25%"}
-> df_X
+> x
 
 | id  | X   |
 |-----|-----|
@@ -645,7 +523,7 @@ continent
 :::
 
 ::: {.column .fragment width="25%"}
-> df_Y
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -655,20 +533,19 @@ continent
 :::
 
 ::: {.column .fragment width="50%"}
-> anti_join(df_X, df_Y)
+> anti_join(x, y)
 
 | id  | X   |
 |-----|-----|
 | 3   | X3  |
 :::
-:::
-
+::::::
 
 ## Joining: Anti Join
 
-::: columns
+:::::: columns
 ::: {.column width="25%"}
-> df_X
+> x
 
 | id  | X   |
 |-----|-----|
@@ -678,7 +555,7 @@ continent
 :::
 
 ::: {.column width="25%"}
-> df_Y
+> y
 
 | id  | Y   |
 |-----|-----|
@@ -688,33 +565,25 @@ continent
 :::
 
 ::: {.column width="50%"}
-> anti_join(df_X, df_Y)
-
+> anti_join(x, y)
 
 | id  | X   |
 |-----|-----|
 | 3   | X3  |
 :::
-:::
+::::::
 
-<!-- small Venn diagram in the bottom-right -->
-<div style="
-  position: absolute;
-  bottom: 80px;
-  right: -90px;
-  width: 280px;           /* adjust to taste */
-  pointer-events: none;  /* so it never steals clicks */
-">
-  <img src="images/venn-1.png" style="width: 100%; height: auto;" />
+<div style="position: absolute; bottom: 80px; right: -90px; width: 280px; pointer-events: none;">
+  <img src="img/07/anti-join.gif" style="width: 100%; height: auto;">
 </div>
 
 ## Summary of Join Types
 
-![](images/left.png)
+![](img/07/07-dplyr_joins.svg){fig-align="center"}
 
 ## More Notes on Join
 
--   In the following examples, I use left_join()
+-   In the following examples, I use left_join() to demonstrate
 
 -   The same concept holds for other types of joins!
 
@@ -724,9 +593,9 @@ continent
 
 How can I specify which column to join by?
 
-::: columns
+:::::: columns
 ::: {.column .fragment width="25%"}
-> df_X
+> x
 
 | id_X | X   |
 |------|-----|
@@ -736,7 +605,7 @@ How can I specify which column to join by?
 :::
 
 ::: {.column .fragment width="25%"}
-> df_Y
+> y
 
 | id_Y | Y   |
 |------|-----|
@@ -757,11 +626,11 @@ How can I specify which column to join by?
 ```{r}
 #| eval: false
 
-left_join(df_X, df_Y, 
+left_join(x, y, 
           by = join_by(id_X == id_Y))
 ```
 :::
-:::
+::::::
 
 ## What about the pipe? {.smaller}
 
@@ -769,7 +638,8 @@ The following two pieces of code are equivalent:
 
 ```{r}
 #| eval: false
-left_join(df_X, df_Y, 
+
+left_join(x, y, 
           by = join_by(id_X == id_Y))
 ```
 
@@ -778,8 +648,8 @@ left_join(df_X, df_Y,
 ```{r}
 #| eval: false
 
-df_X |> left_join(df_Y, 
-                  by = join_by(id_X == id_Y))
+x |> left_join(y, 
+               by = join_by(id_X == id_Y))
 ```
 
 ## Let's save!
@@ -789,34 +659,129 @@ Most often, you will want to save the result of a join to a new data frame.
 ```{r}
 #| eval: false
 
-df_X_Y <- df_X |> left_join(df_Y, 
-                            by = join_by(id_X == id_Y))
+x_y <- x |> left_join(y, 
+                      by = join_by(id_X == id_Y))
 ```
 
-# Your Turn
+## Another potential scenario...
 
-## What is the result?
+-   In some cases, it may be helpful to join a dataset with itself
+
+-   When joining a dataset with itself, since the "left" and "right data frames are exactly the same, `inner_join()`, `left_join()`, `right_join()`, and `full_join()` will "collapse" to the same solution
+
+-   To demonstrate the utility, I will proceed with `inner_join()`
+
+## Joining a data frame with... itself?
+
+```{r}
+#| include: false
+
+rx_data <- tibble(
+  patid = c(
+    1001, 1001, 1001,
+    1002, 1002,
+    1003, 1003
+  ),
+  
+  ndc_code = c(
+    "00074-4333",
+    "00074-4333",
+    "54868-5277",
+    "59011-4420",
+    "59011-4420",
+    "00406-0512",
+    "00406-0512"
+  ),
+  
+  rx_start = as.Date(c(
+    "2025-01-01",
+    "2025-01-04",
+    "2025-02-10",
+    "2025-03-01",
+    "2025-03-20",
+    "2025-04-05",
+    "2025-04-08"
+  )),
+  
+  rx_end = as.Date(c(
+    "2025-01-03",
+    "2025-01-30",
+    "2025-03-05",
+    "2025-03-15",
+    "2025-04-10",
+    "2025-04-07",
+    "2025-05-01"
+  ))
+)
+
+```
+
+"Toy" prescription data frame
+```{r}
+#| label: rx_data
+
+rx_data
+
+```
+
+## Joining a data frame with... itself? {.medium}
+
+Why the `suffix =` argument? What about the warning?
+
+```{r}
+#| label: self-join
+
+# Join the data to itself by patient ID
+rx_permute <- rx_data |>
+  inner_join(
+    rx_data,
+    by = "patid",
+    suffix = c("_ref", "_comp")
+  )
+  
+```
+
+## Joining a data frame with... itself? {.scrollable .smaller}
+
+```{r}
+#| label: self-join-nw
+#| code-line-numbers: "7"
+
+# Join the data to itself by patient ID
+rx_permute <- rx_data |>
+  inner_join(
+    rx_data,
+    by = "patid",
+    suffix = c("_ref", "_comp"),
+    relationship = "many-to-many"
+  )
+
+rx_permute
+  
+```
+
+
+## Joining a data frame with... itself? {.scrollable .smaller}
+
+-   Now, I can calculate the time-gap (in days) between each patient's prescriptions
+
+-   This might be helpful if I'm considering imputing (i.e., filling in missing data) data in between prescriptions
+
+-   Or, if I have Rx fill data and I'm trying to measure adherence (i.e., is a patient picking up their refills in a timely manner, or are they going days / weeks without medication?)
+
+```{r}
+
+# Keep only records where the comparison prescription starts later
+rx_permute |>
+  filter(rx_start_comp > rx_end_ref) |>
+  # Calculate the gap between prescriptions
+  mutate(
+    gap_days = as.numeric(rx_start_comp - rx_end_ref)) |>
+  select(patid, rx_end_ref, rx_start_comp, gap_days)
+
+```
+
 
 # AE 07
 
-Goal: Do a join!!!
-
-## Data {.smaller}
-
-::: columns
-::: {.column width="44%"}
-```{r}
-
-population
-
-```
-:::
-
-::: {.column width="56%"}
-```{r}
-
-continent
-
-```
-:::
-:::
+Goal: Practice with joins!
