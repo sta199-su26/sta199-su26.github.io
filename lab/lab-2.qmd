@@ -106,7 +106,9 @@ You should have at least 3 commits with meaningful commit messages by the end of
 
 Grouping by one variable.
 
-The following dataframe is used:
+For this question, you will work with the following dataset called `df`.
+The [`tibble()`](https://tibble.tidyverse.org/reference/tibble.html) function creates the data frame (the `tibble` object) `df` with three variables: `var_1`, `var_2`, and `var_3`.
+The following code is already included in your lab document; press the green arrow to run the code chunk and load the `df` into your RStudio environment.
 
 ```{r}
 df <- tibble(
@@ -123,6 +125,13 @@ df
 a\.
 What does the following code chunk do?
 Run it, analyze the result, and articulate in words what `arrange()` does.
+
+::: callout-tip
+Check out the R Documentation for arrange() by typing “?a
+rrange” into the console.
+You should see the “Help” tab pop up in the bottom right pane of your RStudio environment.
+Read through the “Description” section to confirm your understanding of the function.
+:::
 
 ```{r}
 #| eval: false
@@ -142,7 +151,11 @@ df |>
 
 c\.
 What does the following code chunk do?
-Run it and analyze the result and articulate in words what the pipeline does.
+Run it and analyze the result and articulate in words what each pipe does.
+How many rows does the output have?
+How many columns does the output have?
+Is the output grouped?
+If so, how many groups does it have?
 
 ```{r}
 #| eval: false
@@ -153,7 +166,10 @@ df |>
 
 d\.
 Compare this behavior to the following code chunk.
-Run it, analyze the result, and articulate in words what the pipeline does, and how it's behavior is different from part (c).
+How many rows does the output have?
+How many columns does the output have?
+Is the output grouped?
+If so, how many groups does it have?
 
 ```{r}
 #| eval: false
@@ -168,7 +184,13 @@ Grouping by two variables.
 a\.
 How many levels does `var_2` have?
 How many levels does `var_3`have?
-How many possible combinations are there of the levels of `var_2` and `var_3`?
+How many possible combinations are there of the levels of `var_2` and `var_3`? You should use code to support your answers to each component of this question. 
+
+::: callout-tip
+
+Hint: The functions `unique()` and `count()` may be helpful here. 
+
+:::
 
 b\.
 What does the following code chunk do?
@@ -195,16 +217,36 @@ df |>
 ```
 
 d\.
-What do the following pipelines do?
-Run both and analyze their results and articulate in words what each pipeline does.
-How are the outputs of the two pipelines different?
+In the following code cell, we add one more step to the data pipelines from the previous two parts. The new step uses slice_head(n = 1), which is designed to give the first row of the output. Run the code cell and analyze the result for each pipeline. You will notice the results are different. Why?
 
 ```{r}
 #| eval: false
+# pipeline from part b + slice_head()
 df |>
   group_by(var_2, var_3) |>
-  summarize(mean_var_1 = mean(var_1), .groups = "drop")
+  summarize(mean_var_1 = mean(var_1)) |>
+  slice_head(n = 1)
 
+# pipeline from part c + slice_head()
+df |>
+  group_by(var_2, var_3) |>
+  summarize(mean_var_1 = mean(var_1), .groups = "drop") |>
+  slice_head(n = 1)
+```
+
+e\.
+Run the following code cell and analyze the result.
+How many rows does the output have?
+How many columns does the output have?
+Is the output grouped? If so, how many groups does it have, and how many variables is it grouped on?
+Articulate the difference(s) between summarize() and mutate().
+
+::: callout-tip
+Another hint: There are 2 key differences between `summarize()` and `mutate()` that your narrative should mention. Review the help files for each if you are stuck.
+:::
+
+```{r}
+#| eval: false
 df |>
   group_by(var_2, var_3) |>
   mutate(mean_var_1 = mean(var_1))
@@ -230,42 +272,9 @@ b\.
 In a given state, two counties can't have the same name.
 However, across states some county names might be shared.
 A classmate says "Look at that, there is a county called \_\_\_ in each state in this dataset!" **In a single pipeline**, discover all counties that could fill in the blank.
-**Your response should be a data frame with only the county names that could fill in the blank and how many times they appear in the dat**a.
+**Your response should be a data frame with only the county names that could fill in the blank and how many times they appear in the data.**
 
 ## Question 4
-
-Return to the following box plot of population densities where you were asked to identify at least one outlier.
-
-```{r}
-#| label: popdensity-boxplot
-#| fig-width: 5
-#| fig-height: 3
-#| echo: false
-#| eval: true
-
-ggplot(midwest, aes(x = popdensity)) +
-  geom_boxplot() +
-  labs(
-    title = "Population densities of midwest counties",
-    x = "Population density"
-  )
-```
-
-In this question, we want you to revisit this box plot and identify the counties described in each section:
-
-a\.
-The counties with a population density higher than 50,000.
-Your code must use the filter() function.
-
-b\.
-The county with the highest population density.
-Your code must use the max() function.
-
-Answer using **a single pipeline** for each part.
-In each part, your **response should be a data frame** with **five columns**: county name, state name, population density, total population, and area, **in this order**.
-If your response has multiple rows**,** the data frame should be **arranged in descending order of population density**.
-
-## Question 5
 
 In Lab 1 you were also asked to describe the distribution of population densities.
 The following is one acceptable description that touches on shape, center, and spread of this distribution.
@@ -277,10 +286,12 @@ In words, identify which value corresponds to which blank.
 > The middle 50% of the counties have population densities between \_\_\_ to \_\_\_ people per unit area.
 
 ::: callout-tip
+
 The `quantile()` function will be useful here!
+
 :::
 
-## Question 6
+## Question 5
 
 Another visualization from Lab 1 was the plot that showed the proportion of urban counties in each state.
 
@@ -305,7 +316,7 @@ ggplot(midwest, aes(x = state, fill = metro)) +
 
 Calculate the corresponding proportions **in a single data pipeline**.
 
-## Question 7
+## Question 6
 
 a\.
 **In a single pipeline**, calculate the total population for each state and **save the resulting data frame as state_population**.
