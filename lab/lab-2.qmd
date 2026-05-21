@@ -207,7 +207,7 @@ df |>
 c\.
 What does the following code chunk do?
 Run it and analyze the result and articulate in words what the pipeline does, especially mentioning what the `.groups` argument does.
-How is the output different from the one in part (a)?
+How is the output different from the one in part (b)?
 
 ```{r}
 #| eval: false
@@ -390,7 +390,7 @@ countries_of_interest <- c("France", "United States", "Iceland", "Denmark")
 Then, in 1-2 sentences, state why you chose these countries!
 
 b\.
-**In a single pipeline**, filter your reshaped dataset from question 10 to include only the `countries_of_interest` from part (a) and **save the resulting data frame with a new name**.
+**In a single pipeline**, filter your reshaped dataset from question 8 to include only the `countries_of_interest` from part (a) and **save the resulting data frame with a new name**.
 **Do not overwrite the data frame** you're starting with.
 Use a short but informative name.
 **Then, in a new pipeline**, find the `distinct()` countries in the data frame you created to confirm that you've successfully filtered.
