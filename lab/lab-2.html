@@ -99,10 +99,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script><link rel="stylesheet" href="../style/sta199.scss">
 <meta property="og:title" content="Lab 2 – STA 199">
 <meta property="og:description" content="Due to Gradescope by Sun. May 24 11:59 PM">
-<meta property="og:image" content="https://sta199-su26.github.io/lab/lab-2_files/figure-html/popdensity-boxplot-1.png">
+<meta property="og:image" content="https://sta199-su26.github.io/lab/lab-2_files/figure-html/metro-barplot-1.png">
 <meta property="og:site_name" content="STA 199">
 <meta property="og:image:height" content="576">
-<meta property="og:image:width" content="960">
+<meta property="og:image:width" content="1344">
 <meta name="twitter:title" content="Lab 2 – STA 199">
 <meta name="twitter:description" content="Due to Gradescope by Sun. May 24 11:59 PM">
 <meta name="twitter:image" content="https://sta199-su26.github.io/lab/img/twitter-card-ks.pdf">
@@ -276,7 +276,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
-  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   </ul>
 </li>
   <li>
@@ -406,7 +405,7 @@ Important
 </section></section><section id="part-1-all-about-group-by" class="level1"><h1>Part 1: All About Group By</h1>
 <section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <p>Grouping by one variable.</p>
-<p>The following dataframe is used:</p>
+<p>For this question, you will work with the following dataset called <code>df</code>. The <a href="https://tibble.tidyverse.org/reference/tibble.html"><code>tibble()</code></a> function creates the data frame (the <code>tibble</code> object) <code>df</code> with three variables: <code>var_1</code>, <code>var_2</code>, and <code>var_3</code>. The following code is already included in your lab document; press the green arrow to run the code chunk and load the <code>df</code> into your RStudio environment.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
 <span>  var_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">50</span>, <span class="fl">20</span>, <span class="fl">70</span>, <span class="fl">10</span>, <span class="fl">100</span>, <span class="fl">30</span>, <span class="fl">40</span>, <span class="fl">80</span>, <span class="fl">120</span>, <span class="fl">60</span>, <span class="fl">90</span>, <span class="fl">110</span><span class="op">)</span>,</span>
@@ -436,6 +435,19 @@ Important
 </div>
 </div>
 <p>a. What does the following code chunk do? Run it, analyze the result, and articulate in words what <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> does.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Check out the R Documentation for arrange() by typing “?a rrange” into the console. You should see the “Help” tab pop up in the bottom right pane of your RStudio environment. Read through the “Description” section to confirm your understanding of the function.</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">var_2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -445,20 +457,33 @@ Important
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">var_2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>c. What does the following code chunk do? Run it and analyze the result and articulate in words what the pipeline does.</p>
+<p>c. What does the following code chunk do? Run it and analyze the result and articulate in words what each pipe does. How many rows does the output have? How many columns does the output have? Is the output grouped? If so, how many groups does it have?</p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">var_2</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_var_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">var_1</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>d. Compare this behavior to the following code chunk. Run it, analyze the result, and articulate in words what the pipeline does, and how it’s behavior is different from part (c).</p>
+<p>d. Compare this behavior to the following code chunk. How many rows does the output have? How many columns does the output have? Is the output grouped? If so, how many groups does it have?</p>
 <div class="cell">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_var_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">var_1</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p>Grouping by two variables.</p>
-<p>a. How many levels does <code>var_2</code> have? How many levels does <code>var_3</code>have? How many possible combinations are there of the levels of <code>var_2</code> and <code>var_3</code>?</p>
+<p>a. How many levels does <code>var_2</code> have? How many levels does <code>var_3</code>have? How many possible combinations are there of the levels of <code>var_2</code> and <code>var_3</code>? You should use code to support your answers to each component of this question.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hint: The functions <code><a href="https://rdrr.io/r/base/unique.html">unique()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> may be helpful here.</p>
+</div>
+</div>
 <p>b. What does the following code chunk do? Run it and analyze the result and articulate in words what the pipeline does. Then, comment on what the message says.</p>
 <div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">|&gt;</span></span>
@@ -471,13 +496,36 @@ Important
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">var_2</span>, <span class="va">var_3</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_var_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">var_1</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>d. What do the following pipelines do? Run both and analyze their results and articulate in words what each pipeline does. How are the outputs of the two pipelines different?</p>
+<p>d. In the following code cell, we add one more step to the data pipelines from the previous two parts. The new step uses slice_head(n = 1), which is designed to give the first row of the output. Run the code cell and analyze the result for each pipeline. You will notice the results are different. Why?</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">var_2</span>, <span class="va">var_3</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_var_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">var_1</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span></span>
-<span></span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># pipeline from part b + slice_head()</span></span>
 <span><span class="va">df</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">var_2</span>, <span class="va">var_3</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_var_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">var_1</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># pipeline from part c + slice_head()</span></span>
+<span><span class="va">df</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">var_2</span>, <span class="va">var_3</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_var_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">var_1</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>e. Run the following code cell and analyze the result. How many rows does the output have? How many columns does the output have? Is the output grouped? If so, how many groups does it have, and how many variables is it grouped on? Articulate the difference(s) between summarize() and mutate().</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Another hint: There are 2 key differences between <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> that your narrative should mention. Review the help files for each if you are stuck.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">var_2</span>, <span class="va">var_3</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>mean_var_1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">var_1</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -486,22 +534,8 @@ Important
 <p>You will revisit and build on some of your findings from Lab 1, where you explored the <code>midwest</code> data frame. Remember that this data frame is bundled with the <strong>ggplot2</strong> package and is automatically loaded when you load the tidyverse package. As a refresher, the data contains demographic characteristics of counties in the Midwest region of the United States. You can read the documentation for the data set, including variable definitions, by typing <code><a href="https://ggplot2.tidyverse.org/reference/midwest.html">?midwest</a></code> in the Console or searching for <code>midwest</code> in the Help pane.</p>
 <section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <p>a. <strong>In a single pipeline,</strong> calculate the number of counties in each state and display your results in descending order of number of counties. Which state has the highest number of counties, and how many? Which state has the lowest number, and how many?</p>
-<p>b. In a given state, two counties can’t have the same name. However, across states some county names might be shared. A classmate says “Look at that, there is a county called ___ in each state in this dataset!” <strong>In a single pipeline</strong>, discover all counties that could fill in the blank. <strong>Your response should be a data frame with only the county names that could fill in the blank and how many times they appear in the dat</strong>a.</p>
+<p>b. In a given state, two counties can’t have the same name. However, across states some county names might be shared. A classmate says “Look at that, there is a county called ___ in each state in this dataset!” <strong>In a single pipeline</strong>, discover all counties that could fill in the blank. <strong>Your response should be a data frame with only the county names that could fill in the blank and how many times they appear in the data.</strong></p>
 </section><section id="question-4" class="level2"><h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
-<p>Return to the following box plot of population densities where you were asked to identify at least one outlier.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="lab-2_files/figure-html/popdensity-boxplot-1.png" class="img-fluid figure-img" width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>In this question, we want you to revisit this box plot and identify the counties described in each section:</p>
-<p>a. The counties with a population density higher than 50,000. Your code must use the filter() function.</p>
-<p>b. The county with the highest population density. Your code must use the max() function.</p>
-<p>Answer using <strong>a single pipeline</strong> for each part. In each part, your <strong>response should be a data frame</strong> with <strong>five columns</strong>: county name, state name, population density, total population, and area, <strong>in this order</strong>. If your response has multiple rows<strong>,</strong> the data frame should be <strong>arranged in descending order of population density</strong>.</p>
-</section><section id="question-5" class="level2"><h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <p>In Lab 1 you were also asked to describe the distribution of population densities. The following is one acceptable description that touches on shape, center, and spread of this distribution. <strong>In a single pipeline</strong>, calculate the values that should go into the blanks. In words, identify which value corresponds to which blank.</p>
 <blockquote class="blockquote">
 <p>The distribution of population density of counties is unimodal and extremely right-skewed. A typical Midwestern county has population density of ____ people per unit area. The middle 50% of the counties have population densities between ___ to ___ people per unit area.</p>
@@ -519,7 +553,7 @@ Tip
 <p>The <code><a href="https://rdrr.io/r/stats/quantile.html">quantile()</a></code> function will be useful here!</p>
 </div>
 </div>
-</section><section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+</section><section id="question-5" class="level2"><h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <p>Another visualization from Lab 1 was the plot that showed the proportion of urban counties in each state.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -530,14 +564,14 @@ Tip
 </div>
 </div>
 <p>Calculate the corresponding proportions <strong>in a single data pipeline</strong>.</p>
-</section><section id="question-7" class="level2"><h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+</section><section id="question-6" class="level2"><h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
 <p>a. <strong>In a single pipeline</strong>, calculate the total population for each state and <strong>save the resulting data frame as state_population</strong>. Then, <strong>in a separate pipeline,</strong> display it in descending order of total population.</p>
 <p>b. <strong>In a single pipeline</strong>, use the <strong>state_population</strong> data frame made above to calculate the proportion of the total population in each state, displaying the results in descending order of proportion of population.</p>
 <p>c. Use your results from a and b to answer this question: which Midwestern state is most populous and what percent of the Midwest population lives there? Which is the least populous and what percent lives there?</p>
 </section></section><section id="part-3-life-expectancy" class="level1"><h1>Part 3: Life Expectancy</h1>
 <p>In this part of the lab, you will work with data regarding life expectancy at birth in various countries (and groups of countries) between 1960 and 2023; the data is from the United Nations population division.</p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">life_expect</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/life_expect_total.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">life_expect</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/life_expect_total.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="question-8" class="level2"><h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
 <p>a. Get to know the data! Use the <code><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse()</a></code> function and show the result. In writing, how many rows does <code>life_expect</code> have and what does each row represent? How many columns does <code>life_expect</code> have and what does each column represent?</p>
@@ -566,7 +600,7 @@ Tip
 </ul></section><section id="question-10" class="level2"><h2 class="anchored" data-anchor-id="question-10">Question 10</h2>
 <p>a. Create a vector called <code>countries_of_interest</code> which contains the names of up to five countries you want to visualize the life expectancy for over the years. For example, if these countries are Germany and United States, you can do this as follows:</p>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">countries_of_interest</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Germany"</span>, <span class="st">"United States"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">countries_of_interest</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Germany"</span>, <span class="st">"United States"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then, in 1-2 sentences, state why you chose these countries!</p>
 <p>b. <strong>In a single pipeline</strong>, filter your reshaped dataset from question 10 to include only the <code>countries_of_interest</code> from part (a) and <strong>save the resulting data frame with a new name</strong>. <strong>Do not overwrite the data frame</strong> you’re starting with. Use a short but informative name. <strong>Then, in a new pipeline</strong>, find the <code><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct()</a></code> countries in the data frame you created.</p>
