@@ -172,66 +172,143 @@
     "href": "lab.html",
     "title": "Labs",
     "section": "",
-    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\nNo.\n\n\nTitle\n\n\nDue date\n\n\n\n\n\n\nLab 0\n\n\nHello, World and STA 199!\n\n\nEnd of lab on May 14\n\n\n\n\nLab 1\n\n\nFrom the Midwest to Lego Sets!\n\n\nDue to Gradescope by Wed. May 20 11:59 PM\n\n\n\n\nLab 2\n\n\nData Transformation + Tidying\n\n\nDue Wed. May 28 11:59 PM\n\n\n\n\n\nNo matching items",
+    "text": "More labs to be added as the semester progresses.\n\n\n\n\n\n\n\n\n\nNo.\n\n\nTitle\n\n\nDue date\n\n\n\n\n\n\nLab 0\n\n\nHello, World and STA 199!\n\n\nEnd of lab on May 14\n\n\n\n\nLab 1\n\n\nFrom the Midwest to Lego Sets!\n\n\nDue to Gradescope by Wed. May 20 11:59 PM\n\n\n\n\nLab 2\n\n\nData Transformation + Tidying\n\n\nDue to Gradescope by Sun. May 24 11:59 PM\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Labs"
     ]
   },
   {
-    "objectID": "lab/lab-0.html",
-    "href": "lab/lab-0.html",
-    "title": "Lab 0",
+    "objectID": "lab/lab-2.html",
+    "href": "lab/lab-2.html",
+    "title": "Lab 2",
     "section": "",
-    "text": "This lab will set you up for the computing workflow and give you an opportunity to introduce yourselves to each other and the teaching team."
+    "text": "In this lab, you’ll continue to hone your data science workflow and integrate data visualization, wrangling, and tidying.\n\n\n\n\n\n\nNote\n\n\n\nThis lab assumes you’ve completed Lab 0 and Lab 1 and doesn’t repeat setup and overview content from those labs. If you haven’t done those yet, you should review them before starting with this one.\n\n\n\nBy the end of the lab, you will…\n\nBe able to create transform data using dplyr\n\nBuild on your mastery of data visualizations using ggplot2\n\nGet more experience with data science workflow using R, RStudio, Git, and GitHub\nFurther your reproducible authoring skills with Quarto\nImprove your familiarity with version control using Git and GitHub\n\n\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA199 under My reservations to log into your container. You should now see the RStudio environment.\n\n\nGo to the course organization at github.com/sta199-su26 organization on GitHub. Click on the repo with the prefix lab-2. It contains the starter documents you need to complete the lab.\nClick on the green CODE button and select Use SSH (this might already be selected by default; if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-2.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\nIn lab-2.qmd, update the author field to your name, render your document, and examine the changes. Then, in the Git pane, click on Diff to view your changes, add a commit message (e.g., “Added author name”), and click Commit. Then, push the changes to your GitHub repository and, in your browser, confirm that these changes have indeed propagated to your repository.\n\n\n\n\n\n\nImportant\n\n\n\nIf you encounter any issues with the above steps, flag your TA for help before proceeding.\n\n\n\nIn this lab, we will work with the tidyverse package, a collection of packages for performing data analysis in a “tidy” way.\n\nlibrary(tidyverse)\n\n\n\nRun the code cell by clicking on the green triangle (play) button for the code cell labeled load-packages. This loads the package so that its features (the functions and datasets in it) are accessible from your Console.\nThen, render the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document.\n\nAs we’ve discussed in the lecture, your plots should include an informative title, axes and legends should have human-readable labels, and aesthetic choices should be carefully considered.\nAdditionally, code should follow the tidyverse style. In particular,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nFurthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.1\nAs you complete the lab and other assignments in this course, remember to develop a sound workflow for reproducible data analysis. This assignment will periodically remind you to render, commit, and push your changes to GitHub.\n\n\n\n\n\n\nImportant\n\n\n\nYou should have at least 3 commits with meaningful commit messages by the end of the assignment."
   },
   {
-    "objectID": "lab/lab-0.html#access-r-and-rstudio",
-    "href": "lab/lab-0.html#access-r-and-rstudio",
-    "title": "Lab 0",
-    "section": "1. Access R and RStudio",
-    "text": "1. Access R and RStudio\n\nGo to https://cmgr.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick STA199 to log into the Docker container. You should now see the RStudio environment.\n\nGo to https://cmgr.oit.duke.edu/containers and under Reservations available click on reserve STA199 to reserve a container for yourself.\n\n\n\n\n\n\nNote\n\n\n\nA container is a self-contained instance of RStudio for you, and you alone. You will do all of your computing in your container.\n\n\nOnce you’ve reserved the container you’ll see that it will show up under My reservations.\nTo launch your container click on it under My reservations, then click Login, and then Start.1"
+    "objectID": "lab/lab-2.html#learning-objectives",
+    "href": "lab/lab-2.html#learning-objectives",
+    "title": "Lab 2",
+    "section": "",
+    "text": "By the end of the lab, you will…\n\nBe able to create transform data using dplyr\n\nBuild on your mastery of data visualizations using ggplot2\n\nGet more experience with data science workflow using R, RStudio, Git, and GitHub\nFurther your reproducible authoring skills with Quarto\nImprove your familiarity with version control using Git and GitHub"
   },
   {
-    "objectID": "lab/lab-0.html#create-a-github-account",
-    "href": "lab/lab-0.html#create-a-github-account",
-    "title": "Lab 0",
-    "section": "2. Create a GitHub account",
-    "text": "2. Create a GitHub account\nYou should have already done this yesterday during class! Go ahead and check to make sure you remember what email address you used with your GitHub account."
+    "objectID": "lab/lab-2.html#getting-started",
+    "href": "lab/lab-2.html#getting-started",
+    "title": "Lab 2",
+    "section": "",
+    "text": "Go to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA199 under My reservations to log into your container. You should now see the RStudio environment.\n\n\nGo to the course organization at github.com/sta199-su26 organization on GitHub. Click on the repo with the prefix lab-2. It contains the starter documents you need to complete the lab.\nClick on the green CODE button and select Use SSH (this might already be selected by default; if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-2.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\nIn lab-2.qmd, update the author field to your name, render your document, and examine the changes. Then, in the Git pane, click on Diff to view your changes, add a commit message (e.g., “Added author name”), and click Commit. Then, push the changes to your GitHub repository and, in your browser, confirm that these changes have indeed propagated to your repository.\n\n\n\n\n\n\nImportant\n\n\n\nIf you encounter any issues with the above steps, flag your TA for help before proceeding."
   },
   {
-    "objectID": "lab/lab-0.html#set-up-your-ssh-key",
-    "href": "lab/lab-0.html#set-up-your-ssh-key",
-    "title": "Lab 0",
-    "section": "3. Set up your SSH key",
-    "text": "3. Set up your SSH key\nYou will authenticate GitHub using SSH (Secure Shell Protocol – it doesn’t really matter what this means for the purpose of this course). Below is an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nGo back to your RStudio container and type credentials::ssh_setup_github() into your console.\nR will ask “No SSH key found. Generate one now?” You should click 1 for yes.\nYou will generate a key. R will then ask “Would you like to open a browser now?” You should click 1 for yes.\nYou may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta199).\n\nYou can find more detailed instructions here if you’re interested."
+    "objectID": "lab/lab-2.html#packages",
+    "href": "lab/lab-2.html#packages",
+    "title": "Lab 2",
+    "section": "",
+    "text": "In this lab, we will work with the tidyverse package, a collection of packages for performing data analysis in a “tidy” way.\n\nlibrary(tidyverse)\n\n\n\nRun the code cell by clicking on the green triangle (play) button for the code cell labeled load-packages. This loads the package so that its features (the functions and datasets in it) are accessible from your Console.\nThen, render the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document."
   },
   {
-    "objectID": "lab/lab-0.html#configure-git-to-introduce-yourself",
-    "href": "lab/lab-0.html#configure-git-to-introduce-yourself",
-    "title": "Lab 0",
-    "section": "4. Configure Git to introduce yourself",
-    "text": "4. Configure Git to introduce yourself\nThere is one more thing we need to do before getting started on the assignment. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\n\n\n\n\n\n\nNote\n\n\n\nYou’ll hear about 📦 packages a lot in the context of R – basically they’re how developers write functions and bundle them to distribute to the community (and more on this later too!).\n\n\nType the following lines of code in the console in RStudio filling in your name and the address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n)\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Katie Solarz\", \n  user.email = \"katiesolarz@gmail.com\"\n)\n\n\n\n\n\n\n\nNote\n\n\n\nI used my personal email because that is the one I used to create my GitHub account. You must use the exact same email address that you used to create your GitHub account, even if it isn’t your Duke email.\n\n\nYou are now ready interact with GitHub via RStudio!\nIf you don’t do this, we won’t be able to tell who you are and give you points for the work you do…\n\n\n\n\n\n\nNote\n\n\n\nWell, a more accurate statement would be that we will be reaching out to you to get things right during the first few days of class. But, it’s best if you can get it right today!\n\n\n\n\n\n\n\n\nHow do I know if I did it right?\n\n\n\nWhen you input the usethis::use_git_config(...) command into the console and hit enter/return, it will appear as if nothing happened. To verify that everything worked, you can briefly switch over to the Terminal tab (should be to the right of Console) and type the commands git config user.name and git config user.email. If all is well, these will return whatever text you originally provided. If you notice a mistake or typo, you can just go back to the Console and rerun usethis::use_git_config(...) with modified inputs.\n\n\n\n\n\n\n\n\nNeed a recap? Watch this video!\n\n\n\n\n\nThe following video walks you through the steps outlined in the SSH key generation and Git configuration sections above."
+    "objectID": "lab/lab-2.html#guidelines",
+    "href": "lab/lab-2.html#guidelines",
+    "title": "Lab 2",
+    "section": "",
+    "text": "As we’ve discussed in the lecture, your plots should include an informative title, axes and legends should have human-readable labels, and aesthetic choices should be carefully considered.\nAdditionally, code should follow the tidyverse style. In particular,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nFurthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.1\nAs you complete the lab and other assignments in this course, remember to develop a sound workflow for reproducible data analysis. This assignment will periodically remind you to render, commit, and push your changes to GitHub.\n\n\n\n\n\n\nImportant\n\n\n\nYou should have at least 3 commits with meaningful commit messages by the end of the assignment."
   },
   {
-    "objectID": "lab/lab-0.html#babys-first-repo",
-    "href": "lab/lab-0.html#babys-first-repo",
-    "title": "Lab 0",
-    "section": "5. Baby’s first repo",
-    "text": "5. Baby’s first repo\nA GitHub repository (repo) is a collection of files hosted on GitHub. Repos are the main way we will distribute files to you during the semester. When you copy the files in a repo to your local computing environment (your container, in this case), that’s called “cloning”. So, let’s clone our first repo:\n\nGo to the repository for lab-0 in the course GitHub organization: https://github.com/sta199-su26/lab-0.\n\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\n\n\n\n\n\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\n\nClick Create Project.\n\n\n\n\n\n\nSince this is the first time you are connecting to GitHub from this RStudio instance, you will be asked to confirm the authenticity of the host. This will happen in a pop-up window like the one below. Type yes in the box and hit Enter.\n\n\n\n\n\nRStudio will now clone the repo and create a new RStudio project for you. This might take a few seconds. Once done, the files from your GitHub repo will be displayed in the Files pane in RStudio.\n\nYou will need to get used to these steps, because you’ll probably clone at least one new repo every week."
+    "objectID": "lab/lab-2.html#question-1",
+    "href": "lab/lab-2.html#question-1",
+    "title": "Lab 2",
+    "section": "Question 1",
+    "text": "Question 1\nGrouping by one variable.\nThe following dataframe is used:\n\ndf &lt;- tibble(\n  var_1 = c(50, 20, 70, 10, 100, 30, 40, 80, 120, 60, 90, 110),\n  var_2 = c(\"Pizza\", \"Burger\", \"Pizza\", \"Pizza\", \"Burger\", \"Burger\",\n            \"Burger\", \"Pizza\", \"Burger\", \"Pizza\", \"Pizza\", \"Burger\"),\n  var_3 = c(\"Apple\", \"Apple\", \"Pear\", \"Banana\", \"Pear\", \"Banana\",\n            \"Apple\", \"Apple\", \"Pear\", \"Pear\", \"Banana\", \"Banana\")\n)\n\ndf\n\n# A tibble: 12 × 3\n   var_1 var_2  var_3 \n   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; \n 1    50 Pizza  Apple \n 2    20 Burger Apple \n 3    70 Pizza  Pear  \n 4    10 Pizza  Banana\n 5   100 Burger Pear  \n 6    30 Burger Banana\n 7    40 Burger Apple \n 8    80 Pizza  Apple \n 9   120 Burger Pear  \n10    60 Pizza  Pear  \n11    90 Pizza  Banana\n12   110 Burger Banana\n\n\na. What does the following code chunk do? Run it, analyze the result, and articulate in words what arrange() does.\n\ndf |&gt;\n  arrange(var_2)\n\nb. What does the following code chunk do? Run it and analyze the result and articulate in words what group_by() does.\n\ndf |&gt;\n  group_by(var_2)\n\nc. What does the following code chunk do? Run it and analyze the result and articulate in words what the pipeline does.\n\ndf |&gt;\n  group_by(var_2) |&gt;\n  summarize(mean_var_1 = mean(var_1))\n\nd. Compare this behavior to the following code chunk. Run it, analyze the result, and articulate in words what the pipeline does, and how it’s behavior is different from part (c).\n\ndf |&gt;\n  summarize(mean_var_1 = mean(var_1))"
   },
   {
-    "objectID": "lab/lab-0.html#hello-sta-199",
-    "href": "lab/lab-0.html#hello-sta-199",
-    "title": "Lab 0",
-    "section": "6. Hello STA 199!",
-    "text": "6. Hello STA 199!\nFill out the course “Getting to know you” survey on Canvas.\nWe will use the information collected in this survey for a variety of goals, including getting to know you as a person and your course goals and concerns, as well as pair you with project teammates with similar interests, be it personal or professional."
+    "objectID": "lab/lab-2.html#question-2",
+    "href": "lab/lab-2.html#question-2",
+    "title": "Lab 2",
+    "section": "Question 2",
+    "text": "Question 2\nGrouping by two variables.\na. How many levels does var_2 have? How many levels does var_3have? How many possible combinations are there of the levels of var_2 and var_3?\nb. What does the following code chunk do? Run it and analyze the result and articulate in words what the pipeline does. Then, comment on what the message says.\n\ndf |&gt;\n  group_by(var_2, var_3) |&gt;\n  summarize(mean_var_1 = mean(var_1))\n\nc. What does the following code chunk do? Run it and analyze the result and articulate in words what the pipeline does, especially mentioning what the .groups argument does. How is the output different from the one in part (a)?\n\ndf |&gt;\n  group_by(var_2, var_3) |&gt;\n  summarize(mean_var_1 = mean(var_1), .groups = \"drop\")\n\nd. What do the following pipelines do? Run both and analyze their results and articulate in words what each pipeline does. How are the outputs of the two pipelines different?\n\ndf |&gt;\n  group_by(var_2, var_3) |&gt;\n  summarize(mean_var_1 = mean(var_1), .groups = \"drop\")\n\ndf |&gt;\n  group_by(var_2, var_3) |&gt;\n  mutate(mean_var_1 = mean(var_1))"
   },
   {
-    "objectID": "lab/lab-0.html#footnotes",
-    "href": "lab/lab-0.html#footnotes",
-    "title": "Lab 0",
+    "objectID": "lab/lab-2.html#question-3",
+    "href": "lab/lab-2.html#question-3",
+    "title": "Lab 2",
+    "section": "Question 3",
+    "text": "Question 3\na. In a single pipeline, calculate the number of counties in each state and display your results in descending order of number of counties. Which state has the highest number of counties, and how many? Which state has the lowest number, and how many?\nb. In a given state, two counties can’t have the same name. However, across states some county names might be shared. A classmate says “Look at that, there is a county called ___ in each state in this dataset!” In a single pipeline, discover all counties that could fill in the blank. Your response should be a data frame with only the county names that could fill in the blank and how many times they appear in the data."
+  },
+  {
+    "objectID": "lab/lab-2.html#question-4",
+    "href": "lab/lab-2.html#question-4",
+    "title": "Lab 2",
+    "section": "Question 4",
+    "text": "Question 4\nReturn to the following box plot of population densities where you were asked to identify at least one outlier.\n\n\n\n\n\n\n\n\nIn this question, we want you to revisit this box plot and identify the counties described in each section:\na. The counties with a population density higher than 50,000. Your code must use the filter() function.\nb. The county with the highest population density. Your code must use the max() function.\nAnswer using a single pipeline for each part. In each part, your response should be a data frame with five columns: county name, state name, population density, total population, and area, in this order. If your response has multiple rows, the data frame should be arranged in descending order of population density."
+  },
+  {
+    "objectID": "lab/lab-2.html#question-5",
+    "href": "lab/lab-2.html#question-5",
+    "title": "Lab 2",
+    "section": "Question 5",
+    "text": "Question 5\nIn Lab 1 you were also asked to describe the distribution of population densities. The following is one acceptable description that touches on shape, center, and spread of this distribution. In a single pipeline, calculate the values that should go into the blanks. In words, identify which value corresponds to which blank.\n\nThe distribution of population density of counties is unimodal and extremely right-skewed. A typical Midwestern county has population density of ____ people per unit area. The middle 50% of the counties have population densities between ___ to ___ people per unit area.\n\n\n\n\n\n\n\nTip\n\n\n\nThe quantile() function will be useful here!"
+  },
+  {
+    "objectID": "lab/lab-2.html#question-6",
+    "href": "lab/lab-2.html#question-6",
+    "title": "Lab 2",
+    "section": "Question 6",
+    "text": "Question 6\nAnother visualization from Lab 1 was the plot that showed the proportion of urban counties in each state.\n\n\n\n\n\n\n\n\nCalculate the corresponding proportions in a single data pipeline."
+  },
+  {
+    "objectID": "lab/lab-2.html#question-7",
+    "href": "lab/lab-2.html#question-7",
+    "title": "Lab 2",
+    "section": "Question 7",
+    "text": "Question 7\na. In a single pipeline, calculate the total population for each state and save the resulting data frame as state_population. Then, in a separate pipeline, display it in descending order of total population.\nb. In a single pipeline, use the state_population data frame made above to calculate the proportion of the total population in each state, displaying the results in descending order of proportion of population.\nc. Use your results from a and b to answer this question: which Midwestern state is most populous and what percent of the Midwest population lives there? Which is the least populous and what percent lives there?"
+  },
+  {
+    "objectID": "lab/lab-2.html#question-8",
+    "href": "lab/lab-2.html#question-8",
+    "title": "Lab 2",
+    "section": "Question 8",
+    "text": "Question 8\na. Get to know the data! Use the glimpse() function and show the result. In writing, how many rows does life_expect have and what does each row represent? How many columns does life_expect have and what does each column represent?\nb. High and low life expectancy: In a single pipeline, identify countries with a 2023 life expectancy above 85 or below 55. Your response should be a data frame with two columns: 2023 and country_name.\nc. Growing life expectancy: In a single pipeline, identify which country had the largest ratio of 2023 life expectancy to 1960 life expectancy. Your response should be a data frame with one row and two columns: the ratio and country_name. What is the English interpretation of this result? Does this result surprise you?\n\n\n\n\n\n\nTip\n\n\n\nColumn names that are numbers are not considered “proper” in R, therefore to work with them you’ll need to surround them with backticks, e.g. select( ` 1993 ` )."
+  },
+  {
+    "objectID": "lab/lab-2.html#question-9",
+    "href": "lab/lab-2.html#question-9",
+    "title": "Lab 2",
+    "section": "Question 9",
+    "text": "Question 9\nIn a single pipeline, reshape (pivot) life_expect such that each row represents a country/year combination, with columns country_name,year, and life_expectancy; save the result to a new variable. Then, display the resulting data frame and state how many rows and columns it has.\nRequirements:\n\nYour code must use one of pivot_longer() or pivot_wider(). There are other ways you can do this reshaping move in R, but this question requires solving this problem by pivoting.\nIn your pivot_*() function, you must use names_transform = as.numeric as an argument to force the new year column to be numeric.\nThe resulting data frame must be saved as something other than life_expect so you (1) can refer to this data frame later in your analysis and (2) do not overwrite life_expect. Use a short but informative name."
+  },
+  {
+    "objectID": "lab/lab-2.html#question-10",
+    "href": "lab/lab-2.html#question-10",
+    "title": "Lab 2",
+    "section": "Question 10",
+    "text": "Question 10\na. Create a vector called countries_of_interest which contains the names of up to five countries you want to visualize the life expectancy for over the years. For example, if these countries are Germany and United States, you can do this as follows:\n\ncountries_of_interest &lt;- c(\"Germany\", \"United States\")\n\nThen, in 1-2 sentences, state why you chose these countries!\nb. In a single pipeline, filter your reshaped dataset from question 10 to include only the countries_of_interest from part (a) and save the resulting data frame with a new name. Do not overwrite the data frame you’re starting with. Use a short but informative name. Then, in a new pipeline, find the distinct() countries in the data frame you created.\n\n\n\n\n\n\nTip\n\n\n\nThe number of distinct countries in the filtered data frame you created in part (b) should equal the number of countries you chose in part (a). If it doesn’t, you might have misspelled a country name or made a mistake in filtering for these countries. Go back and correct your work."
+  },
+  {
+    "objectID": "lab/lab-2.html#question-11",
+    "href": "lab/lab-2.html#question-11",
+    "title": "Lab 2",
+    "section": "Question 11",
+    "text": "Question 11\nUsing your data frame from the previous question, create a plot of life expectancy (y) vs. year (x) for these countries. In a few sentences, describe the patterns you observe in the plot, particularly focusing on anything you find surprising or not surprising, based on your knowledge (or lack thereof) of these countries.\nRequirements for the plot:\n\nData should be represented with points as well as lines connecting the points for each country (Note: lines should be directly connecting points, not smooth through them).\nEach country should be represented by a different color line and different color and shape points.\nAxes and legend should be properly labeled.\nThe plot should have an appropriate title (and optionally a subtitle).\nPlot should be customized in at least one additional way – you could use a different than default color scale, or different than default theme, or some other customization."
+  },
+  {
+    "objectID": "lab/lab-2.html#question-12",
+    "href": "lab/lab-2.html#question-12",
+    "title": "Lab 2",
+    "section": "Question 12",
+    "text": "Question 12\nBriefly explain why the pivot in question 9 was necessary for creating the plot in question 11."
+  },
+  {
+    "objectID": "lab/lab-2.html#question-13---workflow",
+    "href": "lab/lab-2.html#question-13---workflow",
+    "title": "Lab 2",
+    "section": "Question 13 - Workflow",
+    "text": "Question 13 - Workflow\nWorkflow: please make sure you have selected pages in gradescope AND made at least three commits to this project to get full credit for this question."
+  },
+  {
+    "objectID": "lab/lab-2.html#footnotes",
+    "href": "lab/lab-2.html#footnotes",
+    "title": "Lab 2",
     "section": "Footnotes",
-    "text": "Footnotes\n\nYes, it’s too many steps. I don’t know why! But it works, and you’ll get used to it. Trust me, it beats downloading and installing everything you need on your computers!↩︎"
+    "text": "Footnotes\n\nRemember, haikus, not novellas, when writing code!↩︎"
   },
   {
     "objectID": "computing-cheatsheets.html",
@@ -1026,7 +1103,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Something's Go…  2003  495509065   101286957  4.89 FAIL   dubious   \n2 Fear and Loath…  1998   34859650    26438948  1.32 FAIL   notalk    \n3 Take the Lead    2006  115732846    34673890  3.34 PASS   ok        \n4 Daddy Day Care   2003  339861252    75965217  4.47 PASS   ok        \n5 Winter's Bone    2010   24209397     2136464 11.3  PASS   ok"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Cradle 2 the G…  2003  115331245    31652174  3.64 FAIL   notalk    \n2 Evil Dead        2013  151641905    17000000  8.92 PASS   ok        \n3 Our Idiot Brot…  2011   52484748     5178454 10.1  PASS   ok        \n4 The Negotiator   1998  134069092    71456616  1.88 FAIL   notalk    \n5 S.W.A.T.         2003  410253125    88626087  4.63 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
@@ -1285,7 +1362,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Something's Go…  2003  495509065   101286957  4.89 FAIL   dubious   \n2 Fear and Loath…  1998   34859650    26438948  1.32 FAIL   notalk    \n3 Take the Lead    2006  115732846    34673890  3.34 PASS   ok        \n4 Daddy Day Care   2003  339861252    75965217  4.47 PASS   ok        \n5 Winter's Bone    2010   24209397     2136464 11.3  PASS   ok"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Cradle 2 the G…  2003  115331245    31652174  3.64 FAIL   notalk    \n2 Evil Dead        2013  151641905    17000000  8.92 PASS   ok        \n3 Our Idiot Brot…  2011   52484748     5178454 10.1  PASS   ok        \n4 The Negotiator   1998  134069092    71456616  1.88 FAIL   notalk    \n5 S.W.A.T.         2003  410253125    88626087  4.63 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
@@ -5191,137 +5268,60 @@
     "text": "Footnotes\n\nRemember, haikus not novellas when writing code!↩︎\nWe’re assigning points to this seemingly trivial task because not selecting your pages and questions will greatly slow down the grading. So we want to make sure you’re properly motivated to complete this task!↩︎"
   },
   {
-    "objectID": "lab/lab-2 (1).html",
-    "href": "lab/lab-2 (1).html",
-    "title": "Lab 2",
+    "objectID": "lab/lab-0.html",
+    "href": "lab/lab-0.html",
+    "title": "Lab 0",
     "section": "",
-    "text": "In this lab, you’ll continue to hone your data science workflow and integrate data visualization, wrangling, and tidying.\n\n\n\n\n\n\nNote\n\n\n\nThis lab assumes you’ve completed Lab 0 and Lab 1 and doesn’t repeat setup and overview content from those labs. If you haven’t done those yet, you should review them before starting with this one.\n\n\n\nBy the end of the lab, you will…\n\nBe able to create transform data using dplyr\n\nBuild on your mastery of data visualizations using ggplot2\n\nGet more experience with data science workflow using R, RStudio, Git, and GitHub\nFurther your reproducible authoring skills with Quarto\nImprove your familiarity with version control using Git and GitHub\n\n\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA198-199 under My reservations to log into your container. You should now see the RStudio environment.\n\n\nGo to the course organization at github.com/sta199-su25 organization on GitHub. Click on the repo with the prefix lab-2. It contains the starter documents you need to complete the lab.\nClick on the green CODE button and select Use SSH (this might already be selected by default; if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-2.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\nIn lab-2.qmd, update the author field to your name, render your document, and examine the changes. Then, in the Git pane, click on Diff to view your changes, add a commit message (e.g., “Added author name”), and click Commit. Then, push the changes to your GitHub repository and, in your browser, confirm that these changes have indeed propagated to your repository.\n\n\n\n\n\n\nImportant\n\n\n\nIf you encounter any issues with the above steps, flag a TA for help before proceeding.\n\n\n\nIn this lab, we will work with the tidyverse package, a collection of packages for performing data analysis in a “tidy” way.\n\nlibrary(tidyverse)\n\n\n\nRun the code cell by clicking on the green triangle (play) button for the code cell labeled load-packages. This loads the package so that its features (the functions and datasets in it) are accessible from your Console.\nThen, render the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document.\n\nAs we’ve discussed in the lecture, your plots should include an informative title, axes and legends should have human-readable labels and aesthetic choices should be carefully considered.\nAdditionally, code should follow the tidyverse style. Particularly,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nFurthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.1\nAs you complete the lab and other assignments in this course, remember to develop a sound workflow for reproducible data analysis. This assignment will periodically remind you to render, commit, and push your changes to GitHub.\n\n\n\n\n\n\nImportant\n\n\n\nYou should have at least 3 commits with meaningful commit messages by the end of the assignment."
+    "text": "This lab will set you up for the computing workflow and give you an opportunity to introduce yourselves to each other and the teaching team."
   },
   {
-    "objectID": "lab/lab-2 (1).html#learning-objectives",
-    "href": "lab/lab-2 (1).html#learning-objectives",
-    "title": "Lab 2",
-    "section": "",
-    "text": "By the end of the lab, you will…\n\nBe able to create transform data using dplyr\n\nBuild on your mastery of data visualizations using ggplot2\n\nGet more experience with data science workflow using R, RStudio, Git, and GitHub\nFurther your reproducible authoring skills with Quarto\nImprove your familiarity with version control using Git and GitHub"
+    "objectID": "lab/lab-0.html#access-r-and-rstudio",
+    "href": "lab/lab-0.html#access-r-and-rstudio",
+    "title": "Lab 0",
+    "section": "1. Access R and RStudio",
+    "text": "1. Access R and RStudio\n\nGo to https://cmgr.oit.duke.edu/containers and login with your Duke NetID and Password.\nClick STA199 to log into the Docker container. You should now see the RStudio environment.\n\nGo to https://cmgr.oit.duke.edu/containers and under Reservations available click on reserve STA199 to reserve a container for yourself.\n\n\n\n\n\n\nNote\n\n\n\nA container is a self-contained instance of RStudio for you, and you alone. You will do all of your computing in your container.\n\n\nOnce you’ve reserved the container you’ll see that it will show up under My reservations.\nTo launch your container click on it under My reservations, then click Login, and then Start.1"
   },
   {
-    "objectID": "lab/lab-2 (1).html#getting-started",
-    "href": "lab/lab-2 (1).html#getting-started",
-    "title": "Lab 2",
-    "section": "",
-    "text": "Go to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA198-199 under My reservations to log into your container. You should now see the RStudio environment.\n\n\nGo to the course organization at github.com/sta199-su25 organization on GitHub. Click on the repo with the prefix lab-2. It contains the starter documents you need to complete the lab.\nClick on the green CODE button and select Use SSH (this might already be selected by default; if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-2.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.\n\nIn lab-2.qmd, update the author field to your name, render your document, and examine the changes. Then, in the Git pane, click on Diff to view your changes, add a commit message (e.g., “Added author name”), and click Commit. Then, push the changes to your GitHub repository and, in your browser, confirm that these changes have indeed propagated to your repository.\n\n\n\n\n\n\nImportant\n\n\n\nIf you encounter any issues with the above steps, flag a TA for help before proceeding."
+    "objectID": "lab/lab-0.html#create-a-github-account",
+    "href": "lab/lab-0.html#create-a-github-account",
+    "title": "Lab 0",
+    "section": "2. Create a GitHub account",
+    "text": "2. Create a GitHub account\nYou should have already done this yesterday during class! Go ahead and check to make sure you remember what email address you used with your GitHub account."
   },
   {
-    "objectID": "lab/lab-2 (1).html#packages",
-    "href": "lab/lab-2 (1).html#packages",
-    "title": "Lab 2",
-    "section": "",
-    "text": "In this lab, we will work with the tidyverse package, a collection of packages for performing data analysis in a “tidy” way.\n\nlibrary(tidyverse)\n\n\n\nRun the code cell by clicking on the green triangle (play) button for the code cell labeled load-packages. This loads the package so that its features (the functions and datasets in it) are accessible from your Console.\nThen, render the document that loads this package to make its features (the functions and datasets in it) available for other code cells in your Quarto document."
+    "objectID": "lab/lab-0.html#set-up-your-ssh-key",
+    "href": "lab/lab-0.html#set-up-your-ssh-key",
+    "title": "Lab 0",
+    "section": "3. Set up your SSH key",
+    "text": "3. Set up your SSH key\nYou will authenticate GitHub using SSH (Secure Shell Protocol – it doesn’t really matter what this means for the purpose of this course). Below is an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nGo back to your RStudio container and type credentials::ssh_setup_github() into your console.\nR will ask “No SSH key found. Generate one now?” You should click 1 for yes.\nYou will generate a key. R will then ask “Would you like to open a browser now?” You should click 1 for yes.\nYou may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta199).\n\nYou can find more detailed instructions here if you’re interested."
   },
   {
-    "objectID": "lab/lab-2 (1).html#guidelines",
-    "href": "lab/lab-2 (1).html#guidelines",
-    "title": "Lab 2",
-    "section": "",
-    "text": "As we’ve discussed in the lecture, your plots should include an informative title, axes and legends should have human-readable labels and aesthetic choices should be carefully considered.\nAdditionally, code should follow the tidyverse style. Particularly,\n\nthere should be spaces before and line breaks after each + when building a ggplot,\nthere should also be spaces before and line breaks after each |&gt; in a data transformation pipeline,\ncode should be properly indented,\nthere should be spaces around = signs and spaces after commas.\n\nFurthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF. Long lines that run off the page should be split across multiple lines with line breaks.1\nAs you complete the lab and other assignments in this course, remember to develop a sound workflow for reproducible data analysis. This assignment will periodically remind you to render, commit, and push your changes to GitHub.\n\n\n\n\n\n\nImportant\n\n\n\nYou should have at least 3 commits with meaningful commit messages by the end of the assignment."
+    "objectID": "lab/lab-0.html#configure-git-to-introduce-yourself",
+    "href": "lab/lab-0.html#configure-git-to-introduce-yourself",
+    "title": "Lab 0",
+    "section": "4. Configure Git to introduce yourself",
+    "text": "4. Configure Git to introduce yourself\nThere is one more thing we need to do before getting started on the assignment. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\n\n\n\n\n\n\nNote\n\n\n\nYou’ll hear about 📦 packages a lot in the context of R – basically they’re how developers write functions and bundle them to distribute to the community (and more on this later too!).\n\n\nType the following lines of code in the console in RStudio filling in your name and the address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\"\n)\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Katie Solarz\", \n  user.email = \"katiesolarz@gmail.com\"\n)\n\n\n\n\n\n\n\nNote\n\n\n\nI used my personal email because that is the one I used to create my GitHub account. You must use the exact same email address that you used to create your GitHub account, even if it isn’t your Duke email.\n\n\nYou are now ready interact with GitHub via RStudio!\nIf you don’t do this, we won’t be able to tell who you are and give you points for the work you do…\n\n\n\n\n\n\nNote\n\n\n\nWell, a more accurate statement would be that we will be reaching out to you to get things right during the first few days of class. But, it’s best if you can get it right today!\n\n\n\n\n\n\n\n\nHow do I know if I did it right?\n\n\n\nWhen you input the usethis::use_git_config(...) command into the console and hit enter/return, it will appear as if nothing happened. To verify that everything worked, you can briefly switch over to the Terminal tab (should be to the right of Console) and type the commands git config user.name and git config user.email. If all is well, these will return whatever text you originally provided. If you notice a mistake or typo, you can just go back to the Console and rerun usethis::use_git_config(...) with modified inputs.\n\n\n\n\n\n\n\n\nNeed a recap? Watch this video!\n\n\n\n\n\nThe following video walks you through the steps outlined in the SSH key generation and Git configuration sections above."
   },
   {
-    "objectID": "lab/lab-2 (1).html#question-1",
-    "href": "lab/lab-2 (1).html#question-1",
-    "title": "Lab 2",
-    "section": "Question 1",
-    "text": "Question 1\nGrouping by one variable.\nThe following dataframe is used:\n\ndf &lt;- tibble(\n  var_1 = c(50, 20, 70, 10, 100, 30, 40, 80, 120, 60, 90, 110),\n  var_2 = c(\"Pizza\", \"Burger\", \"Pizza\", \"Pizza\", \"Burger\", \"Burger\",\n            \"Burger\", \"Pizza\", \"Burger\", \"Pizza\", \"Pizza\", \"Burger\"),\n  var_3 = c(\"Apple\", \"Apple\", \"Pear\", \"Banana\", \"Pear\", \"Banana\",\n            \"Apple\", \"Apple\", \"Pear\", \"Pear\", \"Banana\", \"Banana\")\n)\n\ndf\n\n# A tibble: 12 × 3\n   var_1 var_2  var_3 \n   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; \n 1    50 Pizza  Apple \n 2    20 Burger Apple \n 3    70 Pizza  Pear  \n 4    10 Pizza  Banana\n 5   100 Burger Pear  \n 6    30 Burger Banana\n 7    40 Burger Apple \n 8    80 Pizza  Apple \n 9   120 Burger Pear  \n10    60 Pizza  Pear  \n11    90 Pizza  Banana\n12   110 Burger Banana\n\n\na. What does the following code chunk do? Run it, analyze the result, and articulate in words what arrange() does.\n\ndf |&gt;\n  arrange(var_2)\n\nb. What does the following code chunk do? Run it and analyze the result and articulate in words what group_by() does.\n\ndf |&gt;\n  group_by(var_2)\n\nc. What does the following code chunk do? Run it and analyze the result and articulate in words what the pipeline does.\n\ndf |&gt;\n  group_by(var_2) |&gt;\n  summarize(mean_var_1 = mean(var_1))\n\nd. Compare this behavior to the following code chunk. Run it, analyze the result, and articulate in words what the pipeline does, and how it’s behavior is different from part (c).\n\ndf |&gt;\n  summarize(mean_var_1 = mean(var_1))"
+    "objectID": "lab/lab-0.html#babys-first-repo",
+    "href": "lab/lab-0.html#babys-first-repo",
+    "title": "Lab 0",
+    "section": "5. Baby’s first repo",
+    "text": "5. Baby’s first repo\nA GitHub repository (repo) is a collection of files hosted on GitHub. Repos are the main way we will distribute files to you during the semester. When you copy the files in a repo to your local computing environment (your container, in this case), that’s called “cloning”. So, let’s clone our first repo:\n\nGo to the repository for lab-0 in the course GitHub organization: https://github.com/sta199-su26/lab-0.\n\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\n\n\n\n\n\nIn RStudio, go to File ➛ New Project ➛Version Control ➛ Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\n\nClick Create Project.\n\n\n\n\n\n\nSince this is the first time you are connecting to GitHub from this RStudio instance, you will be asked to confirm the authenticity of the host. This will happen in a pop-up window like the one below. Type yes in the box and hit Enter.\n\n\n\n\n\nRStudio will now clone the repo and create a new RStudio project for you. This might take a few seconds. Once done, the files from your GitHub repo will be displayed in the Files pane in RStudio.\n\nYou will need to get used to these steps, because you’ll probably clone at least one new repo every week."
   },
   {
-    "objectID": "lab/lab-2 (1).html#question-2",
-    "href": "lab/lab-2 (1).html#question-2",
-    "title": "Lab 2",
-    "section": "Question 2",
-    "text": "Question 2\nGrouping by two variables.\na. How many levels does var_2 have? How many levels does var_3have? How many possible combinations are there of the levels of var_2 and var_3?\nb. What does the following code chunk do? Run it and analyze the result and articulate in words what the pipeline does. Then, comment on what the message says.\n\ndf |&gt;\n  group_by(var_2, var_3) |&gt;\n  summarize(mean_var_1 = mean(var_1))\n\nc. What does the following code chunk do? Run it and analyze the result and articulate in words what the pipeline does, especially mentioning what the .groups argument does. How is the output different from the one in part (a)?\n\ndf |&gt;\n  group_by(var_2, var_3) |&gt;\n  summarize(mean_var_1 = mean(var_1), .groups = \"drop\")\n\nd. What do the following pipelines do? Run both and analyze their results and articulate in words what each pipeline does. How are the outputs of the two pipelines different?\n\ndf |&gt;\n  group_by(var_2, var_3) |&gt;\n  summarize(mean_var_1 = mean(var_1), .groups = \"drop\")\n\ndf |&gt;\n  group_by(var_2, var_3) |&gt;\n  mutate(mean_var_1 = mean(var_1))"
+    "objectID": "lab/lab-0.html#hello-sta-199",
+    "href": "lab/lab-0.html#hello-sta-199",
+    "title": "Lab 0",
+    "section": "6. Hello STA 199!",
+    "text": "6. Hello STA 199!\nFill out the course “Getting to know you” survey on Canvas.\nWe will use the information collected in this survey for a variety of goals, including getting to know you as a person and your course goals and concerns, as well as pair you with project teammates with similar interests, be it personal or professional."
   },
   {
-    "objectID": "lab/lab-2 (1).html#question-3",
-    "href": "lab/lab-2 (1).html#question-3",
-    "title": "Lab 2",
-    "section": "Question 3",
-    "text": "Question 3\na. In a single pipeline, calculate the number of counties in each state and display your results in descending order of number of counties. Which state has the highest number of counties, and how many? Which state has the lowest number, and how many?\nb. In a given state, two counties can’t have the same name. However, across states some county names might be shared. A classmate says “Look at that, there is a county called ___ in each state in this dataset!” In a single pipeline, discover all counties that could fill in the blank. Your response should be a data frame with only the county names that could fill in the blank and how many times they appear in the data."
-  },
-  {
-    "objectID": "lab/lab-2 (1).html#question-4",
-    "href": "lab/lab-2 (1).html#question-4",
-    "title": "Lab 2",
-    "section": "Question 4",
-    "text": "Question 4\nReturn to the following box plot of population densities where you were asked to identify at least one outlier.\n\n\n\n\n\n\n\n\nIn this question, we want you to revisit this box plot and identify the counties described in each section:\na. The counties with a population density higher than 50,000. Your code must use the filter() function.\nb. The county with the highest population density. Your code must use the max() function.\nAnswer using a single pipeline for each part. In each part, your response should be a data frame with five columns: county name, state name, population density, total population, and area, in this order. If your response has multiple rows, the data frame should be arranged in descending order of population density."
-  },
-  {
-    "objectID": "lab/lab-2 (1).html#question-5",
-    "href": "lab/lab-2 (1).html#question-5",
-    "title": "Lab 2",
-    "section": "Question 5",
-    "text": "Question 5\nIn Lab 1 you were also asked to describe the distribution of population densities. The following is one acceptable description that touches on shape, center, and spread of this distribution. In a single pipeline, calculate the values that should go into the blanks. In words, identify which value corresponds to which blank.\n\nThe distribution of population density of counties is unimodal and extremely right-skewed. A typical Midwestern county has population density of ____ people per unit area. The middle 50% of the counties have population densities between ___ to ___ people per unit area.\n\n\n\n\n\n\n\nTip\n\n\n\nThe quantile() function will be useful here!"
-  },
-  {
-    "objectID": "lab/lab-2 (1).html#question-6",
-    "href": "lab/lab-2 (1).html#question-6",
-    "title": "Lab 2",
-    "section": "Question 6",
-    "text": "Question 6\nAnother visualization from Lab 1 was the plot that showed the proportion of urban counties in each state.\n\n\n\n\n\n\n\n\nCalculate the corresponding proportions in a single data pipeline."
-  },
-  {
-    "objectID": "lab/lab-2 (1).html#question-7",
-    "href": "lab/lab-2 (1).html#question-7",
-    "title": "Lab 2",
-    "section": "Question 7",
-    "text": "Question 7\na. In a single pipeline, calculate the total population for each state and save the resulting data frame as state_population. Then, in a separate pipeline, display it in descending order of total population.\nb. In a single pipeline, use the state_population data frame made above to calculate the proportion of the total population in each state, displaying the results in descending order of proportion of population.\nc. Use your results from a and b to answer this question: which Midwestern state is most populous and what percent of the Midwest population lives there? Which is the least populous and what percent lives there?"
-  },
-  {
-    "objectID": "lab/lab-2 (1).html#question-8",
-    "href": "lab/lab-2 (1).html#question-8",
-    "title": "Lab 2",
-    "section": "Question 8",
-    "text": "Question 8\na. Get to know the data! Use the glimpse() function and show the result. In writing, how many rows does life_expect have and what does each row represent? How many columns does life_expect have and what does each column represent?\nb. High and low life expectancy: In a single pipeline, identify countries with a 2023 life expectancy above 85 or below 55. Your response should be a data frame with two columns: 2023 and country_name.\nc. Growing life expectancy: In a single pipeline, identify which country had the largest ratio of 2023 life expectancy to 1960 life expectancy. Your response should be a data frame with one row and two columns: the ratio and country_name. What is the English interpretation of this result? Does this result surprise you?\n\n\n\n\n\n\nTip\n\n\n\nColumn names that are numbers are not considered “proper” in R, therefore to work with them you’ll need to surround them with backticks, e.g. select( ` 1993 ` )."
-  },
-  {
-    "objectID": "lab/lab-2 (1).html#question-9",
-    "href": "lab/lab-2 (1).html#question-9",
-    "title": "Lab 2",
-    "section": "Question 9",
-    "text": "Question 9\nIn a single pipeline, reshape (pivot) life_expect such that each row represents a country/year combination, with columns country_name,year, and life_expectancy; save the result to a new variable. Then, display the resulting data frame and state how many rows and columns it has.\nRequirements:\n\nYour code must use one of pivot_longer() or pivot_wider(). There are other ways you can do this reshaping move in R, but this question requires solving this problem by pivoting.\nIn your pivot_*() function, you must use names_transform = as.numeric as an argument to force the new year column to be numeric.\nThe resulting data frame must be saved as something other than life_expect so you (1) can refer to this data frame later in your analysis and (2) do not overwrite life_expect. Use a short but informative name."
-  },
-  {
-    "objectID": "lab/lab-2 (1).html#question-10",
-    "href": "lab/lab-2 (1).html#question-10",
-    "title": "Lab 2",
-    "section": "Question 10",
-    "text": "Question 10\na. Create a vector called countries_of_interest which contains the names of up to five countries you want to visualize the life expectancy for over the years. For example, if these countries are Germany and United States, you can do this as follows:\n\ncountries_of_interest &lt;- c(\"Germany\", \"United States\")\n\nThen, in 1-2 sentences, state why you chose these countries!\nb. In a single pipeline, filter your reshaped dataset from question 10 to include only the countries_of_interest from part (a) and save the resulting data frame with a new name. Do not overwrite the data frame you’re starting with. Use a short but informative name. Then, in a new pipeline, find the distinct() countries in the data frame you created.\n\n\n\n\n\n\nTip\n\n\n\nThe number of distinct countries in the filtered data frame you created in part (b) should equal the number of countries you chose in part (a). If it doesn’t, you might have misspelled a country name or made a mistake in filtering for these countries. Go back and correct your work."
-  },
-  {
-    "objectID": "lab/lab-2 (1).html#question-11",
-    "href": "lab/lab-2 (1).html#question-11",
-    "title": "Lab 2",
-    "section": "Question 11",
-    "text": "Question 11\nUsing your data frame from the previous question, create a plot of life expectancy (y) vs. year (x) for these countries. In a few sentences, describe the patterns you observe in the plot, particularly focusing on anything you find surprising or not surprising, based on your knowledge (or lack thereof) of these countries.\nRequirements for the plot:\n\nData should be represented with points as well as lines connecting the points for each country (Note: lines should be directly connecting points, not smooth through them).\nEach country should be represented by a different color line and different color and shape points.\nAxes and legend should be properly labeled.\nThe plot should have an appropriate title (and optionally a subtitle).\nPlot should be customized in at least one additional way – you could use a different than default color scale, or different than default theme, or some other customization."
-  },
-  {
-    "objectID": "lab/lab-2 (1).html#question-12",
-    "href": "lab/lab-2 (1).html#question-12",
-    "title": "Lab 2",
-    "section": "Question 12",
-    "text": "Question 12\nBriefly explain why the pivot in question 9 was necessary for creating the plot in question 11."
-  },
-  {
-    "objectID": "lab/lab-2 (1).html#question-13---workflow",
-    "href": "lab/lab-2 (1).html#question-13---workflow",
-    "title": "Lab 2",
-    "section": "Question 13 - Workflow",
-    "text": "Question 13 - Workflow\nWorkflow: please make sure you have selected pages in gradescope AND made at least three commits to this project to get full credit for this question."
-  },
-  {
-    "objectID": "lab/lab-2 (1).html#footnotes",
-    "href": "lab/lab-2 (1).html#footnotes",
-    "title": "Lab 2",
+    "objectID": "lab/lab-0.html#footnotes",
+    "href": "lab/lab-0.html#footnotes",
+    "title": "Lab 0",
     "section": "Footnotes",
-    "text": "Footnotes\n\nRemember, haikus, not novellas, when writing code!↩︎"
+    "text": "Footnotes\n\nYes, it’s too many steps. I don’t know why! But it works, and you’ll get used to it. Trust me, it beats downloading and installing everything you need on your computers!↩︎"
   },
   {
     "objectID": "computing-code-alongs.html",
