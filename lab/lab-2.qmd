@@ -338,7 +338,7 @@ In this part of the lab, you will work with data regarding life expectancy at bi
 life_expect <- read_csv("data/life_expect_total.csv")
 ```
 
-## Question 8
+## Question 7
 
 a\.
 Get to know the data!
@@ -359,12 +359,12 @@ Does this result surprise you?
 ::: callout-tip
 ## Tip
 
-Column names that are numbers are not considered "proper" in R, therefore to work with them you'll need to surround them with backticks, e.g. `` select( ` 1993 ` ) ``.
+Column names that are numbers are not considered "proper" in R; therefore, to work with / access them you'll need to wrap the column name in backticks.
 :::
 
-## Question 9
+## Question 8
 
-**In a single pipeline,** reshape (pivot) `life_expect` such that each row represents a country/year combination, with columns `country_name`,`year`, and `life_expectancy`; **save the result to a new variable.** Then, display the resulting data frame and state how many rows and columns it has.
+**In a single pipeline,** reshape (pivot) `life_expect` such that each row represents a country/year combination, with columns `country_name`,`year`, and `life_expectancy`; **save the result to a new data frame** Then, display the resulting data frame and state how many rows and columns it has.
 
 Requirements:
 
@@ -373,18 +373,17 @@ Requirements:
 
 -   In your `pivot_*()` function, you must use `names_transform = as.numeric` as an argument to force the new `year` column to be numeric.
 
--   The resulting data frame must be saved as something other than `life_expect` so you (1) can refer to this data frame later in your analysis and (2) do not overwrite `life_expect`.
-    Use a short but informative name.
+-   The resulting data frame must be saved as something other than `life_expect` so you (1) can refer to this data frame later in your analysis and (2) do not overwrite `life_expect`. Use a short but informative name.
 
-## Question 10
+## Question 9
 
 a\.
-Create a vector called `countries_of_interest` which contains the names of up to five countries you want to visualize the life expectancy for over the years.
-For example, if these countries are Germany and United States, you can do this as follows:
+Create a vector called `countries_of_interest` which contains the names of between three and five countries you want to visualize the life expectancy for over the years.
+For example, if these countries are France, Iceland, Denmark, and the United States, you can do this as follows:
 
 ```{r}
 #| eval: false
-countries_of_interest <- c("Germany", "United States")
+countries_of_interest <- c("France", "United States", "Iceland", "Denmark")
 
 ```
 
@@ -394,7 +393,7 @@ b\.
 **In a single pipeline**, filter your reshaped dataset from question 10 to include only the `countries_of_interest` from part (a) and **save the resulting data frame with a new name**.
 **Do not overwrite the data frame** you're starting with.
 Use a short but informative name.
-**Then, in a new pipeline**, find the `distinct()` countries in the data frame you created.
+**Then, in a new pipeline**, find the `distinct()` countries in the data frame you created to confirm that you've successfully filtered.
 
 ::: callout-tip
 The number of distinct countries in the filtered data frame you created in part (b) should equal the number of countries you chose in part (a).
@@ -402,14 +401,14 @@ If it doesn't, you might have misspelled a country name or made a mistake in fil
 Go back and correct your work.
 :::
 
-## Question 11
+## Question 10
 
 Using your data frame from the previous question, **create a plot of life expectancy (y) vs. year (x) for these countries**.
-In a few sentences, describe the patterns you observe in the plot, particularly focusing on anything you find surprising or not surprising, based on your knowledge (or lack thereof) of these countries.
+In a few sentences, describe the patterns you observe in the plot, particularly focusing on anything you find surprising or not surprising, based on your knowledge (or lack thereof) of these countries. Then, briefly explain why the pivot performed in question 9 was necessary for creating the this plot.
 
 Requirements for the plot:
 
--   Data should be represented with **points** as well as **lines connecting the points** for each country (Note: lines should be directly connecting points, not smooth through them).
+-   Data should be represented with **points** as well as **lines connecting the points** for each country (Note: lines should be directly connecting points, not a smooth trendline through them).
 
 -   Each **country** should be represented by a **different color line** and **different color and shape points**.
 
@@ -417,12 +416,8 @@ Requirements for the plot:
 
 -   The plot should have an **appropriate title** (and optionally a subtitle).
 
--   Plot should be **customized in at least one additional way** -- you could use a different than default color scale, or different than default theme, or some other customization.
+-   Plot should be **customized in at least one additional way** -- you could use a different than default color scale, or different than default theme (but NOT `theme_minimal()` or `theme_bw()` -- choose something more creative!), or some other customization.
 
-## Question 12
+## Question 11 - Workflow
 
-Briefly explain why the pivot in question 9 was necessary for creating the plot in question 11.
-
-## Question 13 - Workflow
-
-Workflow: please make sure you have selected pages in gradescope AND made at least three commits to this project to get full credit for this question.
+Workflow: please make sure you have selected pages in Gradescope AND made at least three commits to this project to get full credit for this question.
