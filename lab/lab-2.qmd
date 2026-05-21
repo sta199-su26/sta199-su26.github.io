@@ -2,7 +2,7 @@
 title: Lab 2
 subtitle: Data Transformation + Tidying
 categories: Lab
-description: "Due Wed. May 28 11:59 PM"
+description: "Due to Gradescope by Sun. May 24 11:59 PM"
 draft: false
 ---
 
@@ -30,11 +30,11 @@ By the end of the lab, you will...
 ### Step 1: Log in to RStudio
 
 -   Go to <https://cmgr.oit.duke.edu/containers> and log in with your Duke NetID and Password.
--   Click `STA198-199` under My reservations to log into your container. You should now see the RStudio environment.
+-   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
 
 ### Step 2: Clone the repo & start a new RStudio project
 
--   Go to the course organization at [github.com/sta199-su25](https://github.com/sta199-su25) organization on GitHub.
+-   Go to the course organization at [github.com/sta199-su26](https://github.com/sta199-su26) organization on GitHub.
     Click on the repo with the prefix **lab-2**.
     It contains the starter documents you need to complete the lab.
 
@@ -57,7 +57,7 @@ Then, in the Git pane, click on **Diff** to view your changes, add a commit mess
 Then, push the changes to your GitHub repository and, in your browser, confirm that these changes have indeed propagated to your repository.
 
 ::: callout-important
-If you encounter any issues with the above steps, flag a TA for help before proceeding.
+If you encounter any issues with the above steps, flag your TA for help before proceeding.
 :::
 
 ## Packages
@@ -75,10 +75,10 @@ library(tidyverse)
 
 ## Guidelines
 
-As we've discussed in the lecture, your plots should include an informative title, axes and legends should have human-readable labels and aesthetic choices should be carefully considered.
+As we've discussed in the lecture, your plots should include an informative title, axes and legends should have human-readable labels, and aesthetic choices should be carefully considered.
 
 Additionally, code should follow the [tidyverse style](https://style.tidyverse.org/).
-Particularly,
+In particular,
 
 -   there should be spaces before and line breaks after each `+` when building a `ggplot`,
 
