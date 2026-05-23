@@ -246,7 +246,7 @@ Katie Solarz
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>data_set <span class="sc">|&gt;</span></span>
 <span id="cb1-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb1-3"><a></a>    <span class="at">cols =</span> colums_to_pivot,</span>
+<span id="cb1-3"><a></a>    <span class="at">cols =</span> columns_to_pivot,</span>
 <span id="cb1-4"><a></a>    <span class="at">names_to =</span> <span class="st">"var_name_for_former_column_names"</span>, </span>
 <span id="cb1-5"><a></a>    <span class="at">values_to =</span> <span class="st">"var_name_for_values"</span></span>
 <span id="cb1-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -763,7 +763,7 @@ Katie Solarz
 </table>
 </div><div class="column fragment" style="width:50%;">
 <blockquote>
-<p>right_join(x, y)</p>
+<p>full_join(x, y)</p>
 </blockquote>
 <table class="caption-top">
 <thead><tr class="header">
@@ -847,7 +847,7 @@ Katie Solarz
 </table>
 </div><div class="column" style="width:50%;">
 <blockquote>
-<p>right_join(x, y)</p>
+<p>full_join(x, y)</p>
 </blockquote>
 <table class="caption-top">
 <thead><tr class="header">
@@ -1425,7 +1425,7 @@ Katie Solarz
 </section><section id="another-potential-scenario" class="slide level2"><h2>Another potential scenario…</h2>
 <ul>
 <li><p>In some cases, it may be helpful to join a dataset with itself</p></li>
-<li><p>When joining a dataset with itself, since the “left” and “right data frames are exactly the same, <code>inner_join()</code>, <code>left_join()</code>, <code>right_join()</code>, and <code>full_join()</code> will”collapse” to the same solution</p></li>
+<li><p>When joining a dataset with itself, since the “left” and “right” data frames are exactly the same, <code>inner_join()</code>, <code>left_join()</code>, <code>right_join()</code>, and <code>full_join()</code> will “collapse” to the same solution</p></li>
 <li><p>To demonstrate the utility, I will proceed with <code>inner_join()</code></p></li>
 </ul></section><section id="joining-a-data-frame-with-itself" class="slide level2"><h2>Joining a data frame with… itself?</h2>
 <p>“Toy” prescription data frame</p>

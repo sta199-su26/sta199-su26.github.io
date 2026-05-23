@@ -354,7 +354,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_set</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span></span>
-<span>    cols <span class="op">=</span> <span class="va">colums_to_pivot</span>,</span>
+<span>    cols <span class="op">=</span> <span class="va">columns_to_pivot</span>,</span>
 <span>    names_to <span class="op">=</span> <span class="st">"var_name_for_former_column_names"</span>, </span>
 <span>    values_to <span class="op">=</span> <span class="st">"var_name_for_values"</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -886,7 +886,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="column fragment" style="width:50%;">
 <blockquote class="blockquote">
-<p>right_join(x, y)</p>
+<p>full_join(x, y)</p>
 </blockquote>
 <table class="caption-top table">
 <thead><tr class="header">
@@ -971,7 +971,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div><div class="column" style="width:50%;">
 <blockquote class="blockquote">
-<p>right_join(x, y)</p>
+<p>full_join(x, y)</p>
 </blockquote>
 <table class="caption-top table">
 <thead><tr class="header">
@@ -1565,7 +1565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="another-potential-scenario" class="level2"><h2 class="anchored" data-anchor-id="another-potential-scenario">Another potential scenario…</h2>
 <ul>
 <li><p>In some cases, it may be helpful to join a dataset with itself</p></li>
-<li><p>When joining a dataset with itself, since the “left” and “right data frames are exactly the same, <code>inner_join()</code>, <code>left_join()</code>, <code>right_join()</code>, and <code>full_join()</code> will”collapse” to the same solution</p></li>
+<li><p>When joining a dataset with itself, since the “left” and “right” data frames are exactly the same, <code>inner_join()</code>, <code>left_join()</code>, <code>right_join()</code>, and <code>full_join()</code> will “collapse” to the same solution</p></li>
 <li><p>To demonstrate the utility, I will proceed with <code>inner_join()</code></p></li>
 </ul></section><section id="joining-a-data-frame-with-itself" class="level2"><h2 class="anchored" data-anchor-id="joining-a-data-frame-with-itself">Joining a data frame with… itself?</h2>
 <p>“Toy” prescription data frame</p>
