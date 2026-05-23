@@ -1,0 +1,103 @@
+---
+title: "AE 05: Gerrymandering + data exploration II"
+---
+
+## Getting started
+
+### Packages
+
+We'll use the **tidyverse** package for this analysis.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(usdata)
+library(ggbeeswarm)
+
+gerrymander <- usdata::gerrymander
+
+```
+
+### Data
+
+The data are availale in the **usdata** package.
+
+```{r}
+#| label: gerrymander
+glimpse(gerrymander)
+```
+
+## Congressional districts per state
+
+Which state has the most congressional districts?
+How many congressional districts are there in this state?
+
+Add your response here.
+
+```{r}
+#| label: districts
+
+gerrymander |>
+  count(state, sort = TRUE) |>
+  slice(1)
+
+```
+
+## Gerrymandering and flipping
+
+Is a Congressional District more likely to be flipped to a Democratic seat if it has high prevalence of gerrymandering or low prevalence of gerrymandering?
+Support your answer with a visualization and summary statistics.
+
+Add your response here.
+
+```{r}
+#| label: flips
+#| fig-asp: 0.4
+
+gerrymander |>
+  mutate(flip18 = as_factor(flip18)) |>
+  ggplot(aes(x = gerry, fill = flip18)) +
+  geom_bar(position = "fill")
+
+gerrymander |>
+  count(gerry, flip18) |>
+  group_by(gerry) |>
+  mutate(prop = n / sum(n))
+
+
+```
+
+## Aesthetic mappings
+
+Recreate the following visualization, and then improve it.
+
+![](images/gerrymander-recreate.png)
+
+```{r}
+#| label: recreate
+#| fig-asp: 0.4
+
+library(scales)
+
+##  Recreate 
+
+ggplot(gerrymander, aes(x = gerry, y = clinton16)) +
+  geom_beeswarm(alpha = .5, color = "grey") +
+  geom_boxplot(aes(color = gerry), alpha = .5) +
+  theme_minimal()
+
+## Improve
+gerrymander |>
+  ggplot(aes(x = gerry, y = clinton16)) +
+    geom_beeswarm(alpha = .5, color = "grey") +
+    geom_boxplot(aes(color = gerry), alpha = .5) +
+    theme_minimal() +
+    scale_y_continuous(labels = label_percent(scale = 1)) +
+    labs(title = "Distribution of % Vote for Clinton in 2016",
+         subtitle = "By Level of Gerrymandering",
+         x = "Level of Gerrymandering",
+         y = "% Vote for Clinton in 2016") +
+    theme(legend.position = "none")
+
+```
