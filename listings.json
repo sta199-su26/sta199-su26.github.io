@@ -1,5 +1,13 @@
 [
   {
+    "listing": "/lab.html",
+    "items": [
+      "/lab/lab-0.html",
+      "/lab/lab-1.html",
+      "/lab/lab-2.html"
+    ]
+  },
+  {
     "listing": "/ae.html",
     "items": [
       "/ae/ae-00-github.html",
@@ -10,16 +18,11 @@
       "/ae/ae-04-github-A.html",
       "/ae/ae-04-github.html",
       "/ae/ae-05-github.html",
+      "/ae/ae-05-gerrymander-explore-II (1).html",
       "/ae/ae-06-github.html",
+      "/ae/ae-06-majors-tidy (1).html",
+      "/ae/ae-07-joining-data (1).html",
       "/ae/ae-07-github.html"
-    ]
-  },
-  {
-    "listing": "/lab.html",
-    "items": [
-      "/lab/lab-0.html",
-      "/lab/lab-1.html",
-      "/lab/lab-2.html"
     ]
   }
 ]
