@@ -1,6 +1,15 @@
 ---
 title: "AE 06: Tidying Stat Sci"
+subtitle: "Suggested answers"
+format:
+  html:
+    self-contained: true
 ---
+
+::: callout-important
+These are suggested answers.
+This document should be used as reference only, it's not designed to be an exhaustive key.
+:::
 
 ## Goal
 
@@ -47,11 +56,9 @@ statsci |>
     values_to = "n",
     names_transform = as.numeric
   )
-
-
 ```
 
--   **Your Turn:** Now, repeat your code from above, but this time **save the result** to a **new** dataframe. 
+-   **Your Turn:** Now, repeat your code from above, but this time **save the result** to a **new** dataframe.
 
 ```{r}
 #| label: pivot-with-transform-name
@@ -63,8 +70,6 @@ statsci_longer <- statsci |>
     values_to = "n",
     names_transform = as.numeric
   )
-
-
 ```
 
 ## Plotting
@@ -79,19 +84,15 @@ statsci_longer <- statsci |>
 ggplot(statsci_longer, aes(x = year, y = n, color = degree_type)) +
   geom_point() +
   geom_line()
-
 ```
 
--   **Question**: Why was the pivot necessary in order to create this plot?
-Our original dataframe had each year as it's own column; we needed year to be one column where each obs. in our df represents a degree type - year combo. 
+-   **Question**: Why was the pivot necessary in order to create this plot? 
 
-*Add your response here!*
+Our original dataframe had each year as it's own column; we needed year to be one column where each obs. in our df represents a degree type - year combo.
 
 -   **Question:** What aspects of the plot need to be updated to go from the draft you created above to the [goal] plot at the beginning of this application exercise?
 
 Theme, color scale, legend formatting, labels, scale of x-axis
-
-*Add your response here.*
 
 -   **Demo:** Update x-axis scale such that the years displayed go from 2011 to 2025 in increments of 2 years. Do this by adding on to your pipeline from earlier.
 
@@ -102,7 +103,6 @@ ggplot(statsci_longer, aes(x = year, y = n, color = degree_type)) +
   geom_point() +
   geom_line() +
   scale_x_continuous(breaks = seq(2011, 2025, 2))
-
 ```
 
 -   **Demo:** Update line colors using the following level / color assignments. Once again, do this by adding on to your pipeline from earlier.
@@ -129,7 +129,6 @@ ggplot(statsci_longer, aes(x = year, y = n, color = degree_type)) +
       "AB2" = "lightgoldenrod3"
     )
   )
-
 ```
 
 -   **Your turn:** Update the plot labels (`title`, `subtitle`, `x`, `y`, and `caption`) and use `theme_minimal()`. Once again, do this by adding on to your pipeline from earlier.
@@ -156,8 +155,6 @@ ggplot(statsci_longer, aes(x = year, y = n, color = degree_type)) +
        color = "Degree type",
        caption  = "Source: Office of the University Registrar\nhttps://registrar.duke.edu/registration/enrollment-statistics") +
   theme_minimal()
-  
-
 ```
 
 -   **Demo:** Adding to your pipeline you've developed so far, move the legend into the plot, make its background white, and its border gray.
@@ -187,7 +184,6 @@ ggplot(statsci_longer, aes(x = year, y = n, color = degree_type)) +
   theme(legend.position = "inside",
         legend.position.inside = c(.1, .7),
         legend.background = element_rect(fill = "white", color = "grey"))
-
 ```
 
 -   **Demo:** Finally, set `fig-width: 10` and `fig-height: 5` for your plot in the chunk options.
@@ -219,8 +215,6 @@ ggplot(statsci_longer, aes(x = year, y = n, color = degree_type)) +
   theme(legend.position = "inside",
         legend.position.inside = c(.1, .7),
         legend.background = element_rect(fill = "white", color = "grey"))
-
-
 ```
 
 ## Let's now pivot wider!
@@ -237,6 +231,4 @@ statsci_wide <- statsci_longer |>
   )
 
 statsci_wide
-
-
 ```

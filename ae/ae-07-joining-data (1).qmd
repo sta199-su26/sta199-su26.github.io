@@ -1,12 +1,15 @@
 ---
 title: "AE 07: Joining"
+subtitle: "Suggested answers"
 format:
   html:
     self-contained: true
-editor: 
-  markdown: 
-    wrap: sentence
 ---
+
+::: callout-important
+These are suggested answers.
+This document should be used as reference only, it's not designed to be an exhaustive key.
+:::
 
 ## Goal
 
@@ -40,7 +43,7 @@ We want to know what continent *all* of the variables in the `population` data f
 
 -   What type of join should we use?
 
-Left join with `population` as the "left" or "main" df because we want to keep all info in this df & supplement with info from `continents` 
+Left join with `population` as the "left" or "main" df because we want to keep all info in this df & supplement with info from `continents`
 
 -   Which variable in each data frame should we use?
 
@@ -59,7 +62,6 @@ population_continents <- population |>
   )
 
 population_continents
-
 ```
 
 How does that look?
@@ -74,7 +76,6 @@ Go ahead and `filter` the resulting data frame to see if any of the continent va
 
 population_continents |>
   filter(is.na(continent))
-
 ```
 
 There are!
@@ -134,30 +135,46 @@ How does what we just did fit into the bigger picture of the class?
 ```{r}
 #| label: plotting_practice 
 
-glimpse(population_continent_new)
-
-top_20 <- population_continent_new |>
-  slice_max(population, n = 20) 
-
-top_20 <- top_20 |>
+population_continent_new <- population_continent_new |>
   mutate(population = population / 1000)
 
-glimpse(top_20)
+## subset the data and plot only the top 20 most populous countries 
+
+top_20 <- population_continent_new |>
+  slice_max(population, n = 20)
+
 top_20 |>
-  ggplot(aes(x = population, y = country, fill = continent)) +
-  geom_col()
-
-glimpse(top_20)
-
-levels(top_20$country)
-
-
-
-
+  ggplot(aes(x = population, y = fct_reorder(country, population),
+             fill = continent)) +
+  geom_col() +
+  labs(title = "20 Most Populous Countries",
+       x = "Population (millions)",
+       y = NULL,
+       fill = "Continent") +
+  theme_minimal() 
 
 ```
 
-
 ***To see something new,*** try making a 'lollipop chart' of population by country (hint: this will require using `geom_point()` and `geom_segment()`.
 
+```{r}
+
+top_20 |>
+  ggplot(aes(x = population, y = fct_reorder(country, population),
+             color = continent)) +
+  # line segment
+  geom_segment(aes(x = 0, xend = population,
+                   y = country, yend = country),
+               lwd = 1.2, alpha = 0.7) +
+  # point at the end
+  geom_point(size = 4) +
+  labs(
+    title = "20 Most Populous Countries",
+    x = "Population (millions)",
+    y = NULL,
+    color = "Continent"
+  ) +
+  theme_minimal()
+
+```
 
