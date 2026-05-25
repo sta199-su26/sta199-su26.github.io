@@ -1,10 +1,12 @@
 ---
-title: "Data types and classes"
+title: "Data Types and Classes"
 subtitle: "Lecture 8"
-date: "May 27, 2025"
+date: "2026-05-26"
 format: 
   revealjs:
     output-file: 08-data-types-slides.html
+  html: 
+    output-file: 08-data-types.html
 auto-stretch: false
 ---
 
@@ -17,27 +19,15 @@ library(ggthemes)
 ggplot2::theme_set(theme_gray(base_size = 16))
 ```
 
-## Announcements
-
--   Exam 1 in class next week on Tuesday -- cheat sheet (1 page, both sides, hand-written or typed, must be prepared by you)
--   Exam 1 take home starts after class on **Tuesday**, due at 9:30 AM on **Wednesday** (open resources, internet, etc., closed to other humans)
-
-## Study tips for the exam
-
--   Review lectures/readings/labs/AEs
--   Make sure you understand [***why***]{.underline} code has the output it does
--   Lab 3 will cover most of what we have done so far - think of this as a type of review!
--   General practice/ in class review coming on Friday!
-
 # Types and classes
 
 ## Types and classes
 
-An object's *type* indicates how it is stored in memory.
+An object's *type* indicates how it is stored in memory
 
 ## Common data types
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 You'll commonly encounter:
 
@@ -55,11 +45,11 @@ You'll less commonly encounter:
 -   `complex`
 -   `raw`
 :::
-:::
+:::::
 
 ## Logical and Character {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 **Logical:** Boolean `TRUE` / `FALSE` values
 
@@ -77,9 +67,15 @@ typeof(FALSE)
 :::
 
 ::: {.column width="50%"}
-**Character:** Character strings; in quotes
+**Character:** single characters, or strings of characters; wrap in quotes
 
--   \`\<chr\>\`
+-   `<chr>`
+
+```{r}
+typeof("x")
+```
+
+<br>
 
 ```{r}
 typeof("Hello!")
@@ -90,16 +86,17 @@ typeof("Hello!")
 ```{r}
 typeof("TRUE")
 ```
+
 :::
-:::
+:::::
 
 ## Numeric: Double and integer {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 **Double**: floating point numerical values (default numerical type)
 
--   \`\<dbl\>\`
+-   `<dbl>`
 
 ```{r}
 typeof(2.5)
@@ -115,18 +112,19 @@ typeof(3)
 ::: {.column width="50%"}
 **Integer**: integer numerical values; indicated with an `L`
 
--   \`\<int\>\`
+-   `<int>`
 
 ```{r}
 typeof(3L)
 ```
 :::
-:::
+:::::
 
 ## Type Compatibility {.smaller}
 
 Can you use different types of data together?
-Sometimes... but be careful!
+Sometimes...
+but be careful!
 
 ```{r}
 #| error: true
@@ -144,15 +142,15 @@ typeof(3L + 3)
 ```{r}
 #| error: true
 
-TRUE + 3
-typeof(TRUE + 3)
+TRUE + 3L
+typeof(TRUE + 3L)
 ```
 
 ## Concatenation {.smaller}
 
 **Vectors** are constructed using the `c` function
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 -   **Double** vector:
 
@@ -184,7 +182,7 @@ typeof(TRUE + 3)
     typeof(x)
     ```
 :::
-:::
+:::::
 
 ## Converting between types {.smaller}
 
@@ -229,7 +227,7 @@ c(2L, "two")
 with intention...
 :::
 
-::: columns
+::::: columns
 ::: {.column width="49%"}
 ```{r}
 x <- 1:3
@@ -245,7 +243,7 @@ y
 typeof(y)
 ```
 :::
-:::
+:::::
 
 ## Converting between types
 
@@ -253,7 +251,7 @@ typeof(y)
 with intention...
 :::
 
-::: columns
+::::: columns
 ::: {.column width="49%"}
 ```{r}
 x <- c(TRUE, FALSE)
@@ -269,11 +267,11 @@ y
 typeof(y)
 ```
 :::
-:::
+:::::
 
 ## Explicit vs. implicit coercion {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="49%"}
 **Explicit coercion:**
 
@@ -295,7 +293,21 @@ When you call a function like:
 
 Happens when you use a vector in a specific context that expects a certain type of vector.
 :::
-:::
+:::::
+
+## You've seen explicit coercion before
+
+```{r}
+#| eval: false
+#| code-line-numbers: "6"
+statsci |>
+  pivot_longer(
+    cols = -degree_type,
+    values_to = "n",
+    names_to = "year",
+    names_transform = as.numeric
+  )
+```
 
 # Data classes
 
@@ -312,24 +324,49 @@ Happens when you use a vector in a specific context that expects a certain type 
 
 We can think of data frames like like vectors of equal length glued together
 
+::::: columns
+::: column
 ```{r}
 df <- data.frame(x = 1:2, y = 3:4)
 df
 ```
 
-::: columns
-::: column
+<br>
+
 ```{r}
 typeof(df)
+```
+
+<br>
+
+```{r}
+class(df)
 ```
 :::
 
 ::: column
 ```{r}
+## alternatively, "bind" two columns together
+x <- data.frame(x = 1:2)
+y <- data.frame(y = 3:4)
+
+df <- cbind(x, y)
+df
+```
+
+<br>
+
+```{r}
+typeof(df)
+```
+
+<br>
+
+```{r}
 class(df)
 ```
 :::
-:::
+:::::
 
 ## Data frames {.smaller}
 
@@ -340,7 +377,7 @@ df <- data.frame(x = 1:2, y = 3:4)
 df
 ```
 
-::: columns
+::::: columns
 ::: column
 ```{r}
 typeof(df)
@@ -352,9 +389,9 @@ typeof(df)
 class(df)
 ```
 :::
-:::
+:::::
 
--   When we use the `pull()` function, we extract a vector from the data frame
+-   When we use the `pull()` function, we extract a vector from the data frame; this is functionally the same as accessing a column with  `df$col_name`
 
 ```{r}
 df |>
@@ -364,7 +401,7 @@ df |>
 ## Dates
 
 ```{r}
-today <- as.Date("2025-05-27")
+today <- as.Date("2026-05-26")
 today
 ```
 
@@ -378,50 +415,78 @@ class(today)
 
 ## More on dates
 
-We can think of dates like an integer (the number of days since the origin, 1 Jan 1970) and an integer (the origin) glued together
+We can think of dates like an integer (the number of days since the origin, 1 Jan 1970) and an integer (the origin, aka "the Unix epoch") glued together
 
 ```{r}
 as.integer(today)
 ```
 
 ```{r}
-as.integer(today) / 365 # roughly 55 yrs
+as.integer(today) / 365 # roughly 56 yrs
 ```
-
-## Factors {.smaller}
-
-R uses **factors** to handle **categorical variables** with a fixed and known set of possible values
 
 ```{r}
-months <- c("June", "July", "June", "August", "June")
-months_factor <- factor(months)
-months_factor
+as.integer(as.Date("1970-01-01"))
 ```
 
-::: columns
+## More on dates
+
+The `lubridate` package allows you to work with / access elements of dates seamlessly
+
+```{r}
+library(lubridate)
+```
+```{r}
+year(today)
+```
+
+```{r}
+month(today)
+```
+
+```{r}
+day(today)
+```
+
+
+## Factors {.scrollable .smaller}
+
+-   R uses **factors** to handle **categorical variables** with a fixed and known set of possible values
+
+-   `factor(x = ...)`: *"The default (ordering of levels) is the unique set of values taken by as.character(x), sorted into increasing (alphabetical) order of x"*
+
+```{r}
+summer_months <- c("June", "July", "June", "August", "June")
+typeof(summer_months)
+summer_factor <- factor(summer_months)
+summer_factor
+levels(summer_factor) ## print levels
+```
+
+::::: columns
 ::: {.column .fragment}
 ```{r}
-typeof(months_factor)
+typeof(summer_factor)
 ```
 :::
 
 ::: {.column .fragment}
 ```{r}
-class(months_factor)
+class(summer_factor)
 ```
 :::
-:::
+:::::
 
 ## More on factors
 
-We can think of factors like character (level labels) and an integer (level numbers) glued together
+-   We can think of factors like character (level labels) and an integer (level numbers) glued together
 
 ```{r}
-glimpse(months_factor)
+glimpse(summer_factor)
 ```
 
 ```{r}
-as.integer(months_factor)
+as.integer(summer_factor)
 ```
 
 ## More on factors {.smaller}
@@ -438,7 +503,7 @@ Some commonly used functions are:
 
 -   fct_rev(): reorder factors by reversing
 
-## Example Factor Re-Order
+## Example factor re-order
 
 ```{r}
 amounts <- c("low", "medium", "high", "high", "medium")
@@ -449,6 +514,140 @@ amounts_factor
 ```{r}
 fct_relevel(amounts_factor, c("low", "medium", "high"))
 ```
+
+# FAQ
+
+## Quotes VS no quotes VS backticks
+
+. . .
+
+```{r}
+df <- tibble(
+  x = c(-2, -0.5, 0.5, 1, 2),
+  `2011` = c(-2, -0.5, 0.5, 1, 2),
+  `my var` = c(-2, -1, 0, 1, 2)
+)
+df
+```
+
+## Quotes VS no quotes VS backticks {.small .scrollable}
+
+```{r}
+df <- tibble(
+  x = c(-2, -0.5, 0.5, 1, 2),
+  `2011` = c(-2, -0.5, 0.5, 1, 2),
+  `my var` = c(-2, -1, 0, 1, 2)
+)
+```
+
+Referencing a column in a pipeline:
+
+::: columns
+::: {.column .fragment width="33%"}
+```{r}
+df |>
+  filter("x" > 0)
+```
+`"x"` means the literal character string.
+:::
+
+::: {.column .fragment width="31%"}
+```{r}
+df |>
+  filter(x > 0)
+```
+`x` means the column name in `df`.
+:::
+
+
+::: {.column .fragment width="33%"}
+```{r}
+df |>
+  filter(`x` > 0)
+```
+``` `x` ``` also means the column name in `df`.
+:::
+
+:::
+
+## Quotes VS no quotes VS backticks {.small .scrollable}
+
+```{r}
+df <- tibble(
+  x = c(-2, -0.5, 0.5, 1, 2),
+  `2011` = c(-2, -0.5, 0.5, 1, 2),
+  `my var` = c(-2, -1, 0, 1, 2)
+)
+```
+
+Referencing a column in a pipeline:
+
+::: columns
+::: {.column .fragment width="33%"}
+```{r}
+df |>
+  filter("2011" > 0)
+```
+`"2011"` means the literal character string.
+:::
+
+::: {.column .fragment width="31%"}
+```{r}
+df |>
+  filter(2011 > 0)
+```
+`2011` means the literal number.
+:::
+
+::: {.column .fragment width="33%"}
+```{r}
+df |>
+  filter(`2011` > 0)
+```
+``` `2011` ``` means the column name in `df`.
+:::
+
+:::
+
+## Quotes VS no quotes VS backticks {.small .scrollable}
+
+```{r}
+df <- tibble(
+  x = c(-2, -0.5, 0.5, 1, 2),
+  `2011` = c(-2, -0.5, 0.5, 1, 2),
+  `my var` = c(-2, -1, 0, 1, 2)
+)
+```
+
+Referencing a column in a pipeline:
+
+::: columns
+::: {.column .fragment width="33%"}
+```{r}
+df |>
+  filter("my var" > 0)
+```
+`"my var"` means the literal character string.
+:::
+
+::: {.column .fragment width="31%"}
+```{r}
+#| error: true
+df |>
+  filter(my var > 0)
+```
+`my var` means nothing.
+:::
+
+::: {.column .fragment width="33%"}
+```{r}
+df |>
+  filter(`my var` > 0)
+```
+``` `my var` ``` means the column name in `df`.
+:::
+
+:::
 
 # Application exercise
 
