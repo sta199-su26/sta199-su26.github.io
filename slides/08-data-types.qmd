@@ -649,6 +649,4 @@ df |>
 
 :::
 
-# Application exercise
-
-## AE 08: Working with Factors
+# AE 08: Working with Factors
