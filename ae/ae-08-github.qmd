@@ -24,7 +24,7 @@ The data come from <https://www.usclimatedata.com/climate/durham/north-carolina/
 durham_climate <- read_csv("data/durham-climate.csv")
 ```
 
-And let's take a look at the data.
+Let's take a look at the data.
 
 ```{r}
 #| label: view-data
@@ -62,6 +62,17 @@ Fix the plot.
 
 ```{r}
 #| label: avg-high-fixed
+#| fig-width: 8
+#| fig-asp: 0.4
+#| out-width: 100%
+# add code here
+```
+
+Perhaps I want the points to be plotted in order of decreasing value (i.e., decreasing avg. high temp).
+Add code to accomplish this in the chunk below.
+
+```{r}
+#| label: avg-high-dec
 #| fig-width: 8
 #| fig-asp: 0.4
 #| out-width: 100%
