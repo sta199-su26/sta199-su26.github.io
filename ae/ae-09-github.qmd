@@ -1,5 +1,5 @@
 ---
-title: "AE 09: Age gaps + import"
+title: "AE 09: Data Imports & Exports"
 ---
 
 ## Packages
@@ -15,6 +15,8 @@ We will use the following two packages in this application exercise.
 # add code here
 ```
 
+# Part 1: Hollywood Relationships
+
 ## Data
 
 The data for this application exercise is from [Data is Plural](https://www.data-is-plural.com) and it is on age gaps in Hollywood relationships.
@@ -26,15 +28,15 @@ The data follows certain rules:
 -   Not animated characters.
 
 The age gaps dataset includes "gender" columns, which always contain the values "man" or "woman".
-These values appear to indicate how the characters in each film identify.
-Some of these values do not match how the actor identifies.
+These values appear to indicate how the characters in each film identify.
+Some of these values do not match how the actor identifies.
 
 The data are in an Excel file called `age-gaps.xlsx` in your `data` folder.
 
 This is how the Excel file looks -- it has two sheets, one with the data (called `Hollywood Age Gaps`) and one with information about the data (called `Source`).
 Additionally, the data sheet has some metadata at the top, above the column headers.
 
-![](images/age-gaps-source.png){width="400"} ![](images/age-gaps-data.png){width="400"}
+![](img/age-gaps-source.png){width="400"} ![](img/age-gaps-data.png){width="400"}
 
 ## Import
 
@@ -49,7 +51,7 @@ Click on the *name of the object* in your Environment tab to pop open the data i
 
 ## Subset
 
-Create a subset of the data frame for heterosexual relationships on screen.
+Create a subset of the data frame for heterosexual relationships on screen & save the resulting data as a *new* data frame.
 
 ```{r}
 #| label: age-gaps-hetero
@@ -76,3 +78,32 @@ Write out the three new datasets you created into the `data`, and within that, i
 write_csv(woman_older, file = "data/age-gaps-subsets/woman-older.csv")
 # add more code here
 ```
+
+# Part 2: Sales Data
+
+Sales data are stored in an Excel file that looks like the following:
+
+![](https://sta199-s24.github.io/images/sales-excel.png)
+
+**Task 1:** Read in the Excel file called `sales.xlsx` from the `data` folder such that it looks like the following.
+
+![](https://sta199-s24.github.io/images/sales-1.png){width="200"}
+
+```{r}
+#| label: sales-import
+# add code here
+```
+
+**Task 2:** Manipulate the sales data such such that it looks like the following.
+
+![](https://sta199-s24.github.io/images/sales-2.png){width="200"}
+
+```{r}
+#| label: sales-cleanup
+# add code here
+```
+
+Why should we bother with writing code for reading the data in by skipping columns and assigning variable names as well as cleaning it up in multiple steps instead of opening the Excel file and editing the data in there to prepare it for a clean import?
+
+Add response here.
+
