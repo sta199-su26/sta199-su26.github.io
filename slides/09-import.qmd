@@ -1,12 +1,12 @@
 ---
-title: "Data Importing"
+title: "Data Importation"
 subtitle: "Lecture 9"
 date: "2026-05-27"
 format: 
   revealjs:
-    output-file: 08-data-types-slides.html
+    output-file: 09-data-import-slides.html
   html: 
-    output-file: 08-data-types.html
+    output-file: 09-data-import
 auto-stretch: false
 ---
 
