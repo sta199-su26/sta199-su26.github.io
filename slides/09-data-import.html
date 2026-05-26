@@ -5,8 +5,8 @@
 <meta name="generator" content="quarto-1.6.39">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Katie Solarz">
-<meta name="dcterms.date" content="2025-05-28">
-<title>Data Importing – STA 199</title>
+<meta name="dcterms.date" content="2026-05-27">
+<title>Data Importation – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,13 +98,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script><link rel="stylesheet" href="../style/sta199.scss">
-<meta property="og:title" content="Data Importing – STA 199">
+<meta property="og:title" content="Data Importation – STA 199">
 <meta property="og:description" content="Lecture 9">
-<meta property="og:image" content="https://sta199-su26.github.io/slides/09-import_files/figure-revealjs/unnamed-chunk-2-1.png">
+<meta property="og:image" content="https://sta199-su26.github.io/slides/img/00/data-science-cycle.001.png">
 <meta property="og:site_name" content="STA 199">
-<meta property="og:image:height" content="960">
+<meta property="og:image:height" content="1080">
 <meta property="og:image:width" content="1920">
-<meta name="twitter:title" content="Data Importing – STA 199">
+<meta name="twitter:title" content="Data Importation – STA 199">
 <meta name="twitter:description" content="Lecture 9">
 <meta name="twitter:image" content="https://sta199-su26.github.io/slides/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Importing</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Importation</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -247,18 +247,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#midterm-upcoming" id="toc-midterm-upcoming" class="nav-link active" data-scroll-target="#midterm-upcoming">Midterm Upcoming</a></li>
-  <li>
-<a href="#lab-check-in" id="toc-lab-check-in" class="nav-link" data-scroll-target="#lab-check-in">Lab Check In</a>
-  <ul class="collapse">
-<li><a href="#lab-1-grades" id="toc-lab-1-grades" class="nav-link" data-scroll-target="#lab-1-grades">Lab 1 Grades</a></li>
-  <li><a href="#code-style" id="toc-code-style" class="nav-link" data-scroll-target="#code-style">Code Style</a></li>
-  <li><a href="#lab-2-clarifications" id="toc-lab-2-clarifications" class="nav-link" data-scroll-target="#lab-2-clarifications">Lab 2 clarifications</a></li>
-  <li><a href="#lab-2-workflow-question" id="toc-lab-2-workflow-question" class="nav-link" data-scroll-target="#lab-2-workflow-question">Lab 2 Workflow question</a></li>
-  <li><a href="#lab-2-question-5" id="toc-lab-2-question-5" class="nav-link" data-scroll-target="#lab-2-question-5">Lab 2 Question 5</a></li>
-  <li><a href="#lab-2-question-5-1" id="toc-lab-2-question-5-1" class="nav-link" data-scroll-target="#lab-2-question-5-1">Lab 2 Question 5</a></li>
-  </ul>
-</li>
+<li><a href="#administrative-details" id="toc-administrative-details" class="nav-link active" data-scroll-target="#administrative-details">Administrative Details</a></li>
+  <li><a href="#administrative-details-1" id="toc-administrative-details-1" class="nav-link" data-scroll-target="#administrative-details-1">Administrative Details</a></li>
   <li>
 <a href="#lets-zoom-out-for-a-second" id="toc-lets-zoom-out-for-a-second" class="nav-link" data-scroll-target="#lets-zoom-out-for-a-second">Let’s zoom out for a second</a>
   <ul class="collapse">
@@ -277,7 +267,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#reading-rectangular-data" id="toc-reading-rectangular-data" class="nav-link" data-scroll-target="#reading-rectangular-data">Reading rectangular data</a></li>
   <li><a href="#using-read_csv" id="toc-using-read_csv" class="nav-link" data-scroll-target="#using-read_csv">Using read_csv()</a></li>
   <li><a href="#path-to-file" id="toc-path-to-file" class="nav-link" data-scroll-target="#path-to-file">Path to file</a></li>
-  <li><a href="#why-not-include-ae-mneubrander" id="toc-why-not-include-ae-mneubrander" class="nav-link" data-scroll-target="#why-not-include-ae-mneubrander">Why not include <code>ae-mneubrander</code>?</a></li>
+  <li><a href="#path-to-file-1" id="toc-path-to-file-1" class="nav-link" data-scroll-target="#path-to-file-1">Path to file</a></li>
+  <li><a href="#why-not-include-ae-kgsolarz" id="toc-why-not-include-ae-kgsolarz" class="nav-link" data-scroll-target="#why-not-include-ae-kgsolarz">Why not include <code>ae-kgsolarz</code>?</a></li>
   <li><a href="#we-can-also-write-files" id="toc-we-can-also-write-files" class="nav-link" data-scroll-target="#we-can-also-write-files">We can also write files!</a></li>
   </ul>
 </li>
@@ -286,6 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
 <li><a href="#goal-1.1-reading-and-writing-csv-files" id="toc-goal-1.1-reading-and-writing-csv-files" class="nav-link" data-scroll-target="#goal-1.1-reading-and-writing-csv-files">Goal 1.1: Reading and writing CSV files</a></li>
   <li><a href="#goal-1.2-practice---case-when" id="toc-goal-1.2-practice---case-when" class="nav-link" data-scroll-target="#goal-1.2-practice---case-when">Goal 1.2: Practice - Case When</a></li>
+  <li><a href="#an-aside---if-else" id="toc-an-aside---if-else" class="nav-link" data-scroll-target="#an-aside---if-else">An aside - If Else</a></li>
   <li><a href="#age-gap-in-hollywood-relationships" id="toc-age-gap-in-hollywood-relationships" class="nav-link" data-scroll-target="#age-gap-in-hollywood-relationships">Age gap in Hollywood relationships</a></li>
   <li><a href="#goal-2.1-reading-excel-files-non-tidy-data" id="toc-goal-2.1-reading-excel-files-non-tidy-data" class="nav-link" data-scroll-target="#goal-2.1-reading-excel-files-non-tidy-data">Goal 2.1: Reading Excel files &amp; non-tidy data</a></li>
   <li><a href="#goal-2.2-string-functions" id="toc-goal-2.2-string-functions" class="nav-link" data-scroll-target="#goal-2.2-string-functions">Goal 2.2: String Functions</a></li>
@@ -296,11 +288,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sales-data-1" id="toc-sales-data-1" class="nav-link" data-scroll-target="#sales-data-1">Sales data</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/09-import.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="09-import-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/09-import.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="09-data-import-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Data Importing</h1>
+<h1 class="title">Data Importation</h1>
 <p class="subtitle lead">Lecture 9</p>
 </div>
 
@@ -325,7 +317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 28, 2025</p>
+      <p class="date">May 27, 2026</p>
     </div>
   </div>
   
@@ -334,76 +326,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="midterm-upcoming" class="level1"><h1>Midterm Upcoming</h1>
+</header><section id="administrative-details" class="level2 scrollable smaller"><h2 class="scrollable smaller anchored" data-anchor-id="administrative-details">Administrative Details</h2>
 <ul>
-<li><p>Practice + some review + many more details tomorrow in class</p></li>
-<li><p>Initial practice questions are posted!</p></li>
-</ul></section><section id="lab-check-in" class="level1"><h1>Lab Check In</h1>
-<section id="lab-1-grades" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="lab-1-grades">Lab 1 Grades</h2>
-<ul>
-<li><p>Please read comments on ALL questions. Some mistakes we did not penalize for, but could in future problems.</p></li>
-<li><p>In the first few questions, the point adjustment feature was used for partial credit.</p></li>
-<li><p>Regrade requests: submit within a week if you believe a grading mistake was made.</p></li>
 <li>
-<p><strong>Code style</strong> was the biggest common issue.</p>
+<p>Midterm next Monday!</p>
 <ul>
-<li><p>Even though most questions had code style points, we did not double penalize on <em>this lab.</em></p></li>
-<li><p>There were some minor problems we did not take off for <em>this time</em> but left comments about.</p></li>
+<li><p>Practice + some review tomorrow in class</p></li>
+<li><p>Practice questions for both the multiple choice &amp; live coding portions of the exam will be posted tomorrow!</p></li>
+<li><p>I will post solutions to the practice questions by Saturday morning</p></li>
 </ul>
 </li>
-</ul></section><section id="code-style" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="code-style">Code Style</h2>
-<ul>
-<li><p>spaces before and line breaks after each&nbsp;<code>+</code>&nbsp;when building a&nbsp;<code>ggplot</code>,</p></li>
-<li><p>spaces before and line breaks after each&nbsp;<code>|&gt;</code>&nbsp;in a data transformation pipeline,</p></li>
 <li>
-<p>code should be properly indented</p>
+<p>Lab 3 after lecture tomorrow</p>
 <ul>
-<li><p>this should match the automatic indentation when you hit enter</p></li>
-<li><p>to fix: highlight code, click <code>code</code> option on top of RStudio, select <code>reindent lines</code></p></li>
+<li><p>This will be a <em>shorter than usual</em> lab &amp; is meant to serve as a recap of all we’ve learned so far (aka, helpful exam prep!)</p></li>
+<li><p>Reminder: Lab 3 will be due by <strong>12:00pm</strong> (noon) on Sunday; there will be <strong>no late window</strong> for this lab assignment</p></li>
+<li><p>Solutions will posted to the website promptly thereafter</p></li>
 </ul>
 </li>
-<li><p>there should be spaces around&nbsp;<code>=</code>&nbsp;signs and spaces after commas</p></li>
-<li><p>use <code>|&gt;</code> and not <code>%&gt;%</code></p></li>
-<li><p>use <code>&lt;-</code> and not <code>=</code> for saving a data frame</p></li>
-</ul></section><section id="lab-2-clarifications" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="lab-2-clarifications">Lab 2 clarifications</h2>
+</ul></section><section id="administrative-details-1" class="level2 scrollable smaller"><h2 class="scrollable smaller anchored" data-anchor-id="administrative-details-1">Administrative Details</h2>
 <ul>
-<li><p>Question 7c: No code needed! Use results 7a and 7b to answer. You can delete the code chunk from the template!</p></li>
-<li><p>Question 10b: ‘filter your reshaped dataset from question 10’ should be from question 9</p></li>
-<li><p>Question 2c: ‘How is the output different from the one in part (a)?’ should say from part (b)</p></li>
-</ul></section><section id="lab-2-workflow-question" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="lab-2-workflow-question">Lab 2 Workflow question</h2>
+<li>
+<p>Project work begins next week!</p>
 <ul>
-<li><p><strong>Select pages on gradescope</strong> when you submit</p></li>
-<li><p><strong>At least three commits</strong> to your lab 2 repo</p></li>
+<li><p>Since the midterm takes place during both of the formal lecture and lab timeslots next Monday, lecture time next Tuesday (9:30am - 10:45am) will function as a lab meeting</p></li>
+<li><p><strong>Both</strong> lab sessions next week (T, Th) will be dedicated worktime</p></li>
+<li><p>You will receive your team assignments (2 groups of 3, 2 groups of 4) in lab next Tuesday</p></li>
+<li><p>As a reminder, projects are completed in groups <strong>BUT</strong> grades are individual; your final project grade may ultimately differ from your teammates’ if there is unequal participation</p></li>
+<li><p>Participation is measured by 1) lab attendance on project work days; 2) commit history in project repos on GitHub; 3) peer review forms</p></li>
 </ul>
-<p>These should hopefully be free points!!!</p>
-</section><section id="lab-2-question-5" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="lab-2-question-5">Lab 2 Question 5</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="09-import_files/figure-revealjs/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><em>What is a ‘typical value’ of population density?</em></p>
-</section><section id="lab-2-question-5-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="lab-2-question-5-1">Lab 2 Question 5</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="09-import_files/figure-revealjs/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 2
-   mean   med
-  &lt;dbl&gt; &lt;dbl&gt;
-1 3098. 1156.</code></pre>
-</div>
-</div>
-</section></section><section id="lets-zoom-out-for-a-second" class="level1"><h1>Let’s zoom out for a second</h1>
+</li>
+</ul></section><section id="lets-zoom-out-for-a-second" class="level1"><h1>Let’s zoom out for a second</h1>
 <section id="data-science-and-statistical-thinking" class="level2"><h2 class="anchored" data-anchor-id="data-science-and-statistical-thinking">Data science and statistical thinking</h2>
 <p>Before Midterm 1…</p>
 <ul>
@@ -416,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>Statistics</strong>: the mathematical discipline of quantifying our uncertainty about that knowledge.</li>
 </ul></section><section id="data-science" class="level2 medium"><h2 class="medium anchored" data-anchor-id="data-science">Data science</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/data-science-cycle/data-science-cycle.001.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/00/data-science-cycle.001.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="data-science-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="data-science-1">Data science</h2>
@@ -424,22 +377,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="incremental">
 <ol class="incremental" type="1">
 <li>
-<strong>Collection</strong>: we won’t seriously study this; data importing coming today</li>
+<strong>Collection</strong>: we won’t seriously study data collection (take an experimental design class if you are interested!); we <em>will</em> discuss data importation methods today</li>
 </ol>
 <ul class="incremental">
 <li>
-<strong>for us</strong>: package data (<code><a href="https://rdrr.io/r/base/library.html">library()</a></code>), <strong>data importing</strong> (<code>read_csv</code>), and webscraping (eventually)<br>
-</li>
+<strong>for the purposes of this class</strong>: accessing package data (<code><a href="https://rdrr.io/r/base/library.html">library()</a></code>; <code>df &lt;- library::df</code>), <strong>data importation</strong> (<code>read_csv</code>, <code>read_xlsx</code>, <code>read_xls</code>)</li>
 <li>
-<strong>but really</strong>: domain-specific issues of measurement, survey design, experimental design, etc<br>
-</li>
+<strong>in reality…</strong>: web-scraping, domain-specific issues of measurement, survey design, experimental design, etc.</li>
 </ul>
 </div>
 </div>
 </section><section id="data-science-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="data-science-2">Data science</h2>
 <ol type="1">
 <li>
-<strong>Collection</strong>: we won’t seriously study this; data importing coming today</li>
+<strong>Collection</strong>: we won’t seriously study data collection; we <em>will</em> discuss data importation methods today</li>
 </ol>
 <div class="incremental">
 <div class="fragment" style="background-color:#f3e8ff; border-left:4px solid #d8b4fe; padding:0.5em 1em; border-radius:4px; display:inline-block">
@@ -456,41 +407,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="data-science-3" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="data-science-3">Data science</h2>
 <ol type="1">
-<li>
-<strong>Collection</strong>: we won’t seriously study this; data importing coming today</li>
-<li>
-<strong>Preparation</strong>: cleaning, wrangling, and otherwise <em>tidying</em> the data so we can actually work with it.</li>
+<li><p><strong>Collection</strong>: we won’t seriously study data collection; we <em>will</em> discuss data importation methods today</p></li>
+<li><p><strong>Preparation</strong>: cleaning, wrangling, and otherwise <em>tidying</em> the data so we can actually work with it.</p></li>
 </ol>
 <div class="incremental">
 <div class="fragment" style="background-color:#f3e8ff; border-left:4px solid #d8b4fe; padding:0.5em 1em; border-radius:4px; display:inline-block">
 <ol class="incremental" start="3" type="1">
 <li>
-<strong>Analysis</strong>: finally transform the data into <em>knowledge</em>…</li>
+<strong>Analysis</strong>: finally, transform the data into <em>knowledge</em>…</li>
 </ol>
 <ul class="incremental">
 <li>
-<strong>pictures</strong>: <code>ggplot</code>, <code>geom_*</code>, etc<br>
-</li>
+<strong>visual summaries</strong>: <code>ggplot</code>, <code>geom_*</code>, etc.</li>
 <li>
-<strong>numerical summaries</strong>: <code>summarize</code>, <code>group_by</code>, <code>count</code>, <code>mean</code>, <code>median</code>, <code>sd</code>, <code>quantile</code>, <code>IQR</code>, <code>cor</code>, etc<br>
-</li>
-<li>The pictures and the summaries need to work together!</li>
+<strong>numerical summaries</strong>: <code>summarize</code>, <code>group_by</code>, <code>count</code>, <code>mean</code>, <code>median</code>, <code>sd</code>, <code>quantile</code>, <code>IQR</code>, <code>cor</code>, etc.</li>
+<li>The visualizations and the summaries should complement one another!</li>
 </ul>
 </div>
 </div>
 </section></section><section id="reading-data-into-r" class="level1"><h1>Reading data into R</h1>
 <section id="package-data" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="package-data">Package data</h2>
 <ul>
-<li><p>When data is in a pack, such as <strong>tidyverse</strong>, loading the pacakge gets our dataset</p></li>
+<li><p>When data is neatly stored in a package, such as <strong>tidyverse</strong>, loading the package loads the dataset; you can explicitly save a packaged df to your RStudio environment by running <code>df &lt;- library::df</code></p></li>
 <li><p>Most often, this is not the case</p></li>
 </ul></section><section id="reading-in-rectangular-data" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="reading-in-rectangular-data">Reading in rectangular data</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/excel.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="923"></p>
+<figure class="figure"><p><img src="img/00/excel.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="923"></p>
 </figure>
 </div>
 </section><section id="reading-rectangular-data" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="reading-rectangular-data">Reading rectangular data</h2>
 <ul>
-<li>Using <a href="https://readr.tidyverse.org/"><strong>readr</strong></a>: (in <strong>tidyverse)</strong>
+<li>Using <a href="https://readr.tidyverse.org/"><strong>readr</strong></a>: (in <strong>tidyverse</strong>)
 <ul>
 <li>Most commonly: <code>read_csv()</code> - file saved as <code>.csv</code>
 </li>
@@ -500,39 +447,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>. . .</p>
 <ul>
-<li>Using <a href="https://readxl.tidyverse.org/"><strong>readxl</strong></a>: <code>read_excel()</code> - .xls or .xlsx</li>
+<li>Using <a href="https://readxl.tidyverse.org/"><strong>readxl</strong></a>:
+<ul>
+<li>
+<code>read_excel()</code> - R determines file type for you</li>
+<li>
+<code>read_xls()</code>, <code>read_xlsx()</code> - use if you know whether you have a .xls or .xlsx file</li>
+</ul>
+</li>
 </ul>
 <p>. . .</p>
 <ul>
-<li>Using <a href="https://googlesheets4.tidyverse.org/"><strong>googlesheets4</strong></a>: <code>read_sheet()</code> – We haven’t covered this in the videos, but might be useful for your projects</li>
+<li>
+<p>Using <a href="https://googlesheets4.tidyverse.org/"><strong>googlesheets4</strong></a>: <code>read_sheet()</code> – we haven’t covered this in the videos, but might be useful for your projects</p>
+<ul>
+<li>Fun fact: The “Schedule” page on the course website pulls information from an underlying Google sheets file</li>
+</ul>
+</li>
 </ul></section><section id="using-read_csv" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="using-read_csv">Using read_csv()</h2>
 <p>Generally, the format is:</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">r_df_name</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"path_to_file_name.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_name</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"path_to_file_name.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="path-to-file" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="path-to-file">Path to file</h2>
-<p><em>Where is durham-climate.csv?</em></p>
+<p>For example, recall we worked with <em>durham-climate.csv</em> in AE08. <strong>Where is</strong> <em>durham-climate.csv?</em></p>
+<p>When in our AE repo, we read in the data with the following code:</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">durham_climate</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/durham-climate.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="path-to-file-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="path-to-file-1">Path to file</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img src="images/ae_repo.png" class="img-fluid" width="300"></p>
+<p><img src="img/09/ae_repo.png" class="img-fluid" width="500"></p>
 </div><div class="column" style="width:50%;">
-<p><img src="images/data_folder.png" class="img-fluid" width="400"></p>
+<p><img src="img/09/ae_repo_data.png" class="img-fluid" width="500"></p>
 </div>
 </div>
 <ul>
 <li><p>use <code>/</code> to separate folder(s) + file names; file path in quotes</p></li>
-<li><p>Answer:</p></li>
-</ul></section><section id="why-not-include-ae-mneubrander" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="why-not-include-ae-mneubrander">Why not include <code>ae-mneubrander</code>?</h2>
+<li><p>Answer: <code>read_csv("data/durham-climate.csv")</code></p></li>
+</ul></section><section id="why-not-include-ae-kgsolarz" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="why-not-include-ae-kgsolarz">Why not include <code>ae-kgsolarz</code>?</h2>
 <p><em>Where is durham-climate.csv?</em></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img src="images/ae_repo.png" class="img-fluid" width="300"></p>
+<p><img src="img/09/ae_repo.png" class="img-fluid" width="300"></p>
 </div><div class="column" style="width:50%;">
-<p><img src="images/data_folder.png" class="img-fluid" width="400"><img src="images/getwd.png" class="img-fluid" width="400"></p>
+<p><img src="img/09/ae_repo_data.png" class="img-fluid" width="400"><img src="img/09/get_wd.png" class="img-fluid" width="400"></p>
 </div>
 </div>
 </section><section id="we-can-also-write-files" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="we-can-also-write-files">We can also write files!</h2>
-<p>This allows us to save data for later usage, sharing outside of R, etc.</p>
+<p>This allows us to save data for later usage, share data outside of R, etc.</p>
 <p><br></p>
 <p>Using <code>write_csv()</code>:</p>
 <div class="cell">
@@ -549,7 +513,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <code>case_when()</code> is similar to <code>if_else()</code>, but allows multiple cases</li>
 <li>
-<code>case_when()</code> is often used in <code>mutate()</code> to make a new column</li>
+<code>case_when()</code> is often used within <code>mutate()</code> to create a new column</li>
 </ul>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">|&gt;</span></span>
@@ -561,9 +525,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    .default <span class="op">=</span> <span class="va">default_result</span></span>
 <span>  <span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section><section id="an-aside---if-else" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="an-aside---if-else">An aside - If Else</h2>
+<ul>
+<li><p><code>case_when()</code> is similar to <code>if_else()</code>, but <code>if_else()</code> only allows for 2 cases / conditions</p></li>
+<li><p>Long story short… use <code>if_else()</code> if you are only considering 2 cases / conditions; for &gt; 2 conditions, use <code>case_when()</code></p></li>
+<li><p>In words, we’d read the code below as: “<strong>If</strong> logical_1 evaluates to TRUE (i.e., this condition is met), <strong>then</strong> choose result_1; <strong>else</strong> (i.e., this condition is not met), choose result 2</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>new_var <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">logical_1</span>, <span class="va">result_1</span>, <span class="va">result_2</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## create a new column, "is_december" with a value 1 if the month is December and a value 0 otherwise</span></span>
+<span></span>
+<span><span class="va">durham_climate</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>is_december <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">month</span> <span class="op">==</span> <span class="st">"December"</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section><section id="age-gap-in-hollywood-relationships" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="age-gap-in-hollywood-relationships">Age gap in Hollywood relationships</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/09/hollywood-ages.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
+<figure class="figure"><p><img src="img/09/hollywood-ages.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
 </figure>
 </div>
 </section><section id="goal-2.1-reading-excel-files-non-tidy-data" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="goal-2.1-reading-excel-files-non-tidy-data">Goal 2.1: Reading Excel files &amp; non-tidy data</h2>
@@ -579,12 +558,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>today: <strong>str_detect</strong> in <strong>stringr</strong></p></li>
 </ul>
 </div><div class="column" style="width:30%;">
-<p><img src="images/stringr.png" class="img-fluid" width="185"></p>
+<p><img src="img/09/stringr.png" class="img-fluid" width="185"></p>
 </div>
 </div>
 </section><section id="goal-2.2-string-functions-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="goal-2.2-string-functions-1">Goal 2.2: String Functions</h2>
 <ul>
-<li><p><strong>str_detect()</strong> identifies if some characters are a substring of a larger string</p></li>
+<li><p><strong>str_detect()</strong> identifies if a character / sequence of characters is a <em>substring</em> within a longer string</p></li>
 <li>
 <p>useful in cases when you need to check some condition, for example:</p>
 <ul>
@@ -594,7 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 </ul></section><section id="goal-2.2-string-functions-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="goal-2.2-string-functions-2">Goal 2.2: String Functions</h2>
 <ul>
-<li><p><strong>str_detect()</strong> identifies if some characters are a substring of a larger string</p></li>
+<li><p><strong>str_detect()</strong> identifies if a character / sequence of characters is a <em>substring</em> within a longer string</p></li>
 <li>
 <p>useful in cases when you need to check some condition, for example:</p>
 <ul>
@@ -605,7 +584,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><strong>example:</strong> which classes in a list are in the stats department?</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">classes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"sta199"</span>, <span class="st">"dance122"</span>, <span class="st">"math185"</span>, <span class="st">"sta240"</span>, <span class="st">"pubpol202"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">classes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"sta199"</span>, <span class="st">"dance122"</span>, <span class="st">"math185"</span>, <span class="st">"sta240"</span>, <span class="st">"pubpol202"</span><span class="op">)</span></span>
 <span><span class="fu">str_detect</span><span class="op">(</span><span class="va">classes</span>, <span class="st">"sta"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE FALSE FALSE  TRUE FALSE</code></pre>
@@ -614,19 +593,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="goal-2.2-string-functions-3" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="goal-2.2-string-functions-3">Goal 2.2: String Functions</h2>
 <p>General form:</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">str_detect</span><span class="op">(</span><span class="va">character_var</span>, <span class="st">"word_to_detect"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">str_detect</span><span class="op">(</span><span class="va">character_var</span>, <span class="st">"word_to_detect"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="sales-data" class="level2"><h2 class="anchored" data-anchor-id="sales-data">Sales data</h2>
-<p><img src="images/09/sales-excel.png" class="img-fluid"></p>
+<p><img src="img/09/sales-excel.png" class="img-fluid"></p>
 <p>. . .</p>
 <div class="question">
 <p>Are these data tidy? Why or why not?</p>
 </div>
 </section><section id="sales-data-1" class="level2"><h2 class="anchored" data-anchor-id="sales-data-1">Sales data</h2>
 <div class="question">
-<p>What “data moves” do we need to go from the original, non-tidy data to this, tidy one?</p>
+<p>What data tidying must be done to go from the original, non-tidy data to the below tidy version of these data?</p>
 </div>
-<p><img src="images/09/sales-2.png" class="img-fluid" width="150"></p>
+<p><img src="img/09/sales-2.png" class="img-fluid" width="150"></p>
 
 
 </section></section></main><!-- /main --><script>

@@ -3466,7 +3466,7 @@
     "href": "index.html",
     "title": "STA 199: Introduction to Data Science & Statistical Thinking",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester! Entries for future dates are tentative; the timeline of topics, assignments, and due dates might be changed throughout the session at the instructor’s discretion. All material changes will be communicated with the students in a timely manner.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nMATERIALS\nDUE\nPREPARE\n\n\n\n1\nWed, May 13\nWelcome\n🖥️ slides 00  ⌨️ ae 00\n\nGitHub username - End of Lecture\n\n\n\n\nThu, May 14\nLab 0\n💻 lab 0\n\nLab 0 - End of Lab\n\n\n\n\nThu, May 14\nMeet the Toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto \n\n\n\n\nFri, May 15\nGrammar of Data Visualization\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 02\n\n\n📗 r4ds - chp 1  📘 ims - chp 4 \n\n\n\n2\nMon, May 18\nGrammar of Data Transformation\n🖥️ slides 03  🗒️ notes 03  ⌨️ ae 03  ✅ ae 03\n\n\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\nMon, May 18\nLab 1\n💻 lab 1\n\n\n📗 r4ds - chp 2  📘 ims - chp 5\n\n\n\n\nTue, May 19\nExploratory Data Analysis I\n🖥️ slides 04  🗒️ notes 04  ⌨️ ae 04  ✅ ae 04\n\n\n📗 r4ds - chp 3.6-3.7  🎥 Visualizing and summarizing categorical data  🎥 Visualizing and summarizing numerical data  🎥 Visualizing and summarizing relationships  🎥 Code along :: Star Wars characters\n\n\n\n\nWed, May 20\nExploratory Data Analysis II\n🖥️ slides 05  🗒️ notes 05  ⌨️ ae 05  ✅ ae 05\n\nLab 1 - 11:59PM ET\n📘 ims - chp 5  📘 ims - chp 6  🎥 Code along :: Diving deeper with Palmer Penguins\n\n\n\n\nThu, May 21\nTidying Data\n🖥️ slides 06  🗒️ notes 06  ⌨️ ae 06  ✅ ae 06\n\n\n📗 r4ds - chp 5  📘 ims - chp 6\n\n\n\n\nThu, May 21\nLab 2\n💻 lab 2\n\n\n📗 r4ds - chp 4 🎥 Tidy data 🎥 Tidying data 🎥 Code Along: Population over time\n\n\n\n\nFri, May 22\nJoining Data\n🖥️ slides 07  🗒️ notes 07  ⌨️ ae 07  ✅ ae 07\n\n\n🎥 Joining data  🎥 Code along :: Continent populations  📗 r4ds - chp 19.1-19.3\n\n\n\n\nSun, May 24\n\n\n\n\n\n\n3\nMon, May 25\nNO CLASS - Memorial Day\n\nLab 2 - 11:59PM ET\n\n\n\n\nTue, May 26\nData Types and Classes\n🖥️ slides 08  🗒️ notes 08  ⌨️ ae 08\n\n\n🎥 Data types  🎥 Data classes  🎥 Code along :: That’s my type  📗 r4ds - chp 16\n\n\n\n\nWed, May 27\nImporting and Recoding Data\n\n\n🎥 Importing data  🎥 Code along :: Halving CO2 emissions  🎥 Code along :: Student survey  📗 r4ds - chp 7  📗 r4ds - chp 17.1 - 17.3\n\n\n\n\nThu, May 28\nMore Practice + Midterm Review\n\n\n\n\n\n\nThu, May 28\nLab 3\n\n\n\n\n\n\nFri, May 29\nData Ethics + Midterm Review\n\n\n📕 mdsr - chp 8  📝 How to make a racist AI in R without really trying  🎥 Alberto Cairo - How charts lie  🎥 Joy Buolamwini - How I’m fighting bias in algorithms\n\n\n\n\nSun, May 31\n\n\nLab 3 - 11:59PM ET\n\n\n\n4\nMon, Jun 1\nMidterm (lecture + lab sessions)\n\n\n\n\n\n\nTue, Jun 2\nProject Milestone 1 - Collaboration\n\nProject Milestone 1 - 12:30PM ET\n\n\n\n\nWed, Jun 3\nThe Language of Models\n\n\n🎥 The language of models  📘 ims - chp 7.1  🎥 Fitting and interpreting models  🎥 Modeling nonlinear relationships\n\n\n\n\nThu, Jun 4\nSimple Linear Regression\n\n\n🎥 Linear regression with a categorical predictor  🎥 Outliers in linear regression  🎥 Code along :: Modeling fish  📘 ims - chp 7.2\n\n\n\n\nThu, Jun 4\nProject Milestone 2 - Proposals\n\n\n\n\n\n\nFri, Jun 5\nMultiple Linear Regression I\n\n\n🎥 Linear regression with multiple predictors  🎥 Main and interaction effects  📘 ims - chp 8.1-8.2  📘 ims - chp 8.3-8.5\n\n\n\n\nSun, Jun 7\n\n\nProject Milestone 2 - 11:59PM ET\n\n\n\n5\nMon, Jun 8\nMultiple Linear Regression II\n\n\n🎥 Code along :: Modeling interest rates\n\n\n\n\nMon, Jun 8\nLab 4\n\n\n\n\n\n\nTue, Jun 9\nLinear Regression Diagnostics\n\n\nTBU\n\n\n\nWed, Jun 10\nLogistic Regression I\n\nLab 4 - 11:59PM ET \n\n🎥 Logistic regression  🎥 Code along :: Building a spam filter  📘 ims - chp 9\n\n\n\n\nThu, Jun 11\nLogistic Regression II\n\n\n🎥 Clasification and decision errors  🎥 Overfitting and spending your data\n\n\n\n\nThu, Jun 11\nLab 5\n\n\n\n\n\n\nFri, Jun 12\nInterval Estimation\n\nProject Milestone 3 - 11:59PM ET\n🎥 Quantifying uncertainty  🎥 Bootstrapping  🎥 Code along :: Bootstrapping Duke Forest houses  📘 ims - chp 11  📘 ims - chp 12\n\n\n\n\nSun, Jun 14\n\n\nLab 5 - 11:59PM ET \n\n\n\n\n6\nMon, Jun 15\nHypothesis Testing\n\n\n🎥 Hypothesis testing  📘 ims - chp 11\n\n\n\n\nMon, Jun 15\nProject Milestone 4 - Peer Review\n\nProject Milestone 4 - 12:30PM ET\n\n\n\n\nTue, Jun 16\nMore Inference\n\n\n\n\n\n\nWed, Jun 17\nMore Inference\n\n\n\n\n\n\nThu, Jun 18\nSpecial Topic\n\n\n\n\n\n\nThu, Jun 18\nLab 6\n\n\n\n\n\n\nFri, Jun 19\nNO CLASS - Juneteenth\n\n\n\n\n\n\nSun, Jun 21\n\n\nLab 6 - 11:59pm ET\n\n\n\n7\nMon, Jun 22\nProject Milestone 5 - Presentations + Final Review\n\nProject - 9:30 AM\n\n\n\n\nMon, Jun 22\nFinal Review\n\n\n\n\n\n\nWed, Jun 24\nFINAL EXAM (9am - 12pm)",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester! Entries for future dates are tentative; the timeline of topics, assignments, and due dates might be changed throughout the session at the instructor’s discretion. All material changes will be communicated with the students in a timely manner.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nMATERIALS\nDUE\nPREPARE\n\n\n\n1\nWed, May 13\nWelcome\n🖥️ slides 00  ⌨️ ae 00\n\nGitHub username - End of Lecture\n\n\n\n\nThu, May 14\nLab 0\n💻 lab 0\n\nLab 0 - End of Lab\n\n\n\n\nThu, May 14\nMeet the Toolkit\n🖥️ slides 01  🗒️ notes 01  ⌨️ ae 01\n\n\n📗 r4ds - intro  📘 ims - chp 1  🎥 Meet the toolkit :: R and RStudio  🎥 Meet the toolkit :: Quarto \n\n\n\n\nFri, May 15\nGrammar of Data Visualization\n🖥️ slides 02  🗒️ notes 02  ⌨️ ae 02\n\n\n📗 r4ds - chp 1  📘 ims - chp 4 \n\n\n\n2\nMon, May 18\nGrammar of Data Transformation\n🖥️ slides 03  🗒️ notes 03  ⌨️ ae 03  ✅ ae 03\n\n\n📗 r4ds - chp 2  📗 r4ds - chp 3.1-3.5  🎥 Grammar of data transformation  🎥 Code along :: Flights and pipes\n\n\n\n\nMon, May 18\nLab 1\n💻 lab 1\n\n\n📗 r4ds - chp 2  📘 ims - chp 5\n\n\n\n\nTue, May 19\nExploratory Data Analysis I\n🖥️ slides 04  🗒️ notes 04  ⌨️ ae 04  ✅ ae 04\n\n\n📗 r4ds - chp 3.6-3.7  🎥 Visualizing and summarizing categorical data  🎥 Visualizing and summarizing numerical data  🎥 Visualizing and summarizing relationships  🎥 Code along :: Star Wars characters\n\n\n\n\nWed, May 20\nExploratory Data Analysis II\n🖥️ slides 05  🗒️ notes 05  ⌨️ ae 05  ✅ ae 05\n\nLab 1 - 11:59PM ET\n📘 ims - chp 5  📘 ims - chp 6  🎥 Code along :: Diving deeper with Palmer Penguins\n\n\n\n\nThu, May 21\nTidying Data\n🖥️ slides 06  🗒️ notes 06  ⌨️ ae 06  ✅ ae 06\n\n\n📗 r4ds - chp 5  📘 ims - chp 6\n\n\n\n\nThu, May 21\nLab 2\n💻 lab 2\n\n\n📗 r4ds - chp 4 🎥 Tidy data 🎥 Tidying data 🎥 Code Along: Population over time\n\n\n\n\nFri, May 22\nJoining Data\n🖥️ slides 07  🗒️ notes 07  ⌨️ ae 07  ✅ ae 07\n\n\n🎥 Joining data  🎥 Code along :: Continent populations  📗 r4ds - chp 19.1-19.3\n\n\n\n\nSun, May 24\n\n\n\n\n\n\n3\nMon, May 25\nNO CLASS - Memorial Day\n\nLab 2 - 11:59PM ET\n\n\n\n\nTue, May 26\nData Types and Classes\n🖥️ slides 08  🗒️ notes 08  ⌨️ ae 08\n\n\n🎥 Data types  🎥 Data classes  🎥 Code along :: That’s my type  📗 r4ds - chp 16\n\n\n\n\nWed, May 27\nImporting and Recoding Data\n🖥️ slides 09  🗒️ notes 09  ⌨️ ae 09\n\n\n🎥 Importing data  🎥 Code along :: Halving CO2 emissions  🎥 Code along :: Student survey  📗 r4ds - chp 7  📗 r4ds - chp 17.1 - 17.3\n\n\n\n\nThu, May 28\nMore Practice + Midterm Review\n\n\n\n\n\n\nThu, May 28\nLab 3\n\n\n\n\n\n\nFri, May 29\nData Ethics + Midterm Review\n\n\n📕 mdsr - chp 8  📝 How to make a racist AI in R without really trying  🎥 Alberto Cairo - How charts lie  🎥 Joy Buolamwini - How I’m fighting bias in algorithms\n\n\n\n\nSun, May 31\n\n\nLab 3 - 12:00PM ET\n\n\n\n4\nMon, Jun 1\nMidterm (lecture + lab sessions)\n\n\n\n\n\n\nTue, Jun 2\nProject Milestone 1 - Collaboration\n\nProject Milestone 1 - 11:00AM ET\n\n\n\n\nWed, Jun 3\nThe Language of Models\n\n\n🎥 The language of models  📘 ims - chp 7.1  🎥 Fitting and interpreting models  🎥 Modeling nonlinear relationships\n\n\n\n\nThu, Jun 4\nSimple Linear Regression\n\n\n🎥 Linear regression with a categorical predictor  🎥 Outliers in linear regression  🎥 Code along :: Modeling fish  📘 ims - chp 7.2\n\n\n\n\nThu, Jun 4\nProject Milestone 2 - Proposals\n\n\n\n\n\n\nFri, Jun 5\nMultiple Linear Regression I\n\n\n🎥 Linear regression with multiple predictors  🎥 Main and interaction effects  📘 ims - chp 8.1-8.2  📘 ims - chp 8.3-8.5\n\n\n\n\nSun, Jun 7\n\n\nProject Milestone 2 - 11:59PM ET\n\n\n\n5\nMon, Jun 8\nMultiple Linear Regression II\n\n\n🎥 Code along :: Modeling interest rates\n\n\n\n\nMon, Jun 8\nLab 4\n\n\n\n\n\n\nTue, Jun 9\nLinear Regression Diagnostics\n\n\nTBU\n\n\n\nWed, Jun 10\nLogistic Regression I\n\nLab 4 - 11:59PM ET \n\n🎥 Logistic regression  🎥 Code along :: Building a spam filter  📘 ims - chp 9\n\n\n\n\nThu, Jun 11\nLogistic Regression II\n\n\n🎥 Clasification and decision errors  🎥 Overfitting and spending your data\n\n\n\n\nThu, Jun 11\nLab 5\n\n\n\n\n\n\nFri, Jun 12\nInterval Estimation\n\nProject Milestone 3 - 11:59PM ET\n🎥 Quantifying uncertainty  🎥 Bootstrapping  🎥 Code along :: Bootstrapping Duke Forest houses  📘 ims - chp 11  📘 ims - chp 12\n\n\n\n\nSun, Jun 14\n\n\nLab 5 - 11:59PM ET \n\n\n\n\n6\nMon, Jun 15\nHypothesis Testing\n\n\n🎥 Hypothesis testing  📘 ims - chp 11\n\n\n\n\nMon, Jun 15\nProject Milestone 4 - Peer Review\n\nProject Milestone 4 - 12:30PM ET\n\n\n\n\nTue, Jun 16\nMore Inference\n\n\n\n\n\n\nWed, Jun 17\nMore Inference\n\n\n\n\n\n\nThu, Jun 18\nSpecial Topic\n\n\n\n\n\n\nThu, Jun 18\nLab 6\n\n\n\n\n\n\nFri, Jun 19\nNO CLASS - Juneteenth\n\n\n\n\n\n\nSun, Jun 21\n\n\nLab 6 - 11:59pm ET\n\n\n\n7\nMon, Jun 22\nProject Milestone 5 - Presentations + Final Review\n\nProject - 9:30 AM\n\n\n\n\nMon, Jun 22\nFinal Review\n\n\n\n\n\n\nWed, Jun 24\nFINAL EXAM (9am - 12pm)",
     "crumbs": [
       "Course Information",
       "Schedule"
@@ -3483,403 +3483,375 @@
     ]
   },
   {
-    "objectID": "slides/09-import.html",
-    "href": "slides/09-import.html",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html",
+    "href": "slides/09-data-import.html",
+    "title": "Data Importation",
     "section": "",
-    "text": "Practice + some review + many more details tomorrow in class\nInitial practice questions are posted!"
+    "text": "Midterm next Monday!\n\nPractice + some review tomorrow in class\nPractice questions for both the multiple choice & live coding portions of the exam will be posted tomorrow!\nI will post solutions to the practice questions by Saturday morning\n\n\n\nLab 3 after lecture tomorrow\n\nThis will be a shorter than usual lab & is meant to serve as a recap of all we’ve learned so far (aka, helpful exam prep!)\nReminder: Lab 3 will be due by 12:00pm (noon) on Sunday; there will be no late window for this lab assignment\nSolutions will posted to the website promptly thereafter"
   },
   {
-    "objectID": "slides/09-import.html#lab-1-grades",
-    "href": "slides/09-import.html#lab-1-grades",
-    "title": "Data Importing",
-    "section": "Lab 1 Grades",
-    "text": "Lab 1 Grades\n\nPlease read comments on ALL questions. Some mistakes we did not penalize for, but could in future problems.\nIn the first few questions, the point adjustment feature was used for partial credit.\nRegrade requests: submit within a week if you believe a grading mistake was made.\n\nCode style was the biggest common issue.\n\nEven though most questions had code style points, we did not double penalize on this lab.\nThere were some minor problems we did not take off for this time but left comments about."
+    "objectID": "slides/09-data-import.html#administrative-details",
+    "href": "slides/09-data-import.html#administrative-details",
+    "title": "Data Importation",
+    "section": "",
+    "text": "Midterm next Monday!\n\nPractice + some review tomorrow in class\nPractice questions for both the multiple choice & live coding portions of the exam will be posted tomorrow!\nI will post solutions to the practice questions by Saturday morning\n\n\n\nLab 3 after lecture tomorrow\n\nThis will be a shorter than usual lab & is meant to serve as a recap of all we’ve learned so far (aka, helpful exam prep!)\nReminder: Lab 3 will be due by 12:00pm (noon) on Sunday; there will be no late window for this lab assignment\nSolutions will posted to the website promptly thereafter"
   },
   {
-    "objectID": "slides/09-import.html#code-style",
-    "href": "slides/09-import.html#code-style",
-    "title": "Data Importing",
-    "section": "Code Style",
-    "text": "Code Style\n\nspaces before and line breaks after each + when building a ggplot,\nspaces before and line breaks after each |&gt; in a data transformation pipeline,\n\ncode should be properly indented\n\nthis should match the automatic indentation when you hit enter\nto fix: highlight code, click code option on top of RStudio, select reindent lines\n\n\nthere should be spaces around = signs and spaces after commas\nuse |&gt; and not %&gt;%\nuse &lt;- and not = for saving a data frame"
+    "objectID": "slides/09-data-import.html#administrative-details-1",
+    "href": "slides/09-data-import.html#administrative-details-1",
+    "title": "Data Importation",
+    "section": "Administrative Details",
+    "text": "Administrative Details\n\n\nProject work begins next week!\n\nSince the midterm takes place during both of the formal lecture and lab timeslots next Monday, lecture time next Tuesday (9:30am - 10:45am) will function as a lab meeting\nBoth lab sessions next week (T, Th) will be dedicated worktime\nYou will receive your team assignments (2 groups of 3, 2 groups of 4) in lab next Tuesday\nAs a reminder, projects are completed in groups BUT grades are individual; your final project grade may ultimately differ from your teammates’ if there is unequal participation\nParticipation is measured by 1) lab attendance on project work days; 2) commit history in project repos on GitHub; 3) peer review forms"
   },
   {
-    "objectID": "slides/09-import.html#lab-2-clarifications",
-    "href": "slides/09-import.html#lab-2-clarifications",
-    "title": "Data Importing",
-    "section": "Lab 2 clarifications",
-    "text": "Lab 2 clarifications\n\nQuestion 7c: No code needed! Use results 7a and 7b to answer. You can delete the code chunk from the template!\nQuestion 10b: ‘filter your reshaped dataset from question 10’ should be from question 9\nQuestion 2c: ‘How is the output different from the one in part (a)?’ should say from part (b)"
-  },
-  {
-    "objectID": "slides/09-import.html#lab-2-workflow-question",
-    "href": "slides/09-import.html#lab-2-workflow-question",
-    "title": "Data Importing",
-    "section": "Lab 2 Workflow question",
-    "text": "Lab 2 Workflow question\n\nSelect pages on gradescope when you submit\nAt least three commits to your lab 2 repo\n\nThese should hopefully be free points!!!"
-  },
-  {
-    "objectID": "slides/09-import.html#lab-2-question-5",
-    "href": "slides/09-import.html#lab-2-question-5",
-    "title": "Data Importing",
-    "section": "Lab 2 Question 5",
-    "text": "Lab 2 Question 5\n\n\n\n\n\n\n\n\nWhat is a ‘typical value’ of population density?"
-  },
-  {
-    "objectID": "slides/09-import.html#lab-2-question-5-1",
-    "href": "slides/09-import.html#lab-2-question-5-1",
-    "title": "Data Importing",
-    "section": "Lab 2 Question 5",
-    "text": "Lab 2 Question 5\n\n\n\n\n\n\n\n\n\n\n# A tibble: 1 × 2\n   mean   med\n  &lt;dbl&gt; &lt;dbl&gt;\n1 3098. 1156."
-  },
-  {
-    "objectID": "slides/09-import.html#data-science-and-statistical-thinking",
-    "href": "slides/09-import.html#data-science-and-statistical-thinking",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#data-science-and-statistical-thinking",
+    "href": "slides/09-data-import.html#data-science-and-statistical-thinking",
+    "title": "Data Importation",
     "section": "Data science and statistical thinking",
     "text": "Data science and statistical thinking\nBefore Midterm 1…\n\n\nData science: the real-world art of transforming messy, imperfect, incomplete data into knowledge;\n\nAfter Midterm 1…\n\n\nStatistics: the mathematical discipline of quantifying our uncertainty about that knowledge."
   },
   {
-    "objectID": "slides/09-import.html#data-science",
-    "href": "slides/09-import.html#data-science",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#data-science",
+    "href": "slides/09-data-import.html#data-science",
+    "title": "Data Importation",
     "section": "Data science",
     "text": "Data science"
   },
   {
-    "objectID": "slides/09-import.html#data-science-1",
-    "href": "slides/09-import.html#data-science-1",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#data-science-1",
+    "href": "slides/09-data-import.html#data-science-1",
+    "title": "Data Importation",
     "section": "Data science",
-    "text": "Data science\n\n\n\n\nCollection: we won’t seriously study this; data importing coming today\n\n\n\nfor us: package data (library()), data importing (read_csv), and webscraping (eventually)\n\n\nbut really: domain-specific issues of measurement, survey design, experimental design, etc"
+    "text": "Data science\n\n\n\n\nCollection: we won’t seriously study data collection (take an experimental design class if you are interested!); we will discuss data importation methods today\n\n\n\nfor the purposes of this class: accessing package data (library(); df &lt;- library::df), data importation (read_csv, read_xlsx, read_xls)\n\nin reality…: web-scraping, domain-specific issues of measurement, survey design, experimental design, etc."
   },
   {
-    "objectID": "slides/09-import.html#data-science-2",
-    "href": "slides/09-import.html#data-science-2",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#data-science-2",
+    "href": "slides/09-data-import.html#data-science-2",
+    "title": "Data Importation",
     "section": "Data science",
-    "text": "Data science\n\n\nCollection: we won’t seriously study this; data importing coming today\n\n\n\n\n\nPreparation: cleaning, wrangling, and otherwise tidying the data so we can actually work with it.\n\n\n\nkeywords: mutate, fct_relevel, pivot_*, *_join"
+    "text": "Data science\n\n\nCollection: we won’t seriously study data collection; we will discuss data importation methods today\n\n\n\n\n\nPreparation: cleaning, wrangling, and otherwise tidying the data so we can actually work with it.\n\n\n\nkeywords: mutate, fct_relevel, pivot_*, *_join"
   },
   {
-    "objectID": "slides/09-import.html#data-science-3",
-    "href": "slides/09-import.html#data-science-3",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#data-science-3",
+    "href": "slides/09-data-import.html#data-science-3",
+    "title": "Data Importation",
     "section": "Data science",
-    "text": "Data science\n\n\nCollection: we won’t seriously study this; data importing coming today\n\nPreparation: cleaning, wrangling, and otherwise tidying the data so we can actually work with it.\n\n\n\n\n\nAnalysis: finally transform the data into knowledge…\n\n\n\npictures: ggplot, geom_*, etc\n\n\nnumerical summaries: summarize, group_by, count, mean, median, sd, quantile, IQR, cor, etc\n\nThe pictures and the summaries need to work together!"
+    "text": "Data science\n\nCollection: we won’t seriously study data collection; we will discuss data importation methods today\nPreparation: cleaning, wrangling, and otherwise tidying the data so we can actually work with it.\n\n\n\n\n\nAnalysis: finally, transform the data into knowledge…\n\n\n\nvisual summaries: ggplot, geom_*, etc.\n\nnumerical summaries: summarize, group_by, count, mean, median, sd, quantile, IQR, cor, etc.\nThe visualizations and the summaries should complement one another!"
   },
   {
-    "objectID": "slides/09-import.html#package-data",
-    "href": "slides/09-import.html#package-data",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#package-data",
+    "href": "slides/09-data-import.html#package-data",
+    "title": "Data Importation",
     "section": "Package data",
-    "text": "Package data\n\nWhen data is in a pack, such as tidyverse, loading the pacakge gets our dataset\nMost often, this is not the case"
+    "text": "Package data\n\nWhen data is neatly stored in a package, such as tidyverse, loading the package loads the dataset; you can explicitly save a packaged df to your RStudio environment by running df &lt;- library::df\nMost often, this is not the case"
   },
   {
-    "objectID": "slides/09-import.html#reading-in-rectangular-data",
-    "href": "slides/09-import.html#reading-in-rectangular-data",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#reading-in-rectangular-data",
+    "href": "slides/09-data-import.html#reading-in-rectangular-data",
+    "title": "Data Importation",
     "section": "Reading in rectangular data",
     "text": "Reading in rectangular data"
   },
   {
-    "objectID": "slides/09-import.html#reading-rectangular-data",
-    "href": "slides/09-import.html#reading-rectangular-data",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#reading-rectangular-data",
+    "href": "slides/09-data-import.html#reading-rectangular-data",
+    "title": "Data Importation",
     "section": "Reading rectangular data",
-    "text": "Reading rectangular data\n\nUsing readr: (in tidyverse)\n\nMost commonly: read_csv() - file saved as .csv\n\nMaybe also: read_tsv(), read_delim(), etc - other file formats\n\n\n\n. . .\n\nUsing readxl: read_excel() - .xls or .xlsx\n\n. . .\n\nUsing googlesheets4: read_sheet() – We haven’t covered this in the videos, but might be useful for your projects"
+    "text": "Reading rectangular data\n\nUsing readr: (in tidyverse)\n\nMost commonly: read_csv() - file saved as .csv\n\nMaybe also: read_tsv(), read_delim(), etc - other file formats\n\n\n\n. . .\n\nUsing readxl:\n\n\nread_excel() - R determines file type for you\n\nread_xls(), read_xlsx() - use if you know whether you have a .xls or .xlsx file\n\n\n\n. . .\n\n\nUsing googlesheets4: read_sheet() – we haven’t covered this in the videos, but might be useful for your projects\n\nFun fact: The “Schedule” page on the course website pulls information from an underlying Google sheets file"
   },
   {
-    "objectID": "slides/09-import.html#using-read_csv",
-    "href": "slides/09-import.html#using-read_csv",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#using-read_csv",
+    "href": "slides/09-data-import.html#using-read_csv",
+    "title": "Data Importation",
     "section": "Using read_csv()",
-    "text": "Using read_csv()\nGenerally, the format is:\n\nr_df_name &lt;- read_csv(\"path_to_file_name.csv\")"
+    "text": "Using read_csv()\nGenerally, the format is:\n\ndf_name &lt;- read_csv(\"path_to_file_name.csv\")"
   },
   {
-    "objectID": "slides/09-import.html#path-to-file",
-    "href": "slides/09-import.html#path-to-file",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#path-to-file",
+    "href": "slides/09-data-import.html#path-to-file",
+    "title": "Data Importation",
     "section": "Path to file",
-    "text": "Path to file\nWhere is durham-climate.csv?\n\n\n\n\n\n\n\n\nuse / to separate folder(s) + file names; file path in quotes\nAnswer:"
+    "text": "Path to file\nFor example, recall we worked with durham-climate.csv in AE08. Where is durham-climate.csv?\nWhen in our AE repo, we read in the data with the following code:\n\ndurham_climate &lt;- read_csv(\"data/durham-climate.csv\")"
   },
   {
-    "objectID": "slides/09-import.html#why-not-include-ae-mneubrander",
-    "href": "slides/09-import.html#why-not-include-ae-mneubrander",
-    "title": "Data Importing",
-    "section": "Why not include ae-mneubrander?",
-    "text": "Why not include ae-mneubrander?\nWhere is durham-climate.csv?"
+    "objectID": "slides/09-data-import.html#path-to-file-1",
+    "href": "slides/09-data-import.html#path-to-file-1",
+    "title": "Data Importation",
+    "section": "Path to file",
+    "text": "Path to file\n\n\n\n\n\n\n\n\nuse / to separate folder(s) + file names; file path in quotes\nAnswer: read_csv(\"data/durham-climate.csv\")"
   },
   {
-    "objectID": "slides/09-import.html#we-can-also-write-files",
-    "href": "slides/09-import.html#we-can-also-write-files",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#why-not-include-ae-kgsolarz",
+    "href": "slides/09-data-import.html#why-not-include-ae-kgsolarz",
+    "title": "Data Importation",
+    "section": "Why not include ae-kgsolarz?",
+    "text": "Why not include ae-kgsolarz?\nWhere is durham-climate.csv?"
+  },
+  {
+    "objectID": "slides/09-data-import.html#we-can-also-write-files",
+    "href": "slides/09-data-import.html#we-can-also-write-files",
+    "title": "Data Importation",
     "section": "We can also write files!",
-    "text": "We can also write files!\nThis allows us to save data for later usage, sharing outside of R, etc.\n\nUsing write_csv():\n\nwrite_csv(r_df_name, \"path_to_file.csv\")"
+    "text": "We can also write files!\nThis allows us to save data for later usage, share data outside of R, etc.\n\nUsing write_csv():\n\nwrite_csv(r_df_name, \"path_to_file.csv\")"
   },
   {
-    "objectID": "slides/09-import.html#goal-1.1-reading-and-writing-csv-files",
-    "href": "slides/09-import.html#goal-1.1-reading-and-writing-csv-files",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#goal-1.1-reading-and-writing-csv-files",
+    "href": "slides/09-data-import.html#goal-1.1-reading-and-writing-csv-files",
+    "title": "Data Importation",
     "section": "Goal 1.1: Reading and writing CSV files",
     "text": "Goal 1.1: Reading and writing CSV files\n\nRead a CSV file with tidy data\nSplit it into subsets based on features of the data\nWrite out subsets as CSV files"
   },
   {
-    "objectID": "slides/09-import.html#goal-1.2-practice---case-when",
-    "href": "slides/09-import.html#goal-1.2-practice---case-when",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#goal-1.2-practice---case-when",
+    "href": "slides/09-data-import.html#goal-1.2-practice---case-when",
+    "title": "Data Importation",
     "section": "Goal 1.2: Practice - Case When",
-    "text": "Goal 1.2: Practice - Case When\n\n\ncase_when() is similar to if_else(), but allows multiple cases\n\ncase_when() is often used in mutate() to make a new column\n\n\ndf |&gt;\n  mutate(new_var = case_when(\n    condition_1 ~ result_1,\n    condition_2 ~ result_2,\n    condition_3 ~ result_3,\n    ...,\n    .default = default_result\n  ))"
+    "text": "Goal 1.2: Practice - Case When\n\n\ncase_when() is similar to if_else(), but allows multiple cases\n\ncase_when() is often used within mutate() to create a new column\n\n\ndf |&gt;\n  mutate(new_var = case_when(\n    condition_1 ~ result_1,\n    condition_2 ~ result_2,\n    condition_3 ~ result_3,\n    ...,\n    .default = default_result\n  ))"
   },
   {
-    "objectID": "slides/09-import.html#age-gap-in-hollywood-relationships",
-    "href": "slides/09-import.html#age-gap-in-hollywood-relationships",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#an-aside---if-else",
+    "href": "slides/09-data-import.html#an-aside---if-else",
+    "title": "Data Importation",
+    "section": "An aside - If Else",
+    "text": "An aside - If Else\n\ncase_when() is similar to if_else(), but if_else() only allows for 2 cases / conditions\nLong story short… use if_else() if you are only considering 2 cases / conditions; for &gt; 2 conditions, use case_when()\nIn words, we’d read the code below as: “If logical_1 evaluates to TRUE (i.e., this condition is met), then choose result_1; else (i.e., this condition is not met), choose result 2\n\n\ndf |&gt;\n  mutate(new_var = if_else(logical_1, result_1, result_2))\n\n## create a new column, \"is_december\" with a value 1 if the month is December and a value 0 otherwise\n\ndurham_climate |&gt;\n  mutate(is_december = if_else(month == \"December\", 1, 0))"
+  },
+  {
+    "objectID": "slides/09-data-import.html#age-gap-in-hollywood-relationships",
+    "href": "slides/09-data-import.html#age-gap-in-hollywood-relationships",
+    "title": "Data Importation",
     "section": "Age gap in Hollywood relationships",
     "text": "Age gap in Hollywood relationships"
   },
   {
-    "objectID": "slides/09-import.html#goal-2.1-reading-excel-files-non-tidy-data",
-    "href": "slides/09-import.html#goal-2.1-reading-excel-files-non-tidy-data",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#goal-2.1-reading-excel-files-non-tidy-data",
+    "href": "slides/09-data-import.html#goal-2.1-reading-excel-files-non-tidy-data",
+    "title": "Data Importation",
     "section": "Goal 2.1: Reading Excel files & non-tidy data",
     "text": "Goal 2.1: Reading Excel files & non-tidy data\n\nRead an Excel file with non-tidy data\nTidy it up!"
   },
   {
-    "objectID": "slides/09-import.html#goal-2.2-string-functions",
-    "href": "slides/09-import.html#goal-2.2-string-functions",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#goal-2.2-string-functions",
+    "href": "slides/09-data-import.html#goal-2.2-string-functions",
+    "title": "Data Importation",
     "section": "Goal 2.2: String Functions",
     "text": "Goal 2.2: String Functions\n\n\nWe’ve seen lots of functions that deal with numeric data (mean, median, sum, etc.) - what about characters?\n\nstringr is a tidyverse package with lots of functions for dealing with character strings\ntoday: str_detect in stringr"
   },
   {
-    "objectID": "slides/09-import.html#goal-2.2-string-functions-1",
-    "href": "slides/09-import.html#goal-2.2-string-functions-1",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#goal-2.2-string-functions-1",
+    "href": "slides/09-data-import.html#goal-2.2-string-functions-1",
+    "title": "Data Importation",
     "section": "Goal 2.2: String Functions",
-    "text": "Goal 2.2: String Functions\n\nstr_detect() identifies if some characters are a substring of a larger string\n\nuseful in cases when you need to check some condition, for example:\n\nin a filter()\nin an if_else() or case_when()"
+    "text": "Goal 2.2: String Functions\n\nstr_detect() identifies if a character / sequence of characters is a substring within a longer string\n\nuseful in cases when you need to check some condition, for example:\n\nin a filter()\nin an if_else() or case_when()"
   },
   {
-    "objectID": "slides/09-import.html#goal-2.2-string-functions-2",
-    "href": "slides/09-import.html#goal-2.2-string-functions-2",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#goal-2.2-string-functions-2",
+    "href": "slides/09-data-import.html#goal-2.2-string-functions-2",
+    "title": "Data Importation",
     "section": "Goal 2.2: String Functions",
-    "text": "Goal 2.2: String Functions\n\nstr_detect() identifies if some characters are a substring of a larger string\n\nuseful in cases when you need to check some condition, for example:\n\nin a filter()\nin an if_else() or case_when()\n\n\n\nexample: which classes in a list are in the stats department?\n\nclasses &lt;- c(\"sta199\", \"dance122\", \"math185\", \"sta240\", \"pubpol202\")\nstr_detect(classes, \"sta\")\n\n[1]  TRUE FALSE FALSE  TRUE FALSE"
+    "text": "Goal 2.2: String Functions\n\nstr_detect() identifies if a character / sequence of characters is a substring within a longer string\n\nuseful in cases when you need to check some condition, for example:\n\nin a filter()\nin an if_else() or case_when()\n\n\n\nexample: which classes in a list are in the stats department?\n\nclasses &lt;- c(\"sta199\", \"dance122\", \"math185\", \"sta240\", \"pubpol202\")\nstr_detect(classes, \"sta\")\n\n[1]  TRUE FALSE FALSE  TRUE FALSE"
   },
   {
-    "objectID": "slides/09-import.html#goal-2.2-string-functions-3",
-    "href": "slides/09-import.html#goal-2.2-string-functions-3",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#goal-2.2-string-functions-3",
+    "href": "slides/09-data-import.html#goal-2.2-string-functions-3",
+    "title": "Data Importation",
     "section": "Goal 2.2: String Functions",
     "text": "Goal 2.2: String Functions\nGeneral form:\n\nstr_detect(character_var, \"word_to_detect\")"
   },
   {
-    "objectID": "slides/09-import.html#sales-data",
-    "href": "slides/09-import.html#sales-data",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#sales-data",
+    "href": "slides/09-data-import.html#sales-data",
+    "title": "Data Importation",
     "section": "Sales data",
     "text": "Sales data\n\n. . .\n\nAre these data tidy? Why or why not?"
   },
   {
-    "objectID": "slides/09-import.html#sales-data-1",
-    "href": "slides/09-import.html#sales-data-1",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import.html#sales-data-1",
+    "href": "slides/09-data-import.html#sales-data-1",
+    "title": "Data Importation",
     "section": "Sales data",
-    "text": "Sales data\n\nWhat “data moves” do we need to go from the original, non-tidy data to this, tidy one?"
+    "text": "Sales data\n\nWhat data tidying must be done to go from the original, non-tidy data to the below tidy version of these data?"
   },
   {
-    "objectID": "slides/09-import-slides.html#lab-1-grades",
-    "href": "slides/09-import-slides.html#lab-1-grades",
-    "title": "Data Importing",
-    "section": "Lab 1 Grades",
-    "text": "Lab 1 Grades\n\nPlease read comments on ALL questions. Some mistakes we did not penalize for, but could in future problems.\nIn the first few questions, the point adjustment feature was used for partial credit.\nRegrade requests: submit within a week if you believe a grading mistake was made.\n\nCode style was the biggest common issue.\n\nEven though most questions had code style points, we did not double penalize on this lab.\nThere were some minor problems we did not take off for this time but left comments about."
+    "objectID": "slides/09-data-import-slides.html#administrative-details",
+    "href": "slides/09-data-import-slides.html#administrative-details",
+    "title": "Data Importation",
+    "section": "Administrative Details",
+    "text": "Administrative Details\n\n\nMidterm next Monday!\n\nPractice + some review tomorrow in class\nPractice questions for both the multiple choice & live coding portions of the exam will be posted tomorrow!\nI will post solutions to the practice questions by Saturday morning\n\n\n\nLab 3 after lecture tomorrow\n\nThis will be a shorter than usual lab & is meant to serve as a recap of all we’ve learned so far (aka, helpful exam prep!)\nReminder: Lab 3 will be due by 12:00pm (noon) on Sunday; there will be no late window for this lab assignment\nSolutions will posted to the website promptly thereafter"
   },
   {
-    "objectID": "slides/09-import-slides.html#code-style",
-    "href": "slides/09-import-slides.html#code-style",
-    "title": "Data Importing",
-    "section": "Code Style",
-    "text": "Code Style\n\nspaces before and line breaks after each + when building a ggplot,\nspaces before and line breaks after each |&gt; in a data transformation pipeline,\n\ncode should be properly indented\n\nthis should match the automatic indentation when you hit enter\nto fix: highlight code, click code option on top of RStudio, select reindent lines\n\n\nthere should be spaces around = signs and spaces after commas\nuse |&gt; and not %&gt;%\nuse &lt;- and not = for saving a data frame"
+    "objectID": "slides/09-data-import-slides.html#administrative-details-1",
+    "href": "slides/09-data-import-slides.html#administrative-details-1",
+    "title": "Data Importation",
+    "section": "Administrative Details",
+    "text": "Administrative Details\n\n\nProject work begins next week!\n\nSince the midterm takes place during both of the formal lecture and lab timeslots next Monday, lecture time next Tuesday (9:30am - 10:45am) will function as a lab meeting\nBoth lab sessions next week (T, Th) will be dedicated worktime\nYou will receive your team assignments (2 groups of 3, 2 groups of 4) in lab next Tuesday\nAs a reminder, projects are completed in groups BUT grades are individual; your final project grade may ultimately differ from your teammates’ if there is unequal participation\nParticipation is measured by 1) lab attendance on project work days; 2) commit history in project repos on GitHub; 3) peer review forms"
   },
   {
-    "objectID": "slides/09-import-slides.html#lab-2-clarifications",
-    "href": "slides/09-import-slides.html#lab-2-clarifications",
-    "title": "Data Importing",
-    "section": "Lab 2 clarifications",
-    "text": "Lab 2 clarifications\n\nQuestion 7c: No code needed! Use results 7a and 7b to answer. You can delete the code chunk from the template!\nQuestion 10b: ‘filter your reshaped dataset from question 10’ should be from question 9\nQuestion 2c: ‘How is the output different from the one in part (a)?’ should say from part (b)"
-  },
-  {
-    "objectID": "slides/09-import-slides.html#lab-2-workflow-question",
-    "href": "slides/09-import-slides.html#lab-2-workflow-question",
-    "title": "Data Importing",
-    "section": "Lab 2 Workflow question",
-    "text": "Lab 2 Workflow question\n\nSelect pages on gradescope when you submit\nAt least three commits to your lab 2 repo\n\nThese should hopefully be free points!!!"
-  },
-  {
-    "objectID": "slides/09-import-slides.html#lab-2-question-5",
-    "href": "slides/09-import-slides.html#lab-2-question-5",
-    "title": "Data Importing",
-    "section": "Lab 2 Question 5",
-    "text": "Lab 2 Question 5\n\n\n\n\n\n\n\n\nWhat is a ‘typical value’ of population density?"
-  },
-  {
-    "objectID": "slides/09-import-slides.html#lab-2-question-5-1",
-    "href": "slides/09-import-slides.html#lab-2-question-5-1",
-    "title": "Data Importing",
-    "section": "Lab 2 Question 5",
-    "text": "Lab 2 Question 5\n\n\n\n\n\n\n\n\n\n\n# A tibble: 1 × 2\n   mean   med\n  &lt;dbl&gt; &lt;dbl&gt;\n1 3098. 1156."
-  },
-  {
-    "objectID": "slides/09-import-slides.html#data-science-and-statistical-thinking",
-    "href": "slides/09-import-slides.html#data-science-and-statistical-thinking",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#data-science-and-statistical-thinking",
+    "href": "slides/09-data-import-slides.html#data-science-and-statistical-thinking",
+    "title": "Data Importation",
     "section": "Data science and statistical thinking",
     "text": "Data science and statistical thinking\nBefore Midterm 1…\n\n\nData science: the real-world art of transforming messy, imperfect, incomplete data into knowledge;\n\nAfter Midterm 1…\n\n\nStatistics: the mathematical discipline of quantifying our uncertainty about that knowledge."
   },
   {
-    "objectID": "slides/09-import-slides.html#data-science",
-    "href": "slides/09-import-slides.html#data-science",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#data-science",
+    "href": "slides/09-data-import-slides.html#data-science",
+    "title": "Data Importation",
     "section": "Data science",
     "text": "Data science"
   },
   {
-    "objectID": "slides/09-import-slides.html#data-science-1",
-    "href": "slides/09-import-slides.html#data-science-1",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#data-science-1",
+    "href": "slides/09-data-import-slides.html#data-science-1",
+    "title": "Data Importation",
     "section": "Data science",
-    "text": "Data science\n\n\n\n\nCollection: we won’t seriously study this; data importing coming today\n\n\n\nfor us: package data (library()), data importing (read_csv), and webscraping (eventually)\n\n\nbut really: domain-specific issues of measurement, survey design, experimental design, etc"
+    "text": "Data science\n\n\n\n\nCollection: we won’t seriously study data collection (take an experimental design class if you are interested!); we will discuss data importation methods today\n\n\n\nfor the purposes of this class: accessing package data (library(); df &lt;- library::df), data importation (read_csv, read_xlsx, read_xls)\n\nin reality…: web-scraping, domain-specific issues of measurement, survey design, experimental design, etc."
   },
   {
-    "objectID": "slides/09-import-slides.html#data-science-2",
-    "href": "slides/09-import-slides.html#data-science-2",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#data-science-2",
+    "href": "slides/09-data-import-slides.html#data-science-2",
+    "title": "Data Importation",
     "section": "Data science",
-    "text": "Data science\n\n\nCollection: we won’t seriously study this; data importing coming today\n\n\n\n\n\nPreparation: cleaning, wrangling, and otherwise tidying the data so we can actually work with it.\n\n\n\nkeywords: mutate, fct_relevel, pivot_*, *_join"
+    "text": "Data science\n\n\nCollection: we won’t seriously study data collection; we will discuss data importation methods today\n\n\n\n\n\nPreparation: cleaning, wrangling, and otherwise tidying the data so we can actually work with it.\n\n\n\nkeywords: mutate, fct_relevel, pivot_*, *_join"
   },
   {
-    "objectID": "slides/09-import-slides.html#data-science-3",
-    "href": "slides/09-import-slides.html#data-science-3",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#data-science-3",
+    "href": "slides/09-data-import-slides.html#data-science-3",
+    "title": "Data Importation",
     "section": "Data science",
-    "text": "Data science\n\n\nCollection: we won’t seriously study this; data importing coming today\n\nPreparation: cleaning, wrangling, and otherwise tidying the data so we can actually work with it.\n\n\n\n\n\nAnalysis: finally transform the data into knowledge…\n\n\n\npictures: ggplot, geom_*, etc\n\n\nnumerical summaries: summarize, group_by, count, mean, median, sd, quantile, IQR, cor, etc\n\nThe pictures and the summaries need to work together!"
+    "text": "Data science\n\nCollection: we won’t seriously study data collection; we will discuss data importation methods today\nPreparation: cleaning, wrangling, and otherwise tidying the data so we can actually work with it.\n\n\n\n\n\nAnalysis: finally, transform the data into knowledge…\n\n\n\nvisual summaries: ggplot, geom_*, etc.\n\nnumerical summaries: summarize, group_by, count, mean, median, sd, quantile, IQR, cor, etc.\nThe visualizations and the summaries should complement one another!"
   },
   {
-    "objectID": "slides/09-import-slides.html#package-data",
-    "href": "slides/09-import-slides.html#package-data",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#package-data",
+    "href": "slides/09-data-import-slides.html#package-data",
+    "title": "Data Importation",
     "section": "Package data",
-    "text": "Package data\n\nWhen data is in a pack, such as tidyverse, loading the pacakge gets our dataset\nMost often, this is not the case"
+    "text": "Package data\n\nWhen data is neatly stored in a package, such as tidyverse, loading the package loads the dataset; you can explicitly save a packaged df to your RStudio environment by running df &lt;- library::df\nMost often, this is not the case"
   },
   {
-    "objectID": "slides/09-import-slides.html#reading-in-rectangular-data",
-    "href": "slides/09-import-slides.html#reading-in-rectangular-data",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#reading-in-rectangular-data",
+    "href": "slides/09-data-import-slides.html#reading-in-rectangular-data",
+    "title": "Data Importation",
     "section": "Reading in rectangular data",
     "text": "Reading in rectangular data"
   },
   {
-    "objectID": "slides/09-import-slides.html#reading-rectangular-data",
-    "href": "slides/09-import-slides.html#reading-rectangular-data",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#reading-rectangular-data",
+    "href": "slides/09-data-import-slides.html#reading-rectangular-data",
+    "title": "Data Importation",
     "section": "Reading rectangular data",
-    "text": "Reading rectangular data\n\nUsing readr: (in tidyverse)\n\nMost commonly: read_csv() - file saved as .csv\n\nMaybe also: read_tsv(), read_delim(), etc - other file formats\n\n\n\n\n\nUsing readxl: read_excel() - .xls or .xlsx\n\n\n\n\nUsing googlesheets4: read_sheet() – We haven’t covered this in the videos, but might be useful for your projects"
+    "text": "Reading rectangular data\n\nUsing readr: (in tidyverse)\n\nMost commonly: read_csv() - file saved as .csv\n\nMaybe also: read_tsv(), read_delim(), etc - other file formats\n\n\n\n\n\nUsing readxl:\n\n\nread_excel() - R determines file type for you\n\nread_xls(), read_xlsx() - use if you know whether you have a .xls or .xlsx file\n\n\n\n\n\n\n\nUsing googlesheets4: read_sheet() – we haven’t covered this in the videos, but might be useful for your projects\n\nFun fact: The “Schedule” page on the course website pulls information from an underlying Google sheets file"
   },
   {
-    "objectID": "slides/09-import-slides.html#using-read_csv",
-    "href": "slides/09-import-slides.html#using-read_csv",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#using-read_csv",
+    "href": "slides/09-data-import-slides.html#using-read_csv",
+    "title": "Data Importation",
     "section": "Using read_csv()",
-    "text": "Using read_csv()\nGenerally, the format is:\n\nr_df_name &lt;- read_csv(\"path_to_file_name.csv\")"
+    "text": "Using read_csv()\nGenerally, the format is:\n\ndf_name &lt;- read_csv(\"path_to_file_name.csv\")"
   },
   {
-    "objectID": "slides/09-import-slides.html#path-to-file",
-    "href": "slides/09-import-slides.html#path-to-file",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#path-to-file",
+    "href": "slides/09-data-import-slides.html#path-to-file",
+    "title": "Data Importation",
     "section": "Path to file",
-    "text": "Path to file\nWhere is durham-climate.csv?\n\n\n\n\n\n\n\nuse / to separate folder(s) + file names; file path in quotes\nAnswer:"
+    "text": "Path to file\nFor example, recall we worked with durham-climate.csv in AE08. Where is durham-climate.csv?\nWhen in our AE repo, we read in the data with the following code:\n\ndurham_climate &lt;- read_csv(\"data/durham-climate.csv\")"
   },
   {
-    "objectID": "slides/09-import-slides.html#why-not-include-ae-mneubrander",
-    "href": "slides/09-import-slides.html#why-not-include-ae-mneubrander",
-    "title": "Data Importing",
-    "section": "Why not include ae-mneubrander?",
-    "text": "Why not include ae-mneubrander?\nWhere is durham-climate.csv?"
+    "objectID": "slides/09-data-import-slides.html#path-to-file-1",
+    "href": "slides/09-data-import-slides.html#path-to-file-1",
+    "title": "Data Importation",
+    "section": "Path to file",
+    "text": "Path to file\n\n\n\n\n\n\n\nuse / to separate folder(s) + file names; file path in quotes\nAnswer: read_csv(\"data/durham-climate.csv\")"
   },
   {
-    "objectID": "slides/09-import-slides.html#we-can-also-write-files",
-    "href": "slides/09-import-slides.html#we-can-also-write-files",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#why-not-include-ae-kgsolarz",
+    "href": "slides/09-data-import-slides.html#why-not-include-ae-kgsolarz",
+    "title": "Data Importation",
+    "section": "Why not include ae-kgsolarz?",
+    "text": "Why not include ae-kgsolarz?\nWhere is durham-climate.csv?"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#we-can-also-write-files",
+    "href": "slides/09-data-import-slides.html#we-can-also-write-files",
+    "title": "Data Importation",
     "section": "We can also write files!",
-    "text": "We can also write files!\nThis allows us to save data for later usage, sharing outside of R, etc.\n\nUsing write_csv():\n\nwrite_csv(r_df_name, \"path_to_file.csv\")"
+    "text": "We can also write files!\nThis allows us to save data for later usage, share data outside of R, etc.\n\nUsing write_csv():\n\nwrite_csv(r_df_name, \"path_to_file.csv\")"
   },
   {
-    "objectID": "slides/09-import-slides.html#goal-1.1-reading-and-writing-csv-files",
-    "href": "slides/09-import-slides.html#goal-1.1-reading-and-writing-csv-files",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#goal-1.1-reading-and-writing-csv-files",
+    "href": "slides/09-data-import-slides.html#goal-1.1-reading-and-writing-csv-files",
+    "title": "Data Importation",
     "section": "Goal 1.1: Reading and writing CSV files",
     "text": "Goal 1.1: Reading and writing CSV files\n\nRead a CSV file with tidy data\nSplit it into subsets based on features of the data\nWrite out subsets as CSV files"
   },
   {
-    "objectID": "slides/09-import-slides.html#goal-1.2-practice---case-when",
-    "href": "slides/09-import-slides.html#goal-1.2-practice---case-when",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#goal-1.2-practice---case-when",
+    "href": "slides/09-data-import-slides.html#goal-1.2-practice---case-when",
+    "title": "Data Importation",
     "section": "Goal 1.2: Practice - Case When",
-    "text": "Goal 1.2: Practice - Case When\n\n\ncase_when() is similar to if_else(), but allows multiple cases\n\ncase_when() is often used in mutate() to make a new column\n\n\ndf |&gt;\n  mutate(new_var = case_when(\n    condition_1 ~ result_1,\n    condition_2 ~ result_2,\n    condition_3 ~ result_3,\n    ...,\n    .default = default_result\n  ))"
+    "text": "Goal 1.2: Practice - Case When\n\n\ncase_when() is similar to if_else(), but allows multiple cases\n\ncase_when() is often used within mutate() to create a new column\n\n\ndf |&gt;\n  mutate(new_var = case_when(\n    condition_1 ~ result_1,\n    condition_2 ~ result_2,\n    condition_3 ~ result_3,\n    ...,\n    .default = default_result\n  ))"
   },
   {
-    "objectID": "slides/09-import-slides.html#age-gap-in-hollywood-relationships",
-    "href": "slides/09-import-slides.html#age-gap-in-hollywood-relationships",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#an-aside---if-else",
+    "href": "slides/09-data-import-slides.html#an-aside---if-else",
+    "title": "Data Importation",
+    "section": "An aside - If Else",
+    "text": "An aside - If Else\n\ncase_when() is similar to if_else(), but if_else() only allows for 2 cases / conditions\nLong story short… use if_else() if you are only considering 2 cases / conditions; for &gt; 2 conditions, use case_when()\nIn words, we’d read the code below as: “If logical_1 evaluates to TRUE (i.e., this condition is met), then choose result_1; else (i.e., this condition is not met), choose result 2\n\n\ndf |&gt;\n  mutate(new_var = if_else(logical_1, result_1, result_2))\n\n## create a new column, \"is_december\" with a value 1 if the month is December and a value 0 otherwise\n\ndurham_climate |&gt;\n  mutate(is_december = if_else(month == \"December\", 1, 0))"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#age-gap-in-hollywood-relationships",
+    "href": "slides/09-data-import-slides.html#age-gap-in-hollywood-relationships",
+    "title": "Data Importation",
     "section": "Age gap in Hollywood relationships",
     "text": "Age gap in Hollywood relationships"
   },
   {
-    "objectID": "slides/09-import-slides.html#goal-2.1-reading-excel-files-non-tidy-data",
-    "href": "slides/09-import-slides.html#goal-2.1-reading-excel-files-non-tidy-data",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#goal-2.1-reading-excel-files-non-tidy-data",
+    "href": "slides/09-data-import-slides.html#goal-2.1-reading-excel-files-non-tidy-data",
+    "title": "Data Importation",
     "section": "Goal 2.1: Reading Excel files & non-tidy data",
     "text": "Goal 2.1: Reading Excel files & non-tidy data\n\nRead an Excel file with non-tidy data\nTidy it up!"
   },
   {
-    "objectID": "slides/09-import-slides.html#goal-2.2-string-functions",
-    "href": "slides/09-import-slides.html#goal-2.2-string-functions",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#goal-2.2-string-functions",
+    "href": "slides/09-data-import-slides.html#goal-2.2-string-functions",
+    "title": "Data Importation",
     "section": "Goal 2.2: String Functions",
     "text": "Goal 2.2: String Functions\n\n\nWe’ve seen lots of functions that deal with numeric data (mean, median, sum, etc.) - what about characters?\n\nstringr is a tidyverse package with lots of functions for dealing with character strings\ntoday: str_detect in stringr"
   },
   {
-    "objectID": "slides/09-import-slides.html#goal-2.2-string-functions-1",
-    "href": "slides/09-import-slides.html#goal-2.2-string-functions-1",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#goal-2.2-string-functions-1",
+    "href": "slides/09-data-import-slides.html#goal-2.2-string-functions-1",
+    "title": "Data Importation",
     "section": "Goal 2.2: String Functions",
-    "text": "Goal 2.2: String Functions\n\nstr_detect() identifies if some characters are a substring of a larger string\n\nuseful in cases when you need to check some condition, for example:\n\nin a filter()\nin an if_else() or case_when()"
+    "text": "Goal 2.2: String Functions\n\nstr_detect() identifies if a character / sequence of characters is a substring within a longer string\n\nuseful in cases when you need to check some condition, for example:\n\nin a filter()\nin an if_else() or case_when()"
   },
   {
-    "objectID": "slides/09-import-slides.html#goal-2.2-string-functions-2",
-    "href": "slides/09-import-slides.html#goal-2.2-string-functions-2",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#goal-2.2-string-functions-2",
+    "href": "slides/09-data-import-slides.html#goal-2.2-string-functions-2",
+    "title": "Data Importation",
     "section": "Goal 2.2: String Functions",
-    "text": "Goal 2.2: String Functions\n\nstr_detect() identifies if some characters are a substring of a larger string\n\nuseful in cases when you need to check some condition, for example:\n\nin a filter()\nin an if_else() or case_when()\n\n\n\nexample: which classes in a list are in the stats department?\n\nclasses &lt;- c(\"sta199\", \"dance122\", \"math185\", \"sta240\", \"pubpol202\")\nstr_detect(classes, \"sta\")\n\n[1]  TRUE FALSE FALSE  TRUE FALSE"
+    "text": "Goal 2.2: String Functions\n\nstr_detect() identifies if a character / sequence of characters is a substring within a longer string\n\nuseful in cases when you need to check some condition, for example:\n\nin a filter()\nin an if_else() or case_when()\n\n\n\nexample: which classes in a list are in the stats department?\n\nclasses &lt;- c(\"sta199\", \"dance122\", \"math185\", \"sta240\", \"pubpol202\")\nstr_detect(classes, \"sta\")\n\n[1]  TRUE FALSE FALSE  TRUE FALSE"
   },
   {
-    "objectID": "slides/09-import-slides.html#goal-2.2-string-functions-3",
-    "href": "slides/09-import-slides.html#goal-2.2-string-functions-3",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#goal-2.2-string-functions-3",
+    "href": "slides/09-data-import-slides.html#goal-2.2-string-functions-3",
+    "title": "Data Importation",
     "section": "Goal 2.2: String Functions",
     "text": "Goal 2.2: String Functions\nGeneral form:\n\nstr_detect(character_var, \"word_to_detect\")"
   },
   {
-    "objectID": "slides/09-import-slides.html#sales-data",
-    "href": "slides/09-import-slides.html#sales-data",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#sales-data",
+    "href": "slides/09-data-import-slides.html#sales-data",
+    "title": "Data Importation",
     "section": "Sales data",
     "text": "Sales data\n\n\n\nAre these data tidy? Why or why not?"
   },
   {
-    "objectID": "slides/09-import-slides.html#sales-data-1",
-    "href": "slides/09-import-slides.html#sales-data-1",
-    "title": "Data Importing",
+    "objectID": "slides/09-data-import-slides.html#sales-data-1",
+    "href": "slides/09-data-import-slides.html#sales-data-1",
+    "title": "Data Importation",
     "section": "Sales data",
-    "text": "Sales data\n\nWhat “data moves” do we need to go from the original, non-tidy data to this, tidy one?"
+    "text": "Sales data\n\nWhat data tidying must be done to go from the original, non-tidy data to the below tidy version of these data?"
   },
   {
     "objectID": "slides/04-exploratory-data-analysis-I.html",
@@ -5076,7 +5048,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Moonrise Kingd…  2012  111128220    16234217  6.85 PASS   ok        \n2 Blue Crush       2002  118815649    38855376  3.06 PASS   ok        \n3 Goodfellas       1990  166686124    44574385  3.74 FAIL   men       \n4 Ramona and Bee…  2010   57296349    16023478  3.58 PASS   ok        \n5 Beverly Hills …  1994  254244739    78583235  3.24 FAIL   nowomen"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Ace Ventura: P…  1994  282011328    18859976 15.0  FAIL   men       \n2 Home Alone 2: …  1992  884268339    33206945 26.6  FAIL   notalk    \n3 Zathura: A Spa…  2005  103306027    77547153  1.33 FAIL   nowomen   \n4 The Lake House   2006  193203174    46231854  4.18 FAIL   dubious   \n5 The Darkest Ho…  2011   87283057    36042039  2.42 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
@@ -5328,7 +5300,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Moonrise Kingd…  2012  111128220    16234217  6.85 PASS   ok        \n2 Blue Crush       2002  118815649    38855376  3.06 PASS   ok        \n3 Goodfellas       1990  166686124    44574385  3.74 FAIL   men       \n4 Ramona and Bee…  2010   57296349    16023478  3.58 PASS   ok        \n5 Beverly Hills …  1994  254244739    78583235  3.24 FAIL   nowomen"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Ace Ventura: P…  1994  282011328    18859976 15.0  FAIL   men       \n2 Home Alone 2: …  1992  884268339    33206945 26.6  FAIL   notalk    \n3 Zathura: A Spa…  2005  103306027    77547153  1.33 FAIL   nowomen   \n4 The Lake House   2006  193203174    46231854  4.18 FAIL   dubious   \n5 The Darkest Ho…  2011   87283057    36042039  2.42 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
