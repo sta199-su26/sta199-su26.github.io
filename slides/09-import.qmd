@@ -185,7 +185,7 @@ durham_climate <- read_csv("data/durham-climate.csv")
 
 ## We can also write files! {.smaller}
 
-This allows us to save data for later usage, sharing outside of R, etc.
+This allows us to save data for later usage, share data outside of R, etc.
 
 <br>
 
@@ -210,7 +210,7 @@ write_csv(r_df_name, "path_to_file.csv")
 ## Goal 1.2: Practice - Case When {.smaller}
 
 -   `case_when()` is similar to `if_else()`, but allows multiple cases
--   `case_when()` is often used in `mutate()` to make a new column
+-   `case_when()` is often used within `mutate()` to create a new column
 
 ```{r}
 #| eval: false
@@ -225,9 +225,30 @@ df |>
   ))
 ```
 
+## An aside - If Else {.smaller}
+
+-   `case_when()` is similar to `if_else()`, but `if_else()` only allows for 2 cases / conditions
+
+-   Long story short... use `if_else()` if you are only considering 2 cases / conditions; for > 2 conditions, use `case_when()`
+
+- In words, we'd read the code below as: "**If** logical_1 evaluates to TRUE (i.e., this condition is met), **then** choose result_1; **else** (i.e., this condition is not met), choose result 2
+
+```{r}
+#| eval: false
+
+df |>
+  mutate(new_var = if_else(logical_1, result_1, result_2))
+
+## create a new column, "is_december" with a value 1 if the month is December and a value 0 otherwise
+
+durham_climate |>
+  mutate(is_december = if_else(month == "December", 1, 0))
+
+```
+
 ## Age gap in Hollywood relationships {.smaller}
 
-![](images/09/hollywood-ages.jpeg){fig-align="center" width="600"}
+![](img/09/hollywood-ages.jpeg){fig-align="center" width="600"}
 
 ## Goal 2.1: Reading Excel files & non-tidy data {.smaller}
 
@@ -247,13 +268,13 @@ We've seen lots of functions that deal with numeric data (`mean`, `median`, `sum
 :::
 
 ::: {.column width="30%"}
-![](images/stringr.png){width="185"}
+![](img/09/stringr.png){width="185"}
 :::
 :::::
 
 ## Goal 2.2: String Functions {.smaller}
 
--   **str_detect()** identifies if some characters are a substring of a larger string
+-   **str_detect()** identifies if a character / sequence of characters is a *substring* within a longer string
 
 -   useful in cases when you need to check some condition, for example:
 
@@ -263,7 +284,7 @@ We've seen lots of functions that deal with numeric data (`mean`, `median`, `sum
 
 ## Goal 2.2: String Functions {.smaller}
 
--   **str_detect()** identifies if some characters are a substring of a larger string
+-   **str_detect()** identifies if a character / sequence of characters is a *substring* within a longer string
 
 -   useful in cases when you need to check some condition, for example:
 
@@ -289,7 +310,7 @@ str_detect(character_var, "word_to_detect")
 
 ## Sales data
 
-![](images/09/sales-excel.png)
+![](img/09/sales-excel.png)
 
 . . .
 
@@ -301,7 +322,7 @@ Why or why not?
 ## Sales data
 
 ::: question
-What "data moves" do we need to go from the original, non-tidy data to this, tidy one?
+What data tidying must be done to go from the original, non-tidy data to the below tidy version of these data?
 :::
 
-![](images/09/sales-2.png){width="150"}
+![](img/09/sales-2.png){width="150"}
