@@ -30,42 +30,42 @@
   {
     "objectID": "ae/ae-09-github.html",
     "href": "ae/ae-09-github.html",
-    "title": "AE 09: Age gaps + import",
+    "title": "AE 09: Data Imports & Exports",
     "section": "",
     "text": "We will use the following two packages in this application exercise.\n\n\ntidyverse: For data import, wrangling, and visualization.\n\nreadxl: For importing data from Excel.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-09-github.html#packages",
     "href": "ae/ae-09-github.html#packages",
-    "title": "AE 09: Age gaps + import",
+    "title": "AE 09: Data Imports & Exports",
     "section": "",
     "text": "We will use the following two packages in this application exercise.\n\n\ntidyverse: For data import, wrangling, and visualization.\n\nreadxl: For importing data from Excel.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-09-github.html#data",
     "href": "ae/ae-09-github.html#data",
-    "title": "AE 09: Age gaps + import",
+    "title": "AE 09: Data Imports & Exports",
     "section": "Data",
-    "text": "Data\nThe data for this application exercise is from Data is Plural and it is on age gaps in Hollywood relationships.\nThe data follows certain rules:\n\nThe two (or more) actors play actual love interests (not just friends, coworkers, or some other non-romantic type of relationship).\nThe youngest of the two actors is at least 17 years old.\nNot animated characters.\n\nThe age gaps dataset includes “gender” columns, which always contain the values “man” or “woman”. These values appear to indicate how the characters in each film identify. Some of these values do not match how the actor identifies.\nThe data are in an Excel file called age-gaps.xlsx in your data folder.\nThis is how the Excel file looks – it has two sheets, one with the data (called Hollywood Age Gaps) and one with information about the data (called Source). Additionally, the data sheet has some metadata at the top, above the column headers."
+    "text": "Data\nThe data for this application exercise is from Data is Plural and it is on age gaps in Hollywood relationships.\nThe data follows certain rules:\n\nThe two (or more) actors play actual love interests (not just friends, coworkers, or some other non-romantic type of relationship).\nThe youngest of the two actors is at least 17 years old.\nNot animated characters.\n\nThe age gaps dataset includes “gender” columns, which always contain the values “man” or “woman”. These values appear to indicate how the characters in each film identify. Some of these values do not match how the actor identifies.\nThe data are in an Excel file called age-gaps.xlsx in your data folder.\nThis is how the Excel file looks – it has two sheets, one with the data (called Hollywood Age Gaps) and one with information about the data (called Source). Additionally, the data sheet has some metadata at the top, above the column headers."
   },
   {
     "objectID": "ae/ae-09-github.html#import",
     "href": "ae/ae-09-github.html#import",
-    "title": "AE 09: Age gaps + import",
+    "title": "AE 09: Data Imports & Exports",
     "section": "Import",
     "text": "Import\nLoad the data from age-gaps.xlsx in your data and assign it to age_gaps. Confirm that this new object appears in your Environment tab. Click on the name of the object in your Environment tab to pop open the data in the data viewer.\n\n# add code here"
   },
   {
     "objectID": "ae/ae-09-github.html#subset",
     "href": "ae/ae-09-github.html#subset",
-    "title": "AE 09: Age gaps + import",
+    "title": "AE 09: Data Imports & Exports",
     "section": "Subset",
-    "text": "Subset\nCreate a subset of the data frame for heterosexual relationships on screen.\n\n# add code here\n\nSplit the data for heterosexual relationships into three – where woman is older, where man is older, where they are the same age. Save these subsets as two appropriately named data frames. Remember: Use concise and evocative names. Confirm that these new objects appear in your Environment tab and that the sum of the number of observations in the two new data frames add to the number of observations in the original data frame.\n\n# add code here"
+    "text": "Subset\nCreate a subset of the data frame for heterosexual relationships on screen & save the resulting data as a new data frame.\n\n# add code here\n\nSplit the data for heterosexual relationships into three – where woman is older, where man is older, where they are the same age. Save these subsets as two appropriately named data frames. Remember: Use concise and evocative names. Confirm that these new objects appear in your Environment tab and that the sum of the number of observations in the two new data frames add to the number of observations in the original data frame.\n\n# add code here"
   },
   {
     "objectID": "ae/ae-09-github.html#export",
     "href": "ae/ae-09-github.html#export",
-    "title": "AE 09: Age gaps + import",
+    "title": "AE 09: Data Imports & Exports",
     "section": "Export",
     "text": "Export\nWrite out the three new datasets you created into the data, and within that, into a subfolder called age-gaps-subsets, as CSV files.\n\nwrite_csv(woman_older, file = \"data/age-gaps-subsets/woman-older.csv\")\n\nError in `write_csv()`:\n! could not find function \"write_csv\"\n\n# add more code here"
   },
@@ -1488,7 +1488,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Fright Night     2011   60918605    31070724  1.96 FAIL   dubious   \n2 White Fang       1991  118831862    23951765  4.96 FAIL   notalk    \n3 That's My Boy    2012   96379965    68488103  1.41 FAIL   notalk    \n4 The Break Up     2006  371878517    60101410  6.19 FAIL   notalk    \n5 The Sisterhood…  2008   95628271    29220920  3.27 PASS   ok"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Inkheart         2008   81553292    64935379  1.26 PASS   ok        \n2 Stargate         1994  421412559    86441558  4.88 FAIL   notalk    \n3 The Other Bole…  2008  113128159    43290252  2.61 PASS   ok        \n4 Hannibal Rising  2007  121626993    56177174  2.17 FAIL   notalk    \n5 Iron Man 2       2010  999859302   181599413  5.51 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
@@ -1747,7 +1747,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Fright Night     2011   60918605    31070724  1.96 FAIL   dubious   \n2 White Fang       1991  118831862    23951765  4.96 FAIL   notalk    \n3 That's My Boy    2012   96379965    68488103  1.41 FAIL   notalk    \n4 The Break Up     2006  371878517    60101410  6.19 FAIL   notalk    \n5 The Sisterhood…  2008   95628271    29220920  3.27 PASS   ok"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Inkheart         2008   81553292    64935379  1.26 PASS   ok        \n2 Stargate         1994  421412559    86441558  4.88 FAIL   notalk    \n3 The Other Bole…  2008  113128159    43290252  2.61 PASS   ok        \n4 Hannibal Rising  2007  121626993    56177174  2.17 FAIL   notalk    \n5 Iron Man 2       2010  999859302   181599413  5.51 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
@@ -3357,7 +3357,7 @@
     "href": "ae.html",
     "title": "Application Exercises",
     "section": "",
-    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 10:45 am) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\nMore AEs to be added as the semester progresses.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nAE 00: Make a GitHub\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Penguin peekaboo\n\n\n \n\n\n\n\nAE 03: NYC flights + data wrangling\n\n\nSuggested answers\n\n\n\n\nAE 03: NYC flights + data wrangling\n\n\n \n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\nSuggested answers\n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\n \n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\nSuggested answers\n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\n \n\n\n\n\nAE 06: Tidying Stat Sci\n\n\nSuggested answers\n\n\n\n\nAE 06: Tidying Stat Sci\n\n\n \n\n\n\n\nAE 07: Joining\n\n\nSuggested answers\n\n\n\n\nAE 07: Joining\n\n\n \n\n\n\n\nAE 08: Durham climate + factors\n\n\n \n\n\n\n\nAE 09: Age gaps + import\n\n\n \n\n\n\n\n\nNo matching items",
+    "text": "All application exercises (AEs) are due by the end of lecture (or, precisely, by 10:45 am) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, commit and then push your change to your AE repo. AEs are graded for engagement, not accuracy.\nMore AEs to be added as the semester progresses.\n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nAE 00: Make a GitHub\n\n\n \n\n\n\n\nAE 01: Meet the penguins\n\n\n \n\n\n\n\nAE 02: Penguin peekaboo\n\n\n \n\n\n\n\nAE 03: NYC flights + data wrangling\n\n\nSuggested answers\n\n\n\n\nAE 03: NYC flights + data wrangling\n\n\n \n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\nSuggested answers\n\n\n\n\nAE 04: Gerrymandering + data exploration I\n\n\n \n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\nSuggested answers\n\n\n\n\nAE 05: Gerrymandering + data exploration II\n\n\n \n\n\n\n\nAE 06: Tidying Stat Sci\n\n\nSuggested answers\n\n\n\n\nAE 06: Tidying Stat Sci\n\n\n \n\n\n\n\nAE 07: Joining\n\n\nSuggested answers\n\n\n\n\nAE 07: Joining\n\n\n \n\n\n\n\nAE 08: Durham climate + factors\n\n\n \n\n\n\n\nAE 09: Data Imports & Exports\n\n\n \n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Application Exercises"
     ]

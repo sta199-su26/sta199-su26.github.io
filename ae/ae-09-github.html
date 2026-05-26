@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.39">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>AE 09: Age gaps + import – STA 199</title>
+<title>AE 09: Data Imports &amp; Exports – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -96,11 +96,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script><link rel="stylesheet" href="../style/sta199.scss">
-<meta property="og:title" content="AE 09: Age gaps + import – STA 199">
+<meta property="og:title" content="AE 09: Data Imports &amp; Exports – STA 199">
 <meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
-<meta property="og:image" content="https://sta199-su26.github.io/ae/images/age-gaps-source.png">
+<meta property="og:image" content="https://sta199-su26.github.io/ae/img/age-gaps-source.png">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="AE 09: Age gaps + import – STA 199">
+<meta property="og:image:height" content="1025">
+<meta property="og:image:width" content="1578">
+<meta name="twitter:title" content="AE 09: Data Imports &amp; Exports – STA 199">
 <meta name="twitter:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
 <meta name="twitter:image" content="https://sta199-su26.github.io/ae/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
@@ -113,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 09: Age gaps + import</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 09: Data Imports &amp; Exports</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -244,15 +246,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li><a href="#packages" id="toc-packages" class="nav-link active" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li>
+<a href="#part-1-hollywood-relationships" id="toc-part-1-hollywood-relationships" class="nav-link" data-scroll-target="#part-1-hollywood-relationships">Part 1: Hollywood Relationships</a>
+  <ul class="collapse">
+<li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">Import</a></li>
   <li><a href="#subset" id="toc-subset" class="nav-link" data-scroll-target="#subset">Subset</a></li>
   <li><a href="#export" id="toc-export" class="nav-link" data-scroll-target="#export">Export</a></li>
+  </ul>
+</li>
+  <li><a href="#part-2-sales-data" id="toc-part-2-sales-data" class="nav-link" data-scroll-target="#part-2-sales-data">Part 2: Sales Data</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae/ae-09-github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">AE 09: Age gaps + import</h1>
+<h1 class="title">AE 09: Data Imports &amp; Exports</h1>
 </div>
 
 
@@ -277,7 +285,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="data" class="level2"><h2 class="anchored" data-anchor-id="data">Data</h2>
+</section><section id="part-1-hollywood-relationships" class="level1"><h1>Part 1: Hollywood Relationships</h1>
+<section id="data" class="level2"><h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>The data for this application exercise is from <a href="https://www.data-is-plural.com">Data is Plural</a> and it is on age gaps in Hollywood relationships.</p>
 <p>The data follows certain rules:</p>
 <ul>
@@ -285,17 +294,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>The youngest of the two actors is at least 17 years old.</li>
 <li>Not animated characters.</li>
 </ul>
-<p>The age gaps dataset includes “gender” columns, which always contain the values “man” or “woman”. These values appear to indicate how the&nbsp;characters&nbsp;in each film identify. Some of these values do not match how the&nbsp;actor&nbsp;identifies.</p>
+<p>The age gaps dataset includes “gender” columns, which always contain the values “man” or “woman”. These values appear to indicate how the characters in each film identify. Some of these values do not match how the actor identifies.</p>
 <p>The data are in an Excel file called <code>age-gaps.xlsx</code> in your <code>data</code> folder.</p>
 <p>This is how the Excel file looks – it has two sheets, one with the data (called <code>Hollywood Age Gaps</code>) and one with information about the data (called <code>Source</code>). Additionally, the data sheet has some metadata at the top, above the column headers.</p>
-<p><img src="images/age-gaps-source.png" class="img-fluid" width="400"><img src="images/age-gaps-data.png" class="img-fluid" width="400"></p>
+<p><img src="img/age-gaps-source.png" class="img-fluid" width="400"><img src="img/age-gaps-data.png" class="img-fluid" width="400"></p>
 </section><section id="import" class="level2"><h2 class="anchored" data-anchor-id="import">Import</h2>
 <p>Load the data from <code>age-gaps.xlsx</code> in your <code>data</code> and assign it to <code>age_gaps</code>. Confirm that this new object appears in your Environment tab. Click on the <em>name of the object</em> in your Environment tab to pop open the data in the data viewer.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="subset" class="level2"><h2 class="anchored" data-anchor-id="subset">Subset</h2>
-<p>Create a subset of the data frame for heterosexual relationships on screen.</p>
+<p>Create a subset of the data frame for heterosexual relationships on screen &amp; save the resulting data as a <em>new</em> data frame.</p>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -313,6 +322,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add more code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section></section><section id="part-2-sales-data" class="level1"><h1>Part 2: Sales Data</h1>
+<p>Sales data are stored in an Excel file that looks like the following:</p>
+<p><img src="https://sta199-s24.github.io/images/sales-excel.png" class="img-fluid"></p>
+<p><strong>Task 1:</strong> Read in the Excel file called <code>sales.xlsx</code> from the <code>data</code> folder such that it looks like the following.</p>
+<p><img src="https://sta199-s24.github.io/images/sales-1.png" class="img-fluid" width="200"></p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Task 2:</strong> Manipulate the sales data such such that it looks like the following.</p>
+<p><img src="https://sta199-s24.github.io/images/sales-2.png" class="img-fluid" width="200"></p>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Why should we bother with writing code for reading the data in by skipping columns and assigning variable names as well as cleaning it up in multiple steps instead of opening the Excel file and editing the data in there to prepare it for a clean import?</p>
+<p>Add response here.</p>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
