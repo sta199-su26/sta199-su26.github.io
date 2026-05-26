@@ -1,10 +1,12 @@
 ---
 title: "Data Importing"
 subtitle: "Lecture 9"
-date: "2025-05-28"
+date: "2026-05-27"
 format: 
   revealjs:
-    output-file: 09-import-slides.html
+    output-file: 08-data-types-slides.html
+  html: 
+    output-file: 08-data-types.html
 auto-stretch: false
 ---
 
@@ -13,101 +15,37 @@ auto-stretch: false
 library(tidyverse)
 ```
 
-# Midterm Upcoming
+## Administrative Details {.scrollable .smaller}
 
--   Practice + some review + many more details tomorrow in class
+-   Midterm next Monday!
 
--   Initial practice questions are posted!
+    -   Practice + some review tomorrow in class
 
-# Lab Check In
+    -   Practice questions for both the multiple choice & live coding portions of the exam will be posted tomorrow!
 
-## Lab 1 Grades {.smaller}
+    -   I will post solutions to the practice questions by Saturday morning
 
--   Please read comments on ALL questions.
-    Some mistakes we did not penalize for, but could in future problems.
+-   Lab 3 after lecture tomorrow
 
--   In the first few questions, the point adjustment feature was used for partial credit.
+    -   This will be a *shorter than usual* lab & is meant to serve as a recap of all we've learned so far (aka, helpful exam prep!)
+    
+    -   Reminder: Lab 3 will be due by **12:00pm** (noon) on Sunday; there will be **no late window** for this lab assignment 
+    
+    -   Solutions will posted to the website promptly thereafter 
+    
+## Administrative Details {.scrollable .smaller}
 
--   Regrade requests: submit within a week if you believe a grading mistake was made.
+-   Project work begins next week!
 
--   **Code style** was the biggest common issue.
+    -   Since the midterm takes place during both of the formal lecture and lab timeslots next Monday, lecture time next Tuesday (9:30am - 10:45am) will function as a lab meeting
 
-    -   Even though most questions had code style points, we did not double penalize on *this lab.*
-
-    -   There were some minor problems we did not take off for *this time* but left comments about.
-
-## Code Style {.smaller}
-
--   spaces before and line breaks after each `+` when building a `ggplot`,
-
--   spaces before and line breaks after each `|>` in a data transformation pipeline,
-
--   code should be properly indented
-
-    -   this should match the automatic indentation when you hit enter
-
-    -   to fix: highlight code, click `code` option on top of RStudio, select `reindent lines`
-
--   there should be spaces around `=` signs and spaces after commas
-
--   use `|>` and not `%>%`
-
--   use `<-` and not `=` for saving a data frame
-
-## Lab 2 clarifications {.smaller}
-
--   Question 7c: No code needed!
-    Use results 7a and 7b to answer.
-    You can delete the code chunk from the template!
-
--   Question 10b: 'filter your reshaped dataset from question 10' should be from question 9
-
--   Question 2c: 'How is the output different from the one in part (a)?'
-    should say from part (b)
-
-## Lab 2 Workflow question {.smaller}
-
--   **Select pages on gradescope** when you submit
-
--   **At least three commits** to your lab 2 repo
-
-These should hopefully be free points!!!
-
-## Lab 2 Question 5 {.smaller}
-
-```{r}
-#| echo: false
-ggplot(midwest, aes(x = popdensity)) +
-  geom_boxplot() +
-  labs(
-    title = "Population densities of midwest counties",
-    x = "Population density"
-  )
-```
-
-*What is a 'typical value' of population density?*
-
-## Lab 2 Question 5 {.smaller}
-
-```{r}
-#| echo: false
-
-ggplot(midwest, aes(x = popdensity)) +
-  geom_boxplot() +
-  labs(
-    title = "Population densities of midwest counties",
-    x = "Population density"
-  ) +
-  geom_vline(xintercept = median(midwest$popdensity), color = "darkgreen")+
-  geom_vline(xintercept = mean(midwest$popdensity), color = "hotpink")
-```
-
-```{r}
-#| echo: false
-midwest |>
-  summarize(mean = mean(popdensity), 
-            med= median(popdensity))
-```
+    -   **Both** lab sessions next week (T, Th) will be dedicated worktime
+    
+    -   You will receive your team assignments (2 groups of 3, 2 groups of 4) in lab next Tuesday
+    
+    -   As a reminder, projects are completed in groups **BUT** grades are individual; your final project grade may ultimately differ from your teammates' if there is unequal participation
+    
+    -   Participation is measured by 1) lab attendance on project work days; 2) commit history in project repos on GitHub; 3) peer review forms 
 
 # Let's zoom out for a second
 
@@ -123,71 +61,76 @@ After Midterm 1...
 
 ## Data science {.medium}
 
-![](images/data-science-cycle/data-science-cycle.001.png){fig-align="center"}
+![](img/00/data-science-cycle.001.png){fig-align="center"}
 
 ## Data science {.smaller}
 
-::: {style="background-color:#f3e8ff; border-left:4px solid #d8b4fe; padding:0.5em 1em; border-radius:4px; display:inline-block"}
+:::: {style="background-color:#f3e8ff; border-left:4px solid #d8b4fe; padding:0.5em 1em; border-radius:4px; display:inline-block"}
 ::: incremental
-1.  **Collection**: we won't seriously study this; data importing coming today
+1.  **Collection**: we won't seriously study data collection (take an experimental design class if you are interested!); we *will* discuss data importation methods today 
 
--   **for us**: package data (`library()`), **data importing** (`read_csv`), and webscraping (eventually)\
--   **but really**: domain-specific issues of measurement, survey design, experimental design, etc\
+-   **for the purposes of this class**: accessing package data (`library()`; `df <- library::df`), **data importation** (`read_csv`, `read_xlsx`, `read_xls`)
+-   **in reality...**: web-scraping, domain-specific issues of measurement, survey design, experimental design, etc.
 :::
-:::
+::::
 
 ## Data science {.smaller}
 
-1.  **Collection**: we won't seriously study this; data importing coming today
+1.  **Collection**: we won't seriously study data collection; we *will* discuss data importation methods today 
 
-::: incremental
+:::: incremental
 ::: {.fragment style="background-color:#f3e8ff; border-left:4px solid #d8b4fe; padding:0.5em 1em; border-radius:4px; display:inline-block"}
 2.  **Preparation**: cleaning, wrangling, and otherwise *tidying* the data so we can actually work with it.
 
 -   **keywords**: `mutate`, `fct_relevel`, `pivot_*`, `*_join`
 :::
-:::
+::::
 
 ## Data science {.smaller}
 
-1.  **Collection**: we won't seriously study this; data importing coming today
+1.  **Collection**: we won't seriously study data collection; we *will* discuss data importation methods today 
+
 2.  **Preparation**: cleaning, wrangling, and otherwise *tidying* the data so we can actually work with it.
 
-::: incremental
+:::: incremental
 ::: {.fragment style="background-color:#f3e8ff; border-left:4px solid #d8b4fe; padding:0.5em 1em; border-radius:4px; display:inline-block"}
-3.  **Analysis**: finally transform the data into *knowledge*...
+3.  **Analysis**: finally, transform the data into *knowledge*...
 
--   **pictures**: `ggplot`, `geom_*`, etc\
--   **numerical summaries**: `summarize`, `group_by`, `count`, `mean`, `median`, `sd`, `quantile`, `IQR`, `cor`, etc\
--   The pictures and the summaries need to work together!
+-   **visual summaries**: `ggplot`, `geom_*`, etc.
+-   **numerical summaries**: `summarize`, `group_by`, `count`, `mean`, `median`, `sd`, `quantile`, `IQR`, `cor`, etc.
+-   The visualizations and the summaries should complement one another!
 :::
-:::
+::::
 
 # Reading data into R
 
 ## Package data {.smaller}
 
--   When data is in a pack, such as **tidyverse**, loading the pacakge gets our dataset
+-   When data is neatly stored in a package, such as **tidyverse**, loading the package loads the dataset; you can explicitly save a packaged df to your RStudio environment by running `df <- library::df`
 
 -   Most often, this is not the case
 
 ## Reading in rectangular data {.smaller}
 
-![](images/excel.png){fig-align="center" width="923"}
+![](img/00/excel.png){fig-align="center" width="923"}
 
 ## Reading rectangular data {.smaller}
 
--   Using [**readr**](https://readr.tidyverse.org/): (in **tidyverse)**
+-   Using [**readr**](https://readr.tidyverse.org/): (in **tidyverse**)
     -   Most commonly: `read_csv()` - file saved as `.csv`
     -   Maybe also: `read_tsv()`, `read_delim()`, etc - other file formats
 
 . . .
 
--   Using [**readxl**](https://readxl.tidyverse.org/): `read_excel()` - .xls or .xlsx
+-   Using [**readxl**](https://readxl.tidyverse.org/): 
+    -   `read_excel()` - R determines file type for you
+    -   `read_xls()`, `read_xlsx()` - use if you know whether you have a .xls or .xlsx file
 
 . . .
 
--   Using [**googlesheets4**](https://googlesheets4.tidyverse.org/): `read_sheet()` -- We haven't covered this in the videos, but might be useful for your projects
+-   Using [**googlesheets4**](https://googlesheets4.tidyverse.org/): `read_sheet()` -- we haven't covered this in the videos, but might be useful for your projects
+
+    -   Fun fact: The "Schedule" page on the course website pulls information from an underlying Google sheets file
 
 ## Using read_csv() {.smaller}
 
@@ -195,41 +138,50 @@ Generally, the format is:
 
 ```{r}
 #| eval: false
-
-r_df_name <- read_csv("path_to_file_name.csv")
+df_name <- read_csv("path_to_file_name.csv")
 ```
 
 ## Path to file {.smaller}
 
-*Where is durham-climate.csv?*
+For example, recall we worked with *durham-climate.csv* in AE08. **Where is** *durham-climate.csv?*
 
-::: columns
+When in our AE repo, we read in the data with the following code:
+```{r}
+#| label: load-data
+#| eval: false
+durham_climate <- read_csv("data/durham-climate.csv")
+```
+
+## Path to file {.smaller}
+
+::::: columns
 ::: {.column width="50%"}
-![](images/ae_repo.png){width="300"}
+![](img/09/ae_repo.png){width="500"}
 :::
 
 ::: {.column width="50%"}
-![](images/data_folder.png){width="400"}
+![](img/09/ae_repo_data.png){width="500"}
 :::
-:::
+:::::
 
 -   use `/` to separate folder(s) + file names; file path in quotes
 
--   Answer:
+-   Answer: `read_csv("data/durham-climate.csv")`
 
-## Why not include `ae-mneubrander`? {.smaller}
+## Why not include `ae-kgsolarz`? {.smaller}
 
 *Where is durham-climate.csv?*
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
-![](images/ae_repo.png){width="300"}
+![](img/09/ae_repo.png){width="300"}
 :::
 
 ::: {.column width="50%"}
-![](images/data_folder.png){width="400"} ![](images/getwd.png){width="400"}
+![](img/09/ae_repo_data.png){width="400"} ![](img/09/get_wd.png){width="400"}
+
 :::
-:::
+:::::
 
 ## We can also write files! {.smaller}
 
@@ -285,7 +237,7 @@ df |>
 
 ## Goal 2.2: String Functions {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="70%"}
 We've seen lots of functions that deal with numeric data (`mean`, `median`, `sum`, etc.) - what about characters?
 
@@ -297,7 +249,7 @@ We've seen lots of functions that deal with numeric data (`mean`, `median`, `sum
 ::: {.column width="30%"}
 ![](images/stringr.png){width="185"}
 :::
-:::
+:::::
 
 ## Goal 2.2: String Functions {.smaller}
 
