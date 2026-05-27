@@ -13,6 +13,7 @@ auto-stretch: false
 ```{r}
 #| include: false
 library(tidyverse)
+durham_climate <- read_csv("data/durham-climate.csv")
 ```
 
 ## Administrative Details {.scrollable .smaller}
@@ -35,7 +36,7 @@ library(tidyverse)
     
 ## Administrative Details {.scrollable .smaller}
 
--   Project work begins next week!
+-   Project work begins next week! More details on *what* the project *is* tomorrow :)
 
     -   Since the midterm takes place during both of the formal lecture and lab timeslots next Monday, lecture time next Tuesday (9:30am - 10:45am) will function as a lab meeting
 
@@ -46,6 +47,359 @@ library(tidyverse)
     -   As a reminder, projects are completed in groups **BUT** grades are individual; your final project grade may ultimately differ from your teammates' if there is unequal participation
     
     -   Participation is measured by 1) lab attendance on project work days; 2) commit history in project repos on GitHub; 3) peer review forms 
+    
+# Back to AE-08
+
+## Task 1: Prettifying the plot from ae-08 {.scrollable}
+
+```{r}
+ggplot(
+  durham_climate, 
+  aes(x = month, y = avg_high_f, group = 1)
+  ) +
+  geom_line() +
+  geom_point(
+    shape = "circle filled", size = 4,
+    color = "black", fill = "white", stroke = 1
+  ) +
+  labs(
+    x = "Month",
+    y = "Average high temperature (F)",
+    title = "Durham climate"
+  ) + 
+  theme_minimal()
+```
+
+## Things to change
+
+::: incremental 
+1. ✅ Reorder the months chronologically;
+2. ✅ Fill the circles with season-specific colors;
+3. ⬜ Add a legend for these colors to the *top* of the plot;
+4. ⬜ Make sure the legend is ordered chronologically by season.
+:::
+
+## 0. Why `group = 1`? {.scrollable}
+
+With it:
+
+```{r}
+#| code-line-numbers: "3"
+ggplot(
+  durham_climate, 
+  aes(x = month, y = avg_high_f, group = 1)
+  ) +
+  geom_line() +
+  geom_point(
+    shape = "circle filled", size = 4,
+    color = "black", fill = "white", stroke = 1
+  ) +
+  labs(
+    x = "Month",
+    y = "Average high temperature (F)",
+    title = "Durham climate"
+  ) +
+  theme_minimal()
+```
+
+## 0. Why `group = 1`? {.scrollable}
+
+Without it (even though I have `geom_line`!):
+
+```{r}
+#| code-line-numbers: "3|5"
+ggplot(
+  durham_climate, 
+  aes(x = month, y = avg_high_f)
+  ) +
+  geom_line() +
+  geom_point(
+    shape = "circle filled", size = 4,
+    color = "black", fill = "white", stroke = 1
+  ) +
+  labs(
+    x = "Month",
+    y = "Average high temperature (F)",
+    title = "Durham climate"
+  ) +
+  theme_minimal()
+```
+
+## 0. Why `group = 1`? {.scrollable}
+
+Don't need `group =` argument for numerical vs numerical:
+
+```{r}
+#| code-line-numbers: "3"
+ggplot(
+  durham_climate, 
+  aes(x = avg_low_f, y = avg_high_f)
+  ) +
+  geom_line() +
+  geom_point(
+    shape = "circle filled", size = 4,
+    color = "black", fill = "white", stroke = 1
+  ) +
+  labs(
+    x = "Average low temperature (F)",
+    y = "Average high temperature (F)",
+    title = "Durham climate"
+  ) +
+  theme_minimal()
+```
+
+## 0. Why `group = 1`? {.scrollable}
+
+**Do** need `group = ` argument for categorical vs numerical:
+
+```{r}
+#| code-line-numbers: "3"
+ggplot(
+  durham_climate, 
+  aes(x = month, y = avg_high_f, group = 1)
+  ) +
+  geom_line() +
+  geom_point(
+    shape = "circle filled", size = 4,
+    color = "black", fill = "white", stroke = 1
+  ) +
+  labs(
+    x = "Month",
+    y = "Average high temperature (F)",
+    title = "Durham climate"
+  ) +
+  theme_minimal()
+```
+
+## 1. Reorder the months chronologically {.scrollable}
+
+```{r}
+#| code-line-numbers: "2-4"
+durham_climate |>
+  mutate(
+    month = fct_relevel(month, month.name)
+  ) |>
+  ggplot(
+    aes(x = month, y = avg_high_f, group = 1)
+  ) +
+  geom_line() +
+  geom_point(
+    shape = "circle filled", size = 4,
+    color = "black", fill = "white", stroke = 1
+  ) +
+  labs(
+    x = "Month",
+    y = "Average high temperature (F)",
+    title = "Durham climate"
+  ) +
+  theme_minimal()
+```
+
+## 2. Fill the circles with season-specific colors {.scrollable}
+
+```{r}
+#| code-line-numbers: "4-8|16"
+durham_climate |>
+  mutate(
+    month = fct_relevel(month, month.name),
+    season = case_when(
+      month %in% c("December", "January", "February") ~ "Winter",
+      month %in% c("March", "April", "May") ~ "Spring",
+      month %in% c("June", "July", "August") ~ "Summer",
+      month %in% c("September", "October", "November") ~ "Fall",
+    )
+  ) |>
+  ggplot(
+    aes(x = month, y = avg_high_f, group = 1)
+    ) +
+  geom_line() +
+  geom_point(
+    aes(fill = season),
+    shape = "circle filled", size = 4,
+    color = "black", stroke = 1
+  ) +
+  labs(
+    x = "Month",
+    y = "Average high temperature (F)",
+    title = "Durham climate"
+  ) +
+  theme_minimal()
+```
+
+## 2.5 Let's choose different-than-default season-specific colors {.scrollable}
+
+```{r}
+#| code-line-numbers: "20-27"
+durham_climate |>
+  mutate(
+    month = fct_relevel(month, month.name),
+    season = case_when(
+      month %in% c("December", "January", "February") ~ "Winter",
+      month %in% c("March", "April", "May") ~ "Spring",
+      month %in% c("June", "July", "August") ~ "Summer",
+      month %in% c("September", "October", "November") ~ "Fall",
+    )
+  ) |>
+  ggplot(
+    aes(x = month, y = avg_high_f, group = 1)
+    ) +
+  geom_line() +
+  geom_point(
+    aes(fill = season),
+    shape = "circle filled", size = 4,
+    color = "black", stroke = 1
+  ) +
+  scale_fill_manual(
+    values = c(
+      "Winter" = "lightskyblue1",
+      "Spring" = "chartreuse3",
+      "Summer" = "gold2",
+      "Fall" = "lightsalmon4"
+    )
+  ) + 
+  labs(
+    x = "Month",
+    y = "Average high temperature (F)",
+    title = "Durham climate"
+  ) +
+  theme_minimal()
+```
+
+## 3. Add legend for season to *top* of plot {.scrollable}
+
+```{r}
+#| code-line-numbers: "34"
+durham_climate |>
+  mutate(
+    month = fct_relevel(month, month.name),
+    season = case_when(
+      month %in% c("December", "January", "February") ~ "Winter",
+      month %in% c("March", "April", "May") ~ "Spring",
+      month %in% c("June", "July", "August") ~ "Summer",
+      month %in% c("September", "October", "November") ~ "Fall",
+    )
+  ) |>
+  ggplot(
+    aes(x = month, y = avg_high_f, group = 1)
+    ) +
+  geom_line() +
+  geom_point(
+    aes(fill = season),
+    shape = "circle filled", size = 4,
+    color = "black", stroke = 1
+  ) +
+  scale_fill_manual(
+    values = c(
+      "Winter" = "lightskyblue1",
+      "Spring" = "chartreuse3",
+      "Summer" = "gold2",
+      "Fall" = "lightsalmon4"
+    )
+  ) + 
+  labs(
+    x = "Month",
+    y = "Average high temperature (F)",
+    title = "Durham climate"
+  ) +
+  theme_minimal() + 
+  theme(legend.position = "top")
+```
+
+## 4. Order legend chronologically {.scrollable}
+
+```{r}
+#| code-line-numbers: "10"
+durham_climate |>
+  mutate(
+    month = fct_relevel(month, month.name),
+    season = case_when(
+      month %in% c("December", "January", "February") ~ "Winter",
+      month %in% c("March", "April", "May") ~ "Spring",
+      month %in% c("June", "July", "August") ~ "Summer",
+      month %in% c("September", "October", "November") ~ "Fall",
+    ),
+    season = fct_relevel(season, "Winter", "Spring", "Summer", "Fall")
+  ) |>
+  ggplot(
+    aes(x = month, y = avg_high_f, group = 1)
+    ) +
+  geom_line() +
+  geom_point(
+    aes(fill = season),
+    shape = "circle filled", size = 4,
+    color = "black", stroke = 1
+  ) +
+  scale_fill_manual(
+    values = c(
+      "Winter" = "lightskyblue1",
+      "Spring" = "chartreuse3",
+      "Summer" = "gold2",
+      "Fall" = "lightsalmon4"
+    )
+  ) + 
+  labs(
+    x = "Month",
+    y = "Average high temperature (F)",
+    title = "Durham climate"
+  ) +
+  theme_minimal() + 
+  theme(legend.position = "top")
+```
+
+## Task 2: *pivot* to replicate this...
+
+```{r}
+#| echo: false 
+durham_climate |>
+  mutate(
+    month = fct_relevel(month, month.name),
+    season = case_when(
+      month %in% c("December", "January", "February") ~ "Winter",
+      month %in% c("March", "April", "May") ~ "Spring",
+      month %in% c("June", "July", "August") ~ "Summer",
+      month %in% c("September", "October", "November") ~ "Fall",
+    ),
+    season = fct_relevel(season, "Winter", "Spring", "Summer", "Fall")
+  ) |>
+  pivot_longer(
+    cols = c(avg_high_f, avg_low_f),
+    names_to = "temp_type",
+    names_prefix = "avg_",
+    values_to = "avg_temp_f"
+  ) |>
+  mutate(temp_type = str_remove(temp_type, "_f")) |>
+  ggplot(aes(x = month, y = avg_temp_f, group = temp_type, color = temp_type)) +
+  geom_line() +
+  geom_point(
+    aes(fill = season),
+    shape = "circle filled", size = 3, stroke = 1
+  ) +
+  scale_fill_manual(
+    values = c(
+      "Winter" = "lightskyblue1",
+      "Spring" = "chartreuse3",
+      "Summer" = "gold2",
+      "Fall" = "lightsalmon4"
+    )
+  ) +
+  scale_color_manual(
+    values = c(
+      "high" = "gray20",
+      "low" = "gray70"
+    )
+  ) +
+  labs(
+    x = "Month",
+    y = "Average temperature (F)",
+    title = "Durham climate",
+    fill = "Season",
+    color = "Type"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "top")
+```
+
+Give it a shot in your `ae-08` `.qmd` file... you can ignore the **prettification** we walked through for now. 
 
 # Let's zoom out for a second
 
