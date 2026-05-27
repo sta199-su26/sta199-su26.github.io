@@ -22,16 +22,6 @@
       ],
       "Hash": "594af2c6021b55271b6759d004a25ca2"
     },
-    "BiocVersion": {
-      "Package": "BiocVersion",
-      "Version": "3.22.0",
-      "Source": "Repository",
-      "Repository": "https://bioconductor.org/packages/3.22/bioc",
-      "Requirements": [
-        "R"
-      ],
-      "Hash": "4a4115a819943b3a6010e77a90bd6a2f"
-    },
     "DBI": {
       "Package": "DBI",
       "Version": "1.3.0",
