@@ -1488,7 +1488,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title           year gross_2013 budget_2013    roi binary clean_test\n  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Four rooms      1995   13150560     6115118  2.15  FAIL   notalk    \n2 Virus           1999   62423681   104884652  0.595 FAIL   dubious   \n3 Detention       2011         NA    10356908 NA     PASS   ok        \n4 I Love You Ph…  2009   18655197    14114511  1.32  FAIL   notalk    \n5 Womb            2010         NA    13887014 NA     PASS   ok"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title          year gross_2013 budget_2013     roi binary clean_test\n  &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The To Do Li…  2013    6983338     1500000  4.66   PASS   ok        \n2 Enter the Vo…  2009     733948    17371706  0.0422 FAIL   notalk    \n3 Drumline       2002  146091454    25903584  5.64   FAIL   notalk    \n4 54             1998   47896406    18578720  2.58   FAIL   notalk    \n5 Like Crazy     2011    7381244      258923 28.5    PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
@@ -1747,7 +1747,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title           year gross_2013 budget_2013    roi binary clean_test\n  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Four rooms      1995   13150560     6115118  2.15  FAIL   notalk    \n2 Virus           1999   62423681   104884652  0.595 FAIL   dubious   \n3 Detention       2011         NA    10356908 NA     PASS   ok        \n4 I Love You Ph…  2009   18655197    14114511  1.32  FAIL   notalk    \n5 Womb            2010         NA    13887014 NA     PASS   ok"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title          year gross_2013 budget_2013     roi binary clean_test\n  &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The To Do Li…  2013    6983338     1500000  4.66   PASS   ok        \n2 Enter the Vo…  2009     733948    17371706  0.0422 FAIL   notalk    \n3 Drumline       2002  146091454    25903584  5.64   FAIL   notalk    \n4 54             1998   47896406    18578720  2.58   FAIL   notalk    \n5 Like Crazy     2011    7381244      258923 28.5    PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
@@ -2993,7 +2993,91 @@
     "href": "slides/09-data-import-slides.html#administrative-details-1",
     "title": "Data Importation",
     "section": "Administrative Details",
-    "text": "Administrative Details\n\n\nProject work begins next week!\n\nSince the midterm takes place during both of the formal lecture and lab timeslots next Monday, lecture time next Tuesday (9:30am - 10:45am) will function as a lab meeting\nBoth lab sessions next week (T, Th) will be dedicated worktime\nYou will receive your team assignments (2 groups of 3, 2 groups of 4) in lab next Tuesday\nAs a reminder, projects are completed in groups BUT grades are individual; your final project grade may ultimately differ from your teammates’ if there is unequal participation\nParticipation is measured by 1) lab attendance on project work days; 2) commit history in project repos on GitHub; 3) peer review forms"
+    "text": "Administrative Details\n\n\nProject work begins next week! More details on what the project is tomorrow :)\n\nSince the midterm takes place during both of the formal lecture and lab timeslots next Monday, lecture time next Tuesday (9:30am - 10:45am) will function as a lab meeting\nBoth lab sessions next week (T, Th) will be dedicated worktime\nYou will receive your team assignments (2 groups of 3, 2 groups of 4) in lab next Tuesday\nAs a reminder, projects are completed in groups BUT grades are individual; your final project grade may ultimately differ from your teammates’ if there is unequal participation\nParticipation is measured by 1) lab attendance on project work days; 2) commit history in project repos on GitHub; 3) peer review forms"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#task-1-prettifying-the-plot-from-ae-08",
+    "href": "slides/09-data-import-slides.html#task-1-prettifying-the-plot-from-ae-08",
+    "title": "Data Importation",
+    "section": "Task 1: Prettifying the plot from ae-08",
+    "text": "Task 1: Prettifying the plot from ae-08\n\nggplot(\n  durham_climate, \n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 4,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) + \n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#things-to-change",
+    "href": "slides/09-data-import-slides.html#things-to-change",
+    "title": "Data Importation",
+    "section": "Things to change",
+    "text": "Things to change\n\n\n✅ Reorder the months chronologically;\n✅ Fill the circles with season-specific colors;\n⬜ Add a legend for these colors to the top of the plot;\n⬜ Make sure the legend is ordered chronologically by season."
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#why-group-1",
+    "href": "slides/09-data-import-slides.html#why-group-1",
+    "title": "Data Importation",
+    "section": "0. Why group = 1?",
+    "text": "0. Why group = 1?\nWith it:\n\nggplot(\n  durham_climate, \n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 4,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#why-group-1-1",
+    "href": "slides/09-data-import-slides.html#why-group-1-1",
+    "title": "Data Importation",
+    "section": "0. Why group = 1?",
+    "text": "0. Why group = 1?\nWithout it (even though I have geom_line!):\n\nggplot(\n  durham_climate, \n  aes(x = month, y = avg_high_f)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 4,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()\n\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#why-group-1-2",
+    "href": "slides/09-data-import-slides.html#why-group-1-2",
+    "title": "Data Importation",
+    "section": "0. Why group = 1?",
+    "text": "0. Why group = 1?\nDon’t need group = argument for numerical vs numerical:\n\nggplot(\n  durham_climate, \n  aes(x = avg_low_f, y = avg_high_f)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 4,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Average low temperature (F)\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#why-group-1-3",
+    "href": "slides/09-data-import-slides.html#why-group-1-3",
+    "title": "Data Importation",
+    "section": "0. Why group = 1?",
+    "text": "0. Why group = 1?\nDo need group = argument for categorical vs numerical:\n\nggplot(\n  durham_climate, \n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 4,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#reorder-the-months-chronologically",
+    "href": "slides/09-data-import-slides.html#reorder-the-months-chronologically",
+    "title": "Data Importation",
+    "section": "1. Reorder the months chronologically",
+    "text": "1. Reorder the months chronologically\n\ndurham_climate |&gt;\n  mutate(\n    month = fct_relevel(month, month.name)\n  ) |&gt;\n  ggplot(\n    aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 4,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#fill-the-circles-with-season-specific-colors",
+    "href": "slides/09-data-import-slides.html#fill-the-circles-with-season-specific-colors",
+    "title": "Data Importation",
+    "section": "2. Fill the circles with season-specific colors",
+    "text": "2. Fill the circles with season-specific colors\n\ndurham_climate |&gt;\n  mutate(\n    month = fct_relevel(month, month.name),\n    season = case_when(\n      month %in% c(\"December\", \"January\", \"February\") ~ \"Winter\",\n      month %in% c(\"March\", \"April\", \"May\") ~ \"Spring\",\n      month %in% c(\"June\", \"July\", \"August\") ~ \"Summer\",\n      month %in% c(\"September\", \"October\", \"November\") ~ \"Fall\",\n    )\n  ) |&gt;\n  ggplot(\n    aes(x = month, y = avg_high_f, group = 1)\n    ) +\n  geom_line() +\n  geom_point(\n    aes(fill = season),\n    shape = \"circle filled\", size = 4,\n    color = \"black\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#lets-choose-different-than-default-season-specific-colors",
+    "href": "slides/09-data-import-slides.html#lets-choose-different-than-default-season-specific-colors",
+    "title": "Data Importation",
+    "section": "2.5 Let’s choose different-than-default season-specific colors",
+    "text": "2.5 Let’s choose different-than-default season-specific colors\n\ndurham_climate |&gt;\n  mutate(\n    month = fct_relevel(month, month.name),\n    season = case_when(\n      month %in% c(\"December\", \"January\", \"February\") ~ \"Winter\",\n      month %in% c(\"March\", \"April\", \"May\") ~ \"Spring\",\n      month %in% c(\"June\", \"July\", \"August\") ~ \"Summer\",\n      month %in% c(\"September\", \"October\", \"November\") ~ \"Fall\",\n    )\n  ) |&gt;\n  ggplot(\n    aes(x = month, y = avg_high_f, group = 1)\n    ) +\n  geom_line() +\n  geom_point(\n    aes(fill = season),\n    shape = \"circle filled\", size = 4,\n    color = \"black\", stroke = 1\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Winter\" = \"lightskyblue1\",\n      \"Spring\" = \"chartreuse3\",\n      \"Summer\" = \"gold2\",\n      \"Fall\" = \"lightsalmon4\"\n    )\n  ) + \n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#add-legend-for-season-to-top-of-plot",
+    "href": "slides/09-data-import-slides.html#add-legend-for-season-to-top-of-plot",
+    "title": "Data Importation",
+    "section": "3. Add legend for season to top of plot",
+    "text": "3. Add legend for season to top of plot\n\ndurham_climate |&gt;\n  mutate(\n    month = fct_relevel(month, month.name),\n    season = case_when(\n      month %in% c(\"December\", \"January\", \"February\") ~ \"Winter\",\n      month %in% c(\"March\", \"April\", \"May\") ~ \"Spring\",\n      month %in% c(\"June\", \"July\", \"August\") ~ \"Summer\",\n      month %in% c(\"September\", \"October\", \"November\") ~ \"Fall\",\n    )\n  ) |&gt;\n  ggplot(\n    aes(x = month, y = avg_high_f, group = 1)\n    ) +\n  geom_line() +\n  geom_point(\n    aes(fill = season),\n    shape = \"circle filled\", size = 4,\n    color = \"black\", stroke = 1\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Winter\" = \"lightskyblue1\",\n      \"Spring\" = \"chartreuse3\",\n      \"Summer\" = \"gold2\",\n      \"Fall\" = \"lightsalmon4\"\n    )\n  ) + \n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal() + \n  theme(legend.position = \"top\")"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#order-legend-chronologically",
+    "href": "slides/09-data-import-slides.html#order-legend-chronologically",
+    "title": "Data Importation",
+    "section": "4. Order legend chronologically",
+    "text": "4. Order legend chronologically\n\ndurham_climate |&gt;\n  mutate(\n    month = fct_relevel(month, month.name),\n    season = case_when(\n      month %in% c(\"December\", \"January\", \"February\") ~ \"Winter\",\n      month %in% c(\"March\", \"April\", \"May\") ~ \"Spring\",\n      month %in% c(\"June\", \"July\", \"August\") ~ \"Summer\",\n      month %in% c(\"September\", \"October\", \"November\") ~ \"Fall\",\n    ),\n    season = fct_relevel(season, \"Winter\", \"Spring\", \"Summer\", \"Fall\")\n  ) |&gt;\n  ggplot(\n    aes(x = month, y = avg_high_f, group = 1)\n    ) +\n  geom_line() +\n  geom_point(\n    aes(fill = season),\n    shape = \"circle filled\", size = 4,\n    color = \"black\", stroke = 1\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Winter\" = \"lightskyblue1\",\n      \"Spring\" = \"chartreuse3\",\n      \"Summer\" = \"gold2\",\n      \"Fall\" = \"lightsalmon4\"\n    )\n  ) + \n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal() + \n  theme(legend.position = \"top\")"
+  },
+  {
+    "objectID": "slides/09-data-import-slides.html#task-2-pivot-to-replicate-this",
+    "href": "slides/09-data-import-slides.html#task-2-pivot-to-replicate-this",
+    "title": "Data Importation",
+    "section": "Task 2: pivot to replicate this…",
+    "text": "Task 2: pivot to replicate this…\n\n\n\n\n\n\n\n\nGive it a shot in your ae-08 .qmd file… you can ignore the prettification we walked through for now."
   },
   {
     "objectID": "slides/09-data-import-slides.html#data-science-and-statistical-thinking",
@@ -3182,7 +3266,91 @@
     "href": "slides/09-data-import.html#administrative-details-1",
     "title": "Data Importation",
     "section": "Administrative Details",
-    "text": "Administrative Details\n\n\nProject work begins next week!\n\nSince the midterm takes place during both of the formal lecture and lab timeslots next Monday, lecture time next Tuesday (9:30am - 10:45am) will function as a lab meeting\nBoth lab sessions next week (T, Th) will be dedicated worktime\nYou will receive your team assignments (2 groups of 3, 2 groups of 4) in lab next Tuesday\nAs a reminder, projects are completed in groups BUT grades are individual; your final project grade may ultimately differ from your teammates’ if there is unequal participation\nParticipation is measured by 1) lab attendance on project work days; 2) commit history in project repos on GitHub; 3) peer review forms"
+    "text": "Administrative Details\n\n\nProject work begins next week! More details on what the project is tomorrow :)\n\nSince the midterm takes place during both of the formal lecture and lab timeslots next Monday, lecture time next Tuesday (9:30am - 10:45am) will function as a lab meeting\nBoth lab sessions next week (T, Th) will be dedicated worktime\nYou will receive your team assignments (2 groups of 3, 2 groups of 4) in lab next Tuesday\nAs a reminder, projects are completed in groups BUT grades are individual; your final project grade may ultimately differ from your teammates’ if there is unequal participation\nParticipation is measured by 1) lab attendance on project work days; 2) commit history in project repos on GitHub; 3) peer review forms"
+  },
+  {
+    "objectID": "slides/09-data-import.html#task-1-prettifying-the-plot-from-ae-08",
+    "href": "slides/09-data-import.html#task-1-prettifying-the-plot-from-ae-08",
+    "title": "Data Importation",
+    "section": "Task 1: Prettifying the plot from ae-08",
+    "text": "Task 1: Prettifying the plot from ae-08\n\nggplot(\n  durham_climate, \n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 4,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) + \n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import.html#things-to-change",
+    "href": "slides/09-data-import.html#things-to-change",
+    "title": "Data Importation",
+    "section": "Things to change",
+    "text": "Things to change\n\n\n✅ Reorder the months chronologically;\n✅ Fill the circles with season-specific colors;\n⬜ Add a legend for these colors to the top of the plot;\n⬜ Make sure the legend is ordered chronologically by season."
+  },
+  {
+    "objectID": "slides/09-data-import.html#why-group-1",
+    "href": "slides/09-data-import.html#why-group-1",
+    "title": "Data Importation",
+    "section": "0. Why group = 1?",
+    "text": "0. Why group = 1?\nWith it:\n\nggplot(\n  durham_climate, \n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 4,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import.html#why-group-1-1",
+    "href": "slides/09-data-import.html#why-group-1-1",
+    "title": "Data Importation",
+    "section": "0. Why group = 1?",
+    "text": "0. Why group = 1?\nWithout it (even though I have geom_line!):\n\nggplot(\n  durham_climate, \n  aes(x = month, y = avg_high_f)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 4,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()\n\n`geom_line()`: Each group consists of only one observation.\nℹ Do you need to adjust the group aesthetic?"
+  },
+  {
+    "objectID": "slides/09-data-import.html#why-group-1-2",
+    "href": "slides/09-data-import.html#why-group-1-2",
+    "title": "Data Importation",
+    "section": "0. Why group = 1?",
+    "text": "0. Why group = 1?\nDon’t need group = argument for numerical vs numerical:\n\nggplot(\n  durham_climate, \n  aes(x = avg_low_f, y = avg_high_f)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 4,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Average low temperature (F)\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import.html#why-group-1-3",
+    "href": "slides/09-data-import.html#why-group-1-3",
+    "title": "Data Importation",
+    "section": "0. Why group = 1?",
+    "text": "0. Why group = 1?\nDo need group = argument for categorical vs numerical:\n\nggplot(\n  durham_climate, \n  aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 4,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import.html#reorder-the-months-chronologically",
+    "href": "slides/09-data-import.html#reorder-the-months-chronologically",
+    "title": "Data Importation",
+    "section": "1. Reorder the months chronologically",
+    "text": "1. Reorder the months chronologically\n\ndurham_climate |&gt;\n  mutate(\n    month = fct_relevel(month, month.name)\n  ) |&gt;\n  ggplot(\n    aes(x = month, y = avg_high_f, group = 1)\n  ) +\n  geom_line() +\n  geom_point(\n    shape = \"circle filled\", size = 4,\n    color = \"black\", fill = \"white\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import.html#fill-the-circles-with-season-specific-colors",
+    "href": "slides/09-data-import.html#fill-the-circles-with-season-specific-colors",
+    "title": "Data Importation",
+    "section": "2. Fill the circles with season-specific colors",
+    "text": "2. Fill the circles with season-specific colors\n\ndurham_climate |&gt;\n  mutate(\n    month = fct_relevel(month, month.name),\n    season = case_when(\n      month %in% c(\"December\", \"January\", \"February\") ~ \"Winter\",\n      month %in% c(\"March\", \"April\", \"May\") ~ \"Spring\",\n      month %in% c(\"June\", \"July\", \"August\") ~ \"Summer\",\n      month %in% c(\"September\", \"October\", \"November\") ~ \"Fall\",\n    )\n  ) |&gt;\n  ggplot(\n    aes(x = month, y = avg_high_f, group = 1)\n    ) +\n  geom_line() +\n  geom_point(\n    aes(fill = season),\n    shape = \"circle filled\", size = 4,\n    color = \"black\", stroke = 1\n  ) +\n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import.html#lets-choose-different-than-default-season-specific-colors",
+    "href": "slides/09-data-import.html#lets-choose-different-than-default-season-specific-colors",
+    "title": "Data Importation",
+    "section": "2.5 Let’s choose different-than-default season-specific colors",
+    "text": "2.5 Let’s choose different-than-default season-specific colors\n\ndurham_climate |&gt;\n  mutate(\n    month = fct_relevel(month, month.name),\n    season = case_when(\n      month %in% c(\"December\", \"January\", \"February\") ~ \"Winter\",\n      month %in% c(\"March\", \"April\", \"May\") ~ \"Spring\",\n      month %in% c(\"June\", \"July\", \"August\") ~ \"Summer\",\n      month %in% c(\"September\", \"October\", \"November\") ~ \"Fall\",\n    )\n  ) |&gt;\n  ggplot(\n    aes(x = month, y = avg_high_f, group = 1)\n    ) +\n  geom_line() +\n  geom_point(\n    aes(fill = season),\n    shape = \"circle filled\", size = 4,\n    color = \"black\", stroke = 1\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Winter\" = \"lightskyblue1\",\n      \"Spring\" = \"chartreuse3\",\n      \"Summer\" = \"gold2\",\n      \"Fall\" = \"lightsalmon4\"\n    )\n  ) + \n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/09-data-import.html#add-legend-for-season-to-top-of-plot",
+    "href": "slides/09-data-import.html#add-legend-for-season-to-top-of-plot",
+    "title": "Data Importation",
+    "section": "3. Add legend for season to top of plot",
+    "text": "3. Add legend for season to top of plot\n\ndurham_climate |&gt;\n  mutate(\n    month = fct_relevel(month, month.name),\n    season = case_when(\n      month %in% c(\"December\", \"January\", \"February\") ~ \"Winter\",\n      month %in% c(\"March\", \"April\", \"May\") ~ \"Spring\",\n      month %in% c(\"June\", \"July\", \"August\") ~ \"Summer\",\n      month %in% c(\"September\", \"October\", \"November\") ~ \"Fall\",\n    )\n  ) |&gt;\n  ggplot(\n    aes(x = month, y = avg_high_f, group = 1)\n    ) +\n  geom_line() +\n  geom_point(\n    aes(fill = season),\n    shape = \"circle filled\", size = 4,\n    color = \"black\", stroke = 1\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Winter\" = \"lightskyblue1\",\n      \"Spring\" = \"chartreuse3\",\n      \"Summer\" = \"gold2\",\n      \"Fall\" = \"lightsalmon4\"\n    )\n  ) + \n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal() + \n  theme(legend.position = \"top\")"
+  },
+  {
+    "objectID": "slides/09-data-import.html#order-legend-chronologically",
+    "href": "slides/09-data-import.html#order-legend-chronologically",
+    "title": "Data Importation",
+    "section": "4. Order legend chronologically",
+    "text": "4. Order legend chronologically\n\ndurham_climate |&gt;\n  mutate(\n    month = fct_relevel(month, month.name),\n    season = case_when(\n      month %in% c(\"December\", \"January\", \"February\") ~ \"Winter\",\n      month %in% c(\"March\", \"April\", \"May\") ~ \"Spring\",\n      month %in% c(\"June\", \"July\", \"August\") ~ \"Summer\",\n      month %in% c(\"September\", \"October\", \"November\") ~ \"Fall\",\n    ),\n    season = fct_relevel(season, \"Winter\", \"Spring\", \"Summer\", \"Fall\")\n  ) |&gt;\n  ggplot(\n    aes(x = month, y = avg_high_f, group = 1)\n    ) +\n  geom_line() +\n  geom_point(\n    aes(fill = season),\n    shape = \"circle filled\", size = 4,\n    color = \"black\", stroke = 1\n  ) +\n  scale_fill_manual(\n    values = c(\n      \"Winter\" = \"lightskyblue1\",\n      \"Spring\" = \"chartreuse3\",\n      \"Summer\" = \"gold2\",\n      \"Fall\" = \"lightsalmon4\"\n    )\n  ) + \n  labs(\n    x = \"Month\",\n    y = \"Average high temperature (F)\",\n    title = \"Durham climate\"\n  ) +\n  theme_minimal() + \n  theme(legend.position = \"top\")"
+  },
+  {
+    "objectID": "slides/09-data-import.html#task-2-pivot-to-replicate-this",
+    "href": "slides/09-data-import.html#task-2-pivot-to-replicate-this",
+    "title": "Data Importation",
+    "section": "Task 2: pivot to replicate this…",
+    "text": "Task 2: pivot to replicate this…\n\n\n\n\n\n\n\n\nGive it a shot in your ae-08 .qmd file… you can ignore the prettification we walked through for now."
   },
   {
     "objectID": "slides/09-data-import.html#data-science-and-statistical-thinking",
