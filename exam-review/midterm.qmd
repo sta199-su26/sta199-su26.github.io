@@ -49,7 +49,7 @@ iv. Inside `ggplot` or `geom_xxx`, what does the aesthetic mapping `aes` do?
 v.  What is the difference between `if_else` and `case_when`?
 vi. What is the difference between `filter` and `select`?
 vii. What does `group_by` do?
-viii. If I have a column of numbers, what is the definition of the 38% quantile? - Could you sketch a cartoon of what this looks like? - Is the 38% quantile smaller than, bigger than, or equal to the median, or do you not have enough information to say?
+viii. If I have a column of numbers, what is the definition of the 38% quantile? Is the 38% quantile smaller than, bigger than, or equal to the median, or do you not have enough information to say?
 
 # Visual understanding
 
@@ -686,7 +686,7 @@ question <- question + 1
 
 ### Question `{r} question`
 
-Which distribution of annual salaries has a higher standard deviation?
+Which distribution of annual salaries has a higher variance?
 
 a.  Hourly workers
 
