@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Application Exercises – STA 199</title>
+<title>Exam Reviews – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,9 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./lab.html" rel="prev">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,71 +67,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-ae-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-ae-listing'] = new List('listing-ae-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="style/sta199.scss">
-<meta property="og:title" content="Application Exercises – STA 199">
+<meta property="og:title" content="Exam Reviews – STA 199">
 <meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Application Exercises – STA 199">
+<meta name="twitter:title" content="Exam Reviews – STA 199">
 <meta name="twitter:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
 <meta name="twitter:image" content="https://sta199-su26.github.io/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
@@ -150,7 +89,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ae.html">Application Exercises</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Exam Reviews</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -273,7 +212,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ae.html" class="sidebar-item-text sidebar-link active">
+  <a href="./ae.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Application Exercises</span></a>
   </div>
 </li>
@@ -290,7 +229,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Application Exercises</h1>
+<h1 class="title">Exam Reviews</h1>
 </div>
 
 
@@ -307,158 +246,7 @@ window.Quarto = {
 </header>
 
 
-<p>All application exercises (AEs) are due by the end of lecture (or, precisely, by 10:45 am) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, <strong>commit and then push</strong> your change to your AE repo. AEs are graded for engagement, not accuracy.</p>
-<p>More AEs to be added as the semester progresses.</p>
-<p><br></p>
-<div id="listing-ae-listing" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Title
-</th>
-<th>
-Subtitle
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1779929543566" data-listing-reading-time-sort="2" data-listing-word-count-sort="398" data-listing-title-sort="AE 00: Make a GitHub" data-listing-filename-sort="ae-00-github.qmd">
-<td>
-<a href="./ae/ae-00-github.html" class="title listing-title">AE 00: Make a GitHub</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="4" data-listing-word-count-sort="751" data-listing-title-sort="AE 01: Meet the penguins" data-listing-filename-sort="ae-01-github.qmd">
-<td>
-<a href="./ae/ae-01-github.html" class="title listing-title">AE 01: Meet the penguins</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="1" data-listing-word-count-sort="159" data-listing-title-sort="AE 02: Penguin peekaboo" data-listing-filename-sort="ae-02-github.qmd">
-<td>
-<a href="./ae/ae-02-github.html" class="title listing-title">AE 02: Penguin peekaboo</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="3" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="8" data-listing-word-count-sort="1549" data-listing-title-sort="AE 03: NYC flights + data wrangling" data-listing-filename-sort="ae-03-github-A.qmd">
-<td>
-<a href="./ae/ae-03-github-A.html" class="title listing-title">AE 03: NYC flights + data wrangling</a>
-</td>
-<td>
-<span class="listing-subtitle">Suggested answers</span>
-</td>
-</tr>
-<tr data-index="4" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="8" data-listing-word-count-sort="1432" data-listing-title-sort="AE 03: NYC flights + data wrangling" data-listing-filename-sort="ae-03-github.qmd">
-<td>
-<a href="./ae/ae-03-github.html" class="title listing-title">AE 03: NYC flights + data wrangling</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="5" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="3" data-listing-word-count-sort="449" data-listing-title-sort="AE 04: Gerrymandering + data exploration I" data-listing-filename-sort="ae-04-github-A.qmd">
-<td>
-<a href="./ae/ae-04-github-A.html" class="title listing-title">AE 04: Gerrymandering + data exploration I</a>
-</td>
-<td>
-<span class="listing-subtitle">Suggested answers</span>
-</td>
-</tr>
-<tr data-index="6" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="2" data-listing-word-count-sort="331" data-listing-title-sort="AE 04: Gerrymandering + data exploration I" data-listing-filename-sort="ae-04-github.qmd">
-<td>
-<a href="./ae/ae-04-github.html" class="title listing-title">AE 04: Gerrymandering + data exploration I</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="7" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="2" data-listing-word-count-sort="378" data-listing-title-sort="AE 05: Gerrymandering + data exploration II" data-listing-filename-sort="ae-05-github-A.qmd">
-<td>
-<a href="./ae/ae-05-github-A.html" class="title listing-title">AE 05: Gerrymandering + data exploration II</a>
-</td>
-<td>
-<span class="listing-subtitle">Suggested answers</span>
-</td>
-</tr>
-<tr data-index="8" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="1" data-listing-word-count-sort="110" data-listing-title-sort="AE 05: Gerrymandering + data exploration II" data-listing-filename-sort="ae-05-github.qmd">
-<td>
-<a href="./ae/ae-05-github.html" class="title listing-title">AE 05: Gerrymandering + data exploration II</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="9" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="6" data-listing-word-count-sort="1184" data-listing-title-sort="AE 06: Tidying Stat Sci" data-listing-filename-sort="ae-06-github-A.qmd">
-<td>
-<a href="./ae/ae-06-github-A.html" class="title listing-title">AE 06: Tidying Stat Sci</a>
-</td>
-<td>
-<span class="listing-subtitle">Suggested answers</span>
-</td>
-</tr>
-<tr data-index="10" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="3" data-listing-word-count-sort="492" data-listing-title-sort="AE 06: Tidying Stat Sci" data-listing-filename-sort="ae-06-github.qmd">
-<td>
-<a href="./ae/ae-06-github.html" class="title listing-title">AE 06: Tidying Stat Sci</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="11" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="5" data-listing-word-count-sort="824" data-listing-title-sort="AE 07: Joining" data-listing-filename-sort="ae-07-github-A.qmd">
-<td>
-<a href="./ae/ae-07-github-A.html" class="title listing-title">AE 07: Joining</a>
-</td>
-<td>
-<span class="listing-subtitle">Suggested answers</span>
-</td>
-</tr>
-<tr data-index="12" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="3" data-listing-word-count-sort="534" data-listing-title-sort="AE 07: Joining" data-listing-filename-sort="ae-07-github.qmd">
-<td>
-<a href="./ae/ae-07-github.html" class="title listing-title">AE 07: Joining</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="13" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="2" data-listing-word-count-sort="338" data-listing-title-sort="AE 08: Durham climate + factors" data-listing-filename-sort="ae-08-github.qmd">
-<td>
-<a href="./ae/ae-08-github.html" class="title listing-title">AE 08: Durham climate + factors</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="14" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="3" data-listing-word-count-sort="480" data-listing-title-sort="AE 09: Data Imports &amp; Exports" data-listing-filename-sort="ae-09-github.qmd">
-<td>
-<a href="./ae/ae-09-github.html" class="title listing-title">AE 09: Data Imports &amp; Exports</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="15" data-listing-file-modified-sort="1779929543567" data-listing-reading-time-sort="2" data-listing-word-count-sort="384" data-listing-title-sort="AE 10: Trends in instructional staff employees in universities" data-listing-filename-sort="ae-10-github.qmd">
-<td>
-<a href="./ae/ae-10-github.html" class="title listing-title">AE 10: Trends in instructional staff employees in universities</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-<p><br></p>
-
+<p>See sidebar for <strong>Midterm Review Questions.</strong></p>
 
 
 
@@ -880,15 +668,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./lab.html" class="pagination-link" aria-label="Labs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Labs</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -897,7 +676,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/exam-review.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #f21118;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
