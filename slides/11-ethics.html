@@ -125,8 +125,10 @@ window.Quarto = {
 </script><link rel="stylesheet" href="../style/sta199.scss">
 <meta property="og:title" content="Ethics in Data Science – STA 199">
 <meta property="og:description" content="Lecture 11">
-<meta property="og:image" content="https://sta199-su26.github.io/slides/images/14/exercise-cancer-time.png">
+<meta property="og:image" content="https://sta199-su26.github.io/slides/img/00/personal_inj.png">
 <meta property="og:site_name" content="STA 199">
+<meta property="og:image:height" content="1006">
+<meta property="og:image:width" content="1724">
 <meta name="twitter:title" content="Ethics in Data Science – STA 199">
 <meta name="twitter:description" content="Lecture 11">
 <meta name="twitter:image" content="https://sta199-su26.github.io/slides/img/twitter-card-ks.pdf">
@@ -292,6 +294,7 @@ window.Quarto = {
 <a href="#misrepresentation" id="toc-misrepresentation" class="nav-link" data-scroll-target="#misrepresentation">Misrepresentation</a>
   <ul class="collapse">
 <li><a href="#misrepresenting-data-science-results" id="toc-misrepresenting-data-science-results" class="nav-link" data-scroll-target="#misrepresenting-data-science-results">Misrepresenting data science results</a></li>
+  <li><a href="#recall-from-day-1" id="toc-recall-from-day-1" class="nav-link" data-scroll-target="#recall-from-day-1">Recall from day 1…</a></li>
   <li><a href="#causality---time-coverage" id="toc-causality---time-coverage" class="nav-link" data-scroll-target="#causality---time-coverage">Causality - TIME coverage</a></li>
   <li><a href="#causality---la-times-coverage" id="toc-causality---la-times-coverage" class="nav-link" data-scroll-target="#causality---la-times-coverage">Causality - LA Times coverage</a></li>
   <li><a href="#causality---original-study" id="toc-causality---original-study" class="nav-link" data-scroll-target="#causality---original-study">Causality - Original study</a></li>
@@ -300,8 +303,8 @@ window.Quarto = {
   <li><a href="#axes-and-scales---cost-of-gas-1" id="toc-axes-and-scales---cost-of-gas-1" class="nav-link" data-scroll-target="#axes-and-scales---cost-of-gas-1">Axes and scales - Cost of gas</a></li>
   <li><a href="#axes-and-scales---covid-in-ga" id="toc-axes-and-scales---covid-in-ga" class="nav-link" data-scroll-target="#axes-and-scales---covid-in-ga">Axes and scales - COVID in GA</a></li>
   <li><a href="#axes-and-scales---covid-in-ga-1" id="toc-axes-and-scales---covid-in-ga-1" class="nav-link" data-scroll-target="#axes-and-scales---covid-in-ga-1">Axes and scales - COVID in GA</a></li>
-  <li><a href="#axes-and-scales---pp-services" id="toc-axes-and-scales---pp-services" class="nav-link" data-scroll-target="#axes-and-scales---pp-services">Axes and scales - PP services</a></li>
-  <li><a href="#axes-and-scales---pp-services-1" id="toc-axes-and-scales---pp-services-1" class="nav-link" data-scroll-target="#axes-and-scales---pp-services-1">Axes and scales - PP services</a></li>
+  <li><a href="#axes-and-scales---planned-parenthood-services" id="toc-axes-and-scales---planned-parenthood-services" class="nav-link" data-scroll-target="#axes-and-scales---planned-parenthood-services">Axes and scales - Planned Parenthood services</a></li>
+  <li><a href="#axes-and-scales---planned-parenthood-services-1" id="toc-axes-and-scales---planned-parenthood-services-1" class="nav-link" data-scroll-target="#axes-and-scales---planned-parenthood-services-1">Axes and scales - Planned Parenthood services</a></li>
   <li><a href="#maps-and-areas---voting-map" id="toc-maps-and-areas---voting-map" class="nav-link" data-scroll-target="#maps-and-areas---voting-map">Maps and areas - Voting map</a></li>
   <li><a href="#maps-and-areas---two-alternate-tales" id="toc-maps-and-areas---two-alternate-tales" class="nav-link" data-scroll-target="#maps-and-areas---two-alternate-tales">Maps and areas - Two alternate tales</a></li>
   <li><a href="#maps-and-areas---voting-percentages" id="toc-maps-and-areas---voting-percentages" class="nav-link" data-scroll-target="#maps-and-areas---voting-percentages">Maps and areas - Voting percentages</a></li>
@@ -330,8 +333,8 @@ window.Quarto = {
   <li>
 <a href="#data-privacy" id="toc-data-privacy" class="nav-link" data-scroll-target="#data-privacy">Data privacy</a>
   <ul class="collapse">
-<li><a href="#this-would-bevery-bad-for-jz" id="toc-this-would-bevery-bad-for-jz" class="nav-link" data-scroll-target="#this-would-bevery-bad-for-jz">This would be…very bad for JZ</a></li>
-  <li><a href="#oy-vey" id="toc-oy-vey" class="nav-link" data-scroll-target="#oy-vey">Oy vey</a></li>
+<li><a href="#according-to-my-family-members-this-would-bevery-bad-for-me" id="toc-according-to-my-family-members-this-would-bevery-bad-for-me" class="nav-link" data-scroll-target="#according-to-my-family-members-this-would-bevery-bad-for-me">According to my family members, this would be…very bad for me</a></li>
+  <li><a href="#yikes" id="toc-yikes" class="nav-link" data-scroll-target="#yikes">Yikes…</a></li>
   <li><a href="#your-data" id="toc-your-data" class="nav-link" data-scroll-target="#your-data">“Your” data</a></li>
   <li><a href="#privacy-of-your-data" id="toc-privacy-of-your-data" class="nav-link" data-scroll-target="#privacy-of-your-data">Privacy of your data</a></li>
   <li><a href="#sharing-your-data" id="toc-sharing-your-data" class="nav-link" data-scroll-target="#sharing-your-data">Sharing your data</a></li>
@@ -365,7 +368,7 @@ window.Quarto = {
   <li><a href="#parting-thoughts" id="toc-parting-thoughts" class="nav-link" data-scroll-target="#parting-thoughts">Parting thoughts</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/11-ethics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="14-ethics-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/11-ethics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="11-ethics-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
@@ -404,26 +407,46 @@ window.Quarto = {
 
 
 </header><section id="today" class="level2"><h2 class="anchored" data-anchor-id="today">Today</h2>
-<p>No technique, and no AE. Just sit back and ponder:</p>
 <ul>
 <li><p>Data do not speak for themselves. They require an interpretive lens, not all of which are created equal;</p></li>
 <li><p>The practice of data science is not ethically neutral or value-free.</p></li>
 </ul></section><section id="misrepresentation" class="level1 page-columns page-full"><h1>Misrepresentation</h1>
-<section id="misrepresenting-data-science-results" class="level2"><h2 class="anchored" data-anchor-id="misrepresenting-data-science-results">Misrepresenting data science results</h2>
+<section id="misrepresenting-data-science-results" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="misrepresenting-data-science-results">Misrepresenting data science results</h2>
 <p>Some common ways people do this, either intentionally or unintentionally, include:</p>
 <div class="incremental">
 <ul class="incremental">
 <li><p>Claiming <strong>causality</strong> where it’s not in the scope of inference of the underlying study</p></li>
+<li><p>Generalizing results to some <strong>broader population</strong> that is not comparable to the underlying study population</p></li>
 <li><p>Distorting <strong>axes and scales</strong> to make the data tell a different story</p></li>
 <li><p>Visualizing <strong>spatial areas instead of human density</strong> for issues that depend on and affect humans</p></li>
 <li><p>Omitting <strong>uncertainty</strong> in reporting</p></li>
 </ul>
 </div>
+</section><section id="recall-from-day-1" class="level2"><h2 class="anchored" data-anchor-id="recall-from-day-1">Recall from day 1…</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/00/personal_inj.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div style="font-size: 0.6em; margin-top: 0.5em;">
+<p><a href="https://martinmontilino.com/april-20th-deadly-day-for-car-crashes/"> Personal Injury Law Firm Blog Post </a></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/00/communicate.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div style="font-size: 0.6em; margin-top: 0.5em;">
+<p>Harper and Palayew’s (2019) study, <em>“The annual cannabis holiday and fatal traffic crashes”</em>, available <a href="https://osf.io/qnrg6/">here</a>.</p>
+</div>
+</div>
+</div>
 </section><section id="causality---time-coverage" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="causality---time-coverage">Causality - TIME coverage</h2>
 <div class="question">
 <p>How plausible is the statement in the title of this article?</p>
 </div>
-<p><img src="images/14/exercise-cancer-time.png" class="img-fluid"></p>
+<p><img src="img/11/exercise-cancer-time.png" class="img-fluid"></p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Alice Park. <a href="https://time.com/4330041/reduce-cancer-risk-exercise/">Exercise Can Lower Risk of Some Cancers By 20%</a>. Time Magazine. 16 May 2016.</p>
@@ -431,12 +454,12 @@ window.Quarto = {
 <div class="question">
 <p>What does “research shows” mean?</p>
 </div>
-<p><img src="images/14/exercise-cancer-latimes.png" class="img-fluid"></p>
+<p><img src="img/11/exercise-cancer-latimes.png" class="img-fluid"></p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Melissa Healy. <a href="https://www.latimes.com/science/sciencenow/la-sci-sn-exercising-cancer-20160516-story.html">Exercising drives down risk for 13 cancers, research shows</a>.<br>
 Los Angeles Times. 16 May 2016.</p>
-</div></div></section><section id="causality---original-study" class="level2"><h2 class="anchored" data-anchor-id="causality---original-study">Causality - Original study</h2>
+</div></div></section><section id="causality---original-study" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="causality---original-study">Causality - Original study</h2>
 <p>Moore, Steven C., et al.&nbsp;<a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2521826"><strong>“Association of leisure-time physical activity with risk of 26 types of cancer in 1.44 million adults.”</strong></a> JAMA internal medicine 176.6 (2016): 816-825.</p>
 <ul>
 <li>
@@ -454,7 +477,7 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 <div class="question">
 <p>What is the difference between these two pictures? Which presents a better way to represent these data?</p>
 </div>
-<p><img src="images/14/axis-start-at-0.png" class="img-fluid"></p>
+<p><img src="img/11/axis-start-at-0.png" class="img-fluid"></p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Christopher Ingraham. <a href="https://www.washingtonpost.com/business/2019/10/14/youve-been-reading-charts-wrong-heres-how-pro-does-it/">“You’ve been reading charts wrong. Here’s how a pro does it.”</a>. The Washington Post. 14 October 2019.</p>
@@ -462,7 +485,10 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 <div class="question">
 <p>What is wrong with this picture? How would you correct it?</p>
 </div>
-<p><img src="images/14/cost-of-gas.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/cost-of-gas.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
 </section><section id="axes-and-scales---cost-of-gas-1" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="axes-and-scales---cost-of-gas-1">Axes and scales - Cost of gas</h2>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
@@ -498,29 +524,38 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 <div class="question">
 <p>What is wrong with this picture? How would you correct it?</p>
 </div>
-<p><img src="images/14/ga-dph-declining-bars.jpg" class="img-fluid" width="750"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/ga-dph-declining-bars.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
+</figure>
+</div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Georgia Department of Public Health. 11 May 2020.</p>
 </div></div></section><section id="axes-and-scales---covid-in-ga-1" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="axes-and-scales---covid-in-ga-1">Axes and scales - COVID in GA</h2>
-<p><img src="images/14/ga-dph-corrected-bars.png" class="img-fluid" width="900"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/ga-dph-corrected-bars.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="900"></p>
+</figure>
+</div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Lucy D’Agostino McGowan. <a href="https://livefreeordichotomize.com/posts/2020-05-17-graph-detective/">Graph detective</a>. Live Free or Dichotomize. 17 May 2020.</p>
-</div></div></section><section id="axes-and-scales---pp-services" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="axes-and-scales---pp-services">Axes and scales - PP services</h2>
+</div></div></section><section id="axes-and-scales---planned-parenthood-services" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="axes-and-scales---planned-parenthood-services">Axes and scales - Planned Parenthood services</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="question">
 <p>What is wrong with this picture? How would you correct it?</p>
 </div>
-</div><div class="column" style="width:60%;">
-<p><img src="images/14/pp-misleading.png" class="img-fluid"></p>
+</div><div class="column" style="vertical-align: top;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/pp-misleading.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p>Timothy B. Lee. <a href="https://www.vox.com/2015/9/29/9417845/planned-parenthood-terrible-chart">Whatever you think of Planned Parenthood, this is a terrible and dishonest chart</a>. Vox. 29 September 2019.</p>
-</div></div></section><section id="axes-and-scales---pp-services-1" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="axes-and-scales---pp-services-1">Axes and scales - PP services</h2>
+<p>Timothy B. Lee. <a href="https://www.vox.com/2015/9/29/9417845/planned-parenthood-terrible-chart">Whatever you think of Planned Parenthood, this is a terrible and misleading chart</a>. Vox. 29 September 2019.</p>
+</div></div></section><section id="axes-and-scales---planned-parenthood-services-1" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="axes-and-scales---planned-parenthood-services-1">Axes and scales - Planned Parenthood services</h2>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pp</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
 <span>  year <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2006</span>, <span class="fl">2006</span>, <span class="fl">2013</span>, <span class="fl">2013</span><span class="op">)</span>,</span>
@@ -573,28 +608,43 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 <div class="question">
 <p>Do you recognize this map? What does it show?</p>
 </div>
-<p><img src="images/14/election-2016-county.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/election-2016-county.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Lazaro Gamio. <a href="https://www.washingtonpost.com/graphics/politics/2016-election/how-election-maps-lie/">“Election maps are telling you big lies about small things”</a>. The Washington Post. 1 Nov 2016.</p>
 </div></div></section><section id="maps-and-areas---two-alternate-tales" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="maps-and-areas---two-alternate-tales">Maps and areas - Two alternate tales</h2>
 <div class="columns">
 <div class="column">
-<p><img src="images/14/citizens-for-trump.png" class="img-fluid" width="350"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/citizens-for-trump.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="320"></p>
+</figure>
+</div>
 </div><div class="column">
-<p><img src="images/14/counties-for-trump.png" class="img-fluid" width="350"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/counties-for-trump.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="320"></p>
+</figure>
+</div>
 </div>
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Alberto Cairo. <a href="https://visualtrumperytour.wordpress.com/">Visual Trumpery talk</a>.</p>
 </div></div></section><section id="maps-and-areas---voting-percentages" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="maps-and-areas---voting-percentages">Maps and areas - Voting percentages</h2>
-<p><img src="images/14/cairo-vote-percentages.png" class="img-fluid" width="800"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/cairo-vote-percentages.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
+</figure>
+</div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Alberto Cairo. <a href="https://visualtrumperytour.wordpress.com/">Visual Trumpery talk</a>.</p>
 </div></div></section><section id="maps-and-areas---voting-percentages-1" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="maps-and-areas---voting-percentages-1">Maps and areas - Voting percentages</h2>
-<p><img src="images/14/cairo-what-matters.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/cairo-what-matters.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Alberto Cairo. <a href="https://visualtrumperytour.wordpress.com/">Visual Trumpery talk</a>.</p>
@@ -624,7 +674,7 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Alberto Cairo. <a href="https://ec.europa.eu/eurostat/cros/powerfromstatistics/OR/PfS-OutlookReport-Cairo.pdf">“Uncertainty and Graphicacy: How Should Statisticians Journalists and Designers Reveal Uncertainty in Graphics for Public Consumption?”</a>, Power from Statistics: Data Information and Knowledge, 2017.</p>
 </div></div></section></section><section id="algorithmic-bias" class="level1 page-columns page-full"><h1>Algorithmic bias</h1>
-<section id="california-proposition-25-2020" class="level2 medium"><h2 class="medium anchored" data-anchor-id="california-proposition-25-2020">California Proposition 25 (2020)</h2>
+<section id="california-proposition-25-2020" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="california-proposition-25-2020">California Proposition 25 (2020)</h2>
 <p>Popular referendum on 2018’s Senate Bill 10:</p>
 <div class="incremental">
 <ul class="incremental">
@@ -644,7 +694,7 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 <li><p>Judges would consult this prediction to make bail decisions.</p></li>
 </ul>
 </div>
-</section><section id="what-might-risk-assessment-look-like" class="level2"><h2 class="anchored" data-anchor-id="what-might-risk-assessment-look-like">What might “risk assessment” look like?</h2>
+</section><section id="what-might-risk-assessment-look-like" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="what-might-risk-assessment-look-like">What might “risk assessment” look like?</h2>
 <p>Something we will study after spring break:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -654,8 +704,8 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 </div>
 </div>
 </div>
-<p>Above the line means high risk means no bail. Is this progress?</p>
-</section><section id="what-happens-when-we-try-predictive-policing" class="level2 small page-columns page-full"><h2 class="small anchored" data-anchor-id="what-happens-when-we-try-predictive-policing">What happens when we try “predictive policing”?</h2>
+<p>Let’s say above the line means high risk, which means no bail. Is this progress?</p>
+</section><section id="what-happens-when-we-try-predictive-policing" class="level2 small scrollable page-columns page-full"><h2 class="small scrollable anchored" data-anchor-id="what-happens-when-we-try-predictive-policing">What happens when we try “predictive policing”?</h2>
 <p>2016 ProPublica article on algorithm used for rating a defendant’s risk of future crime:</p>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -668,7 +718,7 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 </blockquote>
 </div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/14/machine-bias.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
+<figure class="figure"><p><img src="img/11/machine-bias.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="800"></p>
 </figure>
 </div>
 </div>
@@ -685,9 +735,9 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:30%;">
-<p><img src="images/14/machine-bias-petty-theft-1.png" class="quarto-figure quarto-figure-center" width="300" height="250"><img src="images/14/machine-bias-petty-theft-2.png" class="quarto-figure quarto-figure-center" width="300" height="180"></p>
+<p><img src="img/11/machine-bias-petty-theft-1.png" class="quarto-figure quarto-figure-center" width="300" height="250"><img src="img/11/machine-bias-petty-theft-2.png" class="quarto-figure quarto-figure-center" width="300" height="180"></p>
 </div><div class="column" style="width:30%;">
-<p><img src="images/14/machine-bias-drug-posession-1.png" class="quarto-figure quarto-figure-center" width="300" height="250"><img src="images/14/machine-bias-drug-posession-2.png" class="quarto-figure quarto-figure-center" width="300" height="180"></p>
+<p><img src="img/11/machine-bias-drug-posession-1.png" class="quarto-figure quarto-figure-center" width="300" height="250"><img src="img/11/machine-bias-drug-posession-2.png" class="quarto-figure quarto-figure-center" width="300" height="180"></p>
 </div>
 </div>
 </section><section id="but-race-wasnt-in-my-model" class="level2"><h2 class="anchored" data-anchor-id="but-race-wasnt-in-my-model">“But race wasn’t in my model”</h2>
@@ -700,7 +750,7 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 
 </div><div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/14/machine-bias-risk-scores.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="480"></p>
+<figure class="figure"><p><img src="img/11/machine-bias-risk-scores.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="480"></p>
 </figure>
 </div>
 </div>
@@ -753,15 +803,15 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 </section><section id="wru-package-2" class="level2"><h2 class="anchored" data-anchor-id="wru-package-2">
 <strong>wru</strong> package</h2>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">me</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>surname <span class="op">=</span> <span class="st">"Zito"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">me</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>surname <span class="op">=</span> <span class="st">"Solarz"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/wru/man/predict_race.html">predict_race</a></span><span class="op">(</span>voter.file <span class="op">=</span> <span class="va">me</span>, surname.only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  surname  pred.whi   pred.bla   pred.his    pred.asi   pred.oth
-1    Zito 0.9220001 0.00419631 0.03968994 0.009652312 0.02446131</code></pre>
+<pre><code>  surname  pred.whi pred.bla    pred.his    pred.asi   pred.oth
+1  Solarz 0.9410478        0 0.003365333 0.003998592 0.05158826</code></pre>
 </div>
 </div>
-</section><section id="california-prop-25-did-not-pass" class="level2"><h2 class="anchored" data-anchor-id="california-prop-25-did-not-pass">California Prop 25 did not pass</h2>
+</section><section id="california-prop-25-did-not-pass" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="california-prop-25-did-not-pass">California Prop 25 did not pass</h2>
 <p>The cash bail system was retained:</p>
 <table class="caption-top table">
 <thead><tr class="header">
@@ -790,25 +840,28 @@ Sharon Begley. <a href="https://www.statnews.com/2016/05/16/exercise-prevent-can
 </ul>
 </div>
 </section><section id="another-algorithmic-decision" class="level2"><h2 class="anchored" data-anchor-id="another-algorithmic-decision">Another algorithmic decision…</h2>
-<p><img src="images/14/lending.png" class="img-fluid"> Armies of stats PhDs go to work on these models. They have no training in the ethics of what they’re doing.</p>
+<p><img src="img/11/lending.png" class="img-fluid"> Armies of stats PhDs go to work on these models. They have no training in the ethics of what they’re doing.</p>
 </section><section id="a-success-story" class="level2"><h2 class="anchored" data-anchor-id="a-success-story">A success story?</h2>
 <p>. . .</p>
 <p><code>Data</code> + <code>Model</code> to predict timing of menstrual cycle:</p>
-<p><img src="images/14/flo.png" class="img-fluid" style="width:24.0%"><img src="images/14/clue.png" class="img-fluid" style="width:24.0%"><img src="images/14/per_calendar.png" class="img-fluid" style="width:24.0%"><img src="images/14/stardust.png" class="img-fluid" style="width:24.0%"></p>
+<p><img src="img/11/flo.png" class="img-fluid" style="width:24.0%"><img src="img/11/clue.png" class="img-fluid" style="width:24.0%"><img src="img/11/per_calendar.png" class="img-fluid" style="width:24.0%"><img src="img/11/stardust.png" class="img-fluid" style="width:24.0%"></p>
 <p>. . .</p>
 <p>A perfect microcosm of the themes of our course, and maybe one of the real triumphs of data and modeling improving modern life.</p>
 <p>. . .</p>
 <p>…but what if you learned they were selling your data?</p>
 </section></section><section id="data-privacy" class="level1 page-columns page-full"><h1>Data privacy</h1>
 <p>(aka the reason Tony Soprano ripped the GPS out of this Escalade)</p>
-<section id="this-would-bevery-bad-for-jz" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="this-would-bevery-bad-for-jz">This would be…very bad for JZ</h2>
-<p><img src="images/14/nyt_data_privacy.png" class="img-fluid"></p>
+<section id="according-to-my-family-members-this-would-bevery-bad-for-me" class="level2 scrollable page-columns page-full"><h2 class="scrollable anchored" data-anchor-id="according-to-my-family-members-this-would-bevery-bad-for-me">According to my family members, this would be…very bad for me</h2>
+<p><img src="img/11/nyt_data_privacy.png" class="img-fluid"></p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Kashmir Hill <a href="https://www.nytimes.com/2024/03/11/technology/carmakers-driver-tracking-insurance.html">Automakers Are Sharing Consumers’ Driving Behavior With Insurance Companies</a>.<br>
 New York Times. March 11, 2024.</p>
-</div></div></section><section id="oy-vey" class="level2 scrollable page-columns page-full"><h2 class="scrollable anchored" data-anchor-id="oy-vey">Oy vey</h2>
-<p><img src="images/14/nih-woops.png" class="img-fluid" style="width:60.0%"></p>
+</div></div></section><section id="yikes" class="level2 scrollable page-columns page-full"><h2 class="scrollable anchored" data-anchor-id="yikes">Yikes…</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/nih-woops.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Mike McIntire <a href="https://www.nytimes.com/2026/01/24/us/children-genetics-race-science.html">Genetic Data From Over 20,000 U.S. Children Misused for ‘Race Science’</a>.<br>
@@ -821,7 +874,7 @@ New York Times. Jan.&nbsp;24, 2026.</p>
 <div class="question">
 <p>What pieces of data have you left on the internet today? Think through everything you’ve logged into, clicked on, checked in, either actively or automatically, that might be tracking you. Do you know where that data is stored? Who it can be accessed by? Whether it’s shared with others?</p>
 </div>
-</section><section id="sharing-your-data" class="level2"><h2 class="anchored" data-anchor-id="sharing-your-data">Sharing your data</h2>
+</section><section id="sharing-your-data" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="sharing-your-data">Sharing your data</h2>
 <div class="question">
 <p>What are you OK with sharing?</p>
 </div>
@@ -875,17 +928,20 @@ New York Times. Jan.&nbsp;24, 2026.</p>
 </ul>
 </div>
 </section><section id="aol-search-data-leak" class="level2 smaller page-columns page-full"><h2 class="smaller anchored" data-anchor-id="aol-search-data-leak">AOL search data leak</h2>
-<p><img src="images/14/aol-data-leak.png" class="img-fluid" width="800"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/thelma.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p>Michael Barbaro and Tom Zeller Jr.&nbsp;<a href="https://www.nytimes.com/2006/08/09/technology/09aol.html">A Face Is Exposed for AOL Searcher No.&nbsp;4417749</a>.<br>
+<p>Michael Barbaro and Tom Zeller Jr. <a href="https://www.nytimes.com/2006/08/09/technology/09aol.html">A Face Is Exposed for AOL Searcher No.&nbsp;4417749</a>.<br>
 New York Times. 9 August 2006.</p>
 </div></div></section><section id="ok-cupid-data-breach" class="level2"><h2 class="anchored" data-anchor-id="ok-cupid-data-breach">OK Cupid data breach</h2>
 <ul>
 <li><p>In 2016, researchers published data of 70,000 OkCupid users—including usernames, political leanings, drug usage, and intimate sexual details</p></li>
 <li><p>Researchers didn’t release the real names and pictures of OKCupid users, but their identities could easily be uncovered from the details provided, e.g.&nbsp;usernames</p></li>
 </ul></section><section id="ok-cupid-data-breach-1" class="level2"><h2 class="anchored" data-anchor-id="ok-cupid-data-breach-1">OK Cupid data breach</h2>
-<p><img src="images/14/okcupid-tweet.png" class="img-fluid"></p>
+<p><img src="img/11/okcupid-tweet.png" class="img-fluid"></p>
 </section><section id="ok-cupid-data-breach-2" class="level2"><h2 class="anchored" data-anchor-id="ok-cupid-data-breach-2">OK Cupid data breach</h2>
 <blockquote class="blockquote">
 <p>Some may object to the ethics of gathering and releasing this data. However, all the data found in the dataset are or were already publicly available, so releasing this dataset merely presents it in a more useful form.</p>
@@ -898,9 +954,15 @@ New York Times. 9 August 2006.</p>
 </section></section><section id="some-good-news" class="level1"><h1>Some good news?</h1>
 <section id="faster-more-accurate-cancer-screening" class="level2"><h2 class="anchored" data-anchor-id="faster-more-accurate-cancer-screening">Faster, more accurate cancer screening?</h2>
 <p>Augmenting doctors’ diagnostic capacity so that they make fewer mistakes, treat more people, and focus on other aspects of care:</p>
-<p><img src="images/14/aamc_cancer.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/aamc_cancer.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="700"></p>
+</figure>
+</div>
 </section><section id="recent-nobel-prize" class="level2"><h2 class="anchored" data-anchor-id="recent-nobel-prize">Recent Nobel Prize</h2>
-<p><img src="images/14/nobel.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/11/nobel.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="550"></p>
+</figure>
+</div>
 <ul>
 <li><p>AlphaFold2: “predicting 3D structures [of proteins] (<span class="math inline">\(y\)</span>) directly from the primary amino acid sequence (<span class="math inline">\(x\)</span>).”</p></li>
 <li><p>“researchers can now better understand antibiotic resistance and create images of enzymes that can decompose plastic.”</p></li>
@@ -908,7 +970,7 @@ New York Times. 9 August 2006.</p>
 <section id="how-charts-lie" class="level2"><h2 class="anchored" data-anchor-id="how-charts-lie">How Charts Lie</h2>
 <div class="columns">
 <div class="column">
-<p><img src="images/14/cairo-how-charts-lie.jpg" class="img-fluid" width="400"></p>
+<p><img src="img/11/cairo-how-charts-lie.jpg" class="img-fluid" width="400"></p>
 </div><div class="column">
 <p><a href="http://www.thefunctionalart.com/p/reviews.html">How Charts Lie</a></p>
 <p>Getting Smarter about Visual Information</p>
@@ -918,7 +980,7 @@ New York Times. 9 August 2006.</p>
 </section><section id="calling-bullshit" class="level2"><h2 class="anchored" data-anchor-id="calling-bullshit">Calling Bullshit</h2>
 <div class="columns">
 <div class="column">
-<p><img src="images/14/calling-bullshit.png" class="img-fluid" width="400"></p>
+<p><img src="img/11/calling-bullshit.png" class="img-fluid" width="400"></p>
 </div><div class="column">
 <p><a href="https://www.callingbullshit.org/">Calling Bullshit</a><br>
 The Art of Skepticism in a<br>
@@ -929,7 +991,7 @@ Data-Driven World</p>
 </section><section id="machine-bias" class="level2"><h2 class="anchored" data-anchor-id="machine-bias">Machine Bias</h2>
 <div class="columns">
 <div class="column">
-<p><img src="images/14/propublica-machine-bias.png" class="img-fluid" width="400"></p>
+<p><img src="img/11/propublica-machine-bias.png" class="img-fluid" width="400"></p>
 </div><div class="column">
 <p><a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias</a><br></p>
 <p>by Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner</p>
@@ -938,7 +1000,7 @@ Data-Driven World</p>
 </section><section id="ethics-and-data-science" class="level2"><h2 class="anchored" data-anchor-id="ethics-and-data-science">Ethics and Data Science</h2>
 <div class="columns">
 <div class="column">
-<p><img src="images/14/ethics-data-science.jpg" class="img-fluid" width="400"></p>
+<p><img src="img/11/ethics-data-science.jpg" class="img-fluid" width="400"></p>
 </div><div class="column">
 <p><a href="https://www.amazon.com/Ethics-Data-Science-Mike-Loukides-ebook/dp/B07GTC8ZN7">Ethics and Data Science</a><br></p>
 <p>by Mike Loukides, Hilary Mason, DJ Patil<br>
@@ -948,7 +1010,7 @@ Data-Driven World</p>
 </section><section id="weapons-of-math-destruction" class="level2"><h2 class="anchored" data-anchor-id="weapons-of-math-destruction">Weapons of Math Destruction</h2>
 <div class="columns">
 <div class="column">
-<p><img src="images/14/weapons-of-math-destruction.jpg" class="img-fluid" width="400"></p>
+<p><img src="img/11/weapons-of-math-destruction.jpg" class="img-fluid" width="400"></p>
 </div><div class="column">
 <p><a href="https://www.penguin.co.uk/books/304/304513/weapons-of-math-destruction/9780141985411.html">Weapons of Math Destruction</a><br>
 How Big Data Increases Inequality and Threatens Democracy<br></p>
@@ -958,7 +1020,7 @@ How Big Data Increases Inequality and Threatens Democracy<br></p>
 </section><section id="algorithms-of-oppression" class="level2"><h2 class="anchored" data-anchor-id="algorithms-of-oppression">Algorithms of Oppression</h2>
 <div class="columns">
 <div class="column">
-<p><img src="images/14/algorithms-of-oppression.jpg" class="img-fluid" width="400"></p>
+<p><img src="img/11/algorithms-of-oppression.jpg" class="img-fluid" width="400"></p>
 </div><div class="column">
 <p><a href="https://nyupress.org/9781479837243/algorithms-of-oppression/">Algorithms of Oppression</a><br>
 How Search Engines Reinforce Racism<br></p>
@@ -969,7 +1031,7 @@ How Search Engines Reinforce Racism<br></p>
 <p><a href="https://newsroom.ucla.edu/stories/how-ai-discriminates-and-what-that-means-for-your-google-habit">How AI discriminates and what that means for your Google habit</a><br>
 A conversation with UCLA internet studies scholar Safiya Noble<br></p>
 <p>by Julia Busiek</p>
-</section><section id="parting-thoughts" class="level2"><h2 class="anchored" data-anchor-id="parting-thoughts">Parting thoughts</h2>
+</section><section id="parting-thoughts" class="level2 scrollable smaller"><h2 class="scrollable smaller anchored" data-anchor-id="parting-thoughts">Parting thoughts</h2>
 <ul>
 <li><p>At some point during your data science learning journey you will learn tools that can be used unethically</p></li>
 <li><p>You might also be tempted to use your knowledge in a way that is ethically questionable either because of business goals or for the pursuit of further knowledge (or because your boss told you to do so)</p></li>

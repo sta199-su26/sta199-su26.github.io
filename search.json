@@ -2240,7 +2240,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Despicable Me    2010  849253947    73707997 11.5  PASS   ok        \n2 Se7en            1995  654701768    45863384 14.3  FAIL   notalk    \n3 The Time Trave…  2009  175976985    42343532  4.16 FAIL   dubious   \n4 Jurassic Park    1993 2307969149   101584911 22.7  PASS   ok        \n5 The Invention …  2009   55514015    20086035  2.76 FAIL   men"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Ender's Game     2013  151474382   110000000  1.38 FAIL   men       \n2 The Internship   2013  138345528    58000000  2.39 FAIL   notalk    \n3 My Cousin Vinny  1992  175761596    18263820  9.62 FAIL   notalk    \n4 Quinceanera      2006    4872236      462319 10.5  PASS   ok        \n5 The Savages      2007   19398097    10111891  1.92 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
@@ -2499,7 +2499,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Despicable Me    2010  849253947    73707997 11.5  PASS   ok        \n2 Se7en            1995  654701768    45863384 14.3  FAIL   notalk    \n3 The Time Trave…  2009  175976985    42343532  4.16 FAIL   dubious   \n4 Jurassic Park    1993 2307969149   101584911 22.7  PASS   ok        \n5 The Invention …  2009   55514015    20086035  2.76 FAIL   men"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Ender's Game     2013  151474382   110000000  1.38 FAIL   men       \n2 The Internship   2013  138345528    58000000  2.39 FAIL   notalk    \n3 My Cousin Vinny  1992  175761596    18263820  9.62 FAIL   notalk    \n4 Quinceanera      2006    4872236      462319 10.5  PASS   ok        \n5 The Savages      2007   19398097    10111891  1.92 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
@@ -6441,21 +6441,28 @@
     "href": "slides/11-ethics.html",
     "title": "Ethics in Data Science",
     "section": "",
-    "text": "No technique, and no AE. Just sit back and ponder:\n\nData do not speak for themselves. They require an interpretive lens, not all of which are created equal;\nThe practice of data science is not ethically neutral or value-free."
+    "text": "Data do not speak for themselves. They require an interpretive lens, not all of which are created equal;\nThe practice of data science is not ethically neutral or value-free."
   },
   {
     "objectID": "slides/11-ethics.html#today",
     "href": "slides/11-ethics.html#today",
     "title": "Ethics in Data Science",
     "section": "",
-    "text": "No technique, and no AE. Just sit back and ponder:\n\nData do not speak for themselves. They require an interpretive lens, not all of which are created equal;\nThe practice of data science is not ethically neutral or value-free."
+    "text": "Data do not speak for themselves. They require an interpretive lens, not all of which are created equal;\nThe practice of data science is not ethically neutral or value-free."
   },
   {
     "objectID": "slides/11-ethics.html#misrepresenting-data-science-results",
     "href": "slides/11-ethics.html#misrepresenting-data-science-results",
     "title": "Ethics in Data Science",
     "section": "Misrepresenting data science results",
-    "text": "Misrepresenting data science results\nSome common ways people do this, either intentionally or unintentionally, include:\n\n\nClaiming causality where it’s not in the scope of inference of the underlying study\nDistorting axes and scales to make the data tell a different story\nVisualizing spatial areas instead of human density for issues that depend on and affect humans\nOmitting uncertainty in reporting"
+    "text": "Misrepresenting data science results\nSome common ways people do this, either intentionally or unintentionally, include:\n\n\nClaiming causality where it’s not in the scope of inference of the underlying study\nGeneralizing results to some broader population that is not comparable to the underlying study population\nDistorting axes and scales to make the data tell a different story\nVisualizing spatial areas instead of human density for issues that depend on and affect humans\nOmitting uncertainty in reporting"
+  },
+  {
+    "objectID": "slides/11-ethics.html#recall-from-day-1",
+    "href": "slides/11-ethics.html#recall-from-day-1",
+    "title": "Ethics in Data Science",
+    "section": "Recall from day 1…",
+    "text": "Recall from day 1…\n\n\n\n\n\n\n\n Personal Injury Law Firm Blog Post \n\n\n\n\n\n\n\nHarper and Palayew’s (2019) study, “The annual cannabis holiday and fatal traffic crashes”, available here."
   },
   {
     "objectID": "slides/11-ethics.html#causality---time-coverage",
@@ -6504,56 +6511,56 @@
     "href": "slides/11-ethics.html#axes-and-scales---covid-in-ga",
     "title": "Ethics in Data Science",
     "section": "Axes and scales - COVID in GA",
-    "text": "Axes and scales - COVID in GA\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\nGeorgia Department of Public Health. 11 May 2020."
+    "text": "Axes and scales - COVID in GA\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\n\n\n\nGeorgia Department of Public Health. 11 May 2020."
   },
   {
     "objectID": "slides/11-ethics.html#axes-and-scales---covid-in-ga-1",
     "href": "slides/11-ethics.html#axes-and-scales---covid-in-ga-1",
     "title": "Ethics in Data Science",
     "section": "Axes and scales - COVID in GA",
-    "text": "Axes and scales - COVID in GA\n\n\n\nLucy D’Agostino McGowan. Graph detective. Live Free or Dichotomize. 17 May 2020."
+    "text": "Axes and scales - COVID in GA\n\n\n\n\n\n\nLucy D’Agostino McGowan. Graph detective. Live Free or Dichotomize. 17 May 2020."
   },
   {
-    "objectID": "slides/11-ethics.html#axes-and-scales---pp-services",
-    "href": "slides/11-ethics.html#axes-and-scales---pp-services",
+    "objectID": "slides/11-ethics.html#axes-and-scales---planned-parenthood-services",
+    "href": "slides/11-ethics.html#axes-and-scales---planned-parenthood-services",
     "title": "Ethics in Data Science",
-    "section": "Axes and scales - PP services",
-    "text": "Axes and scales - PP services\n\n\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\n\n\n\nTimothy B. Lee. Whatever you think of Planned Parenthood, this is a terrible and dishonest chart. Vox. 29 September 2019."
+    "section": "Axes and scales - Planned Parenthood services",
+    "text": "Axes and scales - Planned Parenthood services\n\n\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\n\n\n\n\n\n\nTimothy B. Lee. Whatever you think of Planned Parenthood, this is a terrible and misleading chart. Vox. 29 September 2019."
   },
   {
-    "objectID": "slides/11-ethics.html#axes-and-scales---pp-services-1",
-    "href": "slides/11-ethics.html#axes-and-scales---pp-services-1",
+    "objectID": "slides/11-ethics.html#axes-and-scales---planned-parenthood-services-1",
+    "href": "slides/11-ethics.html#axes-and-scales---planned-parenthood-services-1",
     "title": "Ethics in Data Science",
-    "section": "Axes and scales - PP services",
-    "text": "Axes and scales - PP services\n\nCodepp &lt;- tibble(\n  year = c(2006, 2006, 2013, 2013),\n  service = c(\"Abortion\", \"Cancer\", \"Abortion\", \"Cancer\"),\n  n = c(289750, 2007371, 327000, 935573)\n)\n\nggplot(pp, aes(x = year, y = n, color = service)) +\n  geom_point(size = 2) +\n  geom_line(linewidth = 1) +\n  geom_text(aes(label = n), nudge_y = 100000) +\n  geom_text(\n    aes(label = year), \n    nudge_y = 200000, \n    color = \"darkgray\"\n  ) +\n  labs(\n    title = \"Services provided by Planned Parenthood\",\n    caption = \"Source: Planned Parenthood\",\n    x = NULL,\n    y = NULL\n  ) +\n  scale_x_continuous(breaks = c(2006, 2013)) +\n  scale_y_continuous(labels = label_number(big.mark = \",\")) +\n  scale_color_manual(values = c(\"red\", \"purple\")) +\n  annotate(\n    geom = \"text\",\n    label = \"Abortions\",\n    x = 2009.5,\n    y = 400000,\n    color = \"red\"\n  ) +\n  annotate(\n    geom = \"text\",\n    label = \"Cancer screening\\nand prevention services\",\n    x = 2010.5,\n    y = 1600000, \n    color = \"purple\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
+    "section": "Axes and scales - Planned Parenthood services",
+    "text": "Axes and scales - Planned Parenthood services\n\nCodepp &lt;- tibble(\n  year = c(2006, 2006, 2013, 2013),\n  service = c(\"Abortion\", \"Cancer\", \"Abortion\", \"Cancer\"),\n  n = c(289750, 2007371, 327000, 935573)\n)\n\nggplot(pp, aes(x = year, y = n, color = service)) +\n  geom_point(size = 2) +\n  geom_line(linewidth = 1) +\n  geom_text(aes(label = n), nudge_y = 100000) +\n  geom_text(\n    aes(label = year), \n    nudge_y = 200000, \n    color = \"darkgray\"\n  ) +\n  labs(\n    title = \"Services provided by Planned Parenthood\",\n    caption = \"Source: Planned Parenthood\",\n    x = NULL,\n    y = NULL\n  ) +\n  scale_x_continuous(breaks = c(2006, 2013)) +\n  scale_y_continuous(labels = label_number(big.mark = \",\")) +\n  scale_color_manual(values = c(\"red\", \"purple\")) +\n  annotate(\n    geom = \"text\",\n    label = \"Abortions\",\n    x = 2009.5,\n    y = 400000,\n    color = \"red\"\n  ) +\n  annotate(\n    geom = \"text\",\n    label = \"Cancer screening\\nand prevention services\",\n    x = 2010.5,\n    y = 1600000, \n    color = \"purple\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
   },
   {
     "objectID": "slides/11-ethics.html#maps-and-areas---voting-map",
     "href": "slides/11-ethics.html#maps-and-areas---voting-map",
     "title": "Ethics in Data Science",
     "section": "Maps and areas - Voting map",
-    "text": "Maps and areas - Voting map\n\nDo you recognize this map? What does it show?\n\n\n\n\nLazaro Gamio. “Election maps are telling you big lies about small things”. The Washington Post. 1 Nov 2016."
+    "text": "Maps and areas - Voting map\n\nDo you recognize this map? What does it show?\n\n\n\n\n\n\n\nLazaro Gamio. “Election maps are telling you big lies about small things”. The Washington Post. 1 Nov 2016."
   },
   {
     "objectID": "slides/11-ethics.html#maps-and-areas---two-alternate-tales",
     "href": "slides/11-ethics.html#maps-and-areas---two-alternate-tales",
     "title": "Ethics in Data Science",
     "section": "Maps and areas - Two alternate tales",
-    "text": "Maps and areas - Two alternate tales\n\n\n\n\n\n\n\n\n\nAlberto Cairo. Visual Trumpery talk."
+    "text": "Maps and areas - Two alternate tales\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlberto Cairo. Visual Trumpery talk."
   },
   {
     "objectID": "slides/11-ethics.html#maps-and-areas---voting-percentages",
     "href": "slides/11-ethics.html#maps-and-areas---voting-percentages",
     "title": "Ethics in Data Science",
     "section": "Maps and areas - Voting percentages",
-    "text": "Maps and areas - Voting percentages\n\n\n\nAlberto Cairo. Visual Trumpery talk."
+    "text": "Maps and areas - Voting percentages\n\n\n\n\n\n\nAlberto Cairo. Visual Trumpery talk."
   },
   {
     "objectID": "slides/11-ethics.html#maps-and-areas---voting-percentages-1",
     "href": "slides/11-ethics.html#maps-and-areas---voting-percentages-1",
     "title": "Ethics in Data Science",
     "section": "Maps and areas - Voting percentages",
-    "text": "Maps and areas - Voting percentages\n\n\n\nAlberto Cairo. Visual Trumpery talk."
+    "text": "Maps and areas - Voting percentages\n\n\n\n\n\n\nAlberto Cairo. Visual Trumpery talk."
   },
   {
     "objectID": "slides/11-ethics.html#uncertainty---catalan-independence",
@@ -6581,7 +6588,7 @@
     "href": "slides/11-ethics.html#what-might-risk-assessment-look-like",
     "title": "Ethics in Data Science",
     "section": "What might “risk assessment” look like?",
-    "text": "What might “risk assessment” look like?\nSomething we will study after spring break:\n\n\n\n\n\n\n\n\nAbove the line means high risk means no bail. Is this progress?"
+    "text": "What might “risk assessment” look like?\nSomething we will study after spring break:\n\n\n\n\n\n\n\n\nLet’s say above the line means high risk, which means no bail. Is this progress?"
   },
   {
     "objectID": "slides/11-ethics.html#what-happens-when-we-try-predictive-policing",
@@ -6630,7 +6637,7 @@
     "href": "slides/11-ethics.html#wru-package-2",
     "title": "Ethics in Data Science",
     "section": "\nwru package",
-    "text": "wru package\n\nme &lt;- tibble(surname = \"Zito\")\n\npredict_race(voter.file = me, surname.only = TRUE)\n\n  surname  pred.whi   pred.bla   pred.his    pred.asi   pred.oth\n1    Zito 0.9220001 0.00419631 0.03968994 0.009652312 0.02446131"
+    "text": "wru package\n\nme &lt;- tibble(surname = \"Solarz\")\n\npredict_race(voter.file = me, surname.only = TRUE)\n\n  surname  pred.whi pred.bla    pred.his    pred.asi   pred.oth\n1  Solarz 0.9410478        0 0.003365333 0.003998592 0.05158826"
   },
   {
     "objectID": "slides/11-ethics.html#california-prop-25-did-not-pass",
@@ -6654,18 +6661,18 @@
     "text": "A success story?\n. . .\nData + Model to predict timing of menstrual cycle:\n\n. . .\nA perfect microcosm of the themes of our course, and maybe one of the real triumphs of data and modeling improving modern life.\n. . .\n…but what if you learned they were selling your data?"
   },
   {
-    "objectID": "slides/11-ethics.html#this-would-bevery-bad-for-jz",
-    "href": "slides/11-ethics.html#this-would-bevery-bad-for-jz",
+    "objectID": "slides/11-ethics.html#according-to-my-family-members-this-would-bevery-bad-for-me",
+    "href": "slides/11-ethics.html#according-to-my-family-members-this-would-bevery-bad-for-me",
     "title": "Ethics in Data Science",
-    "section": "This would be…very bad for JZ",
-    "text": "This would be…very bad for JZ\n\n\n\nKashmir Hill Automakers Are Sharing Consumers’ Driving Behavior With Insurance Companies.\nNew York Times. March 11, 2024."
+    "section": "According to my family members, this would be…very bad for me",
+    "text": "According to my family members, this would be…very bad for me\n\n\n\nKashmir Hill Automakers Are Sharing Consumers’ Driving Behavior With Insurance Companies.\nNew York Times. March 11, 2024."
   },
   {
-    "objectID": "slides/11-ethics.html#oy-vey",
-    "href": "slides/11-ethics.html#oy-vey",
+    "objectID": "slides/11-ethics.html#yikes",
+    "href": "slides/11-ethics.html#yikes",
     "title": "Ethics in Data Science",
-    "section": "Oy vey",
-    "text": "Oy vey\n\n\n\nMike McIntire Genetic Data From Over 20,000 U.S. Children Misused for ‘Race Science’.\nNew York Times. Jan. 24, 2026."
+    "section": "Yikes…",
+    "text": "Yikes…\n\n\n\n\n\n\nMike McIntire Genetic Data From Over 20,000 U.S. Children Misused for ‘Race Science’.\nNew York Times. Jan. 24, 2026."
   },
   {
     "objectID": "slides/11-ethics.html#your-data",
@@ -6714,7 +6721,7 @@
     "href": "slides/11-ethics.html#aol-search-data-leak",
     "title": "Ethics in Data Science",
     "section": "AOL search data leak",
-    "text": "AOL search data leak\n\n\n\nMichael Barbaro and Tom Zeller Jr. A Face Is Exposed for AOL Searcher No. 4417749.\nNew York Times. 9 August 2006."
+    "text": "AOL search data leak\n\n\n\n\n\n\nMichael Barbaro and Tom Zeller Jr. A Face Is Exposed for AOL Searcher No. 4417749.\nNew York Times. 9 August 2006."
   },
   {
     "objectID": "slides/11-ethics.html#ok-cupid-data-breach",
@@ -6756,7 +6763,7 @@
     "href": "slides/11-ethics.html#recent-nobel-prize",
     "title": "Ethics in Data Science",
     "section": "Recent Nobel Prize",
-    "text": "Recent Nobel Prize\n\n\nAlphaFold2: “predicting 3D structures [of proteins] (\\(y\\)) directly from the primary amino acid sequence (\\(x\\)).”\n“researchers can now better understand antibiotic resistance and create images of enzymes that can decompose plastic.”"
+    "text": "Recent Nobel Prize\n\n\n\n\n\nAlphaFold2: “predicting 3D structures [of proteins] (\\(y\\)) directly from the primary amino acid sequence (\\(x\\)).”\n“researchers can now better understand antibiotic resistance and create images of enzymes that can decompose plastic.”"
   },
   {
     "objectID": "slides/11-ethics.html#how-charts-lie",
@@ -6815,372 +6822,379 @@
     "text": "Parting thoughts\n\nAt some point during your data science learning journey you will learn tools that can be used unethically\nYou might also be tempted to use your knowledge in a way that is ethically questionable either because of business goals or for the pursuit of further knowledge (or because your boss told you to do so)\n\n\nHow do you train yourself to make the right decisions (or reduce the likelihood of accidentally making the wrong decisions) at those points?"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#today",
-    "href": "slides/14-ethics-slides.html#today",
+    "objectID": "slides/11-ethics-slides.html#today",
+    "href": "slides/11-ethics-slides.html#today",
     "title": "Ethics in Data Science",
     "section": "Today",
-    "text": "Today\nNo technique, and no AE. Just sit back and ponder:\n\nData do not speak for themselves. They require an interpretive lens, not all of which are created equal;\nThe practice of data science is not ethically neutral or value-free."
+    "text": "Today\n\nData do not speak for themselves. They require an interpretive lens, not all of which are created equal;\nThe practice of data science is not ethically neutral or value-free."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#misrepresenting-data-science-results",
-    "href": "slides/14-ethics-slides.html#misrepresenting-data-science-results",
+    "objectID": "slides/11-ethics-slides.html#misrepresenting-data-science-results",
+    "href": "slides/11-ethics-slides.html#misrepresenting-data-science-results",
     "title": "Ethics in Data Science",
     "section": "Misrepresenting data science results",
-    "text": "Misrepresenting data science results\nSome common ways people do this, either intentionally or unintentionally, include:\n\n\nClaiming causality where it’s not in the scope of inference of the underlying study\nDistorting axes and scales to make the data tell a different story\nVisualizing spatial areas instead of human density for issues that depend on and affect humans\nOmitting uncertainty in reporting"
+    "text": "Misrepresenting data science results\nSome common ways people do this, either intentionally or unintentionally, include:\n\n\nClaiming causality where it’s not in the scope of inference of the underlying study\nGeneralizing results to some broader population that is not comparable to the underlying study population\nDistorting axes and scales to make the data tell a different story\nVisualizing spatial areas instead of human density for issues that depend on and affect humans\nOmitting uncertainty in reporting"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#causality---time-coverage",
-    "href": "slides/14-ethics-slides.html#causality---time-coverage",
+    "objectID": "slides/11-ethics-slides.html#recall-from-day-1",
+    "href": "slides/11-ethics-slides.html#recall-from-day-1",
+    "title": "Ethics in Data Science",
+    "section": "Recall from day 1…",
+    "text": "Recall from day 1…\n\n\n\n\n\n\n\n Personal Injury Law Firm Blog Post \n\n\n\n\n\n\n\nHarper and Palayew’s (2019) study, “The annual cannabis holiday and fatal traffic crashes”, available here."
+  },
+  {
+    "objectID": "slides/11-ethics-slides.html#causality---time-coverage",
+    "href": "slides/11-ethics-slides.html#causality---time-coverage",
     "title": "Ethics in Data Science",
     "section": "Causality - TIME coverage",
     "text": "Causality - TIME coverage\n\nHow plausible is the statement in the title of this article?\n\n\n\n\nAlice Park. Exercise Can Lower Risk of Some Cancers By 20%. Time Magazine. 16 May 2016."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#causality---la-times-coverage",
-    "href": "slides/14-ethics-slides.html#causality---la-times-coverage",
+    "objectID": "slides/11-ethics-slides.html#causality---la-times-coverage",
+    "href": "slides/11-ethics-slides.html#causality---la-times-coverage",
     "title": "Ethics in Data Science",
     "section": "Causality - LA Times coverage",
     "text": "Causality - LA Times coverage\n\nWhat does “research shows” mean?\n\n\n\n\nMelissa Healy. Exercising drives down risk for 13 cancers, research shows.\nLos Angeles Times. 16 May 2016."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#causality---original-study",
-    "href": "slides/14-ethics-slides.html#causality---original-study",
+    "objectID": "slides/11-ethics-slides.html#causality---original-study",
+    "href": "slides/11-ethics-slides.html#causality---original-study",
     "title": "Ethics in Data Science",
     "section": "Causality - Original study",
     "text": "Causality - Original study\nMoore, Steven C., et al. “Association of leisure-time physical activity with risk of 26 types of cancer in 1.44 million adults.” JAMA internal medicine 176.6 (2016): 816-825.\n\n\nVolunteers were asked about their physical activity level over the preceding year.\nHalf exercised less than about 150 minutes per week, half exercised more.\nCompared to the bottom 10% of exercisers, the top 10% had lower rates of esophageal, liver, lung, endometrial, colon, and breast cancer.\nResearchers found no association between exercising and 13 other cancers (e.g. pancreatic, ovarian, and brain).\n\nCarl Bergstrom and Jevin West. Calling Bullshit: The art of skepticism in a data-driven world.\nRandom House, 2020.\nSharon Begley. “Does exercise prevent cancer?”. StatNews. 16 May 2016."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#axes-and-scales---tax-cuts",
-    "href": "slides/14-ethics-slides.html#axes-and-scales---tax-cuts",
+    "objectID": "slides/11-ethics-slides.html#axes-and-scales---tax-cuts",
+    "href": "slides/11-ethics-slides.html#axes-and-scales---tax-cuts",
     "title": "Ethics in Data Science",
     "section": "Axes and scales - Tax cuts",
     "text": "Axes and scales - Tax cuts\n\nWhat is the difference between these two pictures? Which presents a better way to represent these data?\n\n\n\n\nChristopher Ingraham. “You’ve been reading charts wrong. Here’s how a pro does it.”. The Washington Post. 14 October 2019."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#axes-and-scales---cost-of-gas",
-    "href": "slides/14-ethics-slides.html#axes-and-scales---cost-of-gas",
+    "objectID": "slides/11-ethics-slides.html#axes-and-scales---cost-of-gas",
+    "href": "slides/11-ethics-slides.html#axes-and-scales---cost-of-gas",
     "title": "Ethics in Data Science",
     "section": "Axes and scales - Cost of gas",
     "text": "Axes and scales - Cost of gas\n\nWhat is wrong with this picture? How would you correct it?"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#axes-and-scales---cost-of-gas-1",
-    "href": "slides/14-ethics-slides.html#axes-and-scales---cost-of-gas-1",
+    "objectID": "slides/11-ethics-slides.html#axes-and-scales---cost-of-gas-1",
+    "href": "slides/11-ethics-slides.html#axes-and-scales---cost-of-gas-1",
     "title": "Ethics in Data Science",
     "section": "Axes and scales - Cost of gas",
     "text": "Axes and scales - Cost of gas\n\nCodedf &lt;- tibble(\n  date = ymd(c(\"2019-11-01\", \"2020-10-25\", \"2020-11-01\")),\n  cost = c(3.17, 3.51, 3.57)\n)\nggplot(df, aes(x = date, y = cost, group = 1)) +\n  geom_point() +\n  geom_line() +\n  geom_label(aes(label = cost), hjust = -0.25) +\n  labs(\n    title = \"Cost of gas\",\n    subtitle = \"National average\",\n    x = NULL, y = NULL, \n    caption = \"Source: AAA Fuel Gauge Report\"\n  ) +\n  scale_x_continuous(\n    breaks = ymd(c(\"2019-11-01\", \"2020-10-25\", \"2020-11-01\")), \n    labels = c(\"Last year\", \"Last week\", \"Current\"),\n    guide = guide_axis(angle = 90),\n    limits = as.numeric(ymd(c(\"2019-11-01\", \"2020-11-29\"))),\n    minor_breaks = ymd(c(\"2019-11-01\", \"2020-10-25\", \"2020-11-01\"))\n  ) +\n  scale_y_continuous(labels = label_dollar())"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#axes-and-scales---covid-in-ga",
-    "href": "slides/14-ethics-slides.html#axes-and-scales---covid-in-ga",
+    "objectID": "slides/11-ethics-slides.html#axes-and-scales---covid-in-ga",
+    "href": "slides/11-ethics-slides.html#axes-and-scales---covid-in-ga",
     "title": "Ethics in Data Science",
     "section": "Axes and scales - COVID in GA",
-    "text": "Axes and scales - COVID in GA\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\nGeorgia Department of Public Health. 11 May 2020."
+    "text": "Axes and scales - COVID in GA\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\n\n\n\nGeorgia Department of Public Health. 11 May 2020."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#axes-and-scales---covid-in-ga-1",
-    "href": "slides/14-ethics-slides.html#axes-and-scales---covid-in-ga-1",
+    "objectID": "slides/11-ethics-slides.html#axes-and-scales---covid-in-ga-1",
+    "href": "slides/11-ethics-slides.html#axes-and-scales---covid-in-ga-1",
     "title": "Ethics in Data Science",
     "section": "Axes and scales - COVID in GA",
-    "text": "Axes and scales - COVID in GA\n\n\n\nLucy D’Agostino McGowan. Graph detective. Live Free or Dichotomize. 17 May 2020."
+    "text": "Axes and scales - COVID in GA\n\n\n\n\n\n\nLucy D’Agostino McGowan. Graph detective. Live Free or Dichotomize. 17 May 2020."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#axes-and-scales---pp-services",
-    "href": "slides/14-ethics-slides.html#axes-and-scales---pp-services",
+    "objectID": "slides/11-ethics-slides.html#axes-and-scales---planned-parenthood-services",
+    "href": "slides/11-ethics-slides.html#axes-and-scales---planned-parenthood-services",
     "title": "Ethics in Data Science",
-    "section": "Axes and scales - PP services",
-    "text": "Axes and scales - PP services\n\n\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\n\n\nTimothy B. Lee. Whatever you think of Planned Parenthood, this is a terrible and dishonest chart. Vox. 29 September 2019."
+    "section": "Axes and scales - Planned Parenthood services",
+    "text": "Axes and scales - Planned Parenthood services\n\n\n\nWhat is wrong with this picture? How would you correct it?\n\n\n\n\n\n\n\n\n\nTimothy B. Lee. Whatever you think of Planned Parenthood, this is a terrible and misleading chart. Vox. 29 September 2019."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#axes-and-scales---pp-services-1",
-    "href": "slides/14-ethics-slides.html#axes-and-scales---pp-services-1",
+    "objectID": "slides/11-ethics-slides.html#axes-and-scales---planned-parenthood-services-1",
+    "href": "slides/11-ethics-slides.html#axes-and-scales---planned-parenthood-services-1",
     "title": "Ethics in Data Science",
-    "section": "Axes and scales - PP services",
-    "text": "Axes and scales - PP services\n\nCodepp &lt;- tibble(\n  year = c(2006, 2006, 2013, 2013),\n  service = c(\"Abortion\", \"Cancer\", \"Abortion\", \"Cancer\"),\n  n = c(289750, 2007371, 327000, 935573)\n)\n\nggplot(pp, aes(x = year, y = n, color = service)) +\n  geom_point(size = 2) +\n  geom_line(linewidth = 1) +\n  geom_text(aes(label = n), nudge_y = 100000) +\n  geom_text(\n    aes(label = year), \n    nudge_y = 200000, \n    color = \"darkgray\"\n  ) +\n  labs(\n    title = \"Services provided by Planned Parenthood\",\n    caption = \"Source: Planned Parenthood\",\n    x = NULL,\n    y = NULL\n  ) +\n  scale_x_continuous(breaks = c(2006, 2013)) +\n  scale_y_continuous(labels = label_number(big.mark = \",\")) +\n  scale_color_manual(values = c(\"red\", \"purple\")) +\n  annotate(\n    geom = \"text\",\n    label = \"Abortions\",\n    x = 2009.5,\n    y = 400000,\n    color = \"red\"\n  ) +\n  annotate(\n    geom = \"text\",\n    label = \"Cancer screening\\nand prevention services\",\n    x = 2010.5,\n    y = 1600000, \n    color = \"purple\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
+    "section": "Axes and scales - Planned Parenthood services",
+    "text": "Axes and scales - Planned Parenthood services\n\nCodepp &lt;- tibble(\n  year = c(2006, 2006, 2013, 2013),\n  service = c(\"Abortion\", \"Cancer\", \"Abortion\", \"Cancer\"),\n  n = c(289750, 2007371, 327000, 935573)\n)\n\nggplot(pp, aes(x = year, y = n, color = service)) +\n  geom_point(size = 2) +\n  geom_line(linewidth = 1) +\n  geom_text(aes(label = n), nudge_y = 100000) +\n  geom_text(\n    aes(label = year), \n    nudge_y = 200000, \n    color = \"darkgray\"\n  ) +\n  labs(\n    title = \"Services provided by Planned Parenthood\",\n    caption = \"Source: Planned Parenthood\",\n    x = NULL,\n    y = NULL\n  ) +\n  scale_x_continuous(breaks = c(2006, 2013)) +\n  scale_y_continuous(labels = label_number(big.mark = \",\")) +\n  scale_color_manual(values = c(\"red\", \"purple\")) +\n  annotate(\n    geom = \"text\",\n    label = \"Abortions\",\n    x = 2009.5,\n    y = 400000,\n    color = \"red\"\n  ) +\n  annotate(\n    geom = \"text\",\n    label = \"Cancer screening\\nand prevention services\",\n    x = 2010.5,\n    y = 1600000, \n    color = \"purple\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#maps-and-areas---voting-map",
-    "href": "slides/14-ethics-slides.html#maps-and-areas---voting-map",
+    "objectID": "slides/11-ethics-slides.html#maps-and-areas---voting-map",
+    "href": "slides/11-ethics-slides.html#maps-and-areas---voting-map",
     "title": "Ethics in Data Science",
     "section": "Maps and areas - Voting map",
-    "text": "Maps and areas - Voting map\n\nDo you recognize this map? What does it show?\n\n\n\n\nLazaro Gamio. “Election maps are telling you big lies about small things”. The Washington Post. 1 Nov 2016."
+    "text": "Maps and areas - Voting map\n\nDo you recognize this map? What does it show?\n\n\n\n\n\n\n\nLazaro Gamio. “Election maps are telling you big lies about small things”. The Washington Post. 1 Nov 2016."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#maps-and-areas---two-alternate-tales",
-    "href": "slides/14-ethics-slides.html#maps-and-areas---two-alternate-tales",
+    "objectID": "slides/11-ethics-slides.html#maps-and-areas---two-alternate-tales",
+    "href": "slides/11-ethics-slides.html#maps-and-areas---two-alternate-tales",
     "title": "Ethics in Data Science",
     "section": "Maps and areas - Two alternate tales",
-    "text": "Maps and areas - Two alternate tales\n\n\n\n\n\n\n\n\nAlberto Cairo. Visual Trumpery talk."
+    "text": "Maps and areas - Two alternate tales\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlberto Cairo. Visual Trumpery talk."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#maps-and-areas---voting-percentages",
-    "href": "slides/14-ethics-slides.html#maps-and-areas---voting-percentages",
+    "objectID": "slides/11-ethics-slides.html#maps-and-areas---voting-percentages",
+    "href": "slides/11-ethics-slides.html#maps-and-areas---voting-percentages",
     "title": "Ethics in Data Science",
     "section": "Maps and areas - Voting percentages",
-    "text": "Maps and areas - Voting percentages\n\n\n\nAlberto Cairo. Visual Trumpery talk."
+    "text": "Maps and areas - Voting percentages\n\n\n\n\n\n\nAlberto Cairo. Visual Trumpery talk."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#maps-and-areas---voting-percentages-1",
-    "href": "slides/14-ethics-slides.html#maps-and-areas---voting-percentages-1",
+    "objectID": "slides/11-ethics-slides.html#maps-and-areas---voting-percentages-1",
+    "href": "slides/11-ethics-slides.html#maps-and-areas---voting-percentages-1",
     "title": "Ethics in Data Science",
     "section": "Maps and areas - Voting percentages",
-    "text": "Maps and areas - Voting percentages\n\n\n\nAlberto Cairo. Visual Trumpery talk."
+    "text": "Maps and areas - Voting percentages\n\n\n\n\n\n\nAlberto Cairo. Visual Trumpery talk."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#uncertainty---catalan-independence",
-    "href": "slides/14-ethics-slides.html#uncertainty---catalan-independence",
+    "objectID": "slides/11-ethics-slides.html#uncertainty---catalan-independence",
+    "href": "slides/11-ethics-slides.html#uncertainty---catalan-independence",
     "title": "Ethics in Data Science",
     "section": "Uncertainty - Catalan independence",
     "text": "Uncertainty - Catalan independence\nOn December 19, 2014, the front page of Spanish national newspaper El País read “Catalan public opinion swings toward ‘no’ for independence, says survey”.\n\n\n\n\n\n\n\n\n\n\nAlberto Cairo. The truthful art: Data, charts, and maps for communication. New Riders, 2016."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#uncertainty---catalan-independence-1",
-    "href": "slides/14-ethics-slides.html#uncertainty---catalan-independence-1",
+    "objectID": "slides/11-ethics-slides.html#uncertainty---catalan-independence-1",
+    "href": "slides/11-ethics-slides.html#uncertainty---catalan-independence-1",
     "title": "Ethics in Data Science",
     "section": "Uncertainty - Catalan independence",
     "text": "Uncertainty - Catalan independence\n\n\n\n\n\n\n\n\n\n\nAlberto Cairo. “Uncertainty and Graphicacy: How Should Statisticians Journalists and Designers Reveal Uncertainty in Graphics for Public Consumption?”, Power from Statistics: Data Information and Knowledge, 2017."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#california-proposition-25-2020",
-    "href": "slides/14-ethics-slides.html#california-proposition-25-2020",
+    "objectID": "slides/11-ethics-slides.html#california-proposition-25-2020",
+    "href": "slides/11-ethics-slides.html#california-proposition-25-2020",
     "title": "Ethics in Data Science",
     "section": "California Proposition 25 (2020)",
     "text": "California Proposition 25 (2020)\nPopular referendum on 2018’s Senate Bill 10:\n\n\n\nYES: replace cash bail with “risk assessment.”\n\nDemocratic Party, Governor Gavin Newson, League of Women Voters of California, California Medical Association, Democracy for America (progressive PAC), etc.\n\n\n\nNO: keep the cash bail system.\n\nRepublican Party, American Bail Coalition, ACLU of Southern California, NAACP, California Asian Pacific Chamber of Commerce, etc.\n\n\nIf passed, each county would be empowered to develop a tool that predicts the risk of a suspect reoffending before trial.\nJudges would consult this prediction to make bail decisions."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#what-might-risk-assessment-look-like",
-    "href": "slides/14-ethics-slides.html#what-might-risk-assessment-look-like",
+    "objectID": "slides/11-ethics-slides.html#what-might-risk-assessment-look-like",
+    "href": "slides/11-ethics-slides.html#what-might-risk-assessment-look-like",
     "title": "Ethics in Data Science",
     "section": "What might “risk assessment” look like?",
-    "text": "What might “risk assessment” look like?\nSomething we will study after spring break:\n\nAbove the line means high risk means no bail. Is this progress?"
+    "text": "What might “risk assessment” look like?\nSomething we will study after spring break:\n\n\n\n\n\n\n\n\nLet’s say above the line means high risk, which means no bail. Is this progress?"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#what-happens-when-we-try-predictive-policing",
-    "href": "slides/14-ethics-slides.html#what-happens-when-we-try-predictive-policing",
+    "objectID": "slides/11-ethics-slides.html#what-happens-when-we-try-predictive-policing",
+    "href": "slides/11-ethics-slides.html#what-happens-when-we-try-predictive-policing",
     "title": "Ethics in Data Science",
     "section": "What happens when we try “predictive policing”?",
     "text": "What happens when we try “predictive policing”?\n2016 ProPublica article on algorithm used for rating a defendant’s risk of future crime:\n\n\n\nIn forecasting who would re-offend, the algorithm made mistakes with black and white defendants at roughly the same rate but in very different ways.\n\nThe formula was particularly likely to falsely flag black defendants as future criminals, wrongly labeling them this way at almost twice the rate as white defendants.\nWhite defendants were mislabeled as low risk more often than black defendants.\n\n\n\n\n\n\n\n\n\n\nSource: ProPublica"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#notice-anything",
-    "href": "slides/14-ethics-slides.html#notice-anything",
+    "objectID": "slides/11-ethics-slides.html#notice-anything",
+    "href": "slides/11-ethics-slides.html#notice-anything",
     "title": "Ethics in Data Science",
     "section": "Notice anything?",
     "text": "Notice anything?\n\n\n\nWhat is common among the defendants who were assigned a high/low risk score for reoffending?"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#but-race-wasnt-in-my-model",
-    "href": "slides/14-ethics-slides.html#but-race-wasnt-in-my-model",
+    "objectID": "slides/11-ethics-slides.html#but-race-wasnt-in-my-model",
+    "href": "slides/11-ethics-slides.html#but-race-wasnt-in-my-model",
     "title": "Ethics in Data Science",
     "section": "“But race wasn’t in my model”",
     "text": "“But race wasn’t in my model”\n\n\n\nHow can an algorithm that doesn’t use race as input data be racist?"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#predicting-ethnicity",
-    "href": "slides/14-ethics-slides.html#predicting-ethnicity",
+    "objectID": "slides/11-ethics-slides.html#predicting-ethnicity",
+    "href": "slides/11-ethics-slides.html#predicting-ethnicity",
     "title": "Ethics in Data Science",
     "section": "Predicting ethnicity",
     "text": "Predicting ethnicity\nImproving Ecological Inference by Predicting Individual Ethnicity from Voter Registration Record (Imran and Khan, 2016)\n\nIn both political behavior research and voting rights litigation, turnout and vote choice for different racial groups are often inferred using aggregate election results and racial composition. Over the past several decades, many statistical methods have been proposed to address this ecological inference problem. We propose an alternative method to reduce aggregation bias by predicting individual-level ethnicity from voter registration records. Building on the existing methodological literature, we use Bayes’s rule to combine the Census Bureau’s Surname List with various information from geocoded voter registration records. We evaluate the performance of the proposed methodology using approximately nine million voter registration records from Florida, where self-reported ethnicity is available. We find that it is possible to reduce the false positive rate among Black and Latino voters to 6% and 3%, respectively, while maintaining the true positive rate above 80%. Moreover, we use our predictions to estimate turnout by race and find that our estimates yields substantially less amounts of bias and root mean squared error than standard ecological inference estimates. We provide open-source software to implement the proposed methodology. The open-source software is available for implementing the proposed methodology."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#wru-package",
-    "href": "slides/14-ethics-slides.html#wru-package",
+    "objectID": "slides/11-ethics-slides.html#wru-package",
+    "href": "slides/11-ethics-slides.html#wru-package",
     "title": "Ethics in Data Science",
     "section": "\nwru package",
     "text": "wru package\nThe said “source software” is the wru package: https://github.com/kosukeimai/wru.\n\nDo you have any ethical concerns about installing this package?"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#wru-package-1",
-    "href": "slides/14-ethics-slides.html#wru-package-1",
+    "objectID": "slides/11-ethics-slides.html#wru-package-1",
+    "href": "slides/11-ethics-slides.html#wru-package-1",
     "title": "Ethics in Data Science",
     "section": "\nwru package",
     "text": "wru package\n\nWas the publication of this model ethical? Does the open-source nature of the code affect your answer? Is it ethical to use this software? Does your answer change depending on the intended use?\n\n\nlibrary(wru)\npredict_race(voter.file = voters, surname.only = TRUE) |&gt;\n  select(surname, pred.whi, pred.bla, pred.his, pred.asi, pred.oth)\n\n      surname    pred.whi    pred.bla     pred.his    pred.asi\n1      Khanna 0.045110474 0.003067623 0.0068522723 0.860411906\n2        Imai 0.052645440 0.001334812 0.0558160072 0.719376581\n3      Rivera 0.043285692 0.008204605 0.9136195794 0.024316883\n4     Fifield 0.895405704 0.001911388 0.0337464844 0.011079323\n5        Zhou 0.006572555 0.001298962 0.0005388581 0.982365594\n6    Ratkovic 0.861236727 0.008212824 0.0095395642 0.011334635\n7     Johnson 0.543815322 0.344128607 0.0272403940 0.007405765\n8       Lopez 0.038939877 0.004920643 0.9318797791 0.012154125\n10 Wantchekon 0.330697188 0.194700665 0.4042849478 0.021379541\n9       Morse 0.866360147 0.044429853 0.0246568086 0.010219712\n      pred.oth\n1  0.084557725\n2  0.170827160\n3  0.010573240\n4  0.057857101\n5  0.009224032\n6  0.109676251\n7  0.077409913\n8  0.012105576\n10 0.048937658\n9  0.054333479"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#wru-package-2",
-    "href": "slides/14-ethics-slides.html#wru-package-2",
+    "objectID": "slides/11-ethics-slides.html#wru-package-2",
+    "href": "slides/11-ethics-slides.html#wru-package-2",
     "title": "Ethics in Data Science",
     "section": "\nwru package",
-    "text": "wru package\n\nme &lt;- tibble(surname = \"Zito\")\n\npredict_race(voter.file = me, surname.only = TRUE)\n\n  surname  pred.whi   pred.bla   pred.his    pred.asi   pred.oth\n1    Zito 0.9220001 0.00419631 0.03968994 0.009652312 0.02446131"
+    "text": "wru package\n\nme &lt;- tibble(surname = \"Solarz\")\n\npredict_race(voter.file = me, surname.only = TRUE)\n\n  surname  pred.whi pred.bla    pred.his    pred.asi   pred.oth\n1  Solarz 0.9410478        0 0.003365333 0.003998592 0.05158826"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#california-prop-25-did-not-pass",
-    "href": "slides/14-ethics-slides.html#california-prop-25-did-not-pass",
+    "objectID": "slides/11-ethics-slides.html#california-prop-25-did-not-pass",
+    "href": "slides/11-ethics-slides.html#california-prop-25-did-not-pass",
     "title": "Ethics in Data Science",
     "section": "California Prop 25 did not pass",
     "text": "California Prop 25 did not pass\nThe cash bail system was retained:\n\n\nChoice\nVotes\nPercent\n\n\n\nYes\n7,232,380\n43.59%\n\n\nNo\n9,358,226\n56.41%\n\n\n\n\n\nreasonable people can debate if this outcome is good or bad;\nevery Californian was invited to decide whether statistics and data science should be deployed to make decisions with major social consequences. They opted out;\nThis vote was held in the pre-ChatGPT era. What would the outcome be today? Is the case for YES stronger or weaker?"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#another-algorithmic-decision",
-    "href": "slides/14-ethics-slides.html#another-algorithmic-decision",
+    "objectID": "slides/11-ethics-slides.html#another-algorithmic-decision",
+    "href": "slides/11-ethics-slides.html#another-algorithmic-decision",
     "title": "Ethics in Data Science",
     "section": "Another algorithmic decision…",
     "text": "Another algorithmic decision…\n Armies of stats PhDs go to work on these models. They have no training in the ethics of what they’re doing."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#a-success-story",
-    "href": "slides/14-ethics-slides.html#a-success-story",
+    "objectID": "slides/11-ethics-slides.html#a-success-story",
+    "href": "slides/11-ethics-slides.html#a-success-story",
     "title": "Ethics in Data Science",
     "section": "A success story?",
     "text": "A success story?\n\nData + Model to predict timing of menstrual cycle:\n\n\n\nA perfect microcosm of the themes of our course, and maybe one of the real triumphs of data and modeling improving modern life.\n\n\n…but what if you learned they were selling your data?"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#this-would-bevery-bad-for-jz",
-    "href": "slides/14-ethics-slides.html#this-would-bevery-bad-for-jz",
+    "objectID": "slides/11-ethics-slides.html#according-to-my-family-members-this-would-bevery-bad-for-me",
+    "href": "slides/11-ethics-slides.html#according-to-my-family-members-this-would-bevery-bad-for-me",
     "title": "Ethics in Data Science",
-    "section": "This would be…very bad for JZ",
-    "text": "This would be…very bad for JZ\n\n\n\nKashmir Hill Automakers Are Sharing Consumers’ Driving Behavior With Insurance Companies.\nNew York Times. March 11, 2024."
+    "section": "According to my family members, this would be…very bad for me",
+    "text": "According to my family members, this would be…very bad for me\n\n\n\nKashmir Hill Automakers Are Sharing Consumers’ Driving Behavior With Insurance Companies.\nNew York Times. March 11, 2024."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#oy-vey",
-    "href": "slides/14-ethics-slides.html#oy-vey",
+    "objectID": "slides/11-ethics-slides.html#yikes",
+    "href": "slides/11-ethics-slides.html#yikes",
     "title": "Ethics in Data Science",
-    "section": "Oy vey",
-    "text": "Oy vey\n\n\n\nMike McIntire Genetic Data From Over 20,000 U.S. Children Misused for ‘Race Science’.\nNew York Times. Jan. 24, 2026."
+    "section": "Yikes…",
+    "text": "Yikes…\n\n\n\n\n\n\nMike McIntire Genetic Data From Over 20,000 U.S. Children Misused for ‘Race Science’.\nNew York Times. Jan. 24, 2026."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#your-data",
-    "href": "slides/14-ethics-slides.html#your-data",
+    "objectID": "slides/11-ethics-slides.html#your-data",
+    "href": "slides/11-ethics-slides.html#your-data",
     "title": "Ethics in Data Science",
     "section": "“Your” data",
     "text": "“Your” data\n\nEvery time we use apps, websites, and devices, our data is being collected and used or sold to others.\nMore importantly, decisions are made by law enforcement, financial institutions, and governments based on data that directly affect the lives of people."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#privacy-of-your-data",
-    "href": "slides/14-ethics-slides.html#privacy-of-your-data",
+    "objectID": "slides/11-ethics-slides.html#privacy-of-your-data",
+    "href": "slides/11-ethics-slides.html#privacy-of-your-data",
     "title": "Ethics in Data Science",
     "section": "Privacy of your data",
     "text": "Privacy of your data\n\nWhat pieces of data have you left on the internet today? Think through everything you’ve logged into, clicked on, checked in, either actively or automatically, that might be tracking you. Do you know where that data is stored? Who it can be accessed by? Whether it’s shared with others?"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#sharing-your-data",
-    "href": "slides/14-ethics-slides.html#sharing-your-data",
+    "objectID": "slides/11-ethics-slides.html#sharing-your-data",
+    "href": "slides/11-ethics-slides.html#sharing-your-data",
     "title": "Ethics in Data Science",
     "section": "Sharing your data",
     "text": "Sharing your data\n\nWhat are you OK with sharing?\n\n\n\n\n\nName\nAge\nEmail\nPhone Number\nList of every video you watch\nList of every video you comment on\n\n\n\n\n\nHow you type: speed, accuracy\nHow long you spend on different content\nList of all your private messages (date, time, person sent to)\nInfo about your photos: how it was taken, where it was taken (GPS), when it was taken"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#what-does-google-thinkknow-about-you",
-    "href": "slides/14-ethics-slides.html#what-does-google-thinkknow-about-you",
+    "objectID": "slides/11-ethics-slides.html#what-does-google-thinkknow-about-you",
+    "href": "slides/11-ethics-slides.html#what-does-google-thinkknow-about-you",
     "title": "Ethics in Data Science",
     "section": "What does Google think/know about you?",
     "text": "What does Google think/know about you?\n\nHave you ever thought about why you’re seeing an ad on Google? Google it! Try to figure out if you have ad personalization on and how your ads are personalized."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#your-browsing-history",
-    "href": "slides/14-ethics-slides.html#your-browsing-history",
+    "objectID": "slides/11-ethics-slides.html#your-browsing-history",
+    "href": "slides/11-ethics-slides.html#your-browsing-history",
     "title": "Ethics in Data Science",
     "section": "Your browsing history",
     "text": "Your browsing history\n\nWhich of the following are you OK with your browsing history to be used towards?\n\n\n\nFor serving you targeted ads\nTo score you as a candidate for a job\nTo predict your race/ethnicity for voting purposes"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#who-else-gets-to-use-your-data",
-    "href": "slides/14-ethics-slides.html#who-else-gets-to-use-your-data",
+    "objectID": "slides/11-ethics-slides.html#who-else-gets-to-use-your-data",
+    "href": "slides/11-ethics-slides.html#who-else-gets-to-use-your-data",
     "title": "Ethics in Data Science",
     "section": "Who else gets to use your data?",
     "text": "Who else gets to use your data?\n\nSuppose you create a profile on a social media site and share your personal information on your profile. Who else gets to use that data?\n\n\n\nCompanies the social media company has a connection to?\nCompanies the social media company sells your data to?\nResearchers?"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#aol-search-data-leak",
-    "href": "slides/14-ethics-slides.html#aol-search-data-leak",
+    "objectID": "slides/11-ethics-slides.html#aol-search-data-leak",
+    "href": "slides/11-ethics-slides.html#aol-search-data-leak",
     "title": "Ethics in Data Science",
     "section": "AOL search data leak",
-    "text": "AOL search data leak\n\n\n\nMichael Barbaro and Tom Zeller Jr. A Face Is Exposed for AOL Searcher No. 4417749.\nNew York Times. 9 August 2006."
+    "text": "AOL search data leak\n\n\n\n\n\n\nMichael Barbaro and Tom Zeller Jr. A Face Is Exposed for AOL Searcher No. 4417749.\nNew York Times. 9 August 2006."
   },
   {
-    "objectID": "slides/14-ethics-slides.html#ok-cupid-data-breach",
-    "href": "slides/14-ethics-slides.html#ok-cupid-data-breach",
+    "objectID": "slides/11-ethics-slides.html#ok-cupid-data-breach",
+    "href": "slides/11-ethics-slides.html#ok-cupid-data-breach",
     "title": "Ethics in Data Science",
     "section": "OK Cupid data breach",
     "text": "OK Cupid data breach\n\nIn 2016, researchers published data of 70,000 OkCupid users—including usernames, political leanings, drug usage, and intimate sexual details\nResearchers didn’t release the real names and pictures of OKCupid users, but their identities could easily be uncovered from the details provided, e.g. usernames"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#ok-cupid-data-breach-1",
-    "href": "slides/14-ethics-slides.html#ok-cupid-data-breach-1",
+    "objectID": "slides/11-ethics-slides.html#ok-cupid-data-breach-1",
+    "href": "slides/11-ethics-slides.html#ok-cupid-data-breach-1",
     "title": "Ethics in Data Science",
     "section": "OK Cupid data breach",
     "text": "OK Cupid data breach"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#ok-cupid-data-breach-2",
-    "href": "slides/14-ethics-slides.html#ok-cupid-data-breach-2",
+    "objectID": "slides/11-ethics-slides.html#ok-cupid-data-breach-2",
+    "href": "slides/11-ethics-slides.html#ok-cupid-data-breach-2",
     "title": "Ethics in Data Science",
     "section": "OK Cupid data breach",
     "text": "OK Cupid data breach\n\nSome may object to the ethics of gathering and releasing this data. However, all the data found in the dataset are or were already publicly available, so releasing this dataset merely presents it in a more useful form.\nResearchers Emil Kirkegaard and Julius Daugbjerg Bjerrekær"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#data-privacy-1",
-    "href": "slides/14-ethics-slides.html#data-privacy-1",
+    "objectID": "slides/11-ethics-slides.html#data-privacy-1",
+    "href": "slides/11-ethics-slides.html#data-privacy-1",
     "title": "Ethics in Data Science",
     "section": "Data privacy",
     "text": "Data privacy\n\nIn analysis of data that individuals willingly shared publicly on a given platform (e.g. social media), how do you make sure you don’t violate reasonable expectations of privacy?"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#faster-more-accurate-cancer-screening",
-    "href": "slides/14-ethics-slides.html#faster-more-accurate-cancer-screening",
+    "objectID": "slides/11-ethics-slides.html#faster-more-accurate-cancer-screening",
+    "href": "slides/11-ethics-slides.html#faster-more-accurate-cancer-screening",
     "title": "Ethics in Data Science",
     "section": "Faster, more accurate cancer screening?",
     "text": "Faster, more accurate cancer screening?\nAugmenting doctors’ diagnostic capacity so that they make fewer mistakes, treat more people, and focus on other aspects of care:"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#recent-nobel-prize",
-    "href": "slides/14-ethics-slides.html#recent-nobel-prize",
+    "objectID": "slides/11-ethics-slides.html#recent-nobel-prize",
+    "href": "slides/11-ethics-slides.html#recent-nobel-prize",
     "title": "Ethics in Data Science",
     "section": "Recent Nobel Prize",
-    "text": "Recent Nobel Prize\n\n\nAlphaFold2: “predicting 3D structures [of proteins] (\\(y\\)) directly from the primary amino acid sequence (\\(x\\)).”\n“researchers can now better understand antibiotic resistance and create images of enzymes that can decompose plastic.”"
+    "text": "Recent Nobel Prize\n\n\n\n\n\nAlphaFold2: “predicting 3D structures [of proteins] (\\(y\\)) directly from the primary amino acid sequence (\\(x\\)).”\n“researchers can now better understand antibiotic resistance and create images of enzymes that can decompose plastic.”"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#how-charts-lie",
-    "href": "slides/14-ethics-slides.html#how-charts-lie",
+    "objectID": "slides/11-ethics-slides.html#how-charts-lie",
+    "href": "slides/11-ethics-slides.html#how-charts-lie",
     "title": "Ethics in Data Science",
     "section": "How Charts Lie",
     "text": "How Charts Lie\n\n\n\n\nHow Charts Lie\nGetting Smarter about Visual Information\nby Alberto Cairo"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#calling-bullshit",
-    "href": "slides/14-ethics-slides.html#calling-bullshit",
+    "objectID": "slides/11-ethics-slides.html#calling-bullshit",
+    "href": "slides/11-ethics-slides.html#calling-bullshit",
     "title": "Ethics in Data Science",
     "section": "Calling Bullshit",
     "text": "Calling Bullshit\n\n\n\n\nCalling Bullshit\nThe Art of Skepticism in a\nData-Driven World\nby Carl Bergstrom and Jevin West"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#machine-bias",
-    "href": "slides/14-ethics-slides.html#machine-bias",
+    "objectID": "slides/11-ethics-slides.html#machine-bias",
+    "href": "slides/11-ethics-slides.html#machine-bias",
     "title": "Ethics in Data Science",
     "section": "Machine Bias",
     "text": "Machine Bias\n\n\n\n\nMachine Bias\nby Julia Angwin, Jeff Larson, Surya Mattu, and Lauren Kirchner"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#ethics-and-data-science",
-    "href": "slides/14-ethics-slides.html#ethics-and-data-science",
+    "objectID": "slides/11-ethics-slides.html#ethics-and-data-science",
+    "href": "slides/11-ethics-slides.html#ethics-and-data-science",
     "title": "Ethics in Data Science",
     "section": "Ethics and Data Science",
     "text": "Ethics and Data Science\n\n\n\n\nEthics and Data Science\nby Mike Loukides, Hilary Mason, DJ Patil\n(Free Kindle download)"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#weapons-of-math-destruction",
-    "href": "slides/14-ethics-slides.html#weapons-of-math-destruction",
+    "objectID": "slides/11-ethics-slides.html#weapons-of-math-destruction",
+    "href": "slides/11-ethics-slides.html#weapons-of-math-destruction",
     "title": "Ethics in Data Science",
     "section": "Weapons of Math Destruction",
     "text": "Weapons of Math Destruction\n\n\n\n\nWeapons of Math Destruction\nHow Big Data Increases Inequality and Threatens Democracy\nby Cathy O’Neil"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#algorithms-of-oppression",
-    "href": "slides/14-ethics-slides.html#algorithms-of-oppression",
+    "objectID": "slides/11-ethics-slides.html#algorithms-of-oppression",
+    "href": "slides/11-ethics-slides.html#algorithms-of-oppression",
     "title": "Ethics in Data Science",
     "section": "Algorithms of Oppression",
     "text": "Algorithms of Oppression\n\n\n\n\nAlgorithms of Oppression\nHow Search Engines Reinforce Racism\nby Safiya Umoja Noble"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#and-more-recently",
-    "href": "slides/14-ethics-slides.html#and-more-recently",
+    "objectID": "slides/11-ethics-slides.html#and-more-recently",
+    "href": "slides/11-ethics-slides.html#and-more-recently",
     "title": "Ethics in Data Science",
     "section": "And more recently…",
     "text": "And more recently…\nHow AI discriminates and what that means for your Google habit\nA conversation with UCLA internet studies scholar Safiya Noble\nby Julia Busiek"
   },
   {
-    "objectID": "slides/14-ethics-slides.html#parting-thoughts",
-    "href": "slides/14-ethics-slides.html#parting-thoughts",
+    "objectID": "slides/11-ethics-slides.html#parting-thoughts",
+    "href": "slides/11-ethics-slides.html#parting-thoughts",
     "title": "Ethics in Data Science",
     "section": "Parting thoughts",
     "text": "Parting thoughts\n\nAt some point during your data science learning journey you will learn tools that can be used unethically\nYou might also be tempted to use your knowledge in a way that is ethically questionable either because of business goals or for the pursuit of further knowledge (or because your boss told you to do so)\n\n\nHow do you train yourself to make the right decisions (or reduce the likelihood of accidentally making the wrong decisions) at those points?"
