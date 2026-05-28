@@ -64,7 +64,7 @@ website:
       - ae.qmd
       - section: "Exam Review"
         contents:
-          - href: exam-review/midterm-review.qmd
+          - href: exam-review/midterm.qmd
             text: "Midterm Review"
       
       
