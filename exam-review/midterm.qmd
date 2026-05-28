@@ -1,13 +1,9 @@
 ---
-title: "Midterm 1 Study Guide"
+title: "Midterm Study Guide"
 format: html
 execute:
   echo: false
 ---
-
-::: callout-note
-Answers are [here](/exams/midterm-1-answers.html).
-:::
 
 ```{r}
 #| label: load-packages
