@@ -36,43 +36,20 @@ theme_set(theme_bw(base_size = 12))
 
 ```
 
-Midterm Exam 1 consists of two parts:
-
-- In-class portion
-    - Wednesday February 25 at 11:45 AM - 1:00 PM in Griffith Theater;
-    - Worth 80% of your Midterm 1 grade;
-    - All multiple choice;
-    - Your only resource is both sides of one 8.5" x 11" note sheet that you and only you created (written, typed, iPad, etc);
-- Take-home portion
-    - Released Thursday February 26 at 6:00 PM;
-    - Due Sunday March 1 at 11:59 PM;
-    - Worth 20% of your Midterm 1 grade;
-    - Similar to a homework assignment, but shorter;
-    - Completely open resource (open note, open internet, open ChatGPT, open everything), but citation policies apply, and collaboration between students is forbidden.
-    
-[Here](https://edstem.org/us/courses/90224/discussion/7626328) is our advice about how you should prioritize your studying. Below are 52 practice questions to get your wheels spinning.
-
-
-
-
 # Concepts and main ideas
 
 ### Question 1
 
 Can you answer each of these in one or two sentences?
 
-i. What does it mean for a dataset to be *tidy*?
-i. What does it mean for a data analysis to be *reproducible*?
-i. What is the difference between a *list* and a *vector* in `R`?
-i. How does one pronounce "STA 199"?
-i. What does the pipe operator `|>` do?
-i. Inside `ggplot` or `geom_xxx`, what does the aesthetic mapping `aes` do?
-i. What is the difference between `if_else` and `case_when`?
-i. What is the difference between `filter` and `select`?
-i. What does `group_by` do?
-i. If I have a column of numbers, what is the definition of the 38% quantile? 
-    - Could you sketch a cartoon of what this looks like? 
-    - Is the 38% quantile smaller than, bigger than, or equal to the median, or do you not have enough information to say?
+i.  What does it mean for a dataset to be *tidy*?
+ii. What does it mean for a data analysis to be *reproducible*?
+iii. What does the pipe operator `|>` do?
+iv. Inside `ggplot` or `geom_xxx`, what does the aesthetic mapping `aes` do?
+v.  What is the difference between `if_else` and `case_when`?
+vi. What is the difference between `filter` and `select`?
+vii. What does `group_by` do?
+viii. If I have a column of numbers, what is the definition of the 38% quantile? - Could you sketch a cartoon of what this looks like? - Is the 38% quantile smaller than, bigger than, or equal to the median, or do you not have enough information to say?
 
 # Visual understanding
 
@@ -139,8 +116,8 @@ ggplot(z, aes(x = x, y = y)) +
   coord_fixed()
 ```
 
-Match each scatterplot to the pair of histograms that displays the distributions of `x` and `y`. There is exactly one unique match for each.
-
+Match each scatterplot to the pair of histograms that displays the distributions of `x` and `y`.
+There is exactly one unique match for each.
 
 ```{r}
 #| label: simulated-data-histograms
@@ -183,7 +160,8 @@ z |>
 
 ### Questions 8 - 13: match densities and boxplots
 
-Match the density plot to the boxplot that visualizes the distribution of the same data. There is exactly one unique match for each.
+Match the density plot to the boxplot that visualizes the distribution of the same data.
+There is exactly one unique match for each.
 
 ```{r}
 #| label: simulate-data-2
@@ -217,7 +195,6 @@ z <- tibble(
   x = c(x1, x2, x3, x4, x5, x6)
 )
 ```
-
 
 ```{r}
 #| label: simulated-data-densities
@@ -266,12 +243,10 @@ z |>
   #)
 ```
 
-
 # Code doctor
 
-Below are ten examples of code that returns an error or a warning or otherwise behaves in a strange and unexpected way. In each case, identify the mistake and explain how it should be fixed.
-
-
+Below are some examples of code that return an error or a warning or otherwise behave in a strange and unexpected way.
+In each case, identify the mistake and explain how it should be fixed.
 
 ```{r}
 question <- 14
@@ -279,13 +254,14 @@ question <- 14
 
 ### Question `{r} question`
 
-Recall `mtcars`:
+The next few questions use the `mtcars` dataset. The data in this dataset come from the 1974 Motor Trend US magazine (so, yes, they’re old!) and provide information on fuel efficiency and other car characteristics.
 
 ```{r}
 glimpse(mtcars)
 ```
 
-You try to produce a plot and you get this error. Why?
+You try to produce a plot and you get this error.
+Why?
 
 ```{r}
 #| eval: false
@@ -297,7 +273,8 @@ ggplot(mtcars, aes(x = wt, y = mpg))
     y = "Miles per gallon"
   )
 ```
-```
+
+```         
 Error in `+.gg`:
 ! Cannot add <ggproto> objects together.
 ℹ Did you forget to add this object to a <ggplot> object?
@@ -310,8 +287,8 @@ question <- question + 1
 
 ### Question `{r} question`
 
-
-You try again and you get this error. Why?
+You try again and you get this error.
+Why?
 
 ```{r}
 #| error: true
@@ -324,15 +301,14 @@ ggplot(mtcars, aes(x = wt, y = mpg, shape = vs)) +
   )
 ```
 
-
 ```{r}
 question <- question + 1
 ```
 
 ### Question `{r} question`
 
-
-You want to color the points on your plot by whether or not the car's weight is above average. Why didn't this do the trick?
+You want to color the points on your plot by whether or not the car's weight is above average.
+Why didn't this do the trick?
 
 ```{r}
 #| error: true
@@ -382,7 +358,6 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
   )
 ```
 
-
 ```{r}
 question <- question + 1
 ```
@@ -399,13 +374,12 @@ When creating a scatter plot and giving each species a color and point shape, wh
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, shape = species, color = species)) + 
   geom_point() + 
   labs(
-    title = "God I hate the penguins",
-    x = "Stupid flipper length",
-    y = "Bloody body mass",
+    title = "Penguin Flipper Length vs. Body Mass",
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)",
     color = "Species"
   )
 ```
-
 
 ```{r}
 question <- question + 1
@@ -442,7 +416,7 @@ Why does this give an error?
 #| echo: true
 survey_counts |>
   group_by(age) |>
-  summarise(
+  summarize(
     age_sum = sum(n_people)
   ) |> 
   mutate(
@@ -477,52 +451,13 @@ question <- question + 1
 
 ### Question `{r} question`
 
-Earlier this year I surveyed you people about how many classes you have on Tuesdays, and you silly geese responded like this:
-
-```{r}
-#| echo: false
-#| message: false
-survey <- read_csv("data/survey-2025-02-06.csv") |>
-  rename(
-    tuesday = `How many classes do you have on Tuesdays?`,
-    year = `What year are you?`
-  ) |>
-  select(tuesday, year) |>
-  filter(
-    tuesday %in% c("2", "1", "Two")
-  )
-```
-
-```{r}
-survey |> 
-  count(tuesday)
-```
-
-Why did this throw an error?
-
-```{r}
-#| error: true
-#| echo: true
-survey |>
-  mutate(
-    tuesday = if_else(tuesday == "Two", 2, tuesday)
-  )
-```
-
-```{r}
-question <- question + 1
-```
-
-### Question `{r} question`
-
-
 In lecture we saw this data on UN votes:
 
 ```{r}
 glimpse(un_votes)
 ```
 
-This code does a bunch of cleaning and transformation, and then tries to create [this plot](https://sta199-s26.github.io/slides/02-grammar-of-data-visualization-slides.html#/what-does-this-picture-communicate) from class: 
+This code does a bunch of cleaning and transformation, and then tries to create [this plot](https://sta199-s26.github.io/slides/02-grammar-of-data-visualization-slides.html#/what-does-this-picture-communicate) from class:
 
 ```{r}
 #| echo: true
@@ -549,13 +484,11 @@ un_votes |>
 
 Why did it fail?
 
-
 ```{r}
 question <- question + 1
 ```
 
 ### Question `{r} question`
-
 
 You decide you want to save all the transformations you performed for later and then take a peek at just the data for Turkey:
 
@@ -586,10 +519,9 @@ us_uk_tr_votes |>
   glimpse()
 ```
 
-Wut?
+What went wrong here?
 
 # Data analysis
-
 
 ```{r}
 #| label: blizzard-data-prep
@@ -771,22 +703,22 @@ question <- question + 1
 Which of the following alternate plots would also be useful for visualizing the distributions of annual salaries of hourly and salaried workers?
 Choose all that apply.
 
-a\.
+a.
 Box plots
 
-b\.
+b.
 Density plots
 
-c\.
+c.
 Pie charts
 
-d\.
+d.
 Waffle charts
 
-e\.
+e.
 Histograms
 
-f\.
+f.
 Scatterplots
 
 {{< pagebreak >}}
@@ -1021,8 +953,6 @@ e.  There isn't a clear outlier in the plot.
 f.  The interpretation is causal – we don't know if the cause of the high percent increase is higher annual salary based on observational data.
     The causal direction might be the other way around, or there may be other factors contributing to the apparent relationship.
 
-
-
 ### Question 37
 
 Below is some code and its output.
@@ -1050,8 +980,6 @@ $\vspace{5cm}$
 :::
 
 Part 2: What is the cause of the warning and what does it mean?
-
-
 
 ### Question 38
 
@@ -1093,7 +1021,8 @@ d.  You need to pull to see my changes on GitHub in the web browser.
 
 ## Penguins
 
-The `penguins` data set includes measurements for penguin species, including: flipper length, body mass, bill dimensions, and sex. The following table summarizes information on which species of penguins (Adelie, Gentoo, and Chinstrap) live on which islands (Biscoe, Dream, or Torgersen).
+The `penguins` data set includes measurements for penguin species, including: flipper length, body mass, bill dimensions, and sex.
+The following table summarizes information on which species of penguins (Adelie, Gentoo, and Chinstrap) live on which islands (Biscoe, Dream, or Torgersen).
 
 ```{r}
 #| label: penguins-species-island-table
@@ -1155,7 +1084,8 @@ ggplot(penguins, aes(fill = island, y = species)) +
 
 ## NYC Flights
 
-The `flights` dataset includes characteristics of all flights departing from New York City airports (JFK, LGA, EWR) in 2013. Below is a peek at the first ten rows of the `flights` data.
+The `flights` dataset includes characteristics of all flights departing from New York City airports (JFK, LGA, EWR) in 2013.
+Below is a peek at the first ten rows of the `flights` data.
 
 ```{r}
 #| label: flights-glimpse
@@ -1166,7 +1096,8 @@ flights |>
 
 ### Question 40
 
-Based on this output, which of the following must be [**true**]{.underline} about the `flights` data frame? **Select all that are true.**
+Based on this output, which of the following must be [**true**]{.underline} about the `flights` data frame?
+**Select all that are true.**
 
 a.  The `flights` data frame is a `tibble`.
 
@@ -1180,7 +1111,8 @@ e.  There are no missing data in the `flights` data frame.
 
 ### Question 41
 
-Which of the following pipelines produce(s) the output shown below? **Select all that apply.**
+Which of the following pipelines produce(s) the output shown below?
+**Select all that apply.**
 
 ```{r}
 #| label: flights-pipeline
@@ -1383,7 +1315,8 @@ Which of the following goes in blanks (1) and (2)?
 
 ### Question 45
 
-Which function or functions go into blank (3)? **Select all that apply.**
+Which function or functions go into blank (3)?
+**Select all that apply.**
 
 a.  `arrange()`
 
@@ -1397,13 +1330,13 @@ e.  `slice()`
 
 ## Law & Order
 
-You've heard of the tidyverse, now let's visit the Law & Order-verse. Doink doink![^1]
+You've heard of the tidyverse, now let's visit the Law & Order-verse.
 
-[^1]: "Doink doink" is the scene and episode introductory sound on the Law & Order series. If you've never heard it, you're not at any disadvantage for the exam. If you've ever heard it, good luck getting it out of your head!
+Law & Order is a police procedural and legal drama television series that has been running since the 1990s.
+The Law & Order franchise includes a number of series such as Law & Order, Law & Order: SVU, Law & Order: Criminal Intent, etc.
 
-Law & Order is a police procedural and legal drama television series that has been running since the 1990s. The Law & Order franchise includes a number of series such as Law & Order, Law & Order: SVU, Law & Order: Criminal Intent, etc.
-
-You will work with data on average ratings for each season of three series from the Law & Order-verse – a subset of the data from the previous questions. Below is a peek at the first ten rows of the Law & Order data.
+You will work with data on average ratings for each season of three series from the Law & Order-verse – a subset of the data from the previous questions.
+Below is a peek at the first ten rows of the Law & Order data.
 
 ```{r}
 #| echo: false
@@ -1462,7 +1395,8 @@ ggplot(law_and_order, aes(x = season, y = av_rating, shape = title)) +
 
 ### Question 47
 
-The following code calculates the standard deviations of average season ratings of the five Law & Order series. Unfortunately, the output is partially erased and replaced with blanks.
+The following code calculates the standard deviations of average season ratings of the five Law & Order series.
+Unfortunately, the output is partially erased and replaced with blanks.
 
 ```{r}
 #| results: hide
@@ -1484,7 +1418,8 @@ law_and_order |>
 4 Law & Order: SVU                        8.67        _(2)_
 ```
 
-Based on the visualizations you've seen of these data so far, which of the following is [**true**]{.underline} about the blanks in the output? **Select all that are true.**
+Based on the visualizations you've seen of these data so far, which of the following is [**true**]{.underline} about the blanks in the output?
+**Select all that are true.**
 
 a.  The **mean** of average ratings (Blank 1) of Law & Order seasons is **lower** than the other two means.
 
@@ -1498,7 +1433,10 @@ e.  The **standard deviation** of average ratings of Law & Order: SVU seasons (B
 
 ## Romance and comedy
 
-Finally, we focus on romance and comedy shows. We first filter the dataset for any shows that have romance or comedy as their genre (`genre_1`, `genre_2`, or `genre_3`) and then remove shows that have both of these genre labels. For the next two questions, we focus on these shows that we identify as either romance or comedy. We then calculate the mean of the average season ratings for each show, to obtain a single "mean average rating" value per show.
+Finally, we focus on romance and comedy shows.
+We first filter the dataset for any shows that have romance or comedy as their genre (`genre_1`, `genre_2`, or `genre_3`) and then remove shows that have both of these genre labels.
+For the next two questions, we focus on these shows that we identify as either romance or comedy.
+We then calculate the mean of the average season ratings for each show, to obtain a single "mean average rating" value per show.
 
 ```{r}
 #| echo: false
@@ -1541,7 +1479,8 @@ ggplot(romance_comedy_means, aes(x = mean_av_rating, fill = genre)) +
 
 ### Question 48
 
-Which of the following statements is [**true**]{.underline} about these distributions? **Select all that are true.**
+Which of the following statements is [**true**]{.underline} about these distributions?
+**Select all that are true.**
 
 a.  Mean average ratings of romance shows are bimodal.
 b.  Mean average ratings of comedy are unimodal.
@@ -1551,7 +1490,8 @@ e.  There are more romance shows than comedy shows.
 
 ## IMDB
 
-The data for the next few questions come from the Internet Movie Database (IMDB). Specifically, the data are a random sample of movies released between 1980 and 2020.
+The data for the next few questions come from the Internet Movie Database (IMDB).
+Specifically, the data are a random sample of movies released between 1980 and 2020.
 
 ```{r}
 #| label: load-data
@@ -1563,24 +1503,24 @@ The name of the data frame used for this analysis is `movies`, and it contains t
 
 \setcounter{table}{0}
 
-| Variable          | Description                                                             |
-|-------------------|-------------------------------------------------------------------------|
-| `name`            | name of the movie                                                       |
-| `rating`          | rating of the movie (R, PG, etc.)                                       |
-| `genre`           | main genre of the movie.                                                |
-| `runtime`         | duration of the movie                                                   |
-| `year`            | year of release                                                         |
-| `release_date`    | release date (YYYY-MM-DD)                                               |
-| `release_country` | release country                                                         |
-| `score`           | IMDB user rating                                                        |
-| `votes`           | number of user votes                                                    |
-| `director`        | the director                                                            |
-| `writer`          | writer of the movie                                                     |
-| `star`            | main actor/actress                                                      |
-| `country`         | country of origin                                                       |
-| `budget`          | the budget of a movie (some movies don't have this, so it appears as 0) |
-| `gross`           | revenue of the movie                                                    |
-| `company`         | the production company                                                  |
+| Variable | Description |
+|------------------|------------------------------------------------------|
+| `name` | name of the movie |
+| `rating` | rating of the movie (R, PG, etc.) |
+| `genre` | main genre of the movie. |
+| `runtime` | duration of the movie |
+| `year` | year of release |
+| `release_date` | release date (YYYY-MM-DD) |
+| `release_country` | release country |
+| `score` | IMDB user rating |
+| `votes` | number of user votes |
+| `director` | the director |
+| `writer` | writer of the movie |
+| `star` | main actor/actress |
+| `country` | country of origin |
+| `budget` | the budget of a movie (some movies don't have this, so it appears as 0) |
+| `gross` | revenue of the movie |
+| `company` | the production company |
 
 : Data dictionary for `movies` {#tbl-data-dictionary tbl-colwidths="\[20,80\]"}
 
@@ -1634,7 +1574,7 @@ options(
 
 The `name` and `runtime` variables are shown below, with the variable types suppressed.
 
-::: {layout="[0.5, 0.5]"}
+::::: {layout="[0.5, 0.5]"}
 ::: {#firstcol}
 ```{r}
 #| eval: false
@@ -1668,7 +1608,7 @@ d.  Integer
 
 e.  Logical
 :::
-:::
+:::::
 
 \vspace{2cm}
 
@@ -1682,7 +1622,8 @@ movies |>
   summarize(sum(release_country == "United States"))
 ```
 
-Which of the following is [**TRUE**]{.underline} about the code and its result? **Select all that are true.**
+Which of the following is [**TRUE**]{.underline} about the code and its result?
+**Select all that are true.**
 
 a.  Evaluates whether each `release_country` is equal to `"United States"` or not, which results in a logical variable.
 
@@ -1696,7 +1637,8 @@ e.  The result shows there are 435 movies released in the United States.
 
 ### Question 51
 
-Suppose you want a visualization that shows the number of movies in the sample in each `genre`. Your first attempt is as follows.
+Suppose you want a visualization that shows the number of movies in the sample in each `genre`.
+Your first attempt is as follows.
 
 ```{r}
 #| fig-width: 6
@@ -1727,7 +1669,8 @@ ggplot(movies, aes(y = genre)) +
   )
 ```
 
-Which of the following modifications would your friend have made to your code to create their version? **Select all that apply.**
+Which of the following modifications would your friend have made to your code to create their version?
+**Select all that apply.**
 
 a.  Combine movies in genres other than Comedy, Drama, Action, and Horror into a new level called `"Other"`.
 
@@ -1741,7 +1684,8 @@ e.  Filter out all moves in genres other than Comedy, Drama, Action, and Horror 
 
 ### Question 52
 
-Which of the following is [**TRUE**]{.underline} about the code and its result? **Select all that are true.**
+Which of the following is [**TRUE**]{.underline} about the code and its result?
+**Select all that are true.**
 
 ```{r}
 #| echo: true
@@ -1759,4 +1703,3 @@ c.  Each row of the output is a movie.
 d.  The output shows that there are six distinct ratings in the dataset.
 
 e.  The code reduces the number of variables and observations in the `movies` data frame to six.
-

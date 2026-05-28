@@ -584,6 +584,11 @@
       ],
       "Hash": "d18028e978a88b2b16ef8d400cb49adf"
     },
+    "distr": {
+      "Package": "distr",
+      "Version": "2.9.7",
+      "Source": "Repository"
+    },
     "downlit": {
       "Package": "downlit",
       "Version": "0.4.5",
@@ -1559,6 +1564,11 @@
         "tibble"
       ],
       "Hash": "61eb941328b49a62d7f9816dfed7d959"
+    },
+    "openintro": {
+      "Package": "openintro",
+      "Version": "2.5.0",
+      "Source": "Repository"
     },
     "openssl": {
       "Package": "openssl",
