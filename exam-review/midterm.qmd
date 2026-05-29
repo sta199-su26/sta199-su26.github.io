@@ -791,7 +791,7 @@ d.  `Poor, Successful, High, Top`
 
 {{< pagebreak >}}
 
-### Questions 31 - 33
+### Questions 30 - 32
 
 Finally, another teammate creates the following two plots.
 
@@ -828,14 +828,14 @@ blizzard_salary |>
   )
 ```
 
-**Question 31:** Your teammate asks you for help deciding which one to use in the final report for visualizing the relationship between performance rating and salary type.
+**Question 30:** Your teammate asks you for help deciding which one to use in the final report for visualizing the relationship between performance rating and salary type.
 In 1-3 sentences, can you help them make a decision, justify your choice, and write the narrative that should go with the plot?
 
 ::: {.content-visible when-format="pdf"}
 $\vspace{2cm}$
 :::
 
-**Question 32:** A friend with a keen eye points out that the number of observations in @fig-salary-performance-rating-1 seems lower than the total number of observations in `blizzard_salary`.
+**Question 31:** A friend with a keen eye points out that the number of observations in @fig-salary-performance-rating-1 seems lower than the total number of observations in `blizzard_salary`.
 What might be going on here?
 Explain your reasoning.
 
@@ -845,7 +845,7 @@ $\vspace{2cm}$
 {{< pagebreak >}}
 :::
 
-**Question 33:** Below are the proportions of performance ratings for hourly and salaried workers.
+**Question 32:** Below are the proportions of performance ratings for hourly and salaried workers.
 Place these values in the corresponding segments in @fig-salary-performance-rating-2.
 
 ```{r}
@@ -862,7 +862,7 @@ blizzard_salary |>
 {{< pagebreak >}}
 :::
 
-### Questions 34 and 35
+### Questions 33 and 34
 
 The table below shows the distribution of `salary_type` and `performance_rating`.
 
@@ -890,7 +890,7 @@ blizzard_salary |>
   arrange(annual_salary)
 ```
 
-**Question 34:** Which of the following goes in blanks (1) and (2)?
+**Question 33:** Which of the following goes in blanks (1) and (2)?
 
 |     | \(1\) | \(2\) |
 |-----|:-----:|:-----:|
@@ -903,7 +903,7 @@ blizzard_salary |>
 $\vspace{1cm}$
 :::
 
-**Question 35:** Which function or functions go into blank (3)?
+**Question 34:** Which function or functions go into blank (3)?
 
 a.  `arrange()`
 
@@ -917,7 +917,7 @@ d.  `sort()`
 $\vspace{1cm}$
 :::
 
-### Question 36
+### Question 35
 
 You're reviewing another team's work and they made the following visualization:
 
@@ -953,7 +953,7 @@ e.  There isn't a clear outlier in the plot.
 f.  The interpretation is causal – we don't know if the cause of the high percent increase is higher annual salary based on observational data.
     The causal direction might be the other way around, or there may be other factors contributing to the apparent relationship.
 
-### Question 37
+### Question 36
 
 Below is some code and its output.
 
@@ -981,7 +981,7 @@ $\vspace{5cm}$
 
 Part 2: What is the cause of the warning and what does it mean?
 
-### Question 38
+### Question 37
 
 You're working on a data analysis on salaries of Blizzard employees in a Quarto document in a project version controlled by Git.
 You create a plot and write up a paragraph describing any patterns in it.
@@ -1037,7 +1037,7 @@ penguins |>
   cols_align(align = "right")
 ```
 
-### Question 39
+### Question 38
 
 Which of the following plots is the result of the following code?
 
@@ -1094,7 +1094,7 @@ flights |>
   relocate(year, month, day, arr_delay, carrier)
 ```
 
-### Question 40
+### Question 39
 
 Based on this output, which of the following must be [**true**]{.underline} about the `flights` data frame?
 **Select all that are true.**
@@ -1109,7 +1109,7 @@ d.  The `carrier` variable in the `flights` data frame is a character variable.
 
 e.  There are no missing data in the `flights` data frame.
 
-### Question 41
+### Question 40
 
 Which of the following pipelines produce(s) the output shown below?
 **Select all that apply.**
@@ -1229,7 +1229,7 @@ population |>
   left_join(continents, by = join_by(country == entity))
 ```
 
-### Question 42
+### Question 41
 
 How many rows will the resulting data frame have?
 
@@ -1239,7 +1239,7 @@ c.  6
 d.  7
 e.  8
 
-### Question 43
+### Question 42
 
 What will be the columns of the resulting data frame?
 
@@ -1301,7 +1301,7 @@ duke_forest |>
   mutate(price_per_sqfeet = price / area)
 ```
 
-### Question 44
+### Question 43
 
 Which of the following goes in blanks (1) and (2)?
 
@@ -1313,7 +1313,7 @@ Which of the following goes in blanks (1) and (2)?
 | d\. |  `|`  | `>=`  |
 | e\. |  `&`  | `!=`  |
 
-### Question 45
+### Question 44
 
 Which function or functions go into blank (3)?
 **Select all that apply.**
@@ -1360,7 +1360,7 @@ law_and_order |>
   labs(x = "Average rating", y = "Series title")
 ```
 
-### Question 46
+### Question 45
 
 Based on the information from the side-by-side box plots, fill in the legend of the plot below with Law & Order series titles.
 
@@ -1393,7 +1393,7 @@ ggplot(law_and_order, aes(x = season, y = av_rating, shape = title)) +
   theme(legend.key.height = unit(1.25, "cm"))
 ```
 
-### Question 47
+### Question 46
 
 The following code calculates the standard deviations of average season ratings of the five Law & Order series.
 Unfortunately, the output is partially erased and replaced with blanks.
@@ -1477,7 +1477,7 @@ ggplot(romance_comedy_means, aes(x = mean_av_rating, fill = genre)) +
   scale_fill_grey(start = 0.2, end = 0.6)
 ```
 
-### Question 48
+### Question 47
 
 Which of the following statements is [**true**]{.underline} about these distributions?
 **Select all that are true.**
@@ -1570,7 +1570,7 @@ options(
 ```
 :::
 
-### Question 49
+### Question 48
 
 The `name` and `runtime` variables are shown below, with the variable types suppressed.
 
@@ -1612,7 +1612,7 @@ e.  Logical
 
 \vspace{2cm}
 
-### Question 50
+### Question 49
 
 The code below summarizes the data in a certain way.
 
@@ -1635,7 +1635,7 @@ d.  Results in a character vector.
 
 e.  The result shows there are 435 movies released in the United States.
 
-### Question 51
+### Question 50
 
 Suppose you want a visualization that shows the number of movies in the sample in each `genre`.
 Your first attempt is as follows.
@@ -1682,7 +1682,7 @@ d.  Add a title, x and y-axis labels, and a caption.
 
 e.  Filter out all moves in genres other than Comedy, Drama, Action, and Horror before plotting.
 
-### Question 52
+### Question 51
 
 Which of the following is [**TRUE**]{.underline} about the code and its result?
 **Select all that are true.**
