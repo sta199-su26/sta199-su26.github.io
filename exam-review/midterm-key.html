@@ -25,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../exam-review/midterm.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -79,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Midterm 1 Study Guide Solutions</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exam-review/midterm.html">Exam Review</a></li><li class="breadcrumb-item"><a href="../exam-review/midterm-key.html">Midterm Review Answer Key</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -203,17 +204,23 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Exam Review</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../exam-review/midterm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Midterm Review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam-review/midterm-key.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Midterm Review Answer Key</span></a>
   </div>
 </li>
       </ul>
@@ -226,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exam-review/midterm.html">Exam Review</a></li><li class="breadcrumb-item"><a href="../exam-review/midterm-key.html">Midterm Review Answer Key</a></li></ol></nav><div class="quarto-title">
 <h1 class="title">Midterm 1 Study Guide Solutions</h1>
 </div>
 
@@ -247,10 +254,8 @@ ul.task-list li input[type="checkbox"] {
 <ol type="i">
 <li>every row is an observation and every column is a variable;</li>
 <li>given the data and the code, we can exactly reproduce all of the figures and tables in the analysis;</li>
-<li>both lists and vector are ways of bundling together multiple values in R. But a vector consists of values of all the same type, whereas a list can bundle different types;</li>
-<li>STAAAAAAAWANANAAAAA;</li>
 <li>It takes the object on the left and feeds it forward as the first argument to the command on the right;</li>
-<li>It tells the computer what columns in the data frame to use and how to use them;</li>
+<li>It tells the computer what columns in the data frame to use and how to map them to the plot;</li>
 <li>
 <code>if_else</code> handles two conditions; <code>case_when</code> handles multiple conditions;</li>
 <li>
@@ -258,8 +263,7 @@ ul.task-list li input[type="checkbox"] {
 <li>adds a “grouping” attribute to a data frame so that subsequent operations are performed <em>within</em> the levels of a categorical variable;</li>
 <li>it’s the cutoff point on the number line that has 38% of your data values below and 62% of the values above;
 <ul>
-<li>yes I could;</li>
-<li>smaller than.</li>
+<li>the 38% quantile is smaller than the median</li>
 </ul>
 </li>
 </ol>
@@ -280,10 +284,9 @@ ul.task-list li input[type="checkbox"] {
 <li><p><code>vs</code> is numeric type, but the <code>shape</code> aesthetic requires a factor;</p></li>
 <li><p><code>mtcars</code> needs to be overwritten to save the new variable <code>heavy</code>;</p></li>
 <li><p>There’s a hanging comma inside the <code>values</code> argument to <code>scale_color_manual</code>;</p></li>
-<li><p><code>color</code> and <code>shape</code> have different labels. <code>shape</code> is defaulting to the column name “species”, and <code>color</code> is using the user-specified “Species”. It’s case sensitive. Add <code>shape = "Species"</code> inside <code>labs</code>, and the legends are consolidated;</p></li>
+<li><p><code>color</code> and <code>shape</code> have different labels. <code>shape</code> is defaulting to the column name “species”, and <code>color</code> is using the user-specified “Species”. It’s case sensitive. Add <code>shape = "Species"</code> inside <code>labs</code>, and the legends will be consolidated;</p></li>
 <li><p><code>n_people</code> is not a column in the summary table. <code>age_sum</code> is a column in the summary table.</p></li>
 <li><p>The wider data frame has a column titled <code>Remain Against The Law</code>, which is improper because of the spaces. To reference that column by name, you need to put it in back ticks, no quotes;</p></li>
-<li><p>Inside the <code>if_else</code>, we are mixing types: characters and numbers;</p></li>
 <li><p>We are supplying <code>ggplot</code> with the data twice, by piping it in and supplying the data frame directly. It needs to be one or the other;</p></li>
 <li><p>We are assigning <em>the entire pipeline</em> to the variable name <code>us_uk_tr_votes</code>. The pipeline ends with the creation of a plot, so this new variable is not a data frame, it’s a plot object. You can’t filter that;</p></li>
 <li><p>b, c, f, g -</p></li>
@@ -293,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
 -   The `percent_incr` variable is numerical and continuous.
 
 -   The `salary_type` variable is categorical.</code></pre>
-<ol start="25" type="1">
+<ol start="24" type="1">
 <li><p>Figure 1 - A shared x-axis makes it easier to compare summary statistics for the variable on the x-axis.</p></li>
 <li><p>c - It’s a value higher than the median for hourly but lower than the mean for salaried.</p></li>
 <li><p>b - There is more variability around the mean compared to the hourly distribution.</p></li>
@@ -347,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<ol start="47" type="1">
+<ol start="46" type="1">
 <li><p>a, d</p></li>
 <li><p>b, c, e</p></li>
 <li><p>a</p></li>
@@ -774,7 +777,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../exam-review/midterm.html" class="pagination-link" aria-label="Midterm Review">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Midterm Review</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
