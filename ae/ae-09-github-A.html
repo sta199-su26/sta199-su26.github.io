@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.39">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>Application Exercises – STA 199</title>
+<title>AE 09: Data Imports &amp; Exports – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,31 +17,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./exam-review/midterm.html" rel="next">
-<link href="./lab.html" rel="prev">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-55dd4162233498a7984b836f21ab1d60.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-55dd4162233498a7984b836f21ab1d60.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -70,104 +95,36 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-ae-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-ae-listing'] = new List('listing-ae-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="style/sta199.scss">
-<meta property="og:title" content="Application Exercises – STA 199">
+}</script><link rel="stylesheet" href="../style/sta199.scss">
+<meta property="og:title" content="AE 09: Data Imports &amp; Exports – STA 199">
 <meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
+<meta property="og:image" content="https://sta199-su26.github.io/ae/images/age-gaps-source.png">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Application Exercises – STA 199">
+<meta name="twitter:title" content="AE 09: Data Imports &amp; Exports – STA 199">
 <meta name="twitter:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
-<meta name="twitter:image" content="https://sta199-su26.github.io/img/twitter-card-ks.pdf">
+<meta name="twitter:image" content="https://sta199-su26.github.io/ae/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ae.html">Application Exercises</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 09: Data Imports &amp; Exports</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
       <div class="sidebar-tools-main">
     <a href="https://github.com/sta199-su26" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
@@ -180,7 +137,7 @@ window.Quarto = {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
+<li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course Information</span></a>
@@ -188,45 +145,45 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-team.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Team</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Couse Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-links.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-links.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Useful Links</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -235,46 +192,46 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-access.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cheatsheets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coding-principles-oh.html" class="sidebar-item-text sidebar-link">
+  <a href="../coding-principles-oh.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Coding principles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Troubleshooting</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
  <span class="menu-text">Project</span></span>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab.html" class="sidebar-item-text sidebar-link">
+  <a href="../lab.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Labs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ae.html" class="sidebar-item-text sidebar-link active">
+  <a href="../ae.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Application Exercises</span></a>
   </div>
 </li>
@@ -286,29 +243,39 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exam-review/midterm.html" class="sidebar-item-text sidebar-link">
+  <a href="../exam-review/midterm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Midterm Review</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#packages" id="toc-packages" class="nav-link active" data-scroll-target="#packages">Packages</a></li>
+  <li>
+<a href="#part-1-hollywood-relationships" id="toc-part-1-hollywood-relationships" class="nav-link" data-scroll-target="#part-1-hollywood-relationships">Part 1: Hollywood Relationships</a>
+  <ul class="collapse">
+<li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">Import</a></li>
+  <li><a href="#subset" id="toc-subset" class="nav-link" data-scroll-target="#subset">Subset</a></li>
+  <li><a href="#export" id="toc-export" class="nav-link" data-scroll-target="#export">Export</a></li>
+  </ul>
+</li>
+  <li><a href="#part-2-sales-data" id="toc-part-2-sales-data" class="nav-link" data-scroll-target="#part-2-sales-data">Part 2: Sales Data</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae/ae-09-github-A.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Application Exercises</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">AE 09: Data Imports &amp; Exports</h1>
 </div>
 
 
@@ -322,198 +289,128 @@ window.Quarto = {
   
 
 
-</header>
-
-
-<p>All application exercises (AEs) are due by the end of lecture (or, precisely, by 10:45 am) on the day they’re covered in lecture. To submit your AE, make at least one change to your AE, <strong>commit and then push</strong> your change to your AE repo. AEs are graded for engagement, not accuracy.</p>
-<p>More AEs to be added as the semester progresses.</p>
-<p><br></p>
-<div id="listing-ae-listing" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Title
-</th>
-<th>
-Subtitle
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1780086519120" data-listing-reading-time-sort="2" data-listing-word-count-sort="398" data-listing-title-sort="AE 00: Make a GitHub" data-listing-filename-sort="ae-00-github.qmd">
-<td>
-<a href="./ae/ae-00-github.html" class="title listing-title">AE 00: Make a GitHub</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="4" data-listing-word-count-sort="751" data-listing-title-sort="AE 01: Meet the penguins" data-listing-filename-sort="ae-01-github.qmd">
-<td>
-<a href="./ae/ae-01-github.html" class="title listing-title">AE 01: Meet the penguins</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="1" data-listing-word-count-sort="159" data-listing-title-sort="AE 02: Penguin peekaboo" data-listing-filename-sort="ae-02-github.qmd">
-<td>
-<a href="./ae/ae-02-github.html" class="title listing-title">AE 02: Penguin peekaboo</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="3" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="8" data-listing-word-count-sort="1549" data-listing-title-sort="AE 03: NYC flights + data wrangling" data-listing-filename-sort="ae-03-github-A.qmd">
-<td>
-<a href="./ae/ae-03-github-A.html" class="title listing-title">AE 03: NYC flights + data wrangling</a>
-</td>
-<td>
-<span class="listing-subtitle">Suggested answers</span>
-</td>
-</tr>
-<tr data-index="4" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="8" data-listing-word-count-sort="1432" data-listing-title-sort="AE 03: NYC flights + data wrangling" data-listing-filename-sort="ae-03-github.qmd">
-<td>
-<a href="./ae/ae-03-github.html" class="title listing-title">AE 03: NYC flights + data wrangling</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="5" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="3" data-listing-word-count-sort="449" data-listing-title-sort="AE 04: Gerrymandering + data exploration I" data-listing-filename-sort="ae-04-github-A.qmd">
-<td>
-<a href="./ae/ae-04-github-A.html" class="title listing-title">AE 04: Gerrymandering + data exploration I</a>
-</td>
-<td>
-<span class="listing-subtitle">Suggested answers</span>
-</td>
-</tr>
-<tr data-index="6" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="2" data-listing-word-count-sort="331" data-listing-title-sort="AE 04: Gerrymandering + data exploration I" data-listing-filename-sort="ae-04-github.qmd">
-<td>
-<a href="./ae/ae-04-github.html" class="title listing-title">AE 04: Gerrymandering + data exploration I</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="7" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="2" data-listing-word-count-sort="378" data-listing-title-sort="AE 05: Gerrymandering + data exploration II" data-listing-filename-sort="ae-05-github-A.qmd">
-<td>
-<a href="./ae/ae-05-github-A.html" class="title listing-title">AE 05: Gerrymandering + data exploration II</a>
-</td>
-<td>
-<span class="listing-subtitle">Suggested answers</span>
-</td>
-</tr>
-<tr data-index="8" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="1" data-listing-word-count-sort="110" data-listing-title-sort="AE 05: Gerrymandering + data exploration II" data-listing-filename-sort="ae-05-github.qmd">
-<td>
-<a href="./ae/ae-05-github.html" class="title listing-title">AE 05: Gerrymandering + data exploration II</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="9" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="6" data-listing-word-count-sort="1184" data-listing-title-sort="AE 06: Tidying Stat Sci" data-listing-filename-sort="ae-06-github-A.qmd">
-<td>
-<a href="./ae/ae-06-github-A.html" class="title listing-title">AE 06: Tidying Stat Sci</a>
-</td>
-<td>
-<span class="listing-subtitle">Suggested answers</span>
-</td>
-</tr>
-<tr data-index="10" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="3" data-listing-word-count-sort="492" data-listing-title-sort="AE 06: Tidying Stat Sci" data-listing-filename-sort="ae-06-github.qmd">
-<td>
-<a href="./ae/ae-06-github.html" class="title listing-title">AE 06: Tidying Stat Sci</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="11" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="5" data-listing-word-count-sort="824" data-listing-title-sort="AE 07: Joining" data-listing-filename-sort="ae-07-github-A.qmd">
-<td>
-<a href="./ae/ae-07-github-A.html" class="title listing-title">AE 07: Joining</a>
-</td>
-<td>
-<span class="listing-subtitle">Suggested answers</span>
-</td>
-</tr>
-<tr data-index="12" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="3" data-listing-word-count-sort="534" data-listing-title-sort="AE 07: Joining" data-listing-filename-sort="ae-07-github.qmd">
-<td>
-<a href="./ae/ae-07-github.html" class="title listing-title">AE 07: Joining</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="13" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="2" data-listing-word-count-sort="338" data-listing-title-sort="AE 08: Durham climate + factors" data-listing-filename-sort="ae-08-github.qmd">
-<td>
-<a href="./ae/ae-08-github.html" class="title listing-title">AE 08: Durham climate + factors</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="14" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="5" data-listing-word-count-sort="916" data-listing-title-sort="AE 08: Durham climate + factors" data-listing-filename-sort="ae-08-github-A.qmd">
-<td>
-<a href="./ae/ae-08-github-A.html" class="title listing-title">AE 08: Durham climate + factors</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="15" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="3" data-listing-word-count-sort="480" data-listing-title-sort="AE 09: Data Imports &amp; Exports" data-listing-filename-sort="ae-09-github.qmd">
-<td>
-<a href="./ae/ae-09-github.html" class="title listing-title">AE 09: Data Imports &amp; Exports</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="16" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="4" data-listing-word-count-sort="733" data-listing-title-sort="AE 09: Data Imports &amp; Exports" data-listing-filename-sort="ae-09-github-A.qmd">
-<td>
-<a href="./ae/ae-09-github-A.html" class="title listing-title">AE 09: Data Imports &amp; Exports</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="17" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="2" data-listing-word-count-sort="384" data-listing-title-sort="AE 10: Trends in instructional staff employees in universities" data-listing-filename-sort="ae-10-github.qmd">
-<td>
-<a href="./ae/ae-10-github.html" class="title listing-title">AE 10: Trends in instructional staff employees in universities</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="18" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="9" data-listing-word-count-sort="1782" data-listing-title-sort="AE 10: Trends in instructional staff employees in universities" data-listing-filename-sort="ae-10-github-A.qmd">
-<td>
-<a href="./ae/ae-10-github-A.html" class="title listing-title">AE 10: Trends in instructional staff employees in universities</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="19" data-listing-file-modified-sort="1780086519121" data-listing-reading-time-sort="7" data-listing-word-count-sort="1348" data-listing-title-sort="AE 11: Midterm 'Live Coding' Exam Practice 🏀⛹🐧️" data-listing-filename-sort="ae-11-github.qmd">
-<td>
-<a href="./ae/ae-11-github.html" class="title listing-title">AE 11: Midterm ‘Live Coding’ Exam Practice 🏀⛹🐧️</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
+</header><section id="packages" class="level2"><h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>We will use the following two packages in this application exercise.</p>
+<ul>
+<li>
+<strong>tidyverse</strong>: For data import, wrangling, and visualization.</li>
+<li>
+<strong>readxl:</strong> For importing data from Excel.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="part-1-hollywood-relationships" class="level1"><h1>Part 1: Hollywood Relationships</h1>
+<section id="data" class="level2"><h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The data for this application exercise is from <a href="https://www.data-is-plural.com">Data is Plural</a> and it is on age gaps in Hollywood relationships.</p>
+<p>The data follows certain rules:</p>
+<ul>
+<li>The two (or more) actors play actual love interests (not just friends, coworkers, or some other non-romantic type of relationship).</li>
+<li>The youngest of the two actors is at least 17 years old.</li>
+<li>Not animated characters.</li>
+</ul>
+<p>The age gaps dataset includes “gender” columns, which always contain the values “man” or “woman”. These values appear to indicate how the characters in each film identify. Some of these values do not match how the actor identifies.</p>
+<p>The data are in an Excel file called <code>age-gaps.xlsx</code> in your <code>data</code> folder.</p>
+<p>This is how the Excel file looks – it has two sheets, one with the data (called <code>Hollywood Age Gaps</code>) and one with information about the data (called <code>Source</code>). Additionally, the data sheet has some metadata at the top, above the column headers.</p>
+<p><img src="images/age-gaps-source.png" class="img-fluid" width="400"><img src="images/age-gaps-data.png" class="img-fluid" width="400"></p>
+</section><section id="import" class="level2"><h2 class="anchored" data-anchor-id="import">Import</h2>
+<p>Load the data from <code>age-gaps.xlsx</code> in your <code>data</code> and assign it to <code>age_gaps</code>. Confirm that this new object appears in your Environment tab. Click on the <em>name of the object</em> in your Environment tab to pop open the data in the data viewer.</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">age_gaps</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"data/age-gaps.xlsx"</span>, </span>
+<span>                       sheet <span class="op">=</span> <span class="st">"Hollywood Age Gaps"</span>,</span>
+<span>                       skip <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="subset" class="level2"><h2 class="anchored" data-anchor-id="subset">Subset</h2>
+<p>Create a subset of the data frame for heterosexual relationships on screen &amp; save the resulting data as a <em>new</em> data frame.</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">age_gaps_hetero</span> <span class="op">&lt;-</span> <span class="va">age_gaps</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">character_1_gender</span> <span class="op">!=</span> <span class="va">character_2_gender</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Split the data for heterosexual relationships into three – where woman is older, where man is older, where they are the same age. Save these subsets as three appropriately named data frames. <em>Remember:</em> Use concise and evocative names. Confirm that these new objects appear in your Environment tab and that the sum of the number of observations in the two new data frames add to the number of observations in the original data frame.</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">age_gaps_hetero</span> <span class="op">=</span> <span class="va">age_gaps_hetero</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>older_gender <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case-and-replace-when.html">case_when</a></span><span class="op">(</span></span>
+<span>    <span class="op">(</span><span class="va">character_1_gender</span> <span class="op">==</span> <span class="st">"woman"</span> <span class="op">&amp;</span> <span class="op">(</span><span class="va">actor_1_age</span> <span class="op">&gt;</span> <span class="va">actor_2_age</span><span class="op">)</span><span class="op">)</span> <span class="op">~</span> <span class="st">"woman older"</span>,</span>
+<span>    <span class="op">(</span><span class="va">character_2_gender</span> <span class="op">==</span> <span class="st">"woman"</span> <span class="op">&amp;</span> <span class="op">(</span><span class="va">actor_2_age</span> <span class="op">&gt;</span> <span class="va">actor_1_age</span><span class="op">)</span><span class="op">)</span> <span class="op">~</span> <span class="st">"woman older"</span>,</span>
+<span>    <span class="op">(</span><span class="va">character_1_gender</span> <span class="op">==</span> <span class="st">"man"</span> <span class="op">&amp;</span> <span class="op">(</span><span class="va">actor_1_age</span> <span class="op">&gt;</span> <span class="va">actor_2_age</span><span class="op">)</span><span class="op">)</span> <span class="op">~</span> <span class="st">"man older"</span>,</span>
+<span>    <span class="op">(</span><span class="va">character_2_gender</span> <span class="op">==</span> <span class="st">"man"</span> <span class="op">&amp;</span> <span class="op">(</span><span class="va">actor_2_age</span> <span class="op">&gt;</span> <span class="va">actor_1_age</span><span class="op">)</span><span class="op">)</span> <span class="op">~</span> <span class="st">"man older"</span>,</span>
+<span>    <span class="va">actor_1_age</span> <span class="op">==</span> <span class="va">actor_2_age</span> <span class="op">~</span> <span class="st">"same age"</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">woman_older</span> <span class="op">&lt;-</span> <span class="va">age_gaps_hetero</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">older_gender</span> <span class="op">==</span> <span class="st">"woman older"</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="va">man_older</span> <span class="op">&lt;-</span> <span class="va">age_gaps_hetero</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">older_gender</span> <span class="op">==</span> <span class="st">"man older"</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="va">same_age</span> <span class="op">&lt;-</span> <span class="va">age_gaps_hetero</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">older_gender</span> <span class="op">==</span> <span class="st">"same age"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="export" class="level2"><h2 class="anchored" data-anchor-id="export">Export</h2>
+<p>Write out the three new datasets you created into the <code>data</code>, and within that, into a subfolder called <code>age-gaps-subsets</code>, as CSV files.</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">woman_older</span>, file <span class="op">=</span> <span class="st">"data/woman-older.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">man_older</span>, file <span class="op">=</span> <span class="st">"data/man-older.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">same_age</span>, file <span class="op">=</span> <span class="st">"data/same-age.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section><section id="part-2-sales-data" class="level1"><h1>Part 2: Sales Data</h1>
+<p>Sales data are stored in an Excel file that looks like the following:</p>
+<p><img src="https://sta199-s24.github.io/images/sales-excel.png" class="img-fluid"></p>
+<p><strong>Task 1:</strong> Read in the Excel file called <code>sales.xlsx</code> from the <code>data</code> folder such that it looks like the following.</p>
+<p><img src="https://sta199-s24.github.io/images/sales-1.png" class="img-fluid" width="200"></p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_raw</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"data/sales.xlsx"</span>,</span>
+<span>                        skip <span class="op">=</span> <span class="fl">4</span>,</span>
+<span>                        col_names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"id"</span>, <span class="st">"n"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">sales_raw</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 2
+  id      n    
+  &lt;chr&gt;   &lt;chr&gt;
+1 Brand 1 n    
+2 1234    8    
+3 8721    2    
+4 1822    3    
+5 Brand 2 n    
+6 3333    1    
+7 2156    3    
+8 3987    6    
+9 3216    5    </code></pre>
 </div>
 </div>
-<p><br></p>
+<p><strong>Task 2:</strong> Manipulate the sales data such such that it looks like the following.</p>
+<p><img src="https://sta199-s24.github.io/images/sales-2.png" class="img-fluid" width="200"></p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales_clean</span> <span class="op">&lt;-</span> <span class="va">sales_raw</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>is_brand <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">id</span>, <span class="st">"Brand"</span><span class="op">)</span>,</span>
+<span>         brand <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">is_brand</span>, <span class="va">id</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/fill.html">fill</a></span><span class="op">(</span><span class="va">brand</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">n</span> <span class="op">!=</span> <span class="st">"n"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">brand</span>, <span class="va">id</span>, <span class="va">n</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span>,</span>
+<span>         n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">sales_clean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 3
+  brand      id     n
+  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+1 Brand 1  1234     8
+2 Brand 1  8721     2
+3 Brand 1  1822     3
+4 Brand 2  3333     1
+5 Brand 2  2156     3
+6 Brand 2  3987     6
+7 Brand 2  3216     5</code></pre>
+</div>
+</div>
+<p>Why should we bother with writing code for reading the data in by skipping columns and assigning variable names as well as cleaning it up in multiple steps instead of opening the Excel file and editing the data in there to prepare it for a clean import?</p>
+<p>Computational reproducibility.</p>
 
 
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -930,34 +827,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./lab.html" class="pagination-link" aria-label="Labs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Labs</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./exam-review/midterm.html" class="pagination-link" aria-label="Midterm Review">
-        <span class="nav-page-text">Midterm Review</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2026, Mine Çetinkaya-Rundel, Marie Neubrander, John Zito, Katie Solarz</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae/ae-09-github-A.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #f21118;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>
