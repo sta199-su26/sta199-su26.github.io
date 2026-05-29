@@ -91,7 +91,7 @@ Display the data frame and state the numbers of rows and columns in the data fra
 # add code here
 ```
 
-## Question 5 - Help and correct
+## Question 3 - Help and correct
 
 Suppose you are helping a friend who is working with these data.
 
@@ -163,7 +163,7 @@ If at any point you *accidentally* overwrite the `penguins` data frame, you can 
 library(palmerpenguins)
 ```
 
-## Question 3
+## Question 4: Tile and scatter
 
 a.  In a single pipeline, update the `penguins` data frame to:
     -   remove rows with missing values for `bill_length_mm`, `flipper_length_mm`, or `species`
