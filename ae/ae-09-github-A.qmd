@@ -1,5 +1,9 @@
 ---
 title: "AE 09: Data Imports & Exports"
+subtitle: "Suggested answers"
+format:
+  html:
+    self-contained: true
 ---
 
 ## Packages
@@ -153,5 +157,4 @@ sales_clean
 
 Why should we bother with writing code for reading the data in by skipping columns and assigning variable names as well as cleaning it up in multiple steps instead of opening the Excel file and editing the data in there to prepare it for a clean import?
 
-Computational reproducibility. 
-
+Computational reproducibility.
