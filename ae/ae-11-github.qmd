@@ -151,7 +151,7 @@ Fix the code to accomplish your friend’s goals, and again write a bulleted lis
 # add code here
 ```
 
-# Part 2: Back to the Penguins
+# Part 2 - Back to the Penguins
 
 In this part you work with data on the Palmer Penguins.
 
@@ -163,7 +163,7 @@ If at any point you *accidentally* overwrite the `penguins` data frame, you can 
 library(palmerpenguins)
 ```
 
-## Question 4: Tile and scatter
+## Question 4 - Tile and scatter
 
 a.  In a single pipeline, update the `penguins` data frame to:
     -   remove rows with missing values for `bill_length_mm`, `flipper_length_mm`, or `species`
