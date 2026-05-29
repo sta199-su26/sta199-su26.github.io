@@ -66,6 +66,8 @@ website:
         contents:
           - href: exam-review/midterm.qmd
             text: "Midterm Review"
+          - href: exam-review/midterm-key.qmd   
+            text: "Midterm Review Answer Key"
       
       
             
