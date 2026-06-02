@@ -224,9 +224,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Project</span></span>
-  </li>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/description.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Description</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/1-working-collaboratively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 1</span></a>
+  </div>
+</li>
+      </ul>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab.html" class="sidebar-item-text sidebar-link">
@@ -676,11 +695,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code># A tibble: 5 × 7
   title            year gross_2013 budget_2013   roi binary clean_test
   &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     
-1 Runner Runner    2013   81933292    30000000  2.73 FAIL   nowomen   
-2 Bridge to Tera…  2007  247425540    28088587  8.81 PASS   ok        
-3 Notes on a Sca…  2006   77741762    31784400  2.45 PASS   ok        
-4 The Soloist      2009   76190466    65143896  1.17 FAIL   notalk    
-5 Groundhog Day    1993  228669160    23541900  9.71 FAIL   men       </code></pre>
+1 Species          1995  265103961    53507281  4.95 FAIL   dubious   
+2 Before Sunset    2004   21071088     2466386  8.54 FAIL   nowomen   
+3 The Sisterhood…  2008   95628271    29220920  3.27 PASS   ok        
+4 Beauty Shop      2005   89122796    29825828  2.99 PASS   ok        
+5 Mirror Mirror    2012  236965954    86244278  2.75 FAIL   dubious   </code></pre>
 </div>
 </div>
 </section><section id="filter" class="level2 scrollable smaller"><h2 class="scrollable smaller anchored" data-anchor-id="filter"><code>filter()</code></h2>
