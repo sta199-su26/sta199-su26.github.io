@@ -1,18 +1,13 @@
 ---
-title: "The language of models"
-subtitle: "Lecture 15"
-date: "2026-03-16"
+title: "The Language of Models"
+subtitle: "Lecture 12"
+date: "2026-06-03"
 format: 
-  revealjs: 
-    output-file: 15-models-slides.html
-    footer: "[🔗 sta199-s26.github.io](https://sta199-s26.github.io/)"
-    theme: slides.scss
-    transition: fade
-    slide-number: true
-    logo: images/logo.png
-    toc: false
+  revealjs:
+    output-file: 12-modeling-slides.html
   html: 
-    code-link: true
+    output-file: 12-modeling.html
+auto-stretch: false
 ---
 
 ```{r}
@@ -27,31 +22,48 @@ library(datasauRus)
 library(ggplot2)
 library(jpeg)
 library(gt)
-todays_ae <- "ae-15-icecover-model"
+library(patchwork)
+todays_ae <- "ae-12-modeling-fish"
+```
+
+## While you wait... {.smaller}
+
+::: appex
+-   Go to your `ae` project in RStudio.
+
+-   Make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
+
+-   Click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+
+-   Wait till the you're prompted to work on the application exercise during class before editing the file.
+:::
+
+# Midterm is done!
+
+This course is officially halfway over 💔🍾
 
 # Modeling
 
-## Agenda
+## Before:
+
+-   Plotting and summary statistics
+
+-   Useful, but... a little subjective?
+
+## Now:
+
+-   Learn statistical tools for quantifying relationships
+    -   Describing relationships
+    -   Prediction and classification
+    -   Uncertainty quantification
+
+## Today's Agenda
 
 -   What is a model?
 -   Why do we model?
 -   What is correlation?
 
-## Two main goals
-
-- Prediction / classification
-
-- Description / explanation
-
-<br>
-
-::: question
-
-Can you think of examples of modeling for prediction vs. modeling for explanation?
-
-:::
-
-# Prediction
+# Prediction / classification
 
 ## Let's drive a Tesla!
 
@@ -62,7 +74,7 @@ Can you think of examples of modeling for prediction vs. modeling for explanatio
 > i love how Tesla thinks the wall in my garage is a semi.
 > 😅
 
-![](images/15/tesla-get-wrong-1.png){fig-align="center" width="300"}
+![](img/12/tesla-get-wrong-1.png){fig-align="center" width="300"}
 
 ::: aside
 Source: [Reddit](https://www.reddit.com/r/TeslaModelY/comments/vjcpte/i_love_how_tesla_thinks_the_wall_in_my_garage_is/)
@@ -74,24 +86,23 @@ Source: [Reddit](https://www.reddit.com/r/TeslaModelY/comments/vjcpte/i_love_how
 > Just parked in my garage.
 > Tesla thinks I crashed onto a semi.
 
-![](images/15/tesla-get-wrong-2.png){fig-align="center" width="300"}
+![](img/12/tesla-get-wrong-2.png){fig-align="center" width="300"}
 
 ::: aside
 Source: [Reddit](https://www.reddit.com/r/TeslaModelY/comments/112520t/new_owner_here_just_parked_in_my_garage_tesla/)
 :::
 
-## Car or trash?
+## Car or trash? {.smaller}
 
 > Tesla calls Mercedes trash
 
-![](images/15/tesla-get-wrong-3.png){fig-align="center" width="500"}
+![](img/12/tesla-get-wrong-3.png){fig-align="center" width="500"}
 
 ::: aside
 Source: [Reddit](https://www.reddit.com/r/FUCKYOUINPARTICULAR/comments/hi5srx/tesla_calls_mercedes_trash/)
 :::
 
 # Description
-
 
 ## Leisure, commute, physical activity and BP {.smaller}
 
@@ -138,19 +149,17 @@ This association was age dependent.
 
 **Conclusions**: [Higher commuting and leisure-time but not occupational MVPA were significantly associated with lower BP and lower hypertension risk at all ages, but these associations were stronger in older adults.]{style="background-color: #fcefb3"}
 
-
 # Let's go
 
 ## Modeling cars {.smaller}
 
 ::: question
--   What is the relationship between cars' weights and their mileage?
+-   What is the relationship between cars' weights and their gas mileage?
 -   What is your best guess for a car's MPG that weighs 4,500 pounds?
 :::
 
 ```{r}
 #| echo: false
-
 base <- ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_point() +
   labs(
@@ -163,10 +172,10 @@ base <- ggplot(mtcars, aes(x = wt, y = mpg)) +
 base
 ```
 
-## Modelling cars {.smaller}
+## Modeling cars {.smaller}
 
 ::: question
-**Describe:** What is the relationship between cars' weights and their mileage?
+**Describe:** What is the relationship between cars' weights and their gas mileage?
 :::
 
 ```{r}
@@ -174,10 +183,10 @@ base
 #| message: false
 
 base +
-  geom_smooth(method = "lm", color = "#FE5D26")
+  geom_smooth(method = "lm", color = "deeppink")
 ```
 
-## Modelling cars {.smaller}
+## Modeling cars {.smaller}
 
 ::: question
 **Predict:** What is your best guess for a car's MPG that weighs 4,500 pounds?
@@ -196,19 +205,19 @@ base +
   annotate(
     "segment",
     x = 4.5, xend = 4.5, y = -Inf, yend = new_mpg,
-    color = "#FE5D26"
+    color = "deeppink"
   ) +
   annotate(
     "segment",
     x = -Inf, xend = 4.5, y = new_mpg, yend = new_mpg,
-    color = "#FE5D26"
+    color = "deeppink"
   )
 ```
 
-## Modelling
+## Modeling
 
--   Use models to explain the relationship between variables and to make predictions
--   For now we will focus on **linear** models (but there are *many* *many* other types of models too!)
+-   We use statistical models to explain the relationship between variables **and** to make predictions
+-   For now, we will focus on **linear** models (but there are *many* *many* other types of models too!)
 
 ## What is a line?
 
@@ -233,7 +242,7 @@ ggplot() +
   geom_abline(slope = 2, intercept = 1) 
 ```
 
-## But in math terms...
+## But in math terms... back to Algebra I {.smaller}
 
 $$ 
 \begin{aligned}
@@ -251,14 +260,14 @@ ggplot() +
   geom_abline(slope = 2, intercept = 1) 
 ```
 
-## Modelling vocabulary
+## Modeling vocabulary {.scrollable .medium}
 
--   Predictor (explanatory variable)
--   Outcome (response variable)
+-   Predictor(s) (explanatory variable(s), often denoted with a subscripted "x")
+-   Outcome (response variable, often denoted with "y")
 -   Regression line
-    -   Slope
-    -   Intercept
--   Correlation
+    -   Slope (in statistics, we commonly represent slope "parameters" with a subscripted $\beta$)
+    -   Intercept (in statistics, the intercept parameter is typically denoted with $\beta_0$ )
+-   Correlation (more shortly)
 
 ## Predictor (explanatory variable)
 
@@ -287,7 +296,7 @@ mtcars |>
   gt() |>
   tab_style(
     style = list(
-      cell_fill(color = "#FE5D26"),
+      cell_fill(color = "deeppink"),
       cell_text(color = "white")
       ),
     locations = cells_body(columns = wt)
@@ -305,7 +314,7 @@ mtcars |>
 
 base +
   theme(
-    axis.title.x = element_text(color = "#FE5D26", face = "bold", size = 16)
+    axis.title.x = element_text(color = "deeppink", face = "bold", size = 16)
   )
 ```
 :::
@@ -326,7 +335,7 @@ mtcars |>
   gt() |>
   tab_style(
     style = list(
-      cell_fill(color = "#FE5D26"),
+      cell_fill(color = "deeppink"),
       cell_text(color = "white")
       ),
     locations = cells_body(columns = mpg)
@@ -344,7 +353,7 @@ mtcars |>
 
 base +
   theme(
-    axis.title.y = element_text(color = "#FE5D26", face = "bold", size = 16)
+    axis.title.y = element_text(color = "deeppink", face = "bold", size = 16)
   )
 ```
 :::
@@ -357,7 +366,7 @@ base +
 #| message: false
 
 base +
-  geom_smooth(method = "lm", color = "#FE5D26", linewidth = 1.5, se = FALSE)
+  geom_smooth(method = "lm", color = "deeppink", linewidth = 1.5, se = FALSE)
 ```
 
 ## Regression line: slope
@@ -371,17 +380,17 @@ base +
   annotate(
     geom = "segment",
     x = 4, xend = 5, y = 16, yend = 16, 
-    linetype = "dashed", color = "#FE5D26"
+    linetype = "dashed", color = "deeppink"
   ) +
   annotate(
     geom = "segment",
     x = 5, xend = 5, y = 16, yend = 10.6, 
-    color = "#FE5D26"
+    color = "deeppink"
   ) +
   annotate(
     geom = "text",
     x = 5.2, y = 13, label = "slope", 
-    color = "#FE5D26", size = 5, hjust = 0
+    color = "deeppink", size = 5, hjust = 0
   )
 ```
 
@@ -399,13 +408,13 @@ base +
     geom = "point",
     shape = 1, size = 4, stroke = 2,
     x = 0, y = 37.4, 
-    color = "#FE5D26"
+    color = "deeppink"
   ) +
   annotate(
     geom = "text",
     label = "intercept",
     x = 0.5, y = 37.4, 
-    color = "#FE5D26", size = 5, hjust = 0
+    color = "deeppink", size = 5, hjust = 0
   )
 ```
 
@@ -419,20 +428,20 @@ r <- mtcars |>
   pull()
 
 base +
-  stat_ellipse(geom = "polygon", color = "#FE5D26", fill = "#FE5D2630") +
+  stat_ellipse(geom = "polygon", color = "deeppink", fill = "#FFE4E180") +
   annotate(
     geom = "text",
     x = 3.5, y = 27.5, 
     label = paste("r =", r),
-    color = "#FE5D26", size = 5, hjust = 0
+    color = "deeppink", size = 5, hjust = 0
   )
 ```
 
-## Correlation
+## Correlation {.smaller}
 
--   Measures the strength and direction of the *linear* association between two numerical variables;
+-   Measures the strength and direction of the ***linear*** association between two numerical variables;
 -   Tells you how tightly the points cluster around a straight line;
--   Ranges between -1 and 1;
+-   Ranges between -1 and 1, inclusive;
 -   Same sign as the slope.
 
 ```{r}
@@ -470,13 +479,13 @@ ggplot(df, aes(x = x, y = y, color = r)) +
 
 ## New command: `cor`
 
-
-:::::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 df
 ```
 :::
+
 ::: {.column width="50%"}
 ```{r}
 df |>
@@ -485,7 +494,7 @@ df |>
   )
 ```
 :::
-::::::
+:::::
 
 ## Practice! {.small}
 
@@ -493,7 +502,56 @@ df |>
 
 . . .
 
-(Just the sort of pain in the ass visual intuition crap that JZ is liable to put on an exam.)
+(Just the sort of pain in the ass visual intuition crap that I'm liable to put on an exam...)
+
+## Why correlation, and not slope, as a measure of **strength**?
+
+```{r}
+#| echo: false
+#| warning: false
+
+mtcars_units <- mtcars |>
+  mutate(
+    wt_lbs = wt * 1000,
+    kpl = mpg * 0.425144
+  )
+
+slope1 <- round(coef(lm(mpg ~ wt, data = mtcars_units))[2], 2)
+slope2 <- round(coef(lm(mpg ~ wt_lbs, data = mtcars_units))[2], 4)
+slope3 <- round(coef(lm(kpl ~ wt, data = mtcars_units))[2], 2)
+
+p1 <- ggplot(mtcars_units, aes(x = wt, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "deeppink", se = FALSE) +
+  labs(
+    x = "Weight (1000 lbs)",
+    y = "Miles per gallon (MPG)",
+    title = paste("Slope =", slope1)
+  )
+
+p2 <- ggplot(mtcars_units, aes(x = wt_lbs, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "deeppink", se = FALSE) +
+  labs(
+    x = "Weight (lbs)",
+    y = "Miles per gallon (MPG)",
+    title = paste("Slope =", slope2)
+  )
+
+p3 <- ggplot(mtcars_units, aes(x = wt, y = kpl)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "deeppink", se = FALSE) +
+  labs(
+    x = "Weight (1000 lbs)",
+    y = "Kilometers per liter",
+    title = paste("Slope =", slope3)
+  )
+
+(p1 | p2 | p3) +
+  plot_annotation(
+    title = "Changing units changes the slope"
+  )
+```
 
 ## Visualizing the model
 
@@ -526,6 +584,14 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_smooth(method = "lm")
 ```
 
+## Visualizing the model
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE)
+```
+
 # Don't forget: Always Be Visualizing!
 
 ## Anscombe's Quartet
@@ -540,7 +606,7 @@ anscombe_tidy <- anscombe |>
     spread(variable, value)
 ```
 
-::: columns
+::::::: columns
 ::: {.column width="25%"}
 Dataset I
 
@@ -584,8 +650,7 @@ anscombe_tidy |>
   select(x, y)
 ```
 :::
-:::
-
+:::::::
 
 ## Very different
 
@@ -618,10 +683,9 @@ anscombe_tidy |>
   )
 ```
 
+# AE-12
 
-# Application exercise
-
-## `{r} todays_ae` 
+## `{r} todays_ae`
 
 ::: appex
 -   Go to your ae project in RStudio.
@@ -633,19 +697,18 @@ anscombe_tidy |>
 -   Work through the application exercise in class, and render, commit, and push your edits.
 :::
 
-
 ## New commands introduced today
 
 In base `R`:
 
-- `cor`: compute correlation between two numerical variables;
+-   `cor`: compute correlation between two numerical variables;
 
 In `ggplot2`:
 
-- `geom_smooth`: add model fit to scatterplot;
+-   `geom_smooth(method = "lm")`: add linear model line of best fit to scatterplot;
 
 In the new package `tidymodels`:
 
-- `linear_reg` and `fit`: estimate linear model;
-- `tidy`: cute lil' summary table of model output
-- `predict`: use estimated model to predict.
+-   `linear_reg` and `fit`: estimate linear model;
+-   `tidy`: cute lil' summary table of model output;
+-   `predict`: use estimated model to predict.

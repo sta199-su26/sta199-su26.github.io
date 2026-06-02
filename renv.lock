@@ -494,6 +494,11 @@
       ],
       "Hash": "df99cd4333ce592df5173d6ad39b5c14"
     },
+    "datasauRus": {
+      "Package": "datasauRus",
+      "Version": "0.1.9",
+      "Source": "Repository"
+    },
     "dbplyr": {
       "Package": "dbplyr",
       "Version": "2.5.2",
@@ -1275,6 +1280,11 @@
         "tidyselect"
       ],
       "Hash": "64f308bf1fbf5f856cdf4b4c7c0ce51b"
+    },
+    "jpeg": {
+      "Package": "jpeg",
+      "Version": "0.1-11",
+      "Source": "Repository"
     },
     "jquerylib": {
       "Package": "jquerylib",
