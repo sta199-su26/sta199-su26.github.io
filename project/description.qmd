@@ -4,42 +4,46 @@ title: "Project"
 
 # Introduction
 
-**TL;DR**: *Ask a question you're curious about and answer it with a dataset of your choice. This is your project in a nutshell.*
+**TL;DR**: *Ask a question you're curious about and answer it with a dataset and methods of your choice. This is your project in a nutshell.*
 
-The project for this course will consist of analysis on a dataset of your own choosing.
-The dataset may already exist, or you may collect your own data using a survey or by conducting an experiment.
-You can choose the data based on your teams' interests or based on work in other courses or research projects.
-The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this course (and beyond, if you like) and apply them to a novel dataset in a meaningful way.
+The project for this course will consist of analysis on a preexisting dataset of your team's choosing.
+You should choose the data based on your team's common interests or based on work in other courses or research projects.
+The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this course (and beyond!) and apply them to a dataset in a novel and meaningful way.
 
-The goal is not to do an exhaustive data analysis i.e., do not calculate every statistic and procedure you have learned for every variable, but rather let me know that you are proficient at asking meaningful questions and answering them with results of data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results.
+The goal is not to do an exhaustive data analysis i.e., do not calculate every statistic and procedure you have learned for every variable, but rather to communicate that you are proficient at asking meaningful questions and answering them with results of data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results.
+
+# Project Avenues
+
+The project is very open ended, and the purpose of this open-endedness is for you (and your group!) to use your statistical and data-science toolkit to address an outstanding research project in a principled, reproducible way.
+There are two options:
+
+-   **Statistical modeling** Using a dataset of your choosing, identify an interesting research hypothesis, perform some EDA that tees up your modeling, identify an appropriate regression model, and carry out your analysis. Any underlying modeling assumptions will need to be identified and assessed for appropriateness. You should present your results in a reproducible report and in a way that is accessible to allied researchers.
+
+-   **Data science stuff** Again using a related dataset of your choosing, go beyond what we have learned in this class to present the data in an engaging way. Your final report must include a set of visualizations that go well above and beyond the toolkit introduced in labs (i.e., visualizations should have bells and whistles -- à la AE 11 -- and should reflect a variety of plot types). Further, at least one of these visualizations **must** be animated (`gganimate` is a great resource for animating plotting & follows the grammar / structure of `ggplot2`).
+    This still must address a relevant research question posed by you and your team - just without formal regression modeling or hypothesis testing. That is to say, your visualizations should tell a cohesive story and seek to address a central question.
+
+Regardless of whether you choose the “statistical modeling” or “data science stuff” path, you will need to provide a reproducible written report that introduces your research question, explains the methodology, showcases results, and discusses the implications of your work.
 Focus on methods that help you begin to answer your research questions.
 You do not have to apply every statistical procedure we learned.
 Also, critique your own methods and provide suggestions for improving your analysis.
-Issues pertaining to the reliability and validity of your data, and appropriateness of the statistical analysis should be discussed here.
+Issues pertaining to the reliability and validity of your data (i.e., limitations), and appropriateness of the statistical analysis should be discussed in your report.
 
-The project is very open ended.
-You should create some kind of compelling visualization(s) of this data in R.
-There is no limit on what tools or packages you may use but sticking to packages we learned in the course is required.
-You do not need to visualize all of the data at once.
-A single high-quality visualization will receive a much higher grade than a large number of poor-quality visualizations.
-Also pay attention to your presentation.
-Neatness, coherency, and clarity will count.
-All analyses must be done in RStudio, using R, and all components of the project **must be reproducible** (with the exception of the slide deck).
+All analyses must be done in RStudio, using R, and all components of the project **must be reproducible** (with the exception of the slide deck). With respect to the final presentation, neatness, coherency, and clarity will count.
 
-You will work on the project with your lab teams.
+You will work on the project with your assigned teammates.
 
-The four milestones for the final project are
+The milestones for the final project are as follows:
 
 1.  Milestone 1 - Working collaboratively
-2.  Milestone 2 - Proposals, with three dataset ideas
-3.  Milestone 3 - Improvement and progress
+2.  Milestone 2 - Proposals, with two dataset ideas
+3.  Milestone 3 - Improvement + progress: proposal to project
 4.  Milestone 4 - Peer review, on another team's project
-5.  Milestone 5 - Presentation with slides and a reproducible project write-up of your analysis, with a draft along the way.
+5.  Milestone 5 - Presentation with slides and a reproducible project write-up of your analysis, with a draft along the way
 
 You will not be submitting anything on Gradescope for the project.
-Submission of these deliverables will happen on GitHub and feedback will be provided as GitHub issues that you need to engage with and close.
+Submission of these deliverables will happen via GitHub, and feedback will be provided as GitHub issues that you will engage with and close.
 The collection of the documents in your GitHub repo will create a webpage for your project.
-To create the webpage go to the Build tab in RStudio, and click on Render Website.
+To create the webpage, go to the Build tab in RStudio, and click on "Render Website".
 
 # Milestone 1 - Working collaboratively
 
@@ -55,7 +59,7 @@ There are two main purposes of the project proposal:
 
 # Milestone 3 - Improvement and progress {#improvement-progress}
 
-We want to see that you have made concrete progress towards the proposal selected from the previous milestone.
+This milestone will prompt you to make concrete progress towards the proposal selected from the previous milestone.
 
 # Milestone 4 - Peer review {#peer-review}
 
@@ -67,8 +71,55 @@ This feedback is intended to help you create a high quality final project, as we
 
 This is the final project deadline - all goals / deliverables should be completed.
 
-# Other
+# Reproducibility + organization
 
-*More information on grading, teamwork, and more coming soon!*
+All written work (with exception of presentation slides) should be reproducible, and the GitHub repo should be neatly organized.
 
-##  {#reproducibility-organization}
+Points for reproducibility + organization will be based on the reproducibility of the write-up and the organization of the project GitHub repo.
+The repo should be neatly organized as described above, there should be no extraneous files, and all text in the README should be easily readable.
+
+# Teamwork
+
+You will be asked to fill out a survey where you rate the contribution and teamwork of each team member by assigning a contribution percentage for each team member.
+Filling out the survey is a prerequisite for getting credit on the team member evaluation.
+If you are suggesting that an individual did less than half the expected contribution given your team size (e.g., for a team of four students, if a student contributed less than 12.5% of the total effort), please provide some explanation.
+If any individual gets an average peer score indicating that this was the case, their grade will be assessed accordingly and penalties may apply beyond the teamwork component of the grade.
+
+If you have concerns with the teamwork and/or contribution from any team members, please email me by the project presentation deadline.
+**You only need to email me if you have concerns.** Otherwise, I will assume everyone on the team equally contributed and will receive full credit for the teamwork portion of the grade.
+
+# Grading
+
+The grade breakdown is as follows:
+
+| Total                              | 100 pts |
+|------------------------------------|---------|
+| **M1: Working collaboratively**    | 5 pts   |
+| **M2: Project proposal**           | 10 pts  |
+| **M3: Improvement + progress I**   | 5 pts   |
+| **M4: Peer review**                | 5 pts   |
+| **M5: Write-up**                   | 35 pts  |
+| **M5: Slides + presentation**      | 25 pts  |
+| **Reproducibility + organization** | 5 pts   |
+| **Teamwork**                       | 10 pts  |
+
+## Grading summary
+
+Grading of the project will take into account the following:
+
+-   Content - What is the quality of research and/or policy question and relevancy of data to those questions?
+-   Correctness - Are data science and / or statistical procedures carried out and explained correctly?
+-   Writing and Presentation - What is the quality of the data science presentation, writing, and explanations?
+-   Creativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?
+
+A general breakdown of scoring is as follows:
+
+-   *90%-100%*: Outstanding effort. Student understands how to apply all data science and statistics concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.
+-   *80%-89%*: Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.
+-   *70%-79%*: Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.
+-   *60%-69%*: Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.
+-   *Below 60%*: Student is not making a sufficient effort.
+
+## Late work policy
+
+**There is no late work accepted on this project.** Be sure to turn in your work early to avoid any technological mishaps.
