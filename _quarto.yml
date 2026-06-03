@@ -65,6 +65,8 @@ website:
             text: "Description"
           - href: project/1-working-collaboratively.qmd
             text: "Milestone 1"
+          - href: project/2-proposal.qmd
+            text: "Milestone 2"
       - lab.qmd
       - ae.qmd
       - section: "Exam Review"
