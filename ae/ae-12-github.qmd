@@ -1,5 +1,5 @@
 ---
-title: "AE 11: Modelling fish"
+title: "AE 11: Modeling fish 🐟"
 format:
   html:
     self-contained: true
@@ -105,10 +105,6 @@ We can also assess correlation between two quantitative variables.
 -   What is correlation? What are values correlation can take?
 
 Add response here.
-
--   Are you good at guessing correlation?
-    Give it a try!
-    <https://www.rossmanchance.com/applets/2021/guesscorrelation/GuessCorrelation.html>
 
 -   **Demo:** What is the correlation between heights and weights of fish?
 
