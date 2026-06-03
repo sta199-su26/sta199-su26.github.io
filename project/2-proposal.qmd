@@ -5,7 +5,7 @@ categories: "Project"
 ---
 
 ::: callout-note
-You will start working on this milestone in lab, but you will need to finish it outside of lab.
+You will start working on this milestone in lab, but you will likely need to finish it outside of lab.
 Before the end of lab, make sure you have at least one team meeting scheduled to continue working on this milestone.
 :::
 
@@ -44,8 +44,6 @@ The data sets should meet the following criteria:
 
 -   You may not use data that has previously been used in any course materials, or any derivation of data that has been used in course materials.
 
--   You can curate one of your datasets via web scraping.
-
 **Please ask a member of the teaching team if you're unsure whether your data set meets the criteria.**
 
 If you set your hearts on a dataset that has fewer observations or variables than what's suggested here, that might still be ok; use these numbers as guidance for a successful proposal, not as minimum requirements.
@@ -53,7 +51,7 @@ If you set your hearts on a dataset that has fewer observations or variables tha
 ## Resources for datasets
 
 You can find data wherever you like, but here are some recommendations to get you started.
-You shouldn't feel constrained to datasets that are already in a tidy format, you can start with data that needs cleaning and tidying, scrape data off the web, or collect your own data.
+You shouldn't feel constrained to datasets that are already in a tidy format, you can start with data that needs cleaning and tidying.
 
 -   [UNICEF Data](https://data.unicef.org/)
 -   [Youth Risk Behavior Surveillance System (YRBSS)](https://chronicdata.cdc.gov/Youth-Risk-Behaviors/DASH-Youth-Risk-Behavior-Surveillance-System-YRBSS/q6p7-56au)
@@ -64,7 +62,7 @@ You shouldn't feel constrained to datasets that are already in a tidy format, yo
 -   [World Bank Data](https://datacatalog.worldbank.org/home)
 -   [CDC](https://www.cdc.gov/datastatistics/)
 -   [European Statistics](https://ec.europa.eu/eurostat/)
--   [CORGIS: The Collection of Really ](https://think.cs.vt.edu/corgis/csv/)[Great](https://corgis-edu.github.io/corgis/csv/)[, Interesting, Situated Datasets](https://think.cs.vt.edu/corgis/csv/)
+-   [CORGIS: The Collection of Really](https://think.cs.vt.edu/corgis/csv/)[Great](https://corgis-edu.github.io/corgis/csv/)[, Interesting, Situated Datasets](https://think.cs.vt.edu/corgis/csv/)
 -   [General Social Survey](https://gss.norc.org/)
 -   [Harvard Dataverse](https://dataverse.harvard.edu/)
 -   [International Monetary Fund](https://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&sId=1479329328660)
@@ -145,7 +143,7 @@ For each data set, add a data dictionary to the `README.md` file in the `data` f
 
 Update your `_quarto.yml` file, specifically:
 
-```{.yaml filename="_quarto.yml"}
+``` {.yaml filename="_quarto.yml"}
 project:
   type: website
   output-dir: docs
@@ -157,7 +155,6 @@ author: # Replace with team member names
   - name: Name of team member 2
   - name: Name of team member 3
   - name: Name of team member 4
-  - name: ...
 
 website:
   # Replace with team name
@@ -176,8 +173,7 @@ website:
         href: contract.qmd
     right:
       - icon: github
-        # Replace with link to GitHub repo
-        href: "https://github.com/sta199-f25/" 
+        href: "https://github.com/sta199-su26/" 
 
 format:
   html:
