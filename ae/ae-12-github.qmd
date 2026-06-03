@@ -1,5 +1,5 @@
 ---
-title: "AE 11: Modeling fish 🐟"
+title: "AE 12: Modeling fish 🐟"
 format:
   html:
     self-contained: true
