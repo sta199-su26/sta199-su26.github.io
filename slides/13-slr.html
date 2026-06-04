@@ -636,12 +636,12 @@ window.Quarto = {
 </div>
 </section><section id="simple-linear-regression-2" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="simple-linear-regression-2">Simple linear regression</h2>
 <ul>
-<li>The “fitted” model, obtained by estimating <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(beta_1\)</span> using a finite sample (<span class="math inline">\(x_1, y_1\)</span>), (<span class="math inline">\(x_2, y_2\)</span>), …, (<span class="math inline">\(x_n, y_n\)</span>)</li>
+<li>The “fitted” model, obtained by estimating <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> using a finite sample (<span class="math inline">\(x_1, y_1\)</span>), (<span class="math inline">\(x_2, y_2\)</span>), …, (<span class="math inline">\(x_n, y_n\)</span>)</li>
 </ul>
 <p><span class="math display">\[\Large{\widehat{Y} = b_0 + b_1 X}\]</span></p>
 <ul>
-<li><p><span class="math inline">\(b_1\)</span>: Estimated slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>; you may also see <span class="math inline">\(\widehat{\beta_0}\)</span></p></li>
-<li><p><span class="math inline">\(b_0\)</span>: Estimated intercept of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>; you may also see <span class="math inline">\(\widehat{\beta_1}\)</span></p></li>
+<li><p><span class="math inline">\(b_1\)</span>: Estimated slope of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>; you may also see <span class="math inline">\(\widehat{\beta_1}\)</span></p></li>
+<li><p><span class="math inline">\(b_0\)</span>: Estimated intercept of the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>; you may also see <span class="math inline">\(\widehat{\beta_0}\)</span></p></li>
 <li><p>No error term!</p></li>
 <li><p>Ideally, as <span class="math inline">\(n \to \infty\)</span>, <span class="math inline">\(b_0 \to \beta_0\)</span> and <span class="math inline">\(b_1 \to \beta_1\)</span></p></li>
 </ul></section><section id="why-did-the-notation-change" class="level2 small"><h2 class="small anchored" data-anchor-id="why-did-the-notation-change">Why did the notation change?</h2>
@@ -660,7 +660,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="residuals" class="level2"><h2 class="anchored" data-anchor-id="residuals">Residuals</h2>
+</section><section id="residuals" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="residuals">Residuals</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -675,7 +675,7 @@ window.Quarto = {
 <ul class="incremental">
 <li><p>We have <span class="math inline">\(n\)</span> observations (generally, the number of rows in a df)</p></li>
 <li>
-<p><span class="math inline">\(i^{th}\)</span> observation (<span class="math inline">\(i\)</span> from <span class="math inline">\(1\)</span> to <span class="math inline">\(N\)</span>):</p>
+<p><span class="math inline">\(i^{th}\)</span> observation (<span class="math inline">\(i\)</span> from <span class="math inline">\(1\)</span> to <span class="math inline">\(n\)</span>):</p>
 <ul class="incremental">
 <li><p><span class="math inline">\(y_i\)</span> : <span class="math inline">\(i^{th}\)</span> outcome</p></li>
 <li><p><span class="math inline">\(x_i\)</span> : <span class="math inline">\(i^{th}\)</span> explanatory variable</p></li>
@@ -713,17 +713,17 @@ window.Quarto = {
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(x_1 \quad y_1\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\rightarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(e_1 = y_1 - \hat{y}_1 = y_1 - (b_0 + b_1 \times x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(e_1 = y_1 - \widehat{y_1} = y_1 - (b_0 + b_1 \times x_1)\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(x_2 \quad y_2\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\rightarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(e_2 = y_2 - \hat{y}_2 = y_2 - (b_0 + b_1 \times x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(e_2 = y_2 - \widehat{y_2} = y_2 - (b_0 + b_1 \times x_2)\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(x_3 \quad y_3\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\rightarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(e_3 = y_3 - \hat{y}_3 = y_3 - (b_0 + b_1 \times x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(e_3 = y_3 - \widehat{y_3} = y_3 - (b_0 + b_1 \times x_3)\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">…</td>
@@ -733,7 +733,7 @@ window.Quarto = {
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(x_n \quad y_n\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\rightarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(e_n = y_n - \hat{y}_n = y_n - (b_0 + b_1 \times x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(e_n = y_n - \widehat{y_n} = y_n - (b_0 + b_1 \times x_n)\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -900,7 +900,7 @@ e^2
 <p><span class="math display">\[\widehat{\text{audience}} = 32.3 + 0.519 \times \text{critics}\]</span></p>
 <ul>
 <li>Slope: for every one point increase in the critics’ score, <strong>we expect</strong> the audience score to be higher by 0.519 points, <strong>on average</strong>;</li>
-<li>Intercept: for movies with an audience score of 0 points, <strong>we expect</strong> the critics score to be 32.3 points, <strong>on average</strong>.</li>
+<li>Intercept: for movies with a critics’ score of 0 points, <strong>we expect</strong> the audience score to be 32.3 points, <strong>on average</strong>.</li>
 </ul>
 <p>The “we expect” and “on average” are a bit redundant, but let’s go belt and suspenders in this class.</p>
 </section><section id="things-to-watch-out-for" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="things-to-watch-out-for">Things to watch out for</h2>
