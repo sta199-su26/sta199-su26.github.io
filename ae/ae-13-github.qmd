@@ -1,5 +1,5 @@
 ---
-title: "AE 16: Modelling penguins"
+title: "AE 13: Modeling penguins"
 ---
 
 In this application exercise we will be studying penguins.
@@ -24,7 +24,6 @@ Please read the following context and take a `glimpse` at the data set before we
 
 ```{r}
 #| label: glimpse-penguins
-
 # add code here
 ```
 
@@ -44,19 +43,14 @@ First, we are going to investigate the relationship between a penguins' flipper 
 
 # Correlation
 
--   **Your turn (5 minutes):**
-    -   What is correlation?
-        What values can correlation take?
-
-        
-
+-   **Your turn:**
+    -   What is correlation? What values can correlation take?
 -   **Demo:** What is the correlation between flipper length and body mass of penguins?
 
 ```{r}
 #| label: correlation
 # add code here
 ```
-
 
 -   **Demo:** What is the coefficient of determination?
 
@@ -72,16 +66,15 @@ First, we are going to investigate the relationship between a penguins' flipper 
 # add code here
 ```
 
-
 # Defining, fitting, and summarizing a model
 
--   **Demo:** Write the population model below that explains the relationship between body mass and flipper length.
+-   **Demo:** Write the **population model** below that explains the relationship between body mass and flipper length.
 
 $$
 add~math~text~here
 $$
 
--   **Demo:** Fit the linear regression model and display the results. Write the estimated model output below.
+-   **Demo:** Fit the linear regression model and display the results. Write the **fitted** model below.
 
 ```{r}
 #| label: fit-bm-fl
@@ -104,7 +97,6 @@ $$
 #| label: plot-bm-fl-line
 # add code here
 ```
-
 
 -   **Demo:** What is the coefficient of determination ($R^2$)?
 
@@ -152,7 +144,7 @@ $$
 # add code here
 ```
 
--   **Your turn:** Fit the linear regression model and display the results. Write the estimated model output below.
+-   **Your turn:** Fit the linear regression model and display the results. Write the **fitted** model below.
 
 ```{r}
 #| label: fit-bm-island
