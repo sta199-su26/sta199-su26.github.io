@@ -2097,6 +2097,11 @@
       ],
       "Hash": "c5bba8f0d1df8c4b9538a40570798d9b"
     },
+    "scatterplot3d": {
+      "Package": "scatterplot3d",
+      "Version": "0.3-45",
+      "Source": "Repository"
+    },
     "selectr": {
       "Package": "selectr",
       "Version": "0.5-1",

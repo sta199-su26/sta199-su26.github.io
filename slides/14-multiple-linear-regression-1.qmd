@@ -3,16 +3,11 @@ title: "Multiple Linear Regression 1"
 subtitle: "Lecture 14"
 date: "2026-06-05"
 format: 
-  revealjs: 
-    output-file: 17-multiple-linear-regression-1-slides.html
-    footer: "[🔗 sta199-s26.github.io](https://sta199-s26.github.io/)"
-    theme: slides.scss
-    transition: fade
-    slide-number: true
-    logo: images/logo.png
-    toc: false
+  revealjs:
+    output-file: 14-mlr-slides.html
   html: 
-    code-link: true
+    output-file: 14-mlr.html
+auto-stretch: false
 ---
 
 ```{r}
@@ -35,17 +30,23 @@ A researcher wants to see how body mass varies with flipper length.
 
 . . .
 
--   outcome: body mass in grams (numerical)
+-   outcome: body mass (g) (numerical)
 
--   predictor: flipper length in mm (numerical)
+-   predictor: flipper length (mm) (numerical)
 
 . . .
 
 Flipper length is easier to measure, so more plausible you would predict body mass based on that and not the other way around.
 
-## How do we concisely summarize the association between two variables? 
+## How do we concisely summarize the association between two variables?
 
 ```{r}
+#| warning: false
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: "65%"
+#| fig-align: center
+
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + 
   geom_point()
 ```
@@ -53,9 +54,15 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 ## Line of best fit!
 
 ```{r}
+#| warning: false
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: "65%"
+#| fig-align: center
+
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + 
   geom_point() + 
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm", color = "cornflowerblue")
 ```
 
 ## Concise numerical summary: correlation
@@ -67,9 +74,10 @@ penguins |>
   )
 ```
 
-Measures the strength and direction of the linear association between two numerical variables. Strong and positive in this case.
+Measures the strength and direction of the linear association between two numerical variables.
+Strong and positive in this case.
 
-## Model fit 
+## Model fit
 
 ```{r}
 bm_fl_fit <- linear_reg() |>
@@ -79,15 +87,16 @@ tidy(bm_fl_fit)
 ```
 
 $$
-\widehat{body~mass}=-5780.83+49.68\times flipper~length
+\widehat{\text{body mass (g)}}=-5780.83+49.68\times \text{flipper length (mm)}
 $$
 
 ## $R^2$ (coefficient of determination)
 
-The fraction of the variation in the response explained by the model. A number between 0 (bad) and 1 (good) that measures goodness-of-fit:
+The fraction of the variation in the response explained by the model.
+A number between 0 (bad) and 1 (good) that measures goodness-of-fit:
 
-:::::: columns
-:::: {.column width="50%"}
+::::: columns
+::: {.column width="50%"}
 ```{r}
 bm_fl_fit |>
   glance() |>
@@ -95,7 +104,7 @@ bm_fl_fit |>
 ```
 :::
 
-:::: {.column width="50%"}
+::: {.column width="50%"}
 ```{r}
 penguins |>
   summarize(
@@ -104,22 +113,22 @@ penguins |>
   )
 ```
 :::
-
-::::::
+:::::
 
 ## Interpretation
 
 $$
-\widehat{body~mass}=-5780.83+49.68\times flipper~length
+\widehat{\text{body mass (g)}}=-5780.83+49.68\times \text{flipper length (mm)}
 $$
 
--   Intercept: Penguins with 0 flipper length are expected, on average, to weigh -5,781 grams (makes no sense!);
--   Slopes: For each additional millimeter of a penguin's flipper length, the weight of the penguin is expected to be higher, on average, by 49.7 grams.
+-   Intercept: Penguins with 0 mm flipper length are expected, on average, to weigh -5,781 grams (makes no sense!);
+-   Slope: For each additional mm of a penguin's flipper length, the weight of the penguin is expected to be higher, on average, by 49.7 g.
 
-## Prediction 
+## Prediction
 
 ```{r}
 #| echo: false
+#| warning: false
 
 new_penguin <- tibble(flipper_length_mm = 205)
 
@@ -127,16 +136,16 @@ preds <- predict(bm_fl_fit, new_data = new_penguin)
 
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + 
   geom_point() + 
-  geom_smooth(method = "lm")   +
+  geom_smooth(method = "lm", color = "cornflowerblue")   +
   annotate(
     "segment",
     x = new_penguin$flipper_length_mm[1], xend = new_penguin$flipper_length_mm[1], y = -Inf, yend = preds$.pred[1],
-    color = "#FE5D26"
+    color = "deeppink"
   ) +
   annotate(
     "segment",
     x = -Inf, xend = new_penguin$flipper_length_mm[1], y = preds$.pred[1], yend = preds$.pred[1],
-    color = "#FE5D26"
+    color = "deeppink"
   )
 ```
 
@@ -150,26 +159,27 @@ predict(bm_fl_fit, new_data = new_penguin)
 ```
 
 $$
-\widehat{body~mass}=-5780.83+49.68\times 205\approx 4404.71
+\widehat{\text{body mass (g)}}=-5780.83+49.68\times 205\approx 4404.71\text{g}
 $$
 
 . . .
 
-We predict that a penguin whose flipper is 205 mm long will weigh 4404.71 grams on average.
+We predict that a penguin whose flipper is 205 mm long will weigh 4,404.71 g, on average.
 
 # Linear regression with one categorical predictor
 
 ## New question
 
 ::: question
-A different researcher wants to look at body weight of penguins based on the island they were recorded on. How are the variables involved in this analysis different?
+A different researcher wants to look at body weight of penguins based on the island they were recorded on.
+How are the variables involved in this analysis different?
 :::
 
 . . .
 
 -   outcome: body mass in grams (numerical)
 
--   predictor: island (categorical with three levels)
+-   predictor: island (categorical, with three levels)
 
 . . .
 
@@ -177,13 +187,20 @@ A different researcher wants to look at body weight of penguins based on the isl
 levels(penguins$island)
 ```
 
-## Scatterplot: possible, but not so good 
+## Scatterplot: possible, but not so good {.smaller}
 
 ::: task
-Visualize the relationship between body weight and island of penguins. Also calculate the average body weight per island.
+Visualize the relationship between body weight and island of penguins.
+Also calculate the average body weight per island.
 :::
 
 ```{r}
+#| warning: false
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: "55%"
+#| fig-align: center
+
 ggplot(penguins, aes(x = island, y = body_mass_g)) + 
   geom_point()
 ```
@@ -192,7 +209,7 @@ ggplot(penguins, aes(x = island, y = body_mass_g)) +
 
 ::: question
 Visualize the relationship between body weight and island of penguins.
-Also calculate the average body weight per island.
+Also, calculate the average body weight per island.
 :::
 
 ```{r}
@@ -219,8 +236,6 @@ penguins |>
   )
 ```
 
-
-
 ## Density plot {.smaller}
 
 ```{r}
@@ -236,10 +251,11 @@ ggplot(
   labs(
     x = "Island",
     y = "Body mass (g)",
-    title = "Body mass by island"
+    title = "Body Mass by Island",
+    color = "Island",
+    fill = "Island"
   )
 ```
-
 
 ## Violin plot {.smaller}
 
@@ -254,7 +270,7 @@ ggplot(
   labs(
     x = "Island",
     y = "Body mass (g)",
-    title = "Body mass by island"
+    title = "Body Mass by Island"
   )
 ```
 
@@ -274,17 +290,17 @@ ggplot(
   labs(
     x = "Island",
     y = "Body mass (g)",
-    title = "Body mass by island"
+    title = "Body Mass by Island",
+    color = "Island"
   ) +
   theme(legend.position = "none")
 ```
 
-
-
-## Model - fit {.medium}
+## Model - fit {.smaller}
 
 ::: task
-Fit a linear regression model predicting body weight from island and display the results. Why is Biscoe not on the output?
+Fit a linear regression model predicting body weight from island and display the results.
+Why is Biscoe not on the output?
 :::
 
 ```{r}
@@ -294,11 +310,11 @@ bm_island_fit <- linear_reg() |>
 tidy(bm_island_fit)
 ```
 
-. . . 
+. . .
 
 Huh?
 
-## Dummy variables {.medium}
+## Dummy variables {.smaller}
 
 ```{r}
 dummy_penguins <- penguins |>
@@ -312,7 +328,7 @@ dummy_penguins <- penguins |>
 dummy_penguins
 ```
 
-## Dummy variables {.scrollable}
+## Dummy variables - fit {.scrollable}
 
 ```{r}
 linear_reg() |>
@@ -330,19 +346,21 @@ Exactly the same as before!
 ## Model - interpret {.small}
 
 $$
-\widehat{body~mass} = 4716 - 1003 \times islandDream - 1010 \times islandTorgersen
+\widehat{\text{body mass(g)}} = 4716 - 1003 \times \text{islandDream} - 1010 \times \text{islandTorgersen}
 $$
 
--   Intercept: [Penguins from Biscoe island are expected to weigh, on average, 4,716 grams.]{.fragment}
+-   Intercept: [Penguins from Biscoe island are expected to weigh, on average, 4,716 g.]{.fragment}
 
--   Slope - islandDream: [Penguins from Dream island are expected to weigh, on average, 1,003 grams less than those from Biscoe island.]{.fragment}
+-   Slope - islandDream: [Penguins from Dream island are expected to weigh, on average, 1,003 g **less than those from Biscoe island**.]{.fragment}
 
--   Slope - islandTorgersen: [Penguins from Torgersen island are expected to weigh, on average, 1,010 grams less than those from Biscoe island.]{.fragment}
+-   Slope - islandTorgersen: [Penguins from Torgersen island are expected to weigh, on average, 1,010 g **less than those from Biscoe island**.]{.fragment}
 
-## Model - predict {.medium .scrollable}
+## Model - predict {.smaller}
 
 ::: task
-What is the predicted body weight of a penguin on Biscoe island? What are the estimated body weights of penguins on Dream and Torgersen islands? Where have we seen these values before?
+What is the predicted body weight of a penguin on Biscoe island?
+What are the estimated body weights of penguins on Dream and Torgersen islands?
+Where have we seen these values before?
 :::
 
 ```{r}
@@ -390,20 +408,22 @@ penguins |>
 ::: incremental
 -   When the categorical predictor has many levels, they're encoded as **dummy variables**.
 
--   The first level of the categorical variable is the baseline level. In a model with one categorical predictor, the intercept is the predicted value of the outcome for the baseline level (x = 0).
+-   The first level of the categorical variable is the "baseline" level.
+    In a model with one categorical predictor, the intercept is the predicted value of the outcome for the baseline level (x = 0).
 
--   Each slope coefficient describes the difference between the predicted value of the outcome for that level of the categorical variable compared to the baseline level.
+-   Each slope coefficient describes the difference between the predicted value of the outcome for that level of the categorical variable **compared to the baseline level**.
 :::
 
 ## In general {.small .scrollable}
 
-Predicting continuous outcome $Y$ using one categorical predictor $X$ with multiple levels 0, 1, 2, ..., $L$. Create dummy variables for every level *except* the base level:
+Predicting continuous outcome $Y$ using one categorical predictor $X$ with multiple levels 1, 2, ..., $k$.
+Create dummy variables for every level *except* the base level:
 
 . . .
 
 $$
-cat_l=\begin{cases}
-1 & X=l\\
+cat_k=\begin{cases}
+1 & X=k\\
 0 & \text{else}
 \end{cases}
 $$
@@ -413,18 +433,17 @@ $$
 Then fit a regression with *multiple* dummy predictors:
 
 $$
-\hat{Y} = b_0 + b_1 \times cat_1 + b_2 \times cat_2 \ldots + b_L \times cat_L
+\widehat{Y} = b_0 + b_1 \times cat_1 + b_2 \times cat_2 \ldots + b_{k-1} \times cat_{k-1}
 $$
 
 ::: incremental
 -   $b_0$ : the model prediction for a member of the base level;
 
-
 -   $b_1$: how does the prediction change when we move from the base level to level 1?
 
-- $b_2$: how does the prediction change when we move from the base level to level 2?
+-   $b_2$: how does the prediction change when we move from the base level to level 2?
 
-- etc
+-   etc...
 :::
 
 . . .
@@ -433,14 +452,14 @@ $$
 ## We're not animals. We have technology!
 
 The computer handles *all* of this for you, but you need to understand the details so you code and interpret it correctly.
-
 :::
 
 ## Changing the baseline level
 
--   By default, R uses the first level of a categorical variable as the baseline level. this is often the first alphabetically, but make sure you check!
+-   By default, R uses the first level of a categorical variable as the baseline level.
+    this is often the first alphabetically, but make sure you check!
 
--   We can change the baseline level by reordering the levels of the categorical variable.
+-   We can change the baseline level by **reordering the levels** of the categorical variable... do you remember how to do this??
 
 # Linear regression with one numerical and one categorical predictor
 
@@ -448,11 +467,16 @@ The computer handles *all* of this for you, but you need to understand the detai
 
 ```{r}
 #| include: false 
-
 penguins <- palmerpenguins::penguins
 ```
 
 ```{r}
+#| warning: false
+#| fig-width: 6
+#| fig-height: 4
+#| out-width: "65%"
+#| fig-align: center
+
 ggplot(penguins, 
   aes(x = flipper_length_mm, y = body_mass_g, color = island)
   ) +
@@ -463,12 +487,12 @@ ggplot(penguins,
 
 Both of these models use `flipper_length_mm` *and* `island` to predict `body_mass_g`:
 
-
 ```{r}
 #| label: additive-interaction-viz
 #| layout-ncol: 2
 #| echo: false
 #| fig-asp: 1
+#| warning: false
 
 # Plot A
 bm_fl_island_fit <- linear_reg() |>
@@ -499,7 +523,7 @@ ggplot(
 ```{r}
 #| label: additive-viz
 #| echo: false
-
+#| warning: false
 
 # Plot A
 bm_fl_island_fit <- linear_reg() |>
@@ -599,7 +623,6 @@ ggplot(
   labs(title = "Interaction model") +
   theme(legend.position = "bottom")
 ```
-
 
 ## The interaction model: different lines for each island {.medium .scrollable}
 
@@ -743,7 +766,6 @@ $$
 \widehat{body~mass} = (-5464 + 3551) + (48.5 - 19.4) \times 205.
 $$
 
-
 ## Prediction on Torgersen island
 
 ```{r}
@@ -786,9 +808,7 @@ $$
 \widehat{body~mass} = (-5464 + 3218) + (48.5 - 17.4) \times 205.
 $$
 
-
 # Linear regression with many numerical predictors
-
 
 ## Multiple numerical predictors {.scrollable}
 
@@ -805,7 +825,6 @@ $$
 \small\widehat{body~mass}=-5736+48.1\times flipper~length+6\times bill~length
 $$
 
-
 ## Interpretation {.scrollable .medium}
 
 $$
@@ -814,12 +833,12 @@ $$
 
 . . .
 
-**Interpretations**: 
+**Interpretations**:
 
 ::: incremental
-- We predict that the body mass of a penguin with *zero* flipper length and *zero* bill length will be -5736 grams, on average (**makes no sense**);
-- Holding all other variables constant, for every additional millimeter in flipper length, we expect the body mass of penguins to be higher, on average, by 48.1 grams.
-- Holding all other variables constant, for every additional millimeter in bill length, we expect the body mass of penguins to be higher, on average, by 6 grams.
+-   We predict that the body mass of a penguin with *zero* flipper length and *zero* bill length will be -5736 grams, on average (**makes no sense**);
+-   Holding all other variables constant, for every additional millimeter in flipper length, we expect the body mass of penguins to be higher, on average, by 48.1 grams.
+-   Holding all other variables constant, for every additional millimeter in bill length, we expect the body mass of penguins to be higher, on average, by 6 grams.
 :::
 
 ## Prediction
@@ -839,7 +858,8 @@ $$
 
 ## Picture? It's not pretty...
 
-2 predictors + 1 response = 3 dimensions. Ick!
+2 predictors + 1 response = 3 dimensions.
+Ick!
 
 ```{r}
 #| echo: false
@@ -855,7 +875,8 @@ scatterplot3d(
 
 ## Picture? It's not pretty...
 
-Instead of a line of best fit, it's a *plane* of best fit. Double ick!
+Instead of a line of best fit, it's a *plane* of best fit.
+Double ick!
 
 ```{r}
 #| echo: false
@@ -888,7 +909,8 @@ $$\Large{Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ...+ \beta_p X_p+\epsilon}$$
 
 . . .
 
-The model with the greek letters and the error term is the "true," idealized, *population* relationship that we could access if we had infinite amounts of perfect data. But we don't, so we have to settle for...
+The model with the greek letters and the error term is the "true," idealized, *population* relationship that we could access if we had infinite amounts of perfect data.
+But we don't, so we have to settle for...
 
 ## Estimated model {.medium}
 
@@ -900,12 +922,12 @@ $$\Large{\hat{Y} = b_0 + b_1 X_1 + b_2 X_2 + ... + b_pX_p}$$
 
 . . .
 
-This is your *best guess* at the true regression function based on the noisy, meager, imperfect data you actually have access to. We still compute the $b_j$ using the principle of least squares: pick the estimates that make the sum of squared residuals as small as possible.
+This is your *best guess* at the true regression function based on the noisy, meager, imperfect data you actually have access to.
+We still compute the $b_j$ using the principle of least squares: pick the estimates that make the sum of squared residuals as small as possible.
 
 ## Next time
 
 Today we saw multiple models that are all attempting to do the same thing: predict body mass.
 
-- Which one is "best"?
-- What does "best" even mean?
-
+-   Which one is "best"?
+-   What does "best" even mean?
