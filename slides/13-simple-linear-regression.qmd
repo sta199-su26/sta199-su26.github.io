@@ -298,13 +298,13 @@ $$\Large{Y = \beta_0 + \beta_1 X + \epsilon}$$
 
 ## Simple linear regression {.smaller}
 
--   The "fitted" model, obtained by estimating $\beta_0$ and $beta_1$ using a finite sample ($x_1, y_1$), ($x_2, y_2$), ..., ($x_n, y_n$)
+-   The "fitted" model, obtained by estimating $\beta_0$ and $\beta_1$ using a finite sample ($x_1, y_1$), ($x_2, y_2$), ..., ($x_n, y_n$)
 
 $$\Large{\widehat{Y} = b_0 + b_1 X}$$
 
--   $b_1$: Estimated slope of the relationship between $X$ and $Y$; you may also see $\widehat{\beta_0}$
+-   $b_1$: Estimated slope of the relationship between $X$ and $Y$; you may also see $\widehat{\beta_1}$
 
--   $b_0$: Estimated intercept of the relationship between $X$ and $Y$; you may also see $\widehat{\beta_1}$
+-   $b_0$: Estimated intercept of the relationship between $X$ and $Y$; you may also see $\widehat{\beta_0}$
 
 -   No error term!
 
@@ -334,7 +334,7 @@ ggplot(movie_scores, aes(x = critics, y = audience)) +
   labs(x = "Critics Score", y = "Audience Score")
 ```
 
-## Residuals
+## Residuals {.smaller}
 
 ```{r}
 #| message: false
@@ -355,7 +355,7 @@ $$\text{residual} = \text{observed} - \text{predicted} = y - \widehat{y}$$
 ::: incremental
 -   We have $n$ observations (generally, the number of rows in a df)
 
--   $i^{th}$ observation ($i$ from $1$ to $N$):
+-   $i^{th}$ observation ($i$ from $1$ to $n$):
 
     -   $y_i$ : $i^{th}$ outcome
 
@@ -382,11 +382,11 @@ $$e^2_1 + e^2_2 + \dots + e^2_n$$
 
 | **data** |   | **residuals** |
 |:----------------------:|:----------------------:|:----------------------:|
-| $x_1 \quad y_1$ | $\rightarrow$ | $e_1 = y_1 - \hat{y}_1 = y_1 - (b_0 + b_1 \times x)$ |
-| $x_2 \quad y_2$ | $\rightarrow$ | $e_2 = y_2 - \hat{y}_2 = y_2 - (b_0 + b_1 \times x)$ |
-| $x_3 \quad y_3$ | $\rightarrow$ | $e_3 = y_3 - \hat{y}_3 = y_3 - (b_0 + b_1 \times x)$ |
+| $x_1 \quad y_1$ | $\rightarrow$ | $e_1 = y_1 - \widehat{y_1} = y_1 - (b_0 + b_1 \times x_1)$ |
+| $x_2 \quad y_2$ | $\rightarrow$ | $e_2 = y_2 - \widehat{y_2} = y_2 - (b_0 + b_1 \times x_2)$ |
+| $x_3 \quad y_3$ | $\rightarrow$ | $e_3 = y_3 - \widehat{y_3} = y_3 - (b_0 + b_1 \times x_3)$ |
 | ... | $\rightarrow$ | ... |
-| $x_n \quad y_n$ | $\rightarrow$ | $e_n = y_n - \hat{y}_n = y_n - (b_0 + b_1 \times x)$ |
+| $x_n \quad y_n$ | $\rightarrow$ | $e_n = y_n - \widehat{y_n} = y_n - (b_0 + b_1 \times x_n)$ |
 
 $$
 \downarrow
@@ -661,7 +661,7 @@ predict(movies_fit,
 $$\widehat{\text{audience}} = 32.3 + 0.519 \times \text{critics}$$
 
 -   Slope: for every one point increase in the critics' score, **we expect** the audience score to be higher by 0.519 points, **on average**;
--   Intercept: for movies with an audience score of 0 points, **we expect** the critics score to be 32.3 points, **on average**.
+-   Intercept: for movies with a critics' score of 0 points, **we expect** the audience score to be 32.3 points, **on average**.
 
 The "we expect" and "on average" are a bit redundant, but let's go belt and suspenders in this class.
 
