@@ -1,7 +1,7 @@
 ---
 title: "Multiple Linear Regression 1"
-subtitle: "Lecture 17"
-date: "2026-03-23"
+subtitle: "Lecture 14"
+date: "2026-06-05"
 format: 
   revealjs: 
     output-file: 17-multiple-linear-regression-1-slides.html
@@ -15,8 +15,6 @@ format:
     code-link: true
 ---
 
-## While you wait: Participate 📱💻 {.xsmall}
-
 ```{r}
 #| include: false
 library(tidyverse)
@@ -26,85 +24,6 @@ library(scatterplot3d)
 library(ggthemes)
 library(ggbeeswarm)
 ```
-
-:::::: columns
-:::: {.column width="70%"}
-::: wooclap
-
-Which of the following is true about linear regression models?
-
-::: wooclap-choices
-- The regression line always passes through the origin (x = 0, y = 0).
-- The slope indicates the average change in the outcome for a one-unit increase in the predictor.
-- The intercept indicates the average value of the predictor when the outcome is 0.
-- Least squares regression line minimizes the sum of the vertical distances between the observed and predicted values of the outcome.
-:::
-
-:::
-::::
-
-::: {.column width="30%"}
-{{< include _wooclap-column.qmd >}}
-:::
-::::::
-
-
-
-## Do you know what Duke invests in? Neither does Nathan! {.small}
-
-![](images/17/nathan.png){fig-align="center"}
-
-
-## Data Manager for ER
-
-:::::: columns
-:::: {.column width="50%"}
-{{< qrcode https://forms.gle/euNGfxbmZzBJGK1j7 width=300 height=300 >}}
-::::
-
-:::: {.column width="50%"}
-- Due: March 28th, 2026 11:59pm;
-- Use STA 199 in real-world application;
-- Support local Durham community.
-::::
-
-
-::::::
-
-## Bookbagging this Thursday! {.scrollable}
-
-:::::: columns
-:::: {.column width="50%"}
-
-
-![](images/17/ssmu.png)
-
-::::
-
-::: {.column width="50%"}
-
-Get great advice about course selection from the old broads in the stats mafia:
-
-- Free boba!
-- Thursday 3/26 7pm - 9pm;
-- Social Sciences 136
-- Instagram: [@dukessmu](https://www.instagram.com/dukessmu/)
-
-:::
-::::::
-
-## "I can't attend lab on March 26"
-
-If you will not be physically present during your team's presentation in lab this Thursday...
-
-::: incremental
-- There are too many of you to make special arrangements;
-- There will not be a remote option;
-- Your team will present without you;
-- You should communicate with your group in advance;
-- Everyone on the team gets the same grade on the presentation regardless their attendance;
-- We leave it to you to police this. If someone doesn't communicate, doesn't contribute, and flakes on the presentation, tear them to shreds in the peer eval.
-:::
 
 # Recap: simple linear regression
 
@@ -257,37 +176,6 @@ A different researcher wants to look at body weight of penguins based on the isl
 ```{r}
 levels(penguins$island)
 ```
-
-## Participate 📱💻 {.xsmall}
-
-:::::: columns
-:::: {.column width="70%"}
-
-::: wooclap
-Determine whether each of the following plot types would be an appropriate choice for visualizing the relationship between body weight and island of penguins.
-
-::: wooclap-choices
--   Scatterplot 
-
--   Box plot
-
--   Density plot
-
--   Violin plot
-
--   Bar plot 
-
--   Stacked bar plot
-:::
-
-:::
-::::
-
-::: {.column width="30%"}
-{{< include _wooclap-column.qmd >}}
-:::
-::::::
-
 
 ## Scatterplot: possible, but not so good 
 
@@ -553,82 +441,6 @@ The computer handles *all* of this for you, but you need to understand the detai
 -   By default, R uses the first level of a categorical variable as the baseline level. this is often the first alphabetically, but make sure you check!
 
 -   We can change the baseline level by reordering the levels of the categorical variable.
-
-## Participate 📱💻 {.xsmall}
-
-:::::: columns
-
-:::: {.column width="70%"}
-
-::: wooclap
-
-What function goes in the blank to make "Dream" the baseline level in the `island` variable?
-
-```{r}
-#| eval: false
-penguins |>
-  mutate(
-    island = ___(island, "Dream")
-  )
-```
-
-::: wooclap-choices
-- `level_reorder`
-- `fct_relevel`
-- `fct_reorder`
-- `str_relevel`
-:::
-
-:::
-
-::::
-
-::: {.column width="30%"}
-{{< include _wooclap-column.qmd >}}
-:::
-
-::::::
-
-## Participate 📱💻 {.xsmall}
-
-:::::: columns
-
-:::: {.column width="70%"}
-
-::: wooclap
-
-What is the baseline level of `island` in the following model??
-
-```{r}
-#| include: false
-penguins <- penguins |>
-  mutate(
-    island = fct_relevel(island, "Torgersen")
-  )
-```
-
-```{r}
-linear_reg() |>
-  fit(body_mass_g ~ island, data = penguins) |>
-  tidy()
-```
-
-::: wooclap-choices
-- Biscoe
-- Dream
-- Torgersen
-- Cannot tell from the output
-:::
-
-:::
-
-::::
-
-::: {.column width="30%"}
-{{< include _wooclap-column.qmd >}}
-:::
-
-::::::
 
 # Linear regression with one numerical and one categorical predictor
 
