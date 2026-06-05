@@ -388,11 +388,11 @@ window.Quarto = {
 <a href="#multiple-linear-regression-in-general" id="toc-multiple-linear-regression-in-general" class="nav-link" data-scroll-target="#multiple-linear-regression-in-general">Multiple linear regression in general</a>
   <ul class="collapse">
 <li><a href="#population-model" id="toc-population-model" class="nav-link" data-scroll-target="#population-model">Population model</a></li>
-  <li><a href="#estimated-model" id="toc-estimated-model" class="nav-link" data-scroll-target="#estimated-model">Estimated model</a></li>
+  <li><a href="#estimated-fitted-model" id="toc-estimated-fitted-model" class="nav-link" data-scroll-target="#estimated-fitted-model">Estimated / fitted model</a></li>
   <li><a href="#next-time" id="toc-next-time" class="nav-link" data-scroll-target="#next-time">Next time</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/14-multiple-linear-regression-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="14-mlr-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/14-multiple-linear-regression-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="14-mlr-I-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
@@ -929,25 +929,25 @@ We’re not animals. We have technology!
 </div>
 <p><span class="math display">\[
 \begin{aligned}
-\widehat{body~mass} = -4625 &amp;+ 44.5 \times flipper~length \\
-&amp;- 262 \times Dream \\
-&amp;- 185 \times Torgersen
+\widehat{\text{body mass (g)}} = -4625 &amp;+ 44.5 \times {\text{flipper length (mm)}} \\
+&amp;- 262 \times \text{Dream} \\
+&amp;- 185 \times \text{Torgersen}
 \end{aligned}
 \]</span></p>
-</section><section id="where-do-the-three-lines-come-from" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="where-do-the-three-lines-come-from">Where do the three lines come from?</h2>
+</section><section id="where-do-the-three-lines-come-from" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="where-do-the-three-lines-come-from">Where do the three lines come from?</h2>
 <p><span class="math display">\[
 \begin{aligned}
-\widehat{body~mass} = -4625 &amp;+ 44.5 \times flipper~length \\
-&amp;- 262 \times Dream \\
-&amp;- 185 \times Torgersen
+\widehat{\text{body mass (g)}} = -4625 &amp;+ 44.5 \times \text{flipper length (mm)} \\
+&amp;- 262 \times \text{Dream} \\
+&amp;- 185 \times \text{Torgersen}
 \end{aligned}
 \]</span></p>
 <p>. . .</p>
-<p>If penguin is from Biscoe, Dream = 0 and Torgersen = 0:</p>
+<p>If penguin is from Biscoe, Dream = 0 <strong>and</strong> Torgersen = 0:</p>
 <p>. . .</p>
 <p><span class="math display">\[
 \begin{aligned}
-\widehat{body~mass} = -4625 &amp;+ 44.5 \times flipper~length
+\widehat{\text{body mass (g)}} = -4625 &amp;+ 44.5 \times \text{flipper length (mm)}
 \end{aligned}
 \]</span></p>
 <p>. . .</p>
@@ -955,7 +955,7 @@ We’re not animals. We have technology!
 <p>. . .</p>
 <p><span class="math display">\[
 \begin{aligned}
-\widehat{body~mass} = -4887 &amp;+ 44.5 \times flipper~length
+\widehat{\text{body mass (g)}} = -4887 &amp;+ 44.5 \times \text{flipper length (mm)}
 \end{aligned}
 \]</span></p>
 <p>. . .</p>
@@ -963,7 +963,7 @@ We’re not animals. We have technology!
 <p>. . .</p>
 <p><span class="math display">\[
 \begin{aligned}
-\widehat{body~mass} = -4810 &amp;+ 44.5 \times flipper~length
+\widehat{\text{body mass (g)}} = -4810 &amp;+ 44.5 \times \text{flipper length (mm)}
 \end{aligned}
 \]</span></p>
 <p>. . .</p>
@@ -978,27 +978,16 @@ We’re not animals. We have technology!
 <span>  <span class="fu">geom_smooth</span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Interaction model"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
-(`stat_smooth()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale
-range (`geom_point()`).</code></pre>
-</div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="14-multiple-linear-regression-1_files/figure-revealjs/interaction-viz-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</section><section id="the-interaction-model-different-lines-for-each-island-1" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="the-interaction-model-different-lines-for-each-island-1">The interaction model: different lines for each island</h2>
+</section><section id="the-interaction-model-different-lines-for-each-island-1" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="the-interaction-model-different-lines-for-each-island-1">The interaction model: different lines for each island</h2>
 <div class="cell">
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bm_fl_island_int_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bm_fl_island_int_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">fit</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">flipper_length_mm</span> <span class="op">*</span> <span class="va">island</span>, data <span class="op">=</span> <span class="va">penguins</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">tidy</span><span class="op">(</span><span class="va">bm_fl_island_int_fit</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">select</span><span class="op">(</span><span class="va">term</span>, <span class="va">estimate</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1017,21 +1006,21 @@ range (`geom_point()`).</code></pre>
 <p>. . .</p>
 <p><span class="math display">\[
 \begin{aligned}
-\widehat{body~mass} = -5464 &amp;+ 48.5 \times flipper~length \\
-&amp;+ 3551 \times Dream \\
-&amp;+ 3218 \times Torgersen \\
-&amp;- 19.4 \times flipper~length*Dream \\
-&amp;- 17.4 \times flipper~length*Torgersen
+\widehat{\text{body mass (g)}} = -5464 &amp;+ 48.5 \times \text{flipper length (mm)} \\
+&amp;+ 3551 \times \text{Dream} \\
+&amp;+ 3218 \times \text{Torgersen} \\
+&amp;- 19.4 \times \text{flipper length (mm)}*\text{Dream} \\
+&amp;- 17.4 \times \text{flipper length (mm)}*\text{Torgersen}
 \end{aligned}
 \]</span></p>
-</section><section id="where-do-the-three-lines-come-from-1" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="where-do-the-three-lines-come-from-1">Where do the three lines come from?</h2>
+</section><section id="where-do-the-three-lines-come-from-1" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="where-do-the-three-lines-come-from-1">Where do the three lines come from?</h2>
 <p><span class="math display">\[
 \begin{aligned}
-\small\widehat{body~mass} = -5464 &amp;+ 48.5 \times flipper~length \\
-&amp;+ 3551 \times Dream \\
-&amp;+ 3218 \times Torgersen \\
-&amp;- 19.4 \times flipper~length*Dream \\
-&amp;- 17.4 \times flipper~length*Torgersen
+\small\widehat{\text{body mass (g)}} = -5464 &amp;+ 48.5 \times \text{flipper length (mm)} \\
+&amp;+ 3551 \times \text{Dream} \\
+&amp;+ 3218 \times \text{Torgersen} \\
+&amp;- 19.4 \times \text{flipper length (mm)} * \text{Dream} \\
+&amp;- 17.4 \times \text{flipper length (mm)} * \text{Torgersen}
 \end{aligned}
 \]</span></p>
 <p>. . .</p>
@@ -1039,7 +1028,7 @@ range (`geom_point()`).</code></pre>
 <p>. . .</p>
 <p><span class="math display">\[
 \begin{aligned}
-\widehat{body~mass} = -5464 &amp;+ 48.5 \times flipper~length
+\widehat{\text{body mass (g)}} = -5464 &amp;+ 48.5 \times \text{flipper length (mm)}
 \end{aligned}
 \]</span></p>
 <p>. . .</p>
@@ -1047,23 +1036,12 @@ range (`geom_point()`).</code></pre>
 <p>. . .</p>
 <p><span class="math display">\[
 \begin{aligned}
-\widehat{body~mass} &amp;= (-5464 + 3551) + (48.5-19.4) \times flipper~length\\
-&amp;=-1913+29.1\times flipper~length.
+\widehat{\text{body mass (g)}} &amp;= (-5464 + 3551) + (48.5-19.4) \times \text{flipper length (mm)}\\
+&amp;=-1913+29.1\times \text{flipper length (mm)}.
 \end{aligned}
 \]</span></p>
 </section><section id="prediction-on-biscoe-island" class="level2"><h2 class="anchored" data-anchor-id="prediction-on-biscoe-island">Prediction on Biscoe island</h2>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
-(`stat_smooth()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale
-range (`geom_point()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="14-multiple-linear-regression-1_files/figure-revealjs/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="960"></p>
@@ -1073,7 +1051,7 @@ range (`geom_point()`).</code></pre>
 </div>
 </section><section id="prediction-on-biscoe-island-1" class="level2"><h2 class="anchored" data-anchor-id="prediction-on-biscoe-island-1">Prediction on Biscoe island</h2>
 <div class="cell">
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new_penguin</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new_penguin</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
 <span>  flipper_length_mm <span class="op">=</span> <span class="fl">205</span>,</span>
 <span>  island <span class="op">=</span> <span class="st">"Biscoe"</span></span>
 <span><span class="op">)</span></span>
@@ -1087,21 +1065,10 @@ range (`geom_point()`).</code></pre>
 </div>
 </div>
 <p><span class="math display">\[
-\widehat{body~mass} = -5464 + 48.5 \times 205.
+\widehat{\text{body mass (g)}} = -5464 + 48.5 \times 205
 \]</span></p>
 </section><section id="prediction-on-dream-island" class="level2"><h2 class="anchored" data-anchor-id="prediction-on-dream-island">Prediction on Dream island</h2>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
-(`stat_smooth()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale
-range (`geom_point()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="14-multiple-linear-regression-1_files/figure-revealjs/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="960"></p>
@@ -1111,7 +1078,7 @@ range (`geom_point()`).</code></pre>
 </div>
 </section><section id="prediction-on-dream-island-1" class="level2"><h2 class="anchored" data-anchor-id="prediction-on-dream-island-1">Prediction on Dream island</h2>
 <div class="cell">
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new_penguin</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new_penguin</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
 <span>  flipper_length_mm <span class="op">=</span> <span class="fl">205</span>,</span>
 <span>  island <span class="op">=</span> <span class="st">"Dream"</span></span>
 <span><span class="op">)</span></span>
@@ -1125,21 +1092,10 @@ range (`geom_point()`).</code></pre>
 </div>
 </div>
 <p><span class="math display">\[
-\widehat{body~mass} = (-5464 + 3551) + (48.5 - 19.4) \times 205.
+\widehat{\text{body mass (g)}} = (-5464 + 3551) + (48.5 - 19.4) \times 205
 \]</span></p>
 </section><section id="prediction-on-torgersen-island" class="level2"><h2 class="anchored" data-anchor-id="prediction-on-torgersen-island">Prediction on Torgersen island</h2>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
-(`stat_smooth()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale
-range (`geom_point()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="14-multiple-linear-regression-1_files/figure-revealjs/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="960"></p>
@@ -1149,7 +1105,7 @@ range (`geom_point()`).</code></pre>
 </div>
 </section><section id="prediction-on-torgersen-island-1" class="level2"><h2 class="anchored" data-anchor-id="prediction-on-torgersen-island-1">Prediction on Torgersen island</h2>
 <div class="cell">
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new_penguin</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new_penguin</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
 <span>  flipper_length_mm <span class="op">=</span> <span class="fl">205</span>,</span>
 <span>  island <span class="op">=</span> <span class="st">"Torgersen"</span></span>
 <span><span class="op">)</span></span>
@@ -1163,12 +1119,12 @@ range (`geom_point()`).</code></pre>
 </div>
 </div>
 <p><span class="math display">\[
-\widehat{body~mass} = (-5464 + 3218) + (48.5 - 17.4) \times 205.
+\widehat{\text{body mass (g)}} = (-5464 + 3218) + (48.5 - 17.4) \times 205
 \]</span></p>
 </section></section><section id="linear-regression-with-many-numerical-predictors" class="level1"><h1>Linear regression with many numerical predictors</h1>
-<section id="multiple-numerical-predictors" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="multiple-numerical-predictors">Multiple numerical predictors</h2>
+<section id="multiple-numerical-predictors" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="multiple-numerical-predictors">Multiple numerical predictors</h2>
 <div class="cell">
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bm_fl_bl_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bm_fl_bl_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">fit</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">flipper_length_mm</span> <span class="op">+</span> <span class="va">bill_length_mm</span>, data <span class="op">=</span> <span class="va">penguins</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">tidy</span><span class="op">(</span><span class="va">bm_fl_bl_fit</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1183,24 +1139,24 @@ range (`geom_point()`).</code></pre>
 </div>
 <p>. . .</p>
 <p><span class="math display">\[
-\small\widehat{body~mass}=-5736+48.1\times flipper~length+6\times bill~length
+\small\widehat{\text{body mass (g)}}=-5736+48.1\times \text{flipper length (mm)}+6\times \text{bill length (mm)}
 \]</span></p>
-</section><section id="interpretation-1" class="level2 scrollable medium"><h2 class="scrollable medium anchored" data-anchor-id="interpretation-1">Interpretation</h2>
+</section><section id="interpretation-1" class="level2 scrollable smaller"><h2 class="scrollable smaller anchored" data-anchor-id="interpretation-1">Interpretation</h2>
 <p><span class="math display">\[
-\small\widehat{body~mass}=-5736+48.1\times flipper~length+6\times bill~length
+\small\widehat{\text{body mass (g)}}=-5736+48.1\times \text{flipper length (mm)}+6\times \text{bill length (mm)}
 \]</span></p>
 <p>. . .</p>
 <p><strong>Interpretations</strong>:</p>
 <div class="incremental">
 <ul class="incremental">
-<li>We predict that the body mass of a penguin with <em>zero</em> flipper length and <em>zero</em> bill length will be -5736 grams, on average (<strong>makes no sense</strong>);</li>
-<li>Holding all other variables constant, for every additional millimeter in flipper length, we expect the body mass of penguins to be higher, on average, by 48.1 grams.</li>
-<li>Holding all other variables constant, for every additional millimeter in bill length, we expect the body mass of penguins to be higher, on average, by 6 grams.</li>
+<li>We predict that the body mass of a penguin with <em>zero</em> flipper length and <em>zero</em> bill length will be -5,736 g, on average (<strong>makes no sense</strong>);</li>
+<li>Holding all other variables constant, for every additional mm in flipper length, we expect the body mass of penguins to be higher, on average, by 48.1 g;</li>
+<li>Holding all other variables constant, for every additional mm in bill length, we expect the body mass of penguins to be higher, on average, by 6 g.</li>
 </ul>
 </div>
 </section><section id="prediction-2" class="level2"><h2 class="anchored" data-anchor-id="prediction-2">Prediction</h2>
 <div class="cell">
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new_penguin</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new_penguin</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span></span>
 <span>  flipper_length_mm <span class="op">=</span> <span class="fl">200</span>,</span>
 <span>  bill_length_mm <span class="op">=</span> <span class="fl">45</span></span>
 <span><span class="op">)</span></span>
@@ -1214,14 +1170,11 @@ range (`geom_point()`).</code></pre>
 </div>
 </div>
 <p><span class="math display">\[
-\widehat{body~mass}=-5736+48.1\times 200+6\times 45
+\widehat{\text{body mass (g)}}=-5736+48.1\times 200+6\times 45
 \]</span></p>
 </section><section id="picture-its-not-pretty" class="level2"><h2 class="anchored" data-anchor-id="picture-its-not-pretty">Picture? It’s not pretty…</h2>
 <p>2 predictors + 1 response = 3 dimensions. Ick!</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Unknown or uninitialised column: `color`.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="14-multiple-linear-regression-1_files/figure-revealjs/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="960"></p>
@@ -1232,9 +1185,6 @@ range (`geom_point()`).</code></pre>
 </section><section id="picture-its-not-pretty-1" class="level2"><h2 class="anchored" data-anchor-id="picture-its-not-pretty-1">Picture? It’s not pretty…</h2>
 <p>Instead of a line of best fit, it’s a <em>plane</em> of best fit. Double ick!</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Unknown or uninitialised column: `color`.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="14-multiple-linear-regression-1_files/figure-revealjs/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="960"></p>
@@ -1243,7 +1193,7 @@ range (`geom_point()`).</code></pre>
 </div>
 </div>
 </section></section><section id="multiple-linear-regression-in-general" class="level1"><h1>Multiple linear regression in general</h1>
-<section id="population-model" class="level2 medium"><h2 class="medium anchored" data-anchor-id="population-model">Population model</h2>
+<section id="population-model" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="population-model">Population model</h2>
 <p><strong>Multiple linear regression</strong> captures the relationship between a numerical outcome <span class="math inline">\(Y\)</span> and <em>many</em> numerical predictors <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, …, <span class="math inline">\(X_p\)</span>:</p>
 <p><span class="math display">\[\Large{Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ...+ \beta_p X_p+\epsilon}\]</span></p>
 <div class="incremental">
@@ -1260,8 +1210,8 @@ range (`geom_point()`).</code></pre>
 </div>
 <p>. . .</p>
 <p>The model with the greek letters and the error term is the “true,” idealized, <em>population</em> relationship that we could access if we had infinite amounts of perfect data. But we don’t, so we have to settle for…</p>
-</section><section id="estimated-model" class="level2 medium"><h2 class="medium anchored" data-anchor-id="estimated-model">Estimated model</h2>
-<p><span class="math display">\[\Large{\hat{Y} = b_0 + b_1 X_1 + b_2 X_2 + ... + b_pX_p}\]</span></p>
+</section><section id="estimated-fitted-model" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="estimated-fitted-model">Estimated / fitted model</h2>
+<p><span class="math display">\[\Large{\widehat{Y} = b_0 + b_1 X_1 + b_2 X_2 + ... + b_pX_p}\]</span></p>
 <ul>
 <li>
 <span class="math inline">\(b_j\)</span>: Estimated slope of the relationship between <span class="math inline">\(X_j\)</span> and <span class="math inline">\(Y\)</span>;</li>

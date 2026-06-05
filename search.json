@@ -2783,659 +2783,659 @@
     "text": "Sales data\n\nWhat data tidying must be done to go from the original, non-tidy data to the below tidy version of these data?"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#from-last-timepenguins",
-    "href": "slides/14-mlr-slides.html#from-last-timepenguins",
+    "objectID": "slides/14-mlr-I-slides.html#from-last-timepenguins",
+    "href": "slides/14-mlr-I-slides.html#from-last-timepenguins",
     "title": "Multiple Linear Regression 1",
     "section": "From last time…penguins",
     "text": "From last time…penguins\n\nA researcher wants to see how body mass varies with flipper length.\n\n\n\noutcome: body mass (g) (numerical)\npredictor: flipper length (mm) (numerical)\n\n\n\nFlipper length is easier to measure, so more plausible you would predict body mass based on that and not the other way around."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#how-do-we-concisely-summarize-the-association-between-two-variables",
-    "href": "slides/14-mlr-slides.html#how-do-we-concisely-summarize-the-association-between-two-variables",
+    "objectID": "slides/14-mlr-I-slides.html#how-do-we-concisely-summarize-the-association-between-two-variables",
+    "href": "slides/14-mlr-I-slides.html#how-do-we-concisely-summarize-the-association-between-two-variables",
     "title": "Multiple Linear Regression 1",
     "section": "How do we concisely summarize the association between two variables?",
     "text": "How do we concisely summarize the association between two variables?\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + \n  geom_point()"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#line-of-best-fit",
-    "href": "slides/14-mlr-slides.html#line-of-best-fit",
+    "objectID": "slides/14-mlr-I-slides.html#line-of-best-fit",
+    "href": "slides/14-mlr-I-slides.html#line-of-best-fit",
     "title": "Multiple Linear Regression 1",
     "section": "Line of best fit!",
     "text": "Line of best fit!\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", color = \"cornflowerblue\")"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#concise-numerical-summary-correlation",
-    "href": "slides/14-mlr-slides.html#concise-numerical-summary-correlation",
+    "objectID": "slides/14-mlr-I-slides.html#concise-numerical-summary-correlation",
+    "href": "slides/14-mlr-I-slides.html#concise-numerical-summary-correlation",
     "title": "Multiple Linear Regression 1",
     "section": "Concise numerical summary: correlation",
     "text": "Concise numerical summary: correlation\n\npenguins |&gt;\n  summarize(\n    r = cor(flipper_length_mm, body_mass_g, use = \"complete.obs\")\n  )\n\n# A tibble: 1 × 1\n      r\n  &lt;dbl&gt;\n1 0.871\n\n\nMeasures the strength and direction of the linear association between two numerical variables. Strong and positive in this case."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#model-fit",
-    "href": "slides/14-mlr-slides.html#model-fit",
+    "objectID": "slides/14-mlr-I-slides.html#model-fit",
+    "href": "slides/14-mlr-I-slides.html#model-fit",
     "title": "Multiple Linear Regression 1",
     "section": "Model fit",
     "text": "Model fit\n\nbm_fl_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(bm_fl_fit)\n\n# A tibble: 2 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)        -5781.     306.       -18.9 5.59e- 55\n2 flipper_length_mm     49.7      1.52      32.7 4.37e-107\n\n\n\\[\n\\widehat{\\text{body mass (g)}}=-5780.83+49.68\\times \\text{flipper length (mm)}\n\\]"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#r2-coefficient-of-determination",
-    "href": "slides/14-mlr-slides.html#r2-coefficient-of-determination",
+    "objectID": "slides/14-mlr-I-slides.html#r2-coefficient-of-determination",
+    "href": "slides/14-mlr-I-slides.html#r2-coefficient-of-determination",
     "title": "Multiple Linear Regression 1",
     "section": "\n\\(R^2\\) (coefficient of determination)",
     "text": "\\(R^2\\) (coefficient of determination)\nThe fraction of the variation in the response explained by the model. A number between 0 (bad) and 1 (good) that measures goodness-of-fit:\n\n\n\nbm_fl_fit |&gt;\n  glance() |&gt;\n  select(r.squared)\n\n# A tibble: 1 × 1\n  r.squared\n      &lt;dbl&gt;\n1     0.759\n\n\n\n\npenguins |&gt;\n  summarize(\n    r = cor(flipper_length_mm, body_mass_g, use = \"complete.obs\"),\n    R2 = r^2\n  )\n\n# A tibble: 1 × 2\n      r    R2\n  &lt;dbl&gt; &lt;dbl&gt;\n1 0.871 0.759"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#interpretation",
-    "href": "slides/14-mlr-slides.html#interpretation",
+    "objectID": "slides/14-mlr-I-slides.html#interpretation",
+    "href": "slides/14-mlr-I-slides.html#interpretation",
     "title": "Multiple Linear Regression 1",
     "section": "Interpretation",
     "text": "Interpretation\n\\[\n\\widehat{\\text{body mass (g)}}=-5780.83+49.68\\times \\text{flipper length (mm)}\n\\]\n\nIntercept: Penguins with 0 mm flipper length are expected, on average, to weigh -5,781 grams (makes no sense!);\nSlope: For each additional mm of a penguin’s flipper length, the weight of the penguin is expected to be higher, on average, by 49.7 g."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#prediction",
-    "href": "slides/14-mlr-slides.html#prediction",
+    "objectID": "slides/14-mlr-I-slides.html#prediction",
+    "href": "slides/14-mlr-I-slides.html#prediction",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction",
     "text": "Prediction"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#prediction-1",
-    "href": "slides/14-mlr-slides.html#prediction-1",
+    "objectID": "slides/14-mlr-I-slides.html#prediction-1",
+    "href": "slides/14-mlr-I-slides.html#prediction-1",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction",
     "text": "Prediction\n\nnew_penguin &lt;- tibble(flipper_length_mm = 205)\n\npredict(bm_fl_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4405.\n\n\n\\[\n\\widehat{\\text{body mass (g)}}=-5780.83+49.68\\times 205\\approx 4404.71\\text{g}\n\\]\n\nWe predict that a penguin whose flipper is 205 mm long will weigh 4,404.71 g, on average."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#new-question",
-    "href": "slides/14-mlr-slides.html#new-question",
+    "objectID": "slides/14-mlr-I-slides.html#new-question",
+    "href": "slides/14-mlr-I-slides.html#new-question",
     "title": "Multiple Linear Regression 1",
     "section": "New question",
     "text": "New question\n\nA different researcher wants to look at body weight of penguins based on the island they were recorded on. How are the variables involved in this analysis different?\n\n\n\noutcome: body mass in grams (numerical)\npredictor: island (categorical, with three levels)\n\n\n\n\nlevels(penguins$island)\n\n[1] \"Biscoe\"    \"Dream\"     \"Torgersen\""
   },
   {
-    "objectID": "slides/14-mlr-slides.html#scatterplot-possible-but-not-so-good",
-    "href": "slides/14-mlr-slides.html#scatterplot-possible-but-not-so-good",
+    "objectID": "slides/14-mlr-I-slides.html#scatterplot-possible-but-not-so-good",
+    "href": "slides/14-mlr-I-slides.html#scatterplot-possible-but-not-so-good",
     "title": "Multiple Linear Regression 1",
     "section": "Scatterplot: possible, but not so good",
     "text": "Scatterplot: possible, but not so good\n\nVisualize the relationship between body weight and island of penguins. Also calculate the average body weight per island.\n\n\nggplot(penguins, aes(x = island, y = body_mass_g)) + \n  geom_point()"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#boxplot",
-    "href": "slides/14-mlr-slides.html#boxplot",
+    "objectID": "slides/14-mlr-I-slides.html#boxplot",
+    "href": "slides/14-mlr-I-slides.html#boxplot",
     "title": "Multiple Linear Regression 1",
     "section": "Boxplot",
     "text": "Boxplot\n\nVisualize the relationship between body weight and island of penguins. Also, calculate the average body weight per island.\n\n\n\nggplot(\n  penguins,\n  aes(x = island, y = body_mass_g)\n) +\n  geom_boxplot() +\n  labs(\n    x = \"Island\",\n    y = \"Body mass (g)\",\n    title = \"Body mass by island\"\n  )\n\n\n\n\n\n\n\n\n\n\npenguins |&gt;\n  group_by(island) |&gt;\n  summarize(\n    bm_mean = mean(body_mass_g, na.rm = TRUE)\n  )\n\n\n# A tibble: 3 × 2\n  island    bm_mean\n  &lt;fct&gt;       &lt;dbl&gt;\n1 Biscoe      4716.\n2 Dream       3713.\n3 Torgersen   3706."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#density-plot",
-    "href": "slides/14-mlr-slides.html#density-plot",
+    "objectID": "slides/14-mlr-I-slides.html#density-plot",
+    "href": "slides/14-mlr-I-slides.html#density-plot",
     "title": "Multiple Linear Regression 1",
     "section": "Density plot",
     "text": "Density plot\n\n\nggplot(\n  penguins,\n  aes(x = body_mass_g, color = island, fill = island)\n) +\n  geom_density(alpha = 0.5) +\n  scale_color_colorblind() +\n  scale_fill_colorblind() +\n  labs(\n    x = \"Island\",\n    y = \"Body mass (g)\",\n    title = \"Body Mass by Island\",\n    color = \"Island\",\n    fill = \"Island\"\n  )"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#violin-plot",
-    "href": "slides/14-mlr-slides.html#violin-plot",
+    "objectID": "slides/14-mlr-I-slides.html#violin-plot",
+    "href": "slides/14-mlr-I-slides.html#violin-plot",
     "title": "Multiple Linear Regression 1",
     "section": "Violin plot",
     "text": "Violin plot\n\n\nggplot(\n  penguins,\n  aes(x = island, y = body_mass_g)\n) +\n  geom_violin() +\n  labs(\n    x = \"Island\",\n    y = \"Body mass (g)\",\n    title = \"Body Mass by Island\"\n  )"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#multiple-geoms",
-    "href": "slides/14-mlr-slides.html#multiple-geoms",
+    "objectID": "slides/14-mlr-I-slides.html#multiple-geoms",
+    "href": "slides/14-mlr-I-slides.html#multiple-geoms",
     "title": "Multiple Linear Regression 1",
     "section": "Multiple geoms",
     "text": "Multiple geoms\n\n\nggplot(\n  penguins,\n  aes(x = island, y = body_mass_g, color = island)\n) +\n  geom_boxplot() +\n  geom_beeswarm(size = 2, alpha = 0.5) +\n  scale_color_colorblind() +\n  labs(\n    x = \"Island\",\n    y = \"Body mass (g)\",\n    title = \"Body Mass by Island\",\n    color = \"Island\"\n  ) +\n  theme(legend.position = \"none\")"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#model---fit",
-    "href": "slides/14-mlr-slides.html#model---fit",
+    "objectID": "slides/14-mlr-I-slides.html#model---fit",
+    "href": "slides/14-mlr-I-slides.html#model---fit",
     "title": "Multiple Linear Regression 1",
     "section": "Model - fit",
     "text": "Model - fit\n\nFit a linear regression model predicting body weight from island and display the results. Why is Biscoe not on the output?\n\n\nbm_island_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ island, data = penguins)\n\ntidy(bm_island_fit)\n\n# A tibble: 3 × 5\n  term            estimate std.error statistic   p.value\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)        4716.      48.5      97.3 8.93e-250\n2 islandDream       -1003.      74.2     -13.5 1.42e- 33\n3 islandTorgersen   -1010.     100.      -10.1 4.66e- 21\n\n\n\nHuh?"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#dummy-variables",
-    "href": "slides/14-mlr-slides.html#dummy-variables",
+    "objectID": "slides/14-mlr-I-slides.html#dummy-variables",
+    "href": "slides/14-mlr-I-slides.html#dummy-variables",
     "title": "Multiple Linear Regression 1",
     "section": "Dummy variables",
     "text": "Dummy variables\n\ndummy_penguins &lt;- penguins |&gt;\n  select(body_mass_g, island) |&gt;\n  arrange(body_mass_g) |&gt;\n  mutate(\n    islandDream = if_else(island == \"Dream\", 1, 0),\n    islandTorgersen = if_else(island == \"Torgersen\", 1, 0),\n  )\n\ndummy_penguins\n\n# A tibble: 344 × 4\n   body_mass_g island    islandDream islandTorgersen\n         &lt;int&gt; &lt;fct&gt;           &lt;dbl&gt;           &lt;dbl&gt;\n 1        2700 Dream               1               0\n 2        2850 Biscoe              0               0\n 3        2850 Biscoe              0               0\n 4        2900 Biscoe              0               0\n 5        2900 Dream               1               0\n 6        2900 Torgersen           0               1\n 7        2900 Dream               1               0\n 8        2925 Biscoe              0               0\n 9        2975 Dream               1               0\n10        3000 Dream               1               0\n# ℹ 334 more rows"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#dummy-variables---fit",
-    "href": "slides/14-mlr-slides.html#dummy-variables---fit",
+    "objectID": "slides/14-mlr-I-slides.html#dummy-variables---fit",
+    "href": "slides/14-mlr-I-slides.html#dummy-variables---fit",
     "title": "Multiple Linear Regression 1",
     "section": "Dummy variables - fit",
     "text": "Dummy variables - fit\n\nlinear_reg() |&gt;\n  fit(\n    body_mass_g ~ islandDream + islandTorgersen, \n    dummy_penguins\n  ) |&gt;\n  tidy()\n\n# A tibble: 3 × 5\n  term            estimate std.error statistic   p.value\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)        4716.      48.5      97.3 8.93e-250\n2 islandDream       -1003.      74.2     -13.5 1.42e- 33\n3 islandTorgersen   -1010.     100.      -10.1 4.66e- 21\n\n\n\nExactly the same as before!"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#model---interpret",
-    "href": "slides/14-mlr-slides.html#model---interpret",
+    "objectID": "slides/14-mlr-I-slides.html#model---interpret",
+    "href": "slides/14-mlr-I-slides.html#model---interpret",
     "title": "Multiple Linear Regression 1",
     "section": "Model - interpret",
     "text": "Model - interpret\n\\[\n\\widehat{\\text{body mass(g)}} = 4716 - 1003 \\times \\text{islandDream} - 1010 \\times \\text{islandTorgersen}\n\\]\n\nIntercept: Penguins from Biscoe island are expected to weigh, on average, 4,716 g.\nSlope - islandDream: Penguins from Dream island are expected to weigh, on average, 1,003 g less than those from Biscoe island.\nSlope - islandTorgersen: Penguins from Torgersen island are expected to weigh, on average, 1,010 g less than those from Biscoe island."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#model---predict",
-    "href": "slides/14-mlr-slides.html#model---predict",
+    "objectID": "slides/14-mlr-I-slides.html#model---predict",
+    "href": "slides/14-mlr-I-slides.html#model---predict",
     "title": "Multiple Linear Regression 1",
     "section": "Model - predict",
     "text": "Model - predict\n\nWhat is the predicted body weight of a penguin on Biscoe island? What are the estimated body weights of penguins on Dream and Torgersen islands? Where have we seen these values before?\n\n\nnew_penguins = tibble(\n  island = c(\"Biscoe\", \"Dream\", \"Torgersen\")\n)\n\npredict(bm_island_fit, new_data = new_penguins)\n\n# A tibble: 3 × 1\n  .pred\n  &lt;dbl&gt;\n1 4716.\n2 3713.\n3 3706."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#model---predict-1",
-    "href": "slides/14-mlr-slides.html#model---predict-1",
+    "objectID": "slides/14-mlr-I-slides.html#model---predict-1",
+    "href": "slides/14-mlr-I-slides.html#model---predict-1",
     "title": "Multiple Linear Regression 1",
     "section": "Model - predict",
     "text": "Model - predict\n\nCalculate the predicted body weights of penguins on Biscoe, Dream, and Torgersen islands by hand.\n\n\\[\n\\widehat{body~mass} = 4716 - 1003 \\times islandDream - 1010 \\times islandTorgersen\n\\]\n\n\nBiscoe: \\(\\widehat{body~mass} = 4716 - 1003 \\times 0 - 1010 \\times 0 = 4716\\)\n\n\n\n\n\nDream: \\(\\widehat{body~mass} = 4716 - 1003 \\times 1 - 1010 \\times 0 = 3713\\)\n\n\n\n\n\nTorgersen: \\(\\widehat{body~mass} = 4716 - 1003 \\times 0 - 1010 \\times 1 = 3706\\)"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#look-familiar",
-    "href": "slides/14-mlr-slides.html#look-familiar",
+    "objectID": "slides/14-mlr-I-slides.html#look-familiar",
+    "href": "slides/14-mlr-I-slides.html#look-familiar",
     "title": "Multiple Linear Regression 1",
     "section": "Look familiar?",
     "text": "Look familiar?\n\npenguins |&gt;\n  group_by(island) |&gt;\n  summarize(\n    bm_mean = mean(body_mass_g, na.rm = TRUE)\n  )\n\n# A tibble: 3 × 2\n  island    bm_mean\n  &lt;fct&gt;       &lt;dbl&gt;\n1 Biscoe      4716.\n2 Dream       3713.\n3 Torgersen   3706."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#models-with-categorical-predictors",
-    "href": "slides/14-mlr-slides.html#models-with-categorical-predictors",
+    "objectID": "slides/14-mlr-I-slides.html#models-with-categorical-predictors",
+    "href": "slides/14-mlr-I-slides.html#models-with-categorical-predictors",
     "title": "Multiple Linear Regression 1",
     "section": "Models with categorical predictors",
     "text": "Models with categorical predictors\n\n\nWhen the categorical predictor has many levels, they’re encoded as dummy variables.\nThe first level of the categorical variable is the “baseline” level. In a model with one categorical predictor, the intercept is the predicted value of the outcome for the baseline level (x = 0).\nEach slope coefficient describes the difference between the predicted value of the outcome for that level of the categorical variable compared to the baseline level."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#in-general",
-    "href": "slides/14-mlr-slides.html#in-general",
+    "objectID": "slides/14-mlr-I-slides.html#in-general",
+    "href": "slides/14-mlr-I-slides.html#in-general",
     "title": "Multiple Linear Regression 1",
     "section": "In general",
     "text": "In general\nPredicting continuous outcome \\(Y\\) using one categorical predictor \\(X\\) with multiple levels 1, 2, …, \\(k\\). Create dummy variables for every level except the base level:\n\n\\[\ncat_k=\\begin{cases}\n1 & X=k\\\\\n0 & \\text{else}\n\\end{cases}\n\\]\n\n\nThen fit a regression with multiple dummy predictors:\n\\[\n\\widehat{Y} = b_0 + b_1 \\times cat_1 + b_2 \\times cat_2 \\ldots + b_{k-1} \\times cat_{k-1}\n\\]\n\n\n\\(b_0\\) : the model prediction for a member of the base level;\n\\(b_1\\): how does the prediction change when we move from the base level to level 1?\n\\(b_2\\): how does the prediction change when we move from the base level to level 2?\netc…\n\n\n\n\n\n\n\n\n\n\nWe’re not animals. We have technology!\n\n\nThe computer handles all of this for you, but you need to understand the details so you code and interpret it correctly."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#changing-the-baseline-level",
-    "href": "slides/14-mlr-slides.html#changing-the-baseline-level",
+    "objectID": "slides/14-mlr-I-slides.html#changing-the-baseline-level",
+    "href": "slides/14-mlr-I-slides.html#changing-the-baseline-level",
     "title": "Multiple Linear Regression 1",
     "section": "Changing the baseline level",
     "text": "Changing the baseline level\n\nBy default, R uses the first level of a categorical variable as the baseline level. this is often the first alphabetically, but make sure you check!\nWe can change the baseline level by reordering the levels of the categorical variable… do you remember how to do this??"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#three-variables-on-one-2d-plot",
-    "href": "slides/14-mlr-slides.html#three-variables-on-one-2d-plot",
+    "objectID": "slides/14-mlr-I-slides.html#three-variables-on-one-2d-plot",
+    "href": "slides/14-mlr-I-slides.html#three-variables-on-one-2d-plot",
     "title": "Multiple Linear Regression 1",
     "section": "Three variables on one 2D plot",
     "text": "Three variables on one 2D plot\n\nggplot(penguins, \n  aes(x = flipper_length_mm, y = body_mass_g, color = island)\n  ) +\n  geom_point()"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#how-do-we-predict-using-more-than-one-predictor",
-    "href": "slides/14-mlr-slides.html#how-do-we-predict-using-more-than-one-predictor",
+    "objectID": "slides/14-mlr-I-slides.html#how-do-we-predict-using-more-than-one-predictor",
+    "href": "slides/14-mlr-I-slides.html#how-do-we-predict-using-more-than-one-predictor",
     "title": "Multiple Linear Regression 1",
     "section": "How do we predict using more than one predictor?",
     "text": "How do we predict using more than one predictor?\nBoth of these models use flipper_length_mm and island to predict body_mass_g:"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#the-additive-model-parallel-lines-one-for-each-island",
-    "href": "slides/14-mlr-slides.html#the-additive-model-parallel-lines-one-for-each-island",
+    "objectID": "slides/14-mlr-I-slides.html#the-additive-model-parallel-lines-one-for-each-island",
+    "href": "slides/14-mlr-I-slides.html#the-additive-model-parallel-lines-one-for-each-island",
     "title": "Multiple Linear Regression 1",
     "section": "The additive model: parallel lines, one for each island",
     "text": "The additive model: parallel lines, one for each island"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#the-additive-model-parallel-lines-one-for-each-island-1",
-    "href": "slides/14-mlr-slides.html#the-additive-model-parallel-lines-one-for-each-island-1",
+    "objectID": "slides/14-mlr-I-slides.html#the-additive-model-parallel-lines-one-for-each-island-1",
+    "href": "slides/14-mlr-I-slides.html#the-additive-model-parallel-lines-one-for-each-island-1",
     "title": "Multiple Linear Regression 1",
     "section": "The additive model: parallel lines, one for each island",
-    "text": "The additive model: parallel lines, one for each island\n\nbm_fl_island_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm + island, data = penguins)\n\ntidy(bm_fl_island_fit)\n\n# A tibble: 4 × 5\n  term              estimate std.error statistic  p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)        -4625.     392.      -11.8  4.29e-27\n2 flipper_length_mm     44.5      1.87     23.9  1.65e-74\n3 islandDream         -262.      55.0      -4.77 2.75e- 6\n4 islandTorgersen     -185.      70.3      -2.63 8.84e- 3\n\n\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -4625 &+ 44.5 \\times flipper~length \\\\\n&- 262 \\times Dream \\\\\n&- 185 \\times Torgersen\n\\end{aligned}\n\\]"
+    "text": "The additive model: parallel lines, one for each island\n\nbm_fl_island_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm + island, data = penguins)\n\ntidy(bm_fl_island_fit)\n\n# A tibble: 4 × 5\n  term              estimate std.error statistic  p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)        -4625.     392.      -11.8  4.29e-27\n2 flipper_length_mm     44.5      1.87     23.9  1.65e-74\n3 islandDream         -262.      55.0      -4.77 2.75e- 6\n4 islandTorgersen     -185.      70.3      -2.63 8.84e- 3\n\n\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -4625 &+ 44.5 \\times {\\text{flipper length (mm)}} \\\\\n&- 262 \\times \\text{Dream} \\\\\n&- 185 \\times \\text{Torgersen}\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#where-do-the-three-lines-come-from",
-    "href": "slides/14-mlr-slides.html#where-do-the-three-lines-come-from",
+    "objectID": "slides/14-mlr-I-slides.html#where-do-the-three-lines-come-from",
+    "href": "slides/14-mlr-I-slides.html#where-do-the-three-lines-come-from",
     "title": "Multiple Linear Regression 1",
     "section": "Where do the three lines come from?",
-    "text": "Where do the three lines come from?\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -4625 &+ 44.5 \\times flipper~length \\\\\n&- 262 \\times Dream \\\\\n&- 185 \\times Torgersen\n\\end{aligned}\n\\]\n\nIf penguin is from Biscoe, Dream = 0 and Torgersen = 0:\n\n\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -4625 &+ 44.5 \\times flipper~length\n\\end{aligned}\n\\]\n\n\nIf penguin is from Dream, Dream = 1 and Torgersen = 0:\n\n\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -4887 &+ 44.5 \\times flipper~length\n\\end{aligned}\n\\]\n\n\nIf penguin is from Torgersen, Dream = 0 and Torgersen = 1:\n\n\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -4810 &+ 44.5 \\times flipper~length\n\\end{aligned}\n\\]\n\n\nEither way, same slope, so the lines are parallel."
+    "text": "Where do the three lines come from?\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -4625 &+ 44.5 \\times \\text{flipper length (mm)} \\\\\n&- 262 \\times \\text{Dream} \\\\\n&- 185 \\times \\text{Torgersen}\n\\end{aligned}\n\\]\n\nIf penguin is from Biscoe, Dream = 0 and Torgersen = 0:\n\n\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -4625 &+ 44.5 \\times \\text{flipper length (mm)}\n\\end{aligned}\n\\]\n\n\nIf penguin is from Dream, Dream = 1 and Torgersen = 0:\n\n\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -4887 &+ 44.5 \\times \\text{flipper length (mm)}\n\\end{aligned}\n\\]\n\n\nIf penguin is from Torgersen, Dream = 0 and Torgersen = 1:\n\n\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -4810 &+ 44.5 \\times \\text{flipper length (mm)}\n\\end{aligned}\n\\]\n\n\nEither way, same slope, so the lines are parallel."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#the-interaction-model-different-lines-for-each-island",
-    "href": "slides/14-mlr-slides.html#the-interaction-model-different-lines-for-each-island",
+    "objectID": "slides/14-mlr-I-slides.html#the-interaction-model-different-lines-for-each-island",
+    "href": "slides/14-mlr-I-slides.html#the-interaction-model-different-lines-for-each-island",
     "title": "Multiple Linear Regression 1",
     "section": "The interaction model: different lines for each island",
-    "text": "The interaction model: different lines for each island\n\nCodeggplot(\n  penguins, \n  aes(x = flipper_length_mm, y = body_mass_g, color = island)\n  ) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Interaction model\") +\n  theme(legend.position = \"bottom\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale\nrange (`geom_point()`)."
+    "text": "The interaction model: different lines for each island\n\nCodeggplot(\n  penguins, \n  aes(x = flipper_length_mm, y = body_mass_g, color = island)\n  ) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Interaction model\") +\n  theme(legend.position = \"bottom\")"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#the-interaction-model-different-lines-for-each-island-1",
-    "href": "slides/14-mlr-slides.html#the-interaction-model-different-lines-for-each-island-1",
+    "objectID": "slides/14-mlr-I-slides.html#the-interaction-model-different-lines-for-each-island-1",
+    "href": "slides/14-mlr-I-slides.html#the-interaction-model-different-lines-for-each-island-1",
     "title": "Multiple Linear Regression 1",
     "section": "The interaction model: different lines for each island",
-    "text": "The interaction model: different lines for each island\n\nbm_fl_island_int_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm * island, data = penguins)\n\ntidy(bm_fl_island_int_fit) |&gt; select(term, estimate)\n\n# A tibble: 6 × 2\n  term                              estimate\n  &lt;chr&gt;                                &lt;dbl&gt;\n1 (Intercept)                        -5464. \n2 flipper_length_mm                     48.5\n3 islandDream                         3551. \n4 islandTorgersen                     3218. \n5 flipper_length_mm:islandDream        -19.4\n6 flipper_length_mm:islandTorgersen    -17.4\n\n\n\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -5464 &+ 48.5 \\times flipper~length \\\\\n&+ 3551 \\times Dream \\\\\n&+ 3218 \\times Torgersen \\\\\n&- 19.4 \\times flipper~length*Dream \\\\\n&- 17.4 \\times flipper~length*Torgersen\n\\end{aligned}\n\\]"
+    "text": "The interaction model: different lines for each island\n\nbm_fl_island_int_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm * island, data = penguins)\n\ntidy(bm_fl_island_int_fit) |&gt; select(term, estimate)\n\n# A tibble: 6 × 2\n  term                              estimate\n  &lt;chr&gt;                                &lt;dbl&gt;\n1 (Intercept)                        -5464. \n2 flipper_length_mm                     48.5\n3 islandDream                         3551. \n4 islandTorgersen                     3218. \n5 flipper_length_mm:islandDream        -19.4\n6 flipper_length_mm:islandTorgersen    -17.4\n\n\n\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -5464 &+ 48.5 \\times \\text{flipper length (mm)} \\\\\n&+ 3551 \\times \\text{Dream} \\\\\n&+ 3218 \\times \\text{Torgersen} \\\\\n&- 19.4 \\times \\text{flipper length (mm)}*\\text{Dream} \\\\\n&- 17.4 \\times \\text{flipper length (mm)}*\\text{Torgersen}\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#where-do-the-three-lines-come-from-1",
-    "href": "slides/14-mlr-slides.html#where-do-the-three-lines-come-from-1",
+    "objectID": "slides/14-mlr-I-slides.html#where-do-the-three-lines-come-from-1",
+    "href": "slides/14-mlr-I-slides.html#where-do-the-three-lines-come-from-1",
     "title": "Multiple Linear Regression 1",
     "section": "Where do the three lines come from?",
-    "text": "Where do the three lines come from?\n\\[\n\\begin{aligned}\n\\small\\widehat{body~mass} = -5464 &+ 48.5 \\times flipper~length \\\\\n&+ 3551 \\times Dream \\\\\n&+ 3218 \\times Torgersen \\\\\n&- 19.4 \\times flipper~length*Dream \\\\\n&- 17.4 \\times flipper~length*Torgersen\n\\end{aligned}\n\\]\n\nIf penguin is from Biscoe, Dream = 0 and Torgersen = 0:\n\n\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -5464 &+ 48.5 \\times flipper~length\n\\end{aligned}\n\\]\n\n\nIf penguin is from Dream, Dream = 1 and Torgersen = 0:\n\n\n\\[\n\\begin{aligned}\n\\widehat{body~mass} &= (-5464 + 3551) + (48.5-19.4) \\times flipper~length\\\\\n&=-1913+29.1\\times flipper~length.\n\\end{aligned}\n\\]"
+    "text": "Where do the three lines come from?\n\\[\n\\begin{aligned}\n\\small\\widehat{\\text{body mass (g)}} = -5464 &+ 48.5 \\times \\text{flipper length (mm)} \\\\\n&+ 3551 \\times \\text{Dream} \\\\\n&+ 3218 \\times \\text{Torgersen} \\\\\n&- 19.4 \\times \\text{flipper length (mm)} * \\text{Dream} \\\\\n&- 17.4 \\times \\text{flipper length (mm)} * \\text{Torgersen}\n\\end{aligned}\n\\]\n\nIf penguin is from Biscoe, Dream = 0 and Torgersen = 0:\n\n\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -5464 &+ 48.5 \\times \\text{flipper length (mm)}\n\\end{aligned}\n\\]\n\n\nIf penguin is from Dream, Dream = 1 and Torgersen = 0:\n\n\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} &= (-5464 + 3551) + (48.5-19.4) \\times \\text{flipper length (mm)}\\\\\n&=-1913+29.1\\times \\text{flipper length (mm)}.\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#prediction-on-biscoe-island",
-    "href": "slides/14-mlr-slides.html#prediction-on-biscoe-island",
+    "objectID": "slides/14-mlr-I-slides.html#prediction-on-biscoe-island",
+    "href": "slides/14-mlr-I-slides.html#prediction-on-biscoe-island",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction on Biscoe island",
-    "text": "Prediction on Biscoe island\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale\nrange (`geom_point()`)."
+    "text": "Prediction on Biscoe island"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#prediction-on-biscoe-island-1",
-    "href": "slides/14-mlr-slides.html#prediction-on-biscoe-island-1",
+    "objectID": "slides/14-mlr-I-slides.html#prediction-on-biscoe-island-1",
+    "href": "slides/14-mlr-I-slides.html#prediction-on-biscoe-island-1",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction on Biscoe island",
-    "text": "Prediction on Biscoe island\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 205,\n  island = \"Biscoe\"\n)\n\npredict(bm_fl_island_int_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4488.\n\n\n\\[\n\\widehat{body~mass} = -5464 + 48.5 \\times 205.\n\\]"
+    "text": "Prediction on Biscoe island\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 205,\n  island = \"Biscoe\"\n)\n\npredict(bm_fl_island_int_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4488.\n\n\n\\[\n\\widehat{\\text{body mass (g)}} = -5464 + 48.5 \\times 205\n\\]"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#prediction-on-dream-island",
-    "href": "slides/14-mlr-slides.html#prediction-on-dream-island",
+    "objectID": "slides/14-mlr-I-slides.html#prediction-on-dream-island",
+    "href": "slides/14-mlr-I-slides.html#prediction-on-dream-island",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction on Dream island",
-    "text": "Prediction on Dream island\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale\nrange (`geom_point()`)."
+    "text": "Prediction on Dream island"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#prediction-on-dream-island-1",
-    "href": "slides/14-mlr-slides.html#prediction-on-dream-island-1",
+    "objectID": "slides/14-mlr-I-slides.html#prediction-on-dream-island-1",
+    "href": "slides/14-mlr-I-slides.html#prediction-on-dream-island-1",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction on Dream island",
-    "text": "Prediction on Dream island\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 205,\n  island = \"Dream\"\n)\n\npredict(bm_fl_island_int_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4060.\n\n\n\\[\n\\widehat{body~mass} = (-5464 + 3551) + (48.5 - 19.4) \\times 205.\n\\]"
+    "text": "Prediction on Dream island\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 205,\n  island = \"Dream\"\n)\n\npredict(bm_fl_island_int_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4060.\n\n\n\\[\n\\widehat{\\text{body mass (g)}} = (-5464 + 3551) + (48.5 - 19.4) \\times 205\n\\]"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#prediction-on-torgersen-island",
-    "href": "slides/14-mlr-slides.html#prediction-on-torgersen-island",
+    "objectID": "slides/14-mlr-I-slides.html#prediction-on-torgersen-island",
+    "href": "slides/14-mlr-I-slides.html#prediction-on-torgersen-island",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction on Torgersen island",
-    "text": "Prediction on Torgersen island\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale\nrange (`geom_point()`)."
+    "text": "Prediction on Torgersen island"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#prediction-on-torgersen-island-1",
-    "href": "slides/14-mlr-slides.html#prediction-on-torgersen-island-1",
+    "objectID": "slides/14-mlr-I-slides.html#prediction-on-torgersen-island-1",
+    "href": "slides/14-mlr-I-slides.html#prediction-on-torgersen-island-1",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction on Torgersen island",
-    "text": "Prediction on Torgersen island\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 205,\n  island = \"Torgersen\"\n)\n\npredict(bm_fl_island_int_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4136.\n\n\n\\[\n\\widehat{body~mass} = (-5464 + 3218) + (48.5 - 17.4) \\times 205.\n\\]"
+    "text": "Prediction on Torgersen island\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 205,\n  island = \"Torgersen\"\n)\n\npredict(bm_fl_island_int_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4136.\n\n\n\\[\n\\widehat{\\text{body mass (g)}} = (-5464 + 3218) + (48.5 - 17.4) \\times 205\n\\]"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#multiple-numerical-predictors",
-    "href": "slides/14-mlr-slides.html#multiple-numerical-predictors",
+    "objectID": "slides/14-mlr-I-slides.html#multiple-numerical-predictors",
+    "href": "slides/14-mlr-I-slides.html#multiple-numerical-predictors",
     "title": "Multiple Linear Regression 1",
     "section": "Multiple numerical predictors",
-    "text": "Multiple numerical predictors\n\nbm_fl_bl_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm + bill_length_mm, data = penguins)\n\ntidy(bm_fl_bl_fit)\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic  p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)       -5737.      308.      -18.6  7.80e-54\n2 flipper_length_mm    48.1       2.01     23.9  7.56e-75\n3 bill_length_mm        6.05      5.18      1.17 2.44e- 1\n\n\n\n\\[\n\\small\\widehat{body~mass}=-5736+48.1\\times flipper~length+6\\times bill~length\n\\]"
+    "text": "Multiple numerical predictors\n\nbm_fl_bl_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm + bill_length_mm, data = penguins)\n\ntidy(bm_fl_bl_fit)\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic  p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)       -5737.      308.      -18.6  7.80e-54\n2 flipper_length_mm    48.1       2.01     23.9  7.56e-75\n3 bill_length_mm        6.05      5.18      1.17 2.44e- 1\n\n\n\n\\[\n\\small\\widehat{\\text{body mass (g)}}=-5736+48.1\\times \\text{flipper length (mm)}+6\\times \\text{bill length (mm)}\n\\]"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#interpretation-1",
-    "href": "slides/14-mlr-slides.html#interpretation-1",
+    "objectID": "slides/14-mlr-I-slides.html#interpretation-1",
+    "href": "slides/14-mlr-I-slides.html#interpretation-1",
     "title": "Multiple Linear Regression 1",
     "section": "Interpretation",
-    "text": "Interpretation\n\\[\n\\small\\widehat{body~mass}=-5736+48.1\\times flipper~length+6\\times bill~length\n\\]\n\nInterpretations:\n\n\nWe predict that the body mass of a penguin with zero flipper length and zero bill length will be -5736 grams, on average (makes no sense);\nHolding all other variables constant, for every additional millimeter in flipper length, we expect the body mass of penguins to be higher, on average, by 48.1 grams.\nHolding all other variables constant, for every additional millimeter in bill length, we expect the body mass of penguins to be higher, on average, by 6 grams."
+    "text": "Interpretation\n\\[\n\\small\\widehat{\\text{body mass (g)}}=-5736+48.1\\times \\text{flipper length (mm)}+6\\times \\text{bill length (mm)}\n\\]\n\nInterpretations:\n\n\nWe predict that the body mass of a penguin with zero flipper length and zero bill length will be -5,736 g, on average (makes no sense);\nHolding all other variables constant, for every additional mm in flipper length, we expect the body mass of penguins to be higher, on average, by 48.1 g;\nHolding all other variables constant, for every additional mm in bill length, we expect the body mass of penguins to be higher, on average, by 6 g."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#prediction-2",
-    "href": "slides/14-mlr-slides.html#prediction-2",
+    "objectID": "slides/14-mlr-I-slides.html#prediction-2",
+    "href": "slides/14-mlr-I-slides.html#prediction-2",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction",
-    "text": "Prediction\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 200,\n  bill_length_mm = 45\n)\n\npredict(bm_fl_bl_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4164.\n\n\n\\[\n\\widehat{body~mass}=-5736+48.1\\times 200+6\\times 45\n\\]"
+    "text": "Prediction\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 200,\n  bill_length_mm = 45\n)\n\npredict(bm_fl_bl_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4164.\n\n\n\\[\n\\widehat{\\text{body mass (g)}}=-5736+48.1\\times 200+6\\times 45\n\\]"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#picture-its-not-pretty",
-    "href": "slides/14-mlr-slides.html#picture-its-not-pretty",
+    "objectID": "slides/14-mlr-I-slides.html#picture-its-not-pretty",
+    "href": "slides/14-mlr-I-slides.html#picture-its-not-pretty",
     "title": "Multiple Linear Regression 1",
     "section": "Picture? It’s not pretty…",
-    "text": "Picture? It’s not pretty…\n2 predictors + 1 response = 3 dimensions. Ick!\n\n\nWarning: Unknown or uninitialised column: `color`."
+    "text": "Picture? It’s not pretty…\n2 predictors + 1 response = 3 dimensions. Ick!"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#picture-its-not-pretty-1",
-    "href": "slides/14-mlr-slides.html#picture-its-not-pretty-1",
+    "objectID": "slides/14-mlr-I-slides.html#picture-its-not-pretty-1",
+    "href": "slides/14-mlr-I-slides.html#picture-its-not-pretty-1",
     "title": "Multiple Linear Regression 1",
     "section": "Picture? It’s not pretty…",
-    "text": "Picture? It’s not pretty…\nInstead of a line of best fit, it’s a plane of best fit. Double ick!\n\n\nWarning: Unknown or uninitialised column: `color`."
+    "text": "Picture? It’s not pretty…\nInstead of a line of best fit, it’s a plane of best fit. Double ick!"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#population-model",
-    "href": "slides/14-mlr-slides.html#population-model",
+    "objectID": "slides/14-mlr-I-slides.html#population-model",
+    "href": "slides/14-mlr-I-slides.html#population-model",
     "title": "Multiple Linear Regression 1",
     "section": "Population model",
     "text": "Population model\nMultiple linear regression captures the relationship between a numerical outcome \\(Y\\) and many numerical predictors \\(X_1\\), \\(X_2\\), …, \\(X_p\\):\n\\[\\Large{Y = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + ...+ \\beta_p X_p+\\epsilon}\\]\n\n\n\n\\(\\beta_0\\): True intercept of the relationship between the \\(X_j\\) and \\(Y\\)\n\n\n\\(\\beta_j\\): True slope of the relationship between \\(X_j\\) and \\(Y\\)\n\n\n\\(\\epsilon\\): Error (residual)\n\n\n\nThe model with the greek letters and the error term is the “true,” idealized, population relationship that we could access if we had infinite amounts of perfect data. But we don’t, so we have to settle for…"
   },
   {
-    "objectID": "slides/14-mlr-slides.html#estimated-model",
-    "href": "slides/14-mlr-slides.html#estimated-model",
+    "objectID": "slides/14-mlr-I-slides.html#estimated-fitted-model",
+    "href": "slides/14-mlr-I-slides.html#estimated-fitted-model",
     "title": "Multiple Linear Regression 1",
-    "section": "Estimated model",
-    "text": "Estimated model\n\\[\\Large{\\hat{Y} = b_0 + b_1 X_1 + b_2 X_2 + ... + b_pX_p}\\]\n\n\n\\(b_j\\): Estimated slope of the relationship between \\(X_j\\) and \\(Y\\);\n\n\\(b_0\\): your prediction for \\(Y\\) if all the predictors equal zero;\nNo error term!\n\n\nThis is your best guess at the true regression function based on the noisy, meager, imperfect data you actually have access to. We still compute the \\(b_j\\) using the principle of least squares: pick the estimates that make the sum of squared residuals as small as possible."
+    "section": "Estimated / fitted model",
+    "text": "Estimated / fitted model\n\\[\\Large{\\widehat{Y} = b_0 + b_1 X_1 + b_2 X_2 + ... + b_pX_p}\\]\n\n\n\\(b_j\\): Estimated slope of the relationship between \\(X_j\\) and \\(Y\\);\n\n\\(b_0\\): your prediction for \\(Y\\) if all the predictors equal zero;\nNo error term!\n\n\nThis is your best guess at the true regression function based on the noisy, meager, imperfect data you actually have access to. We still compute the \\(b_j\\) using the principle of least squares: pick the estimates that make the sum of squared residuals as small as possible."
   },
   {
-    "objectID": "slides/14-mlr-slides.html#next-time",
-    "href": "slides/14-mlr-slides.html#next-time",
+    "objectID": "slides/14-mlr-I-slides.html#next-time",
+    "href": "slides/14-mlr-I-slides.html#next-time",
     "title": "Multiple Linear Regression 1",
     "section": "Next time",
     "text": "Next time\nToday we saw multiple models that are all attempting to do the same thing: predict body mass.\n\nWhich one is “best”?\nWhat does “best” even mean?"
   },
   {
-    "objectID": "slides/14-mlr.html",
-    "href": "slides/14-mlr.html",
+    "objectID": "slides/14-mlr-I.html",
+    "href": "slides/14-mlr-I.html",
     "title": "Multiple Linear Regression 1",
     "section": "",
     "text": "A researcher wants to see how body mass varies with flipper length.\n\n. . .\n\noutcome: body mass (g) (numerical)\npredictor: flipper length (mm) (numerical)\n\n. . .\nFlipper length is easier to measure, so more plausible you would predict body mass based on that and not the other way around.\n\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + \n  geom_point()\n\n\n\n\n\n\n\n\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", color = \"cornflowerblue\")\n\n\n\n\n\n\n\n\n\npenguins |&gt;\n  summarize(\n    r = cor(flipper_length_mm, body_mass_g, use = \"complete.obs\")\n  )\n\n# A tibble: 1 × 1\n      r\n  &lt;dbl&gt;\n1 0.871\n\n\nMeasures the strength and direction of the linear association between two numerical variables. Strong and positive in this case.\n\n\nbm_fl_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(bm_fl_fit)\n\n# A tibble: 2 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)        -5781.     306.       -18.9 5.59e- 55\n2 flipper_length_mm     49.7      1.52      32.7 4.37e-107\n\n\n\\[\n\\widehat{\\text{body mass (g)}}=-5780.83+49.68\\times \\text{flipper length (mm)}\n\\]\n\nThe fraction of the variation in the response explained by the model. A number between 0 (bad) and 1 (good) that measures goodness-of-fit:\n\n\n\nbm_fl_fit |&gt;\n  glance() |&gt;\n  select(r.squared)\n\n# A tibble: 1 × 1\n  r.squared\n      &lt;dbl&gt;\n1     0.759\n\n\n\n\npenguins |&gt;\n  summarize(\n    r = cor(flipper_length_mm, body_mass_g, use = \"complete.obs\"),\n    R2 = r^2\n  )\n\n# A tibble: 1 × 2\n      r    R2\n  &lt;dbl&gt; &lt;dbl&gt;\n1 0.871 0.759\n\n\n\n\n\n\\[\n\\widehat{\\text{body mass (g)}}=-5780.83+49.68\\times \\text{flipper length (mm)}\n\\]\n\nIntercept: Penguins with 0 mm flipper length are expected, on average, to weigh -5,781 grams (makes no sense!);\nSlope: For each additional mm of a penguin’s flipper length, the weight of the penguin is expected to be higher, on average, by 49.7 g.\n\n\n\n\n\n\n\n\n\n\n\nnew_penguin &lt;- tibble(flipper_length_mm = 205)\n\npredict(bm_fl_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4405.\n\n\n\\[\n\\widehat{\\text{body mass (g)}}=-5780.83+49.68\\times 205\\approx 4404.71\\text{g}\n\\]\n. . .\nWe predict that a penguin whose flipper is 205 mm long will weigh 4,404.71 g, on average."
   },
   {
-    "objectID": "slides/14-mlr.html#from-last-timepenguins",
-    "href": "slides/14-mlr.html#from-last-timepenguins",
+    "objectID": "slides/14-mlr-I.html#from-last-timepenguins",
+    "href": "slides/14-mlr-I.html#from-last-timepenguins",
     "title": "Multiple Linear Regression 1",
     "section": "",
     "text": "A researcher wants to see how body mass varies with flipper length.\n\n. . .\n\noutcome: body mass (g) (numerical)\npredictor: flipper length (mm) (numerical)\n\n. . .\nFlipper length is easier to measure, so more plausible you would predict body mass based on that and not the other way around."
   },
   {
-    "objectID": "slides/14-mlr.html#how-do-we-concisely-summarize-the-association-between-two-variables",
-    "href": "slides/14-mlr.html#how-do-we-concisely-summarize-the-association-between-two-variables",
+    "objectID": "slides/14-mlr-I.html#how-do-we-concisely-summarize-the-association-between-two-variables",
+    "href": "slides/14-mlr-I.html#how-do-we-concisely-summarize-the-association-between-two-variables",
     "title": "Multiple Linear Regression 1",
     "section": "",
     "text": "ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + \n  geom_point()"
   },
   {
-    "objectID": "slides/14-mlr.html#line-of-best-fit",
-    "href": "slides/14-mlr.html#line-of-best-fit",
+    "objectID": "slides/14-mlr-I.html#line-of-best-fit",
+    "href": "slides/14-mlr-I.html#line-of-best-fit",
     "title": "Multiple Linear Regression 1",
     "section": "",
     "text": "ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", color = \"cornflowerblue\")"
   },
   {
-    "objectID": "slides/14-mlr.html#concise-numerical-summary-correlation",
-    "href": "slides/14-mlr.html#concise-numerical-summary-correlation",
+    "objectID": "slides/14-mlr-I.html#concise-numerical-summary-correlation",
+    "href": "slides/14-mlr-I.html#concise-numerical-summary-correlation",
     "title": "Multiple Linear Regression 1",
     "section": "",
     "text": "penguins |&gt;\n  summarize(\n    r = cor(flipper_length_mm, body_mass_g, use = \"complete.obs\")\n  )\n\n# A tibble: 1 × 1\n      r\n  &lt;dbl&gt;\n1 0.871\n\n\nMeasures the strength and direction of the linear association between two numerical variables. Strong and positive in this case."
   },
   {
-    "objectID": "slides/14-mlr.html#model-fit",
-    "href": "slides/14-mlr.html#model-fit",
+    "objectID": "slides/14-mlr-I.html#model-fit",
+    "href": "slides/14-mlr-I.html#model-fit",
     "title": "Multiple Linear Regression 1",
     "section": "",
     "text": "bm_fl_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm, data = penguins)\n\ntidy(bm_fl_fit)\n\n# A tibble: 2 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)        -5781.     306.       -18.9 5.59e- 55\n2 flipper_length_mm     49.7      1.52      32.7 4.37e-107\n\n\n\\[\n\\widehat{\\text{body mass (g)}}=-5780.83+49.68\\times \\text{flipper length (mm)}\n\\]"
   },
   {
-    "objectID": "slides/14-mlr.html#r2-coefficient-of-determination",
-    "href": "slides/14-mlr.html#r2-coefficient-of-determination",
+    "objectID": "slides/14-mlr-I.html#r2-coefficient-of-determination",
+    "href": "slides/14-mlr-I.html#r2-coefficient-of-determination",
     "title": "Multiple Linear Regression 1",
     "section": "",
     "text": "The fraction of the variation in the response explained by the model. A number between 0 (bad) and 1 (good) that measures goodness-of-fit:\n\n\n\nbm_fl_fit |&gt;\n  glance() |&gt;\n  select(r.squared)\n\n# A tibble: 1 × 1\n  r.squared\n      &lt;dbl&gt;\n1     0.759\n\n\n\n\npenguins |&gt;\n  summarize(\n    r = cor(flipper_length_mm, body_mass_g, use = \"complete.obs\"),\n    R2 = r^2\n  )\n\n# A tibble: 1 × 2\n      r    R2\n  &lt;dbl&gt; &lt;dbl&gt;\n1 0.871 0.759"
   },
   {
-    "objectID": "slides/14-mlr.html#interpretation",
-    "href": "slides/14-mlr.html#interpretation",
+    "objectID": "slides/14-mlr-I.html#interpretation",
+    "href": "slides/14-mlr-I.html#interpretation",
     "title": "Multiple Linear Regression 1",
     "section": "",
     "text": "\\[\n\\widehat{\\text{body mass (g)}}=-5780.83+49.68\\times \\text{flipper length (mm)}\n\\]\n\nIntercept: Penguins with 0 mm flipper length are expected, on average, to weigh -5,781 grams (makes no sense!);\nSlope: For each additional mm of a penguin’s flipper length, the weight of the penguin is expected to be higher, on average, by 49.7 g."
   },
   {
-    "objectID": "slides/14-mlr.html#prediction-1",
-    "href": "slides/14-mlr.html#prediction-1",
+    "objectID": "slides/14-mlr-I.html#prediction-1",
+    "href": "slides/14-mlr-I.html#prediction-1",
     "title": "Multiple Linear Regression 1",
     "section": "",
     "text": "new_penguin &lt;- tibble(flipper_length_mm = 205)\n\npredict(bm_fl_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4405.\n\n\n\\[\n\\widehat{\\text{body mass (g)}}=-5780.83+49.68\\times 205\\approx 4404.71\\text{g}\n\\]\n. . .\nWe predict that a penguin whose flipper is 205 mm long will weigh 4,404.71 g, on average."
   },
   {
-    "objectID": "slides/14-mlr.html#new-question",
-    "href": "slides/14-mlr.html#new-question",
+    "objectID": "slides/14-mlr-I.html#new-question",
+    "href": "slides/14-mlr-I.html#new-question",
     "title": "Multiple Linear Regression 1",
     "section": "New question",
     "text": "New question\n\nA different researcher wants to look at body weight of penguins based on the island they were recorded on. How are the variables involved in this analysis different?\n\n. . .\n\noutcome: body mass in grams (numerical)\npredictor: island (categorical, with three levels)\n\n. . .\n\nlevels(penguins$island)\n\n[1] \"Biscoe\"    \"Dream\"     \"Torgersen\""
   },
   {
-    "objectID": "slides/14-mlr.html#scatterplot-possible-but-not-so-good",
-    "href": "slides/14-mlr.html#scatterplot-possible-but-not-so-good",
+    "objectID": "slides/14-mlr-I.html#scatterplot-possible-but-not-so-good",
+    "href": "slides/14-mlr-I.html#scatterplot-possible-but-not-so-good",
     "title": "Multiple Linear Regression 1",
     "section": "Scatterplot: possible, but not so good",
     "text": "Scatterplot: possible, but not so good\n\nVisualize the relationship between body weight and island of penguins. Also calculate the average body weight per island.\n\n\nggplot(penguins, aes(x = island, y = body_mass_g)) + \n  geom_point()"
   },
   {
-    "objectID": "slides/14-mlr.html#boxplot",
-    "href": "slides/14-mlr.html#boxplot",
+    "objectID": "slides/14-mlr-I.html#boxplot",
+    "href": "slides/14-mlr-I.html#boxplot",
     "title": "Multiple Linear Regression 1",
     "section": "Boxplot",
     "text": "Boxplot\n\nVisualize the relationship between body weight and island of penguins. Also, calculate the average body weight per island.\n\n\nggplot(\n  penguins,\n  aes(x = island, y = body_mass_g)\n) +\n  geom_boxplot() +\n  labs(\n    x = \"Island\",\n    y = \"Body mass (g)\",\n    title = \"Body mass by island\"\n  )\n\n\n\n\n\n\n\n\npenguins |&gt;\n  group_by(island) |&gt;\n  summarize(\n    bm_mean = mean(body_mass_g, na.rm = TRUE)\n  )\n\n# A tibble: 3 × 2\n  island    bm_mean\n  &lt;fct&gt;       &lt;dbl&gt;\n1 Biscoe      4716.\n2 Dream       3713.\n3 Torgersen   3706."
   },
   {
-    "objectID": "slides/14-mlr.html#density-plot",
-    "href": "slides/14-mlr.html#density-plot",
+    "objectID": "slides/14-mlr-I.html#density-plot",
+    "href": "slides/14-mlr-I.html#density-plot",
     "title": "Multiple Linear Regression 1",
     "section": "Density plot",
     "text": "Density plot\n\nggplot(\n  penguins,\n  aes(x = body_mass_g, color = island, fill = island)\n) +\n  geom_density(alpha = 0.5) +\n  scale_color_colorblind() +\n  scale_fill_colorblind() +\n  labs(\n    x = \"Island\",\n    y = \"Body mass (g)\",\n    title = \"Body Mass by Island\",\n    color = \"Island\",\n    fill = \"Island\"\n  )"
   },
   {
-    "objectID": "slides/14-mlr.html#violin-plot",
-    "href": "slides/14-mlr.html#violin-plot",
+    "objectID": "slides/14-mlr-I.html#violin-plot",
+    "href": "slides/14-mlr-I.html#violin-plot",
     "title": "Multiple Linear Regression 1",
     "section": "Violin plot",
     "text": "Violin plot\n\nggplot(\n  penguins,\n  aes(x = island, y = body_mass_g)\n) +\n  geom_violin() +\n  labs(\n    x = \"Island\",\n    y = \"Body mass (g)\",\n    title = \"Body Mass by Island\"\n  )"
   },
   {
-    "objectID": "slides/14-mlr.html#multiple-geoms",
-    "href": "slides/14-mlr.html#multiple-geoms",
+    "objectID": "slides/14-mlr-I.html#multiple-geoms",
+    "href": "slides/14-mlr-I.html#multiple-geoms",
     "title": "Multiple Linear Regression 1",
     "section": "Multiple geoms",
     "text": "Multiple geoms\n\nggplot(\n  penguins,\n  aes(x = island, y = body_mass_g, color = island)\n) +\n  geom_boxplot() +\n  geom_beeswarm(size = 2, alpha = 0.5) +\n  scale_color_colorblind() +\n  labs(\n    x = \"Island\",\n    y = \"Body mass (g)\",\n    title = \"Body Mass by Island\",\n    color = \"Island\"\n  ) +\n  theme(legend.position = \"none\")"
   },
   {
-    "objectID": "slides/14-mlr.html#model---fit",
-    "href": "slides/14-mlr.html#model---fit",
+    "objectID": "slides/14-mlr-I.html#model---fit",
+    "href": "slides/14-mlr-I.html#model---fit",
     "title": "Multiple Linear Regression 1",
     "section": "Model - fit",
     "text": "Model - fit\n\nFit a linear regression model predicting body weight from island and display the results. Why is Biscoe not on the output?\n\n\nbm_island_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ island, data = penguins)\n\ntidy(bm_island_fit)\n\n# A tibble: 3 × 5\n  term            estimate std.error statistic   p.value\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)        4716.      48.5      97.3 8.93e-250\n2 islandDream       -1003.      74.2     -13.5 1.42e- 33\n3 islandTorgersen   -1010.     100.      -10.1 4.66e- 21\n\n\n. . .\nHuh?"
   },
   {
-    "objectID": "slides/14-mlr.html#dummy-variables",
-    "href": "slides/14-mlr.html#dummy-variables",
+    "objectID": "slides/14-mlr-I.html#dummy-variables",
+    "href": "slides/14-mlr-I.html#dummy-variables",
     "title": "Multiple Linear Regression 1",
     "section": "Dummy variables",
     "text": "Dummy variables\n\ndummy_penguins &lt;- penguins |&gt;\n  select(body_mass_g, island) |&gt;\n  arrange(body_mass_g) |&gt;\n  mutate(\n    islandDream = if_else(island == \"Dream\", 1, 0),\n    islandTorgersen = if_else(island == \"Torgersen\", 1, 0),\n  )\n\ndummy_penguins\n\n# A tibble: 344 × 4\n   body_mass_g island    islandDream islandTorgersen\n         &lt;int&gt; &lt;fct&gt;           &lt;dbl&gt;           &lt;dbl&gt;\n 1        2700 Dream               1               0\n 2        2850 Biscoe              0               0\n 3        2850 Biscoe              0               0\n 4        2900 Biscoe              0               0\n 5        2900 Dream               1               0\n 6        2900 Torgersen           0               1\n 7        2900 Dream               1               0\n 8        2925 Biscoe              0               0\n 9        2975 Dream               1               0\n10        3000 Dream               1               0\n# ℹ 334 more rows"
   },
   {
-    "objectID": "slides/14-mlr.html#dummy-variables---fit",
-    "href": "slides/14-mlr.html#dummy-variables---fit",
+    "objectID": "slides/14-mlr-I.html#dummy-variables---fit",
+    "href": "slides/14-mlr-I.html#dummy-variables---fit",
     "title": "Multiple Linear Regression 1",
     "section": "Dummy variables - fit",
     "text": "Dummy variables - fit\n\nlinear_reg() |&gt;\n  fit(\n    body_mass_g ~ islandDream + islandTorgersen, \n    dummy_penguins\n  ) |&gt;\n  tidy()\n\n# A tibble: 3 × 5\n  term            estimate std.error statistic   p.value\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)        4716.      48.5      97.3 8.93e-250\n2 islandDream       -1003.      74.2     -13.5 1.42e- 33\n3 islandTorgersen   -1010.     100.      -10.1 4.66e- 21\n\n\n. . .\nExactly the same as before!"
   },
   {
-    "objectID": "slides/14-mlr.html#model---interpret",
-    "href": "slides/14-mlr.html#model---interpret",
+    "objectID": "slides/14-mlr-I.html#model---interpret",
+    "href": "slides/14-mlr-I.html#model---interpret",
     "title": "Multiple Linear Regression 1",
     "section": "Model - interpret",
     "text": "Model - interpret\n\\[\n\\widehat{\\text{body mass(g)}} = 4716 - 1003 \\times \\text{islandDream} - 1010 \\times \\text{islandTorgersen}\n\\]\n\nIntercept: Penguins from Biscoe island are expected to weigh, on average, 4,716 g.\nSlope - islandDream: Penguins from Dream island are expected to weigh, on average, 1,003 g less than those from Biscoe island.\nSlope - islandTorgersen: Penguins from Torgersen island are expected to weigh, on average, 1,010 g less than those from Biscoe island."
   },
   {
-    "objectID": "slides/14-mlr.html#model---predict",
-    "href": "slides/14-mlr.html#model---predict",
+    "objectID": "slides/14-mlr-I.html#model---predict",
+    "href": "slides/14-mlr-I.html#model---predict",
     "title": "Multiple Linear Regression 1",
     "section": "Model - predict",
     "text": "Model - predict\n\nWhat is the predicted body weight of a penguin on Biscoe island? What are the estimated body weights of penguins on Dream and Torgersen islands? Where have we seen these values before?\n\n\nnew_penguins = tibble(\n  island = c(\"Biscoe\", \"Dream\", \"Torgersen\")\n)\n\npredict(bm_island_fit, new_data = new_penguins)\n\n# A tibble: 3 × 1\n  .pred\n  &lt;dbl&gt;\n1 4716.\n2 3713.\n3 3706."
   },
   {
-    "objectID": "slides/14-mlr.html#model---predict-1",
-    "href": "slides/14-mlr.html#model---predict-1",
+    "objectID": "slides/14-mlr-I.html#model---predict-1",
+    "href": "slides/14-mlr-I.html#model---predict-1",
     "title": "Multiple Linear Regression 1",
     "section": "Model - predict",
     "text": "Model - predict\n\nCalculate the predicted body weights of penguins on Biscoe, Dream, and Torgersen islands by hand.\n\n\\[\n\\widehat{body~mass} = 4716 - 1003 \\times islandDream - 1010 \\times islandTorgersen\n\\]\n. . .\n\nBiscoe: \\(\\widehat{body~mass} = 4716 - 1003 \\times 0 - 1010 \\times 0 = 4716\\)\n\n\n. . .\n\nDream: \\(\\widehat{body~mass} = 4716 - 1003 \\times 1 - 1010 \\times 0 = 3713\\)\n\n\n. . .\n\nTorgersen: \\(\\widehat{body~mass} = 4716 - 1003 \\times 0 - 1010 \\times 1 = 3706\\)"
   },
   {
-    "objectID": "slides/14-mlr.html#look-familiar",
-    "href": "slides/14-mlr.html#look-familiar",
+    "objectID": "slides/14-mlr-I.html#look-familiar",
+    "href": "slides/14-mlr-I.html#look-familiar",
     "title": "Multiple Linear Regression 1",
     "section": "Look familiar?",
     "text": "Look familiar?\n\npenguins |&gt;\n  group_by(island) |&gt;\n  summarize(\n    bm_mean = mean(body_mass_g, na.rm = TRUE)\n  )\n\n# A tibble: 3 × 2\n  island    bm_mean\n  &lt;fct&gt;       &lt;dbl&gt;\n1 Biscoe      4716.\n2 Dream       3713.\n3 Torgersen   3706."
   },
   {
-    "objectID": "slides/14-mlr.html#models-with-categorical-predictors",
-    "href": "slides/14-mlr.html#models-with-categorical-predictors",
+    "objectID": "slides/14-mlr-I.html#models-with-categorical-predictors",
+    "href": "slides/14-mlr-I.html#models-with-categorical-predictors",
     "title": "Multiple Linear Regression 1",
     "section": "Models with categorical predictors",
     "text": "Models with categorical predictors\n\n\nWhen the categorical predictor has many levels, they’re encoded as dummy variables.\nThe first level of the categorical variable is the “baseline” level. In a model with one categorical predictor, the intercept is the predicted value of the outcome for the baseline level (x = 0).\nEach slope coefficient describes the difference between the predicted value of the outcome for that level of the categorical variable compared to the baseline level."
   },
   {
-    "objectID": "slides/14-mlr.html#in-general",
-    "href": "slides/14-mlr.html#in-general",
+    "objectID": "slides/14-mlr-I.html#in-general",
+    "href": "slides/14-mlr-I.html#in-general",
     "title": "Multiple Linear Regression 1",
     "section": "In general",
     "text": "In general\nPredicting continuous outcome \\(Y\\) using one categorical predictor \\(X\\) with multiple levels 1, 2, …, \\(k\\). Create dummy variables for every level except the base level:\n. . .\n\\[\ncat_k=\\begin{cases}\n1 & X=k\\\\\n0 & \\text{else}\n\\end{cases}\n\\]\n. . .\nThen fit a regression with multiple dummy predictors:\n\\[\n\\widehat{Y} = b_0 + b_1 \\times cat_1 + b_2 \\times cat_2 \\ldots + b_{k-1} \\times cat_{k-1}\n\\]\n\n\n\\(b_0\\) : the model prediction for a member of the base level;\n\\(b_1\\): how does the prediction change when we move from the base level to level 1?\n\\(b_2\\): how does the prediction change when we move from the base level to level 2?\netc…\n\n\n. . .\n\n\n\n\n\n\nWe’re not animals. We have technology!\n\n\n\nThe computer handles all of this for you, but you need to understand the details so you code and interpret it correctly."
   },
   {
-    "objectID": "slides/14-mlr.html#changing-the-baseline-level",
-    "href": "slides/14-mlr.html#changing-the-baseline-level",
+    "objectID": "slides/14-mlr-I.html#changing-the-baseline-level",
+    "href": "slides/14-mlr-I.html#changing-the-baseline-level",
     "title": "Multiple Linear Regression 1",
     "section": "Changing the baseline level",
     "text": "Changing the baseline level\n\nBy default, R uses the first level of a categorical variable as the baseline level. this is often the first alphabetically, but make sure you check!\nWe can change the baseline level by reordering the levels of the categorical variable… do you remember how to do this??"
   },
   {
-    "objectID": "slides/14-mlr.html#three-variables-on-one-2d-plot",
-    "href": "slides/14-mlr.html#three-variables-on-one-2d-plot",
+    "objectID": "slides/14-mlr-I.html#three-variables-on-one-2d-plot",
+    "href": "slides/14-mlr-I.html#three-variables-on-one-2d-plot",
     "title": "Multiple Linear Regression 1",
     "section": "Three variables on one 2D plot",
     "text": "Three variables on one 2D plot\n\nggplot(penguins, \n  aes(x = flipper_length_mm, y = body_mass_g, color = island)\n  ) +\n  geom_point()"
   },
   {
-    "objectID": "slides/14-mlr.html#how-do-we-predict-using-more-than-one-predictor",
-    "href": "slides/14-mlr.html#how-do-we-predict-using-more-than-one-predictor",
+    "objectID": "slides/14-mlr-I.html#how-do-we-predict-using-more-than-one-predictor",
+    "href": "slides/14-mlr-I.html#how-do-we-predict-using-more-than-one-predictor",
     "title": "Multiple Linear Regression 1",
     "section": "How do we predict using more than one predictor?",
     "text": "How do we predict using more than one predictor?\nBoth of these models use flipper_length_mm and island to predict body_mass_g:"
   },
   {
-    "objectID": "slides/14-mlr.html#the-additive-model-parallel-lines-one-for-each-island",
-    "href": "slides/14-mlr.html#the-additive-model-parallel-lines-one-for-each-island",
+    "objectID": "slides/14-mlr-I.html#the-additive-model-parallel-lines-one-for-each-island",
+    "href": "slides/14-mlr-I.html#the-additive-model-parallel-lines-one-for-each-island",
     "title": "Multiple Linear Regression 1",
     "section": "The additive model: parallel lines, one for each island",
     "text": "The additive model: parallel lines, one for each island"
   },
   {
-    "objectID": "slides/14-mlr.html#the-additive-model-parallel-lines-one-for-each-island-1",
-    "href": "slides/14-mlr.html#the-additive-model-parallel-lines-one-for-each-island-1",
+    "objectID": "slides/14-mlr-I.html#the-additive-model-parallel-lines-one-for-each-island-1",
+    "href": "slides/14-mlr-I.html#the-additive-model-parallel-lines-one-for-each-island-1",
     "title": "Multiple Linear Regression 1",
     "section": "The additive model: parallel lines, one for each island",
-    "text": "The additive model: parallel lines, one for each island\n\nbm_fl_island_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm + island, data = penguins)\n\ntidy(bm_fl_island_fit)\n\n# A tibble: 4 × 5\n  term              estimate std.error statistic  p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)        -4625.     392.      -11.8  4.29e-27\n2 flipper_length_mm     44.5      1.87     23.9  1.65e-74\n3 islandDream         -262.      55.0      -4.77 2.75e- 6\n4 islandTorgersen     -185.      70.3      -2.63 8.84e- 3\n\n\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -4625 &+ 44.5 \\times flipper~length \\\\\n&- 262 \\times Dream \\\\\n&- 185 \\times Torgersen\n\\end{aligned}\n\\]"
+    "text": "The additive model: parallel lines, one for each island\n\nbm_fl_island_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm + island, data = penguins)\n\ntidy(bm_fl_island_fit)\n\n# A tibble: 4 × 5\n  term              estimate std.error statistic  p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)        -4625.     392.      -11.8  4.29e-27\n2 flipper_length_mm     44.5      1.87     23.9  1.65e-74\n3 islandDream         -262.      55.0      -4.77 2.75e- 6\n4 islandTorgersen     -185.      70.3      -2.63 8.84e- 3\n\n\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -4625 &+ 44.5 \\times {\\text{flipper length (mm)}} \\\\\n&- 262 \\times \\text{Dream} \\\\\n&- 185 \\times \\text{Torgersen}\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/14-mlr.html#where-do-the-three-lines-come-from",
-    "href": "slides/14-mlr.html#where-do-the-three-lines-come-from",
+    "objectID": "slides/14-mlr-I.html#where-do-the-three-lines-come-from",
+    "href": "slides/14-mlr-I.html#where-do-the-three-lines-come-from",
     "title": "Multiple Linear Regression 1",
     "section": "Where do the three lines come from?",
-    "text": "Where do the three lines come from?\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -4625 &+ 44.5 \\times flipper~length \\\\\n&- 262 \\times Dream \\\\\n&- 185 \\times Torgersen\n\\end{aligned}\n\\]\n. . .\nIf penguin is from Biscoe, Dream = 0 and Torgersen = 0:\n. . .\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -4625 &+ 44.5 \\times flipper~length\n\\end{aligned}\n\\]\n. . .\nIf penguin is from Dream, Dream = 1 and Torgersen = 0:\n. . .\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -4887 &+ 44.5 \\times flipper~length\n\\end{aligned}\n\\]\n. . .\nIf penguin is from Torgersen, Dream = 0 and Torgersen = 1:\n. . .\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -4810 &+ 44.5 \\times flipper~length\n\\end{aligned}\n\\]\n. . .\nEither way, same slope, so the lines are parallel."
+    "text": "Where do the three lines come from?\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -4625 &+ 44.5 \\times \\text{flipper length (mm)} \\\\\n&- 262 \\times \\text{Dream} \\\\\n&- 185 \\times \\text{Torgersen}\n\\end{aligned}\n\\]\n. . .\nIf penguin is from Biscoe, Dream = 0 and Torgersen = 0:\n. . .\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -4625 &+ 44.5 \\times \\text{flipper length (mm)}\n\\end{aligned}\n\\]\n. . .\nIf penguin is from Dream, Dream = 1 and Torgersen = 0:\n. . .\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -4887 &+ 44.5 \\times \\text{flipper length (mm)}\n\\end{aligned}\n\\]\n. . .\nIf penguin is from Torgersen, Dream = 0 and Torgersen = 1:\n. . .\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -4810 &+ 44.5 \\times \\text{flipper length (mm)}\n\\end{aligned}\n\\]\n. . .\nEither way, same slope, so the lines are parallel."
   },
   {
-    "objectID": "slides/14-mlr.html#the-interaction-model-different-lines-for-each-island",
-    "href": "slides/14-mlr.html#the-interaction-model-different-lines-for-each-island",
+    "objectID": "slides/14-mlr-I.html#the-interaction-model-different-lines-for-each-island",
+    "href": "slides/14-mlr-I.html#the-interaction-model-different-lines-for-each-island",
     "title": "Multiple Linear Regression 1",
     "section": "The interaction model: different lines for each island",
-    "text": "The interaction model: different lines for each island\n\nCodeggplot(\n  penguins, \n  aes(x = flipper_length_mm, y = body_mass_g, color = island)\n  ) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Interaction model\") +\n  theme(legend.position = \"bottom\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale\nrange (`geom_point()`)."
+    "text": "The interaction model: different lines for each island\n\nCodeggplot(\n  penguins, \n  aes(x = flipper_length_mm, y = body_mass_g, color = island)\n  ) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Interaction model\") +\n  theme(legend.position = \"bottom\")"
   },
   {
-    "objectID": "slides/14-mlr.html#the-interaction-model-different-lines-for-each-island-1",
-    "href": "slides/14-mlr.html#the-interaction-model-different-lines-for-each-island-1",
+    "objectID": "slides/14-mlr-I.html#the-interaction-model-different-lines-for-each-island-1",
+    "href": "slides/14-mlr-I.html#the-interaction-model-different-lines-for-each-island-1",
     "title": "Multiple Linear Regression 1",
     "section": "The interaction model: different lines for each island",
-    "text": "The interaction model: different lines for each island\n\nbm_fl_island_int_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm * island, data = penguins)\n\ntidy(bm_fl_island_int_fit) |&gt; select(term, estimate)\n\n# A tibble: 6 × 2\n  term                              estimate\n  &lt;chr&gt;                                &lt;dbl&gt;\n1 (Intercept)                        -5464. \n2 flipper_length_mm                     48.5\n3 islandDream                         3551. \n4 islandTorgersen                     3218. \n5 flipper_length_mm:islandDream        -19.4\n6 flipper_length_mm:islandTorgersen    -17.4\n\n\n. . .\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -5464 &+ 48.5 \\times flipper~length \\\\\n&+ 3551 \\times Dream \\\\\n&+ 3218 \\times Torgersen \\\\\n&- 19.4 \\times flipper~length*Dream \\\\\n&- 17.4 \\times flipper~length*Torgersen\n\\end{aligned}\n\\]"
+    "text": "The interaction model: different lines for each island\n\nbm_fl_island_int_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm * island, data = penguins)\n\ntidy(bm_fl_island_int_fit) |&gt; select(term, estimate)\n\n# A tibble: 6 × 2\n  term                              estimate\n  &lt;chr&gt;                                &lt;dbl&gt;\n1 (Intercept)                        -5464. \n2 flipper_length_mm                     48.5\n3 islandDream                         3551. \n4 islandTorgersen                     3218. \n5 flipper_length_mm:islandDream        -19.4\n6 flipper_length_mm:islandTorgersen    -17.4\n\n\n. . .\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -5464 &+ 48.5 \\times \\text{flipper length (mm)} \\\\\n&+ 3551 \\times \\text{Dream} \\\\\n&+ 3218 \\times \\text{Torgersen} \\\\\n&- 19.4 \\times \\text{flipper length (mm)}*\\text{Dream} \\\\\n&- 17.4 \\times \\text{flipper length (mm)}*\\text{Torgersen}\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/14-mlr.html#where-do-the-three-lines-come-from-1",
-    "href": "slides/14-mlr.html#where-do-the-three-lines-come-from-1",
+    "objectID": "slides/14-mlr-I.html#where-do-the-three-lines-come-from-1",
+    "href": "slides/14-mlr-I.html#where-do-the-three-lines-come-from-1",
     "title": "Multiple Linear Regression 1",
     "section": "Where do the three lines come from?",
-    "text": "Where do the three lines come from?\n\\[\n\\begin{aligned}\n\\small\\widehat{body~mass} = -5464 &+ 48.5 \\times flipper~length \\\\\n&+ 3551 \\times Dream \\\\\n&+ 3218 \\times Torgersen \\\\\n&- 19.4 \\times flipper~length*Dream \\\\\n&- 17.4 \\times flipper~length*Torgersen\n\\end{aligned}\n\\]\n. . .\nIf penguin is from Biscoe, Dream = 0 and Torgersen = 0:\n. . .\n\\[\n\\begin{aligned}\n\\widehat{body~mass} = -5464 &+ 48.5 \\times flipper~length\n\\end{aligned}\n\\]\n. . .\nIf penguin is from Dream, Dream = 1 and Torgersen = 0:\n. . .\n\\[\n\\begin{aligned}\n\\widehat{body~mass} &= (-5464 + 3551) + (48.5-19.4) \\times flipper~length\\\\\n&=-1913+29.1\\times flipper~length.\n\\end{aligned}\n\\]"
+    "text": "Where do the three lines come from?\n\\[\n\\begin{aligned}\n\\small\\widehat{\\text{body mass (g)}} = -5464 &+ 48.5 \\times \\text{flipper length (mm)} \\\\\n&+ 3551 \\times \\text{Dream} \\\\\n&+ 3218 \\times \\text{Torgersen} \\\\\n&- 19.4 \\times \\text{flipper length (mm)} * \\text{Dream} \\\\\n&- 17.4 \\times \\text{flipper length (mm)} * \\text{Torgersen}\n\\end{aligned}\n\\]\n. . .\nIf penguin is from Biscoe, Dream = 0 and Torgersen = 0:\n. . .\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} = -5464 &+ 48.5 \\times \\text{flipper length (mm)}\n\\end{aligned}\n\\]\n. . .\nIf penguin is from Dream, Dream = 1 and Torgersen = 0:\n. . .\n\\[\n\\begin{aligned}\n\\widehat{\\text{body mass (g)}} &= (-5464 + 3551) + (48.5-19.4) \\times \\text{flipper length (mm)}\\\\\n&=-1913+29.1\\times \\text{flipper length (mm)}.\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/14-mlr.html#prediction-on-biscoe-island",
-    "href": "slides/14-mlr.html#prediction-on-biscoe-island",
+    "objectID": "slides/14-mlr-I.html#prediction-on-biscoe-island",
+    "href": "slides/14-mlr-I.html#prediction-on-biscoe-island",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction on Biscoe island",
-    "text": "Prediction on Biscoe island\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale\nrange (`geom_point()`)."
+    "text": "Prediction on Biscoe island"
   },
   {
-    "objectID": "slides/14-mlr.html#prediction-on-biscoe-island-1",
-    "href": "slides/14-mlr.html#prediction-on-biscoe-island-1",
+    "objectID": "slides/14-mlr-I.html#prediction-on-biscoe-island-1",
+    "href": "slides/14-mlr-I.html#prediction-on-biscoe-island-1",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction on Biscoe island",
-    "text": "Prediction on Biscoe island\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 205,\n  island = \"Biscoe\"\n)\n\npredict(bm_fl_island_int_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4488.\n\n\n\\[\n\\widehat{body~mass} = -5464 + 48.5 \\times 205.\n\\]"
+    "text": "Prediction on Biscoe island\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 205,\n  island = \"Biscoe\"\n)\n\npredict(bm_fl_island_int_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4488.\n\n\n\\[\n\\widehat{\\text{body mass (g)}} = -5464 + 48.5 \\times 205\n\\]"
   },
   {
-    "objectID": "slides/14-mlr.html#prediction-on-dream-island",
-    "href": "slides/14-mlr.html#prediction-on-dream-island",
+    "objectID": "slides/14-mlr-I.html#prediction-on-dream-island",
+    "href": "slides/14-mlr-I.html#prediction-on-dream-island",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction on Dream island",
-    "text": "Prediction on Dream island\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale\nrange (`geom_point()`)."
+    "text": "Prediction on Dream island"
   },
   {
-    "objectID": "slides/14-mlr.html#prediction-on-dream-island-1",
-    "href": "slides/14-mlr.html#prediction-on-dream-island-1",
+    "objectID": "slides/14-mlr-I.html#prediction-on-dream-island-1",
+    "href": "slides/14-mlr-I.html#prediction-on-dream-island-1",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction on Dream island",
-    "text": "Prediction on Dream island\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 205,\n  island = \"Dream\"\n)\n\npredict(bm_fl_island_int_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4060.\n\n\n\\[\n\\widehat{body~mass} = (-5464 + 3551) + (48.5 - 19.4) \\times 205.\n\\]"
+    "text": "Prediction on Dream island\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 205,\n  island = \"Dream\"\n)\n\npredict(bm_fl_island_int_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4060.\n\n\n\\[\n\\widehat{\\text{body mass (g)}} = (-5464 + 3551) + (48.5 - 19.4) \\times 205\n\\]"
   },
   {
-    "objectID": "slides/14-mlr.html#prediction-on-torgersen-island",
-    "href": "slides/14-mlr.html#prediction-on-torgersen-island",
+    "objectID": "slides/14-mlr-I.html#prediction-on-torgersen-island",
+    "href": "slides/14-mlr-I.html#prediction-on-torgersen-island",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction on Torgersen island",
-    "text": "Prediction on Torgersen island\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale\nrange (`geom_point()`)."
+    "text": "Prediction on Torgersen island"
   },
   {
-    "objectID": "slides/14-mlr.html#prediction-on-torgersen-island-1",
-    "href": "slides/14-mlr.html#prediction-on-torgersen-island-1",
+    "objectID": "slides/14-mlr-I.html#prediction-on-torgersen-island-1",
+    "href": "slides/14-mlr-I.html#prediction-on-torgersen-island-1",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction on Torgersen island",
-    "text": "Prediction on Torgersen island\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 205,\n  island = \"Torgersen\"\n)\n\npredict(bm_fl_island_int_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4136.\n\n\n\\[\n\\widehat{body~mass} = (-5464 + 3218) + (48.5 - 17.4) \\times 205.\n\\]"
+    "text": "Prediction on Torgersen island\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 205,\n  island = \"Torgersen\"\n)\n\npredict(bm_fl_island_int_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4136.\n\n\n\\[\n\\widehat{\\text{body mass (g)}} = (-5464 + 3218) + (48.5 - 17.4) \\times 205\n\\]"
   },
   {
-    "objectID": "slides/14-mlr.html#multiple-numerical-predictors",
-    "href": "slides/14-mlr.html#multiple-numerical-predictors",
+    "objectID": "slides/14-mlr-I.html#multiple-numerical-predictors",
+    "href": "slides/14-mlr-I.html#multiple-numerical-predictors",
     "title": "Multiple Linear Regression 1",
     "section": "Multiple numerical predictors",
-    "text": "Multiple numerical predictors\n\nbm_fl_bl_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm + bill_length_mm, data = penguins)\n\ntidy(bm_fl_bl_fit)\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic  p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)       -5737.      308.      -18.6  7.80e-54\n2 flipper_length_mm    48.1       2.01     23.9  7.56e-75\n3 bill_length_mm        6.05      5.18      1.17 2.44e- 1\n\n\n. . .\n\\[\n\\small\\widehat{body~mass}=-5736+48.1\\times flipper~length+6\\times bill~length\n\\]"
+    "text": "Multiple numerical predictors\n\nbm_fl_bl_fit &lt;- linear_reg() |&gt;\n  fit(body_mass_g ~ flipper_length_mm + bill_length_mm, data = penguins)\n\ntidy(bm_fl_bl_fit)\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic  p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)       -5737.      308.      -18.6  7.80e-54\n2 flipper_length_mm    48.1       2.01     23.9  7.56e-75\n3 bill_length_mm        6.05      5.18      1.17 2.44e- 1\n\n\n. . .\n\\[\n\\small\\widehat{\\text{body mass (g)}}=-5736+48.1\\times \\text{flipper length (mm)}+6\\times \\text{bill length (mm)}\n\\]"
   },
   {
-    "objectID": "slides/14-mlr.html#interpretation-1",
-    "href": "slides/14-mlr.html#interpretation-1",
+    "objectID": "slides/14-mlr-I.html#interpretation-1",
+    "href": "slides/14-mlr-I.html#interpretation-1",
     "title": "Multiple Linear Regression 1",
     "section": "Interpretation",
-    "text": "Interpretation\n\\[\n\\small\\widehat{body~mass}=-5736+48.1\\times flipper~length+6\\times bill~length\n\\]\n. . .\nInterpretations:\n\n\nWe predict that the body mass of a penguin with zero flipper length and zero bill length will be -5736 grams, on average (makes no sense);\nHolding all other variables constant, for every additional millimeter in flipper length, we expect the body mass of penguins to be higher, on average, by 48.1 grams.\nHolding all other variables constant, for every additional millimeter in bill length, we expect the body mass of penguins to be higher, on average, by 6 grams."
+    "text": "Interpretation\n\\[\n\\small\\widehat{\\text{body mass (g)}}=-5736+48.1\\times \\text{flipper length (mm)}+6\\times \\text{bill length (mm)}\n\\]\n. . .\nInterpretations:\n\n\nWe predict that the body mass of a penguin with zero flipper length and zero bill length will be -5,736 g, on average (makes no sense);\nHolding all other variables constant, for every additional mm in flipper length, we expect the body mass of penguins to be higher, on average, by 48.1 g;\nHolding all other variables constant, for every additional mm in bill length, we expect the body mass of penguins to be higher, on average, by 6 g."
   },
   {
-    "objectID": "slides/14-mlr.html#prediction-2",
-    "href": "slides/14-mlr.html#prediction-2",
+    "objectID": "slides/14-mlr-I.html#prediction-2",
+    "href": "slides/14-mlr-I.html#prediction-2",
     "title": "Multiple Linear Regression 1",
     "section": "Prediction",
-    "text": "Prediction\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 200,\n  bill_length_mm = 45\n)\n\npredict(bm_fl_bl_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4164.\n\n\n\\[\n\\widehat{body~mass}=-5736+48.1\\times 200+6\\times 45\n\\]"
+    "text": "Prediction\n\nnew_penguin &lt;- tibble(\n  flipper_length_mm = 200,\n  bill_length_mm = 45\n)\n\npredict(bm_fl_bl_fit, new_data = new_penguin)\n\n# A tibble: 1 × 1\n  .pred\n  &lt;dbl&gt;\n1 4164.\n\n\n\\[\n\\widehat{\\text{body mass (g)}}=-5736+48.1\\times 200+6\\times 45\n\\]"
   },
   {
-    "objectID": "slides/14-mlr.html#picture-its-not-pretty",
-    "href": "slides/14-mlr.html#picture-its-not-pretty",
+    "objectID": "slides/14-mlr-I.html#picture-its-not-pretty",
+    "href": "slides/14-mlr-I.html#picture-its-not-pretty",
     "title": "Multiple Linear Regression 1",
     "section": "Picture? It’s not pretty…",
-    "text": "Picture? It’s not pretty…\n2 predictors + 1 response = 3 dimensions. Ick!\n\n\nWarning: Unknown or uninitialised column: `color`."
+    "text": "Picture? It’s not pretty…\n2 predictors + 1 response = 3 dimensions. Ick!"
   },
   {
-    "objectID": "slides/14-mlr.html#picture-its-not-pretty-1",
-    "href": "slides/14-mlr.html#picture-its-not-pretty-1",
+    "objectID": "slides/14-mlr-I.html#picture-its-not-pretty-1",
+    "href": "slides/14-mlr-I.html#picture-its-not-pretty-1",
     "title": "Multiple Linear Regression 1",
     "section": "Picture? It’s not pretty…",
-    "text": "Picture? It’s not pretty…\nInstead of a line of best fit, it’s a plane of best fit. Double ick!\n\n\nWarning: Unknown or uninitialised column: `color`."
+    "text": "Picture? It’s not pretty…\nInstead of a line of best fit, it’s a plane of best fit. Double ick!"
   },
   {
-    "objectID": "slides/14-mlr.html#population-model",
-    "href": "slides/14-mlr.html#population-model",
+    "objectID": "slides/14-mlr-I.html#population-model",
+    "href": "slides/14-mlr-I.html#population-model",
     "title": "Multiple Linear Regression 1",
     "section": "Population model",
     "text": "Population model\nMultiple linear regression captures the relationship between a numerical outcome \\(Y\\) and many numerical predictors \\(X_1\\), \\(X_2\\), …, \\(X_p\\):\n\\[\\Large{Y = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + ...+ \\beta_p X_p+\\epsilon}\\]\n\n\n\n\\(\\beta_0\\): True intercept of the relationship between the \\(X_j\\) and \\(Y\\)\n\n\n\\(\\beta_j\\): True slope of the relationship between \\(X_j\\) and \\(Y\\)\n\n\n\\(\\epsilon\\): Error (residual)\n\n\n. . .\nThe model with the greek letters and the error term is the “true,” idealized, population relationship that we could access if we had infinite amounts of perfect data. But we don’t, so we have to settle for…"
   },
   {
-    "objectID": "slides/14-mlr.html#estimated-model",
-    "href": "slides/14-mlr.html#estimated-model",
+    "objectID": "slides/14-mlr-I.html#estimated-fitted-model",
+    "href": "slides/14-mlr-I.html#estimated-fitted-model",
     "title": "Multiple Linear Regression 1",
-    "section": "Estimated model",
-    "text": "Estimated model\n\\[\\Large{\\hat{Y} = b_0 + b_1 X_1 + b_2 X_2 + ... + b_pX_p}\\]\n\n\n\\(b_j\\): Estimated slope of the relationship between \\(X_j\\) and \\(Y\\);\n\n\\(b_0\\): your prediction for \\(Y\\) if all the predictors equal zero;\nNo error term!\n\n. . .\nThis is your best guess at the true regression function based on the noisy, meager, imperfect data you actually have access to. We still compute the \\(b_j\\) using the principle of least squares: pick the estimates that make the sum of squared residuals as small as possible."
+    "section": "Estimated / fitted model",
+    "text": "Estimated / fitted model\n\\[\\Large{\\widehat{Y} = b_0 + b_1 X_1 + b_2 X_2 + ... + b_pX_p}\\]\n\n\n\\(b_j\\): Estimated slope of the relationship between \\(X_j\\) and \\(Y\\);\n\n\\(b_0\\): your prediction for \\(Y\\) if all the predictors equal zero;\nNo error term!\n\n. . .\nThis is your best guess at the true regression function based on the noisy, meager, imperfect data you actually have access to. We still compute the \\(b_j\\) using the principle of least squares: pick the estimates that make the sum of squared residuals as small as possible."
   },
   {
-    "objectID": "slides/14-mlr.html#next-time",
-    "href": "slides/14-mlr.html#next-time",
+    "objectID": "slides/14-mlr-I.html#next-time",
+    "href": "slides/14-mlr-I.html#next-time",
     "title": "Multiple Linear Regression 1",
     "section": "Next time",
     "text": "Next time\nToday we saw multiple models that are all attempting to do the same thing: predict body mass.\n\nWhich one is “best”?\nWhat does “best” even mean?"
@@ -3543,7 +3543,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Red Eye          2005  183068080    31018861 5.90  PASS   ok        \n2 Maria Full of …  2004   25861019     3946217 6.55  PASS   ok        \n3 The Tale of De…  2008  152987170    64935379 2.36  PASS   ok        \n4 Up in the Air    2009  272156126    32571948 8.36  FAIL   men       \n5 Cecil B. Demen…  2000    4371065    13529084 0.323 PASS   ok"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 8 Mile           2002  465808809    53102348  8.77 FAIL   notalk    \n2 Remember the T…  2000  341421899    40587251  8.41 FAIL   notalk    \n3 Harry Potter a…  2009 1342372145   271432899  4.95 PASS   ok        \n4 Hanna            2011  109371861    31070724  3.52 PASS   ok        \n5 Die Hard 2       1990  636768095   124808278  5.10 FAIL   dubious"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
@@ -3802,7 +3802,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Red Eye          2005  183068080    31018861 5.90  PASS   ok        \n2 Maria Full of …  2004   25861019     3946217 6.55  PASS   ok        \n3 The Tale of De…  2008  152987170    64935379 2.36  PASS   ok        \n4 Up in the Air    2009  272156126    32571948 8.36  FAIL   men       \n5 Cecil B. Demen…  2000    4371065    13529084 0.323 PASS   ok"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 8 Mile           2002  465808809    53102348  8.77 FAIL   notalk    \n2 Remember the T…  2000  341421899    40587251  8.41 FAIL   notalk    \n3 Harry Potter a…  2009 1342372145   271432899  4.95 PASS   ok        \n4 Hanna            2011  109371861    31070724  3.52 PASS   ok        \n5 Die Hard 2       1990  636768095   124808278  5.10 FAIL   dubious"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
