@@ -4,9 +4,9 @@ subtitle: "Lecture 14"
 date: "2026-06-05"
 format: 
   revealjs:
-    output-file: 14-mlr-slides.html
+    output-file: 14-mlr-I-slides.html
   html: 
-    output-file: 14-mlr.html
+    output-file: 14-mlr-I.html
 auto-stretch: false
 ---
 
@@ -552,31 +552,31 @@ tidy(bm_fl_island_fit)
 
 $$
 \begin{aligned}
-\widehat{body~mass} = -4625 &+ 44.5 \times flipper~length \\
-&- 262 \times Dream \\
-&- 185 \times Torgersen
+\widehat{\text{body mass (g)}} = -4625 &+ 44.5 \times {\text{flipper length (mm)}} \\
+&- 262 \times \text{Dream} \\
+&- 185 \times \text{Torgersen}
 \end{aligned}
 $$
 
-## Where do the three lines come from? {.scrollable}
+## Where do the three lines come from? {.smaller .scrollable}
 
 $$
 \begin{aligned}
-\widehat{body~mass} = -4625 &+ 44.5 \times flipper~length \\
-&- 262 \times Dream \\
-&- 185 \times Torgersen
+\widehat{\text{body mass (g)}} = -4625 &+ 44.5 \times \text{flipper length (mm)} \\
+&- 262 \times \text{Dream} \\
+&- 185 \times \text{Torgersen}
 \end{aligned}
 $$
 
 . . .
 
-If penguin is from Biscoe, Dream = 0 and Torgersen = 0:
+If penguin is from Biscoe, Dream = 0 **and** Torgersen = 0:
 
 . . .
 
 $$
 \begin{aligned}
-\widehat{body~mass} = -4625 &+ 44.5 \times flipper~length
+\widehat{\text{body mass (g)}} = -4625 &+ 44.5 \times \text{flipper length (mm)}
 \end{aligned}
 $$
 
@@ -588,7 +588,7 @@ If penguin is from Dream, Dream = 1 and Torgersen = 0:
 
 $$
 \begin{aligned}
-\widehat{body~mass} = -4887 &+ 44.5 \times flipper~length
+\widehat{\text{body mass (g)}} = -4887 &+ 44.5 \times \text{flipper length (mm)}
 \end{aligned}
 $$
 
@@ -600,7 +600,7 @@ If penguin is from Torgersen, Dream = 0 and Torgersen = 1:
 
 $$
 \begin{aligned}
-\widehat{body~mass} = -4810 &+ 44.5 \times flipper~length
+\widehat{\text{body mass (g)}} = -4810 &+ 44.5 \times \text{flipper length (mm)}
 \end{aligned}
 $$
 
@@ -613,6 +613,7 @@ Either way, same slope, so the lines are parallel.
 ```{r}
 #| label: interaction-viz
 #| code-fold: true
+#| warning: false
 
 ggplot(
   penguins, 
@@ -624,7 +625,7 @@ ggplot(
   theme(legend.position = "bottom")
 ```
 
-## The interaction model: different lines for each island {.medium .scrollable}
+## The interaction model: different lines for each island {.smaller .scrollable}
 
 ```{r}
 bm_fl_island_int_fit <- linear_reg() |>
@@ -637,23 +638,23 @@ tidy(bm_fl_island_int_fit) |> select(term, estimate)
 
 $$
 \begin{aligned}
-\widehat{body~mass} = -5464 &+ 48.5 \times flipper~length \\
-&+ 3551 \times Dream \\
-&+ 3218 \times Torgersen \\
-&- 19.4 \times flipper~length*Dream \\
-&- 17.4 \times flipper~length*Torgersen
+\widehat{\text{body mass (g)}} = -5464 &+ 48.5 \times \text{flipper length (mm)} \\
+&+ 3551 \times \text{Dream} \\
+&+ 3218 \times \text{Torgersen} \\
+&- 19.4 \times \text{flipper length (mm)}*\text{Dream} \\
+&- 17.4 \times \text{flipper length (mm)}*\text{Torgersen}
 \end{aligned}
 $$
 
-## Where do the three lines come from? {.medium .scrollable}
+## Where do the three lines come from? {.smaller .scrollable}
 
 $$
 \begin{aligned}
-\small\widehat{body~mass} = -5464 &+ 48.5 \times flipper~length \\
-&+ 3551 \times Dream \\
-&+ 3218 \times Torgersen \\
-&- 19.4 \times flipper~length*Dream \\
-&- 17.4 \times flipper~length*Torgersen
+\small\widehat{\text{body mass (g)}} = -5464 &+ 48.5 \times \text{flipper length (mm)} \\
+&+ 3551 \times \text{Dream} \\
+&+ 3218 \times \text{Torgersen} \\
+&- 19.4 \times \text{flipper length (mm)} * \text{Dream} \\
+&- 17.4 \times \text{flipper length (mm)} * \text{Torgersen}
 \end{aligned}
 $$
 
@@ -665,7 +666,7 @@ If penguin is from Biscoe, Dream = 0 and Torgersen = 0:
 
 $$
 \begin{aligned}
-\widehat{body~mass} = -5464 &+ 48.5 \times flipper~length
+\widehat{\text{body mass (g)}} = -5464 &+ 48.5 \times \text{flipper length (mm)}
 \end{aligned}
 $$
 
@@ -677,8 +678,8 @@ If penguin is from Dream, Dream = 1 and Torgersen = 0:
 
 $$
 \begin{aligned}
-\widehat{body~mass} &= (-5464 + 3551) + (48.5-19.4) \times flipper~length\\
-&=-1913+29.1\times flipper~length.
+\widehat{\text{body mass (g)}} &= (-5464 + 3551) + (48.5-19.4) \times \text{flipper length (mm)}\\
+&=-1913+29.1\times \text{flipper length (mm)}.
 \end{aligned}
 $$
 
@@ -686,6 +687,7 @@ $$
 
 ```{r}
 #| echo: false
+#| warning: false
 
 new_penguin <- tibble(
   flipper_length_mm = 205,
@@ -721,13 +723,14 @@ predict(bm_fl_island_int_fit, new_data = new_penguin)
 ```
 
 $$
-\widehat{body~mass} = -5464 + 48.5 \times 205.
+\widehat{\text{body mass (g)}} = -5464 + 48.5 \times 205
 $$
 
 ## Prediction on Dream island
 
 ```{r}
 #| echo: false
+#| warning: false
 
 new_penguin <- tibble(
   flipper_length_mm = 205,
@@ -763,13 +766,14 @@ predict(bm_fl_island_int_fit, new_data = new_penguin)
 ```
 
 $$
-\widehat{body~mass} = (-5464 + 3551) + (48.5 - 19.4) \times 205.
+\widehat{\text{body mass (g)}} = (-5464 + 3551) + (48.5 - 19.4) \times 205
 $$
 
 ## Prediction on Torgersen island
 
 ```{r}
 #| echo: false
+#| warning: false
 
 new_penguin <- tibble(
   flipper_length_mm = 205,
@@ -793,7 +797,7 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = island)) +
   )
 ```
 
-## Prediction on Torgersen island
+## Prediction on Torgersen island 
 
 ```{r}
 new_penguin <- tibble(
@@ -805,12 +809,12 @@ predict(bm_fl_island_int_fit, new_data = new_penguin)
 ```
 
 $$
-\widehat{body~mass} = (-5464 + 3218) + (48.5 - 17.4) \times 205.
+\widehat{\text{body mass (g)}} = (-5464 + 3218) + (48.5 - 17.4) \times 205
 $$
 
 # Linear regression with many numerical predictors
 
-## Multiple numerical predictors {.scrollable}
+## Multiple numerical predictors {.smaller .scrollable}
 
 ```{r}
 bm_fl_bl_fit <- linear_reg() |>
@@ -822,13 +826,13 @@ tidy(bm_fl_bl_fit)
 . . .
 
 $$
-\small\widehat{body~mass}=-5736+48.1\times flipper~length+6\times bill~length
+\small\widehat{\text{body mass (g)}}=-5736+48.1\times \text{flipper length (mm)}+6\times \text{bill length (mm)}
 $$
 
-## Interpretation {.scrollable .medium}
+## Interpretation {.scrollable .smaller}
 
 $$
-\small\widehat{body~mass}=-5736+48.1\times flipper~length+6\times bill~length
+\small\widehat{\text{body mass (g)}}=-5736+48.1\times \text{flipper length (mm)}+6\times \text{bill length (mm)}
 $$
 
 . . .
@@ -836,9 +840,9 @@ $$
 **Interpretations**:
 
 ::: incremental
--   We predict that the body mass of a penguin with *zero* flipper length and *zero* bill length will be -5736 grams, on average (**makes no sense**);
--   Holding all other variables constant, for every additional millimeter in flipper length, we expect the body mass of penguins to be higher, on average, by 48.1 grams.
--   Holding all other variables constant, for every additional millimeter in bill length, we expect the body mass of penguins to be higher, on average, by 6 grams.
+-   We predict that the body mass of a penguin with *zero* flipper length and *zero* bill length will be -5,736 g, on average (**makes no sense**);
+-   Holding all other variables constant, for every additional mm in flipper length, we expect the body mass of penguins to be higher, on average, by 48.1 g;
+-   Holding all other variables constant, for every additional mm in bill length, we expect the body mass of penguins to be higher, on average, by 6 g.
 :::
 
 ## Prediction
@@ -853,7 +857,7 @@ predict(bm_fl_bl_fit, new_data = new_penguin)
 ```
 
 $$
-\widehat{body~mass}=-5736+48.1\times 200+6\times 45
+\widehat{\text{body mass (g)}}=-5736+48.1\times 200+6\times 45
 $$
 
 ## Picture? It's not pretty...
@@ -863,10 +867,12 @@ Ick!
 
 ```{r}
 #| echo: false
+#| warning: false
+
 scatterplot3d(
   penguins[,c("bill_length_mm", "flipper_length_mm", "body_mass_g")],
   pch = 19, 
-  color = "blue",
+  color = "cornflowerblue",
   xlab = "Bill length (mm)", 
   ylab = "Flipper length (mm)", 
   zlab = "Body mass (grams)"
@@ -880,22 +886,24 @@ Double ick!
 
 ```{r}
 #| echo: false
+#| warning: false
+
 plot3vars <- scatterplot3d(
   penguins[,c("bill_length_mm", "flipper_length_mm", "body_mass_g")],
   pch = 19, 
-  color = "blue",
+  color = "cornflowerblue",
   xlab = "Bill length (mm)", 
   ylab = "Flipper length (mm)", 
   zlab = "Body mass (grams)"
 ) 
 
 model <- lm(body_mass_g ~ bill_length_mm + flipper_length_mm, data = penguins)
-plot3vars$plane3d(model, col = "darkred")
+plot3vars$plane3d(model, col = "purple")
 ```
 
 # Multiple linear regression in general
 
-## Population model {.medium}
+## Population model {.smaller}
 
 **Multiple linear regression** captures the relationship between a numerical outcome $Y$ and *many* numerical predictors $X_1$, $X_2$, ..., $X_p$:
 
@@ -912,9 +920,9 @@ $$\Large{Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ...+ \beta_p X_p+\epsilon}$$
 The model with the greek letters and the error term is the "true," idealized, *population* relationship that we could access if we had infinite amounts of perfect data.
 But we don't, so we have to settle for...
 
-## Estimated model {.medium}
+## Estimated / fitted model {.smaller}
 
-$$\Large{\hat{Y} = b_0 + b_1 X_1 + b_2 X_2 + ... + b_pX_p}$$
+$$\Large{\widehat{Y} = b_0 + b_1 X_1 + b_2 X_2 + ... + b_pX_p}$$
 
 -   $b_j$: Estimated slope of the relationship between $X_j$ and $Y$;
 -   $b_0$: your prediction for $Y$ if all the predictors equal zero;
