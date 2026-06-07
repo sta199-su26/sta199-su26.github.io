@@ -1,10 +1,10 @@
 ---
 title: "Multiple Linear Regression 2"
-subtitle: "Lecture 18"
-date: "2026-03-25"
+subtitle: "Lecture 15"
+date: "2026-06-08"
 format: 
   revealjs: 
-    output-file: 18-multiple-linear-regression-2-slides.html
+    output-file: 15-multiple-linear-regression-2-slides.html
     footer: "[🔗 sta199-s26.github.io](https://sta199-s26.github.io/)"
     theme: slides.scss
     transition: fade
@@ -24,41 +24,6 @@ library(scatterplot3d)
 library(ggthemes)
 library(ggbeeswarm)
 ```
-
-## WANANA @ DataFest!
-
-![](images/18/datafest.png)
-
-## Bookbagging tomorrow! {.scrollable}
-
-:::::: columns
-:::: {.column width="50%"}
-
-
-![](images/17/ssmu.png)
-
-::::
-
-::: {.column width="50%"}
-
-Get great advice about course selection from the old broads in the stats mafia:
-
-- Free boba!
-- Thursday 3/26 7pm - 9pm;
-- Social Sciences 136
-- Instagram: [@dukessmu](https://www.instagram.com/dukessmu/)
-
-:::
-::::::
-
-## Presentations tomorrow
-
-- Keep it tight: five minutes;
-- There is no "correct" number of slides of figures or whatever, but see bullet one;
-- If you're absent, be extra sure to pull your weight so your group doesn't flame you on the peer eval;
-- We don't want to see any code whatsoever in these presentations;
-- Bad things will happen if we don't have all of the slide decks launched and ready to go at the start of lab;
-- Make sure that your file `presentations.pdf` is up-to-date and your website is working before 8AM tomorrow.
 
 # Recap: linear regression
 
