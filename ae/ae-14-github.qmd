@@ -1,0 +1,164 @@
+---
+title: "AE 13: Modeling housing prices"
+---
+
+In this application exercise we will be studying housing prices.
+The dataset is a cleaned version of publicly available real estate data.
+We will use **tidyverse** and **tidymodels** for data exploration and modeling, respectively.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(tidymodels)
+library(modeldata)
+```
+
+We will use the `ames_housing` dataset from the **modeldata** package.
+
+Before we use the dataset, we'll make a few transformations to it.
+
+-   **Your turn:** Review the code below with your neighbors and write a summary of the data transformation pipeline.
+
+```{r}
+#| label: data-prep
+data(ames)
+housing <- ames |>
+  select(Sale_Price, Gr_Liv_Area, Bldg_Type, Bedroom_AbvGr, Paved_Drive, Exter_Cond) |>
+  mutate(home_type = fct_collapse(Bldg_Type,
+    "House" = c("OneFam", "TwnhsE"),
+    "Townhouse" = "Twnhs",
+    "Duplex" = "Duplex"
+  )) |>
+  select(-Bldg_Type) |>
+  rename(price = Sale_Price, sqft = Gr_Liv_Area, bedrooms = Bedroom_AbvGr) |>
+  filter(home_type %in% c("House", "Townhouse", "Duplex"))
+```
+
+Here is a glimpse at the data:
+
+```{r}
+#| label: glimpse-housing
+glimpse(housing)
+```
+
+# Get to know the data
+
+-   **Your turn:** What is a typical house price in this dataset? What are some common square footage sizes? What types of homes are most common? Additionally, explore at least 1-2 other features that could be interesting. Share your findings!
+
+```{r}
+#| label: explore-housing
+#| layout-ncol: 2
+
+# add code here
+```
+
+# Price vs. square footage
+
+How can we use square footage to model/predict pricing?
+Here is the model:
+
+```{r}
+#| label: price-sqft-fit
+price_sqft_fit <- linear_reg() |>
+  fit(price ~ sqft, data = housing)
+
+tidy(price_sqft_fit)
+```
+
+And here is the model visualized:
+
+```{r}
+#| label: price-sqft-plot
+ggplot(housing, aes(x = sqft, y = price)) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm")
+```
+
+-   **Your turn:** Write the equation of the model in mathematical notation. Then, interpret the intercept and slope.
+
+# Price vs. home type
+
+```{r}
+#| label: price-type-fit
+price_type_fit <- linear_reg() |>
+  fit(price ~ home_type, data = housing)
+
+tidy(price_type_fit)
+```
+
+-   **Your turn:** Write the equation of the model in mathematical notation. Then, interpret the intercept and each coefficient in context.
+
+# Price vs. square footage and home type
+
+Now, let's make some model that use both variables!
+
+## Main effects model
+
+The *main effects model* is another name for the additive model.
+We fit the models below and wrote the model in math notation.
+
+```{r}
+#| label: price-main-fit
+price_main_fit <- linear_reg() |>
+  fit(price ~ sqft + home_type, data = housing)
+
+tidy(price_main_fit)
+```
+
+$$
+\widehat{price} = 13394.8 + 114.5 \times sqft - 20306 \times Townhouse - 63251 \times Duplex
+$$
+
+**Task:** Write the model equations for each home type.
+Provide interpretations of the coefficients.
+
+*Add answer here.*
+
+## Interaction effects model
+
+Now, we will fit an interaction effects model.
+
+**Task:** Write code to fit an interaction effects model predicting price from square feet and home type.
+
+```{r}
+#| label: price-int-fit
+
+#add code here
+```
+
+**Task:** Write the model output using mathematical notation.
+
+*Add answer here.*
+
+**Task:** Write the model equations for each home type.
+
+*Add answer here.*
+
+# Model Comparison
+
+So, we fit multiple models - how do we know which one is better?
+
+We will dive into this tomorrow, but there is a value called *adjusted* $R^2$ that lets us compare models.
+Higher values are better, lower are worse.
+You can `glance()` at a model fit to see the *adjusted* $R^2$ values.
+
+Which model is the best fit?
+Which is the worst?
+
+```{r}
+#| label: model-glance
+
+# add code here
+```
+
+# One more model?
+
+**Task:** Try adding one more variable to your chosen model from above.
+Does it make a difference in *adjusted* $R^2$?
+
+```{r}
+#| label: new-model
+
+# add code here
+```
