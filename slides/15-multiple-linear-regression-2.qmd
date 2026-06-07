@@ -3,16 +3,11 @@ title: "Multiple Linear Regression 2"
 subtitle: "Lecture 15"
 date: "2026-06-08"
 format: 
-  revealjs: 
-    output-file: 15-multiple-linear-regression-2-slides.html
-    footer: "[🔗 sta199-s26.github.io](https://sta199-s26.github.io/)"
-    theme: slides.scss
-    transition: fade
-    slide-number: true
-    logo: images/logo.png
-    toc: false
+  revealjs:
+    output-file: 15-mlr-II-slides.html
   html: 
-    code-link: true
+    output-file: 15-mlr-II.html
+auto-stretch: false
 ---
 
 ```{r}
@@ -27,7 +22,7 @@ library(ggbeeswarm)
 
 # Recap: linear regression
 
-## Population model {.medium}
+## Population model {.smaller}
 
 **Multiple linear regression** captures the relationship between a numerical outcome $Y$ and *many* numerical predictors $X_1$, $X_2$, ..., $X_p$:
 
@@ -41,11 +36,12 @@ $$\Large{Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ...+ \beta_p X_p+\epsilon}$$
 
 . . .
 
-The model with the greek letters and the error term is the "true," idealized, *population* relationship that we could access if we had infinite amounts of perfect data. But we don't, so we have to settle for...
+The model with the greek letters and the error term is the "true," idealized, *population* relationship that we could access if we had infinite amounts of perfect data.
+But we don't, so we have to settle for...
 
-## Estimated model {.medium}
+## Estimated model {.smaller}
 
-$$\Large{\hat{Y} = b_0 + b_1 X_1 + b_2 X_2 + ... + b_pX_p}$$
+$$\Large{\widehat{Y} = b_0 + b_1 X_1 + b_2 X_2 + ... + b_pX_p}$$
 
 -   $b_j$: Estimated slope of the relationship between $X_j$ and $Y$;
 -   $b_0$: your prediction for $Y$ if all the predictors equal zero;
@@ -53,18 +49,20 @@ $$\Large{\hat{Y} = b_0 + b_1 X_1 + b_2 X_2 + ... + b_pX_p}$$
 
 . . .
 
-This is your *best guess* at the true regression function based on the noisy, meager, imperfect data you actually have access to. We still compute the $b_j$ using the principle of least squares: pick the estimates that make the sum of squared residuals as small as possible.
+This is your *best guess* at the true regression function based on the noisy, meager, imperfect data you actually have access to.
+We still compute the $b_j$ using the principle of least squares: pick the estimates that make the sum of squared residuals as small as possible.
 
 ## Example: one numerical predictor
 
 ```{r}
 #| echo: false
+#| warning: false
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + 
   geom_point() + 
   geom_smooth(method = "lm")
 ```
 
-## Example: one numerical predictor
+## Example: one numerical predictor {.medium}
 
 ```{r}
 bm_fl_fit <- linear_reg() |>
@@ -74,17 +72,16 @@ tidy(bm_fl_fit)
 ```
 
 $$
-\widehat{body~mass}=-5780.83+49.68\times flipper~length
+\widehat{\text{body mass (g)}}=-5780.83+49.68\times \text{flipper length (mm)}
 $$
 
 ## Example: one numerical predictor
 
-:::::: columns
-
-:::: {.column width="50%"}
-
+::::: columns
+::: {.column width="50%"}
 ```{r}
 #| echo: false
+#| warning: false
 
 new_penguin <- tibble(flipper_length_mm = 205)
 
@@ -92,20 +89,19 @@ preds <- predict(bm_fl_fit, new_data = new_penguin)
 
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) + 
   geom_point() + 
-  geom_smooth(method = "lm")   +
+  geom_smooth(method = "lm", color = "cornflowerblue")   +
   annotate(
     "segment",
     x = new_penguin$flipper_length_mm[1], xend = new_penguin$flipper_length_mm[1], y = -Inf, yend = preds$.pred[1],
-    color = "#FE5D26"
+    color = "deeppink"
   ) +
   annotate(
     "segment",
     x = -Inf, xend = new_penguin$flipper_length_mm[1], y = preds$.pred[1], yend = preds$.pred[1],
-    color = "#FE5D26"
+    color = "deeppink"
   )
 ```
-
-::::
+:::
 
 ::: {.column width="50%"}
 ```{r}
@@ -118,13 +114,14 @@ predict(bm_fl_fit,
         new_penguin)
 ```
 :::
-
-::::::
+:::::
 
 ## Example: "one categorical predictor"
 
 ```{r}
 #| echo: false
+#| warning: false
+
 ggplot(
   penguins,
   aes(x = island, y = body_mass_g, color = island)
@@ -140,9 +137,9 @@ ggplot(
   theme(legend.position = "none")
 ```
 
-## Example: "one categorical predictor"
+## Example: "one categorical predictor" {.smaller}
 
-This actually gets treated as multiple *binary* (0/1) predictors:
+This actually gets treated as $k$ *binary* (0/1) variables, where k is equal to the number of levels in the categorical predictor, $k-1$ of which are included as predictors in the model:
 
 ```{r}
 bm_island_fit <- linear_reg() |>
@@ -153,7 +150,7 @@ tidy(bm_island_fit)
 
 $$
 \begin{aligned}
-\widehat{body~mass} = 4716 &- 1003 \times islandDream \\ &- 1010 \times islandTorgersen
+\widehat{\text{body mass (g)}} = 4716 &- 1003 \times \text{islandDream} \\ &- 1010 \times \text{islandTorgersen}
 \end{aligned}
 $$
 
@@ -161,10 +158,8 @@ $$
 
 It's just a concise way of summarizing the within-group means of the response variable:
 
-:::::: columns
-
-:::: {.column width="50%"}
-
+::::: columns
+::: {.column width="50%"}
 ```{r}
 penguins |>
   group_by(island) |>
@@ -172,11 +167,9 @@ penguins |>
     avg_body_mass = mean(body_mass_g, na.rm = TRUE)
   )
 ```
-
-::::
+:::
 
 ::: {.column width="50%"}
-
 ```{r}
 new_penguins = tibble(
   island = c("Biscoe", "Dream", "Torgersen")
@@ -185,10 +178,8 @@ new_penguins = tibble(
 predict(bm_island_fit, 
         new_penguins)
 ```
-
 :::
-
-::::::
+:::::
 
 ## Example: numerical and categorical predictors
 
@@ -197,6 +188,7 @@ predict(bm_island_fit,
 #| layout-ncol: 2
 #| echo: false
 #| fig-asp: 1
+#| warning: false
 
 # Plot A
 bm_fl_island_fit <- linear_reg() |>
@@ -222,7 +214,7 @@ ggplot(
   theme(legend.position = "bottom")
 ```
 
-## Example: numerical and categorical predictors
+## Example: numerical and categorical predictors {.smaller}
 
 The additive model:
 
@@ -235,13 +227,13 @@ tidy(bm_fl_island_fit)
 
 $$
 \begin{aligned}
-\widehat{body~mass} = -4625 &+ 44.5 \times flipper~length \\
-&- 262 \times Dream \\
-&- 185 \times Torgersen
+\widehat{\text{body mass (g)}} = -4625 &+ 44.5 \times \text{flipper length (mm)} \\
+&- 262 \times \text{Dream} \\
+&- 185 \times \text{Torgersen}
 \end{aligned}
 $$
 
-## Example: numerical and categorical predictors {.small}
+## Example: numerical and categorical predictors {.scrollable .smaller}
 
 Change *one character* in the code, and you get the interaction model:
 
@@ -252,26 +244,22 @@ bm_fl_island_int_fit <- linear_reg() |>
 tidy(bm_fl_island_int_fit) |> select(term, estimate)
 ```
 
-
 $$
 \begin{aligned}
-\widehat{body~mass} = -5464 &+ 48.5 \times flipper~length \\
-&+ 3551 \times Dream \\
-&+ 3218 \times Torgersen \\
-&- 19.4 \times flipper~length*Dream \\
-&- 17.4 \times flipper~length*Torgersen
+\widehat{\text{body mass (g)}} = -5464 &+ 48.5 \times \text{flipper length (mm)} \\
+&+ 3551 \times \text{Dream} \\
+&+ 3218 \times \text{Torgersen} \\
+&- 19.4 \times \text{flipper length*Dream} \\
+&- 17.4 \times \text{flipper length*Torgersen}
 \end{aligned}
 $$
 
+## Example: numerical and categorical predictors {.smaller}
 
+Same code with each of an additive and interaction model fit:
 
-
-## Example: numerical and categorical predictors
-
-Same code with a different model fit:
-
-:::::: columns
-:::: {.column width="50%"}
+::::: columns
+::: {.column width="50%"}
 ```{r}
 new_penguin <- tibble(
   flipper_length_mm = 205,
@@ -281,10 +269,9 @@ new_penguin <- tibble(
 predict(bm_fl_island_fit, 
         new_data = new_penguin)
 ```
+:::
 
-::::
-
-:::: {.column width="50%"}
+::: {.column width="50%"}
 ```{r}
 new_penguin <- tibble(
   flipper_length_mm = 205,
@@ -294,33 +281,32 @@ new_penguin <- tibble(
 predict(bm_fl_island_int_fit, 
         new_data = new_penguin)
 ```
-::::
-
-::::::
-
+:::
+:::::
 
 ## Example: many numerical predictors
 
-2 predictors + 1 response = 3 dimensions. Instead of a line of best fit, it's a *plane* of best fit:
+2 predictors + 1 response = 3 dimensions.
+Instead of a line of best fit, it's a *plane* of best fit:
 
 ```{r}
 #| echo: false
+#| warning: false
+
 plot3vars <- scatterplot3d(
   penguins[,c("bill_length_mm", "flipper_length_mm", "body_mass_g")],
   pch = 19, 
-  color = "blue",
+  color = "cornflowerblue",
   xlab = "Bill length (mm)", 
   ylab = "Flipper length (mm)", 
   zlab = "Body mass (grams)"
 ) 
 
 model <- lm(body_mass_g ~ bill_length_mm + flipper_length_mm, data = penguins)
-plot3vars$plane3d(model, col = "darkred")
+plot3vars$plane3d(model, col = "purple")
 ```
 
-
-
-## Example: many numerical predictors
+## Example: many numerical predictors {.smaller}
 
 ```{r}
 bm_fl_bl_fit <- linear_reg() |>
@@ -329,10 +315,8 @@ bm_fl_bl_fit <- linear_reg() |>
 tidy(bm_fl_bl_fit)
 ```
 
-
-
 $$
-\small\widehat{body~mass}=-5736+48.1\times flipper~length+6\times bill~length
+\small\widehat{\text{body mass (g)}}=-5736+48.1\times \text{flipper length (mm)}+6\times \text{bill length (mm)}
 $$
 
 ## Example: many numerical predictors
@@ -348,25 +332,31 @@ predict(bm_fl_bl_fit, new_data = new_penguin)
 
 ## Welcome to statistics!
 
-The code was basically the same every time. In this second half of the course, the code itself is not the primary complication. The code is merely a labor-saving device. Our focus shifts to understanding the conceptual and technical underpinnings of the code and interpreting the output correctly. This is subtle, and it tends to trip people up.
+The code was basically the same every time.
+In this second half of the course, the code itself is not the primary complication.
+The code is merely a labor-saving device.
+Our focus shifts to understanding the conceptual and technical underpinnings of the code and interpreting the output correctly.
+This is subtle, and it tends to trip people up.
 
 # FAQ
 
-## Does it matter what the base level is?
+## Does it matter what the base level is? {.smaller}
 
 Regarding the leveling of a categorical predictor:
 
-- It doesn't matter *technically*. The math doesn't care;
-- As long as you *know* what the baseline is, you are consistent throughout your analysis, and you interpret everything correctly, you're probably good;
-- Sometimes the application suggests a natural choice of baseline. You make interpretation and visualization *easier* if you respect that.
+-   It doesn't matter *technically* speaking. The math doesn't change;
+-   As long as **you know** what the baseline is, you are consistent throughout your analysis, and you interpret everything correctly, you're probably good;
+-   Sometimes the application suggests a natural choice of baseline. Interpretation and visualization may be *easier* if you respect this natural choice
+    -   For example, if the categorical variable is ordinal, it might make sense to use the "lowest ranked" variable as the baseline, so-to-speak (e.g., predict on grade level, where "Freshman" is the baseline level)
 
 ## Is interaction the same as separate regressions?
 
-Sort of. You get the same estimates of the slopes and intercepts, but the uncertainty quantification (standard errors) is different. 
+Sort of.
+You get the same estimates of the slopes and intercepts, but the uncertainty quantification (standard errors) is different.
 
 This matters, but we suppress the nuance in this class.
 
-## The interaction model
+## The interaction model {.scrollable .smaller}
 
 ```{r}
 linear_reg() |>
@@ -379,7 +369,7 @@ So on Biscoe island (where Dream = Torgersen = 0), the line is
 
 $$
 \begin{aligned}
-\widehat{body~mass} = -5464 &+ 48.5 \times flipper~length
+\widehat{\text{body mass (g)}} = -5464 &+ 48.5 \times \text{flipper length (mm)}
 \end{aligned}
 $$
 
@@ -403,37 +393,39 @@ Same estimates, but different standard errors.
 ## The default picture
 
 ```{r}
+#| warning: false
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = island)) + 
   geom_point() + 
   geom_smooth(method = "lm")
 ```
 
-These are *separate* simple regressions within each group. The slopes and the intercepts are the same as the interaction model, but the uncertainty bands are different.
+These are *separate* simple regressions within each group.
+The slopes and the intercepts are the same as the interaction model, but the uncertainty bands are different.
 
 # A second look at $R^2$
 
-## Recap: our first look
+## Recap: our first look {.scrollable .medium}
 
 $R^2$ measures "goodness-of-fit:"
 
 ::: incremental
-- $R^2$ is "a Rotten Tomatoes score" for your model;
-- It ranges from 0 (horrific) to 1 (perfect) and measures how well the linear model fits the data;
-- In simple linear regression with one numerical predictor, $R^2$ is literally equal to the square of the correlation coefficient between the predictor $X$ and the numerical response $Y$;
-- When you move from one predictor to many, this relationship breaks down, but $R^2$ remains meaningful.
+-   $R^2$ is "a Rotten Tomatoes score" for your model;
+-   It ranges from 0 (horrific) to 1 (perfect) and measures how well the linear model fits the data;
+-   In simple linear regression with one numerical predictor, $R^2$ is literally equal to the square of the correlation coefficient between the predictor $X$ and the numerical response $Y$;
+-   When you move from one predictor to many, this relationship breaks down, but $R^2$ remains meaningful.
 :::
 
 . . .
 
 So what is it, actually?
 
-
-## Reminder: residuals
+## Reminder: residuals {.scrollable .smaller}
 
 Every data point has one:
 
 ```{r}
 #| message: false
+#| warning: false
 #| echo: false
 #| fig-align: center
 
@@ -449,14 +441,15 @@ ggplot(penguins_small, aes(x = flipper_length_mm, y = body_mass_g)) +
   theme(legend.position = "none")
 ```
 
-Some are big, some are small. Some are above the line (positive), and some are below the line (negative).
+Some are big, some are small.
+Some are above the line (positive), and some are below the line (negative).
 
 ## Reminder: residuals {.scrollable}
 
 The residuals are what's left over after the model attempts to "explain" the response:
 
 $$
-e_i = \text{observed} - \text{predicted} = y_i - \hat{y}_i.
+e_i = \text{observed} - \text{predicted} = y_i - \widehat{y_i}.
 $$
 
 Every data point has one:
@@ -466,10 +459,10 @@ augment(bm_fl_fit, penguins) |>
   select(flipper_length_mm, body_mass_g, .pred, .resid)
 ```
 
-
 ## How it started {.medium}
 
-The original distribution of the response. This is the mess we're trying to clean up with a model:
+The original distribution of the response.
+This is the mess we're trying to clean up with a model:
 
 ```{r}
 #| warning: false
@@ -550,31 +543,25 @@ augment(bm_fl_fit, penguins) |>
   )
 ```
 
-
-## The main idea
+## The main idea {.scrollable}
 
 The model is trying to "explain" the variation in the response:
 
 ::: incremental
-- Variation in the response (blue distribution), is the mess we're trying to clean up;
-- Variation in the residuals (red distribution), is the leftover after the model gives it a shot;
-- The more leftover there is, the worse the model did;
-- You can *quantify* this with the variance. The smaller the variance of the residuals relative to the original response variance, the better.
+-   Variation in the response (blue distribution), is the mess we're trying to clean up;
+-   Variation in the residuals (red distribution), is the leftover after the model gives it a shot;
+-   The more leftover there is, the worse the model did;
+-   You can *quantify* this with the variance. The smaller the variance of the residuals relative to the original response variance, the better.
 :::
 
 . . .
 
 That's what $R^2$ actually is: the proportion of the variance in the response explained by the model.
 
+## $R^2\approx 0$ {.smaller}
 
-
-
-
-
-## $R^2\approx 0$ 
-
-Horrifically awful fit. The model didn’t explain (clean up) anything:
-
+Horrifically awful fit.
+The model didn’t explain (clean up) anything:
 
 ```{r}
 #| echo: false
@@ -624,8 +611,7 @@ augment(myfit, df) |>
   )
 ```
 
-## $R^2\approx 0.28$ 
-
+## $R^2\approx 0.28$
 
 ```{r}
 #| echo: false
@@ -674,8 +660,7 @@ augment(myfit, df) |>
   )
 ```
 
-## $R^2\approx 0.63$ 
-
+## $R^2\approx 0.63$
 
 ```{r}
 #| echo: false
@@ -724,8 +709,7 @@ augment(myfit, df) |>
   )
 ```
 
-## $R^2\approx 0.97$ 
-
+## $R^2\approx 0.97$
 
 ```{r}
 #| echo: false
@@ -774,10 +758,10 @@ augment(myfit, df) |>
   )
 ```
 
-## $R^2\approx 1$ 
+## $R^2\approx 1$ {.smaller}
 
-Perfect fit. The model explained (cleaned up) everything:
-
+Perfect fit.
+The model explained (cleaned up) everything:
 
 ```{r}
 #| echo: false
@@ -854,9 +838,7 @@ $$
 \end{aligned}
 $$
 
-## Literally {.medium}
-
-
+## Literally {.scrollable .medium}
 
 ```{r}
 augment(bm_fl_fit, penguins) |>
@@ -880,41 +862,44 @@ linear_reg() |>
 
 ## Summary
 
-- $R^2$ is a number between zero and one, and it represents the proportion of the variance in the response $Y$ that is explained by the model fit;
+-   $R^2$ is a number between zero and one, and it represents the proportion of the variance in the response $Y$ that is explained by the model fit;
 
-- This is *the* interpretation, regardless how many predictors you have;
+-   This is *the* interpretation, regardless of how many predictors you have;
 
-- In *simple* regression with one numerical predictor, $R^2$ it is also the square of the correlation coefficient, but this doesn't generalize to the multivariate setting.
+-   In *simple* linear regression with one numerical predictor, $R^2$ is also the square of the correlation coefficient, but this doesn't generalize to the multivariate setting.
 
-# Model selection 
+# Model selection
 
-## Model selection
+## Model selection {.scrollable}
 
-**Question**: Given many competing models for *the same response*, which model is "best"? What does that even mean?
+**Question**: Given many competing models for *the same response*, which model is "best"?
+What does that even mean?
 
 . . .
 
 **Answer**: Assign a "quality score" to each model, and pick the model with the best score:
 
-| Model | Score | Verdict |
-| --- | --- | --- | 
-| Simple | 0.1 | ❌ |
-| Additive | 0.5 | ✅ |
-| Interaction | 0.48 | ❌ |
+| Model       | Score | Verdict |
+|-------------|-------|---------|
+| Simple      | 0.1   | ❌      |
+| Additive    | 0.5   | ✅      |
+| Interaction | 0.48  | ❌      |
 
 . . .
 
-**Variable selection**: all of our models were linear, and they differed only by which predictor variables are included. By ranking models by quality score and picking the "best" one, we can determine which predictors are the "most important" to include.
+**Variable selection**: all of our models were linear, and they differed only by which predictor variables are included.
+By ranking models by a quality score and picking the "best" one, we can determine which predictors are the "most important" to include.
 
-## Selection criteria
+## So... what "quality score" to choose? {.scrollable .medium}
 
-This is a big area of statistical research. There are loads of "quality scores" you could consider, and they prioritize different things: predictive accuracy, goodness-of-fit, simplicity, fairness, etc.
+This is a big area of statistical research.
+There are loads of "quality scores" you could consider, and they prioritize different things: predictive accuracy, goodness-of-fit, simplicity, fairness, etc.
 
-- $R^2$
-- adjusted $R^2$
-- Akaike Information criterion (AIC)
-- Bayesian information criterion (BIC)
-- ... so many more
+-   $R^2$
+-   adjusted $R^2$
+-   Akaike Information criterion (AIC)
+-   Bayesian information criterion (BIC)
+-   ... so many more
 
 We won't go into detail, but you will if you keep studying statistics.
 
@@ -928,11 +913,10 @@ bm_fl_fit |>
 
 ## $R^2$'s dirty little secret
 
-$R^2$ gives participation trophies. It *always* goes up when you add any new variable to the model, even if that variable is worthless.
+$R^2$ gives participation trophies.
+It *always* goes up when you add any new variable to the model, even if that variable is worthless.
 
-## Adding a phony variable {.medium}
-
-
+## Adding a phony variable {.scrollable .medium}
 
 The original model fit:
 
@@ -943,12 +927,9 @@ linear_reg() |>
   pull(r.squared)
 ```
 
-
 . . .
 
-
 Add a predictor that is literally just a bunch of random numbers:
-
 
 ```{r}
 #| echo: false
@@ -967,22 +948,26 @@ linear_reg() |>
   pull(r.squared)
 ```
 
-## Adjusted $R^2$
+## Adjusted $R^2$ {.smaller .scrollable}
 
-Because vanilla $R^2$ blithely rewards the addition of *any* variable, no matter how meaningless, you shouldn't use it for model selection. Instead, use *adjusted* $R^2$. The formula is in the textbook if you're dying to know, but here's the tea:
+Because vanilla $R^2$ blithely rewards the addition of *any* variable, no matter how meaningless, you shouldn't use it for model selection.
+Instead, use **adjusted** $R^2$.
+The formula is in the textbook if you're dying to know, but here's the tea:
 
 ::: incremental
-- adjusted $R^2$ penalizes the inclusion of unnecessary predictors;
-- It prioritizes a *parsimonious model*:
-    - a model that fits/predicts well, *and*...
-    - a model that's not too complicated (so our pear brains can still understand it);
-- Occam's razor!
+-   adjusted $R^2$ penalizes the inclusion of unnecessary, unhelpful predictors;
+-   It prioritizes a *parsimonious model*:
+    -   a model that fits/predicts well, *and*...
+    -   a model that's not too complicated (so our pear brains can still understand it);
+-   Occam's razor!
 :::
+
+![](img/15/occam.png){fig-align="center"}
 
 ## For the penguins
 
-:::::: columns
-:::: {.column width="50%"}
+::::: columns
+::: {.column width="50%"}
 ```{r}
 bm_fl_fit |> glance() |>
   pull(adj.r.squared)
@@ -997,11 +982,9 @@ bm_island_fit |> glance() |>
 bm_fl_island_fit |> glance() |>
   pull(adj.r.squared)
 ```
-::::
+:::
 
-
-:::: {.column width="50%"}
-
+::: {.column width="50%"}
 ```{r}
 bm_fl_island_int_fit |> glance() |>
   pull(adj.r.squared)
@@ -1011,32 +994,24 @@ bm_fl_island_int_fit |> glance() |>
 bm_fl_bl_fit |> glance() |>
   pull(adj.r.squared)
 ```
-
-::::
-
-::::::
-
-
-
+:::
+:::::
 
 ## Balancing fit and complexity
 
 ::: incremental
+-   More complex models (i.e., models with more predictors) tend to fit the data at hand better, but may not generalize well to new data.
 
-- More complex models (i.e., models with more predictors) tend to fit the data at hand better, but may not generalize well to new data.
-
-- Model selection criteria, like adjusted $R^2$, help balance model fit and complexity to avoid overfitting by penalizing models with more predictors.
-
+-   Model selection criteria, like adjusted $R^2$, help balance model fit and complexity to avoid overfitting by penalizing models with more predictors.
 :::
 
 ## Overfitting {.smaller}
 
 ::: incremental
+-   Overfitting occurs when a model captures not only the underlying relationship between predictors and outcome but also the random noise in the data.
 
-- Overfitting occurs when a model captures not only the underlying relationship between predictors and outcome but also the random noise in the data.
+-   Overfitted models tend to perform well on the observed data but poorly on new, unseen data.
 
-- Overfitted models tend to perform well on the observed data but poorly on new, unseen data.
-  - Good news: We have techniques to detect and prevent overfitting.
-  - Bad news: We won't get into those until next week.
-
+    -   Good news: We have techniques to detect and prevent overfitting.
+    -   Bad news: This is a topic for another day.
 :::
