@@ -239,7 +239,7 @@ Furthermore, while you may not do the reading we are suggesting here, you should
 
 ## Question 6
 
-a.  Using appropriate methods, relevel each of the `state` and `time` variables so that `"PA"` and `"before"` are the baselines, respectively.
+a.  Copy / paste the code provided above to load in the data and store the data frame as `card_krueger`. Then, update the data frame using appropriate methods to relevel each of the `state` and `time` variables so that `"PA"` and `"before"` are the baselines, respectively.
 
 b.  How many restaurants were sampled in each state? Use code to support your response.
 
