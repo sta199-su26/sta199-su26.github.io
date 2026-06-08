@@ -1,0 +1,30 @@
+---
+title: "Linear Regression - Assumptions & Diagnostics"
+subtitle: "Lecture 16"
+date: "2026-06-09"
+format: 
+  revealjs:
+    output-file: 16-regression-diagnostics-slides.html
+  html: 
+    output-file: 16-regression-diagnostics.html
+auto-stretch: false
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+library(tidymodels)
+library(ggthemes)
+```
+
+# AE-14
+
+## Quick Notes
+
+-   When interpreting intercepts *and* slopes in the context of any *linear* regression modeling, your interpretation should include both of the following phrases: "we expect" (or functionally similar) **AND** "on average"
+
+-   When you've fit a **multiple** linear regression model (i.e., > 1 predictor), your [slope]{.underline} interpretations **must also** include the following: "all else equal" (or functionally similar)
+
+-   I know it's prescriptive and somewhat repetitive but for your own sanity (& mine <3), please please include these statements in **every** interpretation you provide
+
+
