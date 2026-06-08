@@ -1,5 +1,6 @@
 ---
 title: "AE 12: Modeling fish 🐟"
+subtitle: "Suggested answers"
 format:
   html:
     self-contained: true
