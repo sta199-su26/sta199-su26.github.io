@@ -1,81 +1,80 @@
 ---
-title: HW 5
-subtitle: Wages up, parasites down
-description: "Due: Wed, Mar 25, 11:59 pm"
-categories: HW
-filters:
-  - ../remove-fmt-skip.lua
+title: Lab 4
+subtitle: Linear Regression Modeling
+categories: Lab
+description: "Due to Gradescope by Weds. June 10 11:59 PM"
 draft: false
 ---
 
 # Introduction
 
-This is a two-part homework assignment:
+In this lab, you'll practice with simple and multiple regression modeling while continuing to reinforce data science / coding best practices mastered in the first half of the course.
 
-- **Part 1 -- 🤖 Feedback from AI:** Not graded, for practice, you get immediate feedback with AI, based on rubrics designed by the course instructor. Complete in `hw-5-part-1.qmd`, no submission required.
+## Getting Started
 
-- **Part 2 -- 🧑🏽‍🏫 Feedback from Humans:** Graded, you get feedback from the course instructional team in about a week. Complete in `hw-5-part-2.qmd`, submit on Gradescope.
-
-By now you should be familiar with how to get started with a homework assignment by cloning the GitHub repo for the assignment.
+By now you should be familiar with how to get started on a lab assignment by cloning the GitHub repo for the assignment.
 
 <details>
-<summary>Click to expand if you need a refresher on how to get started with a homework assignment.</summary>
+
+<summary>Click to expand if you need a refresher on how to get started with a lab assignment.</summary>
 
 -   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
 -   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
--   Go to the course organization at [github.com/sta199-s26](https://github.com/sta199-s26) organization on GitHub.
-    Click on the repo with the prefix **hw-5**.
-    It contains the starter documents you need to complete the homework.
--   Click on the green **CODE** button, select **Use SSH**.
-    Click on the clipboard icon to copy the repo URL.
+-   Go to the course organization at [github.com/sta199-su26](https://github.com/sta199-su26) organization on GitHub. Click on the repo with the prefix **lab-3**. It contains the starter documents you need to complete the homework.
+-   Click on the green **CODE** button, select **Use SSH**. Click on the clipboard icon to copy the repo URL.
 -   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
 -   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
 -   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+
 </details>
 
-By now you should also be familiar with guidelines for formatting your code and plots as well as your Git and Gradescope workflow.
+Open the *lab-4.qmd* template Quarto file and update the `authors` field to add your name (first and last).
+Render the document.
+Examine the rendered document and make sure your name is updated in the document.
+Commit your changes with a meaningful commit message and push to GitHub.
 
 <details>
+
 <summary>Click to expand if you need a refresher on assignment guidelines.</summary>
-{{< include _guidelines.qmd >}}
+
+**Code Guidelines:**
+
+As we've discussed in the lecture, your plots should include an informative title, axes and legends should have human-readable labels, and aesthetic choices should be carefully considered.
+
+Additionally, code should follow the [tidyverse style](https://style.tidyverse.org/).
+In particular,
+
+-   there should be spaces before and line breaks after each `+` when building a `ggplot`,
+
+-   there should also be spaces before and line breaks after each `|>` in a data transformation pipeline,
+
+-   code should be properly indented,
+
+-   there should be spaces around `=` signs and spaces after commas.
+
+Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF.
+Long lines that run off the page should be split across multiple lines with line breaks.
+
+As you complete the lab and other assignments in this course, remember to develop a sound workflow for reproducible data analysis.
+This assignment will periodically remind you to render, commit, and push your changes to GitHub.
+You should have at least 3 commits with meaningful commit messages by the end of the assignment.
+
 </details>
-
-
-# Part 1 -- Feedback from AI
-
-Your answers to the questions in this part should go in the file `hw-5-part-1.qmd`.
-
-## Instructions
-
-Write your answer to each question in the appropriate section of the `hw-5-part-1.qmd` file.
-Then, highlight your answer to a question, click on _Addins > AIFEEDR > Get feedback_.
-In the app that opens, select the appropriate homework number (4) and question number.
-Then click on _Get Feedback_.
-Please be patient, feedback generation can take a few seconds. 
-Once you read the feedback, you can go back to your Quarto document to improve your answer based on the feedback. 
-You will then need to click the red X on the top left corner of the Viewer pane to stop the feedback app from running before you can re-render your Quarto document.
-
-<details>
-<summary>Click to expand if you want to review the video that demonstrates how to use the AI feedback tool.</summary>
-{{< video https://www.youtube.com/embed/EyT6QQN1ouQ?si=DsG-laE30BykMJby title="aifeedr">}}
-</details>
-
-## Context
-
-Parasites can cause infectious disease – but not all animals are affected by the same parasites. Some parasites are present in a multitude of species and others are confined to a single host. It is hypothesized that closely related hosts are more likely to share the same parasites. More specifically, it is thought that closely related hosts will live in similar environments and have similar genetic makeup that coincides with optimal conditions for the same parasite to flourish.
-
-In this part of the homwework, you will explore how much evolutionary history predicts parasite similarity.
 
 ## Packages
 
-In this part you will work with the **tidyverse** package, which is a collection of packages for doing data analysis in a "tidy" way.
+In this part you will work with the **tidyverse** and **tidymodels** packages.
 
 ```{r}
 library(tidyverse)
 library(tidymodels)
 ```
 
-## Data
+# Part 1: Parasites
+
+Parasites can cause infectious disease – but not all animals are affected by the same parasites. Some parasites are present in a multitude of species and others are confined to a single host. It is hypothesized that closely related hosts are more likely to share the same parasites. More specifically, it is thought that closely related hosts will live in similar environments and have similar genetic makeup that coincides with optimal conditions for the same parasite to flourish.
+
+In this part of the lab, you will explore how much evolutionary history predicts parasite similarity.
 
 The dataset comes from an Ecology Letters paper by Cooper at al. (2012) entitled “Phylogenetic host specificity and understanding parasite sharing in primates” located [here](https://onlinelibrary.wiley.com/doi/10.1111/j.1461-0248.2012.01858.x). The goal of the paper was to identify the ability of evolutionary history and ecological traits to characterize parasite host specificity.
 
@@ -95,41 +94,33 @@ Subsequent columns describe metrics that compare the species:
 
 The data are available in `parasites.csv` in your `data` folder.
 
-## Questions
-
-::: render-commit-push
-Do not forget to render, commit, and push regularly, after each substantial change to your document (e.g., after answering each question).
-Use succinct and informative commit messages.
-Make sure to commit and push all changed files so that your Git pane is empty afterward.
-:::
-
-### Question 1
+## Question 1
 
 Let’s start by reading in the `parasites` data and examining the relationship between `divergence_time` and `parsim`.
 
 a.  Load the data and save the data frame as `parasites`.
 
-b.  Based on the goals of the analysis, what is the outcome variable?
+b.  Based on the goals of the analysis, which variable should we use as the outcome variable?
 
-c.  Visualize the relationship between the two variables, making sure to place the outcome and predictor variables on the appropriate axes.
+c.  Visualize the relationship between the two variables, making sure to place the outcome (y) and predictor (x) variables on the appropriate axes.
 
 d.  Use the visualization to describe the relationship between the two variables.
 
-### Question 2
+## Question 2
 
 Next, model this relationship.
 
-a.  Fit the model and write the estimated regression equation.
+a.  Fit the model and write the fitted equation using proper notation (i.e., using LaTeX).
 
 b.  Interpret the slope and the intercept in the context of the data.
 
 c.  Recreate the visualization from the previous question, this time adding a regression line to the visualization.
 
-d.  What do you notice about the prediction (regression) line that may be strange, particularly for very large divergence times?
+d.  What do you notice about the estimated regression line that may be strange, particularly with respect to predictions for very large divergence times?
 
-### Question 3
+## Question 3
 
-Since `parsim` takes values between 0 and 1, but predicted values from a linear regression model can range between (−∞,+∞), we will transform `parsim` using a logit transformation. This transformation is commonly used for proportion data because it maps values between (0,1) to values between (−∞,+∞). 
+Since `parsim` takes values between 0 and 1, but predicted values from a linear regression model can range between (−∞,+∞), we will transform `parsim` using a logit transformation. This transformation is commonly used for proportion data because it maps values between (0,1) to values between (−∞,+∞). We will learn more about this transformation in our forthcoming study of *logistic* regression.  
 
 a.  Using mutate, create a new variable in the `parasites` data frame called  `transformed_parsim` that is calculated as `log(parsim/(1-parsim))`. Add this variable to your data frame.
 
@@ -137,15 +128,15 @@ a.  Using mutate, create a new variable in the `parasites` data frame called  `t
     `log()` in R represents the **nautral log**.
     :::
 
-b.  Then, visualize the relationship between `divergence_time` and `transformed_parsim`. Add a regression line to your visualization.
+b.  Then, visualize the relationship between `divergence_time` and `transformed_parsim`, making sure to place the outcome (y) and predictor (x) variables on the appropriate axes. Add a regression line to your visualization.
 
 c.  Write a 1-2 sentence description of what you observe in the visualization.
 
-### Question 4
+## Question 4
 
 *Which variable is the strongest individual predictor of parasite similarity between species?*
 
-To answer this question, begin by fitting a linear regression model to each pair of variables. Do not report the model outputs in a tidy format but save each one as `dt_model`, `dist_model`, `BM_model`, and `prec_model`, respectively.
+To answer this question, begin by fitting a linear regression model to each of the following pairs of variables, where `transformed_parsim` is the outcome in each model. Do not report the model outputs in a tidy format but save each one as `dt_model`, `dist_model`, `BM_model`, and `prec_model`, respectively.
 
 -   `divergence_time` and `transformed_parsim`
 
@@ -155,15 +146,15 @@ To answer this question, begin by fitting a linear regression model to each pair
 
 -   `precdiff` and `transformed_parsim`
 
-a.  Report the slopes for each of these models. Use proper notation.
+a.  Report the slopes for each of these models, clearly identifying which reported slope belongs to which model.
 
 b.  To answer our question of interest, would it be useful to compare the slopes in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not?
 
-### Question 5
+## Question 5
 
 Now, what if we calculated $R^2$ to help answer our question? To compare the explanatory power of each individual predictor, we will look at $R^2$ between the models. $R^2$ is a measure of how much of the variability in the response variable is explained by the model.
 
-As you may have guessed from the name $R^2$ can be calculated by squaring the correlation when we have a simple linear regression model. The correlation r takes values -1 to 1, therefore, $R^2$ takes values 0 to 1. Intuitively, if r=1 or −1, then $R^2$=1, indicating the model is a perfect fit for the data. If r≈0 then $R^2$≈0, indicating the model is a very bad fit for the data.
+As you may have guessed from the name, $R^2$ can be calculated by squaring the correlation when we have a simple linear regression model. The correlation r takes values -1 to 1, therefore, $R^2$ takes values 0 to 1. Intuitively, if r=1 or −1, then $R^2$=1, indicating the model is a perfect fit for the data. If r≈0 then $R^2$≈0, indicating the model is a very bad fit for the data.
 
 You can calculate $R^2$ using the glance function. For example, you can calculate $R^2$ for `dt_model` using the code `glance(dt_model)$r.squared`.
 
@@ -171,28 +162,7 @@ a.  Calculate and report $R^2$ for each model fit in the previous exercise.
 
 b.  To answer our question of interest, would it be useful to compare the $R^2$ in each model to choose the variable that is the strongest predictor of parasite similarity? Why or why not? And if so, which variable is the strongest individual predictor of parasite similarity between species?
 
-::: render-commit-push
-Now is another good time to render, commit, and push your changes to GitHub with an informative and concise commit message.
-And once again, make sure to commit and push all changed files so that your Git pane is empty afterward.
-We keep repeating this because it's important and because we see students forget to do this.
-So take a moment to make sure you're practicing good version control habits.
-:::
-
-# Part 2 -- Feedback from Humans
-
-Your answers to the questions in this part should go in the file `hw-5-part-2.qmd`.
-
-## Packages
-
-You will use the **tidyverse** and **tidymodels** packages for data wrangling and visualization, 
-
-You may choose to load other packages as needed, particularly for improving your plots. 
-If you do so, add the functions to load these packages in the code cell labeled `load-packages`.
-
-```{r}
-library(tidyverse)
-library(tidymodels)
-```
+# Part 2: Card & Krueger
 
 ## Context
 
