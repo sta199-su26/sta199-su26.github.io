@@ -2,7 +2,7 @@
 title: "Logistic regression"
 subtitle: "Lecture 19"
 author: "Katie Solarz"
-date: "2026-03-30"
+date: "2026-06-10"
 format: 
   revealjs: 
     output-file: 19-logistic-regression-1-slides.html
@@ -16,8 +16,6 @@ format:
     code-link: true
 ---
 
-## While you wait: Participate 📱💻 {.xsmall}
-
 ```{r}
 #| label: load-packages
 #| message: false
@@ -29,7 +27,7 @@ library(fivethirtyeight)
 library(palmerpenguins)
 library(MASS)
 hp_spam <- read_csv("data/hp-spam.csv")
-todays_ae <- "ae-19-spam-filter"
+todays_ae <- "ae-17-spam-filter"
 ```
 
 ```{r}
@@ -48,35 +46,6 @@ fit <- glm(y ~ x, family = binomial)
 seq_x = seq(1.2 * min(x), 1.2 * max(x), length.out = 500)
 y_vals <- 1 / (1 + exp(-(fit$coefficients[1] + fit$coefficients[2] * seq_x)))
 ```
-
-:::::: columns
-:::: {.column width="70%"}
-::: wooclap
-
-What is the difference between the additive vs. interaction linear model when you run a regression model with one numeric and one categorical predictor?
-
-::: wooclap-choices
-- This is a trick question - both models require only numeric predictors.
-- Both give you different lines for each group, but the additive model requires the lines be parallel.
-- Both give you different lines for each group, but the interaction model requires the lines be parallel.
-- Where is John Zito and what have you done with him?
-:::
-
-:::
-::::
-
-::: {.column width="30%"}
-{{< include _wooclap-column.qmd >}}
-:::
-::::::
-
-## Reminder: project peer eval
-
-- Please submit it on time!
-- Dig the emails out of your spam/junk folder;
-- "Teamwork" is 10% of your project score;
-- These later peer evals bear the most weight in assessing that;
-- Please be thorough and honest.
 
 # So where were we...
 
@@ -457,31 +426,6 @@ $$
 $$
 
 So, our model predicts that an email with no exclamation marks has a 9% probability of being spam.
-
-## Participate 📱💻 {.xsmall}
-
-
-:::::: columns
-:::: {.column width="70%"}
-::: wooclap
-
-The slope of the logistic regression model for these data is 0.000272. Which of the following is the best interpretation of this value?
-
-::: wooclap-choices
-- If we add one exclamation mark to the model, we predict the probability of an email being spam will increase by 0.000272, on average.
-- If we add one exclamation mark to the model, we predict the odds of an email being spam will increase by 0.000272, on average.
-- If we add one exclamation mark to the model, we predict the odds of an email being spam to be higher by a factor of e^0.000272 = 1.000272, on average.
-- The odds of an email being spam are decreasing in the number of exclamation marks.
-:::
-
-:::
-::::
-
-::: {.column width="30%"}
-{{< include _wooclap-column.qmd >}}
-:::
-::::::
-
 
 ## Interpreting the slope is tricky {.scrollable}
 
