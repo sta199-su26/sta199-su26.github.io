@@ -215,12 +215,14 @@ Katie Solarz
 </div>
 
   <p class="date">June 9, 2026</p>
+</section><section><section id="commentary-on-projects" class="title-slide slide level1 center"><h1>Commentary on Projects</h1>
+<p>Milestone 3 primer</p>
 </section><section id="todays-topics" class="slide level2"><h2>Today’s Topics</h2>
 <ul>
 <li><p>Finish AE-14</p></li>
 <li><p>Model assumptions</p></li>
 <li><p>Model diagnostics</p></li>
-</ul></section><section><section id="ae-14" class="title-slide slide level1 center"><h1>AE-14</h1>
+</ul></section></section><section><section id="ae-14" class="title-slide slide level1 center"><h1>AE-14</h1>
 
 </section><section id="quick-notes" class="slide level2 small"><h2>Quick Notes</h2>
 <div>
@@ -545,6 +547,60 @@ $ width_mm  &lt;dbl&gt; 6.18, 8.03, 4.69, 5.69, 4.35, 6.89, 5.56, 6.40, 5.…</c
 </div>
 </div>
 </div>
+</section><section id="q-q-plot-of-residuals" class="slide level2 scrollable"><h2>Q-Q plot of residuals</h2>
+<p>New <code>geom_*()</code> unlocked!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>(diamonds_aug, <span class="fu">aes</span>(<span class="at">sample =</span> .resid)) <span class="sc">+</span></span>
+<span id="cb10-2"><a></a>  <span class="fu">stat_qq</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb10-3"><a></a>  <span class="fu">stat_qq_line</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-5"><a></a>    <span class="at">title =</span> <span class="st">"Q-Q Plot of Residuals"</span>,</span>
+<span id="cb10-6"><a></a>    <span class="at">x =</span> <span class="st">"Theoretical Quantiles"</span>,</span>
+<span id="cb10-7"><a></a>    <span class="at">y =</span> <span class="st">"Sample Quantiles"</span></span>
+<span id="cb10-8"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb10-9"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="16-regression-diagnostics_files/figure-revealjs/qq-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="again-what-are-we-looking-for" class="slide level2 small scrollable"><h2>Again, what are we looking for?</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="16-regression-diagnostics_files/figure-revealjs/qq-II-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p><strong>Normality:</strong> We expect to see normally distributed residuals, centered at 0. In the Q-Q plot, we would expect to see minimal deviation from the reference line</p></li>
+<li><p>Note that in the Q-Q plot, it’s ok if we see “some degree” of deviation (especially in the tails), but if there is a clear pattern or many observations which appear to be “off,” then that’s a clue that normality might be violated</p></li>
+</ul>
+<div class="question">
+<p>Based on the histogram and Q-Q plot, what do you think of the normality assumption underlying our simple linear regression model predicting diamond price from carat?</p>
+</div>
+</section><section id="from-slr-to-mlr" class="slide level2"><h2>From SLR to MLR</h2>
+<ul>
+<li><p>We fit a simple linear regression model with only one predictor (y = price, x = carat)</p></li>
+<li><p>However, these same sort of model assumption diagnostics that we saw (fitted vs.&nbsp;residuals plots, histograms of residuals, Q-Q plots) also apply to the multiple linear regression setting, since the residuals themselves are a function of all of the predictors</p></li>
+</ul></section><section id="takeaways" class="slide level2 small"><h2>Takeaways</h2>
+<div>
+<ul>
+<li class="fragment"><p>Linear regression relies on several assumptions about the relationship(s) between predictors, outcomes, and residuals</p></li>
+<li class="fragment"><p>When these assumptions are reasonably satisfied, the estimated regression coefficients have desirable statistical properties, and the conclusions from our model are more trustworthy</p></li>
+<li class="fragment"><p>Diagnostic plots help us assess whether the assumptions appear reasonable for our data</p></li>
+<li class="fragment"><p>No dataset is perfect; small departures from assumptions are common and do not automatically invalidate a regression analysis</p></li>
+<li class="fragment"><p>However, substantial violations should be acknowledged (discussion of limitations) and may motivate alternative modeling approaches or transformations</p></li>
+</ul>
+</div>
+</section><section id="looking-ahead" class="slide level2"><h2>Looking Ahead</h2>
+<ul>
+<li><p>As budding statistical analysts, it is our responsibility to evaluate these assumptions rather than simply fit a model and report the results</p></li>
+<li><p>If you choose the “statistical modeling” project path, one component of your final report must be an assessment of these linear regression assumptions for your final regression model</p></li>
+</ul>
 
 
 </section></section>
