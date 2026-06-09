@@ -192,13 +192,15 @@ How would you interpret the intercept in the context of these data--is it meanin
 What about the slope?
 :::
 
-## Assumptions for regression (single or multiple!) {.small .scrollable}
+## The 4 Assumptions (of linear regression modeling) {.small .scrollable}
+
+Just as a diamond’s value depends on its 4 Cs, the reliability of a linear regression model depends on its 4 core assumptions
 
 $$
 Y|X_1, \ldots, X_p \sim N(\beta_0 + \beta_1X_1 + \dots + \beta_pX_p, \sigma_\epsilon^2)
 $$
 
-The above is what we implicitly **assume** to be true when we preform standard regression modeling; this is a fancy expression (take 240 or 210 to learn more!) that basically encapsulates the following core assumptions:
+The above is what we implicitly **assume** to be true when we preform standard regression modeling; this is a fancy expression (take STA 240, 210, or 221 to learn more!) that basically encapsulates the following:
 
 ::: incremental
 1.  **Independence:** The errors (residuals) are independent from one another.
