@@ -601,6 +601,77 @@ ggplot(diamonds_aug, aes(x = .resid)) +
   theme_minimal(base_size = 18)
 ```
 
+## Q-Q plot of residuals {.scrollable}
 
+New `geom_*()` unlocked!
+
+```{r}
+#| label: qq
+
+ggplot(diamonds_aug, aes(sample = .resid)) +
+  stat_qq(size = 1.5) +
+  stat_qq_line(color = "red") +
+  labs(
+    title = "Q-Q Plot of Residuals",
+    x = "Theoretical Quantiles",
+    y = "Sample Quantiles"
+  ) +
+  theme_minimal()
+```
+
+## Again, what are we looking for? {.small .scrollable}
+
+```{r}
+#| label: qq-II
+#| echo: false
+
+ggplot(diamonds_aug, aes(sample = .resid)) +
+  stat_qq(size = 1.5) +
+  stat_qq_line(color = "red") +
+  labs(
+    title = "Q-Q Plot of Residuals",
+    x = "Theoretical Quantiles",
+    y = "Sample Quantiles"
+  ) +
+  theme_minimal()
+```
+
+-   **Normality:** We expect to see normally distributed residuals, centered at 0. In the Q-Q plot, we would expect to see minimal deviation from the reference line
+
+-   Note that in the Q-Q plot, it's ok if we see "some degree" of deviation (especially in the tails), but if there is a clear pattern or many observations which appear to be "off," then that's a clue that normality might be violated
+
+::: question
+
+Based on the histogram and Q-Q plot, what do you think of the normality assumption underlying our simple linear regression model predicting diamond price from carat?
+
+:::
+
+## From SLR to MLR
+
+-   We fit a simple linear regression model with only one predictor (y = price, x = carat)
+
+-   However, these same sort of model assumption diagnostics that we saw (fitted vs. residuals plots, histograms of residuals, Q-Q plots) also apply to the multiple linear regression setting, since the residuals themselves are a function of all of the predictors
+
+## Takeaways {.small}
+
+::: incremental
+
+-   Linear regression relies on several assumptions about the relationship(s) between predictors, outcomes, and residuals
+
+-   When these assumptions are reasonably satisfied, the estimated regression coefficients have desirable statistical properties, and the conclusions from our model are more trustworthy
+
+-   Diagnostic plots help us assess whether the assumptions appear reasonable for our data
+
+-   No dataset is perfect; small departures from assumptions are common and do not automatically invalidate a regression analysis
+
+-   However, substantial violations should be acknowledged (discussion of limitations) and may motivate alternative modeling approaches or transformations
+
+:::
+
+## Looking Ahead
+
+-   As budding statistical analysts, it is our responsibility to evaluate these assumptions rather than simply fit a model and report the results
+
+-   If you choose the "statistical modeling" project path, one component of your final report must be an assessment of these linear regression assumptions for your final regression model
 
 
