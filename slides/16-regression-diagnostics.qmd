@@ -18,6 +18,9 @@ library(ggthemes)
 library(patchwork)
 ```
 
+# Commentary on Projects
+Milestone 3 primer
+
 ## Today’s Topics
 
 -   Finish AE-14
