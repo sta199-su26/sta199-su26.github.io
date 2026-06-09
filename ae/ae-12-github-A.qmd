@@ -6,7 +6,8 @@ format:
     self-contained: true
 ---
 
-For this application exercise, we will work with data on fish. The dataset we will use, called `fish`, is on two common fish species in fish market sales.
+For this application exercise, we will work with data on fish.
+The dataset we will use, called `fish`, is on two common fish species in fish market sales.
 
 ```{r}
 #| label: load-packages-data
@@ -45,7 +46,7 @@ fish |>
        title = "Fish Weight vs. Height")
 ```
 
--   If you were to draw a a straight line to best represent the relationship between the heights and weights of fish, where would it go? Why? 
+-   If you were to draw a a straight line to best represent the relationship between the heights and weights of fish, where would it go? Why?
 
 Positive, y-intercept below 0
 
@@ -75,7 +76,7 @@ We can now describe the relationship between fish height and weight, and we coul
 
 20cm: 920g - this prediction is considered an extrapolation because we don't observe any fish with weights \> 19.5cm in our dataset
 
--   What is a residual? 
+-   What is a residual?
 
 Observed - predicted; in statistical notation, this is $y - \widehat{y}$
 

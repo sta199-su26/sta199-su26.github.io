@@ -1,5 +1,9 @@
 ---
 title: "AE 13: Modeling penguins"
+subtitle: "Suggested answers"
+format:
+  html:
+    self-contained: true
 ---
 
 In this application exercise we will be studying penguins.
@@ -49,10 +53,12 @@ penguins |>
 # Correlation
 
 -   **Your turn:**
+
     -   What is correlation? What values can correlation take?
-    
-    A measure of the strength **and** direction of the **linear** relationship between the predictor(s) and outcome. It can be a number between -1 and 1, inclusive.
-    
+
+    A measure of the strength **and** direction of the **linear** relationship between the predictor(s) and outcome.
+    It can be a number between -1 and 1, inclusive.
+
 -   **Demo:** What is the correlation between flipper length and body mass of penguins?
 
 ```{r}
@@ -74,7 +80,7 @@ penguins |>
 
 -   **Demo:** What is the slope of the regression line?
 
-The estimated slope, as computed by hand, is ~ 49.7
+The estimated slope, as computed by hand, is \~ 49.7
 
 ```{r}
 #| label: ols-by-hand
@@ -110,12 +116,13 @@ tidy(penguins_fit)
 ```
 
 $$
-\widehat{\text{body mass(g)}} = -5780.83136	+ 49.68557 \times \text{flipper length (mm)}
+\widehat{\text{body mass(g)}} = -5780.83136 + 49.68557 \times \text{flipper length (mm)}
 $$
 
 -   **Your turn:** Interpret the slope and the intercept in the context of the data.
 
-    -   Intercept: For a penguin with a flipper length of 0mm, we expect it to have a body mass of -5780.83g, on average. This is not meaningful in the context of these data because a penguin with 0mm flipper length doesn't exist. 
+    -   Intercept: For a penguin with a flipper length of 0mm, we expect it to have a body mass of -5780.83g, on average.
+        This is not meaningful in the context of these data because a penguin with 0mm flipper length doesn't exist.
 
     -   Slopes: For every 1 mm increase in flipper length, we expect a penguin's body mass to inc. by 49.69 g, on average.
 
@@ -224,7 +231,7 @@ tidy(penguins_fit_2)
 ```
 
 $$
-\widehat{\text{body mass (g)}} = 4716.018	-1003.115 \times \text{Dream} - 1009.645 \times \text{Torgerson}
+\widehat{\text{body mass (g)}} = 4716.018   -1003.115 \times \text{Dream} - 1009.645 \times \text{Torgerson}
 $$
 
 -   **Demo:** Interpret each coefficient in context of the problem.

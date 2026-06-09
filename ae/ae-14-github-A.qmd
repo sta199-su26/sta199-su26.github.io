@@ -1,5 +1,9 @@
 ---
 title: "AE 14: Modeling Housing Prices 🏠"
+subtitle: "Suggested answers"
+format:
+  html:
+    self-contained: true
 ---
 
 In this application exercise we will be studying housing prices.
@@ -23,8 +27,12 @@ Before we use the dataset, we'll make a few transformations to it.
 -   **Your turn:** Review the code below with your neighbors and write a summary of the data transformation pipeline.
 
 -   Selected for a subset of relevant columns
--   Created a new variable, `home_type`, by consolidating the levels of the og. factor variable, `Bldg_Type`; then, got rid of `Bldg_Type`
+
+-   Created a new variable, `home_type`, by consolidating the levels of the og.
+    factor variable, `Bldg_Type`; then, got rid of `Bldg_Type`
+
 -   Renamed some columns
+
 -   Subset df to homes of type House, Townhouse, or Duplex
 
 ```{r}
@@ -95,9 +103,11 @@ ggplot(housing, aes(x = sqft, y = price)) +
 -   **Your turn:** Write the fitted equation of the model in mathematical notation. Then, interpret the intercept and slope.
 
 $$
-\widehat{price} = 11430.1960	+113.7605	\times sqft
-$$
-For a home with 0 sq. ft., we predict the price to be \$11430.20, on average. For each additional sq. ft, we predict the price of a home to increase by \$113.76, on average.
+\widehat{price} = 11430.1960    +113.7605   \times sqft
+$$ For a home with 0 sq.
+ft., we predict the price to be \$11430.20, on average.
+For each additional sq.
+ft, we predict the price of a home to increase by \$113.76, on average.
 
 # Price vs. home type
 
@@ -113,8 +123,9 @@ tidy(price_type_fit)
 
 $$
 \widehat{price} = 185469.48 - 45660.54 \times Duplex - 49535.42 \times Townhouse
-$$
-We predict the price of a house to be $185,469.48, on average. We predict that the price of a duplex will be \$45,660.54 lower than the price of a house, on average. We predict that the price of a townhouse will be \$49,535.42 lower than the price of a house, on average.
+$$ We predict the price of a house to be \$185,469.48, on average.
+We predict that the price of a duplex will be \$45,660.54 lower than the price of a house, on average.
+We predict that the price of a townhouse will be \$49,535.42 lower than the price of a house, on average.
 
 # Price vs. square footage and home type
 
@@ -137,8 +148,11 @@ tidy(price_main_fit)
 
 $$
 \widehat{price} = 13394.8010 + 114.5305 \times sqft - 63251.4927 \times Duplex - 20306.3316 \times Townhouse
-$$
-We predict the price of a house with 0 sq. ft. to be \$13,394.80, on average. All else equal, for each additional sq. ft., we predict the price of a home to increase by $114.53, on average. All else equal, we predict the price of a Duplex to be \$63,251.50 lower than the price of a house, on average.
+$$ We predict the price of a house with 0 sq.
+ft. to be \$13,394.80, on average.
+All else equal, for each additional sq.
+ft., we predict the price of a home to increase by \$114.53, on average.
+All else equal, we predict the price of a Duplex to be \$63,251.50 lower than the price of a house, on average.
 
 ## Interaction effects model
 
@@ -170,14 +184,11 @@ Duplex
 
 $$
 \widehat{price} = (9087.38517 + 57547.32571) + (117.39744 - 73.21084) \times sqft
-$$
-House
+$$ House
 
 $$
 \widehat{price} = 9087.38517 + 117.39744 \times sqft
-$$
-Townhouse
-$$
+$$ Townhouse $$
 \widehat{price} = (9087.38517 + 13970.23460) + (117.39744 -26.89557) \times sqft
 $$
 
@@ -203,7 +214,8 @@ glance(price_type_fit)$adj.r.squared
 # One more model?
 
 **Task:** Try adding one more variable present in the data frame to the "best" model chosen above.
-Does it make a difference in *adjusted* $R^2$? What about plain old $R^2$?
+Does it make a difference in *adjusted* $R^2$?
+What about plain old $R^2$?
 
 ```{r}
 #| label: new-model
