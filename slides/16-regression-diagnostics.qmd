@@ -15,6 +15,7 @@ auto-stretch: false
 library(tidyverse)
 library(tidymodels)
 library(ggthemes)
+library(patchwork)
 ```
 
 ## Today’s Topics
@@ -30,44 +31,576 @@ library(ggthemes)
 ## Quick Notes {.small}
 
 ::: incremental
-
 -   When interpreting intercepts **and** slopes in the context of any *linear* regression modeling, your interpretation should include both of the following phrases: “we expect” (or functionally similar) **AND** “on average”
 
--   When you’ve fit a multiple linear regression model (i.e., > 1 predictor), your [slope]{.underline} interpretations **must also** include the following: “all else equal” (or functionally similar)
+-   When you’ve fit a multiple linear regression model (i.e., \> 1 predictor), your [slope]{.underline} interpretations **must also** include the following: “all else equal” (or functionally similar)
 
--   I know it’s prescriptive and somewhat repetitive, but for your own sanity (& mine <3), please please include these statements in **every** interpretation you provide
-
+-   I know it’s prescriptive and somewhat repetitive, but for your own sanity (& mine \<3), please please include these statements in **every** interpretation you provide
 :::
 
 # Model Assumptions
 
-## But first, a quick game
+## But first, a quick game {.smaller}
 
-:::: {.columns}
-
-::: {.column width="33%"}
-
-::: {.fragment}
+::::::::: columns
+:::: {.column width="33%"}
+::: fragment
 ![](img/16/tswift.jpg){width="100%"}
+
+<ul>
+
+<li>10-carat old mine brilliant-cut diamond</li>
+
+<li>58 facets</li>
+
+<li>Est.
+at \$550K - \$1M</li>
+
+</ul>
 :::
-
-:::
-
-::: {.column width="33%"}
-
-::: {.fragment}
-![](img/16/zendaya.png){width="100%"}
-:::
-
-:::
-
-::: {.column width="33%"}
-
-::: {.fragment}
-![](img/16/grod.png){width="100%"}
-:::
-
-:::
-
 ::::
+
+:::: {.column width="33%"}
+::: fragment
+![](img/16/zendaya.png){width="100%"}
+
+<ul>
+
+<li>5-carat antique cushion-cut diamond</li>
+
+<li>\$280,000 price tag</li>
+
+</ul>
+:::
+::::
+
+:::: {.column width="33%"}
+::: fragment
+![](img/16/grod.png){width="100%"}
+
+<ul>
+
+<li>Est.
+30-40-carat high color center diamond</li>
+
+<li>1-carat oval side stones</li>
+
+<li>Est.
+value upwards of \$3M</li>
+
+</ul>
+:::
+::::
+:::::::::
+
+## The 4 Cs
+
+When evaluating a diamond, jewelers typically focus on four key characteristics known as the **4 Cs**:
+
+::: incremental
+-   **Carat** — How big is it?
+-   **Cut** — How much does it sparkle?
+-   **Clarity** — How flawless is it?
+-   **Color** — How colorless is it?
+:::
+
+::: fragment
+The 4 Cs are the primary factors that determine a diamond's value.
+:::
+
+## Today's Data {.scrollable .smaller}
+
+```{r}
+#| label: load-data
+#| message: false
+set.seed(847)
+diamonds <- read_csv("data/diamonds.csv") |>
+  rename(length_mm = x, width_mm = y) |>
+  select(price, carat, cut, color, clarity, length_mm, width_mm) |>
+  mutate(color = factor(color),
+         cut = fct_relevel(cut, c("Ideal", "Premium", "Very Good", "Good", "Fair")),
+         clarity = factor(clarity)) |>
+  mutate(clarity = fct_collapse(clarity,
+    "IF" = "IF",
+    "VVS" = c("VVS1", "VVS2"),
+    "VS" = c("VS1", "VS2"),
+    "SI" = c("SI1", "SI2"),
+    "I" = "I1")) |>
+  mutate(clarity = fct_relevel(clarity, c("IF", "VVS", "VS", "SI", "I"))) |>
+  filter(carat <= 3.0) |>
+  sample_n(5000)
+
+glimpse(diamonds)
+```
+
+## Bivariate EDA
+
+```{r}
+#| echo: false
+
+p1 <- ggplot(data = diamonds, aes(x = carat, y = price)) + 
+  geom_point(alpha = 0.25) + 
+  labs(x = "Carat", 
+       y = "Price ($)", 
+       title = "Diamond Carat vs. Price")
+
+p2 <- ggplot(data = diamonds, aes(x = cut, y = price)) + 
+  geom_boxplot(color = "black", fill = "cornflowerblue") + 
+  labs(x = "Cut", 
+       y = "Price ($)", 
+       title = "Distr. of Diamond Prices by Cut")
+
+p3 <- ggplot(data = diamonds, aes(x = clarity, y = price)) + 
+  geom_boxplot(color = "black", fill = "cornflowerblue") + 
+  labs(x = "Clarity", 
+       y = "Price ($)", 
+       title = "Distr. of Diamond Prices by Clarity")
+
+
+p4 <- ggplot(data = diamonds, aes(x = color, y = price)) + 
+  geom_boxplot(color = "black", fill = "cornflowerblue") + 
+  labs(x = "Color", 
+       y = "Price ($)", 
+       title = "Distr. of Diamond Prices by Color")
+
+
+(p1 + p2) / (p3 + p4)
+```
+
+## Let's start with SLR {.small .scrollable}
+
+Fitted Model:
+
+```{r}
+diamond_fit_ct <- linear_reg() |>
+  fit(price ~ carat, data = diamonds)
+
+tidy(diamond_fit_ct)
+```
+
+Using statistical notation...
+
+$$
+\widehat{\text{price}} = -2360.588 + 7916.132 \times \text{carat}
+$$
+
+::: question
+How would you interpret the intercept in the context of these data--is it meaningful?
+What about the slope?
+:::
+
+## Assumptions for regression (single or multiple!) {.small .scrollable}
+
+$$
+Y|X_1, \ldots, X_p \sim N(\beta_0 + \beta_1X_1 + \dots + \beta_pX_p, \sigma_\epsilon^2)
+$$
+
+The above is what we implicitly **assume** to be true when we preform standard regression modeling; this is a fancy expression (take 240 or 210 to learn more!) that basically encapsulates the following core assumptions:
+
+::: incremental
+1.  **Independence:** The errors (residuals) are independent from one another.
+
+2.  **Linearity:** There is a linear relationship between the response and predictor variables.
+
+3.  **Equal variance:** The variability about the least squares line is equal for all combinations of predictors.
+
+4.  **Normality:** The distribution of the errors (residuals) is approximately normal.
+:::
+
+## 1. Independence
+
+Recall our population model for the $i^{th}$ observation $$
+y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + ...+ \beta_p x_{ip} +\epsilon_i
+$$
+
+**Independence:** The errors $\epsilon_i$ are independent of one another.
+Specifically, this also implies that the outcomes $y_i$ are independent (don't worry about why).
+
+::: question
+How might the independence assumption be violated?
+:::
+
+## Remember this crap? {.smaller .incremental .scrollable}
+
+*The Treatment of Lead-Exposed Children (TLC) Trial was a placebo-controlled, randomized clinical trial designed to evaluate whether treatment with succimer, an oral chelating agent used to remove lead from the body, could reduce blood lead levels in young children with moderate lead exposure. The study enrolled children aged 12–33 months with blood lead levels between 20 and 44 micrograms per deciliter (µg/dL) and randomly assigned them to receive either succimer or a placebo. Blood lead levels were measured repeatedly over time to assess the effectiveness of the treatment.*
+
+```{r}
+#| label: tlc-stuff
+#| message: false
+tlc_raw <- read_csv("data/tlc_raw.csv")
+
+tlc_long <- tlc_raw |>
+  pivot_longer(
+    cols = -c(id, group),
+    names_to = "week",
+    names_prefix = "lead_w",
+    names_transform = as.numeric,
+    values_to = "lead_lvl"
+  )
+
+glimpse(tlc_long)
+```
+
+::: question
+What might be problematic here if I fit a model predicting `lead_lvl` from both `group` and `week` using these data?
+:::
+
+## 2. Linearity {.small .incremental .scrollable}
+
+Back to our population model...
+$$
+y = \beta_0 + \beta_1 x_{1} + \beta_2 x_{2} + ...+ \beta_p x_{p} +\epsilon
+$$
+
+**Linearity:**The regression model is linear in the parameters.
+Specifically, this is a linearity assumption on the parameters (i.e., the $\beta$ terms), NOT the predictors themselves (i.e., the observed x terms).
+
+::: fragment
+So this is fine...
+
+$$
+y = \beta_0 + \beta_1 x_{1} + \beta_2 x_{2}^2 + ...+ \beta_p x_{p}^p +\epsilon
+$$
+:::
+
+::: fragment
+...
+but this is not.
+
+$$
+y = \beta_0 + \frac{\beta_1x_1}{\beta_2 + \beta_3(x_1+1)} +...+ \beta_p x_{p} +\epsilon
+$$
+:::
+
+## 3. Equal variance {.small .incremental .scrollable}
+
+$$
+y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + ...+ \beta_p x_{ip} +\epsilon_i
+$$ $$
+\epsilon_i \overset{\text{i.i.d}}\sim N(0, \sigma^2)
+$$ **Equal variance:** The variance of the errors is constant (per the notation above, this variance is some constant represented by $\sigma^2$) regardless of what the predictor values are.
+Specifically, this also implies that the variance of the errors is *independent* of the predictors.
+
+This may sound a bit abstract, and you don't need to fret over any of the fancy notation.
+For the purposes of this course, we'll just show you how to check whether or not this assumption is *reasonably* satisfied.
+
+## 4. Normality
+
+Again, in fancy notation:
+
+$$
+\epsilon_i \overset{\text{i.i.d}}\sim N(0, \sigma^2)
+$$
+
+**Normality:** The errors follow a normal (bell-shaped) distribution centered at zero.
+
+# Model diagnostics
+
+So, how do we check?
+
+## Independence {.small .scrollable}
+
+::: incremental
+-   We usually have to think through this one, unfortunately.
+    In some situations there might be some plots that will specifically give us an indication that independence is violated, but it's best practice to think about the data generating mechanism and how the observations actually came about.
+    Understanding experimental design is especially helpful here.
+
+-   In a randomized experiment, independence across subjects is often a reasonable assumption because the randomization process helps prevent observations from systematically influencing one another (e.g., we can assume that one child's blood lead levels do not indluence a different child's blood lead levels in the TLC trial).
+
+-   In observational studies, however, we need to think more carefully about whether observations may be related through time, location, shared environments, repeated measurements, or other sources of dependence.
+:::
+
+## Residual plots help with the rest! {.scrollable}
+
+First, get the residuals and "fitted" (predicted) values for your original data with `augment()`:
+
+```{r}
+#| label: augment
+diamonds_aug <- augment(diamond_fit_ct, diamonds)
+
+glimpse(diamonds_aug)
+```
+
+## Residual plots help with the rest! {.scrollable}
+
+Then, explore & assess!
+
+First, a "Fitted vs. Residuals" plot:
+
+```{r}
+#| label: fitted-vs-resid
+#| message: false
+ggplot(diamonds_aug, aes(x = .pred, y = .resid)) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Fitted value",
+       y = "Residual",
+       title = "Fitted vs. Residuals Plot")
+```
+
+## What are we looking for? {.small .scrollable}
+
+```{r}
+#| label: plot-squad-I
+#| message: false
+#| echo: false
+
+set.seed(847)
+
+p1 <- tibble(
+  fitted = runif(150, 10, 50),
+  residual = rnorm(150, mean = 0, sd = 5)
+) |>
+  ggplot(aes(x = fitted, y = residual)) +
+  geom_hline(yintercept = 0,
+             linetype = "dashed",
+             linewidth = 1,
+             color = "red") +
+  geom_point(size = 2.5, alpha = 0.7) +
+  coord_cartesian(ylim = c(-10, 10)) +
+  labs(
+    title = "A",
+    x = "Fitted values",
+    y = "Residuals"
+  ) +
+  theme_minimal(base_size = 18)
+
+n <- 150
+
+p2 <- tibble(
+  fitted = runif(n, 10, 50)) |>
+  mutate(
+    residual = rnorm(n, 0, fitted / 10)
+  ) |>
+  ggplot(aes(x = fitted, y = residual)) +
+  geom_hline(yintercept = 0,
+             linetype = "dashed",
+             linewidth = 1,
+             color = "red") +
+  geom_point(size = 2.5, alpha = 0.7) +
+  coord_cartesian(ylim = c(-10, 10)) +
+  labs(
+    title = "B",
+    x = "Fitted values",
+    y = "Residuals"
+  ) +
+  theme_minimal(base_size = 18)
+
+p3 <- tibble(
+  fitted = runif(n, 10, 50)) |>
+  mutate(
+    residual = rnorm(n, 0, (60 - fitted) / 10)
+  )  |>
+  ggplot(aes(x = fitted, y = residual)) +
+  geom_hline(yintercept = 0,
+             linetype = "dashed",
+             linewidth = 1,
+             color = "red") +
+  geom_point(size = 2.5, alpha = 0.7) +
+  coord_cartesian(ylim = c(-10, 10)) +
+  labs(
+    title = "C",
+    x = "Fitted values",
+    y = "Residuals"
+  ) +
+  theme_minimal(base_size = 18)
+
+p4 <- tibble(
+  fitted = seq(10, 50, length.out = n)
+) |>
+  mutate(
+    residual = 0.03 * (fitted - 30)^2 - 4 +
+      rnorm(n, 0, 1)
+  ) |>
+  ggplot(aes(x = fitted, y = residual)) +
+  geom_hline(
+    yintercept = 0,
+    linetype = "dashed",
+    linewidth = 1,
+    color = "red"
+  ) +
+  geom_point(size = 2.5, alpha = 0.7) +
+  labs(
+    title = "D",
+    x = "Fitted values",
+    y = "Residuals"
+  ) +
+  theme_minimal(base_size = 18)
+
+
+(p1 + p2) / (p3 + p4)
+```
+
+-   **Linearity:** If linearity is satisfied, we would expect to find no discernible pattern (i.e., points randomly scattered around the horizontal axis $\text{y} = 0$) in the fitted vs. residuals plot
+
+-   **Equal variance:** If equal variance is satisfied, we would expect to see "evenly-spaced" dots (in the vertical sense) along the y-axis, regardless of what the predicted values are.
+
+## What are we looking for? {.small .scrollable}
+
+```{r}
+#| label: plot-squad-II
+#| message: false
+#| echo: false
+
+set.seed(847)
+
+p1 <- tibble(
+  fitted = runif(150, 10, 50),
+  residual = rnorm(150, mean = 0, sd = 5)
+) |>
+  ggplot(aes(x = fitted, y = residual)) +
+  geom_hline(yintercept = 0,
+             linetype = "dashed",
+             linewidth = 1,
+             color = "red") +
+  geom_point(size = 2.5, alpha = 0.7) +
+  coord_cartesian(ylim = c(-10, 10)) +
+  labs(
+    title = "A",
+    x = "Fitted values",
+    y = "Residuals"
+  ) +
+  theme_minimal(base_size = 18)
+
+n <- 150
+
+p2 <- tibble(
+  fitted = runif(n, 10, 50)) |>
+  mutate(
+    residual = rnorm(n, 0, fitted / 10)
+  ) |>
+  ggplot(aes(x = fitted, y = residual)) +
+  geom_hline(yintercept = 0,
+             linetype = "dashed",
+             linewidth = 1,
+             color = "red") +
+  geom_point(size = 2.5, alpha = 0.7) +
+  coord_cartesian(ylim = c(-10, 10)) +
+  labs(
+    title = "B",
+    x = "Fitted values",
+    y = "Residuals"
+  ) +
+  theme_minimal(base_size = 18)
+
+p3 <- tibble(
+  fitted = runif(n, 10, 50)) |>
+  mutate(
+    residual = rnorm(n, 0, (60 - fitted) / 10)
+  )  |>
+  ggplot(aes(x = fitted, y = residual)) +
+  geom_hline(yintercept = 0,
+             linetype = "dashed",
+             linewidth = 1,
+             color = "red") +
+  geom_point(size = 2.5, alpha = 0.7) +
+  coord_cartesian(ylim = c(-10, 10)) +
+  labs(
+    title = "C",
+    x = "Fitted values",
+    y = "Residuals"
+  ) +
+  theme_minimal(base_size = 18)
+
+p4 <- tibble(
+  fitted = seq(10, 50, length.out = n)
+) |>
+  mutate(
+    residual = 0.03 * (fitted - 30)^2 - 4 +
+      rnorm(n, 0, 1)
+  ) |>
+  ggplot(aes(x = fitted, y = residual)) +
+  geom_hline(
+    yintercept = 0,
+    linetype = "dashed",
+    linewidth = 1,
+    color = "red"
+  ) +
+  geom_point(size = 2.5, alpha = 0.7) +
+  labs(
+    title = "D",
+    x = "Fitted values",
+    y = "Residuals"
+  ) +
+  theme_minimal(base_size = 18)
+
+
+(p1 + p2) / (p3 + p4)
+```
+
+::: incremental
+
+-   In the above, plot A is an example of a "good" fitted vs. residuals plot that supports both the linearity and equal variance assumptions (homoskedastic data)
+
+-   Plot B shows that the residual variance (vertical spread) increases as the fitted values increase; plot C shows the residual variance decreasing as the fitted values increase
+
+    -   Both of these plots suggest that the underlying model violates the assumption of constant / equal error variance (heteroskedastic data)
+
+-   Plot D shows a curved pattern, which indicates that the wrong type of model was used (i.e., linearity assumption is violated)
+
+:::
+
+## Back to the diamonds! {.small .scrollable}
+
+::: question
+
+Based on the fitted vs. residuals plot below, what do you think of the linearity and constant variance assumptions underlying our simple linear regression model predicting diamond price from carat?
+
+:::
+
+```{r}
+#| label: fitted-vs-resid-II
+#| message: false
+#| echo: false
+ggplot(diamonds_aug, aes(x = .pred, y = .resid)) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Fitted value",
+       y = "Residual",
+       title = "Fitted vs. Residuals Plot")
+```
+
+
+## Distribution of residuals {.scrollable}
+
+-   Next, we can take a look at a histogram of the residuals to get an overall feel for the distribution of them 
+
+-   Alternatively, we can use a quantile-quantile plot (Q-Q plot) to get a more accurate picture
+
+    -   The Q-Q plot compares the quantiles of some sample to the theoretical quantiles from a pre-specified distribution (such as the normal distribution)
+
+## Histogram of residuals {.scrollable}
+
+```{r}
+#| label: resid_hist
+#| echo: false
+#| warning: false
+
+ggplot(diamonds_aug, aes(x = .resid)) +
+  geom_histogram(
+    aes(y = after_stat(density)),
+    bins = 30,
+    color = "white",
+    fill = "cornflowerblue"
+  ) +
+  stat_function(
+    fun = dnorm,
+    args = list(
+      mean = mean(diamonds_aug$.resid),
+      sd = sd(diamonds_aug$.resid)
+    ),
+    color = "blue",
+    linewidth = 1
+  ) +
+  labs(
+    title = "Histogram of residuals",
+    x = "Residual",
+    y = "Density"
+  ) +
+  coord_cartesian(xlim = c(-5000, 5000)) +
+  theme_minimal(base_size = 18)
+```
+
+
+
 
