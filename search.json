@@ -7013,7 +7013,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Twilight         2008  639282080    40043484 16.0  PASS   ok        \n2 John Carter      2012  361045719   279025606  1.29 PASS   ok        \n3 But I'm a Chee…  1999    6761310     1678154  4.03 PASS   ok        \n4 The Last Samur…  2003  719037561   177252174  4.06 FAIL   nowomen   \n5 Being John Mal…  1999   77252870    18180006  4.25 PASS   ok"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title          year gross_2013 budget_2013     roi binary clean_test\n  &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Event Horizon  1997   77418452    87074287   0.889 PASS   ok        \n2 Blade          1998  287798042    64310954   4.48  FAIL   notalk    \n3 Finding Nemo   2003 1629447489   119012174  13.7   FAIL   notalk    \n4 Paranormal A…  2007  339424558      505595 671.    FAIL   dubious   \n5 Knocked Up     2007  413369911    30897446  13.4   PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
@@ -7265,7 +7265,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Twilight         2008  639282080    40043484 16.0  PASS   ok        \n2 John Carter      2012  361045719   279025606  1.29 PASS   ok        \n3 But I'm a Chee…  1999    6761310     1678154  4.03 PASS   ok        \n4 The Last Samur…  2003  719037561   177252174  4.06 FAIL   nowomen   \n5 Being John Mal…  1999   77252870    18180006  4.25 PASS   ok"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title          year gross_2013 budget_2013     roi binary clean_test\n  &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Event Horizon  1997   77418452    87074287   0.889 PASS   ok        \n2 Blade          1998  287798042    64310954   4.48  FAIL   notalk    \n3 Finding Nemo   2003 1629447489   119012174  13.7   FAIL   notalk    \n4 Paranormal A…  2007  339424558      505595 671.    FAIL   dubious   \n5 Knocked Up     2007  413369911    30897446  13.4   PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
@@ -8098,7 +8098,133 @@
     "href": "slides/16-regression-diagnostics.html#but-first-a-quick-game",
     "title": "Linear Regression Diagnostics",
     "section": "But first, a quick game",
-    "text": "But first, a quick game"
+    "text": "But first, a quick game\n\n\n\n\n\n\n10-carat old mine brilliant-cut diamond\n\n\n58 facets\n\n\nEst. at $550K - $1M\n\n\n\n\n\n\n\n\n5-carat antique cushion-cut diamond\n\n\n$280,000 price tag\n\n\n\n\n\n\n\n\nEst. 30-40-carat high color center diamond\n\n\n1-carat oval side stones\n\n\nEst. value upwards of $3M"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#the-4-cs",
+    "href": "slides/16-regression-diagnostics.html#the-4-cs",
+    "title": "Linear Regression Diagnostics",
+    "section": "The 4 Cs",
+    "text": "The 4 Cs\nWhen evaluating a diamond, jewelers typically focus on four key characteristics known as the 4 Cs:\n\n\n\nCarat — How big is it?\n\nCut — How much does it sparkle?\n\nClarity — How flawless is it?\n\nColor — How colorless is it?\n\n\n\nThe 4 Cs are the primary factors that determine a diamond’s value."
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#todays-data",
+    "href": "slides/16-regression-diagnostics.html#todays-data",
+    "title": "Linear Regression Diagnostics",
+    "section": "Today’s Data",
+    "text": "Today’s Data\n\nset.seed(847)\ndiamonds &lt;- read_csv(\"data/diamonds.csv\") |&gt;\n  rename(length_mm = x, width_mm = y) |&gt;\n  select(price, carat, cut, color, clarity, length_mm, width_mm) |&gt;\n  mutate(color = factor(color),\n         cut = fct_relevel(cut, c(\"Ideal\", \"Premium\", \"Very Good\", \"Good\", \"Fair\")),\n         clarity = factor(clarity)) |&gt;\n  mutate(clarity = fct_collapse(clarity,\n    \"IF\" = \"IF\",\n    \"VVS\" = c(\"VVS1\", \"VVS2\"),\n    \"VS\" = c(\"VS1\", \"VS2\"),\n    \"SI\" = c(\"SI1\", \"SI2\"),\n    \"I\" = \"I1\")) |&gt;\n  mutate(clarity = fct_relevel(clarity, c(\"IF\", \"VVS\", \"VS\", \"SI\", \"I\"))) |&gt;\n  filter(carat &lt;= 3.0) |&gt;\n  sample_n(5000)\n\nglimpse(diamonds)\n\nRows: 5,000\nColumns: 7\n$ price     &lt;dbl&gt; 3867, 12048, 878, 4325, 401, 5504, 1767, 4704, 112…\n$ carat     &lt;dbl&gt; 0.90, 2.01, 0.41, 0.68, 0.30, 1.19, 0.63, 1.02, 0.…\n$ cut       &lt;fct&gt; Ideal, Ideal, Very Good, Ideal, Ideal, Ideal, Good…\n$ color     &lt;fct&gt; I, J, F, D, E, D, H, G, F, H, F, G, H, I, I, F, F,…\n$ clarity   &lt;fct&gt; VS, SI, SI, VVS, SI, SI, VS, SI, SI, VS, VS, VVS, …\n$ length_mm &lt;dbl&gt; 6.13, 8.08, 4.73, 5.66, 4.33, 6.91, 5.47, 6.36, 5.…\n$ width_mm  &lt;dbl&gt; 6.18, 8.03, 4.69, 5.69, 4.35, 6.89, 5.56, 6.40, 5.…"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#bivariate-eda",
+    "href": "slides/16-regression-diagnostics.html#bivariate-eda",
+    "title": "Linear Regression Diagnostics",
+    "section": "Bivariate EDA",
+    "text": "Bivariate EDA"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#lets-start-with-slr",
+    "href": "slides/16-regression-diagnostics.html#lets-start-with-slr",
+    "title": "Linear Regression Diagnostics",
+    "section": "Let’s start with SLR",
+    "text": "Let’s start with SLR\nFitted Model:\n\ndiamond_fit_ct &lt;- linear_reg() |&gt;\n  fit(price ~ carat, data = diamonds)\n\ntidy(diamond_fit_ct)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 (Intercept)   -2361.      41.9     -56.3       0\n2 carat          7916.      45.2     175.        0\n\n\nUsing statistical notation…\n\\[\n\\widehat{\\text{price}} = -2360.588 + 7916.132 \\times \\text{carat}\n\\]\n\nHow would you interpret the intercept in the context of these data–is it meaningful? What about the slope?"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#assumptions-for-regression-single-or-multiple",
+    "href": "slides/16-regression-diagnostics.html#assumptions-for-regression-single-or-multiple",
+    "title": "Linear Regression Diagnostics",
+    "section": "Assumptions for regression (single or multiple!)",
+    "text": "Assumptions for regression (single or multiple!)\n\\[\nY|X_1, \\ldots, X_p \\sim N(\\beta_0 + \\beta_1X_1 + \\dots + \\beta_pX_p, \\sigma_\\epsilon^2)\n\\]\nThe above is what we implicitly assume to be true when we preform standard regression modeling; this is a fancy expression (take 240 or 210 to learn more!) that basically encapsulates the following core assumptions:\n\n\nIndependence: The errors (residuals) are independent from one another.\nLinearity: There is a linear relationship between the response and predictor variables.\nEqual variance: The variability about the least squares line is equal for all combinations of predictors.\nNormality: The distribution of the errors (residuals) is approximately normal."
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#independence",
+    "href": "slides/16-regression-diagnostics.html#independence",
+    "title": "Linear Regression Diagnostics",
+    "section": "1. Independence",
+    "text": "1. Independence\nRecall our population model for the \\(i^{th}\\) observation \\[\ny_i = \\beta_0 + \\beta_1 x_{i1} + \\beta_2 x_{i2} + ...+ \\beta_p x_{ip} +\\epsilon_i\n\\]\nIndependence: The errors \\(\\epsilon_i\\) are independent of one another. Specifically, this also implies that the outcomes \\(y_i\\) are independent (don’t worry about why).\n\nHow might the independence assumption be violated?"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#remember-this-crap",
+    "href": "slides/16-regression-diagnostics.html#remember-this-crap",
+    "title": "Linear Regression Diagnostics",
+    "section": "Remember this crap?",
+    "text": "Remember this crap?\nThe Treatment of Lead-Exposed Children (TLC) Trial was a placebo-controlled, randomized clinical trial designed to evaluate whether treatment with succimer, an oral chelating agent used to remove lead from the body, could reduce blood lead levels in young children with moderate lead exposure. The study enrolled children aged 12–33 months with blood lead levels between 20 and 44 micrograms per deciliter (µg/dL) and randomly assigned them to receive either succimer or a placebo. Blood lead levels were measured repeatedly over time to assess the effectiveness of the treatment.\n\ntlc_raw &lt;- read_csv(\"data/tlc_raw.csv\")\n\ntlc_long &lt;- tlc_raw |&gt;\n  pivot_longer(\n    cols = -c(id, group),\n    names_to = \"week\",\n    names_prefix = \"lead_w\",\n    names_transform = as.numeric,\n    values_to = \"lead_lvl\"\n  )\n\nglimpse(tlc_long)\n\nRows: 400\nColumns: 4\n$ id       &lt;dbl&gt; 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, …\n$ group    &lt;chr&gt; \"P\", \"P\", \"P\", \"P\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"…\n$ week     &lt;dbl&gt; 0, 1, 4, 6, 0, 1, 4, 6, 0, 1, 4, 6, 0, 1, 4, 6, 0, …\n$ lead_lvl &lt;dbl&gt; 30.8, 26.9, 25.8, 23.8, 26.5, 14.8, 19.5, 21.0, 25.…\n\n\n\nWhat might be problematic here if I fit a model predicting lead_lvl from both group and week using these data?"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#linearity",
+    "href": "slides/16-regression-diagnostics.html#linearity",
+    "title": "Linear Regression Diagnostics",
+    "section": "2. Linearity",
+    "text": "2. Linearity\nBack to our population model… \\[\ny = \\beta_0 + \\beta_1 x_{1} + \\beta_2 x_{2} + ...+ \\beta_p x_{p} +\\epsilon\n\\]\nLinearity:The regression model is linear in the parameters. Specifically, this is a linearity assumption on the parameters (i.e., the \\(\\beta\\) terms), NOT the predictors themselves (i.e., the observed x terms).\n\nSo this is fine…\n\\[\ny = \\beta_0 + \\beta_1 x_{1} + \\beta_2 x_{2}^2 + ...+ \\beta_p x_{p}^p +\\epsilon\n\\]\n\n\n… but this is not.\n\\[\ny = \\beta_0 + \\frac{\\beta_1x_1}{\\beta_2 + \\beta_3(x_1+1)} +...+ \\beta_p x_{p} +\\epsilon\n\\]"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#equal-variance",
+    "href": "slides/16-regression-diagnostics.html#equal-variance",
+    "title": "Linear Regression Diagnostics",
+    "section": "3. Equal variance",
+    "text": "3. Equal variance\n\\[\ny_i = \\beta_0 + \\beta_1 x_{i1} + \\beta_2 x_{i2} + ...+ \\beta_p x_{ip} +\\epsilon_i\n\\] \\[\n\\epsilon_i \\overset{\\text{i.i.d}}\\sim N(0, \\sigma^2)\n\\] Equal variance: The variance of the errors is constant (per the notation above, this variance is some constant represented by \\(\\sigma^2\\)) regardless of what the predictor values are. Specifically, this also implies that the variance of the errors is independent of the predictors.\nThis may sound a bit abstract, and you don’t need to fret over any of the fancy notation. For the purposes of this course, we’ll just show you how to check whether or not this assumption is reasonably satisfied."
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#normality",
+    "href": "slides/16-regression-diagnostics.html#normality",
+    "title": "Linear Regression Diagnostics",
+    "section": "4. Normality",
+    "text": "4. Normality\nAgain, in fancy notation:\n\\[\n\\epsilon_i \\overset{\\text{i.i.d}}\\sim N(0, \\sigma^2)\n\\]\nNormality: The errors follow a normal (bell-shaped) distribution centered at zero."
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#independence-1",
+    "href": "slides/16-regression-diagnostics.html#independence-1",
+    "title": "Linear Regression Diagnostics",
+    "section": "Independence",
+    "text": "Independence\n\n\nWe usually have to think through this one, unfortunately. In some situations there might be some plots that will specifically give us an indication that independence is violated, but it’s best practice to think about the data generating mechanism and how the observations actually came about. Understanding experimental design is especially helpful here.\nIn a randomized experiment, independence across subjects is often a reasonable assumption because the randomization process helps prevent observations from systematically influencing one another (e.g., we can assume that one child’s blood lead levels do not indluence a different child’s blood lead levels in the TLC trial).\nIn observational studies, however, we need to think more carefully about whether observations may be related through time, location, shared environments, repeated measurements, or other sources of dependence."
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#residual-plots-help-with-the-rest",
+    "href": "slides/16-regression-diagnostics.html#residual-plots-help-with-the-rest",
+    "title": "Linear Regression Diagnostics",
+    "section": "Residual plots help with the rest!",
+    "text": "Residual plots help with the rest!\nFirst, get the residuals and “fitted” (predicted) values for your original data with augment():\n\ndiamonds_aug &lt;- augment(diamond_fit_ct, diamonds)\n\nglimpse(diamonds_aug)\n\nRows: 5,000\nColumns: 9\n$ .pred     &lt;dbl&gt; 4763.93087, 13550.83688, 885.02641, 3022.38193, 14…\n$ .resid    &lt;dbl&gt; -896.930869, -1502.836879, -7.026414, 1302.618070,…\n$ price     &lt;dbl&gt; 3867, 12048, 878, 4325, 401, 5504, 1767, 4704, 112…\n$ carat     &lt;dbl&gt; 0.90, 2.01, 0.41, 0.68, 0.30, 1.19, 0.63, 1.02, 0.…\n$ cut       &lt;fct&gt; Ideal, Ideal, Very Good, Ideal, Ideal, Ideal, Good…\n$ color     &lt;fct&gt; I, J, F, D, E, D, H, G, F, H, F, G, H, I, I, F, F,…\n$ clarity   &lt;fct&gt; VS, SI, SI, VVS, SI, SI, VS, SI, SI, VS, VS, VVS, …\n$ length_mm &lt;dbl&gt; 6.13, 8.08, 4.73, 5.66, 4.33, 6.91, 5.47, 6.36, 5.…\n$ width_mm  &lt;dbl&gt; 6.18, 8.03, 4.69, 5.69, 4.35, 6.89, 5.56, 6.40, 5.…"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#residual-plots-help-with-the-rest-1",
+    "href": "slides/16-regression-diagnostics.html#residual-plots-help-with-the-rest-1",
+    "title": "Linear Regression Diagnostics",
+    "section": "Residual plots help with the rest!",
+    "text": "Residual plots help with the rest!\nThen, explore & assess!\nFirst, a “Fitted vs. Residuals” plot:\n\nggplot(diamonds_aug, aes(x = .pred, y = .resid)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(x = \"Fitted value\",\n       y = \"Residual\",\n       title = \"Fitted vs. Residuals Plot\")"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#what-are-we-looking-for",
+    "href": "slides/16-regression-diagnostics.html#what-are-we-looking-for",
+    "title": "Linear Regression Diagnostics",
+    "section": "What are we looking for?",
+    "text": "What are we looking for?\n\n\n\n\n\n\n\n\n\nLinearity: If linearity is satisfied, we would expect to find no discernible pattern (i.e., points randomly scattered around the horizontal axis \\(\\text{y} = 0\\)) in the fitted vs. residuals plot\nEqual variance: If equal variance is satisfied, we would expect to see “evenly-spaced” dots (in the vertical sense) along the y-axis, regardless of what the predicted values are."
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#what-are-we-looking-for-1",
+    "href": "slides/16-regression-diagnostics.html#what-are-we-looking-for-1",
+    "title": "Linear Regression Diagnostics",
+    "section": "What are we looking for?",
+    "text": "What are we looking for?\n\n\n\n\n\n\n\n\n\n\nIn the above, plot A is an example of a “good” fitted vs. residuals plot that supports both the linearity and equal variance assumptions (homoskedastic data)\n\nPlot B shows that the residual variance (vertical spread) increases as the fitted values increase; plot C shows the residual variance decreasing as the fitted values increase\n\nBoth of these plots suggest that the underlying model violates the assumption of constant / equal error variance (heteroskedastic data)\n\n\nPlot D shows a curved pattern, which indicates that the wrong type of model was used (i.e., linearity assumption is violated)"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#back-to-the-diamonds",
+    "href": "slides/16-regression-diagnostics.html#back-to-the-diamonds",
+    "title": "Linear Regression Diagnostics",
+    "section": "Back to the diamonds!",
+    "text": "Back to the diamonds!\n\nBased on the fitted vs. residuals plot below, what do you think of the linearity and constant variance assumptions underlying our simple linear regression model predicting diamond price from carat?"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#distribution-of-residuals",
+    "href": "slides/16-regression-diagnostics.html#distribution-of-residuals",
+    "title": "Linear Regression Diagnostics",
+    "section": "Distribution of residuals",
+    "text": "Distribution of residuals\n\nNext, we can take a look at a histogram of the residuals to get an overall feel for the distribution of them\n\nAlternatively, we can use a quantile-quantile plot (Q-Q plot) to get a more accurate picture\n\nThe Q-Q plot compares the quantiles of some sample to the theoretical quantiles from a pre-specified distribution (such as the normal distribution)"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics.html#histogram-of-residuals",
+    "href": "slides/16-regression-diagnostics.html#histogram-of-residuals",
+    "title": "Linear Regression Diagnostics",
+    "section": "Histogram of residuals",
+    "text": "Histogram of residuals"
   },
   {
     "objectID": "slides/16-regression-diagnostics-slides.html#todays-topics",
@@ -8119,7 +8245,133 @@
     "href": "slides/16-regression-diagnostics-slides.html#but-first-a-quick-game",
     "title": "Linear Regression Diagnostics",
     "section": "But first, a quick game",
-    "text": "But first, a quick game"
+    "text": "But first, a quick game\n\n\n\n\n\n\n10-carat old mine brilliant-cut diamond\n\n\n58 facets\n\n\nEst. at $550K - $1M\n\n\n\n\n\n\n\n\n5-carat antique cushion-cut diamond\n\n\n$280,000 price tag\n\n\n\n\n\n\n\n\nEst. 30-40-carat high color center diamond\n\n\n1-carat oval side stones\n\n\nEst. value upwards of $3M"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#the-4-cs",
+    "href": "slides/16-regression-diagnostics-slides.html#the-4-cs",
+    "title": "Linear Regression Diagnostics",
+    "section": "The 4 Cs",
+    "text": "The 4 Cs\nWhen evaluating a diamond, jewelers typically focus on four key characteristics known as the 4 Cs:\n\n\n\nCarat — How big is it?\n\nCut — How much does it sparkle?\n\nClarity — How flawless is it?\n\nColor — How colorless is it?\n\n\n\nThe 4 Cs are the primary factors that determine a diamond’s value."
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#todays-data",
+    "href": "slides/16-regression-diagnostics-slides.html#todays-data",
+    "title": "Linear Regression Diagnostics",
+    "section": "Today’s Data",
+    "text": "Today’s Data\n\nset.seed(847)\ndiamonds &lt;- read_csv(\"data/diamonds.csv\") |&gt;\n  rename(length_mm = x, width_mm = y) |&gt;\n  select(price, carat, cut, color, clarity, length_mm, width_mm) |&gt;\n  mutate(color = factor(color),\n         cut = fct_relevel(cut, c(\"Ideal\", \"Premium\", \"Very Good\", \"Good\", \"Fair\")),\n         clarity = factor(clarity)) |&gt;\n  mutate(clarity = fct_collapse(clarity,\n    \"IF\" = \"IF\",\n    \"VVS\" = c(\"VVS1\", \"VVS2\"),\n    \"VS\" = c(\"VS1\", \"VS2\"),\n    \"SI\" = c(\"SI1\", \"SI2\"),\n    \"I\" = \"I1\")) |&gt;\n  mutate(clarity = fct_relevel(clarity, c(\"IF\", \"VVS\", \"VS\", \"SI\", \"I\"))) |&gt;\n  filter(carat &lt;= 3.0) |&gt;\n  sample_n(5000)\n\nglimpse(diamonds)\n\nRows: 5,000\nColumns: 7\n$ price     &lt;dbl&gt; 3867, 12048, 878, 4325, 401, 5504, 1767, 4704, 112…\n$ carat     &lt;dbl&gt; 0.90, 2.01, 0.41, 0.68, 0.30, 1.19, 0.63, 1.02, 0.…\n$ cut       &lt;fct&gt; Ideal, Ideal, Very Good, Ideal, Ideal, Ideal, Good…\n$ color     &lt;fct&gt; I, J, F, D, E, D, H, G, F, H, F, G, H, I, I, F, F,…\n$ clarity   &lt;fct&gt; VS, SI, SI, VVS, SI, SI, VS, SI, SI, VS, VS, VVS, …\n$ length_mm &lt;dbl&gt; 6.13, 8.08, 4.73, 5.66, 4.33, 6.91, 5.47, 6.36, 5.…\n$ width_mm  &lt;dbl&gt; 6.18, 8.03, 4.69, 5.69, 4.35, 6.89, 5.56, 6.40, 5.…"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#bivariate-eda",
+    "href": "slides/16-regression-diagnostics-slides.html#bivariate-eda",
+    "title": "Linear Regression Diagnostics",
+    "section": "Bivariate EDA",
+    "text": "Bivariate EDA"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#lets-start-with-slr",
+    "href": "slides/16-regression-diagnostics-slides.html#lets-start-with-slr",
+    "title": "Linear Regression Diagnostics",
+    "section": "Let’s start with SLR",
+    "text": "Let’s start with SLR\nFitted Model:\n\ndiamond_fit_ct &lt;- linear_reg() |&gt;\n  fit(price ~ carat, data = diamonds)\n\ntidy(diamond_fit_ct)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 (Intercept)   -2361.      41.9     -56.3       0\n2 carat          7916.      45.2     175.        0\n\n\nUsing statistical notation…\n\\[\n\\widehat{\\text{price}} = -2360.588 + 7916.132 \\times \\text{carat}\n\\]\n\nHow would you interpret the intercept in the context of these data–is it meaningful? What about the slope?"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#assumptions-for-regression-single-or-multiple",
+    "href": "slides/16-regression-diagnostics-slides.html#assumptions-for-regression-single-or-multiple",
+    "title": "Linear Regression Diagnostics",
+    "section": "Assumptions for regression (single or multiple!)",
+    "text": "Assumptions for regression (single or multiple!)\n\\[\nY|X_1, \\ldots, X_p \\sim N(\\beta_0 + \\beta_1X_1 + \\dots + \\beta_pX_p, \\sigma_\\epsilon^2)\n\\]\nThe above is what we implicitly assume to be true when we preform standard regression modeling; this is a fancy expression (take 240 or 210 to learn more!) that basically encapsulates the following core assumptions:\n\n\nIndependence: The errors (residuals) are independent from one another.\nLinearity: There is a linear relationship between the response and predictor variables.\nEqual variance: The variability about the least squares line is equal for all combinations of predictors.\nNormality: The distribution of the errors (residuals) is approximately normal."
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#independence",
+    "href": "slides/16-regression-diagnostics-slides.html#independence",
+    "title": "Linear Regression Diagnostics",
+    "section": "1. Independence",
+    "text": "1. Independence\nRecall our population model for the \\(i^{th}\\) observation \\[\ny_i = \\beta_0 + \\beta_1 x_{i1} + \\beta_2 x_{i2} + ...+ \\beta_p x_{ip} +\\epsilon_i\n\\]\nIndependence: The errors \\(\\epsilon_i\\) are independent of one another. Specifically, this also implies that the outcomes \\(y_i\\) are independent (don’t worry about why).\n\nHow might the independence assumption be violated?"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#remember-this-crap",
+    "href": "slides/16-regression-diagnostics-slides.html#remember-this-crap",
+    "title": "Linear Regression Diagnostics",
+    "section": "Remember this crap?",
+    "text": "Remember this crap?\nThe Treatment of Lead-Exposed Children (TLC) Trial was a placebo-controlled, randomized clinical trial designed to evaluate whether treatment with succimer, an oral chelating agent used to remove lead from the body, could reduce blood lead levels in young children with moderate lead exposure. The study enrolled children aged 12–33 months with blood lead levels between 20 and 44 micrograms per deciliter (µg/dL) and randomly assigned them to receive either succimer or a placebo. Blood lead levels were measured repeatedly over time to assess the effectiveness of the treatment.\n\ntlc_raw &lt;- read_csv(\"data/tlc_raw.csv\")\n\ntlc_long &lt;- tlc_raw |&gt;\n  pivot_longer(\n    cols = -c(id, group),\n    names_to = \"week\",\n    names_prefix = \"lead_w\",\n    names_transform = as.numeric,\n    values_to = \"lead_lvl\"\n  )\n\nglimpse(tlc_long)\n\nRows: 400\nColumns: 4\n$ id       &lt;dbl&gt; 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, …\n$ group    &lt;chr&gt; \"P\", \"P\", \"P\", \"P\", \"A\", \"A\", \"A\", \"A\", \"A\", \"A\", \"…\n$ week     &lt;dbl&gt; 0, 1, 4, 6, 0, 1, 4, 6, 0, 1, 4, 6, 0, 1, 4, 6, 0, …\n$ lead_lvl &lt;dbl&gt; 30.8, 26.9, 25.8, 23.8, 26.5, 14.8, 19.5, 21.0, 25.…\n\n\n\nWhat might be problematic here if I fit a model predicting lead_lvl from both group and week using these data?"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#linearity",
+    "href": "slides/16-regression-diagnostics-slides.html#linearity",
+    "title": "Linear Regression Diagnostics",
+    "section": "2. Linearity",
+    "text": "2. Linearity\nBack to our population model… \\[\ny = \\beta_0 + \\beta_1 x_{1} + \\beta_2 x_{2} + ...+ \\beta_p x_{p} +\\epsilon\n\\]\nLinearity:The regression model is linear in the parameters. Specifically, this is a linearity assumption on the parameters (i.e., the \\(\\beta\\) terms), NOT the predictors themselves (i.e., the observed x terms).\n\nSo this is fine…\n\\[\ny = \\beta_0 + \\beta_1 x_{1} + \\beta_2 x_{2}^2 + ...+ \\beta_p x_{p}^p +\\epsilon\n\\]\n\n\n… but this is not.\n\\[\ny = \\beta_0 + \\frac{\\beta_1x_1}{\\beta_2 + \\beta_3(x_1+1)} +...+ \\beta_p x_{p} +\\epsilon\n\\]"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#equal-variance",
+    "href": "slides/16-regression-diagnostics-slides.html#equal-variance",
+    "title": "Linear Regression Diagnostics",
+    "section": "3. Equal variance",
+    "text": "3. Equal variance\n\\[\ny_i = \\beta_0 + \\beta_1 x_{i1} + \\beta_2 x_{i2} + ...+ \\beta_p x_{ip} +\\epsilon_i\n\\] \\[\n\\epsilon_i \\overset{\\text{i.i.d}}\\sim N(0, \\sigma^2)\n\\] Equal variance: The variance of the errors is constant (per the notation above, this variance is some constant represented by \\(\\sigma^2\\)) regardless of what the predictor values are. Specifically, this also implies that the variance of the errors is independent of the predictors.\nThis may sound a bit abstract, and you don’t need to fret over any of the fancy notation. For the purposes of this course, we’ll just show you how to check whether or not this assumption is reasonably satisfied."
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#normality",
+    "href": "slides/16-regression-diagnostics-slides.html#normality",
+    "title": "Linear Regression Diagnostics",
+    "section": "4. Normality",
+    "text": "4. Normality\nAgain, in fancy notation:\n\\[\n\\epsilon_i \\overset{\\text{i.i.d}}\\sim N(0, \\sigma^2)\n\\]\nNormality: The errors follow a normal (bell-shaped) distribution centered at zero."
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#independence-1",
+    "href": "slides/16-regression-diagnostics-slides.html#independence-1",
+    "title": "Linear Regression Diagnostics",
+    "section": "Independence",
+    "text": "Independence\n\n\nWe usually have to think through this one, unfortunately. In some situations there might be some plots that will specifically give us an indication that independence is violated, but it’s best practice to think about the data generating mechanism and how the observations actually came about. Understanding experimental design is especially helpful here.\nIn a randomized experiment, independence across subjects is often a reasonable assumption because the randomization process helps prevent observations from systematically influencing one another (e.g., we can assume that one child’s blood lead levels do not indluence a different child’s blood lead levels in the TLC trial).\nIn observational studies, however, we need to think more carefully about whether observations may be related through time, location, shared environments, repeated measurements, or other sources of dependence."
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#residual-plots-help-with-the-rest",
+    "href": "slides/16-regression-diagnostics-slides.html#residual-plots-help-with-the-rest",
+    "title": "Linear Regression Diagnostics",
+    "section": "Residual plots help with the rest!",
+    "text": "Residual plots help with the rest!\nFirst, get the residuals and “fitted” (predicted) values for your original data with augment():\n\ndiamonds_aug &lt;- augment(diamond_fit_ct, diamonds)\n\nglimpse(diamonds_aug)\n\nRows: 5,000\nColumns: 9\n$ .pred     &lt;dbl&gt; 4763.93087, 13550.83688, 885.02641, 3022.38193, 14…\n$ .resid    &lt;dbl&gt; -896.930869, -1502.836879, -7.026414, 1302.618070,…\n$ price     &lt;dbl&gt; 3867, 12048, 878, 4325, 401, 5504, 1767, 4704, 112…\n$ carat     &lt;dbl&gt; 0.90, 2.01, 0.41, 0.68, 0.30, 1.19, 0.63, 1.02, 0.…\n$ cut       &lt;fct&gt; Ideal, Ideal, Very Good, Ideal, Ideal, Ideal, Good…\n$ color     &lt;fct&gt; I, J, F, D, E, D, H, G, F, H, F, G, H, I, I, F, F,…\n$ clarity   &lt;fct&gt; VS, SI, SI, VVS, SI, SI, VS, SI, SI, VS, VS, VVS, …\n$ length_mm &lt;dbl&gt; 6.13, 8.08, 4.73, 5.66, 4.33, 6.91, 5.47, 6.36, 5.…\n$ width_mm  &lt;dbl&gt; 6.18, 8.03, 4.69, 5.69, 4.35, 6.89, 5.56, 6.40, 5.…"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#residual-plots-help-with-the-rest-1",
+    "href": "slides/16-regression-diagnostics-slides.html#residual-plots-help-with-the-rest-1",
+    "title": "Linear Regression Diagnostics",
+    "section": "Residual plots help with the rest!",
+    "text": "Residual plots help with the rest!\nThen, explore & assess!\nFirst, a “Fitted vs. Residuals” plot:\n\nggplot(diamonds_aug, aes(x = .pred, y = .resid)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(x = \"Fitted value\",\n       y = \"Residual\",\n       title = \"Fitted vs. Residuals Plot\")"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#what-are-we-looking-for",
+    "href": "slides/16-regression-diagnostics-slides.html#what-are-we-looking-for",
+    "title": "Linear Regression Diagnostics",
+    "section": "What are we looking for?",
+    "text": "What are we looking for?\n\n\n\n\n\n\n\n\n\nLinearity: If linearity is satisfied, we would expect to find no discernible pattern (i.e., points randomly scattered around the horizontal axis \\(\\text{y} = 0\\)) in the fitted vs. residuals plot\nEqual variance: If equal variance is satisfied, we would expect to see “evenly-spaced” dots (in the vertical sense) along the y-axis, regardless of what the predicted values are."
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#what-are-we-looking-for-1",
+    "href": "slides/16-regression-diagnostics-slides.html#what-are-we-looking-for-1",
+    "title": "Linear Regression Diagnostics",
+    "section": "What are we looking for?",
+    "text": "What are we looking for?\n\n\n\n\n\n\n\n\n\n\nIn the above, plot A is an example of a “good” fitted vs. residuals plot that supports both the linearity and equal variance assumptions (homoskedastic data)\n\nPlot B shows that the residual variance (vertical spread) increases as the fitted values increase; plot C shows the residual variance decreasing as the fitted values increase\n\nBoth of these plots suggest that the underlying model violates the assumption of constant / equal error variance (heteroskedastic data)\n\n\nPlot D shows a curved pattern, which indicates that the wrong type of model was used (i.e., linearity assumption is violated)"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#back-to-the-diamonds",
+    "href": "slides/16-regression-diagnostics-slides.html#back-to-the-diamonds",
+    "title": "Linear Regression Diagnostics",
+    "section": "Back to the diamonds!",
+    "text": "Back to the diamonds!\n\nBased on the fitted vs. residuals plot below, what do you think of the linearity and constant variance assumptions underlying our simple linear regression model predicting diamond price from carat?"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#distribution-of-residuals",
+    "href": "slides/16-regression-diagnostics-slides.html#distribution-of-residuals",
+    "title": "Linear Regression Diagnostics",
+    "section": "Distribution of residuals",
+    "text": "Distribution of residuals\n\nNext, we can take a look at a histogram of the residuals to get an overall feel for the distribution of them\n\nAlternatively, we can use a quantile-quantile plot (Q-Q plot) to get a more accurate picture\n\nThe Q-Q plot compares the quantiles of some sample to the theoretical quantiles from a pre-specified distribution (such as the normal distribution)"
+  },
+  {
+    "objectID": "slides/16-regression-diagnostics-slides.html#histogram-of-residuals",
+    "href": "slides/16-regression-diagnostics-slides.html#histogram-of-residuals",
+    "title": "Linear Regression Diagnostics",
+    "section": "Histogram of residuals",
+    "text": "Histogram of residuals"
   },
   {
     "objectID": "slides/12-modeling.html",

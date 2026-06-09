@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
 <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-1f377f1ccadea7e9b0e26a49b7195540.css">
 <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -167,21 +232,319 @@ Katie Solarz
 </div>
 </section></section><section><section id="model-assumptions" class="title-slide slide level1 center"><h1>Model Assumptions</h1>
 
-</section><section id="but-first-a-quick-game" class="slide level2"><h2>But first, a quick game</h2>
+</section><section id="but-first-a-quick-game" class="slide level2 smaller"><h2>But first, a quick game</h2>
 <div class="columns">
 <div class="column" style="width:33%;">
 <div class="fragment">
 <p><img data-src="img/16/tswift.jpg" style="width:100.0%"></p>
+<ul>
+<li>
+10-carat old mine brilliant-cut diamond
+</li>
+<li>
+58 facets
+</li>
+<li>
+Est. at $550K - $1M
+</li>
+</ul>
 </div>
 </div><div class="column" style="width:33%;">
 <div class="fragment">
 <p><img data-src="img/16/zendaya.png" style="width:100.0%"></p>
+<ul>
+<li>
+5-carat antique cushion-cut diamond
+</li>
+<li>
+$280,000 price tag
+</li>
+</ul>
 </div>
 </div><div class="column" style="width:33%;">
 <div class="fragment">
 <p><img data-src="img/16/grod.png" style="width:100.0%"></p>
+<ul>
+<li>
+Est. 30-40-carat high color center diamond
+</li>
+<li>
+1-carat oval side stones
+</li>
+<li>
+Est. value upwards of $3M
+</li>
+</ul>
 </div>
 </div></div>
+</section><section id="the-4-cs" class="slide level2"><h2>The 4 Cs</h2>
+<p>When evaluating a diamond, jewelers typically focus on four key characteristics known as the <strong>4 Cs</strong>:</p>
+<div>
+<ul>
+<li class="fragment">
+<strong>Carat</strong> — How big is it?</li>
+<li class="fragment">
+<strong>Cut</strong> — How much does it sparkle?</li>
+<li class="fragment">
+<strong>Clarity</strong> — How flawless is it?</li>
+<li class="fragment">
+<strong>Color</strong> — How colorless is it?</li>
+</ul>
+</div>
+<div class="fragment">
+<p>The 4 Cs are the primary factors that determine a diamond’s value.</p>
+</div>
+</section><section id="todays-data" class="slide level2 scrollable smaller"><h2>Today’s Data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">set.seed</span>(<span class="dv">847</span>)</span>
+<span id="cb1-2"><a></a>diamonds <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/diamonds.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a></a>  <span class="fu">rename</span>(<span class="at">length_mm =</span> x, <span class="at">width_mm =</span> y) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a></a>  <span class="fu">select</span>(price, carat, cut, color, clarity, length_mm, width_mm) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a></a>  <span class="fu">mutate</span>(<span class="at">color =</span> <span class="fu">factor</span>(color),</span>
+<span id="cb1-6"><a></a>         <span class="at">cut =</span> <span class="fu">fct_relevel</span>(cut, <span class="fu">c</span>(<span class="st">"Ideal"</span>, <span class="st">"Premium"</span>, <span class="st">"Very Good"</span>, <span class="st">"Good"</span>, <span class="st">"Fair"</span>)),</span>
+<span id="cb1-7"><a></a>         <span class="at">clarity =</span> <span class="fu">factor</span>(clarity)) <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a></a>  <span class="fu">mutate</span>(<span class="at">clarity =</span> <span class="fu">fct_collapse</span>(clarity,</span>
+<span id="cb1-9"><a></a>    <span class="st">"IF"</span> <span class="ot">=</span> <span class="st">"IF"</span>,</span>
+<span id="cb1-10"><a></a>    <span class="st">"VVS"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"VVS1"</span>, <span class="st">"VVS2"</span>),</span>
+<span id="cb1-11"><a></a>    <span class="st">"VS"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"VS1"</span>, <span class="st">"VS2"</span>),</span>
+<span id="cb1-12"><a></a>    <span class="st">"SI"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"SI1"</span>, <span class="st">"SI2"</span>),</span>
+<span id="cb1-13"><a></a>    <span class="st">"I"</span> <span class="ot">=</span> <span class="st">"I1"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-14"><a></a>  <span class="fu">mutate</span>(<span class="at">clarity =</span> <span class="fu">fct_relevel</span>(clarity, <span class="fu">c</span>(<span class="st">"IF"</span>, <span class="st">"VVS"</span>, <span class="st">"VS"</span>, <span class="st">"SI"</span>, <span class="st">"I"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb1-15"><a></a>  <span class="fu">filter</span>(carat <span class="sc">&lt;=</span> <span class="fl">3.0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-16"><a></a>  <span class="fu">sample_n</span>(<span class="dv">5000</span>)</span>
+<span id="cb1-17"><a></a></span>
+<span id="cb1-18"><a></a><span class="fu">glimpse</span>(diamonds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 5,000
+Columns: 7
+$ price     &lt;dbl&gt; 3867, 12048, 878, 4325, 401, 5504, 1767, 4704, 112…
+$ carat     &lt;dbl&gt; 0.90, 2.01, 0.41, 0.68, 0.30, 1.19, 0.63, 1.02, 0.…
+$ cut       &lt;fct&gt; Ideal, Ideal, Very Good, Ideal, Ideal, Ideal, Good…
+$ color     &lt;fct&gt; I, J, F, D, E, D, H, G, F, H, F, G, H, I, I, F, F,…
+$ clarity   &lt;fct&gt; VS, SI, SI, VVS, SI, SI, VS, SI, SI, VS, VS, VVS, …
+$ length_mm &lt;dbl&gt; 6.13, 8.08, 4.73, 5.66, 4.33, 6.91, 5.47, 6.36, 5.…
+$ width_mm  &lt;dbl&gt; 6.18, 8.03, 4.69, 5.69, 4.35, 6.89, 5.56, 6.40, 5.…</code></pre>
+</div>
+</div>
+</section><section id="bivariate-eda" class="slide level2"><h2>Bivariate EDA</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="16-regression-diagnostics_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="lets-start-with-slr" class="slide level2 small scrollable"><h2>Let’s start with SLR</h2>
+<p>Fitted Model:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>diamond_fit_ct <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">fit</span>(price <span class="sc">~</span> carat, <span class="at">data =</span> diamonds)</span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="fu">tidy</span>(diamond_fit_ct)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term        estimate std.error statistic p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)   -2361.      41.9     -56.3       0
+2 carat          7916.      45.2     175.        0</code></pre>
+</div>
+</div>
+<p>Using statistical notation…</p>
+<p><span class="math display">\[
+\widehat{\text{price}} = -2360.588 + 7916.132 \times \text{carat}
+\]</span></p>
+<div class="question">
+<p>How would you interpret the intercept in the context of these data–is it meaningful? What about the slope?</p>
+</div>
+</section><section id="assumptions-for-regression-single-or-multiple" class="slide level2 small scrollable"><h2>Assumptions for regression (single or multiple!)</h2>
+<p><span class="math display">\[
+Y|X_1, \ldots, X_p \sim N(\beta_0 + \beta_1X_1 + \dots + \beta_pX_p, \sigma_\epsilon^2)
+\]</span></p>
+<p>The above is what we implicitly <strong>assume</strong> to be true when we preform standard regression modeling; this is a fancy expression (take 240 or 210 to learn more!) that basically encapsulates the following core assumptions:</p>
+<div>
+<ol type="1">
+<li class="fragment"><p><strong>Independence:</strong> The errors (residuals) are independent from one another.</p></li>
+<li class="fragment"><p><strong>Linearity:</strong> There is a linear relationship between the response and predictor variables.</p></li>
+<li class="fragment"><p><strong>Equal variance:</strong> The variability about the least squares line is equal for all combinations of predictors.</p></li>
+<li class="fragment"><p><strong>Normality:</strong> The distribution of the errors (residuals) is approximately normal.</p></li>
+</ol>
+</div>
+</section><section id="independence" class="slide level2"><h2>1. Independence</h2>
+<p>Recall our population model for the <span class="math inline">\(i^{th}\)</span> observation <span class="math display">\[
+y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + ...+ \beta_p x_{ip} +\epsilon_i
+\]</span></p>
+<p><strong>Independence:</strong> The errors <span class="math inline">\(\epsilon_i\)</span> are independent of one another. Specifically, this also implies that the outcomes <span class="math inline">\(y_i\)</span> are independent (don’t worry about why).</p>
+<div class="question">
+<p>How might the independence assumption be violated?</p>
+</div>
+</section><section id="remember-this-crap" class="slide level2 smaller incremental scrollable"><h2>Remember this crap?</h2>
+<p><em>The Treatment of Lead-Exposed Children (TLC) Trial was a placebo-controlled, randomized clinical trial designed to evaluate whether treatment with succimer, an oral chelating agent used to remove lead from the body, could reduce blood lead levels in young children with moderate lead exposure. The study enrolled children aged 12–33 months with blood lead levels between 20 and 44 micrograms per deciliter (µg/dL) and randomly assigned them to receive either succimer or a placebo. Blood lead levels were measured repeatedly over time to assess the effectiveness of the treatment.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>tlc_raw <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/tlc_raw.csv"</span>)</span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a>tlc_long <span class="ot">&lt;-</span> tlc_raw <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb5-5"><a></a>    <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(id, group),</span>
+<span id="cb5-6"><a></a>    <span class="at">names_to =</span> <span class="st">"week"</span>,</span>
+<span id="cb5-7"><a></a>    <span class="at">names_prefix =</span> <span class="st">"lead_w"</span>,</span>
+<span id="cb5-8"><a></a>    <span class="at">names_transform =</span> as.numeric,</span>
+<span id="cb5-9"><a></a>    <span class="at">values_to =</span> <span class="st">"lead_lvl"</span></span>
+<span id="cb5-10"><a></a>  )</span>
+<span id="cb5-11"><a></a></span>
+<span id="cb5-12"><a></a><span class="fu">glimpse</span>(tlc_long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 400
+Columns: 4
+$ id       &lt;dbl&gt; 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, …
+$ group    &lt;chr&gt; "P", "P", "P", "P", "A", "A", "A", "A", "A", "A", "…
+$ week     &lt;dbl&gt; 0, 1, 4, 6, 0, 1, 4, 6, 0, 1, 4, 6, 0, 1, 4, 6, 0, …
+$ lead_lvl &lt;dbl&gt; 30.8, 26.9, 25.8, 23.8, 26.5, 14.8, 19.5, 21.0, 25.…</code></pre>
+</div>
+</div>
+<div class="question">
+<p>What might be problematic here if I fit a model predicting <code>lead_lvl</code> from both <code>group</code> and <code>week</code> using these data?</p>
+</div>
+</section><section id="linearity" class="slide level2 small incremental scrollable"><h2>2. Linearity</h2>
+<p>Back to our population model… <span class="math display">\[
+y = \beta_0 + \beta_1 x_{1} + \beta_2 x_{2} + ...+ \beta_p x_{p} +\epsilon
+\]</span></p>
+<p><strong>Linearity:</strong>The regression model is linear in the parameters. Specifically, this is a linearity assumption on the parameters (i.e., the <span class="math inline">\(\beta\)</span> terms), NOT the predictors themselves (i.e., the observed x terms).</p>
+<div class="fragment">
+<p>So this is fine…</p>
+<p><span class="math display">\[
+y = \beta_0 + \beta_1 x_{1} + \beta_2 x_{2}^2 + ...+ \beta_p x_{p}^p +\epsilon
+\]</span></p>
+</div>
+<div class="fragment">
+<p>… but this is not.</p>
+<p><span class="math display">\[
+y = \beta_0 + \frac{\beta_1x_1}{\beta_2 + \beta_3(x_1+1)} +...+ \beta_p x_{p} +\epsilon
+\]</span></p>
+</div>
+</section><section id="equal-variance" class="slide level2 small incremental scrollable"><h2>3. Equal variance</h2>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + ...+ \beta_p x_{ip} +\epsilon_i
+\]</span> <span class="math display">\[
+\epsilon_i \overset{\text{i.i.d}}\sim N(0, \sigma^2)
+\]</span> <strong>Equal variance:</strong> The variance of the errors is constant (per the notation above, this variance is some constant represented by <span class="math inline">\(\sigma^2\)</span>) regardless of what the predictor values are. Specifically, this also implies that the variance of the errors is <em>independent</em> of the predictors.</p>
+<p>This may sound a bit abstract, and you don’t need to fret over any of the fancy notation. For the purposes of this course, we’ll just show you how to check whether or not this assumption is <em>reasonably</em> satisfied.</p>
+</section><section id="normality" class="slide level2"><h2>4. Normality</h2>
+<p>Again, in fancy notation:</p>
+<p><span class="math display">\[
+\epsilon_i \overset{\text{i.i.d}}\sim N(0, \sigma^2)
+\]</span></p>
+<p><strong>Normality:</strong> The errors follow a normal (bell-shaped) distribution centered at zero.</p>
+</section></section><section><section id="model-diagnostics" class="title-slide slide level1 center"><h1>Model diagnostics</h1>
+<p>So, how do we check?</p>
+</section><section id="independence-1" class="slide level2 small scrollable"><h2>Independence</h2>
+<div>
+<ul>
+<li class="fragment"><p>We usually have to think through this one, unfortunately. In some situations there might be some plots that will specifically give us an indication that independence is violated, but it’s best practice to think about the data generating mechanism and how the observations actually came about. Understanding experimental design is especially helpful here.</p></li>
+<li class="fragment"><p>In a randomized experiment, independence across subjects is often a reasonable assumption because the randomization process helps prevent observations from systematically influencing one another (e.g., we can assume that one child’s blood lead levels do not indluence a different child’s blood lead levels in the TLC trial).</p></li>
+<li class="fragment"><p>In observational studies, however, we need to think more carefully about whether observations may be related through time, location, shared environments, repeated measurements, or other sources of dependence.</p></li>
+</ul>
+</div>
+</section><section id="residual-plots-help-with-the-rest" class="slide level2 scrollable"><h2>Residual plots help with the rest!</h2>
+<p>First, get the residuals and “fitted” (predicted) values for your original data with <code>augment()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>diamonds_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(diamond_fit_ct, diamonds)</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a><span class="fu">glimpse</span>(diamonds_aug)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 5,000
+Columns: 9
+$ .pred     &lt;dbl&gt; 4763.93087, 13550.83688, 885.02641, 3022.38193, 14…
+$ .resid    &lt;dbl&gt; -896.930869, -1502.836879, -7.026414, 1302.618070,…
+$ price     &lt;dbl&gt; 3867, 12048, 878, 4325, 401, 5504, 1767, 4704, 112…
+$ carat     &lt;dbl&gt; 0.90, 2.01, 0.41, 0.68, 0.30, 1.19, 0.63, 1.02, 0.…
+$ cut       &lt;fct&gt; Ideal, Ideal, Very Good, Ideal, Ideal, Ideal, Good…
+$ color     &lt;fct&gt; I, J, F, D, E, D, H, G, F, H, F, G, H, I, I, F, F,…
+$ clarity   &lt;fct&gt; VS, SI, SI, VVS, SI, SI, VS, SI, SI, VS, VS, VVS, …
+$ length_mm &lt;dbl&gt; 6.13, 8.08, 4.73, 5.66, 4.33, 6.91, 5.47, 6.36, 5.…
+$ width_mm  &lt;dbl&gt; 6.18, 8.03, 4.69, 5.69, 4.35, 6.89, 5.56, 6.40, 5.…</code></pre>
+</div>
+</div>
+</section><section id="residual-plots-help-with-the-rest-1" class="slide level2 scrollable"><h2>Residual plots help with the rest!</h2>
+<p>Then, explore &amp; assess!</p>
+<p>First, a “Fitted vs.&nbsp;Residuals” plot:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(diamonds_aug, <span class="fu">aes</span>(<span class="at">x =</span> .pred, <span class="at">y =</span> .resid)) <span class="sc">+</span></span>
+<span id="cb9-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb9-4"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Fitted value"</span>,</span>
+<span id="cb9-5"><a></a>       <span class="at">y =</span> <span class="st">"Residual"</span>,</span>
+<span id="cb9-6"><a></a>       <span class="at">title =</span> <span class="st">"Fitted vs. Residuals Plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="16-regression-diagnostics_files/figure-revealjs/fitted-vs-resid-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="what-are-we-looking-for" class="slide level2 small scrollable"><h2>What are we looking for?</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="16-regression-diagnostics_files/figure-revealjs/plot-squad-I-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p><strong>Linearity:</strong> If linearity is satisfied, we would expect to find no discernible pattern (i.e., points randomly scattered around the horizontal axis <span class="math inline">\(\text{y} = 0\)</span>) in the fitted vs.&nbsp;residuals plot</p></li>
+<li><p><strong>Equal variance:</strong> If equal variance is satisfied, we would expect to see “evenly-spaced” dots (in the vertical sense) along the y-axis, regardless of what the predicted values are.</p></li>
+</ul></section><section id="what-are-we-looking-for-1" class="slide level2 small scrollable"><h2>What are we looking for?</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="16-regression-diagnostics_files/figure-revealjs/plot-squad-II-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li class="fragment"><p>In the above, plot A is an example of a “good” fitted vs.&nbsp;residuals plot that supports both the linearity and equal variance assumptions (homoskedastic data)</p></li>
+<li class="fragment">
+<p>Plot B shows that the residual variance (vertical spread) increases as the fitted values increase; plot C shows the residual variance decreasing as the fitted values increase</p>
+<ul>
+<li class="fragment">Both of these plots suggest that the underlying model violates the assumption of constant / equal error variance (heteroskedastic data)</li>
+</ul>
+</li>
+<li class="fragment"><p>Plot D shows a curved pattern, which indicates that the wrong type of model was used (i.e., linearity assumption is violated)</p></li>
+</ul>
+</div>
+</section><section id="back-to-the-diamonds" class="slide level2 small scrollable"><h2>Back to the diamonds!</h2>
+<div class="question">
+<p>Based on the fitted vs.&nbsp;residuals plot below, what do you think of the linearity and constant variance assumptions underlying our simple linear regression model predicting diamond price from carat?</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="16-regression-diagnostics_files/figure-revealjs/fitted-vs-resid-II-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="distribution-of-residuals" class="slide level2 scrollable"><h2>Distribution of residuals</h2>
+<ul>
+<li><p>Next, we can take a look at a histogram of the residuals to get an overall feel for the distribution of them</p></li>
+<li>
+<p>Alternatively, we can use a quantile-quantile plot (Q-Q plot) to get a more accurate picture</p>
+<ul>
+<li>The Q-Q plot compares the quantiles of some sample to the theoretical quantiles from a pre-specified distribution (such as the normal distribution)</li>
+</ul>
+</li>
+</ul></section><section id="histogram-of-residuals" class="slide level2 scrollable"><h2>Histogram of residuals</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="16-regression-diagnostics_files/figure-revealjs/resid_hist-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section></section>
