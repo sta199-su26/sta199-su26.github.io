@@ -2,8 +2,6 @@
 title: "Improvement and progress"
 subtitle: "Milestone 3"
 categories: "Project"
-execute:
-  echo: false
 ---
 
 By this point you've received feedback on your proposal & should have identified which of your two proposed datasets you're moving forward with. This milestone prompts you to begin making progress on your analysis and corresponding write-up.
