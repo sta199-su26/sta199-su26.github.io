@@ -4230,6 +4230,13 @@
     "text": "Data: forested\n\n\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52,…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74,…\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 19…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No t…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195,…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61,…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.…\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 1…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, …\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 17…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74,…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144,…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tre…"
   },
   {
+    "objectID": "slides/18-logistic-regression-II-slides.html#data-forested-2",
+    "href": "slides/18-logistic-regression-II-slides.html#data-forested-2",
+    "title": "Logistic Regression II",
+    "section": "Data: forested\n",
+    "text": "Data: forested\n\n\n\n7107 rows and 19 columns;\nEach observation (row) is a plot of land;\nVariables include geographical and meteorological information about each plot, as well as a binary indicator forested (“Yes” or “No”);\nGiven information about a plot that is easy (and cheap) to collect remotely, can we use a model to predict if a plot is forested without actually visiting it (which could be difficult and costly)?"
+  },
+  {
     "objectID": "slides/18-logistic-regression-II-slides.html#outcome-and-predictors",
     "href": "slides/18-logistic-regression-II-slides.html#outcome-and-predictors",
     "title": "Logistic Regression II",
@@ -4249,6 +4256,13 @@
     "title": "Logistic Regression II",
     "section": "Should we include a predictor?",
     "text": "Should we include a predictor?\nTo determine whether we should include a predictor in a model, we should start by asking:\n\n\nIs it ethical to use this variable? (Or even legal?)\nWill this variable be available at prediction time?\nDoes this variable contribute to explainability?"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#goal",
+    "href": "slides/18-logistic-regression-II-slides.html#goal",
+    "title": "Logistic Regression II",
+    "section": "Goal",
+    "text": "Goal\n\n\nUse the data we’ve already seen to predict if a yet-to-be-observed plot of land is forested;\nWe want a model that does well on data it has never seen before;\n“Out-of-sample” predictions on new data are more useful than “in-sample” predictions on old data;"
   },
   {
     "objectID": "slides/18-logistic-regression-II-slides.html#weve-been-cheating",
@@ -4276,14 +4290,14 @@
     "href": "slides/18-logistic-regression-II-slides.html#the-initial-split",
     "title": "Logistic Regression II",
     "section": "The initial split",
-    "text": "The initial split\n\nset.seed(847)\nforested_split &lt;- initial_split(forested)\nforested_split\n\n&lt;Training/Testing/Total&gt;\n&lt;5330/1777/7107&gt;"
+    "text": "The initial split\nBy default it’s a 75%/25% training/test split.\n\nset.seed(847)\nforested_split &lt;- initial_split(forested)\nforested_split\n\n&lt;Training/Testing/Total&gt;\n&lt;5330/1777/7107&gt;"
   },
   {
     "objectID": "slides/18-logistic-regression-II-slides.html#setting-a-seed",
     "href": "slides/18-logistic-regression-II-slides.html#setting-a-seed",
     "title": "Logistic Regression II",
     "section": "Setting a seed",
-    "text": "Setting a seed\n\nWhat does set.seed() do?\n\n\n\nTo create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.\nThis allows us to reproduce results by setting that seed.\nWhich seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance."
+    "text": "Setting a seed\n\nWhat does set.seed() do?\n\nTLDR: The testing/training split is random, but we want the results to be reproducible, so we “freeze the random numbers in time” by setting a seed. If we don’t tell you exactly what seed to use on an assignment, you can pick any positive integer you want.\n\n\nTo create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.\nThis allows us to reproduce results by setting that seed.\nWhich seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance."
   },
   {
     "objectID": "slides/18-logistic-regression-II-slides.html#accessing-the-data",
@@ -4403,6 +4417,167 @@
     "title": "Logistic Regression II",
     "section": "ae-16-forest-classification",
     "text": "ae-16-forest-classification\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-16-forest-classification.qmd. You might be prompted to install forested, say yes.\nWork through the application exercise in class, and render, commit, and push your edits."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#fitting-a-logistic-regression-model",
+    "href": "slides/18-logistic-regression-II-slides.html#fitting-a-logistic-regression-model",
+    "title": "Logistic Regression II",
+    "section": "Fitting a logistic regression model",
+    "text": "Fitting a logistic regression model\nSimilar syntax to linear regression:\n\nforested_precip_fit &lt;- logistic_reg() |&gt;\n  fit(forested ~ precip_annual, data = forested_train)\n\ntidy(forested_precip_fit)\n\n# A tibble: 2 × 5\n  term          estimate std.error statistic   p.value\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)    1.58    0.0558         28.3 1.25e-175\n2 precip_annual -0.00190 0.0000599     -31.8 5.24e-222\n\n\n\n\\[\n\\log\\left(\\frac{\\widehat{p}}{1-\\widehat{p}}\\right)\n=\n1.57\n-\n0.0019\n\\times\nprecip.\n\\]"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#three-equivalent-representations",
+    "href": "slides/18-logistic-regression-II-slides.html#three-equivalent-representations",
+    "title": "Logistic Regression II",
+    "section": "Three equivalent representations",
+    "text": "Three equivalent representations\n\n\n\n\n\n\n\n\nVersion\nequation\nFriendly LHS?\nFriendly RHS?\n\n\n\nProbability: (0, 1)\n\\[\\widehat{p}=\\frac{e^{b_0+b_1x}}{1+e^{b_0+b_1x}}\\]\n✅\n❌\n\n\nOdds: \\((0,\\,\\infty)\\)\n\n\\[\\frac{\\widehat{p}}{1-\\widehat{p}}=e^{b_0+b_1x}\\]\n🥴\n🥴\n\n\nLog-odds: \\((-\\infty,\\,\\infty)\\)\n\n\\[\\log\\left(\\frac{\\widehat{p}}{1-\\widehat{p}}\\right)=b_0+b_1x\\]\n❌\n✅\n\n\n\nTake your pick depending on what you’re trying to do."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#probability-to-log-odds",
+    "href": "slides/18-logistic-regression-II-slides.html#probability-to-log-odds",
+    "title": "Logistic Regression II",
+    "section": "Probability to log-odds",
+    "text": "Probability to log-odds\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(p = 0 \\to \\text{log-odds}=-\\infty\\);\n\n\\(p = 1/2 \\to \\text{log-odds}=0\\);\n\n\\(p = 1 \\to \\text{log-odds}=\\infty\\);\nAnd everything in between.\n\nThe log-odds transformation takes probabilities between 0 and 1 and streeetches them out to numbers between \\(-\\infty\\) and \\(\\infty\\), for which the linear model is appropriate."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#interpreting-the-intercept",
+    "href": "slides/18-logistic-regression-II-slides.html#interpreting-the-intercept",
+    "title": "Logistic Regression II",
+    "section": "Interpreting the intercept",
+    "text": "Interpreting the intercept\nIf precip = 0, then…\n\\[\n\\widehat{\\text{Prob}(\n\\texttt{forested = \"No\"}\n\\mid precip = 0)}\n=\n\\frac{e^{1.57}}{1 + e^{1.57}}\\approx 0.83\n\\]\nSo when \\(precip = 0\\), the model predicts that the probability of forested = \"No\" is about 83%.\n\n\n\n\n\n\nNote\n\n\nWe didn’t interpret the intercept \\(b_0=1.57\\) directly. We transformed it into an interpretable quantity using the probability version of the logsitic regression model."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#interpreting-the-slope",
+    "href": "slides/18-logistic-regression-II-slides.html#interpreting-the-slope",
+    "title": "Logistic Regression II",
+    "section": "Interpreting the slope",
+    "text": "Interpreting the slope\nOdds at \\(precip\\):\n\\[\n\\frac{\\widehat{p}}{1-\\widehat{p}}\n=\n{\\color{blue}{e^{1.57\n-\n0.0019\n\\times\nprecip}}}\n\\]\n\nOdds at \\(precip + 1\\):\n\\[\n\\begin{aligned}\n\\frac{\\widehat{p}}{1-\\widehat{p}}\n&=\ne^{1.57\n-\n0.0019\n\\times\n(precip + 1)}\n\\\\\n&=\ne^{1.57\n-\n0.0019\n\\times\nprecip - 0.0019}\n\\\\\n&=\n{\\color{blue}{e^{1.57\n-\n0.0019\n\\times\nprecip}}}\n\\times\n\\color{red}{e^{-0.0019}}\n\\end{aligned}\n\\]\n\n\nIf \\(precip\\) increases by one unit, the model predicts a decrease in the odds that forested = \"No\" by a multiplicative factor of \\(e^{-0.0019}\\approx 0.99\\)."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#generate-predictions-for-the-test-data",
+    "href": "slides/18-logistic-regression-II-slides.html#generate-predictions-for-the-test-data",
+    "title": "Logistic Regression II",
+    "section": "Generate predictions for the test data",
+    "text": "Generate predictions for the test data\nAugment the test data frame with three new columns on the left that include model predictions (classifications and probabilities) for each row:\n\nforested_precip_aug &lt;- augment(forested_precip_fit, forested_test)\nforested_precip_aug\n\n# A tibble: 1,777 × 22\n   .pred_class .pred_Yes .pred_No forested  year elevation eastness\n   &lt;fct&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1 No              0.366  0.634   Yes       2005       736      -27\n 2 Yes             0.977  0.0227  Yes       2005       787       66\n 3 Yes             0.992  0.00808 Yes       2005      1330       99\n 4 Yes             0.994  0.00598 Yes       2005      1423       46\n 5 Yes             0.849  0.151   Yes       2005      1038      -34\n 6 No              0.261  0.739   No        2014       542      -32\n 7 No              0.243  0.757   No        2014       290       46\n 8 No              0.250  0.750   No        2014       676      -65\n 9 No              0.280  0.720   No        2014       252       99\n10 Yes             0.577  0.423   Yes       2014      1634       54\n# ℹ 1,767 more rows\n# ℹ 15 more variables: northness &lt;dbl&gt;, roughness &lt;dbl&gt;,\n#   tree_no_tree &lt;fct&gt;, dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,\n#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,\n#   land_type &lt;fct&gt;"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#how-did-the-model-perform",
+    "href": "slides/18-logistic-regression-II-slides.html#how-did-the-model-perform",
+    "title": "Logistic Regression II",
+    "section": "How did the model perform?",
+    "text": "How did the model perform?\nThese are the four possibilities:\n\n\n\n\n\nOur test data have the truth in the forested column;\nWe can compare the predictions in .pred_class to the true values and see how we did."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#getting-the-error-rates",
+    "href": "slides/18-logistic-regression-II-slides.html#getting-the-error-rates",
+    "title": "Logistic Regression II",
+    "section": "Getting the error rates",
+    "text": "Getting the error rates\nCount how many predictions fell into the four bins:\n\nforested_precip_aug |&gt;\n  count(forested, .pred_class)\n\n# A tibble: 4 × 3\n  forested .pred_class     n\n  &lt;fct&gt;    &lt;fct&gt;       &lt;int&gt;\n1 Yes      Yes           664\n2 Yes      No            294\n3 No       Yes           138\n4 No       No            681\n\n\nStill need all the tools from before the midterm!"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#getting-the-error-rates-1",
+    "href": "slides/18-logistic-regression-II-slides.html#getting-the-error-rates-1",
+    "title": "Logistic Regression II",
+    "section": "Getting the error rates",
+    "text": "Getting the error rates\nCompute the error rates:\n\nforested_precip_aug |&gt;\n  count(forested, .pred_class) |&gt;\n  group_by(forested) |&gt;\n  mutate(\n    p = n / sum(n)\n  )\n\n# A tibble: 4 × 4\n# Groups:   forested [2]\n  forested .pred_class     n     p\n  &lt;fct&gt;    &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt;\n1 Yes      Yes           664 0.693\n2 Yes      No            294 0.307\n3 No       Yes           138 0.168\n4 No       No            681 0.832\n\n\nStill need all the tools from before the midterm!"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#getting-the-error-rates-2",
+    "href": "slides/18-logistic-regression-II-slides.html#getting-the-error-rates-2",
+    "title": "Logistic Regression II",
+    "section": "Getting the error rates",
+    "text": "Getting the error rates\nLabel the rows so we don’t go crazy:\n\nforested_precip_aug |&gt;\n  count(forested, .pred_class) |&gt;\n  group_by(forested) |&gt;\n  mutate(\n    p = n / sum(n),\n    decision = case_when(\n      forested == \"Yes\" & .pred_class == \"Yes\" ~ \"sensitivity\",\n      forested == \"Yes\" & .pred_class == \"No\" ~ \"false negative\",\n      forested == \"No\" & .pred_class == \"Yes\" ~ \"false positive\",\n      forested == \"No\" & .pred_class == \"No\" ~ \"specificity\",\n    )\n  )\n\n# A tibble: 4 × 5\n# Groups:   forested [2]\n  forested .pred_class     n     p decision      \n  &lt;fct&gt;    &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;         \n1 Yes      Yes           664 0.693 sensitivity   \n2 Yes      No            294 0.307 false negative\n3 No       Yes           138 0.168 false positive\n4 No       No            681 0.832 specificity"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#fyi-error-rates-sum-to-1-within-the-levels-of-the-true-outcome",
+    "href": "slides/18-logistic-regression-II-slides.html#fyi-error-rates-sum-to-1-within-the-levels-of-the-true-outcome",
+    "title": "Logistic Regression II",
+    "section": "FYI: error rates sum to 1 within the levels of the true outcome",
+    "text": "FYI: error rates sum to 1 within the levels of the true outcome\n\n\nFor these two, the denominator is the number of truly “zero” cases:\n\nTNR: proportion of “zero” cases correctly classified as “zero;”\nFPR: proportion of “zero” cases incorrectly classified as “one;”\n\n\nFor these two, the denominator is the number of truly “one” cases:\n\nFNR: proportion of “one” cases incorrectly classified as “zero,”\nTPR: proportion of “one” cases correctly classified as “one.”\n\n\n\n\n\nSo TNR + FPR = 1 and FNR + TPR = 1.\nThat’s why we did group_by(forested)."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#fyi-the-default-threshold-is-50",
+    "href": "slides/18-logistic-regression-II-slides.html#fyi-the-default-threshold-is-50",
+    "title": "Logistic Regression II",
+    "section": "FYI: the default threshold is 50%",
+    "text": "FYI: the default threshold is 50%\n\nThe model produces probabilities: .pred_Yes and .pred_No;\nThe concrete classifications in the .pred_class column come from applying a 50% threshold to these probabilities:\n\n\\[\n\\widehat{\\text{forested}}=\n\\begin{cases}\n\\text{No} & \\text{.pred_Yes} \\leq 0.5\\\\\n\\text{Yes} & \\text{.pred_Yes} &gt; 0.5.\n\\end{cases}\n\\]\n\nIf you want to override that default, you must do so manually."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#change-threshold-to-0.75",
+    "href": "slides/18-logistic-regression-II-slides.html#change-threshold-to-0.75",
+    "title": "Logistic Regression II",
+    "section": "Change threshold to 0.75",
+    "text": "Change threshold to 0.75\nNew threshold \\(\\rightarrow\\) New classifications \\(\\rightarrow\\) New error rates\n\nforested_precip_aug |&gt;\n  mutate(\n    .pred_class = if_else(.pred_Yes &gt; 0.75, \"Yes\", \"No\")\n  ) |&gt;\n  count(forested, .pred_class) |&gt;\n  group_by(forested) |&gt;\n  mutate(\n    p = n / sum(n),\n  )\n\n# A tibble: 4 × 4\n# Groups:   forested [2]\n  forested .pred_class     n      p\n  &lt;fct&gt;    &lt;chr&gt;       &lt;int&gt;  &lt;dbl&gt;\n1 Yes      No            489 0.510 \n2 Yes      Yes           469 0.490 \n3 No       No            760 0.928 \n4 No       Yes            59 0.0720"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#unpacking-roc_curve",
+    "href": "slides/18-logistic-regression-II-slides.html#unpacking-roc_curve",
+    "title": "Logistic Regression II",
+    "section": "Unpacking roc_curve\n",
+    "text": "Unpacking roc_curve\n\n\n\nRecall the augmented data frame:\n\nforested_precip_aug |&gt;\n  select(.pred_class:forested)\n\n# A tibble: 1,777 × 4\n   .pred_class .pred_Yes .pred_No forested\n   &lt;fct&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;   \n 1 No              0.366  0.634   Yes     \n 2 Yes             0.977  0.0227  Yes     \n 3 Yes             0.992  0.00808 Yes     \n 4 Yes             0.994  0.00598 Yes     \n 5 Yes             0.849  0.151   Yes     \n 6 No              0.261  0.739   No      \n 7 No              0.243  0.757   No      \n 8 No              0.250  0.750   No      \n 9 No              0.280  0.720   No      \n10 Yes             0.577  0.423   Yes     \n# ℹ 1,767 more rows\n\n\nRecall how forested is leveled:\n\nlevels(forested_precip_aug$forested)\n\n[1] \"Yes\" \"No\" \n\n\n\n\nroc_curve(forested_precip_aug, \n          truth = forested, \n          .pred_Yes, \n          event_level = \"first\")\n\n\n\nSupply augmented data frame;\nTell it which column contains true classifications;\nTell it which column contains the predicted probabilities for the level you care about\nTell it which level of truth is the one you care about\n\n\n\n\n\n\n\n\n\nWarning\n\n\nThose last two arguments need to match!"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#the-roc-curve",
+    "href": "slides/18-logistic-regression-II-slides.html#the-roc-curve",
+    "title": "Logistic Regression II",
+    "section": "The ROC curve",
+    "text": "The ROC curve\n\nforested_precip_roc &lt;- roc_curve(forested_precip_aug, \n                                 truth = forested, \n                                 .pred_Yes, \n                                 event_level = \"first\")\n\nggplot(forested_precip_roc, aes(x = 1 - specificity, y = sensitivity)) +\n  geom_path() +\n  geom_abline(lty = 3) +\n  coord_equal() + \n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#the-roc-curve-1",
+    "href": "slides/18-logistic-regression-II-slides.html#the-roc-curve-1",
+    "title": "Logistic Regression II",
+    "section": "The ROC curve",
+    "text": "The ROC curve\n\n\nROC stands for receiver operating characteristic;\nThis visualizes the classification accuracy across a range of thresholds;\nThe more “up and to the left” it is, the better.\nWe can quantify “up and to the left” with the area under the curve (AUC)."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#the-roc-curve-2",
+    "href": "slides/18-logistic-regression-II-slides.html#the-roc-curve-2",
+    "title": "Logistic Regression II",
+    "section": "The ROC curve",
+    "text": "The ROC curve"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#auc-1",
+    "href": "slides/18-logistic-regression-II-slides.html#auc-1",
+    "title": "Logistic Regression II",
+    "section": "AUC = 1",
+    "text": "AUC = 1\nThis is the best we could possibly do:"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#auc-1-2",
+    "href": "slides/18-logistic-regression-II-slides.html#auc-1-2",
+    "title": "Logistic Regression II",
+    "section": "AUC = 1 / 2",
+    "text": "AUC = 1 / 2\nDon’t waste time fitting a model. Just flip a coin:"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#auc-0",
+    "href": "slides/18-logistic-regression-II-slides.html#auc-0",
+    "title": "Logistic Regression II",
+    "section": "AUC = 0",
+    "text": "AUC = 0\nThis is the worst we could possibly do:"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#auc-for-the-model-we-fit",
+    "href": "slides/18-logistic-regression-II-slides.html#auc-for-the-model-we-fit",
+    "title": "Logistic Regression II",
+    "section": "AUC for the model we fit",
+    "text": "AUC for the model we fit\n\nroc_auc(\n  forested_precip_aug, \n  truth = forested, \n  .pred_Yes, \n  event_level = \"first\"\n)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.880\n\n\nNot bad!"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#the-area-under-the-roc-curve",
+    "href": "slides/18-logistic-regression-II-slides.html#the-area-under-the-roc-curve",
+    "title": "Logistic Regression II",
+    "section": "The area under the ROC curve",
+    "text": "The area under the ROC curve\n\n\nThis is a “quality score” for a logistic regression model;\nWhen you compute it for a test data set that you set aside, the AUC is a measure of out-of-sample prediction accuracy;\nAUC is a number between 0 and 1, where 0 is awful and 1 is great, similar to \\(R^2\\) for linear regression.\nThe function roc_auc computes it for you, and it takes the same set of arguments as roc_curve."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II-slides.html#new-commands",
+    "href": "slides/18-logistic-regression-II-slides.html#new-commands",
+    "title": "Logistic Regression II",
+    "section": "New commands",
+    "text": "New commands\n\nlogistic_reg\naugment\nroc_curve\nroc_auc\nset.seed\n\ninitial_split, training, test\n\ngeom_path"
   },
   {
     "objectID": "slides/18-logistic-regression-II.html",
@@ -4622,6 +4797,13 @@
     "text": "Data: forested\n\n\nglimpse(forested)\n\nRows: 7,107\nColumns: 19\n$ forested         &lt;fct&gt; Yes, Yes, No, Yes, Yes, Yes, Yes, Yes, Yes,…\n$ year             &lt;dbl&gt; 2005, 2005, 2005, 2005, 2005, 2005, 2005, 2…\n$ elevation        &lt;dbl&gt; 881, 113, 164, 299, 806, 736, 636, 224, 52,…\n$ eastness         &lt;dbl&gt; 90, -25, -84, 93, 47, -27, -48, -65, -62, -…\n$ northness        &lt;dbl&gt; 43, 96, 53, 34, -88, -96, 87, -75, 78, -74,…\n$ roughness        &lt;dbl&gt; 63, 30, 13, 6, 35, 53, 3, 9, 42, 99, 51, 19…\n$ tree_no_tree     &lt;fct&gt; Tree, Tree, Tree, No tree, Tree, Tree, No t…\n$ dew_temp         &lt;dbl&gt; 0.04, 6.40, 6.06, 4.43, 1.06, 1.35, 1.42, 6…\n$ precip_annual    &lt;dbl&gt; 466, 1710, 1297, 2545, 609, 539, 702, 1195,…\n$ temp_annual_mean &lt;dbl&gt; 6.42, 10.64, 10.07, 9.86, 7.72, 7.89, 7.61,…\n$ temp_annual_min  &lt;dbl&gt; -8.32, 1.40, 0.19, -1.20, -5.98, -6.00, -5.…\n$ temp_annual_max  &lt;dbl&gt; 12.91, 15.84, 14.42, 15.78, 13.84, 14.66, 1…\n$ temp_january_min &lt;dbl&gt; -0.08, 5.44, 5.72, 3.95, 1.60, 1.12, 0.99, …\n$ vapor_min        &lt;dbl&gt; 78, 34, 49, 67, 114, 67, 67, 31, 60, 79, 17…\n$ vapor_max        &lt;dbl&gt; 1194, 938, 754, 1164, 1254, 1331, 1275, 944…\n$ canopy_cover     &lt;dbl&gt; 50, 79, 47, 42, 59, 36, 14, 27, 82, 12, 74,…\n$ lon              &lt;dbl&gt; -118.6865, -123.0825, -122.3468, -121.9144,…\n$ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.…\n$ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tre…"
   },
   {
+    "objectID": "slides/18-logistic-regression-II.html#data-forested-2",
+    "href": "slides/18-logistic-regression-II.html#data-forested-2",
+    "title": "Logistic Regression II",
+    "section": "Data: forested\n",
+    "text": "Data: forested\n\n\n\n7107 rows and 19 columns;\nEach observation (row) is a plot of land;\nVariables include geographical and meteorological information about each plot, as well as a binary indicator forested (“Yes” or “No”);\nGiven information about a plot that is easy (and cheap) to collect remotely, can we use a model to predict if a plot is forested without actually visiting it (which could be difficult and costly)?"
+  },
+  {
     "objectID": "slides/18-logistic-regression-II.html#outcome-and-predictors",
     "href": "slides/18-logistic-regression-II.html#outcome-and-predictors",
     "title": "Logistic Regression II",
@@ -4641,6 +4823,13 @@
     "title": "Logistic Regression II",
     "section": "Should we include a predictor?",
     "text": "Should we include a predictor?\nTo determine whether we should include a predictor in a model, we should start by asking:\n\n\nIs it ethical to use this variable? (Or even legal?)\nWill this variable be available at prediction time?\nDoes this variable contribute to explainability?"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#goal",
+    "href": "slides/18-logistic-regression-II.html#goal",
+    "title": "Logistic Regression II",
+    "section": "Goal",
+    "text": "Goal\n\n\nUse the data we’ve already seen to predict if a yet-to-be-observed plot of land is forested;\nWe want a model that does well on data it has never seen before;\n“Out-of-sample” predictions on new data are more useful than “in-sample” predictions on old data;"
   },
   {
     "objectID": "slides/18-logistic-regression-II.html#weve-been-cheating",
@@ -4668,14 +4857,14 @@
     "href": "slides/18-logistic-regression-II.html#the-initial-split",
     "title": "Logistic Regression II",
     "section": "The initial split",
-    "text": "The initial split\n\nset.seed(847)\nforested_split &lt;- initial_split(forested)\nforested_split\n\n&lt;Training/Testing/Total&gt;\n&lt;5330/1777/7107&gt;"
+    "text": "The initial split\nBy default it’s a 75%/25% training/test split.\n\nset.seed(847)\nforested_split &lt;- initial_split(forested)\nforested_split\n\n&lt;Training/Testing/Total&gt;\n&lt;5330/1777/7107&gt;"
   },
   {
     "objectID": "slides/18-logistic-regression-II.html#setting-a-seed",
     "href": "slides/18-logistic-regression-II.html#setting-a-seed",
     "title": "Logistic Regression II",
     "section": "Setting a seed",
-    "text": "Setting a seed\n\nWhat does set.seed() do?\n\n\n\nTo create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.\nThis allows us to reproduce results by setting that seed.\nWhich seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance."
+    "text": "Setting a seed\n\nWhat does set.seed() do?\n\nTLDR: The testing/training split is random, but we want the results to be reproducible, so we “freeze the random numbers in time” by setting a seed. If we don’t tell you exactly what seed to use on an assignment, you can pick any positive integer you want.\n\n\nTo create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.\nThis allows us to reproduce results by setting that seed.\nWhich seed you pick doesn’t matter, as long as you don’t try a bunch of seeds and pick the one that gives you the best performance."
   },
   {
     "objectID": "slides/18-logistic-regression-II.html#accessing-the-data",
@@ -4795,6 +4984,167 @@
     "title": "Logistic Regression II",
     "section": "ae-16-forest-classification",
     "text": "ae-16-forest-classification\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-16-forest-classification.qmd. You might be prompted to install forested, say yes.\nWork through the application exercise in class, and render, commit, and push your edits."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#fitting-a-logistic-regression-model",
+    "href": "slides/18-logistic-regression-II.html#fitting-a-logistic-regression-model",
+    "title": "Logistic Regression II",
+    "section": "Fitting a logistic regression model",
+    "text": "Fitting a logistic regression model\nSimilar syntax to linear regression:\n\nforested_precip_fit &lt;- logistic_reg() |&gt;\n  fit(forested ~ precip_annual, data = forested_train)\n\ntidy(forested_precip_fit)\n\n# A tibble: 2 × 5\n  term          estimate std.error statistic   p.value\n  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)    1.58    0.0558         28.3 1.25e-175\n2 precip_annual -0.00190 0.0000599     -31.8 5.24e-222\n\n\n. . .\n\\[\n\\log\\left(\\frac{\\widehat{p}}{1-\\widehat{p}}\\right)\n=\n1.57\n-\n0.0019\n\\times\nprecip.\n\\]"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#three-equivalent-representations",
+    "href": "slides/18-logistic-regression-II.html#three-equivalent-representations",
+    "title": "Logistic Regression II",
+    "section": "Three equivalent representations",
+    "text": "Three equivalent representations\n\n\n\n\n\n\n\n\nVersion\nequation\nFriendly LHS?\nFriendly RHS?\n\n\n\nProbability: (0, 1)\n\\[\\widehat{p}=\\frac{e^{b_0+b_1x}}{1+e^{b_0+b_1x}}\\]\n✅\n❌\n\n\nOdds: \\((0,\\,\\infty)\\)\n\n\\[\\frac{\\widehat{p}}{1-\\widehat{p}}=e^{b_0+b_1x}\\]\n🥴\n🥴\n\n\nLog-odds: \\((-\\infty,\\,\\infty)\\)\n\n\\[\\log\\left(\\frac{\\widehat{p}}{1-\\widehat{p}}\\right)=b_0+b_1x\\]\n❌\n✅\n\n\n\nTake your pick depending on what you’re trying to do."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#probability-to-log-odds",
+    "href": "slides/18-logistic-regression-II.html#probability-to-log-odds",
+    "title": "Logistic Regression II",
+    "section": "Probability to log-odds",
+    "text": "Probability to log-odds\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(p = 0 \\to \\text{log-odds}=-\\infty\\);\n\n\\(p = 1/2 \\to \\text{log-odds}=0\\);\n\n\\(p = 1 \\to \\text{log-odds}=\\infty\\);\nAnd everything in between.\n\nThe log-odds transformation takes probabilities between 0 and 1 and streeetches them out to numbers between \\(-\\infty\\) and \\(\\infty\\), for which the linear model is appropriate."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#interpreting-the-intercept",
+    "href": "slides/18-logistic-regression-II.html#interpreting-the-intercept",
+    "title": "Logistic Regression II",
+    "section": "Interpreting the intercept",
+    "text": "Interpreting the intercept\nIf precip = 0, then…\n\\[\n\\widehat{\\text{Prob}(\n\\texttt{forested = \"No\"}\n\\mid precip = 0)}\n=\n\\frac{e^{1.57}}{1 + e^{1.57}}\\approx 0.83\n\\]\nSo when \\(precip = 0\\), the model predicts that the probability of forested = \"No\" is about 83%.\n\n\n\n\n\n\nNote\n\n\n\nWe didn’t interpret the intercept \\(b_0=1.57\\) directly. We transformed it into an interpretable quantity using the probability version of the logsitic regression model."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#interpreting-the-slope",
+    "href": "slides/18-logistic-regression-II.html#interpreting-the-slope",
+    "title": "Logistic Regression II",
+    "section": "Interpreting the slope",
+    "text": "Interpreting the slope\nOdds at \\(precip\\):\n\\[\n\\frac{\\widehat{p}}{1-\\widehat{p}}\n=\n{\\color{blue}{e^{1.57\n-\n0.0019\n\\times\nprecip}}}\n\\]\n. . .\nOdds at \\(precip + 1\\):\n\\[\n\\begin{aligned}\n\\frac{\\widehat{p}}{1-\\widehat{p}}\n&=\ne^{1.57\n-\n0.0019\n\\times\n(precip + 1)}\n\\\\\n&=\ne^{1.57\n-\n0.0019\n\\times\nprecip - 0.0019}\n\\\\\n&=\n{\\color{blue}{e^{1.57\n-\n0.0019\n\\times\nprecip}}}\n\\times\n\\color{red}{e^{-0.0019}}\n\\end{aligned}\n\\]\n. . .\nIf \\(precip\\) increases by one unit, the model predicts a decrease in the odds that forested = \"No\" by a multiplicative factor of \\(e^{-0.0019}\\approx 0.99\\)."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#generate-predictions-for-the-test-data",
+    "href": "slides/18-logistic-regression-II.html#generate-predictions-for-the-test-data",
+    "title": "Logistic Regression II",
+    "section": "Generate predictions for the test data",
+    "text": "Generate predictions for the test data\nAugment the test data frame with three new columns on the left that include model predictions (classifications and probabilities) for each row:\n\nforested_precip_aug &lt;- augment(forested_precip_fit, forested_test)\nforested_precip_aug\n\n# A tibble: 1,777 × 22\n   .pred_class .pred_Yes .pred_No forested  year elevation eastness\n   &lt;fct&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1 No              0.366  0.634   Yes       2005       736      -27\n 2 Yes             0.977  0.0227  Yes       2005       787       66\n 3 Yes             0.992  0.00808 Yes       2005      1330       99\n 4 Yes             0.994  0.00598 Yes       2005      1423       46\n 5 Yes             0.849  0.151   Yes       2005      1038      -34\n 6 No              0.261  0.739   No        2014       542      -32\n 7 No              0.243  0.757   No        2014       290       46\n 8 No              0.250  0.750   No        2014       676      -65\n 9 No              0.280  0.720   No        2014       252       99\n10 Yes             0.577  0.423   Yes       2014      1634       54\n# ℹ 1,767 more rows\n# ℹ 15 more variables: northness &lt;dbl&gt;, roughness &lt;dbl&gt;,\n#   tree_no_tree &lt;fct&gt;, dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,\n#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,\n#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,\n#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,\n#   land_type &lt;fct&gt;"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#how-did-the-model-perform",
+    "href": "slides/18-logistic-regression-II.html#how-did-the-model-perform",
+    "title": "Logistic Regression II",
+    "section": "How did the model perform?",
+    "text": "How did the model perform?\nThese are the four possibilities:\n\n\n\n\n\nOur test data have the truth in the forested column;\nWe can compare the predictions in .pred_class to the true values and see how we did."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#getting-the-error-rates",
+    "href": "slides/18-logistic-regression-II.html#getting-the-error-rates",
+    "title": "Logistic Regression II",
+    "section": "Getting the error rates",
+    "text": "Getting the error rates\nCount how many predictions fell into the four bins:\n\nforested_precip_aug |&gt;\n  count(forested, .pred_class)\n\n# A tibble: 4 × 3\n  forested .pred_class     n\n  &lt;fct&gt;    &lt;fct&gt;       &lt;int&gt;\n1 Yes      Yes           664\n2 Yes      No            294\n3 No       Yes           138\n4 No       No            681\n\n\nStill need all the tools from before the midterm!"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#getting-the-error-rates-1",
+    "href": "slides/18-logistic-regression-II.html#getting-the-error-rates-1",
+    "title": "Logistic Regression II",
+    "section": "Getting the error rates",
+    "text": "Getting the error rates\nCompute the error rates:\n\nforested_precip_aug |&gt;\n  count(forested, .pred_class) |&gt;\n  group_by(forested) |&gt;\n  mutate(\n    p = n / sum(n)\n  )\n\n# A tibble: 4 × 4\n# Groups:   forested [2]\n  forested .pred_class     n     p\n  &lt;fct&gt;    &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt;\n1 Yes      Yes           664 0.693\n2 Yes      No            294 0.307\n3 No       Yes           138 0.168\n4 No       No            681 0.832\n\n\nStill need all the tools from before the midterm!"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#getting-the-error-rates-2",
+    "href": "slides/18-logistic-regression-II.html#getting-the-error-rates-2",
+    "title": "Logistic Regression II",
+    "section": "Getting the error rates",
+    "text": "Getting the error rates\nLabel the rows so we don’t go crazy:\n\nforested_precip_aug |&gt;\n  count(forested, .pred_class) |&gt;\n  group_by(forested) |&gt;\n  mutate(\n    p = n / sum(n),\n    decision = case_when(\n      forested == \"Yes\" & .pred_class == \"Yes\" ~ \"sensitivity\",\n      forested == \"Yes\" & .pred_class == \"No\" ~ \"false negative\",\n      forested == \"No\" & .pred_class == \"Yes\" ~ \"false positive\",\n      forested == \"No\" & .pred_class == \"No\" ~ \"specificity\",\n    )\n  )\n\n# A tibble: 4 × 5\n# Groups:   forested [2]\n  forested .pred_class     n     p decision      \n  &lt;fct&gt;    &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;         \n1 Yes      Yes           664 0.693 sensitivity   \n2 Yes      No            294 0.307 false negative\n3 No       Yes           138 0.168 false positive\n4 No       No            681 0.832 specificity"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#fyi-error-rates-sum-to-1-within-the-levels-of-the-true-outcome",
+    "href": "slides/18-logistic-regression-II.html#fyi-error-rates-sum-to-1-within-the-levels-of-the-true-outcome",
+    "title": "Logistic Regression II",
+    "section": "FYI: error rates sum to 1 within the levels of the true outcome",
+    "text": "FYI: error rates sum to 1 within the levels of the true outcome\n\n\nFor these two, the denominator is the number of truly “zero” cases:\n\nTNR: proportion of “zero” cases correctly classified as “zero;”\nFPR: proportion of “zero” cases incorrectly classified as “one;”\n\n\nFor these two, the denominator is the number of truly “one” cases:\n\nFNR: proportion of “one” cases incorrectly classified as “zero,”\nTPR: proportion of “one” cases correctly classified as “one.”\n\n\n\n\n. . .\nSo TNR + FPR = 1 and FNR + TPR = 1.\nThat’s why we did group_by(forested)."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#fyi-the-default-threshold-is-50",
+    "href": "slides/18-logistic-regression-II.html#fyi-the-default-threshold-is-50",
+    "title": "Logistic Regression II",
+    "section": "FYI: the default threshold is 50%",
+    "text": "FYI: the default threshold is 50%\n\nThe model produces probabilities: .pred_Yes and .pred_No;\nThe concrete classifications in the .pred_class column come from applying a 50% threshold to these probabilities:\n\n\\[\n\\widehat{\\text{forested}}=\n\\begin{cases}\n\\text{No} & \\text{.pred_Yes} \\leq 0.5\\\\\n\\text{Yes} & \\text{.pred_Yes} &gt; 0.5.\n\\end{cases}\n\\]\n\nIf you want to override that default, you must do so manually."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#change-threshold-to-0.75",
+    "href": "slides/18-logistic-regression-II.html#change-threshold-to-0.75",
+    "title": "Logistic Regression II",
+    "section": "Change threshold to 0.75",
+    "text": "Change threshold to 0.75\nNew threshold \\(\\rightarrow\\) New classifications \\(\\rightarrow\\) New error rates\n\nforested_precip_aug |&gt;\n  mutate(\n    .pred_class = if_else(.pred_Yes &gt; 0.75, \"Yes\", \"No\")\n  ) |&gt;\n  count(forested, .pred_class) |&gt;\n  group_by(forested) |&gt;\n  mutate(\n    p = n / sum(n),\n  )\n\n# A tibble: 4 × 4\n# Groups:   forested [2]\n  forested .pred_class     n      p\n  &lt;fct&gt;    &lt;chr&gt;       &lt;int&gt;  &lt;dbl&gt;\n1 Yes      No            489 0.510 \n2 Yes      Yes           469 0.490 \n3 No       No            760 0.928 \n4 No       Yes            59 0.0720"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#unpacking-roc_curve",
+    "href": "slides/18-logistic-regression-II.html#unpacking-roc_curve",
+    "title": "Logistic Regression II",
+    "section": "Unpacking roc_curve\n",
+    "text": "Unpacking roc_curve\n\n\n\nRecall the augmented data frame:\n\nforested_precip_aug |&gt;\n  select(.pred_class:forested)\n\n# A tibble: 1,777 × 4\n   .pred_class .pred_Yes .pred_No forested\n   &lt;fct&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;   \n 1 No              0.366  0.634   Yes     \n 2 Yes             0.977  0.0227  Yes     \n 3 Yes             0.992  0.00808 Yes     \n 4 Yes             0.994  0.00598 Yes     \n 5 Yes             0.849  0.151   Yes     \n 6 No              0.261  0.739   No      \n 7 No              0.243  0.757   No      \n 8 No              0.250  0.750   No      \n 9 No              0.280  0.720   No      \n10 Yes             0.577  0.423   Yes     \n# ℹ 1,767 more rows\n\n\nRecall how forested is leveled:\n\nlevels(forested_precip_aug$forested)\n\n[1] \"Yes\" \"No\" \n\n\n\n\n\nroc_curve(forested_precip_aug, \n          truth = forested, \n          .pred_Yes, \n          event_level = \"first\")\n\n\n\nSupply augmented data frame;\nTell it which column contains true classifications;\nTell it which column contains the predicted probabilities for the level you care about\nTell it which level of truth is the one you care about\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThose last two arguments need to match!"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#the-roc-curve",
+    "href": "slides/18-logistic-regression-II.html#the-roc-curve",
+    "title": "Logistic Regression II",
+    "section": "The ROC curve",
+    "text": "The ROC curve\n\nforested_precip_roc &lt;- roc_curve(forested_precip_aug, \n                                 truth = forested, \n                                 .pred_Yes, \n                                 event_level = \"first\")\n\nggplot(forested_precip_roc, aes(x = 1 - specificity, y = sensitivity)) +\n  geom_path() +\n  geom_abline(lty = 3) +\n  coord_equal() + \n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#the-roc-curve-1",
+    "href": "slides/18-logistic-regression-II.html#the-roc-curve-1",
+    "title": "Logistic Regression II",
+    "section": "The ROC curve",
+    "text": "The ROC curve\n\n\nROC stands for receiver operating characteristic;\nThis visualizes the classification accuracy across a range of thresholds;\nThe more “up and to the left” it is, the better.\nWe can quantify “up and to the left” with the area under the curve (AUC)."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#the-roc-curve-2",
+    "href": "slides/18-logistic-regression-II.html#the-roc-curve-2",
+    "title": "Logistic Regression II",
+    "section": "The ROC curve",
+    "text": "The ROC curve"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#auc-1",
+    "href": "slides/18-logistic-regression-II.html#auc-1",
+    "title": "Logistic Regression II",
+    "section": "AUC = 1",
+    "text": "AUC = 1\nThis is the best we could possibly do:"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#auc-1-2",
+    "href": "slides/18-logistic-regression-II.html#auc-1-2",
+    "title": "Logistic Regression II",
+    "section": "AUC = 1 / 2",
+    "text": "AUC = 1 / 2\nDon’t waste time fitting a model. Just flip a coin:"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#auc-0",
+    "href": "slides/18-logistic-regression-II.html#auc-0",
+    "title": "Logistic Regression II",
+    "section": "AUC = 0",
+    "text": "AUC = 0\nThis is the worst we could possibly do:"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#auc-for-the-model-we-fit",
+    "href": "slides/18-logistic-regression-II.html#auc-for-the-model-we-fit",
+    "title": "Logistic Regression II",
+    "section": "AUC for the model we fit",
+    "text": "AUC for the model we fit\n\nroc_auc(\n  forested_precip_aug, \n  truth = forested, \n  .pred_Yes, \n  event_level = \"first\"\n)\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.880\n\n\nNot bad!"
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#the-area-under-the-roc-curve",
+    "href": "slides/18-logistic-regression-II.html#the-area-under-the-roc-curve",
+    "title": "Logistic Regression II",
+    "section": "The area under the ROC curve",
+    "text": "The area under the ROC curve\n\n\nThis is a “quality score” for a logistic regression model;\nWhen you compute it for a test data set that you set aside, the AUC is a measure of out-of-sample prediction accuracy;\nAUC is a number between 0 and 1, where 0 is awful and 1 is great, similar to \\(R^2\\) for linear regression.\nThe function roc_auc computes it for you, and it takes the same set of arguments as roc_curve."
+  },
+  {
+    "objectID": "slides/18-logistic-regression-II.html#new-commands",
+    "href": "slides/18-logistic-regression-II.html#new-commands",
+    "title": "Logistic Regression II",
+    "section": "New commands",
+    "text": "New commands\n\nlogistic_reg\naugment\nroc_curve\nroc_auc\nset.seed\n\ninitial_split, training, test\n\ngeom_path"
   },
   {
     "objectID": "slides/09-data-import-slides.html#administrative-details",
@@ -10419,7 +10769,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title        year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Pitch Black  2000  125031972    31116893 4.02  PASS   ok        \n2 Pain & Gain  2013  131150582    26000000 5.04  FAIL   notalk    \n3 Hulk         2003  477829407   173453913 2.75  FAIL   notalk    \n4 Bon voyage   2003   13566709    25321739 0.536 PASS   ok        \n5 G.I. Jane    1997  139809832    72561906 1.93  PASS   ok"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Safe Haven       2013  165342743    28000000  5.91 PASS   ok        \n2 Into the Wild    2007   83984389    22470870  3.74 FAIL   notalk    \n3 Martha Marcy M…  2011    6744498     1035691  6.51 PASS   ok        \n4 Lucky Number S…  2006   90141634    31206501  2.89 FAIL   notalk    \n5 The Wedding Da…  2005   94132739    17895497  5.26 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
@@ -10671,7 +11021,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title        year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Pitch Black  2000  125031972    31116893 4.02  PASS   ok        \n2 Pain & Gain  2013  131150582    26000000 5.04  FAIL   notalk    \n3 Hulk         2003  477829407   173453913 2.75  FAIL   notalk    \n4 Bon voyage   2003   13566709    25321739 0.536 PASS   ok        \n5 G.I. Jane    1997  139809832    72561906 1.93  PASS   ok"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Safe Haven       2013  165342743    28000000  5.91 PASS   ok        \n2 Into the Wild    2007   83984389    22470870  3.74 FAIL   notalk    \n3 Martha Marcy M…  2011    6744498     1035691  6.51 PASS   ok        \n4 Lucky Number S…  2006   90141634    31206501  2.89 FAIL   notalk    \n5 The Wedding Da…  2005   94132739    17895497  5.26 PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",

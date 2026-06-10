@@ -366,6 +366,7 @@ window.Quarto = {
 <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#data-forested" id="toc-data-forested" class="nav-link" data-scroll-target="#data-forested">Data: <code>forested</code></a></li>
   <li><a href="#data-forested-1" id="toc-data-forested-1" class="nav-link" data-scroll-target="#data-forested-1">Data: <code>forested</code></a></li>
+  <li><a href="#data-forested-2" id="toc-data-forested-2" class="nav-link" data-scroll-target="#data-forested-2">Data: <code>forested</code></a></li>
   <li><a href="#outcome-and-predictors" id="toc-outcome-and-predictors" class="nav-link" data-scroll-target="#outcome-and-predictors">Outcome and predictors</a></li>
   <li><a href="#forested" id="toc-forested" class="nav-link" data-scroll-target="#forested"><code>?forested</code></a></li>
   <li><a href="#should-we-include-a-predictor" id="toc-should-we-include-a-predictor" class="nav-link" data-scroll-target="#should-we-include-a-predictor">Should we include a predictor?</a></li>
@@ -374,7 +375,8 @@ window.Quarto = {
   <li>
 <a href="#data-splitting-and-spending" id="toc-data-splitting-and-spending" class="nav-link" data-scroll-target="#data-splitting-and-spending">Data splitting and spending</a>
   <ul class="collapse">
-<li><a href="#weve-been-cheating" id="toc-weve-been-cheating" class="nav-link" data-scroll-target="#weve-been-cheating">We’ve been cheating!</a></li>
+<li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
+  <li><a href="#weve-been-cheating" id="toc-weve-been-cheating" class="nav-link" data-scroll-target="#weve-been-cheating">We’ve been cheating!</a></li>
   <li><a href="#spending-your-data" id="toc-spending-your-data" class="nav-link" data-scroll-target="#spending-your-data">Spending your data</a></li>
   <li><a href="#how-much-to-spend" id="toc-how-much-to-spend" class="nav-link" data-scroll-target="#how-much-to-spend">How much to spend?</a></li>
   <li><a href="#the-initial-split" id="toc-the-initial-split" class="nav-link" data-scroll-target="#the-initial-split">The initial split</a></li>
@@ -411,6 +413,34 @@ window.Quarto = {
   <ul class="collapse">
 <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next steps</a></li>
   <li><a href="#ae-16-forest-classification" id="toc-ae-16-forest-classification" class="nav-link" data-scroll-target="#ae-16-forest-classification">ae-16-forest-classification</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#logistic-wrap-up" id="toc-logistic-wrap-up" class="nav-link" data-scroll-target="#logistic-wrap-up">Logistic wrap-up</a>
+  <ul class="collapse">
+<li><a href="#fitting-a-logistic-regression-model" id="toc-fitting-a-logistic-regression-model" class="nav-link" data-scroll-target="#fitting-a-logistic-regression-model">Fitting a logistic regression model</a></li>
+  <li><a href="#three-equivalent-representations" id="toc-three-equivalent-representations" class="nav-link" data-scroll-target="#three-equivalent-representations">Three equivalent representations</a></li>
+  <li><a href="#probability-to-log-odds" id="toc-probability-to-log-odds" class="nav-link" data-scroll-target="#probability-to-log-odds">Probability to log-odds</a></li>
+  <li><a href="#interpreting-the-intercept" id="toc-interpreting-the-intercept" class="nav-link" data-scroll-target="#interpreting-the-intercept">Interpreting the intercept</a></li>
+  <li><a href="#interpreting-the-slope" id="toc-interpreting-the-slope" class="nav-link" data-scroll-target="#interpreting-the-slope">Interpreting the slope</a></li>
+  <li><a href="#generate-predictions-for-the-test-data" id="toc-generate-predictions-for-the-test-data" class="nav-link" data-scroll-target="#generate-predictions-for-the-test-data">Generate predictions for the test data</a></li>
+  <li><a href="#how-did-the-model-perform" id="toc-how-did-the-model-perform" class="nav-link" data-scroll-target="#how-did-the-model-perform">How did the model perform?</a></li>
+  <li><a href="#getting-the-error-rates" id="toc-getting-the-error-rates" class="nav-link" data-scroll-target="#getting-the-error-rates">Getting the error rates</a></li>
+  <li><a href="#getting-the-error-rates-1" id="toc-getting-the-error-rates-1" class="nav-link" data-scroll-target="#getting-the-error-rates-1">Getting the error rates</a></li>
+  <li><a href="#getting-the-error-rates-2" id="toc-getting-the-error-rates-2" class="nav-link" data-scroll-target="#getting-the-error-rates-2">Getting the error rates</a></li>
+  <li><a href="#fyi-error-rates-sum-to-1-within-the-levels-of-the-true-outcome" id="toc-fyi-error-rates-sum-to-1-within-the-levels-of-the-true-outcome" class="nav-link" data-scroll-target="#fyi-error-rates-sum-to-1-within-the-levels-of-the-true-outcome">FYI: error rates sum to 1 within the levels of the true outcome</a></li>
+  <li><a href="#fyi-the-default-threshold-is-50" id="toc-fyi-the-default-threshold-is-50" class="nav-link" data-scroll-target="#fyi-the-default-threshold-is-50">FYI: the default threshold is 50%</a></li>
+  <li><a href="#change-threshold-to-0.75" id="toc-change-threshold-to-0.75" class="nav-link" data-scroll-target="#change-threshold-to-0.75">Change threshold to 0.75</a></li>
+  <li><a href="#unpacking-roc_curve" id="toc-unpacking-roc_curve" class="nav-link" data-scroll-target="#unpacking-roc_curve">Unpacking <code>roc_curve</code></a></li>
+  <li><a href="#the-roc-curve" id="toc-the-roc-curve" class="nav-link" data-scroll-target="#the-roc-curve">The ROC curve</a></li>
+  <li><a href="#the-roc-curve-1" id="toc-the-roc-curve-1" class="nav-link" data-scroll-target="#the-roc-curve-1">The ROC curve</a></li>
+  <li><a href="#the-roc-curve-2" id="toc-the-roc-curve-2" class="nav-link" data-scroll-target="#the-roc-curve-2">The ROC curve</a></li>
+  <li><a href="#auc-1" id="toc-auc-1" class="nav-link" data-scroll-target="#auc-1">AUC = 1</a></li>
+  <li><a href="#auc-1-2" id="toc-auc-1-2" class="nav-link" data-scroll-target="#auc-1-2">AUC = 1 / 2</a></li>
+  <li><a href="#auc-0" id="toc-auc-0" class="nav-link" data-scroll-target="#auc-0">AUC = 0</a></li>
+  <li><a href="#auc-for-the-model-we-fit" id="toc-auc-for-the-model-we-fit" class="nav-link" data-scroll-target="#auc-for-the-model-we-fit">AUC for the model we fit</a></li>
+  <li><a href="#the-area-under-the-roc-curve" id="toc-the-area-under-the-roc-curve" class="nav-link" data-scroll-target="#the-area-under-the-roc-curve">The area under the ROC curve</a></li>
+  <li><a href="#new-commands" id="toc-new-commands" class="nav-link" data-scroll-target="#new-commands">New commands</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/18-logistic-regression-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="18-logistic-regression-II-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -1007,6 +1037,16 @@ $ lat              &lt;dbl&gt; 48.69537, 47.07991, 48.77132, 45.80776, 48.…
 $ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tre…</code></pre>
 </div>
 </div>
+</section><section id="data-forested-2" class="level2"><h2 class="anchored" data-anchor-id="data-forested-2">Data: <code>forested</code>
+</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>7107 rows and 19 columns;</p></li>
+<li><p>Each observation (row) is a plot of land;</p></li>
+<li><p>Variables include geographical and meteorological information about each plot, as well as a binary indicator <code>forested</code> (“Yes” or “No”);</p></li>
+<li><p>Given information about a plot that is easy (and cheap) to collect remotely, can we use a model to predict if a plot is forested without actually visiting it (which could be difficult and costly)?</p></li>
+</ul>
+</div>
 </section><section id="outcome-and-predictors" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="outcome-and-predictors">Outcome and predictors</h2>
 <ul>
 <li>Outcome: <code>forested</code> - Factor, <code>Yes</code> (baseline, 0) or <code>No</code> (1)</li>
@@ -1038,14 +1078,22 @@ $ land_type        &lt;fct&gt; Tree, Tree, Tree, Tree, Tree, Tree, Non-tre…</c
 </ul>
 </div>
 </section></section><section id="data-splitting-and-spending" class="level1"><h1>Data splitting and spending</h1>
-<section id="weve-been-cheating" class="level2"><h2 class="anchored" data-anchor-id="weve-been-cheating">We’ve been cheating!</h2>
+<section id="goal" class="level2"><h2 class="anchored" data-anchor-id="goal">Goal</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Use the data we’ve already seen to predict if a yet-to-be-observed plot of land is forested;</p></li>
+<li><p>We want a model that does well on data it has never seen before;</p></li>
+<li><p>“Out-of-sample” predictions on new data are more useful than “in-sample” predictions on old data;</p></li>
+</ul>
+</div>
+</section><section id="weve-been-cheating" class="level2"><h2 class="anchored" data-anchor-id="weve-been-cheating">We’ve been cheating!</h2>
 <div class="incremental">
 <ul class="incremental">
 <li><p>So far, we’ve been using all the data we have for building models. In predictive contexts, this would be considered <em>cheating</em>.</p></li>
 <li><p>Evaluating model performance for predicting outcomes that were used when building the models is like evaluating your learning with questions whose answers you’ve already seen.</p></li>
 </ul>
 </div>
-</section><section id="spending-your-data" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="spending-your-data">Spending your data</h2>
+</section><section id="spending-your-data" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="spending-your-data">Spending your data</h2>
 <p>For predictive models (used primarily in machine learning), we typically split data into training and test sets:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="img/18/test-train-split-1.svg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -1078,6 +1126,7 @@ Warning
 </ul>
 </div>
 </section><section id="the-initial-split" class="level2"><h2 class="anchored" data-anchor-id="the-initial-split">The initial split</h2>
+<p>By default it’s a 75%/25% training/test split.</p>
 <div class="cell">
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">847</span><span class="op">)</span></span>
 <span><span class="va">forested_split</span> <span class="op">&lt;-</span> <span class="fu">initial_split</span><span class="op">(</span><span class="va">forested</span><span class="op">)</span></span>
@@ -1087,10 +1136,11 @@ Warning
 &lt;5330/1777/7107&gt;</code></pre>
 </div>
 </div>
-</section><section id="setting-a-seed" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="setting-a-seed">Setting a seed</h2>
+</section><section id="setting-a-seed" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="setting-a-seed">Setting a seed</h2>
 <div class="task">
 <p>What does <code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> do?</p>
 </div>
+<p>TLDR: The testing/training split is random, but we want the results to be reproducible, so we “freeze the random numbers in time” by setting a seed. If we don’t tell you exactly what seed to use on an assignment, you can pick any positive integer you want.</p>
 <div class="incremental">
 <ul class="incremental">
 <li><p>To create that split of the data, R generates “pseudo-random” numbers: while they are made to behave like random numbers, their generation is deterministic given a “seed”.</p></li>
@@ -1345,7 +1395,7 @@ Warning
 <p>. . .</p>
 <p>Do these two things agree? If not, that isn’t an <em>error</em>, but you might make mistakes when interpreting. Be careful!</p>
 </section></section><section id="todays-ae" class="level1"><h1>Today’s AE</h1>
-<section id="next-steps" class="level2 small"><h2 class="small anchored" data-anchor-id="next-steps">Next steps</h2>
+<section id="next-steps" class="level2 small scrollable"><h2 class="small scrollable anchored" data-anchor-id="next-steps">Next steps</h2>
 <div class="incremental">
 <ul class="incremental">
 <li><p>Fit models on training data</p></li>
@@ -1383,6 +1433,479 @@ Note
 <li><p>Work through the application exercise in class, and render, commit, and push your edits.</p></li>
 </ul>
 </div>
+</section></section><section id="logistic-wrap-up" class="level1"><h1>Logistic wrap-up</h1>
+<section id="fitting-a-logistic-regression-model" class="level2"><h2 class="anchored" data-anchor-id="fitting-a-logistic-regression-model">Fitting a logistic regression model</h2>
+<p>Similar syntax to linear regression:</p>
+<div class="cell">
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">forested_precip_fit</span> <span class="op">&lt;-</span> <span class="fu">logistic_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">forested</span> <span class="op">~</span> <span class="va">precip_annual</span>, data <span class="op">=</span> <span class="va">forested_train</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">tidy</span><span class="op">(</span><span class="va">forested_precip_fit</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term          estimate std.error statistic   p.value
+  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)    1.58    0.0558         28.3 1.25e-175
+2 precip_annual -0.00190 0.0000599     -31.8 5.24e-222</code></pre>
+</div>
+</div>
+<p>. . .</p>
+<p><span class="math display">\[
+\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right)
+=
+1.57
+-
+0.0019
+\times
+precip.
+\]</span></p>
+</section><section id="three-equivalent-representations" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="three-equivalent-representations">Three equivalent representations</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 34%">
+<col style="width: 19%">
+<col style="width: 23%">
+</colgroup>
+<thead><tr class="header">
+<th>Version</th>
+<th>equation</th>
+<th>Friendly LHS?</th>
+<th>Friendly RHS?</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Probability: (0, 1)</td>
+<td><span class="math display">\[\widehat{p}=\frac{e^{b_0+b_1x}}{1+e^{b_0+b_1x}}\]</span></td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td>Odds: <span class="math inline">\((0,\,\infty)\)</span>
+</td>
+<td><span class="math display">\[\frac{\widehat{p}}{1-\widehat{p}}=e^{b_0+b_1x}\]</span></td>
+<td>🥴</td>
+<td>🥴</td>
+</tr>
+<tr class="odd">
+<td>Log-odds: <span class="math inline">\((-\infty,\,\infty)\)</span>
+</td>
+<td><span class="math display">\[\log\left(\frac{\widehat{p}}{1-\widehat{p}}\right)=b_0+b_1x\]</span></td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p>Take your pick depending on what you’re trying to do.</p>
+</section><section id="probability-to-log-odds" class="level2 small"><h2 class="small anchored" data-anchor-id="probability-to-log-odds">Probability to log-odds</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="18-logistic-regression-2_files/figure-revealjs/unnamed-chunk-39-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<ul>
+<li>
+<span class="math inline">\(p = 0 \to \text{log-odds}=-\infty\)</span>;</li>
+<li>
+<span class="math inline">\(p = 1/2 \to \text{log-odds}=0\)</span>;</li>
+<li>
+<span class="math inline">\(p = 1 \to \text{log-odds}=\infty\)</span>;</li>
+<li>And everything in between.</li>
+</ul>
+<p>The log-odds transformation takes probabilities between 0 and 1 and streeetches them out to numbers between <span class="math inline">\(-\infty\)</span> and <span class="math inline">\(\infty\)</span>, for which the linear model is appropriate.</p>
+</div>
+</div>
+</section><section id="interpreting-the-intercept" class="level2"><h2 class="anchored" data-anchor-id="interpreting-the-intercept">Interpreting the intercept</h2>
+<p>If precip = 0, then…</p>
+<p><span class="math display">\[
+\widehat{\text{Prob}(
+\texttt{forested = "No"}
+\mid precip = 0)}
+=
+\frac{e^{1.57}}{1 + e^{1.57}}\approx 0.83
+\]</span></p>
+<p>So when <span class="math inline">\(precip = 0\)</span>, the model predicts that the <em>probability</em> of <code>forested = "No"</code> is about 83%.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We didn’t interpret the intercept <span class="math inline">\(b_0=1.57\)</span> directly. We transformed it into an interpretable quantity using the <em>probability</em> version of the logsitic regression model.</p>
+</div>
+</div>
+</section><section id="interpreting-the-slope" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="interpreting-the-slope">Interpreting the slope</h2>
+<p>Odds at <span class="math inline">\(precip\)</span>:</p>
+<p><span class="math display">\[
+\frac{\widehat{p}}{1-\widehat{p}}
+=
+{\color{blue}{e^{1.57
+-
+0.0019
+\times
+precip}}}
+\]</span></p>
+<p>. . .</p>
+<p>Odds at <span class="math inline">\(precip + 1\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\widehat{p}}{1-\widehat{p}}
+&amp;=
+e^{1.57
+-
+0.0019
+\times
+(precip + 1)}
+\\
+&amp;=
+e^{1.57
+-
+0.0019
+\times
+precip - 0.0019}
+\\
+&amp;=
+{\color{blue}{e^{1.57
+-
+0.0019
+\times
+precip}}}
+\times
+\color{red}{e^{-0.0019}}
+\end{aligned}
+\]</span></p>
+<p>. . .</p>
+<p>If <span class="math inline">\(precip\)</span> increases by one unit, the model predicts a <em>decrease</em> in the odds that <code>forested = "No"</code> by a multiplicative factor of <span class="math inline">\(e^{-0.0019}\approx 0.99\)</span>.</p>
+</section><section id="generate-predictions-for-the-test-data" class="level2 small"><h2 class="small anchored" data-anchor-id="generate-predictions-for-the-test-data">Generate predictions for the test data</h2>
+<p><em>Augment</em> the test data frame with three new columns on the left that include model predictions (classifications and probabilities) for each row:</p>
+<div class="cell">
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">forested_precip_aug</span> <span class="op">&lt;-</span> <span class="fu">augment</span><span class="op">(</span><span class="va">forested_precip_fit</span>, <span class="va">forested_test</span><span class="op">)</span></span>
+<span><span class="va">forested_precip_aug</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,777 × 22
+   .pred_class .pred_Yes .pred_No forested  year elevation eastness
+   &lt;fct&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+ 1 No              0.366  0.634   Yes       2005       736      -27
+ 2 Yes             0.977  0.0227  Yes       2005       787       66
+ 3 Yes             0.992  0.00808 Yes       2005      1330       99
+ 4 Yes             0.994  0.00598 Yes       2005      1423       46
+ 5 Yes             0.849  0.151   Yes       2005      1038      -34
+ 6 No              0.261  0.739   No        2014       542      -32
+ 7 No              0.243  0.757   No        2014       290       46
+ 8 No              0.250  0.750   No        2014       676      -65
+ 9 No              0.280  0.720   No        2014       252       99
+10 Yes             0.577  0.423   Yes       2014      1634       54
+# ℹ 1,767 more rows
+# ℹ 15 more variables: northness &lt;dbl&gt;, roughness &lt;dbl&gt;,
+#   tree_no_tree &lt;fct&gt;, dew_temp &lt;dbl&gt;, precip_annual &lt;dbl&gt;,
+#   temp_annual_mean &lt;dbl&gt;, temp_annual_min &lt;dbl&gt;,
+#   temp_annual_max &lt;dbl&gt;, temp_january_min &lt;dbl&gt;, vapor_min &lt;dbl&gt;,
+#   vapor_max &lt;dbl&gt;, canopy_cover &lt;dbl&gt;, lon &lt;dbl&gt;, lat &lt;dbl&gt;,
+#   land_type &lt;fct&gt;</code></pre>
+</div>
+</div>
+</section><section id="how-did-the-model-perform" class="level2 medium"><h2 class="medium anchored" data-anchor-id="how-did-the-model-perform">How did the model perform?</h2>
+<p>These are the four possibilities:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/18/forested_errs.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<ul>
+<li>Our test data have the truth in the <code>forested</code> column;</li>
+<li>We can compare the predictions in <code>.pred_class</code> to the true values and see how we did.</li>
+</ul></section><section id="getting-the-error-rates" class="level2 small"><h2 class="small anchored" data-anchor-id="getting-the-error-rates">Getting the error rates</h2>
+<p>Count how many predictions fell into the four bins:</p>
+<div class="cell">
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">forested_precip_aug</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">forested</span>, <span class="va">.pred_class</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  forested .pred_class     n
+  &lt;fct&gt;    &lt;fct&gt;       &lt;int&gt;
+1 Yes      Yes           664
+2 Yes      No            294
+3 No       Yes           138
+4 No       No            681</code></pre>
+</div>
+</div>
+<p>Still need all the tools from before the midterm!</p>
+</section><section id="getting-the-error-rates-1" class="level2 small"><h2 class="small anchored" data-anchor-id="getting-the-error-rates-1">Getting the error rates</h2>
+<p>Compute the error rates:</p>
+<div class="cell">
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">forested_precip_aug</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">forested</span>, <span class="va">.pred_class</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">forested</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    p <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   forested [2]
+  forested .pred_class     n     p
+  &lt;fct&gt;    &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt;
+1 Yes      Yes           664 0.693
+2 Yes      No            294 0.307
+3 No       Yes           138 0.168
+4 No       No            681 0.832</code></pre>
+</div>
+</div>
+<p>Still need all the tools from before the midterm!</p>
+</section><section id="getting-the-error-rates-2" class="level2 small"><h2 class="small anchored" data-anchor-id="getting-the-error-rates-2">Getting the error rates</h2>
+<p>Label the rows so we don’t go crazy:</p>
+<div class="cell">
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">forested_precip_aug</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">forested</span>, <span class="va">.pred_class</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">forested</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    p <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span>,</span>
+<span>    decision <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span></span>
+<span>      <span class="va">forested</span> <span class="op">==</span> <span class="st">"Yes"</span> <span class="op">&amp;</span> <span class="va">.pred_class</span> <span class="op">==</span> <span class="st">"Yes"</span> <span class="op">~</span> <span class="st">"sensitivity"</span>,</span>
+<span>      <span class="va">forested</span> <span class="op">==</span> <span class="st">"Yes"</span> <span class="op">&amp;</span> <span class="va">.pred_class</span> <span class="op">==</span> <span class="st">"No"</span> <span class="op">~</span> <span class="st">"false negative"</span>,</span>
+<span>      <span class="va">forested</span> <span class="op">==</span> <span class="st">"No"</span> <span class="op">&amp;</span> <span class="va">.pred_class</span> <span class="op">==</span> <span class="st">"Yes"</span> <span class="op">~</span> <span class="st">"false positive"</span>,</span>
+<span>      <span class="va">forested</span> <span class="op">==</span> <span class="st">"No"</span> <span class="op">&amp;</span> <span class="va">.pred_class</span> <span class="op">==</span> <span class="st">"No"</span> <span class="op">~</span> <span class="st">"specificity"</span>,</span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+# Groups:   forested [2]
+  forested .pred_class     n     p decision      
+  &lt;fct&gt;    &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;         
+1 Yes      Yes           664 0.693 sensitivity   
+2 Yes      No            294 0.307 false negative
+3 No       Yes           138 0.168 false positive
+4 No       No            681 0.832 specificity   </code></pre>
+</div>
+</div>
+</section><section id="fyi-error-rates-sum-to-1-within-the-levels-of-the-true-outcome" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="fyi-error-rates-sum-to-1-within-the-levels-of-the-true-outcome">FYI: error rates sum to 1 within the levels of the true outcome</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>For these two, the <em>denominator</em> is the number of truly “zero” cases:
+<ul class="incremental">
+<li>TNR: proportion of “zero” cases correctly classified as “zero;”</li>
+<li>FPR: proportion of “zero” cases incorrectly classified as “one;”</li>
+</ul>
+</li>
+<li>For these two, the <em>denominator</em> is the number of truly “one” cases:
+<ul class="incremental">
+<li>FNR: proportion of “one” cases incorrectly classified as “zero,”</li>
+<li>TPR: proportion of “one” cases correctly classified as “one.”</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>. . .</p>
+<p>So TNR + FPR = 1 and FNR + TPR = 1.</p>
+<p>That’s why we did <code>group_by(forested)</code>.</p>
+</section><section id="fyi-the-default-threshold-is-50" class="level2 small scrollable"><h2 class="small scrollable anchored" data-anchor-id="fyi-the-default-threshold-is-50">FYI: the default threshold is 50%</h2>
+<ul>
+<li><p>The model produces probabilities: <code>.pred_Yes</code> and <code>.pred_No</code>;</p></li>
+<li><p>The concrete classifications in the <code>.pred_class</code> column come from applying a 50% threshold to these probabilities:</p></li>
+</ul>
+<p><span class="math display">\[
+\widehat{\text{forested}}=
+\begin{cases}
+\text{No} &amp; \text{.pred_Yes} \leq 0.5\\
+\text{Yes} &amp; \text{.pred_Yes} &gt; 0.5.
+\end{cases}
+\]</span></p>
+<ul>
+<li>If you want to override that default, you must do so manually.</li>
+</ul></section><section id="change-threshold-to-0.75" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="change-threshold-to-0.75">Change threshold to 0.75</h2>
+<p>New threshold <span class="math inline">\(\rightarrow\)</span> New classifications <span class="math inline">\(\rightarrow\)</span> New error rates</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>forested_precip_aug <span class="sc">|&gt;</span></span>
+<span id="cb72-2"><a href="#cb72-2"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb72-3"><a href="#cb72-3"></a>    <span class="at">.pred_class =</span> <span class="fu">if_else</span>(.pred_Yes <span class="sc">&gt;</span> <span class="fl">0.75</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>)</span>
+<span id="cb72-4"><a href="#cb72-4"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb72-5"><a href="#cb72-5"></a>  <span class="fu">count</span>(forested, .pred_class) <span class="sc">|&gt;</span></span>
+<span id="cb72-6"><a href="#cb72-6"></a>  <span class="fu">group_by</span>(forested) <span class="sc">|&gt;</span></span>
+<span id="cb72-7"><a href="#cb72-7"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb72-8"><a href="#cb72-8"></a>    <span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n),</span>
+<span id="cb72-9"><a href="#cb72-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   forested [2]
+  forested .pred_class     n      p
+  &lt;fct&gt;    &lt;chr&gt;       &lt;int&gt;  &lt;dbl&gt;
+1 Yes      No            489 0.510 
+2 Yes      Yes           469 0.490 
+3 No       No            760 0.928 
+4 No       Yes            59 0.0720</code></pre>
+</div>
+</div>
+</section><section id="unpacking-roc_curve" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="unpacking-roc_curve">Unpacking <code>roc_curve</code>
+</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Recall the <em>augmented</em> data frame:</p>
+<div class="cell">
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">forested_precip_aug</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">.pred_class</span><span class="op">:</span><span class="va">forested</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,777 × 4
+   .pred_class .pred_Yes .pred_No forested
+   &lt;fct&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;   
+ 1 No              0.366  0.634   Yes     
+ 2 Yes             0.977  0.0227  Yes     
+ 3 Yes             0.992  0.00808 Yes     
+ 4 Yes             0.994  0.00598 Yes     
+ 5 Yes             0.849  0.151   Yes     
+ 6 No              0.261  0.739   No      
+ 7 No              0.243  0.757   No      
+ 8 No              0.250  0.750   No      
+ 9 No              0.280  0.720   No      
+10 Yes             0.577  0.423   Yes     
+# ℹ 1,767 more rows</code></pre>
+</div>
+</div>
+<p>Recall how <code>forested</code> is leveled:</p>
+<div class="cell">
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">forested_precip_aug</span><span class="op">$</span><span class="va">forested</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Yes" "No" </code></pre>
+</div>
+</div>
+</div>
+<div class="column fragment" style="width:40%;">
+<div class="cell">
+<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roc_curve</span><span class="op">(</span><span class="va">forested_precip_aug</span>, </span>
+<span>          truth <span class="op">=</span> <span class="va">forested</span>, </span>
+<span>          <span class="va">.pred_Yes</span>, </span>
+<span>          event_level <span class="op">=</span> <span class="st">"first"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li>Supply <em>augmented</em> data frame;</li>
+<li>Tell it which column contains <em>true</em> classifications;</li>
+<li>Tell it which column contains the predicted probabilities for the level you care about</li>
+<li>Tell it which level of <code>truth</code> is the one you care about</li>
+</ol>
+</div>
+<div class="fragment callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Those last two arguments need to match!</p>
+</div>
+</div>
+</div>
+</div>
+</section><section id="the-roc-curve" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="the-roc-curve">The ROC curve</h2>
+<div class="cell">
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">forested_precip_roc</span> <span class="op">&lt;-</span> <span class="fu">roc_curve</span><span class="op">(</span><span class="va">forested_precip_aug</span>, </span>
+<span>                                 truth <span class="op">=</span> <span class="va">forested</span>, </span>
+<span>                                 <span class="va">.pred_Yes</span>, </span>
+<span>                                 event_level <span class="op">=</span> <span class="st">"first"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">ggplot</span><span class="op">(</span><span class="va">forested_precip_roc</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span> <span class="op">-</span> <span class="va">specificity</span>, y <span class="op">=</span> <span class="va">sensitivity</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_path</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_abline</span><span class="op">(</span>lty <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">coord_equal</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="18-logistic-regression-2_files/figure-revealjs/unnamed-chunk-48-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="the-roc-curve-1" class="level2"><h2 class="anchored" data-anchor-id="the-roc-curve-1">The ROC curve</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>ROC stands for receiver operating characteristic;</p></li>
+<li><p>This visualizes the classification accuracy across a range of thresholds;</p></li>
+<li><p>The more “up and to the left” it is, the better.</p></li>
+<li><p>We can quantify “up and to the left” with the area under the curve (AUC).</p></li>
+</ul>
+</div>
+</section><section id="the-roc-curve-2" class="level2"><h2 class="anchored" data-anchor-id="the-roc-curve-2">The ROC curve</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/18/roc-curve-annotated.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section><section id="auc-1" class="level2"><h2 class="anchored" data-anchor-id="auc-1">AUC = 1</h2>
+<p>This is the best we could possibly do:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="18-logistic-regression-2_files/figure-revealjs/unnamed-chunk-49-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="auc-1-2" class="level2"><h2 class="anchored" data-anchor-id="auc-1-2">AUC = 1 / 2</h2>
+<p>Don’t waste time fitting a model. Just flip a coin:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="18-logistic-regression-2_files/figure-revealjs/unnamed-chunk-50-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="auc-0" class="level2"><h2 class="anchored" data-anchor-id="auc-0">AUC = 0</h2>
+<p>This is the worst we could possibly do:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="18-logistic-regression-2_files/figure-revealjs/unnamed-chunk-51-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="auc-for-the-model-we-fit" class="level2"><h2 class="anchored" data-anchor-id="auc-for-the-model-we-fit">AUC for the model we fit</h2>
+<div class="cell">
+<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">roc_auc</span><span class="op">(</span></span>
+<span>  <span class="va">forested_precip_aug</span>, </span>
+<span>  truth <span class="op">=</span> <span class="va">forested</span>, </span>
+<span>  <span class="va">.pred_Yes</span>, </span>
+<span>  event_level <span class="op">=</span> <span class="st">"first"</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .metric .estimator .estimate
+  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+1 roc_auc binary         0.880</code></pre>
+</div>
+</div>
+<p>Not bad!</p>
+</section><section id="the-area-under-the-roc-curve" class="level2"><h2 class="anchored" data-anchor-id="the-area-under-the-roc-curve">The area under the ROC curve</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>This is a “quality score” for a logistic regression model;</p></li>
+<li><p>When you compute it for a test data set that you set aside, the AUC is a measure of <em>out-of-sample</em> prediction accuracy;</p></li>
+<li><p>AUC is a number between 0 and 1, where 0 is awful and 1 is great, similar to <span class="math inline">\(R^2\)</span> for linear regression.</p></li>
+<li><p>The function <code>roc_auc</code> computes it for you, and it takes the same set of arguments as <code>roc_curve</code>.</p></li>
+</ul>
+</div>
+</section><section id="new-commands" class="level2"><h2 class="anchored" data-anchor-id="new-commands">New commands</h2>
+<ul>
+<li><code>logistic_reg</code></li>
+<li><code>augment</code></li>
+<li><code>roc_curve</code></li>
+<li><code>roc_auc</code></li>
+<li><code>set.seed</code></li>
+<li>
+<code>initial_split</code>, <code>training</code>, <code>test</code>
+</li>
+<li><code>geom_path</code></li>
+</ul>
 
 
 </section></section></main><!-- /main --><script>
