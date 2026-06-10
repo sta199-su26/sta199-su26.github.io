@@ -3,21 +3,29 @@ title: "Logistic Regression II"
 subtitle: "Lecture 18"
 date: "2026-06-11"
 format: 
-  revealjs: 
-    output-file: 20-logistic-regression-2-slides.html
-    footer: "[🔗 sta199-s26.github.io](https://sta199-s26.github.io/)"
-    theme: slides.scss
-    transition: fade
-    slide-number: true
-    logo: images/logo.png
-    toc: false
+  revealjs:
+    output-file: 18-logistic-regression-II-slides.html
   html: 
-    code-link: true
+    output-file: 18-logistic-regression-II.html
+auto-stretch: false
 ---
+
+
+```{r}
+#| label: load-packages
+#| message: false
+#| echo: false
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+library(forested)
+email <- openintro::email
+todays_ae <- "ae-16-forest-classification"
+```
 
 # Recap
 
-## Last time: regression with a binary response
+## Last time: regression with a binary response {.smaller}
 
 $$
 y = 
@@ -44,7 +52,7 @@ ggplot(email, aes(x = exclaim_mess, y = as.numeric(spam) - 1)) +
 S-curve for the probability of "success":
 
 $$
-\hat{p}
+\widehat{p}
 =
 \widehat{\text{Prob}(y=1)}
 =
@@ -61,7 +69,7 @@ $$
 
 These are equivalent.
 
-## R syntax is largely unchanged {.medium}
+## R syntax is largely unchanged {.small}
 
 Just use `logistic_reg` instead of `linear_reg`:
 
@@ -86,23 +94,23 @@ $$
 0.000272\times exclaim~mess
 $$
 
-## Interpretations are strange and delicate {.medium}
+## Interpretations are strange and delicate {.small .scrollable}
 
 ::: incremental
-- If `exclaim_mess = 0`, then
-$$
-\hat{p}=\widehat{P(y=1)}=\frac{e^{-2.27}}{1+e^{-2.27}}\approx 0.09.
-$$
-So, our model predicts that an email with no exclamation marks has a 9% probability of being spam.
+-   If `exclaim_mess = 0`, then $$
+    \widehat{p}=\widehat{P(y=1)}=\frac{e^{-2.27}}{1+e^{-2.27}}\approx 0.09.
+    $$ So, our model predicts that an email with no exclamation marks has a 9% probability of being spam.
 
-- If the email has an additional exclamation mark, we predict the *odds* of the email being spam to be **higher** by a factor of $e^{0.000272}\approx 1.000272$.
+-   If the email has an additional exclamation mark, we predict the *odds* of the email being spam to be **higher** by a factor of $e^{b_1} = e^{0.000272}\approx 1.000272$, on average.
 :::
 
 . . .
 
-(the odds are *higher* because the scale factor is greater than one. If it had been 0.98, then the odds shrink)
+-   The odds are *higher* because the scale factor is greater than one. If it had been 0.98, then the odds shrink and the interpretation would change to "we predict the odds to be **lower** by a factor of 0.98"
 
-## Use the `exp` function to compute {.medium}
+-   For any slope estimate > 0 (i.e., $b_1 > 0$), the multiplicative factor will be larger than 1 (use "higher" or "increase" by a factor of $e^{b_1}$); for any slope estimate < 0, the multiplicative factor will be 0 < $e^{b_1}$ < 1 (use "lower" or "decrease" by a factor of ...); for a slope estimate of exactly 0, the multiplicative factor is $e^0 = 1$, and so the odds remain unchanged
+
+## Compute predicted *probabilities* with the expit function {.small .scrollable}
 
 ```{r}
 tidy(simple_logistic_fit) |>
@@ -112,20 +120,34 @@ tidy(simple_logistic_fit) |>
   )
 ```
 
+-   Note: When interpreting an intercept term, be mindful of which representation of the outcome the instructions / question asks for the interpretation with respect to
+
+-   Ex: "Interpret the intercept with respect to the *probability* of success..."
+
+    -   You should be using the expit function to get just $\widehat{p}$ on the LHS!
+    
+-   If a particular outcome is not specified, you can choose which to interpret with respect to, but be sure you're doing the right math!
+
+    -   Ex: It would be **incorrect** to state the following here: "For an email with 0 exclamation points, we predict the odds of that email being spam to be -2.27."
+    
+    -   Why? -2.27 is the predicted *log-odds*. If you want to say something about the predicted odds, you must "un-log" your outcome i.e., compute $e^{-2.27}$
+    
+## Print exponentiated estimates to screen  {.medium .scrollable}
+
 ```{r}
 tidy(simple_logistic_fit) |>
-  filter(term == "exclaim_mess") |>
-  summarize(
-    scale_factor = exp(estimate)
-  ) |>
-  pull()
+  mutate(exp_estimate = exp(estimate)) |>
+  select(term, estimate, exp_estimate, std.error, statistic, p.value)
 ```
 
-## Here's an alternative model
+## Here's an alternative model {.small .scrollable}
 
 Dump all the predictors in:
 
+> Using a `.` on the RHS of the `~` in fit() will throw all columns in the data frame you supply into the model (except for the outcome column itself) as predictors. This is a time-saver and avoids the need for listing every variable manually
+
 ```{r}
+#| warning: false
 full_logistic_fit <- logistic_reg() |>
   fit(spam ~ ., data = email)
 
@@ -136,27 +158,31 @@ tidy(full_logistic_fit)
 
 There are two kinds of mistakes:
 
-![](images/19/confusion-matrix.png)
+![](img/17/confusion-matrix.png)
 
 We want to avoid both, but there's a trade-off.
 
-## Jargon: False negative and positive
+## Jargon: False negative and positive {.medium .scrollable}
 
--   **False negative rate** is the *proportion* of actual positives that were classified as negatives.
+-   **False negative rate (FNR)** is the *proportion* of actual positives that were classified as negatives.
 
--   **False positive rate** is the *proportion* of actual negatives that were classified as positives.
+    - FNR = (FN) / (FN + TP), where FN = # false negatives, TP = # true positives
+
+-   **False positive rate (FPR)** is the *proportion* of actual negatives that were classified as positives.
+
+    - FPR = (FP) / (FP + TN), where FP = # false positives, TN = # true negatives
 
 ::: callout-tip
-We want these to be low!
+We want these **both** to be low!
 :::
 
 ## Jargon: Sensitivity
 
 **Sensitivity** is the *proportion* of actual positives that were correctly classified as positive.
 
--   Also known as **true positive rate** and **recall**
+-   Also known as **true positive rate (TPR)** and **recall**
 
--   Sensitivity = 1 − False negative rate
+-   Sensitivity = 1 − false negative rate (FNR)
 
 -   Useful when false negatives are more "expensive" than false positives
 
@@ -168,9 +194,9 @@ We want this to be high!
 
 **Specificity** is the *proportion* of actual negatives that were correctly classified as negative
 
--   Also known as **true negative rate**
+-   Also known as **true negative rate (TNR)**
 
--   Specificity = 1 − False positive rate
+-   Specificity = 1 − false positive rate (FPR)
 
 ::: callout-tip
 We want this to be high!
@@ -180,11 +206,11 @@ We want this to be high!
 
 The `augment` function takes a data frame and "augments" it by adding three new columns on the left that describe the model predictions for each row:
 
--   `.pred_class`: model prediction ($\hat{y}$) based on a 50% threshold;
+-   `.pred_class`: model prediction ($\widehat{y}$), based on a 50% threshold by default;
 -   `.pred_0`: model estimate of $P(y=0)$;
 -   `.pred_1`: model estimate of $P(y=1) = 1 - P(y = 0)$.
 
-## The augment function
+## The augment function {.medium .scrollable}
 
 The `augment` function takes a data frame and "augments" it by adding three new columns on the left that describe the model predictions for each row:
 
@@ -217,7 +243,7 @@ log_aug_full |>
   mutate(p = n / sum(n))
 ```
 
-## Calculating the error rates
+## Calculating the error rates {.scrollable}
 
 ```{r}
 log_aug_full |>
@@ -233,7 +259,7 @@ log_aug_full |>
     ))
 ```
 
-## But wait!
+## But wait! {.scrollable}
 
 If we change the classification threshold, we change the classifications, and we change the error rates:
 
@@ -241,7 +267,7 @@ If we change the classification threshold, we change the classifications, and we
 #| code-line-numbers: 2-4
 log_aug_full |>
   mutate(
-    .pred_class = if_else(.pred_1 <= 0.25, 0, 1)
+    .pred_class = if_else(.pred_1 > 0.25, 1, 0)
   ) |>
   count(spam, .pred_class) |>
   group_by(spam) |>
@@ -254,7 +280,7 @@ log_aug_full |>
 #| code-line-numbers: 2-4
 log_aug_full |>
   mutate(
-    .pred_class = if_else(.pred_1 <= 0.00, 0, 1)
+    .pred_class = if_else(.pred_1 > 0.00, 1, 0)
   ) |>
   count(spam, .pred_class) |>
   group_by(spam) |>
@@ -267,7 +293,7 @@ log_aug_full |>
 #| code-line-numbers: 2-4
 log_aug_full |>
   mutate(
-    .pred_class = if_else(.pred_1 <= 0.25, 0, 1)
+    .pred_class = if_else(.pred_1 > 0.25, 1, 0)
   ) |>
   count(spam, .pred_class) |>
   group_by(spam) |>
@@ -280,7 +306,7 @@ log_aug_full |>
 #| code-line-numbers: 2-4
 log_aug_full |>
   mutate(
-    .pred_class = if_else(.pred_1 <= 0.50, 0, 1)
+    .pred_class = if_else(.pred_1 > 0.50, 1, 0)
   ) |>
   count(spam, .pred_class) |>
   group_by(spam) |>
@@ -293,7 +319,7 @@ log_aug_full |>
 #| code-line-numbers: 2-4
 log_aug_full |>
   mutate(
-    .pred_class = if_else(.pred_1 <= 0.75, 0, 1)
+    .pred_class = if_else(.pred_1 > 0.75, 1, 0)
   ) |>
   count(spam, .pred_class) |>
   group_by(spam) |>
@@ -306,7 +332,7 @@ log_aug_full |>
 #| code-line-numbers: 2-4
 log_aug_full |>
   mutate(
-    .pred_class = if_else(.pred_1 <= 1.00, 0, 1)
+    .pred_class = if_else(.pred_1 > 1.00, 1, 0)
   ) |>
   count(spam, .pred_class) |>
   group_by(spam) |>
@@ -333,7 +359,7 @@ ggplot(err_rates, aes(x = `1 - specificity`, y = sensitivity, color = "red")) +
   theme(legend.position="none")
 ```
 
-## ROC curve {.medium}
+## ROC curve {.small}
 
 If we repeat this process for "all" possible thresholds $0\leq p^\star\leq 1$, we trace out the **receiver operating characteristic curve** (ROC curve), which assesses the model's performance across a range of thresholds:
 
@@ -356,7 +382,7 @@ roc_curve(log_aug_full, truth = spam, .pred_1, event_level = "second") |>
 Which corner of the plot indicates the best model performance?
 :::
 
-![](images/20/roc-curve-annotated.png)
+![](img/18/roc-curve-annotated.png)
 
 . . .
 
@@ -397,10 +423,11 @@ Comparing these two curves, the full model is better.
 
 ## Model comparison
 
-The farther up and to the left the ROC curve is, the better the classification accuracy. You can quantify this with the area under the curve.
+The farther up and to the left the ROC curve is, the better the classification accuracy.
+You can quantify this with the area under the curve.
 
 ::: callout-note
-Area under the ROC curve will be our "quality score" for comparing logistic regression models.
+Area under the ROC curve ("AUC") will be our "quality score" for comparing logistic regression models, **NOT** adjusted $R^2$.
 :::
 
 # Washington forests
@@ -429,7 +456,7 @@ glimpse(forested)
 
 ## Outcome and predictors {.smaller}
 
--   Outcome: `forested` - Factor, `Yes` or `No`
+-   Outcome: `forested` - Factor, `Yes` (baseline, 0) or `No` (1)
 
 ```{r}
 levels(forested$forested)
@@ -452,7 +479,8 @@ levels(forested$forested)
 To determine whether we should include a predictor in a model, we should start by asking:
 
 ::: incremental
--   Is it ethical to use this variable? (Or even legal?)
+-   Is it ethical to use this variable?
+    (Or even legal?)
 
 -   Will this variable be available at prediction time?
 
@@ -464,7 +492,8 @@ To determine whether we should include a predictor in a model, we should start b
 ## We've been cheating!
 
 ::: incremental
--   So far, we've been using all the data we have for building models. In predictive contexts, this would be considered *cheating*.
+-   So far, we've been using all the data we have for building models.
+    In predictive contexts, this would be considered *cheating*.
 
 -   Evaluating model performance for predicting outcomes that were used when building the models is like evaluating your learning with questions whose answers you've already seen.
 :::
@@ -473,7 +502,7 @@ To determine whether we should include a predictor in a model, we should start b
 
 For predictive models (used primarily in machine learning), we typically split data into training and test sets:
 
-![](images/20/test-train-split-1.svg){fig-align="center"}
+![](img/18/test-train-split-1.svg){fig-align="center"}
 
 -   The **training set** is used to estimate model parameters.
 
@@ -499,7 +528,7 @@ Do not use, or even peek at, the test set during training.
 
 ```{r}
 #| label: initial-split
-set.seed(20241112)
+set.seed(847)
 forested_split <- initial_split(forested)
 forested_split
 ```
@@ -551,10 +580,11 @@ forested_test
 . . .
 
 ::: task
-Which dataset should we use for the exploration? The entire data `forested`, the training data `forested_train`, or the testing data `forested_test`?
+Which dataset should we use for the exploration?
+The entire data `forested`, the training data `forested_train`, or the testing data `forested_test`?
 :::
 
-## `forested`
+## `forested` {.small}
 
 What’s the distribution of the outcome, `forested`?
 
@@ -563,7 +593,7 @@ ggplot(forested_train, aes(x = forested)) +
   geom_bar()
 ```
 
-## `forested`
+## `forested` {.medium}
 
 What’s the distribution of the outcome, `forested`?
 
@@ -575,7 +605,7 @@ forested_train |>
   )
 ```
 
-## `precip_annual`
+## `precip_annual` {.small}
 
 What’s the distribution of `precip_annual`?
 
@@ -586,7 +616,7 @@ ggplot(forested_train, aes(x = precip_annual)) +
   geom_histogram()
 ```
 
-## `forested` and `precip_annual` {.smaller}
+## `forested` and `precip_annual` {.smaller .scrollable}
 
 ```{r}
 ggplot(
@@ -598,7 +628,7 @@ ggplot(
   theme_minimal()
 ```
 
-## `forested` and `precip_annual` {.smaller}
+## `forested` and `precip_annual` {.smaller .scrollable}
 
 ```{r}
 #| code-line-numbers: "|5"
@@ -612,16 +642,16 @@ ggplot(
   theme_minimal()
 ```
 
-## `forested` and `tree_no_tree` {.smaller}
+## `forested` and `tree_no_tree` {.smaller .scrollable}
 
 ```{r}
 ggplot(forested_train, aes(x = tree_no_tree, fill = forested)) +
-  geom_bar(position = "fill") +
+  geom_bar(position = "fill", alpha = .7) +
   scale_fill_manual(values = c("Yes" = "forestgreen", "No" = "gold2")) +
   theme_minimal()
 ```
 
-## `forested` and `lat` / `lon` {.smaller}
+## `forested` and `lat` / `lon` {.smaller .scrollable}
 
 ```{r}
 ggplot(forested_train, aes(x = lon, y = lat, color = forested)) +
@@ -630,7 +660,7 @@ ggplot(forested_train, aes(x = lon, y = lat, color = forested)) +
   theme_minimal()
 ```
 
-## `precip_annual` and `lat` / `lon` {.smaller}
+## `precip_annual` and `lat` / `lon` {.smaller .scrollable}
 
 ```{r}
 ggplot(forested_train, aes(x = lon, y = lat, color = precip_annual)) +
@@ -699,13 +729,15 @@ This is not a problem, but it means that in order to interpret the output correc
 There are two distinct but related things going on at the same time:
 
 ::: incremental
-- Your binary response variable is a factor with two levels. There is a first level (base) and a second level;
-- In the context of your application, one of those levels is the "negative" or "zero" case (legit e-mail) and one is the "positive" or "one" case (spam e-mail).
+-   Your binary response variable is a factor with two levels. There is a first level (base) and a second level;
+-   In the context of your application, one of those levels is the "negative" or "zero" case (legit e-mail) and one is the "positive" or "one" case (spam e-mail).
 :::
 
 . . .
 
-Do these two things agree? If not, that isn't an *error*, but you might make mistakes when interpreting. Be careful!
+Do these two things agree?
+If not, that isn't an *error*, but you might make mistakes when interpreting.
+Be careful!
 
 # Today's AE
 
@@ -737,14 +769,8 @@ We will only learn about a subset of these in this course, but you can go furthe
 
 -   If you haven't yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there's nothing left in your Git pane.
 
--   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*. You might be prompted to install **forested**, say yes.
+-   If you haven't yet done so, click Pull to get today's application exercise file: *`{r} paste0(todays_ae, ".qmd")`*.
+    You might be prompted to install **forested**, say yes.
 
 -   Work through the application exercise in class, and render, commit, and push your edits.
 :::
-
-
-
-
-
-
-
