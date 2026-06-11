@@ -1,5 +1,8 @@
 ---
-title: "AE 20: Forest classification"
+title: "AE 16: Forest classification 🌳🌲"
+format:
+  html:
+    self-contained: true
 ---
 
 In this application exercise, we will
@@ -85,6 +88,15 @@ Name the model `forested_custom_fit` and display a tidy output of the model.
 # add code here
 ```
 
+## Interpret
+
+Interpret the intercept (with respect to $\widehat{p}$) in the context of these data. Then, interpret one slope coefficient of your choice (with respect to the odds), again in the context of these data.
+
+```{r}
+#| label: forested-interpret
+# add code here
+```
+
 ## Predict
 
 Predict for the testing data using this model.
@@ -96,7 +108,7 @@ Predict for the testing data using this model.
 
 ## Evaluate
 
-Calculate the false positive and false negative rates for the testing data using this model.
+Calculate the error rates (and their complements) for the testing data using this model.
 
 ```{r}
 #| label: forested-custom-eval
@@ -144,7 +156,7 @@ Predict for the testing data using this model.
 
 ## Evaluate
 
-Calculate the false positive and false negative rates for the testing data using this model.
+Calculate the error rates (and their complements) for the testing data using this model.
 
 ```{r}
 #| label: forested-full-eval
