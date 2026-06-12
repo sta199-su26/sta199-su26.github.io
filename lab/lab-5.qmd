@@ -1,0 +1,282 @@
+---
+title: Lab 5
+subtitle: More Modeling!
+categories: Lab
+description: "Due to Gradescope by Mon. June 15 11:59 PM"
+draft: false
+---
+
+# Introduction
+
+In this lab, you'll gain more practice with simple and multiple linear regression modeling, as well as logistic regression modeling, while continuing to reinforce data science / coding best practices mastered in the first half of the course.
+
+## Getting Started
+
+By now you should be familiar with how to get started on a lab assignment by cloning the GitHub repo for the assignment.
+
+<details>
+
+<summary>Click to expand if you need a refresher on how to get started with a lab assignment.</summary>
+
+-   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
+-   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
+-   Go to the course organization at [github.com/sta199-su26](https://github.com/sta199-su26) organization on GitHub. Click on the repo with the prefix **lab-5**. It contains the starter documents you need to complete the homework.
+-   Click on the green **CODE** button, select **Use SSH**. Click on the clipboard icon to copy the repo URL.
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+
+</details>
+
+Open the *lab-5.qmd* template Quarto file and update the `authors` field to add your name (first and last).
+Render the document.
+Examine the rendered document and make sure your name is updated in the document.
+Commit your changes with a meaningful commit message and push to GitHub.
+
+<details>
+
+<summary>Click to expand if you need a refresher on assignment guidelines.</summary>
+
+**Code Guidelines:**
+
+As we've discussed in the lecture, your plots should include an informative title, axes and legends should have human-readable labels, and aesthetic choices should be carefully considered.
+
+Additionally, code should follow the [tidyverse style](https://style.tidyverse.org/).
+In particular,
+
+-   there should be spaces before and line breaks after each `+` when building a `ggplot`,
+
+-   there should also be spaces before and line breaks after each `|>` in a data transformation pipeline,
+
+-   code should be properly indented,
+
+-   there should be spaces around `=` signs and spaces after commas.
+
+Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF.
+Long lines that run off the page should be split across multiple lines with line breaks.
+
+As you complete the lab and other assignments in this course, remember to develop a sound workflow for reproducible data analysis.
+This assignment will periodically remind you to render, commit, and push your changes to GitHub.
+You should have at least 3 commits with meaningful commit messages by the end of the assignment.
+
+</details>
+
+## Packages
+
+In this part you will work with the **tidyverse** and **tidymodels** packages.
+
+```{r}
+#| message: false
+library(tidyverse)
+library(tidymodels)
+```
+
+
+# Part 1: Do you even lift?
+
+In this part, you will be working with data from www.openpowerlifting.org.
+This data was sourced from Tidy Tuesday and contains international powerlifting records at various meets.
+At each meet, each lifter gets three attempts at lifting max weight on three lifts: the bench press, squat and deadlift.
+For all of the following exercises, you should include units on axis labels, e.g. “Bench press (lbs)” or “Bench press (kg)”.
+“Age (years)” etc.
+This is good practice.
+
+## Question 1
+
+a.  Let's begin by taking a look at the **squat lifting** records.
+
+    -   Read in the `ipf.csv` file that is in your data folder and save it as `ipf`.
+    -   First, **remove** any observations that are negative for squat.
+    -   Next, create a new column called `best3_squat_lbs` that converts the record from kilograms to pounds using the appropriate conversion factor; save this column to a new data frame saved as `ipf_squat`.
+
+::: callout-note
+You will need to Google the conversion factor.
+:::
+
+b.  Using the `ipf_squat` data frame you created in part (a), create a scatter plot to investigate the relationship between squat (in lbs) and age.
+
+    -   Age should be on the x-axis.
+    -   Lower the `alpha` level of your points to get a better sense of the density of the data.
+    -   Add a linear trend-line.
+    -   Summarize the trend you observe in at most 2 sentences.
+
+c.  
+
+    -   Write down the linear **population** model to predict lift squat lbs from age using proper statistical notation.
+    -   Fit the linear model, and save it as `age_fit`. Display a tidy summary of your fit object.
+    -   Write down the fitted equation of the model using proper statistical notation.
+    -   Interpret both the intercept and slope estimates in the context of these data, and comment on whether the interpretations are sensible.
+
+## Question 2
+
+In Question 1, you fit a simple linear regression model to predict squat (lbs) from age. Before gleefully presenting the results of your linear regression model, it is important to assess whether the assumptions underlying the model are reasonable. In particular, this question prompts you to assess whether or not the assumptions of linearity, equal / constant variance, and normality of the residuals are likely to hold. 
+
+a.  Create a fitted values vs. residuals plot for the `age_fit` model; you will need to use `augment()` to obtain both the fitted values **and** residuals for your model. Your plot should:
+
+    -   Plot fitted values on the x-axis.
+    -   Plot residuals on the y-axis
+    -   Include a horizontal reference line at 0 (hint: check out the help file for `geom_abline()` with `??geom_abline`, and click into the help page entitled `ggplot2::geom_abline`)
+    
+b.  Using the fitted values vs. residuals plot from part (a), assess the following assumptions of (1) linearity; and (2) constant variance (homoskedasticity). For each assumption, you should articulate whether or not you believe the assumption is appropriately satisfied and provide a brief justification (referencing the plot in part (a)) to support your answer. 
+
+c.  Create the following two plots using the residuals from age_fit:
+
+    -   A histogram of the residuals
+    -   A normal Q–Q plot of the residuals
+    
+d.   Using the plots from part (c), assess whether the normality of errors assumption appears to be satisfied. In 2–3 sentences, describe any features of the plots that support your conclusion.
+
+## Question 3
+
+a.  Building on your `ipf_squat` data frame, update `ipf_squat` to include a new column called `age2` that takes the age of each lifter and squares it. Next, plot squat (in lbs) vs `age2` (`age2` should be on the x-axis) and add a linear trendline.
+
+b.  One metric to assess the fit of a model is the squared correlation coefficient, also known as $R^2$. Fit the model predicting squat (in lbs) from age$^2$ and save the object as `age2_fit`. Obtain the $R^2$ of the new model (squat vs. age$^2$) as well as the $R^2$ of the earlier model (squat vs. age) and compare the two; specifically, identify which has a higher $R^2$ and interpret this value in the context of these data.
+
+# Part 2: General Social Survey
+
+The General Social Survey (GSS) gathers data on contemporary American society in order to monitor and explain trends and constants in attitudes, behaviors, and attributes.
+Hundreds of trends have been tracked since 1972.
+In addition, since the GSS adopted questions from earlier surveys, trends can be followed for up to 70 years.
+The GSS contains a standard core of demographic, behavioral, and attitudinal questions, plus topics of special interest.
+Among the topics covered are civil liberties, crime and violence, intergroup tolerance, morality, national spending priorities, psychological well-being, social mobility, and stress and traumatic events.
+In this part you will work with variables from the 2022 General Social Survey.
+
+## Question 4
+
+a.  Read in the `gss22.csv` file that is in your data folder and save it as `gss22`.
+    Report its number of rows and columns.
+
+b.  Create a new data frame called `gss22_advfront` that only contains the variables `advfront`, `educ`, and `polviews`. Then, update this new data frame by using the `drop_na()` function to remove rows that contain NAs from `gss22_advfront`.
+    Report the number of rows and columns of `gss22_advfront`.
+    Additionally, report what percent of the observations were discarded at this step.
+
+c.  Re-level the `advfront` variable such that it has two levels: "Strongly agree" and "Agree" combined into a new level called "Agree", and the remaining levels combined into "Not agree". Then, re-order the levels in the following order: "Agree" and "Not agree". Finally, `count()` how many times each new level appears in the `advfront` variable and print these counts to the screen.
+
+::: callout-tip
+You can do this in various ways.
+One option is to use the `str_detect()` function to detect the existence of words.
+Note that these sometimes show up with lowercase first letters and sometimes with upper case first letters.
+To detect either in the `str_detect()` function, you can use “\[Aa\]gree”.
+However, solve the problem however you like, this is just one option.
+:::
+
+d.  Combine the levels of the `polviews` variable such that levels that have the word “liberal” in them are lumped into a level called "Liberal" and those that have the word conservative in them are lumped into a level called "Conservative". Then, re-order the levels in the following order: "Conservative", "Moderate", and "Liberal". Finally, `count()` how many times each new level appears in the `polviews` variable.
+
+## Question 5
+
+a.  Fit a **logistic** regression model that predicts `advfront` from `educ`. Report the tidy output of the model.
+
+b.  Write out the fitted model using proper statistical notation.
+
+c.  Using your fitted model, predict the probability of agreeing with the statement *"Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government."* (`Agree` in `advfront`) for someone with 7 years of education.
+
+## Question 6
+
+a.  Fit a model that adds the additional explanatory variable `polviews` to your model from Question 5. Report the tidy output of the model.
+
+b.  Now, predict the probability of agreeing with the following statement *"Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government."* (`Agree` in `advfront`) for a Conservative person with 7 years of education.
+
+# Part 3: Hotel Cancellations
+
+The data stored in `hotels.csv` in your data folder describe the demand of two different types of hotels. Each observation represents a hotel booking between July 1, 2015 and August 31, 2017.
+Some bookings were canceled (`is_canceled = 1`) and others were kept, i.e., the guests checked into the hotel (`is_canceled = 0`). You can view the code book for all variables [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md).
+
+Read in the data frame and store this data as `hotels` using the following code:
+
+```{r}
+#| eval: false
+hotels <- read_csv("data/hotels.csv")
+```
+
+## Question 7
+
+The outcome variable for this analysis is `is_canceled`, where: 0 indicates a booking that was not canceled; 1 indicates a booking that was canceled. We will consider the following variables as potential predictors: `arrival_date_day_of_month` (day of the month on which the reservation begins) and `hotel` (hotel type; resort or city hotel). 
+
+Create a single visualization that explores the relationship between the outcome and the predictors of interest. In a few sentences, describe what the visualization shows about the relationship between these variables. Do you think that either, both, or neither of these variables might be informative predictors of our outcome of interest? 
+
+## Question 8
+
+a.  Update the `hotels` df by transforming the outcome variable to the appropriate data class such that 
+
+    - it uses informative labels ("not canceled" and "canceled" instead of 0 and 1, respectively), and
+    
+    - the levels are ordered such that when we fit a logistic regression model to predict this outcome, success (or, a value of 1) is defined as "canceled" (what we're predicting)
+
+b.  Next, let's address a few data quality issues before moving forward with the analysis. To do so, again update the `hotels` dataset to filter out (remove)
+
+    - any bookings with average daily rate, `adr`, greater than $1,000, and
+    - any bookings with number of adults, `adults`, greater than or equal to 5
+
+c.  Split the data into a training set (75%) and a testing set (25%), setting the random seed to `847` (shoutout Arlington Heights!!) for reproducibility. Be sure to save your testing and training data frames. 
+
+## Question 9
+
+Using these data, one of our goals is to explore the following question:
+
+> *Are reservations earlier in the month or later in the month more likely to be canceled?*
+
+a.  In a single pipeline, calculate the mean arrival dates (`arrival_date_day_of_month`) for reservations that were canceled and reservations that were not canceled.
+
+::: {.callout-tip collapse="true"}
+## Hint
+
+Think carefully about which dataset you should use: `hotels`, the training subset, or the testing subset?
+:::
+
+b.  In your own words, explain why we can not use a linear model to model the relationship between if a hotel reservation was canceled and the day of month for the booking.
+
+c.  Fit the appropriate model to predict whether a reservation was canceled from `arrival_date_day_of_month` and display a tidy summary of the model output.
+    Then, interpret the *slope* coefficient in context of the data and the research question.
+
+::: {.callout-tip collapse="true"}
+## Hint
+
+The slope interpretation will have the following format:
+
+> The model predicts that, for each day the booking is \_\_\_ (later / earlier) in the month, the \_\_\_ (chance / probability / odds) of a hotel cancellation is \_\_\_ (lower / higher) by a factor of \_\_\_, on average.
+:::
+
+d.  Calculate the probability that the hotel reservation is canceled if the arrival date is on the 17th of the month. Based on this probability, would you predict this booking would be canceled or not canceled. Explain your reasoning for your classification (i.e., what threshold are you using?).
+
+## Question 10
+
+a.  Fit another model to predict whether a reservation was canceled from `arrival_date_day_of_month` and `hotel` type (Resort or City Hotel), allowing the relationship between `arrival_date_day_of_month` and `is_canceled` to **vary** based on `hotel` type.
+    Display a tidy output of the model.
+
+b.  Interpret the intercept in context of the data.
+
+c.  Using this model, predict cancellation status for all reservations in your **testing** dataset with `augment()`. Store the resulting data frame under an appropriate name.
+
+d.  Using your augmented data frame from part (c), determine, in a single pipeline, and using `count()`, the numbers of emails:
+
+    -   that are labeled as canceled that are actually canceled
+    -   that are labeled as not canceled that are actually canceled
+    -   that are labeled as canceled that are actually not canceled
+    -   that are not labeled as not canceled that are actually not canceled
+
+    Store the resulting data frame with an appropriate name.
+
+e.  In a single pipeline, using `group_by()` and `mutate()`, calculate the false positive and false negative rates. In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identifies the two rates.
+
+# Wrap-up
+
+::: callout-warning
+Before you wrap up the assignment, make sure that you render, commit, and push one final time so that the final versions of both your `.qmd` file and the rendered PDF are pushed to GitHub and your Git pane is empty.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+:::
+
+## Grading and Feedback
+
+Reminders:
+
+-   Questions will be graded for accuracy and completeness
+
+-   Partial credit will be given where appropriate
+
+-   There are also workflow points for:
+
+    -   committing at least three times as you work through your lab
+
+    -   having your final version of `.qmd` and `.pdf` files in your GitHub repository
+
+    -   selecting pages corresponding to each question in Gradescope
