@@ -2932,7 +2932,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Island       2005  237220114   143163975  1.66 PASS   ok        \n2 The Dictator     2012  242528807    65951507  3.68 FAIL   notalk    \n3 Killing Them S…  2012   52948218    15219578  3.48 FAIL   nowomen   \n4 Super Troopers   2001   54658273     3947538 13.8  FAIL   notalk    \n5 Clerks II        2006   57838986     5778982 10.0  FAIL   dubious"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Scream 2         1997  294204574    34829715  8.45 PASS   ok        \n2 A Dangerous Me…  2011   21241618    20713816  1.03 FAIL   dubious   \n3 Drive            2011  117152696    15535362  7.54 FAIL   dubious   \n4 The Dark Knight  2008 1662601882   200217418  8.30 FAIL   dubious   \n5 Mrs. Doubtfire   1993 1064998555    40311473 26.4  PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
@@ -3191,7 +3191,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Island       2005  237220114   143163975  1.66 PASS   ok        \n2 The Dictator     2012  242528807    65951507  3.68 FAIL   notalk    \n3 Killing Them S…  2012   52948218    15219578  3.48 FAIL   nowomen   \n4 Super Troopers   2001   54658273     3947538 13.8  FAIL   notalk    \n5 Clerks II        2006   57838986     5778982 10.0  FAIL   dubious"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Scream 2         1997  294204574    34829715  8.45 PASS   ok        \n2 A Dangerous Me…  2011   21241618    20713816  1.03 FAIL   dubious   \n3 Drive            2011  117152696    15535362  7.54 FAIL   dubious   \n4 The Dark Knight  2008 1662601882   200217418  8.30 FAIL   dubious   \n5 Mrs. Doubtfire   1993 1064998555    40311473 26.4  PASS   ok"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
@@ -10067,1127 +10067,1113 @@
   {
     "objectID": "slides/19-interval-estimation.html",
     "href": "slides/19-interval-estimation.html",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "",
-    "text": "Monday April 13: lecture on confidence intervals;\nWednesday April 15: lecture on hypothesis testing;\nThursday April 16: graded lab on statistics (last one!);\nMonday April 20: wrap-up lecture on inference;\nWednesday April 22: lecture on who knows what (last one!);\nWednesday April 22: turn in HW 7 (last one!);\nFriday May 1 : final exam @ 2pm."
+    "text": "Today: lecture on confidence intervals;\nTomorrow: lecture on hypothesis testing;\nThursday: Lab 6 (last one!), due Sunday by 11:59pm (deadline firm if you want graded feedback by the final);\nWednesday: wrap-up lecture on inference;\nThursday: lecture on TBD, depending on general vibes / exam readiness this week;\nFriday: no class – Juneteenth!"
   },
   {
     "objectID": "slides/19-interval-estimation.html#the-home-stretch",
     "href": "slides/19-interval-estimation.html#the-home-stretch",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "",
-    "text": "Monday April 13: lecture on confidence intervals;\nWednesday April 15: lecture on hypothesis testing;\nThursday April 16: graded lab on statistics (last one!);\nMonday April 20: wrap-up lecture on inference;\nWednesday April 22: lecture on who knows what (last one!);\nWednesday April 22: turn in HW 7 (last one!);\nFriday May 1 : final exam @ 2pm."
+    "text": "Today: lecture on confidence intervals;\nTomorrow: lecture on hypothesis testing;\nThursday: Lab 6 (last one!), due Sunday by 11:59pm (deadline firm if you want graded feedback by the final);\nWednesday: wrap-up lecture on inference;\nThursday: lecture on TBD, depending on general vibes / exam readiness this week;\nFriday: no class – Juneteenth!"
   },
   {
-    "objectID": "slides/19-interval-estimation.html#the-bottom-line-at-the-top",
-    "href": "slides/19-interval-estimation.html#the-bottom-line-at-the-top",
-    "title": "Interval estimation",
-    "section": "The bottom line, at the top",
-    "text": "The bottom line, at the top\nIf JZ had to boil statistics down to one main idea, it would be:\n\nquantifying uncertainty to help make decisions.\n\nYou make different kinds of decisions if you’re sure versus unsure. Statistics helps you quantify the reliability of your knowledge so that you can determine what sort of decision to make."
-  },
-  {
-    "objectID": "slides/19-interval-estimation.html#quantifying-uncertainty-to-help-make-decisions",
-    "href": "slides/19-interval-estimation.html#quantifying-uncertainty-to-help-make-decisions",
-    "title": "Interval estimation",
-    "section": "Quantifying uncertainty to help make decisions",
-    "text": "Quantifying uncertainty to help make decisions\n\nWhat kind of uncertainty?\n\nHow do you quantify it?\nThese are surprisingly spicy and controversial questions in statistics!\nWith the short time remaining, we will focus on quantifying one specific type of uncertainty…"
+    "objectID": "slides/19-interval-estimation.html#our-goal-quantify-uncertainty-to-help-make-informed-decisions",
+    "href": "slides/19-interval-estimation.html#our-goal-quantify-uncertainty-to-help-make-informed-decisions",
+    "title": "Interval Estimation",
+    "section": "Our goal: quantify uncertainty to help make informed decisions",
+    "text": "Our goal: quantify uncertainty to help make informed decisions\n\nWhat kind of uncertainty?\n\nHow do you quantify it?\nThese are surprisingly spicy and controversial questions in statistics!\nWith the short time remaining, we will focus on quantifying one specific type of uncertainty…"
   },
   {
     "objectID": "slides/19-interval-estimation.html#sampling-uncertainty",
     "href": "slides/19-interval-estimation.html#sampling-uncertainty",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Sampling uncertainty",
-    "text": "Sampling uncertainty\n\nDifferent data give different estimates. How different?\n\n\nIn reality, we have one dataset, and it gives one set of results. How reliable are those results?\nA thought experiment: if I collected a whole new dataset and redid my analysis, do I get the same results, or different results?\n\nif the results vary wildly from dataset to dataset, uncertainty is high and reliability is low;\nif the results are stable from one dataset to another, uncertainty is low and reliability is high.\n\n\n\nThat’s the main idea in a nutshell."
+    "text": "Sampling uncertainty\n\nDifferent data give different estimates. How different?\n\n\nIn reality, we have one (sample) dataset, and it gives one set of results. How reliable are those results?\nA thought experiment: if I collected a whole new dataset and redid my analysis, do I get the same results, or different results?\n\nif the results vary wildly from dataset to dataset, uncertainty is high and reliability is low;\nif the results are stable from one dataset to another, uncertainty is low and reliability is high.\n\n\n\nThat’s the main idea in a nutshell."
   },
   {
     "objectID": "slides/19-interval-estimation.html#a-running-example",
     "href": "slides/19-interval-estimation.html#a-running-example",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "A running example",
-    "text": "A running example\nRecall the openintro::loans_full_schema data frame:\n\n\n10000 rows;\neach row is an approved loan applicant;\n\nthe columns contain financial info about that person, including…\n\nannual income (in $);\namount of non-mortgage debt outstanding (in $).\n\n\nWhat would you guess is the direction of association between these two variables?"
+    "text": "A running example\nThe openintro::loans_full_schema data frame contains loan data from the peer-to-peer lender, Lending Club, available in the openintro package.\n\n\n10000 rows;\neach row is an approved loan applicant;\n\nthe columns contain financial info about the loan applicant, including…\n\nannual income (in $);\namount of non-mortgage debt outstanding (in $).\n\n\nWhat would you guess is the direction of association between these two variables?"
   },
   {
     "objectID": "slides/19-interval-estimation.html#model-fit-with-five-observations",
     "href": "slides/19-interval-estimation.html#model-fit-with-five-observations",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Model fit with five observations",
     "text": "Model fit with five observations\n\n\n\n\n\n\n\n\n(I just took logs to make the picture prettier.)"
   },
   {
     "objectID": "slides/19-interval-estimation.html#double-the-sample-size",
     "href": "slides/19-interval-estimation.html#double-the-sample-size",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Double the sample size",
     "text": "Double the sample size"
   },
   {
     "objectID": "slides/19-interval-estimation.html#double-the-sample-size-again",
     "href": "slides/19-interval-estimation.html#double-the-sample-size-again",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
     "objectID": "slides/19-interval-estimation.html#double-the-sample-size-again-1",
     "href": "slides/19-interval-estimation.html#double-the-sample-size-again-1",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
     "objectID": "slides/19-interval-estimation.html#double-the-sample-size-again-2",
     "href": "slides/19-interval-estimation.html#double-the-sample-size-again-2",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
     "objectID": "slides/19-interval-estimation.html#double-the-sample-size-again-3",
     "href": "slides/19-interval-estimation.html#double-the-sample-size-again-3",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
     "objectID": "slides/19-interval-estimation.html#double-the-sample-size-again-4",
     "href": "slides/19-interval-estimation.html#double-the-sample-size-again-4",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
     "objectID": "slides/19-interval-estimation.html#double-the-sample-size-again-5",
     "href": "slides/19-interval-estimation.html#double-the-sample-size-again-5",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
     "objectID": "slides/19-interval-estimation.html#double-the-sample-size-again-6",
     "href": "slides/19-interval-estimation.html#double-the-sample-size-again-6",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
     "objectID": "slides/19-interval-estimation.html#double-the-sample-size-yet-again",
     "href": "slides/19-interval-estimation.html#double-the-sample-size-yet-again",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Double the sample size yet again",
     "text": "Double the sample size yet again"
   },
   {
     "objectID": "slides/19-interval-estimation.html#double-the-sample-size-one-more-time",
     "href": "slides/19-interval-estimation.html#double-the-sample-size-one-more-time",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Double the sample size one more time",
     "text": "Double the sample size one more time"
   },
   {
     "objectID": "slides/19-interval-estimation.html#use-all-the-data-we-have",
     "href": "slides/19-interval-estimation.html#use-all-the-data-we-have",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Use all the data we have",
     "text": "Use all the data we have"
   },
   {
     "objectID": "slides/19-interval-estimation.html#what-did-we-notice",
     "href": "slides/19-interval-estimation.html#what-did-we-notice",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "What did we notice?",
-    "text": "What did we notice?\n\n\nAs the sample size grew, the best fit line stabilized;\nAs the sample size grew, the grey uncertainty band shrank;\nAs the sample size grew, we observed a larger range of income values, anf the computer displayed more of the line;\n\nAs the sample size grows, the picture the data paint becomes clearer:\n\npositive relationship;\nlinear relationship;\npretty strong"
+    "text": "What did we notice?\n\n\nAs the sample size grew, the best fit line stabilized;\nAs the sample size grew, the grey uncertainty band shrank;\nAs the sample size grew, we observed a larger range of income values, and the computer displayed more of the line;\n\nAs the sample size grows, the picture the data paint becomes clearer:\n\npositive relationship;\nlinear relationship;\npretty strong"
   },
   {
     "objectID": "slides/19-interval-estimation.html#a-silly-question",
     "href": "slides/19-interval-estimation.html#a-silly-question",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "A silly question",
     "text": "A silly question\n\nWhich would you rather have for your data analysis? 5 people in your dataset or 9947? Why?"
   },
   {
     "objectID": "slides/19-interval-estimation.html#heres-the-deal",
     "href": "slides/19-interval-estimation.html#heres-the-deal",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Here’s the deal",
     "text": "Here’s the deal\n\nWe do not know what the “true” line is;\nOur estimates are a best guess based on noisy, incomplete, imperfect data;\nThe more data we have, the more “certain” and “reliable” the estimates are;\nWhat do we mean by “uncertainty” here?"
   },
   {
     "objectID": "slides/19-interval-estimation.html#sampling-uncertainty-1",
     "href": "slides/19-interval-estimation.html#sampling-uncertainty-1",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Sampling uncertainty",
-    "text": "Sampling uncertainty\n\nFact: different data set -&gt; different estimates;\n\nHow much would our estimate vary across alternative datasets?\n\nIf the answer is “a lot,” uncertainty is high, and our estimates are not super reliable;\nIf the answer is “a little,” uncertainty is low, and maybe we can take our estimates to the bank;"
+    "text": "Sampling uncertainty\n\nFact: different data set \\(\\rightarrow\\) different estimates;\n\nHow much would our estimate vary across alternative datasets?\n\nIf the answer is “a lot,” uncertainty is high, and our estimates are not super reliable;\nIf the answer is “a little,” uncertainty is low, and maybe we can take our estimates to the bank;"
   },
   {
     "objectID": "slides/19-interval-estimation.html#heres-one-dataset-we-could-have-seen",
     "href": "slides/19-interval-estimation.html#heres-one-dataset-we-could-have-seen",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Here’s one dataset we could have seen",
     "text": "Here’s one dataset we could have seen"
   },
   {
     "objectID": "slides/19-interval-estimation.html#heres-another",
     "href": "slides/19-interval-estimation.html#heres-another",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Here’s another",
     "text": "Here’s another"
   },
   {
     "objectID": "slides/19-interval-estimation.html#heres-yet-one-more",
     "href": "slides/19-interval-estimation.html#heres-yet-one-more",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Here’s yet one more",
     "text": "Here’s yet one more"
   },
   {
-    "objectID": "slides/19-interval-estimation.html#different-data-set---different-estimates",
-    "href": "slides/19-interval-estimation.html#different-data-set---different-estimates",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\nThese tiny data sets can’t even agree on if the line should slope up or down. Uncertainty is high, hence the large bands.\nIf we repeat the process with a larger sample size, things are more stable"
+    "objectID": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates",
+    "href": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\nThese tiny data sets can’t even agree on if the line should slope up or down. Uncertainty is high, hence the large bands.\nIf we repeat the process with a larger sample size, things are more stable"
   },
   {
     "objectID": "slides/19-interval-estimation.html#alternative-1",
     "href": "slides/19-interval-estimation.html#alternative-1",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Alternative 1",
     "text": "Alternative 1"
   },
   {
     "objectID": "slides/19-interval-estimation.html#alternative-2",
     "href": "slides/19-interval-estimation.html#alternative-2",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Alternative 2",
     "text": "Alternative 2"
   },
   {
     "objectID": "slides/19-interval-estimation.html#alternative-3",
     "href": "slides/19-interval-estimation.html#alternative-3",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Alternative 3",
     "text": "Alternative 3"
   },
   {
     "objectID": "slides/19-interval-estimation.html#lets-visualize-how-the-estimates-vary",
     "href": "slides/19-interval-estimation.html#lets-visualize-how-the-estimates-vary",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Let’s visualize how the estimates vary",
     "text": "Let’s visualize how the estimates vary"
   },
   {
-    "objectID": "slides/19-interval-estimation.html#different-data-set---different-estimates-1",
-    "href": "slides/19-interval-estimation.html#different-data-set---different-estimates-1",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    4.27 \n2 log_inc        0.553"
+    "objectID": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates-1",
+    "href": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates-1",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    4.27 \n2 log_inc        0.553"
   },
   {
-    "objectID": "slides/19-interval-estimation.html#different-data-set---different-estimates-2",
-    "href": "slides/19-interval-estimation.html#different-data-set---different-estimates-2",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    -4.63\n2 log_inc         1.35"
+    "objectID": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates-2",
+    "href": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates-2",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    -4.63\n2 log_inc         1.35"
   },
   {
-    "objectID": "slides/19-interval-estimation.html#different-data-set---different-estimates-3",
-    "href": "slides/19-interval-estimation.html#different-data-set---different-estimates-3",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    -1.14\n2 log_inc         1.04"
+    "objectID": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates-3",
+    "href": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates-3",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    -1.14\n2 log_inc         1.04"
   },
   {
-    "objectID": "slides/19-interval-estimation.html#different-data-set---different-estimates-4",
-    "href": "slides/19-interval-estimation.html#different-data-set---different-estimates-4",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   -0.288\n2 log_inc        0.960"
+    "objectID": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates-4",
+    "href": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates-4",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   -0.288\n2 log_inc        0.960"
   },
   {
-    "objectID": "slides/19-interval-estimation.html#different-data-set---different-estimates-5",
-    "href": "slides/19-interval-estimation.html#different-data-set---different-estimates-5",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    4.84 \n2 log_inc        0.492"
+    "objectID": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates-5",
+    "href": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates-5",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    4.84 \n2 log_inc        0.492"
   },
   {
-    "objectID": "slides/19-interval-estimation.html#different-data-set---different-estimates-6",
-    "href": "slides/19-interval-estimation.html#different-data-set---different-estimates-6",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    3.20 \n2 log_inc        0.654"
+    "objectID": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates-6",
+    "href": "slides/19-interval-estimation.html#different-data-set-rightarrow-different-estimates-6",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    3.20 \n2 log_inc        0.654"
   },
   {
     "objectID": "slides/19-interval-estimation.html#you-get-the-idea",
     "href": "slides/19-interval-estimation.html#you-get-the-idea",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "You get the idea",
     "text": "You get the idea"
   },
   {
     "objectID": "slides/19-interval-estimation.html#variation-in-estimates-across-alternative-datasets",
     "href": "slides/19-interval-estimation.html#variation-in-estimates-across-alternative-datasets",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Variation in estimates across alternative datasets",
-    "text": "Variation in estimates across alternative datasets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe amount of variation in the histogram tells us something about the uncertainty, and gives us a range of likely values."
+    "text": "Variation in estimates across alternative datasets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe amount of variation (i.e., “spread”) in the histogram tells us something about the uncertainty, and gives us a range of likely values."
   },
   {
     "objectID": "slides/19-interval-estimation.html#summary",
     "href": "slides/19-interval-estimation.html#summary",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Summary",
-    "text": "Summary\n\n\nThe notion of uncertainty we seek to quantify is “variability of estimates across datasets;”\n\nIf the estimates vary a lot across datasets, reliability is low and uncertainty is high;\nIf the estimates vary only a little across datasets, reliability is high and uncertainty is low;\n\n\nWe can visualizes this with a histogram of estimates, and quantify it with the spread of that histogram (sd, var, IQR, etc);\nSampling uncertainty is influenced by the underlying noisiness of the data and the sample size.\n\n\n. . .\nIn order to do this in practice, we need multiple datasets. But in practice we only have one. So now what?"
+    "text": "Summary\n\n\nThe notion of uncertainty we seek to quantify is “variability of estimates across datasets;”\n\nIf the estimates vary a lot across datasets, reliability is low and uncertainty is high;\nIf the estimates vary only a little across datasets, reliability is high and uncertainty is low;\n\n\nWe can visualizes this with a histogram of estimates, and quantify it with the spread of that histogram (sd, var, IQR, etc);\nSampling uncertainty is influenced by the underlying noisiness of the data and the sample size.\n\n\n. . .\nIn order to do this in practice, we need multiple datasets. But in practice, we only have access to one. So now what?"
   },
   {
     "objectID": "slides/19-interval-estimation.html#reality-check",
     "href": "slides/19-interval-estimation.html#reality-check",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Reality check",
     "text": "Reality check\n\n\nContemplating alternative datasets is a cute thought experiment, but in reality we cannot collect completely new data;\nData collection is costly!\n\nCollecting new survey responses;\nRecruiting new subjects;\nRunning new experiments;\nFiring up the Large Hadron Collider for one more go;\n\n\nGiven the one dataset we actually have, how can we approximate the idea of alternative datasets and use them to assess the variability of results?"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrapping",
     "href": "slides/19-interval-estimation.html#bootstrapping",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
-    "text": "Bootstrapping\n\n\nWe approximate this idea of “alternative, hypothetical datasets I could have observed” by resampling our data with replacement;\n\nWe construct a new dataset of the same size by randomly picking rows out of the original one:\n\nSome rows will be duplicated;\nSome rows will not appear at all;\nHence, the new dataset is different from the original;\nDifferent dataset &gt;&gt; different estimate;\n\n\nRepeat this processes hundred or thousands of times, and observe how the estimates vary as you refit the model on alternative datasets;\nThis gives you a sense of the sampling variability of your estimates."
+    "text": "Bootstrapping\n\n\nWe approximate this idea of “alternative, hypothetical datasets I could have observed” by resampling our data with replacement;\n\nWe construct a new dataset of the same size by randomly picking rows out of the original one:\n\nSome rows will be duplicated;\nSome rows will not appear at all;\nHence, the new dataset is different from the original;\nDifferent dataset \\(\\rightarrow\\) different estimate;\n\n\nRepeat this processes hundred or thousands of times, and observe how the estimates vary as you refit the model on these hypothetical alternative datasets;\nThis gives you a sense of the sampling variability of your estimates."
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrapping-1",
     "href": "slides/19-interval-estimation.html#bootstrapping-1",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrapping-2",
     "href": "slides/19-interval-estimation.html#bootstrapping-2",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrapping-3",
     "href": "slides/19-interval-estimation.html#bootstrapping-3",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrapping-4",
     "href": "slides/19-interval-estimation.html#bootstrapping-4",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrapping-5",
     "href": "slides/19-interval-estimation.html#bootstrapping-5",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrapping-6",
     "href": "slides/19-interval-estimation.html#bootstrapping-6",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrapping-7",
     "href": "slides/19-interval-estimation.html#bootstrapping-7",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
     "objectID": "slides/19-interval-estimation.html#toy-bootstrap-samples-1",
     "href": "slides/19-interval-estimation.html#toy-bootstrap-samples-1",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Toy: Bootstrap samples 1",
-    "text": "Toy: Bootstrap samples 1\n\n\nOriginal data\n\n\n# A tibble: 6 × 3\n     id       x       y\n  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1     1  0.432   1.53  \n2     2 -2.01    1.80  \n3     3 -0.0467  1.43  \n4     4 -1.05    0.0518\n5     5  0.327   0.820 \n6     6 -0.679  -0.961 \n\n\nOriginal estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   0.801 \n2 x             0.0450\n\n\n\nSample with replacement:\n\n\n# A tibble: 6 × 3\n     id      x      y\n  &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1     5  0.327  0.820\n2     6 -0.679 -0.961\n3     6 -0.679 -0.961\n4     1  0.432  1.53 \n5     6 -0.679 -0.961\n6     1  0.432  1.53 \n\n\nDifferent data &gt;&gt; new estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    0.462\n2 x              2.11"
+    "text": "Toy: Bootstrap samples 1\n\n\nOriginal data\n\n\n# A tibble: 6 × 3\n     id       x       y\n  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1     1  0.432   1.53  \n2     2 -2.01    1.80  \n3     3 -0.0467  1.43  \n4     4 -1.05    0.0518\n5     5  0.327   0.820 \n6     6 -0.679  -0.961 \n\n\nOriginal estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   0.801 \n2 x             0.0450\n\n\n\nSample with replacement:\n\n\n# A tibble: 6 × 3\n     id      x      y\n  &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1     5  0.327  0.820\n2     6 -0.679 -0.961\n3     6 -0.679 -0.961\n4     1  0.432  1.53 \n5     6 -0.679 -0.961\n6     1  0.432  1.53 \n\n\nDifferent data \\(\\rightarrow\\) new estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    0.462\n2 x              2.11"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrap-samples-2",
     "href": "slides/19-interval-estimation.html#bootstrap-samples-2",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrap samples 2",
-    "text": "Bootstrap samples 2\n\n\nOriginal data\n\n\n# A tibble: 6 × 3\n     id       x       y\n  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1     1  0.432   1.53  \n2     2 -2.01    1.80  \n3     3 -0.0467  1.43  \n4     4 -1.05    0.0518\n5     5  0.327   0.820 \n6     6 -0.679  -0.961 \n\n\nOriginal estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   0.801 \n2 x             0.0450\n\n\n\nSample with replacement:\n\n\n# A tibble: 6 × 3\n     id       x      y\n  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;\n1     2 -2.01    1.80 \n2     5  0.327   0.820\n3     1  0.432   1.53 \n4     6 -0.679  -0.961\n5     3 -0.0467  1.43 \n6     2 -2.01    1.80 \n\n\nDifferent data &gt;&gt; new estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    0.913\n2 x             -0.236"
+    "text": "Bootstrap samples 2\n\n\nOriginal data\n\n\n# A tibble: 6 × 3\n     id       x       y\n  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1     1  0.432   1.53  \n2     2 -2.01    1.80  \n3     3 -0.0467  1.43  \n4     4 -1.05    0.0518\n5     5  0.327   0.820 \n6     6 -0.679  -0.961 \n\n\nOriginal estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   0.801 \n2 x             0.0450\n\n\n\nSample with replacement:\n\n\n# A tibble: 6 × 3\n     id       x      y\n  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;\n1     2 -2.01    1.80 \n2     5  0.327   0.820\n3     1  0.432   1.53 \n4     6 -0.679  -0.961\n5     3 -0.0467  1.43 \n6     2 -2.01    1.80 \n\n\nDifferent data \\(\\rightarrow\\) new estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    0.913\n2 x             -0.236"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrap-samples-3",
     "href": "slides/19-interval-estimation.html#bootstrap-samples-3",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrap samples 3",
     "text": "Bootstrap samples 3\n\n\nOriginal data\n\n\n# A tibble: 6 × 3\n     id       x       y\n  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1     1  0.432   1.53  \n2     2 -2.01    1.80  \n3     3 -0.0467  1.43  \n4     4 -1.05    0.0518\n5     5  0.327   0.820 \n6     6 -0.679  -0.961 \n\n\nOriginal estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   0.801 \n2 x             0.0450\n\n\n\nSample with replacement:\n\n\n# A tibble: 6 × 3\n     id      x      y\n  &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1     6 -0.679 -0.961\n2     1  0.432  1.53 \n3     5  0.327  0.820\n4     6 -0.679 -0.961\n5     6 -0.679 -0.961\n6     5  0.327  0.820\n\n\nDifferent data &gt;&gt; new estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    0.357\n2 x              1.96"
   },
   {
     "objectID": "slides/19-interval-estimation.html#data-houses-in-duke-forest",
     "href": "slides/19-interval-estimation.html#data-houses-in-duke-forest",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Data: Houses in Duke Forest",
     "text": "Data: Houses in Duke Forest\n\n\n\nData on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020\nScraped from Zillow\nSource: openintro::duke_forest\n\n\n\n\n\n\nGoal: Use the area (in square feet) to understand variability in the price of houses in Duke Forest."
   },
   {
     "objectID": "slides/19-interval-estimation.html#exploratory-data-analysis",
     "href": "slides/19-interval-estimation.html#exploratory-data-analysis",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Exploratory data analysis",
     "text": "Exploratory data analysis\n\nCodeggplot(duke_forest, aes(x = area, y = price)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"Area (square feet)\",\n    y = \"Sale price (USD)\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
   },
   {
     "objectID": "slides/19-interval-estimation.html#modeling",
     "href": "slides/19-interval-estimation.html#modeling",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Modeling",
-    "text": "Modeling\n\ndf_fit &lt;- linear_reg() |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) # neatly format table to 2 digits\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n. . .\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\n\n\nSlope: For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average."
+    "text": "Modeling\n\ndf_fit &lt;- linear_reg() |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) # neatly format table to 2 digits\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n. . .\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell for $116,652, on average.\n\nIs this interpretation useful?\n\n\n\nSlope: For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average."
   },
   {
     "objectID": "slides/19-interval-estimation.html#from-sample-to-population",
     "href": "slides/19-interval-estimation.html#from-sample-to-population",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "From sample to population",
     "text": "From sample to population\n\nFor each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.\n\n\n\nThis estimate is valid for the single sample of 98 houses.\nBut what if we’re not interested quantifying the relationship between the size and price of a house in this single sample?\nWhat if we want to say something about the relationship between these variables for all houses in Duke Forest?"
   },
   {
     "objectID": "slides/19-interval-estimation.html#statistical-inference",
     "href": "slides/19-interval-estimation.html#statistical-inference",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Statistical inference",
     "text": "Statistical inference\n\nStatistical inference provide methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from\nFor our inferences to be valid, the sample should be random and representative of the population we’re interested in"
   },
   {
     "objectID": "slides/19-interval-estimation.html#inference-for-simple-linear-regression",
     "href": "slides/19-interval-estimation.html#inference-for-simple-linear-regression",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Inference for simple linear regression",
-    "text": "Inference for simple linear regression\n\nCalculate a confidence interval for the slope, \\(\\beta_1\\) (today)\nConduct a hypothesis test for the slope, \\(\\beta_1\\) (Thursday)"
+    "text": "Inference for simple linear regression\n\nCalculate a confidence interval for the slope, \\(\\beta_1\\) (today)\nConduct a hypothesis test for the slope, \\(\\beta_1\\) (tomorrow)"
   },
   {
     "objectID": "slides/19-interval-estimation.html#confidence-interval",
     "href": "slides/19-interval-estimation.html#confidence-interval",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Confidence interval",
     "text": "Confidence interval\n\n\nA plausible range of values for a population parameter is called a confidence interval\n\nUsing only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net\n\nWe can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish\nSimilarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter"
   },
   {
     "objectID": "slides/19-interval-estimation.html#confidence-interval-for-the-slope",
     "href": "slides/19-interval-estimation.html#confidence-interval-for-the-slope",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Confidence interval for the slope",
     "text": "Confidence interval for the slope\nA confidence interval will allow us to make a statement like “For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus X dollars.”\n. . .\n\nShould X be $10? $100? $1000?\nIf we were to take another sample of 98 would we expect the slope calculated based on that sample to be exactly $159? Off by $10? $100? $1000?\nThe answer depends on how variable (from one sample to another sample) the sample statistic (the slope) is\nWe need a way to quantify the variability of the sample statistic"
   },
   {
     "objectID": "slides/19-interval-estimation.html#quantify-the-variability-of-the-slope",
     "href": "slides/19-interval-estimation.html#quantify-the-variability-of-the-slope",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Quantify the variability of the slope",
     "text": "Quantify the variability of the slope\nfor estimation\n\n\nTwo approaches:\n\nVia simulation (what we’ll do in this course)\nVia mathematical models (what you can learn about in future courses)\n\n\n\nBootstrapping to quantify the variability of the slope for the purpose of estimation:\n\nBootstrap new samples from the original sample\nFit models to each of the samples and estimate the slope\nUse features of the distribution of the bootstrapped slopes to construct a confidence interval"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrap-sample-1",
     "href": "slides/19-interval-estimation.html#bootstrap-sample-1",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrap sample 1",
     "text": "Bootstrap sample 1"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrap-sample-2",
     "href": "slides/19-interval-estimation.html#bootstrap-sample-2",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrap sample 2",
     "text": "Bootstrap sample 2"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrap-sample-3",
     "href": "slides/19-interval-estimation.html#bootstrap-sample-3",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrap sample 3",
     "text": "Bootstrap sample 3"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrap-sample-4",
     "href": "slides/19-interval-estimation.html#bootstrap-sample-4",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrap sample 4",
     "text": "Bootstrap sample 4"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrap-sample-5",
     "href": "slides/19-interval-estimation.html#bootstrap-sample-5",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrap sample 5",
     "text": "Bootstrap sample 5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. . .\nso on and so forth…"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrap-samples-1---5",
     "href": "slides/19-interval-estimation.html#bootstrap-samples-1---5",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrap samples 1 - 5",
     "text": "Bootstrap samples 1 - 5"
   },
   {
     "objectID": "slides/19-interval-estimation.html#bootstrap-samples-1---100",
     "href": "slides/19-interval-estimation.html#bootstrap-samples-1---100",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Bootstrap samples 1 - 100",
     "text": "Bootstrap samples 1 - 100"
   },
   {
     "objectID": "slides/19-interval-estimation.html#slopes-of-bootstrap-samples",
     "href": "slides/19-interval-estimation.html#slopes-of-bootstrap-samples",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Slopes of bootstrap samples",
     "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
   },
   {
     "objectID": "slides/19-interval-estimation.html#slopes-of-bootstrap-samples-1",
     "href": "slides/19-interval-estimation.html#slopes-of-bootstrap-samples-1",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Slopes of bootstrap samples",
     "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, we expect the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
   },
   {
     "objectID": "slides/19-interval-estimation.html#confidence-level",
     "href": "slides/19-interval-estimation.html#confidence-level",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Confidence level",
     "text": "Confidence level\n\nHow confident are you that the true slope is between $0 and $250? How about $150 and $170? How about $90 and $210?"
   },
   {
     "objectID": "slides/19-interval-estimation.html#confidence-interval-1",
     "href": "slides/19-interval-estimation.html#confidence-interval-1",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "95% confidence interval",
-    "text": "95% confidence interval\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\n\n\nA 95% confidence interval is bounded by the middle 95% of the bootstrap distribution\nWe are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77."
+    "text": "95% confidence interval\n\n\n\n\n\n\n\n\n\n\nA 95% confidence interval is bounded by the middle 95% of the bootstrap distribution\n“We are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77.”"
   },
   {
     "objectID": "slides/19-interval-estimation.html#where-do-the-bounds-come-from",
     "href": "slides/19-interval-estimation.html#where-do-the-bounds-come-from",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Where do the bounds come from?",
     "text": "Where do the bounds come from?\nQuantiles!\n\n\nThink IQR! 50% of the bootstrap distribution is between the 25% quantile on the left and the 75% quantile on the right. But we want more than 50%\n90% of the bootstrap distribution is between the 5% quantile on the left and the 95% quantile on the right;\n95% of the bootstrap distribution is between the 2.5% quantile on the left and the 97.5% quantile on the right;\nAnd so on."
   },
   {
-    "objectID": "slides/19-interval-estimation.html#ae-22-duke-forest-bootstrap",
-    "href": "slides/19-interval-estimation.html#ae-22-duke-forest-bootstrap",
-    "title": "Interval estimation",
-    "section": "ae-22-duke-forest-bootstrap",
-    "text": "ae-22-duke-forest-bootstrap\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-22-duke-forest-bootstrap.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
+    "objectID": "slides/19-interval-estimation.html#ae-17-duke-forest-bootstrap",
+    "href": "slides/19-interval-estimation.html#ae-17-duke-forest-bootstrap",
+    "title": "Interval Estimation",
+    "section": "ae-17-duke-forest-bootstrap",
+    "text": "ae-17-duke-forest-bootstrap\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-17-duke-forest-bootstrap.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
   },
   {
     "objectID": "slides/19-interval-estimation.html#computing-the-ci-for-the-slope-i",
     "href": "slides/19-interval-estimation.html#computing-the-ci-for-the-slope-i",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Computing the CI for the slope I",
-    "text": "Computing the CI for the slope I\nCalculate the observed slope:\n\nobserved_fit &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  fit()\n\nobserved_fit\n\n# A tibble: 2 × 2\n  term      estimate\n  &lt;chr&gt;        &lt;dbl&gt;\n1 intercept  116652.\n2 area          159."
+    "text": "Computing the CI for the slope I\nCalculate the observed slope:\n\nobserved_fit &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  fit()\n\nobserved_fit\n\n# A tibble: 2 × 2\n  term      estimate\n  &lt;chr&gt;        &lt;dbl&gt;\n1 intercept  116652.\n2 area          159.\n\n\n\nAside: I don’t know why, but one quirk of tidymodels is that, when you are fitting a model for use in CI construction, you’ll use df |&gt; specify(y ~ x) |&gt; fit(); when you’re fitting a model for general inference, you’ll use linear_reg |&gt; fit(y ~ x, data = df)"
   },
   {
     "objectID": "slides/19-interval-estimation.html#computing-the-ci-for-the-slope-ii",
     "href": "slides/19-interval-estimation.html#computing-the-ci-for-the-slope-ii",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Computing the CI for the slope II",
-    "text": "Computing the CI for the slope II\nTake 100 bootstrap samples and fit models to each one:\n\nset.seed(1120)\n\nboot_fits &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept   47819.\n 2         1 area          191.\n 3         2 intercept  144645.\n 4         2 area          134.\n 5         3 intercept  114008.\n 6         3 area          161.\n 7         4 intercept  100639.\n 8         4 area          166.\n 9         5 intercept  215264.\n10         5 area          125.\n# ℹ 190 more rows"
+    "text": "Computing the CI for the slope II\nTake 100 bootstrap samples and have R fit models to each one:\n\nset.seed(1120)\n\nboot_fits &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept   47819.\n 2         1 area          191.\n 3         2 intercept  144645.\n 4         2 area          134.\n 5         3 intercept  114008.\n 6         3 area          161.\n 7         4 intercept  100639.\n 8         4 area          166.\n 9         5 intercept  215264.\n10         5 area          125.\n# ℹ 190 more rows"
   },
   {
     "objectID": "slides/19-interval-estimation.html#computing-the-ci-for-the-slope-iii",
     "href": "slides/19-interval-estimation.html#computing-the-ci-for-the-slope-iii",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Computing the CI for the slope III",
     "text": "Computing the CI for the slope III\nPercentile method: Compute the 95% CI as the middle 95% of the bootstrap distribution:\n\nget_confidence_interval(\n  boot_fits, \n  point_estimate = observed_fit, \n  level = 0.95,\n  type = \"percentile\" # default method\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          92.1     223.\n2 intercept -36765.   296528."
   },
   {
     "objectID": "slides/19-interval-estimation.html#precision-vs.-accuracy",
     "href": "slides/19-interval-estimation.html#precision-vs.-accuracy",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Precision vs. accuracy",
     "text": "Precision vs. accuracy\n\nIf we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?\n\n. . ."
   },
   {
     "objectID": "slides/19-interval-estimation.html#precision-vs.-accuracy-1",
     "href": "slides/19-interval-estimation.html#precision-vs.-accuracy-1",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Precision vs. accuracy",
     "text": "Precision vs. accuracy\n\nHow can we get best of both worlds – high precision and high accuracy?"
   },
   {
     "objectID": "slides/19-interval-estimation.html#changing-confidence-level",
     "href": "slides/19-interval-estimation.html#changing-confidence-level",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Changing confidence level",
     "text": "Changing confidence level\n\nHow would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?\n\n\nget_confidence_interval(\n  boot_fits, \n  point_estimate = observed_fit, \n  level = 0.95,\n  type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          92.1     223.\n2 intercept -36765.   296528."
   },
   {
     "objectID": "slides/19-interval-estimation.html#changing-confidence-level-1",
     "href": "slides/19-interval-estimation.html#changing-confidence-level-1",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Changing confidence level",
     "text": "Changing confidence level\n\n## confidence level: 90%\nget_confidence_interval(\n  boot_fits, point_estimate = observed_fit, \n  level = 0.90, type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          104.     212.\n2 intercept  -24380.  256730.\n\n## confidence level: 99%\nget_confidence_interval(\n  boot_fits, point_estimate = observed_fit, \n  level = 0.99, type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          56.3     226.\n2 intercept -61950.   370395."
   },
   {
     "objectID": "slides/19-interval-estimation.html#recap",
     "href": "slides/19-interval-estimation.html#recap",
-    "title": "Interval estimation",
+    "title": "Interval Estimation",
     "section": "Recap",
     "text": "Recap\n\nPopulation: Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. (population size = \\(N\\))\nSample: Subset of the population, ideally random and representative (sample size = \\(n\\))\nSample statistic \\(\\ne\\) population parameter, but if the sample is good, it can be a good estimate\nStatistical inference: Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process\nWe report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population\nSince we can’t continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#the-home-stretch",
-    "href": "slides/22-interval-estimation-slides.html#the-home-stretch",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#the-home-stretch",
+    "href": "slides/19-interval-estimation-slides.html#the-home-stretch",
+    "title": "Interval Estimation",
     "section": "The home stretch",
-    "text": "The home stretch\n\n\nMonday April 13: lecture on confidence intervals;\nWednesday April 15: lecture on hypothesis testing;\nThursday April 16: graded lab on statistics (last one!);\nMonday April 20: wrap-up lecture on inference;\nWednesday April 22: lecture on who knows what (last one!);\nWednesday April 22: turn in HW 7 (last one!);\nFriday May 1 : final exam @ 2pm."
+    "text": "The home stretch\n\n\nToday: lecture on confidence intervals;\nTomorrow: lecture on hypothesis testing;\nThursday: Lab 6 (last one!), due Sunday by 11:59pm (deadline firm if you want graded feedback by the final);\nWednesday: wrap-up lecture on inference;\nThursday: lecture on TBD, depending on general vibes / exam readiness this week;\nFriday: no class – Juneteenth!"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#the-bottom-line-at-the-top",
-    "href": "slides/22-interval-estimation-slides.html#the-bottom-line-at-the-top",
-    "title": "Interval estimation",
-    "section": "The bottom line, at the top",
-    "text": "The bottom line, at the top\nIf JZ had to boil statistics down to one main idea, it would be:\n\nquantifying uncertainty to help make decisions.\n\nYou make different kinds of decisions if you’re sure versus unsure. Statistics helps you quantify the reliability of your knowledge so that you can determine what sort of decision to make."
+    "objectID": "slides/19-interval-estimation-slides.html#our-goal-quantify-uncertainty-to-help-make-informed-decisions",
+    "href": "slides/19-interval-estimation-slides.html#our-goal-quantify-uncertainty-to-help-make-informed-decisions",
+    "title": "Interval Estimation",
+    "section": "Our goal: quantify uncertainty to help make informed decisions",
+    "text": "Our goal: quantify uncertainty to help make informed decisions\n\nWhat kind of uncertainty?\n\nHow do you quantify it?\nThese are surprisingly spicy and controversial questions in statistics!\nWith the short time remaining, we will focus on quantifying one specific type of uncertainty…"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#quantifying-uncertainty-to-help-make-decisions",
-    "href": "slides/22-interval-estimation-slides.html#quantifying-uncertainty-to-help-make-decisions",
-    "title": "Interval estimation",
-    "section": "Quantifying uncertainty to help make decisions",
-    "text": "Quantifying uncertainty to help make decisions\n\nWhat kind of uncertainty?\n\nHow do you quantify it?\nThese are surprisingly spicy and controversial questions in statistics!\nWith the short time remaining, we will focus on quantifying one specific type of uncertainty…"
-  },
-  {
-    "objectID": "slides/22-interval-estimation-slides.html#sampling-uncertainty",
-    "href": "slides/22-interval-estimation-slides.html#sampling-uncertainty",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#sampling-uncertainty",
+    "href": "slides/19-interval-estimation-slides.html#sampling-uncertainty",
+    "title": "Interval Estimation",
     "section": "Sampling uncertainty",
-    "text": "Sampling uncertainty\n\nDifferent data give different estimates. How different?\n\n\nIn reality, we have one dataset, and it gives one set of results. How reliable are those results?\nA thought experiment: if I collected a whole new dataset and redid my analysis, do I get the same results, or different results?\n\nif the results vary wildly from dataset to dataset, uncertainty is high and reliability is low;\nif the results are stable from one dataset to another, uncertainty is low and reliability is high.\n\n\n\nThat’s the main idea in a nutshell."
+    "text": "Sampling uncertainty\n\nDifferent data give different estimates. How different?\n\n\nIn reality, we have one (sample) dataset, and it gives one set of results. How reliable are those results?\nA thought experiment: if I collected a whole new dataset and redid my analysis, do I get the same results, or different results?\n\nif the results vary wildly from dataset to dataset, uncertainty is high and reliability is low;\nif the results are stable from one dataset to another, uncertainty is low and reliability is high.\n\n\n\nThat’s the main idea in a nutshell."
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#a-running-example",
-    "href": "slides/22-interval-estimation-slides.html#a-running-example",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#a-running-example",
+    "href": "slides/19-interval-estimation-slides.html#a-running-example",
+    "title": "Interval Estimation",
     "section": "A running example",
-    "text": "A running example\nRecall the openintro::loans_full_schema data frame:\n\n\n10000 rows;\neach row is an approved loan applicant;\n\nthe columns contain financial info about that person, including…\n\nannual income (in $);\namount of non-mortgage debt outstanding (in $).\n\n\nWhat would you guess is the direction of association between these two variables?"
+    "text": "A running example\nThe openintro::loans_full_schema data frame contains loan data from the peer-to-peer lender, Lending Club, available in the openintro package.\n\n\n10000 rows;\neach row is an approved loan applicant;\n\nthe columns contain financial info about the loan applicant, including…\n\nannual income (in $);\namount of non-mortgage debt outstanding (in $).\n\n\nWhat would you guess is the direction of association between these two variables?"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#model-fit-with-five-observations",
-    "href": "slides/22-interval-estimation-slides.html#model-fit-with-five-observations",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#model-fit-with-five-observations",
+    "href": "slides/19-interval-estimation-slides.html#model-fit-with-five-observations",
+    "title": "Interval Estimation",
     "section": "Model fit with five observations",
-    "text": "Model fit with five observations\n\n(I just took logs to make the picture prettier.)"
+    "text": "Model fit with five observations\n\n\n\n\n\n\n\n\n(I just took logs to make the picture prettier.)"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#double-the-sample-size",
-    "href": "slides/22-interval-estimation-slides.html#double-the-sample-size",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#double-the-sample-size",
+    "href": "slides/19-interval-estimation-slides.html#double-the-sample-size",
+    "title": "Interval Estimation",
     "section": "Double the sample size",
     "text": "Double the sample size"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#double-the-sample-size-again",
-    "href": "slides/22-interval-estimation-slides.html#double-the-sample-size-again",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#double-the-sample-size-again",
+    "href": "slides/19-interval-estimation-slides.html#double-the-sample-size-again",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#double-the-sample-size-again-1",
-    "href": "slides/22-interval-estimation-slides.html#double-the-sample-size-again-1",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#double-the-sample-size-again-1",
+    "href": "slides/19-interval-estimation-slides.html#double-the-sample-size-again-1",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#double-the-sample-size-again-2",
-    "href": "slides/22-interval-estimation-slides.html#double-the-sample-size-again-2",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#double-the-sample-size-again-2",
+    "href": "slides/19-interval-estimation-slides.html#double-the-sample-size-again-2",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#double-the-sample-size-again-3",
-    "href": "slides/22-interval-estimation-slides.html#double-the-sample-size-again-3",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#double-the-sample-size-again-3",
+    "href": "slides/19-interval-estimation-slides.html#double-the-sample-size-again-3",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#double-the-sample-size-again-4",
-    "href": "slides/22-interval-estimation-slides.html#double-the-sample-size-again-4",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#double-the-sample-size-again-4",
+    "href": "slides/19-interval-estimation-slides.html#double-the-sample-size-again-4",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#double-the-sample-size-again-5",
-    "href": "slides/22-interval-estimation-slides.html#double-the-sample-size-again-5",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#double-the-sample-size-again-5",
+    "href": "slides/19-interval-estimation-slides.html#double-the-sample-size-again-5",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#double-the-sample-size-again-6",
-    "href": "slides/22-interval-estimation-slides.html#double-the-sample-size-again-6",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#double-the-sample-size-again-6",
+    "href": "slides/19-interval-estimation-slides.html#double-the-sample-size-again-6",
+    "title": "Interval Estimation",
     "section": "Double the sample size again",
     "text": "Double the sample size again"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#double-the-sample-size-yet-again",
-    "href": "slides/22-interval-estimation-slides.html#double-the-sample-size-yet-again",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#double-the-sample-size-yet-again",
+    "href": "slides/19-interval-estimation-slides.html#double-the-sample-size-yet-again",
+    "title": "Interval Estimation",
     "section": "Double the sample size yet again",
     "text": "Double the sample size yet again"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#double-the-sample-size-one-more-time",
-    "href": "slides/22-interval-estimation-slides.html#double-the-sample-size-one-more-time",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#double-the-sample-size-one-more-time",
+    "href": "slides/19-interval-estimation-slides.html#double-the-sample-size-one-more-time",
+    "title": "Interval Estimation",
     "section": "Double the sample size one more time",
     "text": "Double the sample size one more time"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#use-all-the-data-we-have",
-    "href": "slides/22-interval-estimation-slides.html#use-all-the-data-we-have",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#use-all-the-data-we-have",
+    "href": "slides/19-interval-estimation-slides.html#use-all-the-data-we-have",
+    "title": "Interval Estimation",
     "section": "Use all the data we have",
     "text": "Use all the data we have"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#what-did-we-notice",
-    "href": "slides/22-interval-estimation-slides.html#what-did-we-notice",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#what-did-we-notice",
+    "href": "slides/19-interval-estimation-slides.html#what-did-we-notice",
+    "title": "Interval Estimation",
     "section": "What did we notice?",
-    "text": "What did we notice?\n\n\nAs the sample size grew, the best fit line stabilized;\nAs the sample size grew, the grey uncertainty band shrank;\nAs the sample size grew, we observed a larger range of income values, anf the computer displayed more of the line;\n\nAs the sample size grows, the picture the data paint becomes clearer:\n\npositive relationship;\nlinear relationship;\npretty strong"
+    "text": "What did we notice?\n\n\nAs the sample size grew, the best fit line stabilized;\nAs the sample size grew, the grey uncertainty band shrank;\nAs the sample size grew, we observed a larger range of income values, and the computer displayed more of the line;\n\nAs the sample size grows, the picture the data paint becomes clearer:\n\npositive relationship;\nlinear relationship;\npretty strong"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#a-silly-question",
-    "href": "slides/22-interval-estimation-slides.html#a-silly-question",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#a-silly-question",
+    "href": "slides/19-interval-estimation-slides.html#a-silly-question",
+    "title": "Interval Estimation",
     "section": "A silly question",
     "text": "A silly question\n\nWhich would you rather have for your data analysis? 5 people in your dataset or 9947? Why?"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#heres-the-deal",
-    "href": "slides/22-interval-estimation-slides.html#heres-the-deal",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#heres-the-deal",
+    "href": "slides/19-interval-estimation-slides.html#heres-the-deal",
+    "title": "Interval Estimation",
     "section": "Here’s the deal",
     "text": "Here’s the deal\n\nWe do not know what the “true” line is;\nOur estimates are a best guess based on noisy, incomplete, imperfect data;\nThe more data we have, the more “certain” and “reliable” the estimates are;\nWhat do we mean by “uncertainty” here?"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#sampling-uncertainty-1",
-    "href": "slides/22-interval-estimation-slides.html#sampling-uncertainty-1",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#sampling-uncertainty-1",
+    "href": "slides/19-interval-estimation-slides.html#sampling-uncertainty-1",
+    "title": "Interval Estimation",
     "section": "Sampling uncertainty",
-    "text": "Sampling uncertainty\n\nFact: different data set -&gt; different estimates;\n\nHow much would our estimate vary across alternative datasets?\n\nIf the answer is “a lot,” uncertainty is high, and our estimates are not super reliable;\nIf the answer is “a little,” uncertainty is low, and maybe we can take our estimates to the bank;"
+    "text": "Sampling uncertainty\n\nFact: different data set \\(\\rightarrow\\) different estimates;\n\nHow much would our estimate vary across alternative datasets?\n\nIf the answer is “a lot,” uncertainty is high, and our estimates are not super reliable;\nIf the answer is “a little,” uncertainty is low, and maybe we can take our estimates to the bank;"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#heres-one-dataset-we-could-have-seen",
-    "href": "slides/22-interval-estimation-slides.html#heres-one-dataset-we-could-have-seen",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#heres-one-dataset-we-could-have-seen",
+    "href": "slides/19-interval-estimation-slides.html#heres-one-dataset-we-could-have-seen",
+    "title": "Interval Estimation",
     "section": "Here’s one dataset we could have seen",
     "text": "Here’s one dataset we could have seen"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#heres-another",
-    "href": "slides/22-interval-estimation-slides.html#heres-another",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#heres-another",
+    "href": "slides/19-interval-estimation-slides.html#heres-another",
+    "title": "Interval Estimation",
     "section": "Here’s another",
     "text": "Here’s another"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#heres-yet-one-more",
-    "href": "slides/22-interval-estimation-slides.html#heres-yet-one-more",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#heres-yet-one-more",
+    "href": "slides/19-interval-estimation-slides.html#heres-yet-one-more",
+    "title": "Interval Estimation",
     "section": "Here’s yet one more",
     "text": "Here’s yet one more"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates",
-    "href": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\nThese tiny data sets can’t even agree on if the line should slope up or down. Uncertainty is high, hence the large bands.\nIf we repeat the process with a larger sample size, things are more stable"
+    "objectID": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates",
+    "href": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\nThese tiny data sets can’t even agree on if the line should slope up or down. Uncertainty is high, hence the large bands.\nIf we repeat the process with a larger sample size, things are more stable"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#alternative-1",
-    "href": "slides/22-interval-estimation-slides.html#alternative-1",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#alternative-1",
+    "href": "slides/19-interval-estimation-slides.html#alternative-1",
+    "title": "Interval Estimation",
     "section": "Alternative 1",
     "text": "Alternative 1"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#alternative-2",
-    "href": "slides/22-interval-estimation-slides.html#alternative-2",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#alternative-2",
+    "href": "slides/19-interval-estimation-slides.html#alternative-2",
+    "title": "Interval Estimation",
     "section": "Alternative 2",
     "text": "Alternative 2"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#alternative-3",
-    "href": "slides/22-interval-estimation-slides.html#alternative-3",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#alternative-3",
+    "href": "slides/19-interval-estimation-slides.html#alternative-3",
+    "title": "Interval Estimation",
     "section": "Alternative 3",
     "text": "Alternative 3"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#lets-visualize-how-the-estimates-vary",
-    "href": "slides/22-interval-estimation-slides.html#lets-visualize-how-the-estimates-vary",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#lets-visualize-how-the-estimates-vary",
+    "href": "slides/19-interval-estimation-slides.html#lets-visualize-how-the-estimates-vary",
+    "title": "Interval Estimation",
     "section": "Let’s visualize how the estimates vary",
     "text": "Let’s visualize how the estimates vary"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates-1",
-    "href": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates-1",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    4.27 \n2 log_inc        0.553"
+    "objectID": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates-1",
+    "href": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates-1",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    4.27 \n2 log_inc        0.553"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates-2",
-    "href": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates-2",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    -4.63\n2 log_inc         1.35"
+    "objectID": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates-2",
+    "href": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates-2",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    -4.63\n2 log_inc         1.35"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates-3",
-    "href": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates-3",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    -1.14\n2 log_inc         1.04"
+    "objectID": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates-3",
+    "href": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates-3",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    -1.14\n2 log_inc         1.04"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates-4",
-    "href": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates-4",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   -0.288\n2 log_inc        0.960"
+    "objectID": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates-4",
+    "href": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates-4",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   -0.288\n2 log_inc        0.960"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates-5",
-    "href": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates-5",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    4.84 \n2 log_inc        0.492"
+    "objectID": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates-5",
+    "href": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates-5",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    4.84 \n2 log_inc        0.492"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates-6",
-    "href": "slides/22-interval-estimation-slides.html#different-data-set---different-estimates-6",
-    "title": "Interval estimation",
-    "section": "Different data set -> different estimates",
-    "text": "Different data set -&gt; different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    3.20 \n2 log_inc        0.654"
+    "objectID": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates-6",
+    "href": "slides/19-interval-estimation-slides.html#different-data-set-rightarrow-different-estimates-6",
+    "title": "Interval Estimation",
+    "section": "Different data set \\(\\rightarrow\\) different estimates",
+    "text": "Different data set \\(\\rightarrow\\) different estimates\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    3.20 \n2 log_inc        0.654"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#you-get-the-idea",
-    "href": "slides/22-interval-estimation-slides.html#you-get-the-idea",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#you-get-the-idea",
+    "href": "slides/19-interval-estimation-slides.html#you-get-the-idea",
+    "title": "Interval Estimation",
     "section": "You get the idea",
     "text": "You get the idea"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#variation-in-estimates-across-alternative-datasets",
-    "href": "slides/22-interval-estimation-slides.html#variation-in-estimates-across-alternative-datasets",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#variation-in-estimates-across-alternative-datasets",
+    "href": "slides/19-interval-estimation-slides.html#variation-in-estimates-across-alternative-datasets",
+    "title": "Interval Estimation",
     "section": "Variation in estimates across alternative datasets",
-    "text": "Variation in estimates across alternative datasets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe amount of variation in the histogram tells us something about the uncertainty, and gives us a range of likely values."
+    "text": "Variation in estimates across alternative datasets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe amount of variation (i.e., “spread”) in the histogram tells us something about the uncertainty, and gives us a range of likely values."
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#summary",
-    "href": "slides/22-interval-estimation-slides.html#summary",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#summary",
+    "href": "slides/19-interval-estimation-slides.html#summary",
+    "title": "Interval Estimation",
     "section": "Summary",
-    "text": "Summary\n\n\nThe notion of uncertainty we seek to quantify is “variability of estimates across datasets;”\n\nIf the estimates vary a lot across datasets, reliability is low and uncertainty is high;\nIf the estimates vary only a little across datasets, reliability is high and uncertainty is low;\n\n\nWe can visualizes this with a histogram of estimates, and quantify it with the spread of that histogram (sd, var, IQR, etc);\nSampling uncertainty is influenced by the underlying noisiness of the data and the sample size.\n\n\n\nIn order to do this in practice, we need multiple datasets. But in practice we only have one. So now what?"
+    "text": "Summary\n\n\nThe notion of uncertainty we seek to quantify is “variability of estimates across datasets;”\n\nIf the estimates vary a lot across datasets, reliability is low and uncertainty is high;\nIf the estimates vary only a little across datasets, reliability is high and uncertainty is low;\n\n\nWe can visualizes this with a histogram of estimates, and quantify it with the spread of that histogram (sd, var, IQR, etc);\nSampling uncertainty is influenced by the underlying noisiness of the data and the sample size.\n\n\n\nIn order to do this in practice, we need multiple datasets. But in practice, we only have access to one. So now what?"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#reality-check",
-    "href": "slides/22-interval-estimation-slides.html#reality-check",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#reality-check",
+    "href": "slides/19-interval-estimation-slides.html#reality-check",
+    "title": "Interval Estimation",
     "section": "Reality check",
     "text": "Reality check\n\n\nContemplating alternative datasets is a cute thought experiment, but in reality we cannot collect completely new data;\nData collection is costly!\n\nCollecting new survey responses;\nRecruiting new subjects;\nRunning new experiments;\nFiring up the Large Hadron Collider for one more go;\n\n\nGiven the one dataset we actually have, how can we approximate the idea of alternative datasets and use them to assess the variability of results?"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrapping",
-    "href": "slides/22-interval-estimation-slides.html#bootstrapping",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrapping",
+    "href": "slides/19-interval-estimation-slides.html#bootstrapping",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
-    "text": "Bootstrapping\n\n\nWe approximate this idea of “alternative, hypothetical datasets I could have observed” by resampling our data with replacement;\n\nWe construct a new dataset of the same size by randomly picking rows out of the original one:\n\nSome rows will be duplicated;\nSome rows will not appear at all;\nHence, the new dataset is different from the original;\nDifferent dataset &gt;&gt; different estimate;\n\n\nRepeat this processes hundred or thousands of times, and observe how the estimates vary as you refit the model on alternative datasets;\nThis gives you a sense of the sampling variability of your estimates."
+    "text": "Bootstrapping\n\n\nWe approximate this idea of “alternative, hypothetical datasets I could have observed” by resampling our data with replacement;\n\nWe construct a new dataset of the same size by randomly picking rows out of the original one:\n\nSome rows will be duplicated;\nSome rows will not appear at all;\nHence, the new dataset is different from the original;\nDifferent dataset \\(\\rightarrow\\) different estimate;\n\n\nRepeat this processes hundred or thousands of times, and observe how the estimates vary as you refit the model on these hypothetical alternative datasets;\nThis gives you a sense of the sampling variability of your estimates."
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrapping-1",
-    "href": "slides/22-interval-estimation-slides.html#bootstrapping-1",
-    "title": "Interval estimation",
-    "section": "Bootstrapping",
-    "text": "Bootstrapping"
-  },
-  {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrapping-2",
-    "href": "slides/22-interval-estimation-slides.html#bootstrapping-2",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrapping-1",
+    "href": "slides/19-interval-estimation-slides.html#bootstrapping-1",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrapping-3",
-    "href": "slides/22-interval-estimation-slides.html#bootstrapping-3",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrapping-2",
+    "href": "slides/19-interval-estimation-slides.html#bootstrapping-2",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrapping-4",
-    "href": "slides/22-interval-estimation-slides.html#bootstrapping-4",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrapping-3",
+    "href": "slides/19-interval-estimation-slides.html#bootstrapping-3",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrapping-5",
-    "href": "slides/22-interval-estimation-slides.html#bootstrapping-5",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrapping-4",
+    "href": "slides/19-interval-estimation-slides.html#bootstrapping-4",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrapping-6",
-    "href": "slides/22-interval-estimation-slides.html#bootstrapping-6",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrapping-5",
+    "href": "slides/19-interval-estimation-slides.html#bootstrapping-5",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrapping-7",
-    "href": "slides/22-interval-estimation-slides.html#bootstrapping-7",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrapping-6",
+    "href": "slides/19-interval-estimation-slides.html#bootstrapping-6",
+    "title": "Interval Estimation",
     "section": "Bootstrapping",
     "text": "Bootstrapping"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#toy-bootstrap-samples-1",
-    "href": "slides/22-interval-estimation-slides.html#toy-bootstrap-samples-1",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrapping-7",
+    "href": "slides/19-interval-estimation-slides.html#bootstrapping-7",
+    "title": "Interval Estimation",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping"
+  },
+  {
+    "objectID": "slides/19-interval-estimation-slides.html#toy-bootstrap-samples-1",
+    "href": "slides/19-interval-estimation-slides.html#toy-bootstrap-samples-1",
+    "title": "Interval Estimation",
     "section": "Toy: Bootstrap samples 1",
-    "text": "Toy: Bootstrap samples 1\n\n\nOriginal data\n\n\n# A tibble: 6 × 3\n     id       x       y\n  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1     1  0.432   1.53  \n2     2 -2.01    1.80  \n3     3 -0.0467  1.43  \n4     4 -1.05    0.0518\n5     5  0.327   0.820 \n6     6 -0.679  -0.961 \n\n\nOriginal estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   0.801 \n2 x             0.0450\n\n\n\nSample with replacement:\n\n\n# A tibble: 6 × 3\n     id      x      y\n  &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1     5  0.327  0.820\n2     6 -0.679 -0.961\n3     6 -0.679 -0.961\n4     1  0.432  1.53 \n5     6 -0.679 -0.961\n6     1  0.432  1.53 \n\n\nDifferent data &gt;&gt; new estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    0.462\n2 x              2.11"
+    "text": "Toy: Bootstrap samples 1\n\n\nOriginal data\n\n\n# A tibble: 6 × 3\n     id       x       y\n  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1     1  0.432   1.53  \n2     2 -2.01    1.80  \n3     3 -0.0467  1.43  \n4     4 -1.05    0.0518\n5     5  0.327   0.820 \n6     6 -0.679  -0.961 \n\n\nOriginal estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   0.801 \n2 x             0.0450\n\n\n\nSample with replacement:\n\n\n# A tibble: 6 × 3\n     id      x      y\n  &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1     5  0.327  0.820\n2     6 -0.679 -0.961\n3     6 -0.679 -0.961\n4     1  0.432  1.53 \n5     6 -0.679 -0.961\n6     1  0.432  1.53 \n\n\nDifferent data \\(\\rightarrow\\) new estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    0.462\n2 x              2.11"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrap-samples-2",
-    "href": "slides/22-interval-estimation-slides.html#bootstrap-samples-2",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrap-samples-2",
+    "href": "slides/19-interval-estimation-slides.html#bootstrap-samples-2",
+    "title": "Interval Estimation",
     "section": "Bootstrap samples 2",
-    "text": "Bootstrap samples 2\n\n\nOriginal data\n\n\n# A tibble: 6 × 3\n     id       x       y\n  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1     1  0.432   1.53  \n2     2 -2.01    1.80  \n3     3 -0.0467  1.43  \n4     4 -1.05    0.0518\n5     5  0.327   0.820 \n6     6 -0.679  -0.961 \n\n\nOriginal estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   0.801 \n2 x             0.0450\n\n\n\nSample with replacement:\n\n\n# A tibble: 6 × 3\n     id       x      y\n  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;\n1     2 -2.01    1.80 \n2     5  0.327   0.820\n3     1  0.432   1.53 \n4     6 -0.679  -0.961\n5     3 -0.0467  1.43 \n6     2 -2.01    1.80 \n\n\nDifferent data &gt;&gt; new estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    0.913\n2 x             -0.236"
+    "text": "Bootstrap samples 2\n\n\nOriginal data\n\n\n# A tibble: 6 × 3\n     id       x       y\n  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1     1  0.432   1.53  \n2     2 -2.01    1.80  \n3     3 -0.0467  1.43  \n4     4 -1.05    0.0518\n5     5  0.327   0.820 \n6     6 -0.679  -0.961 \n\n\nOriginal estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   0.801 \n2 x             0.0450\n\n\n\nSample with replacement:\n\n\n# A tibble: 6 × 3\n     id       x      y\n  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;\n1     2 -2.01    1.80 \n2     5  0.327   0.820\n3     1  0.432   1.53 \n4     6 -0.679  -0.961\n5     3 -0.0467  1.43 \n6     2 -2.01    1.80 \n\n\nDifferent data \\(\\rightarrow\\) new estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    0.913\n2 x             -0.236"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrap-samples-3",
-    "href": "slides/22-interval-estimation-slides.html#bootstrap-samples-3",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrap-samples-3",
+    "href": "slides/19-interval-estimation-slides.html#bootstrap-samples-3",
+    "title": "Interval Estimation",
     "section": "Bootstrap samples 3",
     "text": "Bootstrap samples 3\n\n\nOriginal data\n\n\n# A tibble: 6 × 3\n     id       x       y\n  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1     1  0.432   1.53  \n2     2 -2.01    1.80  \n3     3 -0.0467  1.43  \n4     4 -1.05    0.0518\n5     5  0.327   0.820 \n6     6 -0.679  -0.961 \n\n\nOriginal estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)   0.801 \n2 x             0.0450\n\n\n\nSample with replacement:\n\n\n# A tibble: 6 × 3\n     id      x      y\n  &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1     6 -0.679 -0.961\n2     1  0.432  1.53 \n3     5  0.327  0.820\n4     6 -0.679 -0.961\n5     6 -0.679 -0.961\n6     5  0.327  0.820\n\n\nDifferent data &gt;&gt; new estimates:\n\n\n# A tibble: 2 × 2\n  term        estimate\n  &lt;chr&gt;          &lt;dbl&gt;\n1 (Intercept)    0.357\n2 x              1.96"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#data-houses-in-duke-forest",
-    "href": "slides/22-interval-estimation-slides.html#data-houses-in-duke-forest",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#data-houses-in-duke-forest",
+    "href": "slides/19-interval-estimation-slides.html#data-houses-in-duke-forest",
+    "title": "Interval Estimation",
     "section": "Data: Houses in Duke Forest",
     "text": "Data: Houses in Duke Forest\n\n\n\nData on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020\nScraped from Zillow\nSource: openintro::duke_forest\n\n\n\n\n\nGoal: Use the area (in square feet) to understand variability in the price of houses in Duke Forest."
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#exploratory-data-analysis",
-    "href": "slides/22-interval-estimation-slides.html#exploratory-data-analysis",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#exploratory-data-analysis",
+    "href": "slides/19-interval-estimation-slides.html#exploratory-data-analysis",
+    "title": "Interval Estimation",
     "section": "Exploratory data analysis",
     "text": "Exploratory data analysis\n\nCodeggplot(duke_forest, aes(x = area, y = price)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"Area (square feet)\",\n    y = \"Sale price (USD)\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#modeling",
-    "href": "slides/22-interval-estimation-slides.html#modeling",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#modeling",
+    "href": "slides/19-interval-estimation-slides.html#modeling",
+    "title": "Interval Estimation",
     "section": "Modeling",
-    "text": "Modeling\n\ndf_fit &lt;- linear_reg() |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) # neatly format table to 2 digits\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\n\n\nSlope: For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average."
+    "text": "Modeling\n\ndf_fit &lt;- linear_reg() |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) # neatly format table to 2 digits\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell for $116,652, on average.\n\nIs this interpretation useful?\n\n\n\nSlope: For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average."
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#from-sample-to-population",
-    "href": "slides/22-interval-estimation-slides.html#from-sample-to-population",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#from-sample-to-population",
+    "href": "slides/19-interval-estimation-slides.html#from-sample-to-population",
+    "title": "Interval Estimation",
     "section": "From sample to population",
     "text": "From sample to population\n\nFor each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.\n\n\n\nThis estimate is valid for the single sample of 98 houses.\nBut what if we’re not interested quantifying the relationship between the size and price of a house in this single sample?\nWhat if we want to say something about the relationship between these variables for all houses in Duke Forest?"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#statistical-inference",
-    "href": "slides/22-interval-estimation-slides.html#statistical-inference",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#statistical-inference",
+    "href": "slides/19-interval-estimation-slides.html#statistical-inference",
+    "title": "Interval Estimation",
     "section": "Statistical inference",
     "text": "Statistical inference\n\nStatistical inference provide methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from\nFor our inferences to be valid, the sample should be random and representative of the population we’re interested in"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#inference-for-simple-linear-regression",
-    "href": "slides/22-interval-estimation-slides.html#inference-for-simple-linear-regression",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#inference-for-simple-linear-regression",
+    "href": "slides/19-interval-estimation-slides.html#inference-for-simple-linear-regression",
+    "title": "Interval Estimation",
     "section": "Inference for simple linear regression",
-    "text": "Inference for simple linear regression\n\nCalculate a confidence interval for the slope, \\(\\beta_1\\) (today)\nConduct a hypothesis test for the slope, \\(\\beta_1\\) (Thursday)"
+    "text": "Inference for simple linear regression\n\nCalculate a confidence interval for the slope, \\(\\beta_1\\) (today)\nConduct a hypothesis test for the slope, \\(\\beta_1\\) (tomorrow)"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#confidence-interval",
-    "href": "slides/22-interval-estimation-slides.html#confidence-interval",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#confidence-interval",
+    "href": "slides/19-interval-estimation-slides.html#confidence-interval",
+    "title": "Interval Estimation",
     "section": "Confidence interval",
     "text": "Confidence interval\n\n\nA plausible range of values for a population parameter is called a confidence interval\n\nUsing only a single point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing with a net\n\nWe can throw a spear where we saw a fish but we will probably miss, if we toss a net in that area, we have a good chance of catching the fish\nSimilarly, if we report a point estimate, we probably will not hit the exact population parameter, but if we report a range of plausible values we have a good shot at capturing the parameter"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#confidence-interval-for-the-slope",
-    "href": "slides/22-interval-estimation-slides.html#confidence-interval-for-the-slope",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#confidence-interval-for-the-slope",
+    "href": "slides/19-interval-estimation-slides.html#confidence-interval-for-the-slope",
+    "title": "Interval Estimation",
     "section": "Confidence interval for the slope",
     "text": "Confidence interval for the slope\nA confidence interval will allow us to make a statement like “For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus X dollars.”\n\n\nShould X be $10? $100? $1000?\nIf we were to take another sample of 98 would we expect the slope calculated based on that sample to be exactly $159? Off by $10? $100? $1000?\nThe answer depends on how variable (from one sample to another sample) the sample statistic (the slope) is\nWe need a way to quantify the variability of the sample statistic"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#quantify-the-variability-of-the-slope",
-    "href": "slides/22-interval-estimation-slides.html#quantify-the-variability-of-the-slope",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#quantify-the-variability-of-the-slope",
+    "href": "slides/19-interval-estimation-slides.html#quantify-the-variability-of-the-slope",
+    "title": "Interval Estimation",
     "section": "Quantify the variability of the slope",
     "text": "Quantify the variability of the slope\nfor estimation\n\n\nTwo approaches:\n\nVia simulation (what we’ll do in this course)\nVia mathematical models (what you can learn about in future courses)\n\n\n\nBootstrapping to quantify the variability of the slope for the purpose of estimation:\n\nBootstrap new samples from the original sample\nFit models to each of the samples and estimate the slope\nUse features of the distribution of the bootstrapped slopes to construct a confidence interval"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrap-sample-1",
-    "href": "slides/22-interval-estimation-slides.html#bootstrap-sample-1",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrap-sample-1",
+    "href": "slides/19-interval-estimation-slides.html#bootstrap-sample-1",
+    "title": "Interval Estimation",
     "section": "Bootstrap sample 1",
     "text": "Bootstrap sample 1"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrap-sample-2",
-    "href": "slides/22-interval-estimation-slides.html#bootstrap-sample-2",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrap-sample-2",
+    "href": "slides/19-interval-estimation-slides.html#bootstrap-sample-2",
+    "title": "Interval Estimation",
     "section": "Bootstrap sample 2",
     "text": "Bootstrap sample 2"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrap-sample-3",
-    "href": "slides/22-interval-estimation-slides.html#bootstrap-sample-3",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrap-sample-3",
+    "href": "slides/19-interval-estimation-slides.html#bootstrap-sample-3",
+    "title": "Interval Estimation",
     "section": "Bootstrap sample 3",
     "text": "Bootstrap sample 3"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrap-sample-4",
-    "href": "slides/22-interval-estimation-slides.html#bootstrap-sample-4",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrap-sample-4",
+    "href": "slides/19-interval-estimation-slides.html#bootstrap-sample-4",
+    "title": "Interval Estimation",
     "section": "Bootstrap sample 4",
     "text": "Bootstrap sample 4"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrap-sample-5",
-    "href": "slides/22-interval-estimation-slides.html#bootstrap-sample-5",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrap-sample-5",
+    "href": "slides/19-interval-estimation-slides.html#bootstrap-sample-5",
+    "title": "Interval Estimation",
     "section": "Bootstrap sample 5",
     "text": "Bootstrap sample 5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nso on and so forth…"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrap-samples-1---5",
-    "href": "slides/22-interval-estimation-slides.html#bootstrap-samples-1---5",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrap-samples-1---5",
+    "href": "slides/19-interval-estimation-slides.html#bootstrap-samples-1---5",
+    "title": "Interval Estimation",
     "section": "Bootstrap samples 1 - 5",
     "text": "Bootstrap samples 1 - 5"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#bootstrap-samples-1---100",
-    "href": "slides/22-interval-estimation-slides.html#bootstrap-samples-1---100",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#bootstrap-samples-1---100",
+    "href": "slides/19-interval-estimation-slides.html#bootstrap-samples-1---100",
+    "title": "Interval Estimation",
     "section": "Bootstrap samples 1 - 100",
     "text": "Bootstrap samples 1 - 100"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#slopes-of-bootstrap-samples",
-    "href": "slides/22-interval-estimation-slides.html#slopes-of-bootstrap-samples",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#slopes-of-bootstrap-samples",
+    "href": "slides/19-interval-estimation-slides.html#slopes-of-bootstrap-samples",
+    "title": "Interval Estimation",
     "section": "Slopes of bootstrap samples",
     "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#slopes-of-bootstrap-samples-1",
-    "href": "slides/22-interval-estimation-slides.html#slopes-of-bootstrap-samples-1",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#slopes-of-bootstrap-samples-1",
+    "href": "slides/19-interval-estimation-slides.html#slopes-of-bootstrap-samples-1",
+    "title": "Interval Estimation",
     "section": "Slopes of bootstrap samples",
     "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, we expect the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#confidence-level",
-    "href": "slides/22-interval-estimation-slides.html#confidence-level",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#confidence-level",
+    "href": "slides/19-interval-estimation-slides.html#confidence-level",
+    "title": "Interval Estimation",
     "section": "Confidence level",
     "text": "Confidence level\n\nHow confident are you that the true slope is between $0 and $250? How about $150 and $170? How about $90 and $210?"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#confidence-interval-1",
-    "href": "slides/22-interval-estimation-slides.html#confidence-interval-1",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#confidence-interval-1",
+    "href": "slides/19-interval-estimation-slides.html#confidence-interval-1",
+    "title": "Interval Estimation",
     "section": "95% confidence interval",
-    "text": "95% confidence interval\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\nA 95% confidence interval is bounded by the middle 95% of the bootstrap distribution\nWe are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77."
+    "text": "95% confidence interval\n\n\n\n\n\n\n\n\n\n\nA 95% confidence interval is bounded by the middle 95% of the bootstrap distribution\n“We are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77.”"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#where-do-the-bounds-come-from",
-    "href": "slides/22-interval-estimation-slides.html#where-do-the-bounds-come-from",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#where-do-the-bounds-come-from",
+    "href": "slides/19-interval-estimation-slides.html#where-do-the-bounds-come-from",
+    "title": "Interval Estimation",
     "section": "Where do the bounds come from?",
     "text": "Where do the bounds come from?\nQuantiles!\n\n\nThink IQR! 50% of the bootstrap distribution is between the 25% quantile on the left and the 75% quantile on the right. But we want more than 50%\n90% of the bootstrap distribution is between the 5% quantile on the left and the 95% quantile on the right;\n95% of the bootstrap distribution is between the 2.5% quantile on the left and the 97.5% quantile on the right;\nAnd so on."
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#ae-22-duke-forest-bootstrap",
-    "href": "slides/22-interval-estimation-slides.html#ae-22-duke-forest-bootstrap",
-    "title": "Interval estimation",
-    "section": "ae-22-duke-forest-bootstrap",
-    "text": "ae-22-duke-forest-bootstrap\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-22-duke-forest-bootstrap.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
+    "objectID": "slides/19-interval-estimation-slides.html#ae-17-duke-forest-bootstrap",
+    "href": "slides/19-interval-estimation-slides.html#ae-17-duke-forest-bootstrap",
+    "title": "Interval Estimation",
+    "section": "ae-17-duke-forest-bootstrap",
+    "text": "ae-17-duke-forest-bootstrap\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-17-duke-forest-bootstrap.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#computing-the-ci-for-the-slope-i",
-    "href": "slides/22-interval-estimation-slides.html#computing-the-ci-for-the-slope-i",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#computing-the-ci-for-the-slope-i",
+    "href": "slides/19-interval-estimation-slides.html#computing-the-ci-for-the-slope-i",
+    "title": "Interval Estimation",
     "section": "Computing the CI for the slope I",
-    "text": "Computing the CI for the slope I\nCalculate the observed slope:\n\nobserved_fit &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  fit()\n\nobserved_fit\n\n# A tibble: 2 × 2\n  term      estimate\n  &lt;chr&gt;        &lt;dbl&gt;\n1 intercept  116652.\n2 area          159."
+    "text": "Computing the CI for the slope I\nCalculate the observed slope:\n\nobserved_fit &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  fit()\n\nobserved_fit\n\n# A tibble: 2 × 2\n  term      estimate\n  &lt;chr&gt;        &lt;dbl&gt;\n1 intercept  116652.\n2 area          159.\n\n\n\nAside: I don’t know why, but one quirk of tidymodels is that, when you are fitting a model for use in CI construction, you’ll use df |&gt; specify(y ~ x) |&gt; fit(); when you’re fitting a model for general inference, you’ll use linear_reg |&gt; fit(y ~ x, data = df)"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#computing-the-ci-for-the-slope-ii",
-    "href": "slides/22-interval-estimation-slides.html#computing-the-ci-for-the-slope-ii",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#computing-the-ci-for-the-slope-ii",
+    "href": "slides/19-interval-estimation-slides.html#computing-the-ci-for-the-slope-ii",
+    "title": "Interval Estimation",
     "section": "Computing the CI for the slope II",
-    "text": "Computing the CI for the slope II\nTake 100 bootstrap samples and fit models to each one:\n\nset.seed(1120)\n\nboot_fits &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept   47819.\n 2         1 area          191.\n 3         2 intercept  144645.\n 4         2 area          134.\n 5         3 intercept  114008.\n 6         3 area          161.\n 7         4 intercept  100639.\n 8         4 area          166.\n 9         5 intercept  215264.\n10         5 area          125.\n# ℹ 190 more rows"
+    "text": "Computing the CI for the slope II\nTake 100 bootstrap samples and have R fit models to each one:\n\nset.seed(1120)\n\nboot_fits &lt;- duke_forest |&gt;\n  specify(price ~ area) |&gt;\n  generate(reps = 100, type = \"bootstrap\") |&gt;\n  fit()\n\nboot_fits\n\n# A tibble: 200 × 3\n# Groups:   replicate [100]\n   replicate term      estimate\n       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;\n 1         1 intercept   47819.\n 2         1 area          191.\n 3         2 intercept  144645.\n 4         2 area          134.\n 5         3 intercept  114008.\n 6         3 area          161.\n 7         4 intercept  100639.\n 8         4 area          166.\n 9         5 intercept  215264.\n10         5 area          125.\n# ℹ 190 more rows"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#computing-the-ci-for-the-slope-iii",
-    "href": "slides/22-interval-estimation-slides.html#computing-the-ci-for-the-slope-iii",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#computing-the-ci-for-the-slope-iii",
+    "href": "slides/19-interval-estimation-slides.html#computing-the-ci-for-the-slope-iii",
+    "title": "Interval Estimation",
     "section": "Computing the CI for the slope III",
     "text": "Computing the CI for the slope III\nPercentile method: Compute the 95% CI as the middle 95% of the bootstrap distribution:\n\nget_confidence_interval(\n  boot_fits, \n  point_estimate = observed_fit, \n  level = 0.95,\n  type = \"percentile\" # default method\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          92.1     223.\n2 intercept -36765.   296528."
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#precision-vs.-accuracy",
-    "href": "slides/22-interval-estimation-slides.html#precision-vs.-accuracy",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#precision-vs.-accuracy",
+    "href": "slides/19-interval-estimation-slides.html#precision-vs.-accuracy",
+    "title": "Interval Estimation",
     "section": "Precision vs. accuracy",
     "text": "Precision vs. accuracy\n\nIf we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#precision-vs.-accuracy-1",
-    "href": "slides/22-interval-estimation-slides.html#precision-vs.-accuracy-1",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#precision-vs.-accuracy-1",
+    "href": "slides/19-interval-estimation-slides.html#precision-vs.-accuracy-1",
+    "title": "Interval Estimation",
     "section": "Precision vs. accuracy",
     "text": "Precision vs. accuracy\n\nHow can we get best of both worlds – high precision and high accuracy?"
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#changing-confidence-level",
-    "href": "slides/22-interval-estimation-slides.html#changing-confidence-level",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#changing-confidence-level",
+    "href": "slides/19-interval-estimation-slides.html#changing-confidence-level",
+    "title": "Interval Estimation",
     "section": "Changing confidence level",
     "text": "Changing confidence level\n\nHow would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?\n\n\nget_confidence_interval(\n  boot_fits, \n  point_estimate = observed_fit, \n  level = 0.95,\n  type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          92.1     223.\n2 intercept -36765.   296528."
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#changing-confidence-level-1",
-    "href": "slides/22-interval-estimation-slides.html#changing-confidence-level-1",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#changing-confidence-level-1",
+    "href": "slides/19-interval-estimation-slides.html#changing-confidence-level-1",
+    "title": "Interval Estimation",
     "section": "Changing confidence level",
     "text": "Changing confidence level\n\n## confidence level: 90%\nget_confidence_interval(\n  boot_fits, point_estimate = observed_fit, \n  level = 0.90, type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          104.     212.\n2 intercept  -24380.  256730.\n\n## confidence level: 99%\nget_confidence_interval(\n  boot_fits, point_estimate = observed_fit, \n  level = 0.99, type = \"percentile\"\n)\n\n# A tibble: 2 × 3\n  term      lower_ci upper_ci\n  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;\n1 area          56.3     226.\n2 intercept -61950.   370395."
   },
   {
-    "objectID": "slides/22-interval-estimation-slides.html#recap",
-    "href": "slides/22-interval-estimation-slides.html#recap",
-    "title": "Interval estimation",
+    "objectID": "slides/19-interval-estimation-slides.html#recap",
+    "href": "slides/19-interval-estimation-slides.html#recap",
+    "title": "Interval Estimation",
     "section": "Recap",
     "text": "Recap\n\nPopulation: Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. (population size = \\(N\\))\nSample: Subset of the population, ideally random and representative (sample size = \\(n\\))\nSample statistic \\(\\ne\\) population parameter, but if the sample is good, it can be a good estimate\nStatistical inference: Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process\nWe report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population\nSince we can’t continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability"
   },

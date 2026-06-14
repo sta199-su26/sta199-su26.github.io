@@ -5,8 +5,8 @@
 <meta name="generator" content="quarto-1.6.39">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Katie Solarz">
-<meta name="dcterms.date" content="2026-04-13">
-<title>Interval estimation – STA 199</title>
+<meta name="dcterms.date" content="2026-06-15">
+<title>Interval Estimation – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -123,14 +123,14 @@ window.Quarto = {
   typesetMath
 };
 </script><link rel="stylesheet" href="../style/sta199.scss">
-<meta property="og:title" content="Interval estimation – STA 199">
-<meta property="og:description" content="Lecture 22">
+<meta property="og:title" content="Interval Estimation – STA 199">
+<meta property="og:description" content="Lecture 19">
 <meta property="og:image" content="https://sta199-su26.github.io/slides/19-interval-estimation_files/figure-revealjs/unnamed-chunk-1-1.png">
 <meta property="og:site_name" content="STA 199">
 <meta property="og:image:height" content="960">
 <meta property="og:image:width" content="1920">
-<meta name="twitter:title" content="Interval estimation – STA 199">
-<meta name="twitter:description" content="Lecture 22">
+<meta name="twitter:title" content="Interval Estimation – STA 199">
+<meta name="twitter:description" content="Lecture 19">
 <meta name="twitter:image" content="https://sta199-su26.github.io/slides/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
@@ -142,7 +142,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Interval estimation</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Interval Estimation</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -335,8 +335,7 @@ window.Quarto = {
   <li>
 <a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics">Statistics</a>
   <ul class="collapse">
-<li><a href="#the-bottom-line-at-the-top" id="toc-the-bottom-line-at-the-top" class="nav-link" data-scroll-target="#the-bottom-line-at-the-top">The bottom line, at the top</a></li>
-  <li><a href="#quantifying-uncertainty-to-help-make-decisions" id="toc-quantifying-uncertainty-to-help-make-decisions" class="nav-link" data-scroll-target="#quantifying-uncertainty-to-help-make-decisions">Quantifying uncertainty to help make decisions</a></li>
+<li><a href="#our-goal-quantify-uncertainty-to-help-make-informed-decisions" id="toc-our-goal-quantify-uncertainty-to-help-make-informed-decisions" class="nav-link" data-scroll-target="#our-goal-quantify-uncertainty-to-help-make-informed-decisions">Our goal: quantify uncertainty to help make <strong>informed</strong> decisions</a></li>
   </ul>
 </li>
   <li>
@@ -363,17 +362,17 @@ window.Quarto = {
   <li><a href="#heres-one-dataset-we-could-have-seen" id="toc-heres-one-dataset-we-could-have-seen" class="nav-link" data-scroll-target="#heres-one-dataset-we-could-have-seen">Here’s one dataset we could have seen</a></li>
   <li><a href="#heres-another" id="toc-heres-another" class="nav-link" data-scroll-target="#heres-another">Here’s another</a></li>
   <li><a href="#heres-yet-one-more" id="toc-heres-yet-one-more" class="nav-link" data-scroll-target="#heres-yet-one-more">Here’s yet one more</a></li>
-  <li><a href="#different-data-set---different-estimates" id="toc-different-data-set---different-estimates" class="nav-link" data-scroll-target="#different-data-set---different-estimates">Different data set -&gt; different estimates</a></li>
+  <li><a href="#different-data-set-rightarrow-different-estimates" id="toc-different-data-set-rightarrow-different-estimates" class="nav-link" data-scroll-target="#different-data-set-rightarrow-different-estimates">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</a></li>
   <li><a href="#alternative-1" id="toc-alternative-1" class="nav-link" data-scroll-target="#alternative-1">Alternative 1</a></li>
   <li><a href="#alternative-2" id="toc-alternative-2" class="nav-link" data-scroll-target="#alternative-2">Alternative 2</a></li>
   <li><a href="#alternative-3" id="toc-alternative-3" class="nav-link" data-scroll-target="#alternative-3">Alternative 3</a></li>
   <li><a href="#lets-visualize-how-the-estimates-vary" id="toc-lets-visualize-how-the-estimates-vary" class="nav-link" data-scroll-target="#lets-visualize-how-the-estimates-vary">Let’s visualize how the estimates vary</a></li>
-  <li><a href="#different-data-set---different-estimates-1" id="toc-different-data-set---different-estimates-1" class="nav-link" data-scroll-target="#different-data-set---different-estimates-1">Different data set -&gt; different estimates</a></li>
-  <li><a href="#different-data-set---different-estimates-2" id="toc-different-data-set---different-estimates-2" class="nav-link" data-scroll-target="#different-data-set---different-estimates-2">Different data set -&gt; different estimates</a></li>
-  <li><a href="#different-data-set---different-estimates-3" id="toc-different-data-set---different-estimates-3" class="nav-link" data-scroll-target="#different-data-set---different-estimates-3">Different data set -&gt; different estimates</a></li>
-  <li><a href="#different-data-set---different-estimates-4" id="toc-different-data-set---different-estimates-4" class="nav-link" data-scroll-target="#different-data-set---different-estimates-4">Different data set -&gt; different estimates</a></li>
-  <li><a href="#different-data-set---different-estimates-5" id="toc-different-data-set---different-estimates-5" class="nav-link" data-scroll-target="#different-data-set---different-estimates-5">Different data set -&gt; different estimates</a></li>
-  <li><a href="#different-data-set---different-estimates-6" id="toc-different-data-set---different-estimates-6" class="nav-link" data-scroll-target="#different-data-set---different-estimates-6">Different data set -&gt; different estimates</a></li>
+  <li><a href="#different-data-set-rightarrow-different-estimates-1" id="toc-different-data-set-rightarrow-different-estimates-1" class="nav-link" data-scroll-target="#different-data-set-rightarrow-different-estimates-1">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</a></li>
+  <li><a href="#different-data-set-rightarrow-different-estimates-2" id="toc-different-data-set-rightarrow-different-estimates-2" class="nav-link" data-scroll-target="#different-data-set-rightarrow-different-estimates-2">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</a></li>
+  <li><a href="#different-data-set-rightarrow-different-estimates-3" id="toc-different-data-set-rightarrow-different-estimates-3" class="nav-link" data-scroll-target="#different-data-set-rightarrow-different-estimates-3">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</a></li>
+  <li><a href="#different-data-set-rightarrow-different-estimates-4" id="toc-different-data-set-rightarrow-different-estimates-4" class="nav-link" data-scroll-target="#different-data-set-rightarrow-different-estimates-4">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</a></li>
+  <li><a href="#different-data-set-rightarrow-different-estimates-5" id="toc-different-data-set-rightarrow-different-estimates-5" class="nav-link" data-scroll-target="#different-data-set-rightarrow-different-estimates-5">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</a></li>
+  <li><a href="#different-data-set-rightarrow-different-estimates-6" id="toc-different-data-set-rightarrow-different-estimates-6" class="nav-link" data-scroll-target="#different-data-set-rightarrow-different-estimates-6">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</a></li>
   <li><a href="#you-get-the-idea" id="toc-you-get-the-idea" class="nav-link" data-scroll-target="#you-get-the-idea">You get the idea</a></li>
   <li><a href="#variation-in-estimates-across-alternative-datasets" id="toc-variation-in-estimates-across-alternative-datasets" class="nav-link" data-scroll-target="#variation-in-estimates-across-alternative-datasets">Variation in estimates across alternative datasets</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
@@ -425,7 +424,7 @@ window.Quarto = {
   <li>
 <a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
   <ul class="collapse">
-<li><a href="#ae-22-duke-forest-bootstrap" id="toc-ae-22-duke-forest-bootstrap" class="nav-link" data-scroll-target="#ae-22-duke-forest-bootstrap">ae-22-duke-forest-bootstrap</a></li>
+<li><a href="#ae-17-duke-forest-bootstrap" id="toc-ae-17-duke-forest-bootstrap" class="nav-link" data-scroll-target="#ae-17-duke-forest-bootstrap">ae-17-duke-forest-bootstrap</a></li>
   <li><a href="#computing-the-ci-for-the-slope-i" id="toc-computing-the-ci-for-the-slope-i" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-i">Computing the CI for the slope I</a></li>
   <li><a href="#computing-the-ci-for-the-slope-ii" id="toc-computing-the-ci-for-the-slope-ii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</a></li>
   <li><a href="#computing-the-ci-for-the-slope-iii" id="toc-computing-the-ci-for-the-slope-iii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-iii">Computing the CI for the slope III</a></li>
@@ -436,12 +435,12 @@ window.Quarto = {
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/19-interval-estimation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="22-interval-estimation-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/19-interval-estimation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="19-interval-estimation-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Interval estimation</h1>
-<p class="subtitle lead">Lecture 22</p>
+<h1 class="title">Interval Estimation</h1>
+<p class="subtitle lead">Lecture 19</p>
 </div>
 
 
@@ -465,7 +464,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 13, 2026</p>
+      <p class="date">June 15, 2026</p>
     </div>
   </div>
   
@@ -475,26 +474,19 @@ window.Quarto = {
 
 
 </header><section id="admin" class="level1"><h1>Admin</h1>
-<section id="the-home-stretch" class="level2 medium"><h2 class="medium anchored" data-anchor-id="the-home-stretch">The home stretch</h2>
+<section id="the-home-stretch" class="level2 small scrollable"><h2 class="small scrollable anchored" data-anchor-id="the-home-stretch">The home stretch</h2>
 <div class="incremental">
 <ul class="incremental">
-<li>Monday April 13: lecture on confidence intervals;</li>
-<li>Wednesday April 15: lecture on hypothesis testing;</li>
-<li>Thursday April 16: graded lab on statistics (last one!);</li>
-<li>Monday April 20: wrap-up lecture on inference;</li>
-<li>Wednesday April 22: lecture on who knows what (last one!);</li>
-<li>Wednesday April 22: turn in HW 7 (last one!);</li>
-<li>Friday May 1 : final exam @ 2pm.</li>
+<li>Today: lecture on confidence intervals;</li>
+<li>Tomorrow: lecture on hypothesis testing;</li>
+<li>Thursday: Lab 6 (last one!), due Sunday by 11:59pm (deadline firm if you want graded feedback by the final);</li>
+<li>Wednesday: wrap-up lecture on inference;</li>
+<li>Thursday: lecture on TBD, depending on general vibes / exam readiness this week;</li>
+<li>Friday: no class – Juneteenth!</li>
 </ul>
 </div>
 </section></section><section id="statistics" class="level1"><h1>Statistics</h1>
-<section id="the-bottom-line-at-the-top" class="level2"><h2 class="anchored" data-anchor-id="the-bottom-line-at-the-top">The bottom line, at the top</h2>
-<p>If JZ had to boil statistics down to one main idea, it would be:</p>
-<blockquote class="blockquote">
-<p>quantifying uncertainty to help make decisions.</p>
-</blockquote>
-<p>You make different <em>kinds</em> of decisions if you’re sure versus unsure. Statistics helps you quantify the reliability of your knowledge so that you can determine what sort of decision to make.</p>
-</section><section id="quantifying-uncertainty-to-help-make-decisions" class="level2"><h2 class="anchored" data-anchor-id="quantifying-uncertainty-to-help-make-decisions">Quantifying uncertainty to help make decisions</h2>
+<section id="our-goal-quantify-uncertainty-to-help-make-informed-decisions" class="level2"><h2 class="anchored" data-anchor-id="our-goal-quantify-uncertainty-to-help-make-informed-decisions">Our goal: quantify uncertainty to help make <strong>informed</strong> decisions</h2>
 <ul>
 <li>What kind of uncertainty?</li>
 <li>
@@ -502,12 +494,12 @@ window.Quarto = {
 <li>These are surprisingly spicy and controversial questions in statistics!</li>
 <li>With the short time remaining, we will focus on quantifying one specific type of uncertainty…</li>
 </ul></section></section><section id="classical-sampling-uncertainty" class="level1"><h1>Classical sampling uncertainty</h1>
-<section id="sampling-uncertainty" class="level2 medium"><h2 class="medium anchored" data-anchor-id="sampling-uncertainty">Sampling uncertainty</h2>
+<section id="sampling-uncertainty" class="level2 small scrollable"><h2 class="small scrollable anchored" data-anchor-id="sampling-uncertainty">Sampling uncertainty</h2>
 <blockquote class="blockquote">
 <p>Different data give different estimates. How different?</p>
 </blockquote>
 <ul>
-<li>In reality, we have <em>one</em> dataset, and it gives <em>one</em> set of results. How reliable are those results?</li>
+<li>In reality, we have <em>one</em> (sample) dataset, and it gives <em>one</em> set of results. How reliable are those results?</li>
 <li>A thought experiment: if I collected a whole new dataset and redid my analysis, do I get the same results, or different results?
 <ul>
 <li>if the results vary wildly from dataset to dataset, uncertainty is high and reliability is low;</li>
@@ -516,14 +508,14 @@ window.Quarto = {
 </li>
 </ul>
 <p>That’s the main idea in a nutshell.</p>
-</section><section id="a-running-example" class="level2"><h2 class="anchored" data-anchor-id="a-running-example">A running example</h2>
-<p>Recall the <code><a href="https://openintrostat.github.io/openintro/reference/loans_full_schema.html">openintro::loans_full_schema</a></code> data frame:</p>
+</section><section id="a-running-example" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="a-running-example">A running example</h2>
+<p>The <code><a href="https://openintrostat.github.io/openintro/reference/loans_full_schema.html">openintro::loans_full_schema</a></code> data frame contains loan data from the peer-to-peer lender, Lending Club, available in the openintro package.</p>
 <div class="incremental">
 <ul class="incremental">
 <li><p>10000 rows;</p></li>
 <li><p>each row is an <em>approved</em> loan applicant;</p></li>
 <li>
-<p>the columns contain financial info about that person, including…</p>
+<p>the columns contain financial info about the loan applicant, including…</p>
 <ul class="incremental">
 <li>annual income (in $);</li>
 <li>amount of non-mortgage debt outstanding (in $).</li>
@@ -641,12 +633,12 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="what-did-we-notice" class="level2"><h2 class="anchored" data-anchor-id="what-did-we-notice">What did we notice?</h2>
+</section><section id="what-did-we-notice" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="what-did-we-notice">What did we notice?</h2>
 <div class="incremental">
 <ul class="incremental">
 <li><p>As the sample size grew, the best fit line stabilized;</p></li>
 <li><p>As the sample size grew, the grey uncertainty band shrank;</p></li>
-<li><p>As the sample size grew, we observed a larger range of income values, anf the computer displayed more of the line;</p></li>
+<li><p>As the sample size grew, we observed a larger range of income values, and the computer displayed more of the line;</p></li>
 <li>
 <p>As the sample size grows, the picture the data paint becomes clearer:</p>
 <ul class="incremental">
@@ -669,7 +661,7 @@ window.Quarto = {
 <li><p>What do we mean by “uncertainty” here?</p></li>
 </ul></section><section id="sampling-uncertainty-1" class="level2"><h2 class="anchored" data-anchor-id="sampling-uncertainty-1">Sampling uncertainty</h2>
 <ul>
-<li><p><strong>Fact</strong>: different data set -&gt; different estimates;</p></li>
+<li><p><strong>Fact</strong>: different data set <span class="math inline">\(\rightarrow\)</span> different estimates;</p></li>
 <li>
 <p>How much would our estimate vary across alternative datasets?</p>
 <ul>
@@ -704,7 +696,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="different-data-set---different-estimates" class="level2"><h2 class="anchored" data-anchor-id="different-data-set---different-estimates">Different data set -&gt; different estimates</h2>
+</section><section id="different-data-set-rightarrow-different-estimates" class="level2"><h2 class="anchored" data-anchor-id="different-data-set-rightarrow-different-estimates">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</h2>
 <ul>
 <li><p>These tiny data sets can’t even agree on if the line should slope up or down. Uncertainty is high, hence the large bands.</p></li>
 <li><p>If we repeat the process with a larger sample size, things are more stable</p></li>
@@ -736,7 +728,7 @@ window.Quarto = {
 </div>
 </div>
 </section><section id="lets-visualize-how-the-estimates-vary" class="level2"><h2 class="anchored" data-anchor-id="lets-visualize-how-the-estimates-vary">Let’s visualize how the estimates vary</h2>
-</section><section id="different-data-set---different-estimates-1" class="level2"><h2 class="anchored" data-anchor-id="different-data-set---different-estimates-1">Different data set -&gt; different estimates</h2>
+</section><section id="different-data-set-rightarrow-different-estimates-1" class="level2"><h2 class="anchored" data-anchor-id="different-data-set-rightarrow-different-estimates-1">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</h2>
 <div class="columns">
 <div class="column" style="width:49%;">
 <div class="cell">
@@ -765,7 +757,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="different-data-set---different-estimates-2" class="level2"><h2 class="anchored" data-anchor-id="different-data-set---different-estimates-2">Different data set -&gt; different estimates</h2>
+</section><section id="different-data-set-rightarrow-different-estimates-2" class="level2"><h2 class="anchored" data-anchor-id="different-data-set-rightarrow-different-estimates-2">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</h2>
 <div class="columns">
 <div class="column" style="width:49%;">
 <div class="cell">
@@ -794,7 +786,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="different-data-set---different-estimates-3" class="level2"><h2 class="anchored" data-anchor-id="different-data-set---different-estimates-3">Different data set -&gt; different estimates</h2>
+</section><section id="different-data-set-rightarrow-different-estimates-3" class="level2"><h2 class="anchored" data-anchor-id="different-data-set-rightarrow-different-estimates-3">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</h2>
 <div class="columns">
 <div class="column" style="width:49%;">
 <div class="cell">
@@ -823,7 +815,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="different-data-set---different-estimates-4" class="level2"><h2 class="anchored" data-anchor-id="different-data-set---different-estimates-4">Different data set -&gt; different estimates</h2>
+</section><section id="different-data-set-rightarrow-different-estimates-4" class="level2"><h2 class="anchored" data-anchor-id="different-data-set-rightarrow-different-estimates-4">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</h2>
 <div class="columns">
 <div class="column" style="width:49%;">
 <div class="cell">
@@ -852,7 +844,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="different-data-set---different-estimates-5" class="level2"><h2 class="anchored" data-anchor-id="different-data-set---different-estimates-5">Different data set -&gt; different estimates</h2>
+</section><section id="different-data-set-rightarrow-different-estimates-5" class="level2"><h2 class="anchored" data-anchor-id="different-data-set-rightarrow-different-estimates-5">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</h2>
 <div class="columns">
 <div class="column" style="width:49%;">
 <div class="cell">
@@ -881,7 +873,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="different-data-set---different-estimates-6" class="level2"><h2 class="anchored" data-anchor-id="different-data-set---different-estimates-6">Different data set -&gt; different estimates</h2>
+</section><section id="different-data-set-rightarrow-different-estimates-6" class="level2"><h2 class="anchored" data-anchor-id="different-data-set-rightarrow-different-estimates-6">Different data set <span class="math inline">\(\rightarrow\)</span> different estimates</h2>
 <div class="columns">
 <div class="column" style="width:49%;">
 <div class="cell">
@@ -912,7 +904,7 @@ window.Quarto = {
 </div>
 </section><section id="you-get-the-idea" class="level2"><h2 class="anchored" data-anchor-id="you-get-the-idea">You get the idea</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/22/spongebob.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/19/spongebob.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="variation-in-estimates-across-alternative-datasets" class="level2 small"><h2 class="small anchored" data-anchor-id="variation-in-estimates-across-alternative-datasets">Variation in estimates across alternative datasets</h2>
@@ -937,8 +929,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>The amount of variation in the histogram tells us something about the uncertainty, and gives us a range of likely values.</p>
-</section><section id="summary" class="level2 medium"><h2 class="medium anchored" data-anchor-id="summary">Summary</h2>
+<p>The amount of variation (i.e., “spread”) in the histogram tells us something about the uncertainty, and gives us a range of likely values.</p>
+</section><section id="summary" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="summary">Summary</h2>
 <div class="incremental">
 <ul class="incremental">
 <li>The notion of uncertainty we seek to quantify is “variability of estimates across datasets;”
@@ -952,9 +944,9 @@ window.Quarto = {
 </ul>
 </div>
 <p>. . .</p>
-<p>In order to <em>do</em> this in practice, we need multiple datasets. But in practice we only have one. So now what?</p>
+<p>In order to <em>do</em> this in practice, we need multiple datasets. But in practice, we only have access to one. So now what?</p>
 </section></section><section id="the-bootstrap" class="level1"><h1>The bootstrap</h1>
-<section id="reality-check" class="level2 medium"><h2 class="medium anchored" data-anchor-id="reality-check">Reality check</h2>
+<section id="reality-check" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="reality-check">Reality check</h2>
 <div class="incremental">
 <ul class="incremental">
 <li>Contemplating alternative datasets is a cute thought experiment, but in reality we cannot collect completely new data;</li>
@@ -979,49 +971,49 @@ window.Quarto = {
 <li>Some rows will be duplicated;</li>
 <li>Some rows will not appear at all;</li>
 <li>Hence, the new dataset is different from the original;</li>
-<li>Different dataset &gt;&gt; different estimate;</li>
+<li>Different dataset <span class="math inline">\(\rightarrow\)</span> different estimate;</li>
 </ul>
 </li>
-<li><p>Repeat this processes hundred or thousands of times, and observe how the estimates vary as you refit the model on alternative datasets;</p></li>
+<li><p>Repeat this processes hundred or thousands of times, and observe how the estimates vary as you refit the model on these hypothetical alternative datasets;</p></li>
 <li><p>This gives you a sense of the sampling variability of your estimates.</p></li>
 </ul>
 </div>
 </section><section id="bootstrapping-1" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-1">Bootstrapping</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/bootstrap/1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/19/1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="bootstrapping-2" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-2">Bootstrapping</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/bootstrap/2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/19/2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="bootstrapping-3" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-3">Bootstrapping</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/bootstrap/3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/19/3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="bootstrapping-4" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-4">Bootstrapping</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/bootstrap/4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/19/4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="bootstrapping-5" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-5">Bootstrapping</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/bootstrap/5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/19/5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="bootstrapping-6" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-6">Bootstrapping</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/bootstrap/6.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/19/6.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </section><section id="bootstrapping-7" class="level2"><h2 class="anchored" data-anchor-id="bootstrapping-7">Bootstrapping</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/bootstrap/7.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figure class="figure"><p><img src="img/19/7.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-</section><section id="toy-bootstrap-samples-1" class="level2"><h2 class="anchored" data-anchor-id="toy-bootstrap-samples-1">Toy: Bootstrap samples 1</h2>
+</section><section id="toy-bootstrap-samples-1" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="toy-bootstrap-samples-1">Toy: Bootstrap samples 1</h2>
 <div class="columns">
 <div class="column" style="width:44%;">
 <p>Original data</p>
@@ -1063,7 +1055,7 @@ window.Quarto = {
 6     1  0.432  1.53 </code></pre>
 </div>
 </div>
-<p>Different data &gt;&gt; new estimates:</p>
+<p>Different data <span class="math inline">\(\rightarrow\)</span> new estimates:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
@@ -1075,7 +1067,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="bootstrap-samples-2" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-samples-2">Bootstrap samples 2</h2>
+</section><section id="bootstrap-samples-2" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="bootstrap-samples-2">Bootstrap samples 2</h2>
 <div class="columns">
 <div class="column" style="width:44%;">
 <p>Original data</p>
@@ -1117,7 +1109,7 @@ window.Quarto = {
 6     2 -2.01    1.80 </code></pre>
 </div>
 </div>
-<p>Different data &gt;&gt; new estimates:</p>
+<p>Different data <span class="math inline">\(\rightarrow\)</span> new estimates:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
@@ -1129,7 +1121,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="bootstrap-samples-3" class="level2"><h2 class="anchored" data-anchor-id="bootstrap-samples-3">Bootstrap samples 3</h2>
+</section><section id="bootstrap-samples-3" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="bootstrap-samples-3">Bootstrap samples 3</h2>
 <div class="columns">
 <div class="column" style="width:44%;">
 <p>Original data</p>
@@ -1194,7 +1186,7 @@ window.Quarto = {
 </li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><img src="images/22/duke_forest_home.jpg" class="img-fluid" alt="Home in Duke Forest"></p>
+<p><img src="img/19/duke_forest_home.jpg" class="img-fluid" alt="Home in Duke Forest"></p>
 </div>
 </div>
 <p><strong>Goal</strong>: Use the area (in square feet) to understand variability in the price of houses in Duke Forest.</p>
@@ -1253,7 +1245,7 @@ window.Quarto = {
 <p>. . .</p>
 <ul>
 <li>
-<strong>Intercept:</strong> Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.
+<strong>Intercept:</strong> Duke Forest houses that are 0 square feet are expected to sell for $116,652, on average.
 <ul>
 <li>Is this interpretation useful?</li>
 </ul>
@@ -1273,12 +1265,10 @@ window.Quarto = {
 <ul>
 <li><p><strong>Statistical inference</strong> provide methods and tools so we can use the single observed sample to make valid statements (inferences) about the population it comes from</p></li>
 <li><p>For our inferences to be valid, the sample should be random and representative of the population we’re interested in</p></li>
-</ul>
-<p><img src="images/22/soup.png" class="img-fluid"></p>
-</section><section id="inference-for-simple-linear-regression" class="level2"><h2 class="anchored" data-anchor-id="inference-for-simple-linear-regression">Inference for simple linear regression</h2>
+</ul></section><section id="inference-for-simple-linear-regression" class="level2"><h2 class="anchored" data-anchor-id="inference-for-simple-linear-regression">Inference for simple linear regression</h2>
 <ul>
 <li><p>Calculate a confidence interval for the slope, <span class="math inline">\(\beta_1\)</span> (today)</p></li>
-<li><p>Conduct a hypothesis test for the slope, <span class="math inline">\(\beta_1\)</span> (Thursday)</p></li>
+<li><p>Conduct a hypothesis test for the slope, <span class="math inline">\(\beta_1\)</span> (tomorrow)</p></li>
 </ul></section><section id="confidence-interval" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-interval">Confidence interval</h2>
 <div class="incremental">
 <ul class="incremental">
@@ -1476,7 +1466,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="slopes-of-bootstrap-samples" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="slopes-of-bootstrap-samples">Slopes of bootstrap samples</h2>
+</section><section id="slopes-of-bootstrap-samples" class="level2 small scrollable"><h2 class="small scrollable anchored" data-anchor-id="slopes-of-bootstrap-samples">Slopes of bootstrap samples</h2>
 <div class="task">
 <p><strong>Fill in the blank:</strong> For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
 </div>
@@ -1488,7 +1478,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="slopes-of-bootstrap-samples-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="slopes-of-bootstrap-samples-1">Slopes of bootstrap samples</h2>
+</section><section id="slopes-of-bootstrap-samples-1" class="level2 small scrollable"><h2 class="small scrollable anchored" data-anchor-id="slopes-of-bootstrap-samples-1">Slopes of bootstrap samples</h2>
 <div class="task">
 <p><strong>Fill in the blank:</strong> For each additional square foot, we expect the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
 </div>
@@ -1500,7 +1490,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="confidence-level" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-level">Confidence level</h2>
+</section><section id="confidence-level" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="confidence-level">Confidence level</h2>
 <div class="task">
 <p>How confident are you that the true slope is between $0 and $250? How about $150 and $170? How about $90 and $210?</p>
 </div>
@@ -1512,12 +1502,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="confidence-interval-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-interval-1">95% confidence interval</h2>
+</section><section id="confidence-interval-1" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="confidence-interval-1">95% confidence interval</h2>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="19-interval-estimation_files/figure-revealjs/unnamed-chunk-69-1.png" class="img-fluid figure-img" width="960"></p>
@@ -1528,10 +1514,10 @@ window.Quarto = {
 <div class="incremental">
 <ul class="incremental">
 <li>A 95% confidence interval is bounded by the middle 95% of the bootstrap distribution</li>
-<li>We are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77.</li>
+<li>“We are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77.”</li>
 </ul>
 </div>
-</section><section id="where-do-the-bounds-come-from" class="level2"><h2 class="anchored" data-anchor-id="where-do-the-bounds-come-from">Where do the bounds come from?</h2>
+</section><section id="where-do-the-bounds-come-from" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="where-do-the-bounds-come-from">Where do the bounds come from?</h2>
 <p>Quantiles!</p>
 <div class="incremental">
 <ul class="incremental">
@@ -1542,19 +1528,19 @@ window.Quarto = {
 </ul>
 </div>
 </section></section><section id="application-exercise" class="level1"><h1>Application exercise</h1>
-<section id="ae-22-duke-forest-bootstrap" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-22-duke-forest-bootstrap">ae-22-duke-forest-bootstrap</h2>
+<section id="ae-17-duke-forest-bootstrap" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="ae-17-duke-forest-bootstrap">ae-17-duke-forest-bootstrap</h2>
 <div class="appex">
 <ul>
 <li><p>Go to your ae project in RStudio.</p></li>
 <li><p>If you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.</p></li>
-<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-22-duke-forest-bootstrap.qmd</em>.</p></li>
+<li><p>If you haven’t yet done so, click Pull to get today’s application exercise file: <em>ae-17-duke-forest-bootstrap.qmd</em>.</p></li>
 <li><p>Work through the application exercise in class, and render, commit, and push your edits.</p></li>
 </ul>
 </div>
-</section><section id="computing-the-ci-for-the-slope-i" class="level2"><h2 class="anchored" data-anchor-id="computing-the-ci-for-the-slope-i">Computing the CI for the slope I</h2>
+</section><section id="computing-the-ci-for-the-slope-i" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="computing-the-ci-for-the-slope-i">Computing the CI for the slope I</h2>
 <p>Calculate the observed slope:</p>
 <div class="cell">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">observed_fit</span> <span class="op">&lt;-</span> <span class="va">duke_forest</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">observed_fit</span> <span class="op">&lt;-</span> <span class="va">duke_forest</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">specify</span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">area</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">fit</span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -1567,17 +1553,20 @@ window.Quarto = {
 2 area          159.</code></pre>
 </div>
 </div>
-</section><section id="computing-the-ci-for-the-slope-ii" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</h2>
-<p>Take <code>100</code> bootstrap samples and fit models to each one:</p>
+<blockquote class="blockquote">
+<p>Aside: I don’t know why, but one quirk of <code>tidymodels</code> is that, when you are fitting a model for use in CI construction, you’ll use <code>df |&gt; specify(y ~ x) |&gt; fit()</code>; when you’re fitting a model for general inference, you’ll use <code>linear_reg |&gt; fit(y ~ x, data = df)</code></p>
+</blockquote>
+</section><section id="computing-the-ci-for-the-slope-ii" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</h2>
+<p>Take <code>100</code> bootstrap samples and have R fit models to each one:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">set.seed</span>(<span class="dv">1120</span>)</span>
-<span id="cb24-2"><a href="#cb24-2"></a></span>
-<span id="cb24-3"><a href="#cb24-3"></a>boot_fits <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
-<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
-<span id="cb24-5"><a href="#cb24-5"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">100</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb24-6"><a href="#cb24-6"></a>  <span class="fu">fit</span>()</span>
-<span id="cb24-7"><a href="#cb24-7"></a></span>
-<span id="cb24-8"><a href="#cb24-8"></a>boot_fits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">set.seed</span>(<span class="dv">1120</span>)</span>
+<span id="cb23-2"><a href="#cb23-2"></a></span>
+<span id="cb23-3"><a href="#cb23-3"></a>boot_fits <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">100</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>  <span class="fu">fit</span>()</span>
+<span id="cb23-7"><a href="#cb23-7"></a></span>
+<span id="cb23-8"><a href="#cb23-8"></a>boot_fits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 200 × 3
 # Groups:   replicate [100]
@@ -1599,12 +1588,12 @@ window.Quarto = {
 </section><section id="computing-the-ci-for-the-slope-iii" class="level2"><h2 class="anchored" data-anchor-id="computing-the-ci-for-the-slope-iii">Computing the CI for the slope III</h2>
 <p><strong>Percentile method:</strong> Compute the 95% CI as the middle 95% of the bootstrap distribution:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb26-2"><a href="#cb26-2"></a>  boot_fits, </span>
-<span id="cb26-3"><a href="#cb26-3"></a>  <span class="at">point_estimate =</span> observed_fit, </span>
-<span id="cb26-4"><a href="#cb26-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
-<span id="cb26-5"><a href="#cb26-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span> <span class="co"># default method</span></span>
-<span id="cb26-6"><a href="#cb26-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb25-2"><a href="#cb25-2"></a>  boot_fits, </span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="at">point_estimate =</span> observed_fit, </span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb25-5"><a href="#cb25-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span> <span class="co"># default method</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   term      lower_ci upper_ci
@@ -1618,22 +1607,29 @@ window.Quarto = {
 <p>If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?</p>
 </div>
 <p>. . .</p>
-<p><img src="images/22/garfield.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/19/garfield.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section><section id="precision-vs.-accuracy-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="precision-vs.-accuracy-1">Precision vs.&nbsp;accuracy</h2>
 <div class="task">
 <p>How can we get best of both worlds – high precision and high accuracy?</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/19/precision_accuracy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
 </div>
 </section><section id="changing-confidence-level" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="changing-confidence-level">Changing confidence level</h2>
 <div class="task">
 <p>How would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">get_confidence_interval</span>(</span>
-<span id="cb28-2"><a href="#cb28-2"></a>  boot_fits, </span>
-<span id="cb28-3"><a href="#cb28-3"></a>  <span class="at">point_estimate =</span> observed_fit, </span>
-<span id="cb28-4"><a href="#cb28-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
-<span id="cb28-5"><a href="#cb28-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
-<span id="cb28-6"><a href="#cb28-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb27-2"><a href="#cb27-2"></a>  boot_fits, </span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="at">point_estimate =</span> observed_fit, </span>
+<span id="cb27-4"><a href="#cb27-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb27-5"><a href="#cb27-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   term      lower_ci upper_ci
@@ -1644,7 +1640,7 @@ window.Quarto = {
 </div>
 </section><section id="changing-confidence-level-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="changing-confidence-level-1">Changing confidence level</h2>
 <div class="cell">
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## confidence level: 90%</span></span>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## confidence level: 90%</span></span>
 <span><span class="fu">get_confidence_interval</span><span class="op">(</span></span>
 <span>  <span class="va">boot_fits</span>, point_estimate <span class="op">=</span> <span class="va">observed_fit</span>, </span>
 <span>  level <span class="op">=</span> <span class="fl">0.90</span>, type <span class="op">=</span> <span class="st">"percentile"</span></span>
@@ -1656,7 +1652,7 @@ window.Quarto = {
 1 area          104.     212.
 2 intercept  -24380.  256730.</code></pre>
 </div>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## confidence level: 99%</span></span>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## confidence level: 99%</span></span>
 <span><span class="fu">get_confidence_interval</span><span class="op">(</span></span>
 <span>  <span class="va">boot_fits</span>, point_estimate <span class="op">=</span> <span class="va">observed_fit</span>, </span>
 <span>  level <span class="op">=</span> <span class="fl">0.99</span>, type <span class="op">=</span> <span class="st">"percentile"</span></span>
