@@ -15,8 +15,6 @@ format:
     code-link: true
 ---
 
-## While you wait: Participate 📱💻 {.small}
-
 ```{r}
 #| label: load-packages
 #| message: false
@@ -31,45 +29,6 @@ todays_ae <- "ae-22-duke-forest-bootstrap"
 
 ```
 
-:::::: columns
-:::: {.column width="70%"}
-::: wooclap
-
-The line on the left is the 8% quantile of the data, and the line on the right is the 87% quantile of the data. What fraction of the data lives *between* the two lines?
-
-```{r}
-#| echo: false
-#| warning: false
-#| fig-asp: 0.3
-
-df <- tibble(
-  x = c(rnorm(300), rnorm(200, -4, 2))
-)
-
-ggplot(df, aes(x = x)) + 
-  geom_histogram() + 
-  geom_vline(xintercept = quantile(df$x, 0.08), color = "red", size = 2) + 
-  geom_vline(xintercept = quantile(df$x, 0.87), color = "red", size = 2)
-
-```
-
-::: wooclap-choices
-- 50%
-- 79%
-- 80%
-- 87%
-- 95%
-:::
-
-:::
-::::
-
-::: {.column width="30%"}
-{{< include _wooclap-column.qmd >}}
-:::
-::::::
-
-
 # Admin 
 
 ## The home stretch {.medium}
@@ -83,23 +42,6 @@ ggplot(df, aes(x = x)) +
 - Wednesday April 22: turn in HW 7 (last one!);
 - Friday May 1 : final exam @ 2pm.
 :::
-
-
-## On the horizon {.medium}
-
-::: incremental
-- Project grades posted this week
-- Midterm 2 grades posted this week
-- After Wednesday April 22: drop four days from attendance score
-- After Lab 8 is graded: drop two lowest labs
-- After HW 7 is graded: drop lowest HW
-- 80% of your final course grade is *locked* going into the final
-- I replace your lowest midterm score (the whole thing) with your final exam score, if it's better
-:::
-
-## Also
-
-![](images/22/tom-jerry-rake.gif){fig-align="center"}
 
 # Statistics
 
