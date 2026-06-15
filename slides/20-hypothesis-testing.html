@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Katie Solarz">
+<meta name="dcterms.date" content="2026-06-16">
+<title>Hypothesis Testing – STA 199</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-3e476e15ae565c222d94875412ae43a1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b886197fab7b2e81fff9966159fcfbe8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script><link rel="stylesheet" href="../style/sta199.scss">
+<meta property="og:title" content="Hypothesis Testing – STA 199">
+<meta property="og:description" content="Lecture 20">
+<meta property="og:image" content="https://sta199-su26.github.io/slides/20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-1-1.png">
+<meta property="og:site_name" content="STA 199">
+<meta property="og:image:height" content="1536">
+<meta property="og:image:width" content="1920">
+<meta name="twitter:title" content="Hypothesis Testing – STA 199">
+<meta name="twitter:description" content="Lecture 20">
+<meta name="twitter:image" content="https://sta199-su26.github.io/slides/img/twitter-card-ks.pdf">
+<meta name="twitter:creator" content="@minebocek">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Hypothesis Testing</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/sta199-su26" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Course Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Team</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Couse Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful Links</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Computing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cheatsheets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-principles-oh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coding principles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/description.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Description</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/1-working-collaboratively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/2-proposal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/3-improvement-progress.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/4-peer-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 4</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ae.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application Exercises</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Exam Review</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam-review/midterm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm Review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam-review/midterm-key.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm Review Answer Key</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#recap-sampling-uncertainty" id="toc-recap-sampling-uncertainty" class="nav-link active" data-scroll-target="#recap-sampling-uncertainty">Recap: sampling uncertainty</a>
+  <ul class="collapse">
+<li><a href="#what-if-this-was-my-dataset" id="toc-what-if-this-was-my-dataset" class="nav-link" data-scroll-target="#what-if-this-was-my-dataset">What if this was my dataset?</a></li>
+  <li><a href="#what-if-this-was-my-dataset-instead" id="toc-what-if-this-was-my-dataset-instead" class="nav-link" data-scroll-target="#what-if-this-was-my-dataset-instead">What if this was my dataset instead?</a></li>
+  <li><a href="#what-if-this-was-my-dataset-instead-1" id="toc-what-if-this-was-my-dataset-instead-1" class="nav-link" data-scroll-target="#what-if-this-was-my-dataset-instead-1">What if this was my dataset instead?</a></li>
+  <li><a href="#rinse-and-repeat-1000-times" id="toc-rinse-and-repeat-1000-times" class="nav-link" data-scroll-target="#rinse-and-repeat-1000-times">Rinse and repeat 1000 times…</a></li>
+  <li><a href="#sampling-uncertainty" id="toc-sampling-uncertainty" class="nav-link" data-scroll-target="#sampling-uncertainty">Sampling uncertainty</a></li>
+  <li><a href="#that-was-for-n-50.-what-if-i-was-starting-with-n-1000" id="toc-that-was-for-n-50.-what-if-i-was-starting-with-n-1000" class="nav-link" data-scroll-target="#that-was-for-n-50.-what-if-i-was-starting-with-n-1000">That was for n = 50. What if I was starting with n = 1000?</a></li>
+  <li><a href="#sampling-uncertainty-decreased" id="toc-sampling-uncertainty-decreased" class="nav-link" data-scroll-target="#sampling-uncertainty-decreased">Sampling uncertainty decreased!</a></li>
+  <li><a href="#bootstrapping" id="toc-bootstrapping" class="nav-link" data-scroll-target="#bootstrapping">Bootstrapping</a></li>
+  <li><a href="#bootstrap-samples-1" id="toc-bootstrap-samples-1" class="nav-link" data-scroll-target="#bootstrap-samples-1">Bootstrap samples 1</a></li>
+  <li><a href="#bootstrap-samples-2" id="toc-bootstrap-samples-2" class="nav-link" data-scroll-target="#bootstrap-samples-2">Bootstrap samples 2</a></li>
+  <li><a href="#bootstrap-samples-3" id="toc-bootstrap-samples-3" class="nav-link" data-scroll-target="#bootstrap-samples-3">Bootstrap samples 3</a></li>
+  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals">Confidence intervals</a></li>
+  <li><a href="#precision-vs.-accuracy" id="toc-precision-vs.-accuracy" class="nav-link" data-scroll-target="#precision-vs.-accuracy">Precision vs.&nbsp;accuracy</a></li>
+  <li><a href="#data-houses-in-duke-forest" id="toc-data-houses-in-duke-forest" class="nav-link" data-scroll-target="#data-houses-in-duke-forest">Data: Houses in Duke Forest</a></li>
+  <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling">Modeling</a></li>
+  <li><a href="#confidence-interval-for-the-slope" id="toc-confidence-interval-for-the-slope" class="nav-link" data-scroll-target="#confidence-interval-for-the-slope">Confidence interval for the slope</a></li>
+  <li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval">95% confidence interval</a></li>
+  <li><a href="#where-do-the-bounds-come-from" id="toc-where-do-the-bounds-come-from" class="nav-link" data-scroll-target="#where-do-the-bounds-come-from">Where do the bounds come from?</a></li>
+  <li><a href="#computing-the-ci-for-the-slope-i" id="toc-computing-the-ci-for-the-slope-i" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-i">Computing the CI for the slope I</a></li>
+  <li><a href="#computing-the-ci-for-the-slope-ii" id="toc-computing-the-ci-for-the-slope-ii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</a></li>
+  <li><a href="#computing-the-ci-for-the-slope-iii" id="toc-computing-the-ci-for-the-slope-iii" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-iii">Computing the CI for the slope III</a></li>
+  <li><a href="#computing-the-ci-for-the-slope-iv" id="toc-computing-the-ci-for-the-slope-iv" class="nav-link" data-scroll-target="#computing-the-ci-for-the-slope-iv">Computing the CI for the slope IV</a></li>
+  <li><a href="#changing-confidence-level" id="toc-changing-confidence-level" class="nav-link" data-scroll-target="#changing-confidence-level">Changing confidence level</a></li>
+  <li><a href="#changing-confidence-level-1" id="toc-changing-confidence-level-1" class="nav-link" data-scroll-target="#changing-confidence-level-1">Changing confidence level</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing">Hypothesis testing</a>
+  <ul class="collapse">
+<li><a href="#hypothesis-testing-1" id="toc-hypothesis-testing-1" class="nav-link" data-scroll-target="#hypothesis-testing-1">Hypothesis testing</a></li>
+  <li><a href="#setting-hypotheses" id="toc-setting-hypotheses" class="nav-link" data-scroll-target="#setting-hypotheses">Setting hypotheses</a></li>
+  <li><a href="#hypothesis-testing-mindset" id="toc-hypothesis-testing-mindset" class="nav-link" data-scroll-target="#hypothesis-testing-mindset">Hypothesis testing “mindset”</a></li>
+  <li><a href="#hypothesis-testing-as-a-court-trial" id="toc-hypothesis-testing-as-a-court-trial" class="nav-link" data-scroll-target="#hypothesis-testing-as-a-court-trial">Hypothesis testing as a court trial</a></li>
+  <li><a href="#hypothesis-testing-as-medical-diagnosis" id="toc-hypothesis-testing-as-medical-diagnosis" class="nav-link" data-scroll-target="#hypothesis-testing-as-medical-diagnosis">Hypothesis testing as medical diagnosis</a></li>
+  <li><a href="#hypothesis-testing-framework" id="toc-hypothesis-testing-framework" class="nav-link" data-scroll-target="#hypothesis-testing-framework">Hypothesis testing framework</a></li>
+  <li><a href="#calculate-observed-slope" id="toc-calculate-observed-slope" class="nav-link" data-scroll-target="#calculate-observed-slope">Calculate observed slope</a></li>
+  <li><a href="#simulate-null-distribution" id="toc-simulate-null-distribution" class="nav-link" data-scroll-target="#simulate-null-distribution">Simulate null distribution</a></li>
+  <li><a href="#wait-so-whats-a-null-distribution" id="toc-wait-so-whats-a-null-distribution" class="nav-link" data-scroll-target="#wait-so-whats-a-null-distribution">Wait, so what’s a null distribution?</a></li>
+  <li><a href="#shuffling-vs.-sampling-with-replacement" id="toc-shuffling-vs.-sampling-with-replacement" class="nav-link" data-scroll-target="#shuffling-vs.-sampling-with-replacement">Shuffling (vs.&nbsp;sampling with replacement)</a></li>
+  <li><a href="#every-day-im-shuffling" id="toc-every-day-im-shuffling" class="nav-link" data-scroll-target="#every-day-im-shuffling">Every day I’m shuffling</a></li>
+  <li><a href="#every-day-im-shuffling-1" id="toc-every-day-im-shuffling-1" class="nav-link" data-scroll-target="#every-day-im-shuffling-1">Every day I’m shuffling</a></li>
+  <li><a href="#new-function-alert" id="toc-new-function-alert" class="nav-link" data-scroll-target="#new-function-alert">New function alert!</a></li>
+  <li><a href="#what-if-this-was-my-shuffle" id="toc-what-if-this-was-my-shuffle" class="nav-link" data-scroll-target="#what-if-this-was-my-shuffle">What if this was my shuffle?</a></li>
+  <li><a href="#what-if-this-was-my-shuffle-instead" id="toc-what-if-this-was-my-shuffle-instead" class="nav-link" data-scroll-target="#what-if-this-was-my-shuffle-instead">What if this was my shuffle instead?</a></li>
+  <li><a href="#what-if-this-was-my-shuffle-instead-1" id="toc-what-if-this-was-my-shuffle-instead-1" class="nav-link" data-scroll-target="#what-if-this-was-my-shuffle-instead-1">What if this was my shuffle instead?</a></li>
+  <li><a href="#rinse-and-repeat-10000-times" id="toc-rinse-and-repeat-10000-times" class="nav-link" data-scroll-target="#rinse-and-repeat-10000-times">Rinse and repeat 10000 times…</a></li>
+  <li><a href="#view-null-distribution" id="toc-view-null-distribution" class="nav-link" data-scroll-target="#view-null-distribution">View null distribution</a></li>
+  <li><a href="#visualize-null-distribution" id="toc-visualize-null-distribution" class="nav-link" data-scroll-target="#visualize-null-distribution">Visualize null distribution</a></li>
+  <li><a href="#visualize-null-distribution-alternative" id="toc-visualize-null-distribution-alternative" class="nav-link" data-scroll-target="#visualize-null-distribution-alternative">Visualize null distribution (alternative)</a></li>
+  <li><a href="#get-p-value" id="toc-get-p-value" class="nav-link" data-scroll-target="#get-p-value">Get p-value</a></li>
+  <li><a href="#make-a-decision" id="toc-make-a-decision" class="nav-link" data-scroll-target="#make-a-decision">Make a decision</a></li>
+  <li><a href="#sometimes-the-test-will-be-wrong" id="toc-sometimes-the-test-will-be-wrong" class="nav-link" data-scroll-target="#sometimes-the-test-will-be-wrong">Sometimes the test will be wrong</a></li>
+  <li><a href="#think-about-the-judge" id="toc-think-about-the-judge" class="nav-link" data-scroll-target="#think-about-the-judge">Think about the judge</a></li>
+  <li><a href="#think-about-the-doctor" id="toc-think-about-the-doctor" class="nav-link" data-scroll-target="#think-about-the-doctor">Think about the doctor</a></li>
+  <li><a href="#how-do-we-negotiate-the-trade-off" id="toc-how-do-we-negotiate-the-trade-off" class="nav-link" data-scroll-target="#how-do-we-negotiate-the-trade-off">How do we negotiate the trade-off?</a></li>
+  <li><a href="#how-do-we-negotiate-the-trade-off-1" id="toc-how-do-we-negotiate-the-trade-off-1" class="nav-link" data-scroll-target="#how-do-we-negotiate-the-trade-off-1">How do we negotiate the trade-off?</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/20-hypothesis-testing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="20-hypothesis-testing-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Hypothesis Testing</h1>
+<p class="subtitle lead">Lecture 20</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Katie Solarz </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Duke University <br> STA 199 Summer 2026: Session I
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 16, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header><section id="recap-sampling-uncertainty" class="level1"><h1>Recap: sampling uncertainty</h1>
+<section id="what-if-this-was-my-dataset" class="level2"><h2 class="anchored" data-anchor-id="what-if-this-was-my-dataset">What if this was my dataset?</h2>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term        estimate
+  &lt;chr&gt;          &lt;dbl&gt;
+1 (Intercept)    2.94 
+2 log_inc        0.657</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="what-if-this-was-my-dataset-instead" class="level2"><h2 class="anchored" data-anchor-id="what-if-this-was-my-dataset-instead">What if this was my dataset instead?</h2>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term        estimate
+  &lt;chr&gt;          &lt;dbl&gt;
+1 (Intercept)    5.29 
+2 log_inc        0.486</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="what-if-this-was-my-dataset-instead-1" class="level2"><h2 class="anchored" data-anchor-id="what-if-this-was-my-dataset-instead-1">What if this was my dataset instead?</h2>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term        estimate
+  &lt;chr&gt;          &lt;dbl&gt;
+1 (Intercept)    1.62 
+2 log_inc        0.805</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="rinse-and-repeat-1000-times" class="level2"><h2 class="anchored" data-anchor-id="rinse-and-repeat-1000-times">Rinse and repeat 1000 times…</h2>
+</section><section id="sampling-uncertainty" class="level2 medium"><h2 class="medium anchored" data-anchor-id="sampling-uncertainty">Sampling uncertainty</h2>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>How sensitive are the estimates to the data they are based on?</p>
+<pre><code>- Very? Then uncertainty is high, results are unreliable;
+- Not very? Uncertainty is low, results are more reliable.</code></pre>
+</section><section id="that-was-for-n-50.-what-if-i-was-starting-with-n-1000" class="level2"><h2 class="anchored" data-anchor-id="that-was-for-n-50.-what-if-i-was-starting-with-n-1000">That was for n = 50. What if I was starting with n = 1000?</h2>
+</section><section id="sampling-uncertainty-decreased" class="level2"><h2 class="anchored" data-anchor-id="sampling-uncertainty-decreased">Sampling uncertainty decreased!</h2>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="bootstrapping" class="level2 small scrollable"><h2 class="small scrollable anchored" data-anchor-id="bootstrapping">Bootstrapping</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Data collection is costly, so we have to do our best with what we already have;</p></li>
+<li><p>We approximate this idea of “alternative, hypothetical datasets I could have observed” by resampling our data <em>with replacement</em>;</p></li>
+<li>
+<p>We construct a new dataset of the same size by randomly picking rows out of the original one:</p>
+<ul class="incremental">
+<li>Some rows will be duplicated;</li>
+<li>Some rows will not appear at all;</li>
+<li>Hence, the new dataset is different from the original;</li>
+<li>Different dataset <span class="math inline">\(\rightarrow\)</span> different estimate</li>
+</ul>
+</li>
+<li><p>Repeat this processes hundred or thousands of times, and observe how the estimates vary as you refit the model on alternative datasets.</p></li>
+<li><p>This gives you a sense of the sampling variability of your estimates.</p></li>
+</ul>
+</div>
+</section><section id="bootstrap-samples-1" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="bootstrap-samples-1">Bootstrap samples 1</h2>
+<div class="columns">
+<div class="column" style="width:44%;">
+<p>Original data</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+     id       x       y
+  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+1     1  0.432   1.53  
+2     2 -2.01    1.80  
+3     3 -0.0467  1.43  
+4     4 -1.05    0.0518
+5     5  0.327   0.820 
+6     6 -0.679  -0.961 </code></pre>
+</div>
+</div>
+<p>Original estimates:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term        estimate
+  &lt;chr&gt;          &lt;dbl&gt;
+1 (Intercept)   0.801 
+2 x             0.0450</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:55%;">
+<p>Sample with replacement:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+     id      x      y
+  &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1     5  0.327  0.820
+2     6 -0.679 -0.961
+3     6 -0.679 -0.961
+4     1  0.432  1.53 
+5     6 -0.679 -0.961
+6     1  0.432  1.53 </code></pre>
+</div>
+</div>
+<p>Different data <span class="math inline">\(\rightarrow\)</span> new estimates:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term        estimate
+  &lt;chr&gt;          &lt;dbl&gt;
+1 (Intercept)    0.462
+2 x              2.11 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="bootstrap-samples-2" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="bootstrap-samples-2">Bootstrap samples 2</h2>
+<div class="columns">
+<div class="column" style="width:44%;">
+<p>Original data</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+     id       x       y
+  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+1     1  0.432   1.53  
+2     2 -2.01    1.80  
+3     3 -0.0467  1.43  
+4     4 -1.05    0.0518
+5     5  0.327   0.820 
+6     6 -0.679  -0.961 </code></pre>
+</div>
+</div>
+<p>Original estimates:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term        estimate
+  &lt;chr&gt;          &lt;dbl&gt;
+1 (Intercept)   0.801 
+2 x             0.0450</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:55%;">
+<p>Sample with replacement:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+     id       x      y
+  &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+1     2 -2.01    1.80 
+2     5  0.327   0.820
+3     1  0.432   1.53 
+4     6 -0.679  -0.961
+5     3 -0.0467  1.43 
+6     2 -2.01    1.80 </code></pre>
+</div>
+</div>
+<p>Different data <span class="math inline">\(\rightarrow\)</span> new estimates:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term        estimate
+  &lt;chr&gt;          &lt;dbl&gt;
+1 (Intercept)    0.913
+2 x             -0.236</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="bootstrap-samples-3" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="bootstrap-samples-3">Bootstrap samples 3</h2>
+<div class="columns">
+<div class="column" style="width:44%;">
+<p>Original data</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+     id       x       y
+  &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+1     1  0.432   1.53  
+2     2 -2.01    1.80  
+3     3 -0.0467  1.43  
+4     4 -1.05    0.0518
+5     5  0.327   0.820 
+6     6 -0.679  -0.961 </code></pre>
+</div>
+</div>
+<p>Original estimates:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term        estimate
+  &lt;chr&gt;          &lt;dbl&gt;
+1 (Intercept)   0.801 
+2 x             0.0450</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:55%;">
+<p>Sample with replacement:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+     id      x      y
+  &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1     6 -0.679 -0.961
+2     1  0.432  1.53 
+3     5  0.327  0.820
+4     6 -0.679 -0.961
+5     6 -0.679 -0.961
+6     5  0.327  0.820</code></pre>
+</div>
+</div>
+<p>Different data <span class="math inline">\(\rightarrow\)</span> new estimates:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term        estimate
+  &lt;chr&gt;          &lt;dbl&gt;
+1 (Intercept)    0.357
+2 x              1.96 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section><section id="confidence-intervals" class="level2 small scrollable"><h2 class="small scrollable anchored" data-anchor-id="confidence-intervals">Confidence intervals</h2>
+<ul>
+<li><p><strong>Point estimation</strong>: report your single number <em>best guess</em> for the unknown quantity;</p></li>
+<li>
+<p><strong>Interval estimation</strong>: report a range, or interval, or values where you think the unknown quantity is likely to live;</p>
+<ul>
+<li>Interval should be wide enough to capture the truth with high probability;</li>
+<li>Interval should be narrow enough to be informative;</li>
+</ul>
+</li>
+<li><p>Unfortunately, there is a trade-off. You adjust the <strong>confidence level</strong> to try to negotiate the trade-off;</p></li>
+<li><p>Common choices: 90%, 95%, 99%.</p></li>
+</ul></section><section id="precision-vs.-accuracy" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="precision-vs.-accuracy">Precision vs.&nbsp;accuracy</h2>
+<p><img src="img/19/garfield.png" class="img-fluid"></p>
+</section><section id="data-houses-in-duke-forest" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="data-houses-in-duke-forest">Data: Houses in Duke Forest</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Data on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020</li>
+<li>Scraped from Zillow</li>
+<li>Source: <a href="http://openintrostat.github.io/openintro/reference/duke_forest.html"><code>openintro::duke_forest</code></a>
+</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/19/duke_forest_home.jpg" class="img-fluid" alt="Home in Duke Forest"></p>
+</div>
+</div>
+<p><strong>Goal</strong>: Use the area (in square feet) to understand variability in the price of houses in Duke Forest.</p>
+</section><section id="modeling" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="modeling">Modeling</h2>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">area</span>, data <span class="op">=</span> <span class="va">duke_forest</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">tidy</span><span class="op">(</span><span class="va">df_fit</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">kable</span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="co"># neatly format table to 2 digits</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">116652.33</td>
+<td style="text-align: right;">53302.46</td>
+<td style="text-align: right;">2.19</td>
+<td style="text-align: right;">0.03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">area</td>
+<td style="text-align: right;">159.48</td>
+<td style="text-align: right;">18.17</td>
+<td style="text-align: right;">8.78</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section><section id="confidence-interval-for-the-slope" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="confidence-interval-for-the-slope">Confidence interval for the slope</h2>
+<p>A confidence interval will allow us to make a statement like “<em>For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus X dollars.</em>”</p>
+</section><section id="confidence-interval" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="confidence-interval">95% confidence interval</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="incremental">
+<ul class="incremental">
+<li>A 95% confidence interval is bounded by the middle 95% of the bootstrap distribution</li>
+<li>We are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77.</li>
+</ul>
+</div>
+</section><section id="where-do-the-bounds-come-from" class="level2"><h2 class="anchored" data-anchor-id="where-do-the-bounds-come-from">Where do the bounds come from?</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Quantiles!</p></li>
+<li><p>90% of the bootstrap distribution is between the 5% quantile on the left and the 95% quantile on the right;</p></li>
+<li><p>95% of the bootstrap distribution is between the 2.5% quantile on the left and the 97.5% quantile on the right;</p></li>
+<li><p>And so on.</p></li>
+</ul>
+</div>
+</section><section id="computing-the-ci-for-the-slope-i" class="level2"><h2 class="anchored" data-anchor-id="computing-the-ci-for-the-slope-i">Computing the CI for the slope I</h2>
+<p>Calculate the observed slope:</p>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">observed_fit</span> <span class="op">&lt;-</span> <span class="va">duke_forest</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">specify</span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">area</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">observed_fit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term      estimate
+  &lt;chr&gt;        &lt;dbl&gt;
+1 intercept  116652.
+2 area          159.</code></pre>
+</div>
+</div>
+</section><section id="computing-the-ci-for-the-slope-ii" class="level2"><h2 class="anchored" data-anchor-id="computing-the-ci-for-the-slope-ii">Computing the CI for the slope II</h2>
+<p>Take <code>100</code> bootstrap samples and fit models to each one:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">set.seed</span>(<span class="dv">1120</span>)</span>
+<span id="cb20-2"><a href="#cb20-2"></a></span>
+<span id="cb20-3"><a href="#cb20-3"></a>boot_fits <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">100</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a>  <span class="fu">fit</span>()</span>
+<span id="cb20-7"><a href="#cb20-7"></a></span>
+<span id="cb20-8"><a href="#cb20-8"></a>boot_fits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 200 × 3
+# Groups:   replicate [100]
+   replicate term      estimate
+       &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;
+ 1         1 intercept   47819.
+ 2         1 area          191.
+ 3         2 intercept  144645.
+ 4         2 area          134.
+ 5         3 intercept  114008.
+ 6         3 area          161.
+ 7         4 intercept  100639.
+ 8         4 area          166.
+ 9         5 intercept  215264.
+10         5 area          125.
+# ℹ 190 more rows</code></pre>
+</div>
+</div>
+</section><section id="computing-the-ci-for-the-slope-iii" class="level2"><h2 class="anchored" data-anchor-id="computing-the-ci-for-the-slope-iii">Computing the CI for the slope III</h2>
+<p><strong>Percentile method:</strong> Compute the 95% CI as the middle 95% of the bootstrap distribution:</p>
+<div class="cell">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">get_confidence_interval</span><span class="op">(</span></span>
+<span>  <span class="va">boot_fits</span>, </span>
+<span>  point_estimate <span class="op">=</span> <span class="va">observed_fit</span>, </span>
+<span>  level <span class="op">=</span> <span class="fl">0.95</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"percentile"</span> <span class="co"># default method</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  term      lower_ci upper_ci
+  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+1 area          92.1     223.
+2 intercept -36765.   296528.</code></pre>
+</div>
+</div>
+</section><section id="computing-the-ci-for-the-slope-iv" class="level2"><h2 class="anchored" data-anchor-id="computing-the-ci-for-the-slope-iv">Computing the CI for the slope IV</h2>
+<p>If we did it manually…</p>
+<div class="cell">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">boot_fits</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">term</span> <span class="op">==</span> <span class="st">"area"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">summarize</span><span class="op">(</span></span>
+<span>    lower_ci <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">estimate</span>, <span class="fl">0.025</span><span class="op">)</span>,</span>
+<span>    upper_ci <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">estimate</span>, <span class="fl">0.975</span><span class="op">)</span>,</span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  lower_ci upper_ci
+     &lt;dbl&gt;    &lt;dbl&gt;
+1     92.1     223.</code></pre>
+</div>
+</div>
+</section><section id="changing-confidence-level" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="changing-confidence-level">Changing confidence level</h2>
+<div class="task">
+<p>How would you modify the following code to calculate a 90% confidence interval? How would you modify it for a 99% confidence interval?</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">get_confidence_interval</span>(</span>
+<span id="cb26-2"><a href="#cb26-2"></a>  boot_fits, </span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="at">point_estimate =</span> observed_fit, </span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="at">level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb26-5"><a href="#cb26-5"></a>  <span class="at">type =</span> <span class="st">"percentile"</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  term      lower_ci upper_ci
+  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+1 area          92.1     223.
+2 intercept -36765.   296528.</code></pre>
+</div>
+</div>
+</section><section id="changing-confidence-level-1" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="changing-confidence-level-1">Changing confidence level</h2>
+<div class="cell">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## confidence level: 90%</span></span>
+<span><span class="fu">get_confidence_interval</span><span class="op">(</span></span>
+<span>  <span class="va">boot_fits</span>, point_estimate <span class="op">=</span> <span class="va">observed_fit</span>, </span>
+<span>  level <span class="op">=</span> <span class="fl">0.90</span>, type <span class="op">=</span> <span class="st">"percentile"</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  term      lower_ci upper_ci
+  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+1 area          104.     212.
+2 intercept  -24380.  256730.</code></pre>
+</div>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## confidence level: 99%</span></span>
+<span><span class="fu">get_confidence_interval</span><span class="op">(</span></span>
+<span>  <span class="va">boot_fits</span>, point_estimate <span class="op">=</span> <span class="va">observed_fit</span>, </span>
+<span>  level <span class="op">=</span> <span class="fl">0.99</span>, type <span class="op">=</span> <span class="st">"percentile"</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  term      lower_ci upper_ci
+  &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+1 area          56.3     226.
+2 intercept -61950.   370395.</code></pre>
+</div>
+</div>
+</section><section id="recap" class="level2 small scrollable"><h2 class="small scrollable anchored" data-anchor-id="recap">Recap</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p><strong>Population:</strong> Complete set of observations of whatever we are studying, e.g., people, tweets, photographs, etc. (population size = <span class="math inline">\(N\)</span>)</p></li>
+<li><p><strong>Sample:</strong> Subset of the population, ideally random and representative (sample size = <span class="math inline">\(n\)</span>)</p></li>
+<li><p>Sample statistic <span class="math inline">\(\ne\)</span> population parameter, but if the sample is good, it can be a good estimate</p></li>
+<li><p><strong>Statistical inference:</strong> Discipline that concerns itself with the development of procedures, methods, and theorems that allow us to extract meaning and information from data that has been generated by stochastic (random) process</p></li>
+<li><p>We report the estimate with a confidence interval, and the width of this interval depends on the variability of sample statistics from different samples from the population</p></li>
+<li><p>Since we can’t continue sampling from the population, we bootstrap from the one sample we have to estimate sampling variability</p></li>
+</ul>
+</div>
+</section></section><section id="hypothesis-testing" class="level1"><h1>Hypothesis testing</h1>
+<section id="hypothesis-testing-1" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="hypothesis-testing-1">Hypothesis testing</h2>
+<p>A hypothesis test is a statistical technique used to evaluate <em>competing claims</em> using data</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p><strong>Null hypothesis,</strong> <span class="math inline">\(H_0\)</span>: An assumption about the population. With respect to the slope parameter, our null hypothesis is one of “no relationship”</p></li>
+<li><p><strong>Alternative hypothesis,</strong> <span class="math inline">\(H_A\)</span>: A research question about the population. With respect to the slope parameter, our alternative hypothesis is that “there is some relationship”</p></li>
+</ul>
+</div>
+<p>. . .</p>
+<p>Note: Hypotheses are <strong>always</strong> at the population level!</p>
+</section><section id="setting-hypotheses" class="level2"><h2 class="anchored" data-anchor-id="setting-hypotheses">Setting hypotheses</h2>
+<ul>
+<li><p><strong>Null hypothesis,</strong> <span class="math inline">\(H_0\)</span>: “There is no relationship.” The slope of the model for predicting the prices of houses in Duke Forest from their areas is 0, <span class="math inline">\(\beta_1 = 0\)</span>.</p></li>
+<li><p><strong>Alternative hypothesis,</strong> <span class="math inline">\(H_A\)</span>: “There is some relationship”. The slope of the model for predicting the prices of houses in Duke Forest from their areas is different than 0, <span class="math inline">\(\beta_1 \ne 0\)</span>.</p></li>
+</ul></section><section id="hypothesis-testing-mindset" class="level2"><h2 class="anchored" data-anchor-id="hypothesis-testing-mindset">Hypothesis testing “mindset”</h2>
+<ul>
+<li><p>Assume you live in a world where null hypothesis is true: <span class="math inline">\(\beta_1 = 0\)</span>.</p></li>
+<li><p>Ask yourself how likely you are to observe the sample statistic, or something even more extreme, in this world: <span class="math inline">\(P(b_1 \leq 159.48~or~b_1 \geq 159.48 | \beta_1 = 0)\)</span> = ?</p></li>
+<li><p>In words: “Given the null hypothesis is true and <span class="math inline">\(\beta_1 = 0\)</span>, what is the probability of observing <span class="math inline">\(b_1 \leq 159.48\)</span> or <span class="math inline">\(b_1 \geq 159.48\)</span>?”</p></li>
+</ul></section><section id="hypothesis-testing-as-a-court-trial" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="hypothesis-testing-as-a-court-trial">Hypothesis testing as a court trial</h2>
+<p>Innocent until proven guilty!</p>
+<ul>
+<li><p><strong>Null hypothesis</strong>, <span class="math inline">\(H_0\)</span>: Defendant is innocent</p></li>
+<li><p><strong>Alternative hypothesis</strong>, <span class="math inline">\(H_A\)</span>: Defendant is guilty</p></li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>
+<strong>Present the evidence:</strong> Collect data</li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>
+<strong>Judge the evidence:</strong> “Could these data plausibly have happened by chance if the null hypothesis were true?”
+<ul>
+<li>Yes: Fail to reject <span class="math inline">\(H_0\)</span>
+</li>
+<li>No: Reject <span class="math inline">\(H_0\)</span>
+</li>
+</ul>
+</li>
+</ul></section><section id="hypothesis-testing-as-medical-diagnosis" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="hypothesis-testing-as-medical-diagnosis">Hypothesis testing as medical diagnosis</h2>
+<ul>
+<li><p><strong>Null hypothesis</strong>, <span class="math inline">\(H_0\)</span>: patient is fine</p></li>
+<li><p><strong>Alternative hypothesis</strong>, <span class="math inline">\(H_A\)</span>: patient is sick</p></li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>
+<strong>Present the evidence:</strong> Collect data</li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>
+<strong>Judge the evidence:</strong> “Could these data plausibly have happened by chance if the null hypothesis were true?”
+<ul>
+<li>Yes: Fail to reject <span class="math inline">\(H_0\)</span>
+</li>
+<li>No: Reject <span class="math inline">\(H_0\)</span>
+</li>
+</ul>
+</li>
+</ul></section><section id="hypothesis-testing-framework" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="hypothesis-testing-framework">Hypothesis testing framework</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Start with a null hypothesis, <span class="math inline">\(H_0\)</span>, that represents the status quo</p></li>
+<li><p>Set an alternative hypothesis, <span class="math inline">\(H_A\)</span>, that represents the research question, i.e.&nbsp;what we’re testing for</p></li>
+<li>
+<p>Conduct a hypothesis test under the assumption that the null hypothesis is true and calculate a <strong>p-value</strong> (probability of observed or more extreme outcome given that the null hypothesis is true)</p>
+<ul class="incremental">
+<li>if the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis</li>
+<li>if they do, then reject the null hypothesis in favor of the alternative</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="calculate-observed-slope" class="level2"><h2 class="anchored" data-anchor-id="calculate-observed-slope">Calculate observed slope</h2>
+<p>… which we have already done:</p>
+<div class="cell">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">observed_fit</span> <span class="op">&lt;-</span> <span class="va">duke_forest</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">specify</span><span class="op">(</span><span class="va">price</span> <span class="op">~</span> <span class="va">area</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">observed_fit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term      estimate
+  &lt;chr&gt;        &lt;dbl&gt;
+1 intercept  116652.
+2 area          159.</code></pre>
+</div>
+</div>
+<p>Again, for <em>inference-related</em> tasks, we do this with <code>specify(y ~ x) |&gt; fit()</code></p>
+</section><section id="simulate-null-distribution" class="level2"><h2 class="anchored" data-anchor-id="simulate-null-distribution">Simulate null distribution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">set.seed</span>(<span class="dv">847</span>)</span>
+<span id="cb34-2"><a href="#cb34-2"></a>null_dist <span class="ot">&lt;-</span> duke_forest <span class="sc">|&gt;</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">specify</span>(price <span class="sc">~</span> area) <span class="sc">|&gt;</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb34-6"><a href="#cb34-6"></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="wait-so-whats-a-null-distribution" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="wait-so-whats-a-null-distribution">Wait, so what’s a null distribution?</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Simulating a universe under <span class="math inline">\(H_0\)</span>: the slope of the model for predicting the price of a house in the Duke Forest area from its square footage is 0, <span class="math inline">\(\beta_1 = 0\)</span>. AKA, there is <strong>no</strong> relationship between our x and y.</p></li>
+<li><p>If I “shuffle” the order of <strong>only</strong> the values in the <code>area</code> column, would I expect to find a relationship between area and price? Could area reasonably predict price?</p></li>
+<li><p>No! In theory, I have <strong>broken</strong> whatever relationship <strong>may (or may have not)</strong> existed between my predictor and my outcome.</p></li>
+</ul>
+</div>
+</section><section id="shuffling-vs.-sampling-with-replacement" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="shuffling-vs.-sampling-with-replacement">Shuffling (vs.&nbsp;sampling with replacement)</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Shuffling breaks any existing link between our x and our y (on average)</p></li>
+<li><p><code>type = "permute"</code> (yesterday, <code>type = "bootstrap"</code>)</p></li>
+<li><p>Shuffle the area variable, fit a model and get a slope, record the slope, repeat!</p></li>
+<li><p>If the null is true, the distribution of these slopes should be centered at zero!</p></li>
+<li><p>Think of shuffling a deck of cards; all you are doing is randomizing the order of your deck</p></li>
+<li><p>vs.&nbsp;sampling with replacement allows you to change the composition of your deck entirely; remember the deck of entirely King of Hearts?</p></li>
+</ul>
+</div>
+</section><section id="every-day-im-shuffling" class="level2"><h2 class="anchored" data-anchor-id="every-day-im-shuffling">Every day I’m shuffling</h2>
+<div class="cell">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">duke_forest</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">area</span>, y <span class="op">=</span> <span class="va">price</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">geom_smooth</span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-36-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="every-day-im-shuffling-1" class="level2"><h2 class="anchored" data-anchor-id="every-day-im-shuffling-1">Every day I’m shuffling</h2>
+<div class="cell">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">847</span><span class="op">)</span></span>
+<span><span class="fu">ggplot</span><span class="op">(</span><span class="va">duke_forest</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">area</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">price</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu">geom_smooth</span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-37-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="new-function-alert" class="level2"><h2 class="anchored" data-anchor-id="new-function-alert">New function alert!</h2>
+<div class="cell">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">office_cast</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Michael Scott"</span>, <span class="st">"Jim Halpert"</span>, <span class="st">"Pam Beesly"</span>, <span class="st">"Dwight Schrute"</span><span class="op">)</span></span>
+<span><span class="va">office_cast</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Michael Scott"  "Jim Halpert"    "Pam Beesly"    
+[4] "Dwight Schrute"</code></pre>
+</div>
+</div>
+<p>. . .</p>
+<div class="cell">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">847</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">office_cast</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Jim Halpert"    "Dwight Schrute" "Pam Beesly"    
+[4] "Michael Scott" </code></pre>
+</div>
+</div>
+</section><section id="what-if-this-was-my-shuffle" class="level2"><h2 class="anchored" data-anchor-id="what-if-this-was-my-shuffle">What if this was my shuffle?</h2>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-40-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term        estimate
+  &lt;chr&gt;          &lt;dbl&gt;
+1 (Intercept) 603842. 
+2 area_sh        -15.8</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-41-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="what-if-this-was-my-shuffle-instead" class="level2"><h2 class="anchored" data-anchor-id="what-if-this-was-my-shuffle-instead">What if this was my shuffle instead?</h2>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-42-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term        estimate
+  &lt;chr&gt;          &lt;dbl&gt;
+1 (Intercept) 631641. 
+2 area_sh        -25.8</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-43-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="what-if-this-was-my-shuffle-instead-1" class="level2"><h2 class="anchored" data-anchor-id="what-if-this-was-my-shuffle-instead-1">What if this was my shuffle instead?</h2>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term          estimate
+  &lt;chr&gt;            &lt;dbl&gt;
+1 (Intercept) 559207.   
+2 area_sh          0.249</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-45-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="rinse-and-repeat-10000-times" class="level2"><h2 class="anchored" data-anchor-id="rinse-and-repeat-10000-times">Rinse and repeat 10000 times…</h2>
+</section><section id="view-null-distribution" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="view-null-distribution">View null distribution</h2>
+<div class="cell">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,000 × 3
+# Groups:   replicate [1,000]
+   replicate term       estimate
+       &lt;int&gt; &lt;chr&gt;         &lt;dbl&gt;
+ 1         1 intercept 551475.  
+ 2         1 area           3.03
+ 3         2 intercept 478969.  
+ 4         2 area          29.1 
+ 5         3 intercept 581602.  
+ 6         3 area          -7.81
+ 7         4 intercept 492889.  
+ 8         4 area          24.1 
+ 9         5 intercept 484819.  
+10         5 area          27.0 
+# ℹ 1,990 more rows</code></pre>
+</div>
+</div>
+</section><section id="visualize-null-distribution" class="level2 smaller"><h2 class="smaller anchored" data-anchor-id="visualize-null-distribution">Visualize null distribution</h2>
+<div class="cell">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">term</span> <span class="op">==</span> <span class="st">"area"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">estimate</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_histogram</span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">15</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-47-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="visualize-null-distribution-alternative" class="level2"><h2 class="anchored" data-anchor-id="visualize-null-distribution-alternative">Visualize null distribution (alternative)</h2>
+<div class="cell">
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">visualize</span><span class="op">(</span><span class="va">null_dist</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">shade_p_value</span><span class="op">(</span>obs_stat <span class="op">=</span> <span class="va">observed_fit</span>, direction <span class="op">=</span> <span class="st">"two-sided"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="20-hypothesis-testing_files/figure-revealjs/unnamed-chunk-48-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="get-p-value" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="get-p-value">Get p-value</h2>
+<div class="cell">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">null_dist</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">get_p_value</span><span class="op">(</span>obs_stat <span class="op">=</span> <span class="va">observed_fit</span>, direction <span class="op">=</span> <span class="st">"two-sided"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Please be cautious in reporting a p-value of 0. This result is an
+approximation based on the number of `reps` chosen in the
+`generate()` step.
+ℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.
+Please be cautious in reporting a p-value of 0. This result is an
+approximation based on the number of `reps` chosen in the
+`generate()` step.
+ℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term      p_value
+  &lt;chr&gt;       &lt;dbl&gt;
+1 area            0
+2 intercept       0</code></pre>
+</div>
+</div>
+</section><section id="make-a-decision" class="level2"><h2 class="anchored" data-anchor-id="make-a-decision">Make a decision</h2>
+<div class="task">
+<p>Based on the p-value calculated, what is the conclusion of the hypothesis test?</p>
+</div>
+</section><section id="sometimes-the-test-will-be-wrong" class="level2"><h2 class="anchored" data-anchor-id="sometimes-the-test-will-be-wrong">Sometimes the test will be wrong</h2>
+<p><img src="img/20/general.png" class="img-fluid"></p>
+</section><section id="think-about-the-judge" class="level2"><h2 class="anchored" data-anchor-id="think-about-the-judge">Think about the judge</h2>
+<p><span class="math inline">\(H_0\)</span> person innocent vs <span class="math inline">\(H_A\)</span> person guilty</p>
+<p><img src="img/20/judge.png" class="img-fluid"></p>
+</section><section id="think-about-the-doctor" class="level2"><h2 class="anchored" data-anchor-id="think-about-the-doctor">Think about the doctor</h2>
+<p><span class="math inline">\(H_0\)</span> person well vs <span class="math inline">\(H_A\)</span> person sick.</p>
+<p><img src="img/20/doctor.png" class="img-fluid"></p>
+</section><section id="how-do-we-negotiate-the-trade-off" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="how-do-we-negotiate-the-trade-off">How do we negotiate the trade-off?</h2>
+<div class="incremental">
+<p>Pick a threshold <span class="math inline">\(\alpha\in[0,\,1]\)</span> called the <strong>discernibility level</strong> (you may also hear it called the <strong>significance level</strong>) and threshold the <span class="math inline">\(p\)</span>-value:</p>
+<ul class="incremental">
+<li>If <span class="math inline">\(p\text{-value} &lt; \alpha\)</span>, reject null; in the context of our hypothesis test of <span class="math inline">\(\beta_1\)</span>, we would say “there is sufficient evidence that <span class="math inline">\(\beta_1 \neq 0\)</span> and that there is <strong>some</strong> relationship between x and y.”</li>
+<li>If <span class="math inline">\(p\text{-value} \geq \alpha\)</span>, fail to reject null; “there is not sufficient evidence that <span class="math inline">\(\beta_1\)</span> differs from 0.”</li>
+</ul>
+</div>
+</section><section id="how-do-we-negotiate-the-trade-off-1" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="how-do-we-negotiate-the-trade-off-1">How do we negotiate the trade-off?</h2>
+<p>Unless otherwise specified, we will use a <strong>discernibility level</strong> <span class="math inline">\(\alpha = 0.05\)</span>; you may see this worded as “What is your conclusion at the 5% discernibility level?” or functionally similar</p>
+<p><img src="img/20/alpha.png" class="img-fluid"></p>
+
+
+</section></section></main><!-- /main --><script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
+
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
+
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/sta199-su26\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2026, Mine Çetinkaya-Rundel, Marie Neubrander, John Zito, Katie Solarz</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/20-hypothesis-testing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with <span style="color: #f21118;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+</body></html>
