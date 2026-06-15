@@ -73,7 +73,6 @@ As a team you should spend \~30 minutes on the review.
 
 # Review pairings
 
-
 ```{r}
 #| message: false
 library(tidyverse)
@@ -100,97 +99,16 @@ make_pairing_table <- function(df) {
 ```
 
 ::: panel-tabset
-## L1 - 8:30 am
+## Peer Review Assignments
 
 ```{r}
 #| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1bz6b2xSJNOzGJT1yZ0WyrcSCQGBXGJegQrON-lA-5WM/edit?gid=0#gid=0", 
+teams <- read_sheet("https://docs.google.com/spreadsheets/d/19HAzRXmCpR5hTWGvG7pPsUTYCqpME7gkt1swQE-5ol4/edit?usp=sharing", 
                     sheet = paste0("lab_", 1))
 make_pairing_table(teams)
 ```
 
-## L2 - 10:05 am
-
-```{r}
-#| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1bz6b2xSJNOzGJT1yZ0WyrcSCQGBXGJegQrON-lA-5WM/edit?gid=0#gid=0", 
-                    sheet = paste0("lab_", 2))
-make_pairing_table(teams)
-```
-
-## L3 - 10:05 am
-
-```{r}
-#| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1bz6b2xSJNOzGJT1yZ0WyrcSCQGBXGJegQrON-lA-5WM/edit?gid=0#gid=0", 
-                    sheet = paste0("lab_", 3))
-make_pairing_table(teams)
-```
-
-## L4 - 11:45 am
-
-```{r}
-#| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1bz6b2xSJNOzGJT1yZ0WyrcSCQGBXGJegQrON-lA-5WM/edit?gid=0#gid=0", 
-                    sheet = paste0("lab_", 4))
-make_pairing_table(teams)
-```
-
-## L5 - 11:45 am
-
-```{r}
-#| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1bz6b2xSJNOzGJT1yZ0WyrcSCQGBXGJegQrON-lA-5WM/edit?gid=0#gid=0", 
-                    sheet = paste0("lab_", 5))
-make_pairing_table(teams)
-```
-
-## L6 - 1:25 pm
-
-```{r}
-#| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1bz6b2xSJNOzGJT1yZ0WyrcSCQGBXGJegQrON-lA-5WM/edit?gid=0#gid=0", 
-                    sheet = paste0("lab_", 6))
-make_pairing_table(teams)
-```
-
-## L7 - 1:25 pm
-
-```{r}
-#| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1bz6b2xSJNOzGJT1yZ0WyrcSCQGBXGJegQrON-lA-5WM/edit?gid=0#gid=0", 
-                    sheet = paste0("lab_", 7))
-make_pairing_table(teams)
-```
-
-## L8 - 3:05 pm
-
-```{r}
-#| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1bz6b2xSJNOzGJT1yZ0WyrcSCQGBXGJegQrON-lA-5WM/edit?gid=0#gid=0", 
-                    sheet = paste0("lab_", 8))
-make_pairing_table(teams)
-```
-
-## L9 - 3:05 pm
-
-```{r}
-#| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1bz6b2xSJNOzGJT1yZ0WyrcSCQGBXGJegQrON-lA-5WM/edit?gid=0#gid=0", 
-                    sheet = paste0("lab_", 9))
-make_pairing_table(teams)
-```
-
-## L10 - 4:40 pm
-
-```{r}
-#| message: false
-teams <- read_sheet("https://docs.google.com/spreadsheets/d/1bz6b2xSJNOzGJT1yZ0WyrcSCQGBXGJegQrON-lA-5WM/edit?gid=0#gid=0", 
-                    sheet = paste0("lab_", 10))
-make_pairing_table(teams)
-```
 :::
-
 
 # Grading
 
