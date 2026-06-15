@@ -1,5 +1,5 @@
 ---
-title: "AE 22: Houses in Duke Forest"
+title: "AE 17: Houses in Duke Forest"
 ---
 
 In this application exercise, we will use bootstrapping to construct confidence intervals.
@@ -31,8 +31,10 @@ glimpse(duke_forest)
 
 ```{r}
 #| label: fit-model
+#| message: false
+#| warning: false
+
 df_fit <- linear_reg() |>
-  set_engine("lm") |>
   fit(price ~ area, data = duke_forest)
 
 tidy(df_fit) |>
@@ -45,11 +47,7 @@ tidy(df_fit) |>
 
 ```{r}
 #| label: observed-fit
-observed_fit <- duke_forest |>
-  specify(price ~ area) |>
-  fit()
-
-observed_fit
+# add code here
 ```
 
 ### 2. Take *n* bootstrap samples and fit models to each one.
