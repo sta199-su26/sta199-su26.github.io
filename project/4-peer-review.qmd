@@ -10,6 +10,7 @@ execute:
 ::: callout-important
 You must attend this lab in person and participate in the peer review in person to be eligible for the points for this milestone.
 Team members who are not in lab in person for this milestone will not be eligible for these points, regardless of their contribution throughout the rest of the project.
+
 :::
 
 During the peer feedback process, you will be provided read-only access to your partner team's GitHub repo.
