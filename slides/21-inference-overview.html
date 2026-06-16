@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.6.39">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Katie Solarz">
-<meta name="dcterms.date" content="2026-04-20">
+<meta name="dcterms.date" content="2026-06-17">
 <title>Inference overview – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
@@ -124,11 +124,13 @@ window.Quarto = {
 };
 </script><link rel="stylesheet" href="../style/sta199.scss">
 <meta property="og:title" content="Inference overview – STA 199">
-<meta property="og:description" content="Lecture 24">
-<meta property="og:image" content="https://sta199-su26.github.io/slides/images/24/least_squares.png">
+<meta property="og:description" content="Lecture 20">
+<meta property="og:image" content="https://sta199-su26.github.io/slides/img/21/least_squares.png">
 <meta property="og:site_name" content="STA 199">
+<meta property="og:image:height" content="941">
+<meta property="og:image:width" content="1523">
 <meta name="twitter:title" content="Inference overview – STA 199">
-<meta name="twitter:description" content="Lecture 24">
+<meta name="twitter:description" content="Lecture 20">
 <meta name="twitter:image" content="https://sta199-su26.github.io/slides/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
@@ -355,6 +357,7 @@ window.Quarto = {
   <li><a href="#null-distribution-versus-reality-1" id="toc-null-distribution-versus-reality-1" class="nav-link" data-scroll-target="#null-distribution-versus-reality-1">Null distribution versus reality</a></li>
   <li><a href="#null-distribution-versus-reality-2" id="toc-null-distribution-versus-reality-2" class="nav-link" data-scroll-target="#null-distribution-versus-reality-2">Null distribution versus reality</a></li>
   <li><a href="#the-main-idea" id="toc-the-main-idea" class="nav-link" data-scroll-target="#the-main-idea">The main idea</a></li>
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question</a></li>
   <li><a href="#p-value" id="toc-p-value" class="nav-link" data-scroll-target="#p-value"><em>p</em>-value</a></li>
   <li><a href="#p-value-1" id="toc-p-value-1" class="nav-link" data-scroll-target="#p-value-1"><em>p</em>-value</a></li>
   <li><a href="#p-value-2" id="toc-p-value-2" class="nav-link" data-scroll-target="#p-value-2"><em>p</em>-value</a></li>
@@ -367,6 +370,10 @@ window.Quarto = {
   <ul class="collapse">
 <li><a href="#what-is-b_1" id="toc-what-is-b_1" class="nav-link" data-scroll-target="#what-is-b_1">What is <span class="math inline">\(b_1\)</span>?</a></li>
   <li><a href="#what-is-b_0" id="toc-what-is-b_0" class="nav-link" data-scroll-target="#what-is-b_0">What is <span class="math inline">\(b_0\)</span>?</a></li>
+  <li><a href="#back-to-the-hotels" id="toc-back-to-the-hotels" class="nav-link" data-scroll-target="#back-to-the-hotels">Back to the Hotels!</a></li>
+  <li><a href="#back-to-the-hotels-1" id="toc-back-to-the-hotels-1" class="nav-link" data-scroll-target="#back-to-the-hotels-1">Back to the Hotels!</a></li>
+  <li><a href="#back-to-the-hotels-2" id="toc-back-to-the-hotels-2" class="nav-link" data-scroll-target="#back-to-the-hotels-2">Back to the Hotels!</a></li>
+  <li><a href="#back-to-the-hotels-3" id="toc-back-to-the-hotels-3" class="nav-link" data-scroll-target="#back-to-the-hotels-3">Back to the Hotels!</a></li>
   <li><a href="#which-of-these-could-be-a-bootstrap-sample" id="toc-which-of-these-could-be-a-bootstrap-sample" class="nav-link" data-scroll-target="#which-of-these-could-be-a-bootstrap-sample">Which of these could be a bootstrap sample?</a></li>
   <li><a href="#which-is-a-98-confidence-interval" id="toc-which-is-a-98-confidence-interval" class="nav-link" data-scroll-target="#which-is-a-98-confidence-interval">Which is a 98% confidence interval?</a></li>
   <li><a href="#match-the-picture-to-the-p-value." id="toc-match-the-picture-to-the-p-value." class="nav-link" data-scroll-target="#match-the-picture-to-the-p-value.">Match the picture to the p-value.</a></li>
@@ -374,17 +381,17 @@ window.Quarto = {
   </ul>
 </li>
   <li>
-<a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
+<a href="#ae-19" id="toc-ae-19" class="nav-link" data-scroll-target="#ae-19">AE-19</a>
   <ul class="collapse">
 <li><a href="#ae-19-card-krueger" id="toc-ae-19-card-krueger" class="nav-link" data-scroll-target="#ae-19-card-krueger">ae-19-card-krueger</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/21-inference-overview.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="24-inference-overview-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/slides/21-inference-overview.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="21-inference-overview-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Inference overview</h1>
-<p class="subtitle lead">Lecture 24</p>
+<p class="subtitle lead">Lecture 20</p>
 </div>
 
 
@@ -408,7 +415,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 20, 2026</p>
+      <p class="date">June 17, 2026</p>
     </div>
   </div>
   
@@ -440,17 +447,17 @@ y = \beta_0+\beta_1x +\varepsilon;
 <ul class="incremental">
 <li><p><strong>POINT ESTIMATION</strong>: get a single-number best guess for <span class="math inline">\(\beta_1\)</span>;</p></li>
 <li><p><strong>INTERVAL ESTIMATION</strong>: get a range of likely values for <span class="math inline">\(\beta_1\)</span> that characterizes (sampling) uncertainty;</p></li>
-<li><p><strong>HYPOTHESIS TESTING</strong>: use the data to distinguish competing claims about <span class="math inline">\(\beta_1\)</span>.</p></li>
+<li><p><strong>HYPOTHESIS TESTING</strong>: use the data to evaluate competing claims about <span class="math inline">\(\beta_1\)</span>.</p></li>
 </ul>
 </div>
 </section><section id="point-estimation-roman-letters-hats" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="point-estimation-roman-letters-hats">Point estimation (roman letters, hats!)</h2>
 <p>We estimate <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> with the coefficients of the best fit line:</p>
 <p><span class="math display">\[
-\hat{y}=b_0+b_1x.
+\widehat{y}=b_0+b_1x.
 \]</span></p>
 <p>“Best” means “least squares.” We pick the estimates so that the sum of squared residuals is as small as possible. <a href="https://seeing-theory.brown.edu/regression-analysis/index.html">Play around!</a></p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/24/least_squares.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<figure class="figure"><p><img src="img/21/least_squares.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 </section><section id="point-estimation" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="point-estimation">Point estimation</h2>
@@ -458,9 +465,6 @@ y = \beta_0+\beta_1x +\varepsilon;
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">wt</span>, y <span class="op">=</span> <span class="va">mpg</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_smooth</span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="21-inference-overview_files/figure-revealjs/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="960"></p>
@@ -470,7 +474,7 @@ y = \beta_0+\beta_1x +\varepsilon;
 </div>
 </section><section id="point-estimation-1" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="point-estimation-1">Point estimation</h2>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">fit</span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">wt</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">tidy</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -497,8 +501,8 @@ y = \beta_0+\beta_1x +\varepsilon;
 </section><section id="bootstrap-distribution" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="bootstrap-distribution">Bootstrap distribution</h2>
 <p>This histogram displays variation in the slope estimate across alternative datasets.</p>
 <ul>
-<li>Large spread &gt;&gt; high uncertainty;</li>
-<li>Small spread &gt;&gt; lower uncertainty.</li>
+<li>Large spread <span class="math inline">\(\rightarrow\)</span> high uncertainty;</li>
+<li>Small spread <span class="math inline">\(\rightarrow\)</span> lower uncertainty.</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -518,7 +522,7 @@ y = \beta_0+\beta_1x +\varepsilon;
 </div>
 </div>
 </div>
-<p>We use quantiles (think IQR) but there are other ways.</p>
+<p>We use quantiles (think IQR), but there are other ways.</p>
 </section><section id="hypothesis-testing" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="hypothesis-testing">Hypothesis testing</h2>
 <div class="incremental">
 <ul class="incremental">
@@ -528,7 +532,7 @@ H_0&amp;: \beta_1=0\quad(\text{nothing going on})\\
 H_A&amp;: \beta_1\neq0\quad(\text{something going on})
 \end{aligned}
 \]</span></p></li>
-<li><p>In words: “are x and y correlated or not?”</p></li>
+<li><p>In words: “is there sufficient evidence that x and y are correlated, or not?”</p></li>
 <li><p>Do the data strongly favor one or the other?</p></li>
 <li><p>How can we quantify this?</p></li>
 </ul>
@@ -579,7 +583,7 @@ H_A&amp;: \beta_1\neq0\quad(\text{something going on})
 </div>
 </div>
 </div>
-<p>Are these results in harmony or conflict with the null?</p>
+<p>Are these results in harmony or in conflict with the null?</p>
 </section><section id="null-distribution-versus-reality-2" class="level2 medium scrollable"><h2 class="medium scrollable anchored" data-anchor-id="null-distribution-versus-reality-2">Null distribution versus reality</h2>
 <p>Locate the <em>actual</em> results of your <em>actual</em> data analysis under the null distribution. Are they in the middle? Are they in the tails?</p>
 <div class="cell">
@@ -590,8 +594,8 @@ H_A&amp;: \beta_1\neq0\quad(\text{something going on})
 </div>
 </div>
 </div>
-<p>Are these results in harmony or conflict with the null?</p>
-</section><section id="the-main-idea" class="level2"><h2 class="anchored" data-anchor-id="the-main-idea">The main idea</h2>
+<p>Are these results in harmony or in conflict with the null?</p>
+</section><section id="the-main-idea" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="the-main-idea">The main idea</h2>
 <ul>
 <li>The point estimate is <em>reality</em>. That’s what the data say;</li>
 <li>The null distribution is <em>hypothetical</em>;</li>
@@ -601,8 +605,18 @@ H_A&amp;: \beta_1\neq0\quad(\text{something going on})
 <li>If conflict, go with reality (reject the null).</li>
 </ul>
 </li>
-<li>Instead of eyeballing a picture, how can we <em>quantity</em> the degree of “harmoniousness” between reality and the hypothetical?</li>
-</ul></section><section id="p-value" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="p-value">
+<li>Instead of eyeballing a picture, how can we <em>quantify</em> the degree of “harmoniousness” between reality and the hypothetical?</li>
+</ul></section><section id="question" class="level2 small"><h2 class="small anchored" data-anchor-id="question">Question</h2>
+<div class="question">
+<p>What is a <em>p</em>-value?</p>
+</div>
+<ol type="a">
+<li>The probability that the null hypothesis is true given your result.</li>
+<li>The probability of a result as or more extreme than the one you got.</li>
+<li>The probability of a result as or more extreme than the one you got assuming the null is true.</li>
+<li>The probability that the alternative hypothesis is true given your result.</li>
+<li>The probability that the null hypothesis and alternative hypothesis are both true given your result.</li>
+</ol></section><section id="p-value" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="p-value">
 <em>p</em>-value</h2>
 <div class="incremental">
 <p>The <span class="math inline">\(p\)</span>-value is the probability of being <em>even farther out</em> in the tails of the null distribution than your results already were.</p>
@@ -709,6 +723,92 @@ H_A&amp;: \beta_1\neq0\quad(\text{something going on})
 <li>2</li>
 <li>3</li>
 </ol>
+</div>
+</div>
+</section><section id="back-to-the-hotels" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="back-to-the-hotels">Back to the Hotels!</h2>
+<div class="question">
+<p>The following model predicts <code>adr</code> from <code>adults</code> and <code>hotel</code> type. Which of the following is the best interpretation of the slope coefficient for <code>adults</code>?</p>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term              estimate std.error statistic   p.value
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)           50.2     0.606      82.8 0        
+2 adults                29.7     0.312      95.4 0        
+3 hotelResort Hotel    -10.6     0.323     -32.8 6.78e-235</code></pre>
+</div>
+</div>
+<p>“For each additional adult in the booking, the average daily rate is predicted to be higher by $29.00…”</p>
+<p>. . .</p>
+<ol type="a">
+<li><p>on average, holding hotel type constant.</p></li>
+<li><p>for Resort Hotels compared to City Hotels, on average.</p></li>
+<li><p>for City Hotels compared to Resort Hotels, on average.</p></li>
+<li><p>on average, not holding any other variables constant.</p></li>
+</ol></section><section id="back-to-the-hotels-1" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="back-to-the-hotels-1">Back to the Hotels!</h2>
+<div class="question">
+<p>Which of the following is the correct interpretation of the slope coefficient for <code>hotel</code>?</p>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term              estimate std.error statistic   p.value
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)           50.2     0.606      82.8 0        
+2 adults                29.7     0.312      95.4 0        
+3 hotelResort Hotel    -10.6     0.323     -32.8 6.78e-235</code></pre>
+</div>
+</div>
+<ol type="a">
+<li><p>For each additional Resort Hotel booking, the predicted average daily rate is $10.80 lower, holding number of adults constant.</p></li>
+<li><p>For each additional adult in the booking, the average daily rate is predicted to be lower by $10.80 for resort hotels compared to City Hotels, on average.</p></li>
+<li><p>Resort Hotels bookings are predicted to have an average daily rate that is $10.80 lower than City Hotels, on average, holding number of adults constant.</p></li>
+<li><p>Resort Hotels bookings are predicted to have an average daily rate that is $10.80 higher than City Hotels, on average, holding number of adults constant.</p></li>
+</ol></section><section id="back-to-the-hotels-2" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="back-to-the-hotels-2">Back to the Hotels!</h2>
+<div class="question">
+<p>Which of the following is the correct interpretation of the intercept?</p>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term              estimate std.error statistic   p.value
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)           50.2     0.606      82.8 0        
+2 adults                29.7     0.312      95.4 0        
+3 hotelResort Hotel    -10.6     0.323     -32.8 6.78e-235</code></pre>
+</div>
+</div>
+<ol type="a">
+<li><p>The predicted average daily rate for a bookings with 0 adults at a Resort Hotel is $51.70, on average.</p></li>
+<li><p>The predicted average daily rate for a bookings with 0 adults at a City Hotel is $51.70, on average.</p></li>
+<li><p>For each additional adult and Resort Hotel in the booking, the average daily rate is predicted to be $51.70 higher, on average.</p></li>
+<li><p>For each additional adult and City Hotel in the booking, the average daily rate is predicted to be $51.70 higher, on average.</p></li>
+</ol></section><section id="back-to-the-hotels-3" class="level2 smaller scrollable"><h2 class="smaller scrollable anchored" data-anchor-id="back-to-the-hotels-3">Back to the Hotels!</h2>
+<div class="question">
+<p>Which of the following (Plot A or Plot B) is the correct visual representation of this model?</p>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term              estimate std.error statistic   p.value
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)           50.2     0.606      82.8 0        
+2 adults                29.7     0.312      95.4 0        
+3 hotelResort Hotel    -10.6     0.323     -32.8 6.78e-235</code></pre>
+</div>
+</div>
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="21-inference-overview_files/figure-revealjs/unnamed-chunk-19-1.png" class="img-fluid" width="480"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="21-inference-overview_files/figure-revealjs/unnamed-chunk-19-2.png" class="img-fluid" width="480"></p>
+</div>
 </div>
 </div>
 </section><section id="which-of-these-could-be-a-bootstrap-sample" class="level2 scrollable"><h2 class="scrollable anchored" data-anchor-id="which-of-these-could-be-a-bootstrap-sample">Which of these could be a bootstrap sample?</h2>
@@ -835,7 +935,7 @@ $ scores &lt;dbl&gt; 1.563, -0.515, 1.206, -0.411, 0.523</code></pre>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="21-inference-overview_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="960"></p>
+<figure class="figure"><p><img src="21-inference-overview_files/figure-revealjs/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -857,7 +957,7 @@ $ scores &lt;dbl&gt; 1.563, -0.515, 1.206, -0.411, 0.523</code></pre>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="21-inference-overview_files/figure-revealjs/unnamed-chunk-16-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+<figure class="figure"><p><img src="21-inference-overview_files/figure-revealjs/unnamed-chunk-22-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -886,12 +986,12 @@ H_A&amp;: \beta_1\neq 5.
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="21-inference-overview_files/figure-revealjs/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="960"></p>
+<figure class="figure"><p><img src="21-inference-overview_files/figure-revealjs/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</section></section><section id="application-exercise" class="level1"><h1>Application exercise</h1>
+</section></section><section id="ae-19" class="level1"><h1>AE-19</h1>
 <section id="ae-19-card-krueger" class="level2"><h2 class="anchored" data-anchor-id="ae-19-card-krueger">ae-19-card-krueger</h2>
 <div class="appex">
 <ul>

@@ -604,197 +604,232 @@
     "text": "Footnotes\n\nRemember, haikus, not novellas, when writing code!↩︎"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#the-bottom-line-at-the-top",
-    "href": "slides/24-inference-overview-slides.html#the-bottom-line-at-the-top",
+    "objectID": "slides/21-inference-overview-slides.html#the-bottom-line-at-the-top",
+    "href": "slides/21-inference-overview-slides.html#the-bottom-line-at-the-top",
     "title": "Inference overview",
     "section": "The bottom line, at the top",
     "text": "The bottom line, at the top\n\nData science is the messy, real-world art of converting data into knowledge;\nStatistics is the mathematical study of quantifying uncertainty about that knowledge to help guide decision-making."
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#the-population-model-greek-letters-no-hats",
-    "href": "slides/24-inference-overview-slides.html#the-population-model-greek-letters-no-hats",
+    "objectID": "slides/21-inference-overview-slides.html#the-population-model-greek-letters-no-hats",
+    "href": "slides/21-inference-overview-slides.html#the-population-model-greek-letters-no-hats",
     "title": "Inference overview",
     "section": "The population model (greek letters, no hats)",
     "text": "The population model (greek letters, no hats)\n\n\nThis is an idealized representation of the data: \\[\ny = \\beta_0+\\beta_1x +\\varepsilon;\n\\]\nThere is some “true line” floating out there with a “true slope” \\(\\beta_1\\) and “true intercept” \\(\\beta_0\\);\nWith infinite amounts of perfectly measured data, we could know \\(\\beta_0\\) and \\(\\beta_1\\) exactly;\nWe don’t have that, so we must use finite amounts of imperfect data to estimate;\nWe are especially interested in \\(\\beta_1\\) because is characterizes the association between \\(x\\) and \\(y\\), which is useful for prediction."
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#three-branches-of-statistical-government",
-    "href": "slides/24-inference-overview-slides.html#three-branches-of-statistical-government",
+    "objectID": "slides/21-inference-overview-slides.html#three-branches-of-statistical-government",
+    "href": "slides/21-inference-overview-slides.html#three-branches-of-statistical-government",
     "title": "Inference overview",
     "section": "“Three branches of statistical government”",
-    "text": "“Three branches of statistical government”\n\\(\\beta_1\\) is an unknown quantity we are trying to learn about using noisy, imperfect data. Learning comes in three flavors:\n\n\nPOINT ESTIMATION: get a single-number best guess for \\(\\beta_1\\);\nINTERVAL ESTIMATION: get a range of likely values for \\(\\beta_1\\) that characterizes (sampling) uncertainty;\nHYPOTHESIS TESTING: use the data to distinguish competing claims about \\(\\beta_1\\)."
+    "text": "“Three branches of statistical government”\n\\(\\beta_1\\) is an unknown quantity we are trying to learn about using noisy, imperfect data. Learning comes in three flavors:\n\n\nPOINT ESTIMATION: get a single-number best guess for \\(\\beta_1\\);\nINTERVAL ESTIMATION: get a range of likely values for \\(\\beta_1\\) that characterizes (sampling) uncertainty;\nHYPOTHESIS TESTING: use the data to evaluate competing claims about \\(\\beta_1\\)."
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#point-estimation-roman-letters-hats",
-    "href": "slides/24-inference-overview-slides.html#point-estimation-roman-letters-hats",
+    "objectID": "slides/21-inference-overview-slides.html#point-estimation-roman-letters-hats",
+    "href": "slides/21-inference-overview-slides.html#point-estimation-roman-letters-hats",
     "title": "Inference overview",
     "section": "Point estimation (roman letters, hats!)",
-    "text": "Point estimation (roman letters, hats!)\nWe estimate \\(\\beta_0\\) and \\(\\beta_1\\) with the coefficients of the best fit line:\n\\[\n\\hat{y}=b_0+b_1x.\n\\]\n“Best” means “least squares.” We pick the estimates so that the sum of squared residuals is as small as possible. Play around!"
+    "text": "Point estimation (roman letters, hats!)\nWe estimate \\(\\beta_0\\) and \\(\\beta_1\\) with the coefficients of the best fit line:\n\\[\n\\widehat{y}=b_0+b_1x.\n\\]\n“Best” means “least squares.” We pick the estimates so that the sum of squared residuals is as small as possible. Play around!"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#point-estimation",
-    "href": "slides/24-inference-overview-slides.html#point-estimation",
+    "objectID": "slides/21-inference-overview-slides.html#point-estimation",
+    "href": "slides/21-inference-overview-slides.html#point-estimation",
     "title": "Inference overview",
     "section": "Point estimation",
-    "text": "Point estimation\n\nggplot(mtcars, aes(x = wt, y = mpg)) + \n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Point estimation\n\nggplot(mtcars, aes(x = wt, y = mpg)) + \n  geom_point() +\n  geom_smooth(method = \"lm\")"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#point-estimation-1",
-    "href": "slides/24-inference-overview-slides.html#point-estimation-1",
+    "objectID": "slides/21-inference-overview-slides.html#point-estimation-1",
+    "href": "slides/21-inference-overview-slides.html#point-estimation-1",
     "title": "Inference overview",
     "section": "Point estimation",
     "text": "Point estimation\n\nlinear_reg() |&gt;\n  fit(mpg ~ wt, data = mtcars) |&gt;\n  tidy()\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)    37.3      1.88      19.9  8.24e-19\n2 wt             -5.34     0.559     -9.56 1.29e-10"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#sampling-uncertainty",
-    "href": "slides/24-inference-overview-slides.html#sampling-uncertainty",
+    "objectID": "slides/21-inference-overview-slides.html#sampling-uncertainty",
+    "href": "slides/21-inference-overview-slides.html#sampling-uncertainty",
     "title": "Inference overview",
     "section": "Sampling uncertainty",
     "text": "Sampling uncertainty\n\n\n\nHow do our point estimates vary across alternative, hypothetical datasets?\n\nIf they vary alot, uncertainty is high, and results are unreliable;\nif they vary only a little, uncertainty is low, and results are more reliable.\n\n\nWe can use the bootstrap to construct alternative datasets and assess the sensitivity of our estimates to changes in the data."
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#bootstrap-distribution",
-    "href": "slides/24-inference-overview-slides.html#bootstrap-distribution",
+    "objectID": "slides/21-inference-overview-slides.html#bootstrap-distribution",
+    "href": "slides/21-inference-overview-slides.html#bootstrap-distribution",
     "title": "Inference overview",
     "section": "Bootstrap distribution",
-    "text": "Bootstrap distribution\nThis histogram displays variation in the slope estimate across alternative datasets.\n\nLarge spread &gt;&gt; high uncertainty;\nSmall spread &gt;&gt; lower uncertainty."
+    "text": "Bootstrap distribution\nThis histogram displays variation in the slope estimate across alternative datasets.\n\nLarge spread \\(\\rightarrow\\) high uncertainty;\nSmall spread \\(\\rightarrow\\) lower uncertainty."
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#confidence-interval",
-    "href": "slides/24-inference-overview-slides.html#confidence-interval",
+    "objectID": "slides/21-inference-overview-slides.html#confidence-interval",
+    "href": "slides/21-inference-overview-slides.html#confidence-interval",
     "title": "Inference overview",
     "section": "Confidence interval",
-    "text": "Confidence interval\nPick a range that swallows up a large % of the histogram:\n\nWe use quantiles (think IQR) but there are other ways."
+    "text": "Confidence interval\nPick a range that swallows up a large % of the histogram:\n\n\n\n\n\n\n\n\nWe use quantiles (think IQR), but there are other ways."
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#hypothesis-testing",
-    "href": "slides/24-inference-overview-slides.html#hypothesis-testing",
+    "objectID": "slides/21-inference-overview-slides.html#hypothesis-testing",
+    "href": "slides/21-inference-overview-slides.html#hypothesis-testing",
     "title": "Inference overview",
     "section": "Hypothesis testing",
-    "text": "Hypothesis testing\n\n\nTwo competing claims about \\(\\beta_1\\): \\[\n\\begin{aligned}\nH_0&: \\beta_1=0\\quad(\\text{nothing going on})\\\\\nH_A&: \\beta_1\\neq0\\quad(\\text{something going on})\n\\end{aligned}\n\\]\nIn words: “are x and y correlated or not?”\nDo the data strongly favor one or the other?\nHow can we quantify this?"
+    "text": "Hypothesis testing\n\n\nTwo competing claims about \\(\\beta_1\\): \\[\n\\begin{aligned}\nH_0&: \\beta_1=0\\quad(\\text{nothing going on})\\\\\nH_A&: \\beta_1\\neq0\\quad(\\text{something going on})\n\\end{aligned}\n\\]\nIn words: “is there sufficient evidence that x and y are correlated, or not?”\nDo the data strongly favor one or the other?\nHow can we quantify this?"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#hypothesis-testing-1",
-    "href": "slides/24-inference-overview-slides.html#hypothesis-testing-1",
+    "objectID": "slides/21-inference-overview-slides.html#hypothesis-testing-1",
+    "href": "slides/21-inference-overview-slides.html#hypothesis-testing-1",
     "title": "Inference overview",
     "section": "Hypothesis testing",
     "text": "Hypothesis testing\n\n\n\nThink hypothetically: if the null hypothesis were in fact true, would my results be out of the ordinary?\n\nif no, then the null could be true;\nif yes, then the null might be bogus;\n\n\nMy results represent the reality of actual data. If they conflict with the null, then you throw out the null and stick with reality;\nHow do we quantify “would my results be out of the ordinary”?"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#null-distribution",
-    "href": "slides/24-inference-overview-slides.html#null-distribution",
+    "objectID": "slides/21-inference-overview-slides.html#null-distribution",
+    "href": "slides/21-inference-overview-slides.html#null-distribution",
     "title": "Inference overview",
     "section": "Null distribution",
-    "text": "Null distribution\nIf the null happened to be true, how would we expect our results to vary across datasets? We can use simulation to answer this:\n\nThis is how the world should look if the null is true."
+    "text": "Null distribution\nIf the null happened to be true, how would we expect our results to vary across datasets? We can use simulation to answer this:\n\n\n\n\n\n\n\n\nThis is how the world should look if the null is true."
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#null-distribution-versus-reality",
-    "href": "slides/24-inference-overview-slides.html#null-distribution-versus-reality",
+    "objectID": "slides/21-inference-overview-slides.html#null-distribution-versus-reality",
+    "href": "slides/21-inference-overview-slides.html#null-distribution-versus-reality",
     "title": "Inference overview",
     "section": "Null distribution versus reality",
-    "text": "Null distribution versus reality\nLocate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\nAre these results in harmony or conflict with the null?"
+    "text": "Null distribution versus reality\nLocate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or conflict with the null?"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#null-distribution-versus-reality-1",
-    "href": "slides/24-inference-overview-slides.html#null-distribution-versus-reality-1",
+    "objectID": "slides/21-inference-overview-slides.html#null-distribution-versus-reality-1",
+    "href": "slides/21-inference-overview-slides.html#null-distribution-versus-reality-1",
     "title": "Inference overview",
     "section": "Null distribution versus reality",
-    "text": "Null distribution versus reality\nLocate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\nAre these results in harmony or conflict with the null?"
+    "text": "Null distribution versus reality\nLocate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or in conflict with the null?"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#null-distribution-versus-reality-2",
-    "href": "slides/24-inference-overview-slides.html#null-distribution-versus-reality-2",
+    "objectID": "slides/21-inference-overview-slides.html#null-distribution-versus-reality-2",
+    "href": "slides/21-inference-overview-slides.html#null-distribution-versus-reality-2",
     "title": "Inference overview",
     "section": "Null distribution versus reality",
-    "text": "Null distribution versus reality\nLocate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\nAre these results in harmony or conflict with the null?"
+    "text": "Null distribution versus reality\nLocate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or in conflict with the null?"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#the-main-idea",
-    "href": "slides/24-inference-overview-slides.html#the-main-idea",
+    "objectID": "slides/21-inference-overview-slides.html#the-main-idea",
+    "href": "slides/21-inference-overview-slides.html#the-main-idea",
     "title": "Inference overview",
     "section": "The main idea",
-    "text": "The main idea\n\nThe point estimate is reality. That’s what the data say;\nThe null distribution is hypothetical;\nAre the reality and the hypothetical in harmony or conflict?\n\nIf harmony, the null remains plausible and cannot be dismissed;\nIf conflict, go with reality (reject the null).\n\n\nInstead of eyeballing a picture, how can we quantity the degree of “harmoniousness” between reality and the hypothetical?"
+    "text": "The main idea\n\nThe point estimate is reality. That’s what the data say;\nThe null distribution is hypothetical;\nAre the reality and the hypothetical in harmony or conflict?\n\nIf harmony, the null remains plausible and cannot be dismissed;\nIf conflict, go with reality (reject the null).\n\n\nInstead of eyeballing a picture, how can we quantify the degree of “harmoniousness” between reality and the hypothetical?"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#p-value",
-    "href": "slides/24-inference-overview-slides.html#p-value",
+    "objectID": "slides/21-inference-overview-slides.html#question",
+    "href": "slides/21-inference-overview-slides.html#question",
+    "title": "Inference overview",
+    "section": "Question",
+    "text": "Question\n\nWhat is a p-value?\n\n\nThe probability that the null hypothesis is true given your result.\nThe probability of a result as or more extreme than the one you got.\nThe probability of a result as or more extreme than the one you got assuming the null is true.\nThe probability that the alternative hypothesis is true given your result.\nThe probability that the null hypothesis and alternative hypothesis are both true given your result."
+  },
+  {
+    "objectID": "slides/21-inference-overview-slides.html#p-value",
+    "href": "slides/21-inference-overview-slides.html#p-value",
     "title": "Inference overview",
     "section": "\np-value",
     "text": "p-value\n\nThe \\(p\\)-value is the probability of being even farther out in the tails of the null distribution than your results already were.\n\nif this number is very low, then your results would be out of the ordinary if the null were true, so maybe the null was never true to begin with;\nif this number is high, then your results may be perfectly compatible with the null."
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#p-value-1",
-    "href": "slides/24-inference-overview-slides.html#p-value-1",
+    "objectID": "slides/21-inference-overview-slides.html#p-value-1",
+    "href": "slides/21-inference-overview-slides.html#p-value-1",
     "title": "Inference overview",
     "section": "\np-value",
-    "text": "p-value\np-value is the fraction of the histogram area shaded red:\n\n\nBig ol’ p-value. Null remains plausible"
+    "text": "p-value\np-value is the fraction of the histogram area shaded red:\n\n\n\n\n\n\n\n\n\nBig ol’ p-value. Null remains plausible"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#p-value-2",
-    "href": "slides/24-inference-overview-slides.html#p-value-2",
+    "objectID": "slides/21-inference-overview-slides.html#p-value-2",
+    "href": "slides/21-inference-overview-slides.html#p-value-2",
     "title": "Inference overview",
     "section": "\np-value",
-    "text": "p-value\np-value is the fraction of the histogram area shaded red:\n\n\np-value is basically zero. Null looks bogus."
+    "text": "p-value\np-value is the fraction of the histogram area shaded red:\n\n\n\n\n\n\n\n\n\np-value is basically zero. Null looks bogus."
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#p-value-3",
-    "href": "slides/24-inference-overview-slides.html#p-value-3",
+    "objectID": "slides/21-inference-overview-slides.html#p-value-3",
+    "href": "slides/21-inference-overview-slides.html#p-value-3",
     "title": "Inference overview",
     "section": "\np-value",
-    "text": "p-value\np-value is the fraction of the histogram area shaded red:\n\n\np-value is…kinda small? Null looks…?"
+    "text": "p-value\np-value is the fraction of the histogram area shaded red:\n\n\n\n\n\n\n\n\n\np-value is…kinda small? Null looks…?"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#discernibility-level",
-    "href": "slides/24-inference-overview-slides.html#discernibility-level",
+    "objectID": "slides/21-inference-overview-slides.html#discernibility-level",
+    "href": "slides/21-inference-overview-slides.html#discernibility-level",
     "title": "Inference overview",
     "section": "Discernibility level",
     "text": "Discernibility level\n\n\nHow do we decide if the p-value is big enough or small enough?\n\nPick a threshold \\(\\alpha\\in[0,\\,1]\\) called the discernibility level:\n\nIf \\(p\\text{-value} &lt; \\alpha\\), reject null and accept alternative;\nIf \\(p\\text{-value} \\geq \\alpha\\), fail to reject null;\n\n\nStandard choices: \\(\\alpha=0.01, 0.05, 0.1, 0.15\\)."
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#what-is-b_1",
-    "href": "slides/24-inference-overview-slides.html#what-is-b_1",
+    "objectID": "slides/21-inference-overview-slides.html#what-is-b_1",
+    "href": "slides/21-inference-overview-slides.html#what-is-b_1",
     "title": "Inference overview",
     "section": "What is \\(b_1\\)?",
-    "text": "What is \\(b_1\\)?\n\n\n\n\n-1 / 2\n0\n1 / 4\n\n\n\n1 / 2\n1\n2"
+    "text": "What is \\(b_1\\)?\n\n\n\n\n\n\n\n\n\n\n\n-1 / 2\n0\n1 / 4\n\n\n\n1 / 2\n1\n2"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#what-is-b_0",
-    "href": "slides/24-inference-overview-slides.html#what-is-b_0",
+    "objectID": "slides/21-inference-overview-slides.html#what-is-b_0",
+    "href": "slides/21-inference-overview-slides.html#what-is-b_0",
     "title": "Inference overview",
     "section": "What is \\(b_0\\)?",
-    "text": "What is \\(b_0\\)?\n\n\n\n\n1\n1.75\n\n\n\n2\n3"
+    "text": "What is \\(b_0\\)?\n\n\n\n\n\n\n\n\n\n\n\n1\n1.75\n\n\n\n2\n3"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#which-of-these-could-be-a-bootstrap-sample",
-    "href": "slides/24-inference-overview-slides.html#which-of-these-could-be-a-bootstrap-sample",
+    "objectID": "slides/21-inference-overview-slides.html#back-to-the-hotels",
+    "href": "slides/21-inference-overview-slides.html#back-to-the-hotels",
+    "title": "Inference overview",
+    "section": "Back to the Hotels!",
+    "text": "Back to the Hotels!\n\nThe following model predicts adr from adults and hotel type. Which of the following is the best interpretation of the slope coefficient for adults?\n\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.2     0.606      82.8 0        \n2 adults                29.7     0.312      95.4 0        \n3 hotelResort Hotel    -10.6     0.323     -32.8 6.78e-235\n\n\n“For each additional adult in the booking, the average daily rate is predicted to be higher by $29.00…”\n\n\non average, holding hotel type constant.\nfor Resort Hotels compared to City Hotels, on average.\nfor City Hotels compared to Resort Hotels, on average.\non average, not holding any other variables constant."
+  },
+  {
+    "objectID": "slides/21-inference-overview-slides.html#back-to-the-hotels-1",
+    "href": "slides/21-inference-overview-slides.html#back-to-the-hotels-1",
+    "title": "Inference overview",
+    "section": "Back to the Hotels!",
+    "text": "Back to the Hotels!\n\nWhich of the following is the correct interpretation of the slope coefficient for hotel?\n\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.2     0.606      82.8 0        \n2 adults                29.7     0.312      95.4 0        \n3 hotelResort Hotel    -10.6     0.323     -32.8 6.78e-235\n\n\n\nFor each additional Resort Hotel booking, the predicted average daily rate is $10.80 lower, holding number of adults constant.\nFor each additional adult in the booking, the average daily rate is predicted to be lower by $10.80 for resort hotels compared to City Hotels, on average.\nResort Hotels bookings are predicted to have an average daily rate that is $10.80 lower than City Hotels, on average, holding number of adults constant.\nResort Hotels bookings are predicted to have an average daily rate that is $10.80 higher than City Hotels, on average, holding number of adults constant."
+  },
+  {
+    "objectID": "slides/21-inference-overview-slides.html#back-to-the-hotels-2",
+    "href": "slides/21-inference-overview-slides.html#back-to-the-hotels-2",
+    "title": "Inference overview",
+    "section": "Back to the Hotels!",
+    "text": "Back to the Hotels!\n\nWhich of the following is the correct interpretation of the intercept?\n\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.2     0.606      82.8 0        \n2 adults                29.7     0.312      95.4 0        \n3 hotelResort Hotel    -10.6     0.323     -32.8 6.78e-235\n\n\n\nThe predicted average daily rate for a bookings with 0 adults at a Resort Hotel is $51.70, on average.\nThe predicted average daily rate for a bookings with 0 adults at a City Hotel is $51.70, on average.\nFor each additional adult and Resort Hotel in the booking, the average daily rate is predicted to be $51.70 higher, on average.\nFor each additional adult and City Hotel in the booking, the average daily rate is predicted to be $51.70 higher, on average."
+  },
+  {
+    "objectID": "slides/21-inference-overview-slides.html#back-to-the-hotels-3",
+    "href": "slides/21-inference-overview-slides.html#back-to-the-hotels-3",
+    "title": "Inference overview",
+    "section": "Back to the Hotels!",
+    "text": "Back to the Hotels!\n\nWhich of the following (Plot A or Plot B) is the correct visual representation of this model?\n\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.2     0.606      82.8 0        \n2 adults                29.7     0.312      95.4 0        \n3 hotelResort Hotel    -10.6     0.323     -32.8 6.78e-235"
+  },
+  {
+    "objectID": "slides/21-inference-overview-slides.html#which-of-these-could-be-a-bootstrap-sample",
+    "href": "slides/21-inference-overview-slides.html#which-of-these-could-be-a-bootstrap-sample",
     "title": "Inference overview",
     "section": "Which of these could be a bootstrap sample?",
     "text": "Which of these could be a bootstrap sample?\nThis is the original dataset:\n\n\nRows: 5\nColumns: 1\n$ scores &lt;dbl&gt; 1.563, -0.515, 1.206, -0.411, 0.523\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA\n\n\nB\n\n\nC\n\n\nD\n\n\n\n-0.515\n\n\n1.563\n\n\n-0.515\n\n\n-0.522\n\n\n-0.411\n\n\n-0.411\n\n\n-0.411\n\n\n1.12\n\n\n1.563\n\n\n-0.515\n\n\n-0.411\n\n\n1.206\n\n\n-0.515\n\n\n\n\n\n1.563\n\n\n0.68\n\n\n-0.515\n\n\n\n\n\n1.563\n\n\n0.83\n\n\n\n\n\n\n\n\n0.523\n\n\n\n\n\n\n\n\n\n\n\n1.563"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#which-is-a-98-confidence-interval",
-    "href": "slides/24-inference-overview-slides.html#which-is-a-98-confidence-interval",
+    "objectID": "slides/21-inference-overview-slides.html#which-is-a-98-confidence-interval",
+    "href": "slides/21-inference-overview-slides.html#which-is-a-98-confidence-interval",
     "title": "Inference overview",
     "section": "Which is a 98% confidence interval?",
-    "text": "Which is a 98% confidence interval?\n\n\n\n\n\\((q_{0.01},\\,q_{0.91})\\)\n\\((q_{0.01},\\,q_{0.99})\\)\n\n\n\n\\((q_{0.09},\\,q_{0.95})\\)\n\\((q_{0.05},\\,q_{0.99})\\)"
+    "text": "Which is a 98% confidence interval?\n\n\n\n\n\n\n\n\n\n\n\n\\((q_{0.01},\\,q_{0.91})\\)\n\\((q_{0.01},\\,q_{0.99})\\)\n\n\n\n\\((q_{0.09},\\,q_{0.95})\\)\n\\((q_{0.05},\\,q_{0.99})\\)"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#match-the-picture-to-the-p-value.",
-    "href": "slides/24-inference-overview-slides.html#match-the-picture-to-the-p-value.",
+    "objectID": "slides/21-inference-overview-slides.html#match-the-picture-to-the-p-value.",
+    "href": "slides/21-inference-overview-slides.html#match-the-picture-to-the-p-value.",
     "title": "Inference overview",
     "section": "Match the picture to the p-value.",
-    "text": "Match the picture to the p-value.\n\n\n\n\n0\n0.045\n\n\n\n0.32\n0.62"
+    "text": "Match the picture to the p-value.\n\n\n\n\n\n\n\n\n\n\n\n0\n0.045\n\n\n\n0.32\n0.62"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#which-could-be-the-null-distribution-of-the-test",
-    "href": "slides/24-inference-overview-slides.html#which-could-be-the-null-distribution-of-the-test",
+    "objectID": "slides/21-inference-overview-slides.html#which-could-be-the-null-distribution-of-the-test",
+    "href": "slides/21-inference-overview-slides.html#which-could-be-the-null-distribution-of-the-test",
     "title": "Inference overview",
     "section": "Which could be the null distribution of the test?",
     "text": "Which could be the null distribution of the test?\nFor these hypotheses\n\\[\n\\begin{aligned}\nH_0&: \\beta_1=5\\\\\nH_A&: \\beta_1\\neq 5.\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "slides/24-inference-overview-slides.html#ae-19-card-krueger",
-    "href": "slides/24-inference-overview-slides.html#ae-19-card-krueger",
+    "objectID": "slides/21-inference-overview-slides.html#ae-19-card-krueger",
+    "href": "slides/21-inference-overview-slides.html#ae-19-card-krueger",
     "title": "Inference overview",
     "section": "ae-19-card-krueger",
     "text": "ae-19-card-krueger\n\n\nGo to your ae project in RStudio.\nIf you haven’t yet done so, make sure all of your changes up to this point are committed and pushed, i.e., there’s nothing left in your Git pane.\nIf you haven’t yet done so, click Pull to get today’s application exercise file: ae-19-card-krueger.qmd.\nWork through the application exercise in class, and render, commit, and push your edits."
@@ -804,7 +839,7 @@
     "href": "slides/21-inference-overview.html",
     "title": "Inference overview",
     "section": "",
-    "text": "Data science is the messy, real-world art of converting data into knowledge;\nStatistics is the mathematical study of quantifying uncertainty about that knowledge to help guide decision-making.\n\n\n\nThis is an idealized representation of the data: \\[\ny = \\beta_0+\\beta_1x +\\varepsilon;\n\\]\nThere is some “true line” floating out there with a “true slope” \\(\\beta_1\\) and “true intercept” \\(\\beta_0\\);\nWith infinite amounts of perfectly measured data, we could know \\(\\beta_0\\) and \\(\\beta_1\\) exactly;\nWe don’t have that, so we must use finite amounts of imperfect data to estimate;\nWe are especially interested in \\(\\beta_1\\) because is characterizes the association between \\(x\\) and \\(y\\), which is useful for prediction.\n\n\n\n\\(\\beta_1\\) is an unknown quantity we are trying to learn about using noisy, imperfect data. Learning comes in three flavors:\n\n\nPOINT ESTIMATION: get a single-number best guess for \\(\\beta_1\\);\nINTERVAL ESTIMATION: get a range of likely values for \\(\\beta_1\\) that characterizes (sampling) uncertainty;\nHYPOTHESIS TESTING: use the data to distinguish competing claims about \\(\\beta_1\\).\n\n\n\nWe estimate \\(\\beta_0\\) and \\(\\beta_1\\) with the coefficients of the best fit line:\n\\[\n\\hat{y}=b_0+b_1x.\n\\]\n“Best” means “least squares.” We pick the estimates so that the sum of squared residuals is as small as possible. Play around!\n\n\n\n\n\n\nggplot(mtcars, aes(x = wt, y = mpg)) + \n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nlinear_reg() |&gt;\n  fit(mpg ~ wt, data = mtcars) |&gt;\n  tidy()\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)    37.3      1.88      19.9  8.24e-19\n2 wt             -5.34     0.559     -9.56 1.29e-10\n\n\n\n\n\n\nHow do our point estimates vary across alternative, hypothetical datasets?\n\nIf they vary alot, uncertainty is high, and results are unreliable;\nif they vary only a little, uncertainty is low, and results are more reliable.\n\n\nWe can use the bootstrap to construct alternative datasets and assess the sensitivity of our estimates to changes in the data.\n\n\n\nThis histogram displays variation in the slope estimate across alternative datasets.\n\nLarge spread &gt;&gt; high uncertainty;\nSmall spread &gt;&gt; lower uncertainty.\n\n\n\n\n\n\n\n\n\n\nPick a range that swallows up a large % of the histogram:\n\n\n\n\n\n\n\n\nWe use quantiles (think IQR) but there are other ways.\n\n\n\nTwo competing claims about \\(\\beta_1\\): \\[\n\\begin{aligned}\nH_0&: \\beta_1=0\\quad(\\text{nothing going on})\\\\\nH_A&: \\beta_1\\neq0\\quad(\\text{something going on})\n\\end{aligned}\n\\]\nIn words: “are x and y correlated or not?”\nDo the data strongly favor one or the other?\nHow can we quantify this?\n\n\n\n\n\n\nThink hypothetically: if the null hypothesis were in fact true, would my results be out of the ordinary?\n\nif no, then the null could be true;\nif yes, then the null might be bogus;\n\n\nMy results represent the reality of actual data. If they conflict with the null, then you throw out the null and stick with reality;\nHow do we quantify “would my results be out of the ordinary”?\n\n\n\nIf the null happened to be true, how would we expect our results to vary across datasets? We can use simulation to answer this:\n\n\n\n\n\n\n\n\nThis is how the world should look if the null is true.\n\nLocate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or conflict with the null?\n\nLocate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or conflict with the null?\n\nLocate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or conflict with the null?\n\n\nThe point estimate is reality. That’s what the data say;\nThe null distribution is hypothetical;\nAre the reality and the hypothetical in harmony or conflict?\n\nIf harmony, the null remains plausible and cannot be dismissed;\nIf conflict, go with reality (reject the null).\n\n\nInstead of eyeballing a picture, how can we quantity the degree of “harmoniousness” between reality and the hypothetical?\n\n\nThe \\(p\\)-value is the probability of being even farther out in the tails of the null distribution than your results already were.\n\nif this number is very low, then your results would be out of the ordinary if the null were true, so maybe the null was never true to begin with;\nif this number is high, then your results may be perfectly compatible with the null.\n\n\n\np-value is the fraction of the histogram area shaded red:\n\n\n\n\n\n\n\n\n. . .\nBig ol’ p-value. Null remains plausible\n\np-value is the fraction of the histogram area shaded red:\n\n\n\n\n\n\n\n\n. . .\np-value is basically zero. Null looks bogus.\n\np-value is the fraction of the histogram area shaded red:\n\n\n\n\n\n\n\n\n. . .\np-value is…kinda small? Null looks…?\n\n\n\nHow do we decide if the p-value is big enough or small enough?\n\nPick a threshold \\(\\alpha\\in[0,\\,1]\\) called the discernibility level:\n\nIf \\(p\\text{-value} &lt; \\alpha\\), reject null and accept alternative;\nIf \\(p\\text{-value} \\geq \\alpha\\), fail to reject null;\n\n\nStandard choices: \\(\\alpha=0.01, 0.05, 0.1, 0.15\\)."
+    "text": "Data science is the messy, real-world art of converting data into knowledge;\nStatistics is the mathematical study of quantifying uncertainty about that knowledge to help guide decision-making.\n\n\n\nThis is an idealized representation of the data: \\[\ny = \\beta_0+\\beta_1x +\\varepsilon;\n\\]\nThere is some “true line” floating out there with a “true slope” \\(\\beta_1\\) and “true intercept” \\(\\beta_0\\);\nWith infinite amounts of perfectly measured data, we could know \\(\\beta_0\\) and \\(\\beta_1\\) exactly;\nWe don’t have that, so we must use finite amounts of imperfect data to estimate;\nWe are especially interested in \\(\\beta_1\\) because is characterizes the association between \\(x\\) and \\(y\\), which is useful for prediction.\n\n\n\n\\(\\beta_1\\) is an unknown quantity we are trying to learn about using noisy, imperfect data. Learning comes in three flavors:\n\n\nPOINT ESTIMATION: get a single-number best guess for \\(\\beta_1\\);\nINTERVAL ESTIMATION: get a range of likely values for \\(\\beta_1\\) that characterizes (sampling) uncertainty;\nHYPOTHESIS TESTING: use the data to evaluate competing claims about \\(\\beta_1\\).\n\n\n\nWe estimate \\(\\beta_0\\) and \\(\\beta_1\\) with the coefficients of the best fit line:\n\\[\n\\widehat{y}=b_0+b_1x.\n\\]\n“Best” means “least squares.” We pick the estimates so that the sum of squared residuals is as small as possible. Play around!\n\n\n\n\n\n\nggplot(mtcars, aes(x = wt, y = mpg)) + \n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n\n\n\n\n\n\n\n\nlinear_reg() |&gt;\n  fit(mpg ~ wt, data = mtcars) |&gt;\n  tidy()\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)    37.3      1.88      19.9  8.24e-19\n2 wt             -5.34     0.559     -9.56 1.29e-10\n\n\n\n\n\n\nHow do our point estimates vary across alternative, hypothetical datasets?\n\nIf they vary alot, uncertainty is high, and results are unreliable;\nif they vary only a little, uncertainty is low, and results are more reliable.\n\n\nWe can use the bootstrap to construct alternative datasets and assess the sensitivity of our estimates to changes in the data.\n\n\n\nThis histogram displays variation in the slope estimate across alternative datasets.\n\nLarge spread \\(\\rightarrow\\) high uncertainty;\nSmall spread \\(\\rightarrow\\) lower uncertainty.\n\n\n\n\n\n\n\n\n\n\nPick a range that swallows up a large % of the histogram:\n\n\n\n\n\n\n\n\nWe use quantiles (think IQR), but there are other ways.\n\n\n\nTwo competing claims about \\(\\beta_1\\): \\[\n\\begin{aligned}\nH_0&: \\beta_1=0\\quad(\\text{nothing going on})\\\\\nH_A&: \\beta_1\\neq0\\quad(\\text{something going on})\n\\end{aligned}\n\\]\nIn words: “is there sufficient evidence that x and y are correlated, or not?”\nDo the data strongly favor one or the other?\nHow can we quantify this?\n\n\n\n\n\n\nThink hypothetically: if the null hypothesis were in fact true, would my results be out of the ordinary?\n\nif no, then the null could be true;\nif yes, then the null might be bogus;\n\n\nMy results represent the reality of actual data. If they conflict with the null, then you throw out the null and stick with reality;\nHow do we quantify “would my results be out of the ordinary”?\n\n\n\nIf the null happened to be true, how would we expect our results to vary across datasets? We can use simulation to answer this:\n\n\n\n\n\n\n\n\nThis is how the world should look if the null is true.\n\nLocate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or conflict with the null?\n\nLocate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or in conflict with the null?\n\nLocate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or in conflict with the null?\n\n\nThe point estimate is reality. That’s what the data say;\nThe null distribution is hypothetical;\nAre the reality and the hypothetical in harmony or conflict?\n\nIf harmony, the null remains plausible and cannot be dismissed;\nIf conflict, go with reality (reject the null).\n\n\nInstead of eyeballing a picture, how can we quantify the degree of “harmoniousness” between reality and the hypothetical?\n\n\nWhat is a p-value?\n\n\nThe probability that the null hypothesis is true given your result.\nThe probability of a result as or more extreme than the one you got.\nThe probability of a result as or more extreme than the one you got assuming the null is true.\nThe probability that the alternative hypothesis is true given your result.\nThe probability that the null hypothesis and alternative hypothesis are both true given your result.\n\n\nThe \\(p\\)-value is the probability of being even farther out in the tails of the null distribution than your results already were.\n\nif this number is very low, then your results would be out of the ordinary if the null were true, so maybe the null was never true to begin with;\nif this number is high, then your results may be perfectly compatible with the null.\n\n\n\np-value is the fraction of the histogram area shaded red:\n\n\n\n\n\n\n\n\n. . .\nBig ol’ p-value. Null remains plausible\n\np-value is the fraction of the histogram area shaded red:\n\n\n\n\n\n\n\n\n. . .\np-value is basically zero. Null looks bogus.\n\np-value is the fraction of the histogram area shaded red:\n\n\n\n\n\n\n\n\n. . .\np-value is…kinda small? Null looks…?\n\n\n\nHow do we decide if the p-value is big enough or small enough?\n\nPick a threshold \\(\\alpha\\in[0,\\,1]\\) called the discernibility level:\n\nIf \\(p\\text{-value} &lt; \\alpha\\), reject null and accept alternative;\nIf \\(p\\text{-value} \\geq \\alpha\\), fail to reject null;\n\n\nStandard choices: \\(\\alpha=0.01, 0.05, 0.1, 0.15\\)."
   },
   {
     "objectID": "slides/21-inference-overview.html#the-bottom-line-at-the-top",
@@ -825,21 +860,21 @@
     "href": "slides/21-inference-overview.html#three-branches-of-statistical-government",
     "title": "Inference overview",
     "section": "",
-    "text": "\\(\\beta_1\\) is an unknown quantity we are trying to learn about using noisy, imperfect data. Learning comes in three flavors:\n\n\nPOINT ESTIMATION: get a single-number best guess for \\(\\beta_1\\);\nINTERVAL ESTIMATION: get a range of likely values for \\(\\beta_1\\) that characterizes (sampling) uncertainty;\nHYPOTHESIS TESTING: use the data to distinguish competing claims about \\(\\beta_1\\)."
+    "text": "\\(\\beta_1\\) is an unknown quantity we are trying to learn about using noisy, imperfect data. Learning comes in three flavors:\n\n\nPOINT ESTIMATION: get a single-number best guess for \\(\\beta_1\\);\nINTERVAL ESTIMATION: get a range of likely values for \\(\\beta_1\\) that characterizes (sampling) uncertainty;\nHYPOTHESIS TESTING: use the data to evaluate competing claims about \\(\\beta_1\\)."
   },
   {
     "objectID": "slides/21-inference-overview.html#point-estimation-roman-letters-hats",
     "href": "slides/21-inference-overview.html#point-estimation-roman-letters-hats",
     "title": "Inference overview",
     "section": "",
-    "text": "We estimate \\(\\beta_0\\) and \\(\\beta_1\\) with the coefficients of the best fit line:\n\\[\n\\hat{y}=b_0+b_1x.\n\\]\n“Best” means “least squares.” We pick the estimates so that the sum of squared residuals is as small as possible. Play around!"
+    "text": "We estimate \\(\\beta_0\\) and \\(\\beta_1\\) with the coefficients of the best fit line:\n\\[\n\\widehat{y}=b_0+b_1x.\n\\]\n“Best” means “least squares.” We pick the estimates so that the sum of squared residuals is as small as possible. Play around!"
   },
   {
     "objectID": "slides/21-inference-overview.html#point-estimation",
     "href": "slides/21-inference-overview.html#point-estimation",
     "title": "Inference overview",
     "section": "",
-    "text": "ggplot(mtcars, aes(x = wt, y = mpg)) + \n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "ggplot(mtcars, aes(x = wt, y = mpg)) + \n  geom_point() +\n  geom_smooth(method = \"lm\")"
   },
   {
     "objectID": "slides/21-inference-overview.html#point-estimation-1",
@@ -860,21 +895,21 @@
     "href": "slides/21-inference-overview.html#bootstrap-distribution",
     "title": "Inference overview",
     "section": "",
-    "text": "This histogram displays variation in the slope estimate across alternative datasets.\n\nLarge spread &gt;&gt; high uncertainty;\nSmall spread &gt;&gt; lower uncertainty."
+    "text": "This histogram displays variation in the slope estimate across alternative datasets.\n\nLarge spread \\(\\rightarrow\\) high uncertainty;\nSmall spread \\(\\rightarrow\\) lower uncertainty."
   },
   {
     "objectID": "slides/21-inference-overview.html#confidence-interval",
     "href": "slides/21-inference-overview.html#confidence-interval",
     "title": "Inference overview",
     "section": "",
-    "text": "Pick a range that swallows up a large % of the histogram:\n\n\n\n\n\n\n\n\nWe use quantiles (think IQR) but there are other ways."
+    "text": "Pick a range that swallows up a large % of the histogram:\n\n\n\n\n\n\n\n\nWe use quantiles (think IQR), but there are other ways."
   },
   {
     "objectID": "slides/21-inference-overview.html#hypothesis-testing",
     "href": "slides/21-inference-overview.html#hypothesis-testing",
     "title": "Inference overview",
     "section": "",
-    "text": "Two competing claims about \\(\\beta_1\\): \\[\n\\begin{aligned}\nH_0&: \\beta_1=0\\quad(\\text{nothing going on})\\\\\nH_A&: \\beta_1\\neq0\\quad(\\text{something going on})\n\\end{aligned}\n\\]\nIn words: “are x and y correlated or not?”\nDo the data strongly favor one or the other?\nHow can we quantify this?"
+    "text": "Two competing claims about \\(\\beta_1\\): \\[\n\\begin{aligned}\nH_0&: \\beta_1=0\\quad(\\text{nothing going on})\\\\\nH_A&: \\beta_1\\neq0\\quad(\\text{something going on})\n\\end{aligned}\n\\]\nIn words: “is there sufficient evidence that x and y are correlated, or not?”\nDo the data strongly favor one or the other?\nHow can we quantify this?"
   },
   {
     "objectID": "slides/21-inference-overview.html#hypothesis-testing-1",
@@ -902,21 +937,28 @@
     "href": "slides/21-inference-overview.html#null-distribution-versus-reality-1",
     "title": "Inference overview",
     "section": "",
-    "text": "Locate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or conflict with the null?"
+    "text": "Locate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or in conflict with the null?"
   },
   {
     "objectID": "slides/21-inference-overview.html#null-distribution-versus-reality-2",
     "href": "slides/21-inference-overview.html#null-distribution-versus-reality-2",
     "title": "Inference overview",
     "section": "",
-    "text": "Locate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or conflict with the null?"
+    "text": "Locate the actual results of your actual data analysis under the null distribution. Are they in the middle? Are they in the tails?\n\n\n\n\n\n\n\n\nAre these results in harmony or in conflict with the null?"
   },
   {
     "objectID": "slides/21-inference-overview.html#the-main-idea",
     "href": "slides/21-inference-overview.html#the-main-idea",
     "title": "Inference overview",
     "section": "",
-    "text": "The point estimate is reality. That’s what the data say;\nThe null distribution is hypothetical;\nAre the reality and the hypothetical in harmony or conflict?\n\nIf harmony, the null remains plausible and cannot be dismissed;\nIf conflict, go with reality (reject the null).\n\n\nInstead of eyeballing a picture, how can we quantity the degree of “harmoniousness” between reality and the hypothetical?"
+    "text": "The point estimate is reality. That’s what the data say;\nThe null distribution is hypothetical;\nAre the reality and the hypothetical in harmony or conflict?\n\nIf harmony, the null remains plausible and cannot be dismissed;\nIf conflict, go with reality (reject the null).\n\n\nInstead of eyeballing a picture, how can we quantify the degree of “harmoniousness” between reality and the hypothetical?"
+  },
+  {
+    "objectID": "slides/21-inference-overview.html#question",
+    "href": "slides/21-inference-overview.html#question",
+    "title": "Inference overview",
+    "section": "",
+    "text": "What is a p-value?\n\n\nThe probability that the null hypothesis is true given your result.\nThe probability of a result as or more extreme than the one you got.\nThe probability of a result as or more extreme than the one you got assuming the null is true.\nThe probability that the alternative hypothesis is true given your result.\nThe probability that the null hypothesis and alternative hypothesis are both true given your result."
   },
   {
     "objectID": "slides/21-inference-overview.html#p-value",
@@ -966,6 +1008,34 @@
     "title": "Inference overview",
     "section": "What is \\(b_0\\)?",
     "text": "What is \\(b_0\\)?\n\n\n\n\n\n\n\n\n\n\n\n1\n1.75\n\n\n\n2\n3"
+  },
+  {
+    "objectID": "slides/21-inference-overview.html#back-to-the-hotels",
+    "href": "slides/21-inference-overview.html#back-to-the-hotels",
+    "title": "Inference overview",
+    "section": "Back to the Hotels!",
+    "text": "Back to the Hotels!\n\nThe following model predicts adr from adults and hotel type. Which of the following is the best interpretation of the slope coefficient for adults?\n\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.2     0.606      82.8 0        \n2 adults                29.7     0.312      95.4 0        \n3 hotelResort Hotel    -10.6     0.323     -32.8 6.78e-235\n\n\n“For each additional adult in the booking, the average daily rate is predicted to be higher by $29.00…”\n. . .\n\non average, holding hotel type constant.\nfor Resort Hotels compared to City Hotels, on average.\nfor City Hotels compared to Resort Hotels, on average.\non average, not holding any other variables constant."
+  },
+  {
+    "objectID": "slides/21-inference-overview.html#back-to-the-hotels-1",
+    "href": "slides/21-inference-overview.html#back-to-the-hotels-1",
+    "title": "Inference overview",
+    "section": "Back to the Hotels!",
+    "text": "Back to the Hotels!\n\nWhich of the following is the correct interpretation of the slope coefficient for hotel?\n\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.2     0.606      82.8 0        \n2 adults                29.7     0.312      95.4 0        \n3 hotelResort Hotel    -10.6     0.323     -32.8 6.78e-235\n\n\n\nFor each additional Resort Hotel booking, the predicted average daily rate is $10.80 lower, holding number of adults constant.\nFor each additional adult in the booking, the average daily rate is predicted to be lower by $10.80 for resort hotels compared to City Hotels, on average.\nResort Hotels bookings are predicted to have an average daily rate that is $10.80 lower than City Hotels, on average, holding number of adults constant.\nResort Hotels bookings are predicted to have an average daily rate that is $10.80 higher than City Hotels, on average, holding number of adults constant."
+  },
+  {
+    "objectID": "slides/21-inference-overview.html#back-to-the-hotels-2",
+    "href": "slides/21-inference-overview.html#back-to-the-hotels-2",
+    "title": "Inference overview",
+    "section": "Back to the Hotels!",
+    "text": "Back to the Hotels!\n\nWhich of the following is the correct interpretation of the intercept?\n\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.2     0.606      82.8 0        \n2 adults                29.7     0.312      95.4 0        \n3 hotelResort Hotel    -10.6     0.323     -32.8 6.78e-235\n\n\n\nThe predicted average daily rate for a bookings with 0 adults at a Resort Hotel is $51.70, on average.\nThe predicted average daily rate for a bookings with 0 adults at a City Hotel is $51.70, on average.\nFor each additional adult and Resort Hotel in the booking, the average daily rate is predicted to be $51.70 higher, on average.\nFor each additional adult and City Hotel in the booking, the average daily rate is predicted to be $51.70 higher, on average."
+  },
+  {
+    "objectID": "slides/21-inference-overview.html#back-to-the-hotels-3",
+    "href": "slides/21-inference-overview.html#back-to-the-hotels-3",
+    "title": "Inference overview",
+    "section": "Back to the Hotels!",
+    "text": "Back to the Hotels!\n\nWhich of the following (Plot A or Plot B) is the correct visual representation of this model?\n\n\n\n# A tibble: 3 × 5\n  term              estimate std.error statistic   p.value\n  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)           50.2     0.606      82.8 0        \n2 adults                29.7     0.312      95.4 0        \n3 hotelResort Hotel    -10.6     0.323     -32.8 6.78e-235"
   },
   {
     "objectID": "slides/21-inference-overview.html#which-of-these-could-be-a-bootstrap-sample",
@@ -3821,7 +3891,7 @@
     "href": "slides/03-grammar-of-data-transformation-slides.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title        year gross_2013 budget_2013     roi binary clean_test\n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Whiteout     2009   24461950    38000606   0.644 PASS   ok        \n2 From Hell    2001  131993394    46054609   2.87  FAIL   dubious   \n3 Slacker      1991    4200140       39349 107.    PASS   ok        \n4 Mean Girls   2004  267603166    22197472  12.1   PASS   ok        \n5 World War Z  2013  741919422   190000000   3.90  FAIL   dubious"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Proposition  1998   10314108    28582646 0.361 FAIL   men       \n2 The Next Three…  2010   94436573    32046955 2.95  PASS   ok        \n3 88 Minutes       2007   56049408    33706305 1.66  FAIL   notalk    \n4 Dancer in the …  2000   67259815    16911355 3.98  PASS   ok        \n5 Thir13en Ghosts  2001  145185074    25001073 5.81  FAIL   notalk"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation-slides.html#filter",
@@ -4080,7 +4150,7 @@
     "href": "slides/03-grammar-of-data-transformation.html#sample_n",
     "title": "Grammar of Data Transformation",
     "section": "sample_n()",
-    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title        year gross_2013 budget_2013     roi binary clean_test\n  &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Whiteout     2009   24461950    38000606   0.644 PASS   ok        \n2 From Hell    2001  131993394    46054609   2.87  FAIL   dubious   \n3 Slacker      1991    4200140       39349 107.    PASS   ok        \n4 Mean Girls   2004  267603166    22197472  12.1   PASS   ok        \n5 World War Z  2013  741919422   190000000   3.90  FAIL   dubious"
+    "text": "sample_n()\n\n\nsample_n(): take a random subset of the rows\n\nDisplay five random rows of bechdel:\n\nbechdel \n\n# A tibble: 1,615 × 7\n   title          year gross_2013 budget_2013    roi binary clean_test\n   &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n 1 21 & Over      2013   67878146    13000000  5.22  FAIL   notalk    \n 2 Dredd 3D       2012   55078343    45658735  1.21  PASS   ok        \n 3 12 Years a S…  2013  211714070    20000000 10.6   FAIL   notalk    \n 4 2 Guns         2013  208105475    61000000  3.41  FAIL   notalk    \n 5 42             2013  190040426    40000000  4.75  FAIL   men       \n 6 47 Ronin       2013  184166317   225000000  0.819 FAIL   men       \n 7 A Good Day t…  2013  371598396    92000000  4.04  FAIL   notalk    \n 8 About Time     2013  102648667    12000000  8.55  PASS   ok        \n 9 Admission      2013   36014634    13000000  2.77  PASS   ok        \n10 After Earth    2013  304895295   130000000  2.35  FAIL   notalk    \n# ℹ 1,605 more rows\n\n\n\n\nbechdel |&gt;\n  sample_n(5)\n\n# A tibble: 5 × 7\n  title            year gross_2013 budget_2013   roi binary clean_test\n  &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 The Proposition  1998   10314108    28582646 0.361 FAIL   men       \n2 The Next Three…  2010   94436573    32046955 2.95  PASS   ok        \n3 88 Minutes       2007   56049408    33706305 1.66  FAIL   notalk    \n4 Dancer in the …  2000   67259815    16911355 3.98  PASS   ok        \n5 Thir13en Ghosts  2001  145185074    25001073 5.81  FAIL   notalk"
   },
   {
     "objectID": "slides/03-grammar-of-data-transformation.html#filter",
@@ -15036,7 +15106,7 @@
     "href": "slides/20-hypothesis-testing.html#hypothesis-testing-mindset",
     "title": "Hypothesis Testing",
     "section": "Hypothesis testing “mindset”",
-    "text": "Hypothesis testing “mindset”\n\nAssume you live in a world where null hypothesis is true: \\(\\beta_1 = 0\\).\nAsk yourself how likely you are to observe the sample statistic, or something even more extreme, in this world: \\(P(b_1 \\leq 159.48~or~b_1 \\geq 159.48 | \\beta_1 = 0)\\) = ?\nIn words: “Given the null hypothesis is true and \\(\\beta_1 = 0\\), what is the probability of observing \\(b_1 \\leq 159.48\\) or \\(b_1 \\geq 159.48\\)?”"
+    "text": "Hypothesis testing “mindset”\n\nAssume you live in a world where null hypothesis is true: \\(\\beta_1 = 0\\).\nAsk yourself how likely you are to observe the sample statistic, or something even more extreme, in this world: \\(P(b_1 \\leq -159.48~or~b_1 \\geq 159.48 | \\beta_1 = 0)\\) = ?\nIn words: “Given the null hypothesis is true and \\(\\beta_1 = 0\\), what is the probability of observing \\(b_1 \\leq -159.48\\) or \\(b_1 \\geq 159.48\\)?”"
   },
   {
     "objectID": "slides/20-hypothesis-testing.html#hypothesis-testing-as-a-court-trial",
@@ -15400,7 +15470,7 @@
     "href": "slides/20-hypothesis-testing-slides.html#hypothesis-testing-mindset",
     "title": "Hypothesis Testing",
     "section": "Hypothesis testing “mindset”",
-    "text": "Hypothesis testing “mindset”\n\nAssume you live in a world where null hypothesis is true: \\(\\beta_1 = 0\\).\nAsk yourself how likely you are to observe the sample statistic, or something even more extreme, in this world: \\(P(b_1 \\leq 159.48~or~b_1 \\geq 159.48 | \\beta_1 = 0)\\) = ?\nIn words: “Given the null hypothesis is true and \\(\\beta_1 = 0\\), what is the probability of observing \\(b_1 \\leq 159.48\\) or \\(b_1 \\geq 159.48\\)?”"
+    "text": "Hypothesis testing “mindset”\n\nAssume you live in a world where null hypothesis is true: \\(\\beta_1 = 0\\).\nAsk yourself how likely you are to observe the sample statistic, or something even more extreme, in this world: \\(P(b_1 \\leq -159.48~or~b_1 \\geq 159.48 | \\beta_1 = 0)\\) = ?\nIn words: “Given the null hypothesis is true and \\(\\beta_1 = 0\\), what is the probability of observing \\(b_1 \\leq -159.48\\) or \\(b_1 \\geq 159.48\\)?”"
   },
   {
     "objectID": "slides/20-hypothesis-testing-slides.html#hypothesis-testing-as-a-court-trial",
