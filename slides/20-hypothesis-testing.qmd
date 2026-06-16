@@ -767,9 +767,9 @@ Note: Hypotheses are **always** at the population level!
 
 -   Assume you live in a world where null hypothesis is true: $\beta_1 = 0$.
 
--   Ask yourself how likely you are to observe the sample statistic, or something even more extreme, in this world: $P(b_1 \leq 159.48~or~b_1 \geq 159.48 | \beta_1 = 0)$ = ?
+-   Ask yourself how likely you are to observe the sample statistic, or something even more extreme, in this world: $P(b_1 \leq -159.48~or~b_1 \geq 159.48 | \beta_1 = 0)$ = ?
 
--   In words: "Given the null hypothesis is true and $\beta_1 = 0$, what is the probability of observing $b_1 \leq 159.48$ or $b_1 \geq 159.48$?"
+-   In words: "Given the null hypothesis is true and $\beta_1 = 0$, what is the probability of observing $b_1 \leq -159.48$ or $b_1 \geq 159.48$?"
 
 ## Hypothesis testing as a court trial {.smaller .scrollable}
 

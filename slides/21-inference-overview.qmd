@@ -1,18 +1,13 @@
 ---
 title: "Inference overview"
-subtitle: "Lecture 24"
-date: "2026-04-20"
+subtitle: "Lecture 20"
+date: "2026-06-17"
 format: 
-  revealjs: 
-    output-file: 24-inference-overview-slides.html
-    footer: "[🔗 sta199-s26.github.io](https://sta199-s26.github.io/)"
-    theme: slides.scss
-    transition: fade
-    slide-number: true
-    logo: images/logo.png
-    toc: false
+  revealjs:
+    output-file: 21-inference-overview-slides.html
   html: 
-    code-link: true
+    output-file: 21-inference-overview.html
+auto-stretch: false
 ---
 
 ```{r}
@@ -31,15 +26,16 @@ todays_ae <- "ae-19-card-krueger"
 
 ## The bottom line, at the top
 
-- Data science is the messy, real-world *art* of converting data into knowledge;
-- Statistics is the mathematical study of quantifying uncertainty about that knowledge to help guide decision-making.
+-   Data science is the messy, real-world *art* of converting data into knowledge;
+-   Statistics is the mathematical study of quantifying uncertainty about that knowledge to help guide decision-making.
 
 ## The population model (greek letters, no hats) {.scrollable}
 
 ::: incremental
--   This is an *idealized* representation of the data: $$
-    y = \beta_0+\beta_1x +\varepsilon;
-    $$
+-   This is an *idealized* representation of the data: 
+$$
+y = \beta_0+\beta_1x +\varepsilon;
+$$
 
 -   There is some "true line" floating out there with a "true slope" $\beta_1$ and "true intercept" $\beta_0$;
 
@@ -52,14 +48,15 @@ todays_ae <- "ae-19-card-krueger"
 
 ## "Three branches of statistical government" {.scrollable}
 
-$\beta_1$ is an unknown quantity we are trying to learn about using noisy, imperfect data. Learning comes in three flavors:
+$\beta_1$ is an unknown quantity we are trying to learn about using noisy, imperfect data.
+Learning comes in three flavors:
 
 ::: incremental
 -   **POINT ESTIMATION**: get a single-number best guess for $\beta_1$;
 
 -   **INTERVAL ESTIMATION**: get a range of likely values for $\beta_1$ that characterizes (sampling) uncertainty;
 
--   **HYPOTHESIS TESTING**: use the data to distinguish competing claims about $\beta_1$.
+-   **HYPOTHESIS TESTING**: use the data to evaluate competing claims about $\beta_1$.
 :::
 
 ## Point estimation (roman letters, hats!) {.scrollable}
@@ -67,21 +64,22 @@ $\beta_1$ is an unknown quantity we are trying to learn about using noisy, imper
 We estimate $\beta_0$ and $\beta_1$ with the coefficients of the best fit line:
 
 $$
-\hat{y}=b_0+b_1x.
+\widehat{y}=b_0+b_1x.
 $$
 
-"Best" means "least squares." We pick the estimates so that the sum of squared residuals is as small as possible. [Play around!](https://seeing-theory.brown.edu/regression-analysis/index.html)
+"Best" means "least squares." We pick the estimates so that the sum of squared residuals is as small as possible.
+[Play around!](https://seeing-theory.brown.edu/regression-analysis/index.html)
 
-![](images/24/least_squares.png){width="50%" fig-align="center"} 
+![](img/21/least_squares.png){width="50%" fig-align="center"}
 
 ## Point estimation {.scrollable}
 
 ```{r}
+#| message: false
 ggplot(mtcars, aes(x = wt, y = mpg)) + 
   geom_point() +
   geom_smooth(method = "lm")
 ```
-
 
 ## Point estimation {.scrollable}
 
@@ -91,25 +89,23 @@ linear_reg() |>
   tidy()
 ```
 
-
 ## Sampling uncertainty {.scrollable}
 
 ::: incremental
-- How do our point estimates vary across alternative, hypothetical datasets?
+-   How do our point estimates vary across alternative, hypothetical datasets?
 
-    - If they vary alot, uncertainty is high, and results are unreliable;
-    - if they vary only a little, uncertainty is low, and results are more reliable.
-    
-- We can use the *bootstrap* to construct alternative datasets and assess the sensitivity of our estimates to changes in the data.
+    -   If they vary alot, uncertainty is high, and results are unreliable;
+    -   if they vary only a little, uncertainty is low, and results are more reliable.
+
+-   We can use the *bootstrap* to construct alternative datasets and assess the sensitivity of our estimates to changes in the data.
 :::
 
 ## Bootstrap distribution {.medium .scrollable}
 
-This histogram displays variation in the slope estimate across alternative datasets. 
+This histogram displays variation in the slope estimate across alternative datasets.
 
-- Large spread >> high uncertainty;
-- Small spread >> lower uncertainty.
-
+-   Large spread $\rightarrow$ high uncertainty;
+-   Small spread $\rightarrow$ lower uncertainty.
 
 ```{r}
 #| echo: false
@@ -131,7 +127,7 @@ df_boot_samples_100_fit <- df_boot_samples_100 |>
 
 df_boot_samples_100_hist <- ggplot(df_boot_samples_100_fit |> filter(term == "area"), aes(x = estimate)) +
   geom_histogram(binwidth = 10, color = "white") +
-  geom_vline(xintercept = slope, color = "#8F2D56", linewidth = 1) +
+  geom_vline(xintercept = slope, color = "deeppink", linewidth = 1) +
   labs(x = "Slope", y = "Count",
        title = "Slopes of 100 bootstrap samples") +
   scale_x_continuous(labels = label_dollar())
@@ -158,46 +154,47 @@ upper <- df_boot_samples_100_fit |>
   pull()
 
 df_boot_samples_100_hist +
-  geom_vline(xintercept = lower, color = "steelblue", linewidth = 1, linetype = "dashed") +
-  geom_vline(xintercept = upper, color = "steelblue", linewidth = 1, linetype = "dashed")
+  geom_vline(xintercept = lower, color = "cornflowerblue", linewidth = 1, linetype = "dashed") +
+  geom_vline(xintercept = upper, color = "cornflowerblue", linewidth = 1, linetype = "dashed")
 ```
 
-We use quantiles (think IQR) but there are other ways.
+We use quantiles (think IQR), but there are other ways.
 
 ## Hypothesis testing {.scrollable}
 
 ::: incremental
-- Two competing claims about $\beta_1$:
-$$
-\begin{aligned}
-H_0&: \beta_1=0\quad(\text{nothing going on})\\
-H_A&: \beta_1\neq0\quad(\text{something going on})
-\end{aligned}
-$$
+-   Two competing claims about $\beta_1$: $$
+    \begin{aligned}
+    H_0&: \beta_1=0\quad(\text{nothing going on})\\
+    H_A&: \beta_1\neq0\quad(\text{something going on})
+    \end{aligned}
+    $$
 
-- In words: "are x and y correlated or not?"
+-   In words: "is there sufficient evidence that x and y are correlated, or not?"
 
-- Do the data strongly favor one or the other? 
+-   Do the data strongly favor one or the other?
 
-- How can we quantify this?
+-   How can we quantify this?
 :::
 
 ## Hypothesis testing {.scrollable}
 
-::: incremental 
-- Think hypothetically: if the null hypothesis were in fact true, would my results be out of the ordinary?
+::: incremental
+-   Think hypothetically: if the null hypothesis were in fact true, would my results be out of the ordinary?
 
-    - if no, then the null could be true;
-    - if yes, then the null might be bogus;
+    -   if no, then the null could be true;
+    -   if yes, then the null might be bogus;
 
-- My results represent the reality of actual data. If they conflict with the null, then you throw out the null and stick with reality;
+-   My results represent the reality of actual data.
+    If they conflict with the null, then you throw out the null and stick with reality;
 
-- How do we *quantify* "would my results be out of the ordinary"?
+-   How do we *quantify* "would my results be out of the ordinary"?
 :::
 
 ## Null distribution {.medium .scrollable}
 
-If the null happened to be true, how would we expect our results to vary across datasets? We can use simulation to answer this:
+If the null happened to be true, how would we expect our results to vary across datasets?
+We can use simulation to answer this:
 
 ```{r}
 #| echo: false
@@ -223,11 +220,13 @@ fake_draws |>
   xlim(-5, 5)
 ```
 
-This is how the world should look *if the null is true*. 
+This is how the world should look *if the null is true*.
 
 ## Null distribution versus reality {.medium .scrollable}
 
-Locate the *actual* results of your *actual* data analysis under the null distribution. Are they in the middle? Are they in the tails?
+Locate the *actual* results of your *actual* data analysis under the null distribution.
+Are they in the middle?
+Are they in the tails?
 
 ```{r}
 #| echo: false
@@ -252,7 +251,9 @@ Are these results in harmony or conflict with the null?
 
 ## Null distribution versus reality {.medium .scrollable}
 
-Locate the *actual* results of your *actual* data analysis under the null distribution. Are they in the middle? Are they in the tails?
+Locate the *actual* results of your *actual* data analysis under the null distribution.
+Are they in the middle?
+Are they in the tails?
 
 ```{r}
 #| echo: false
@@ -273,12 +274,13 @@ fake_draws |>
   xlim(-5, 5)
 ```
 
-Are these results in harmony or conflict with the null?
-
+Are these results in harmony or in conflict with the null?
 
 ## Null distribution versus reality {.medium .scrollable}
 
-Locate the *actual* results of your *actual* data analysis under the null distribution. Are they in the middle? Are they in the tails?
+Locate the *actual* results of your *actual* data analysis under the null distribution.
+Are they in the middle?
+Are they in the tails?
 
 ```{r}
 #| echo: false
@@ -299,26 +301,39 @@ fake_draws |>
   xlim(-5, 5)
 ```
 
-Are these results in harmony or conflict with the null?
+Are these results in harmony or in conflict with the null?
 
-## The main idea
+## The main idea {.scrollable}
 
-- The point estimate is *reality*. That's what the data say;
-- The null distribution is *hypothetical*;
-- Are the reality and the hypothetical in harmony or conflict?
-  - If harmony, the null remains plausible and cannot be dismissed;
-  - If conflict, go with reality (reject the null).
-- Instead of eyeballing a picture, how can we *quantity* the degree of "harmoniousness" between reality and the hypothetical?
-  
-  
+-   The point estimate is *reality*. That's what the data say;
+-   The null distribution is *hypothetical*;
+-   Are the reality and the hypothetical in harmony or conflict?
+    -   If harmony, the null remains plausible and cannot be dismissed;
+    -   If conflict, go with reality (reject the null).
+-   Instead of eyeballing a picture, how can we *quantify* the degree of "harmoniousness" between reality and the hypothetical?
+
+## Question {.small}
+
+::: question
+
+What is a *p*-value?
+
+:::
+
+a.  The probability that the null hypothesis is true given your result.
+b.  The probability of a result as or more extreme than the one you got.
+c.  The probability of a result as or more extreme than the one you got assuming the null is true.
+d.  The probability that the alternative hypothesis is true given your result.
+e.  The probability that the null hypothesis and alternative hypothesis are both true given your result.
+
 ## *p*-value {.scrollable}
 
 ::: incremental
-The $p$-value is the probability of being *even farther out* in the tails of the null distribution than your results already were. 
+The $p$-value is the probability of being *even farther out* in the tails of the null distribution than your results already were.
 
-- if this number is very low, then your results would be out of the ordinary if the null were true, so maybe the null was never true to begin with;
+-   if this number is very low, then your results would be out of the ordinary if the null were true, so maybe the null was never true to begin with;
 
-- if this number is high, then your results may be perfectly compatible with the null.
+-   if this number is high, then your results may be perfectly compatible with the null.
 :::
 
 ## *p*-value {.scrollable}
@@ -348,7 +363,8 @@ visualize(null_dist) +
 
 . . .
 
-Big ol' *p*-value. Null remains plausible
+Big ol' *p*-value.
+Null remains plausible
 
 ## *p*-value {.scrollable}
 
@@ -377,7 +393,8 @@ visualize(null_dist) +
 
 . . .
 
-*p*-value is basically zero. Null looks bogus.
+*p*-value is basically zero.
+Null looks bogus.
 
 ## *p*-value {.scrollable}
 
@@ -406,18 +423,20 @@ visualize(null_dist) +
 
 . . .
 
-*p*-value is...kinda small? Null looks...?
+*p*-value is...kinda small?
+Null looks...?
 
 ## Discernibility level {.scrollable}
 
-::: incremental 
-- How do we decide if the *p*-value is big enough or small enough?
+::: incremental
+-   How do we decide if the *p*-value is big enough or small enough?
 
-- Pick a threshold $\alpha\in[0,\,1]$ called the *discernibility level*:
-  -   If $p\text{-value} < \alpha$, reject null and accept alternative;
-  -   If $p\text{-value} \geq \alpha$, fail to reject null;
-  
-- Standard choices: $\alpha=0.01, 0.05, 0.1, 0.15$.
+-   Pick a threshold $\alpha\in[0,\,1]$ called the *discernibility level*:
+
+    -   If $p\text{-value} < \alpha$, reject null and accept alternative;
+    -   If $p\text{-value} \geq \alpha$, fail to reject null;
+
+-   Standard choices: $\alpha=0.01, 0.05, 0.1, 0.15$.
 :::
 
 # Multiple Choice!
@@ -444,7 +463,7 @@ ggplot(df, aes(x = x, y = y)) +
   theme(axis.text = element_text(size = 20))
 ```
 
-::: columns
+::::: columns
 ::: column
 a.  -1 / 2
 b.  0
@@ -452,11 +471,11 @@ c.  1 / 4
 :::
 
 ::: column
-d.  1 / 2 
+d.  1 / 2
 e.  1
 f.  2
 :::
-:::
+:::::
 
 ## What is $b_0$? {.scrollable}
 
@@ -480,7 +499,7 @@ ggplot(df, aes(x = x, y = y)) +
   theme(axis.text = element_text(size = 20))
 ```
 
-::: columns
+::::: columns
 ::: column
 a.  1
 b.  1.75
@@ -488,9 +507,153 @@ b.  1.75
 
 ::: column
 c.  2
-d.  3 
+d.  3
 :::
+:::::
+
+## Back to the Hotels! {.smaller .scrollable}
+
+::: question
+
+The following model predicts `adr` from `adults` and `hotel` type. Which of the following is the best interpretation of the slope coefficient for `adults`?
+
+::: 
+
+```{r}
+#| echo: false
+#| message: false
+
+hotels <- read_csv("data/hotels.csv")
+
+hotels <- hotels |>
+  filter(adr <= 1000, adults < 5)
+
+set.seed(847)
+hotels_split <- initial_split(hotels)
+hotels_train <- training(hotels_split)
+hotels_test <- testing(hotels_split)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+
+adr_fit_1 <- linear_reg() |>
+  fit(adr ~ adults + hotel, data = hotels_train)
+
+adr_aug_1 <- augment(adr_fit_1, hotels_train)
+
+tidy(adr_fit_1)
+```
+
+"For each additional adult in the booking, the average daily rate is predicted to be higher by $29.00..."
+
+. . .
+
+a.  on average, holding hotel type constant.
+
+b.  for Resort Hotels compared to City Hotels, on average.
+    
+c.  for City Hotels compared to Resort Hotels, on average.
+    
+d.  on average, not holding any other variables constant.
+
+## Back to the Hotels! {.smaller .scrollable}
+
+::: question
+
+Which of the following is the correct interpretation of the slope coefficient for `hotel`?
+
 :::
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+tidy(adr_fit_1)
+```
+
+a.  For each additional Resort Hotel booking, the predicted average daily rate is $10.80 lower, holding number of adults constant.
+    
+b.  For each additional adult in the booking, the average daily rate is predicted to be lower by $10.80 for resort hotels compared to City Hotels, on average.
+    
+c.  Resort Hotels bookings are predicted to have an average daily rate that is $10.80 lower than City Hotels, on average, holding number of adults constant.
+    
+d.  Resort Hotels bookings are predicted to have an average daily rate that is $10.80 higher than City Hotels, on average, holding number of adults constant.
+
+## Back to the Hotels! {.smaller .scrollable}
+
+::: question
+
+Which of the following is the correct interpretation of the intercept?
+
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+tidy(adr_fit_1)
+```
+
+a.  The predicted average daily rate for a bookings with 0 adults at a Resort Hotel is $51.70, on average.
+    
+b.  The predicted average daily rate for a bookings with 0 adults at a City Hotel is $51.70, on average.
+    
+c.  For each additional adult and Resort Hotel in the booking, the average daily rate is predicted to be $51.70 higher, on average.
+    
+d.  For each additional adult and City Hotel in the booking, the average daily rate is predicted to be $51.70 higher, on average.
+
+## Back to the Hotels! {.smaller .scrollable}
+
+::: question
+
+Which of the following (Plot A or Plot B) is the correct visual representation of this model?
+
+:::
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+tidy(adr_fit_1)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| layout-ncol: 2
+#| fig-width: 5
+#| fig-asp: 0.618
+ggplot(hotels_train, aes(x = adults, y = adr, color = hotel)) +
+  geom_point() +
+  geom_smooth(method = "lm", linewidth = 1, se = FALSE) +
+  ggthemes::scale_color_colorblind() +
+  labs(
+    title = "Plot A",
+    x = "Number of adults",
+    y = "Average daily rate",
+    color = "Hotel"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "inside", legend.position.inside = c(0.15, 0.80))
+
+ggplot(adr_aug_1, aes(x = adults, color = hotel)) +
+  geom_point(aes(y = adr)) +
+  geom_line(aes(y = .pred), linewidth = 1) +
+  ggthemes::scale_color_colorblind() +
+  labs(
+    title = "Plot B",
+    x = "Number of adults",
+    y = "Average daily rate",
+    color = "Hotel"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "inside", legend.position.inside = c(0.15, 0.80))
+```
+
 
 ## Which of these could be a bootstrap sample? {.scrollable}
 
@@ -548,17 +711,17 @@ axis(1, at = quantile(x, probs = c(0.01, 0.05, 0.09, 0.5, 0.91, 0.95, 0.99)),
      cex.axis = 1.5)
 ```
 
-::: columns
+::::: columns
 ::: column
 a.  $(q_{0.01},\,q_{0.91})$
-b.  $(q_{0.01},\,q_{0.99})$ 
+b.  $(q_{0.01},\,q_{0.99})$
 :::
 
 ::: column
 c.  $(q_{0.09},\,q_{0.95})$
 d.  $(q_{0.05},\,q_{0.99})$
 :::
-:::
+:::::
 
 ## Match the picture to the p-value. {.scrollable}
 
@@ -584,18 +747,17 @@ normTail(0, 1, xlim = c(-4, 4), main = "Plot 4", U = v[4], L = -v[4])
 abline(v = v[4], lty = 2, col = "red")
 ```
 
-::: columns
+::::: columns
 ::: column
-a.  0 
-b.  0.045 
+a.  0
+b.  0.045
 :::
 
 ::: column
-c.  0.32 
-d.  0.62 
+c.  0.32
+d.  0.62
 :::
-:::
-
+:::::
 
 ## Which could be the null distribution of the test? {.medium .scrollable}
 
@@ -635,7 +797,7 @@ ggplot(df, aes(x = draws)) +
   )
 ```
 
-# Application exercise
+# AE-19
 
 ## `{r} todays_ae`
 
@@ -648,6 +810,3 @@ ggplot(df, aes(x = draws)) +
 
 -   Work through the application exercise in class, and render, commit, and push your edits.
 :::
-
-
-
