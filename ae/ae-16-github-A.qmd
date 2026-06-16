@@ -1,5 +1,6 @@
 ---
 title: "AE 16: Forest classification 🌳🌲"
+subtitle: "Suggested answers"
 format:
   html:
     self-contained: true
@@ -46,7 +47,7 @@ Are the percentages roughly consistent?
 What determines this in the `initial_split()`?
 How would the code need to be updated to allocate 80% of the data to training and the remaining 20% to testing?
 
-~75% of the data is allocated to training, by default.
+\~75% of the data is allocated to training, by default.
 
 ```{r}
 #| label: train-test-percentages
@@ -85,7 +86,8 @@ ggplot(forest_train, aes(x = temp_annual_mean, fill = land_type)) +
   facet_wrap(~ forested, ncol = 1)
 ```
 
-We observe that that the majority of plots classified as not forested are of land type "Barren" or "Non-tree vegetation", not "Tree". The distribution of `temp_annual_mean` is centered at a higher value for non-forested plots than for forested, and it's more concentrated around it's center as well. 
+We observe that that the majority of plots classified as not forested are of land type "Barren" or "Non-tree vegetation", not "Tree".
+The distribution of `temp_annual_mean` is centered at a higher value for non-forested plots than for forested, and it's more concentrated around it's center as well.
 
 # Model 1: Custom choice of predictors
 
@@ -104,11 +106,12 @@ tidy(forested_custom_fit)
 
 ## Interpret
 
-Interpret the intercept (with respect to $\widehat{p}$) in the context of these data. Then, interpret one slope coefficient of your choice (with respect to the odds), again in the context of these data.
+Interpret the intercept (with respect to $\widehat{p}$) in the context of these data.
+Then, interpret one slope coefficient of your choice (with respect to the odds), again in the context of these data.
 
-Intercept: 
+Intercept:
 
-For a plot of land with 0 annual precipitation, 0 elevation, and an average annual temperature 0, we predict the probability that the plot is not forested is 0.00181323. 
+For a plot of land with 0 annual precipitation, 0 elevation, and an average annual temperature 0, we predict the probability that the plot is not forested is 0.00181323.
 
 All else equal, we expect that for a one unit increase in annual precipitation, the predicted odds that a plot of land is not forested will decrease by a multiplicative factor of 0.9982989, on average.
 
@@ -274,5 +277,3 @@ forest_custom_auc <- roc_auc(forest_aug,
                                event_level = "first")
 forest_custom_auc
 ```
-
-

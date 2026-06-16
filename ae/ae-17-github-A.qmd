@@ -1,5 +1,9 @@
 ---
 title: "AE 17: Houses in Duke Forest"
+subtitle: "Suggested answers"
+format:
+  html:
+    self-contained: true
 ---
 
 In this application exercise, we will use bootstrapping to construct confidence intervals.
@@ -73,7 +77,8 @@ boot_fits
 
 -   Why do we set a seed before taking the bootstrap samples?
 
-Each bootstrap sample is a random sample from the original dataset. We are trying to "freeze" this randomness in time for reproducibility. 
+Each bootstrap sample is a random sample from the original dataset.
+We are trying to "freeze" this randomness in time for reproducibility.
 
 -   Make a histogram of the bootstrap samples to visualize the bootstrap distribution.
 
@@ -134,7 +139,6 @@ get_confidence_interval(
 
 90% confidence interval
 
--   If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval?
-    What drawbacks are associated with using a wider interval?
-    
-A wider interval; the drawback is it's less precise 
+-   If we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?
+
+A wider interval; the drawback is it's less precise

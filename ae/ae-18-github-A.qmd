@@ -1,8 +1,12 @@
 ---
 title: "AE 18: FIFA Inference ⚽"
+subtitle: "Suggested answers"
+format:
+  html:
+    self-contained: true
 ---
 
-Today we’ll explore the relationship between a FIFA member country's share of the world population and it's share of the global World Cup TV audience. 
+Today we’ll explore the relationship between a FIFA member country's share of the world population and it's share of the global World Cup TV audience.
 
 # Packages
 
@@ -32,24 +36,24 @@ glimpse(fifa)
 
 ## Data Dictionary
 
-| Variable             | Description                                                                   |
-| -------------------- | ----------------------------------------------------------------------------- |
-| `country`            | FIFA member country                                                           |
-| `confederation`      | Confederation to which the country belongs                                    |
-| `population_share`   | Country’s share of the global population, recorded as a percentage            |
-| `tv_audience_share`  | Country’s share of the global World Cup TV audience, recorded as a percentage |
-| `gdp_weighted_share` | Country’s GDP-weighted audience share, recorded as a percentage               |
+| Variable | Description |
+|-----------------|-------------------------------------------------------|
+| `country` | FIFA member country |
+| `confederation` | Confederation to which the country belongs |
+| `population_share` | Country’s share of the global population, recorded as a percentage |
+| `tv_audience_share` | Country’s share of the global World Cup TV audience, recorded as a percentage |
+| `gdp_weighted_share` | Country’s GDP-weighted audience share, recorded as a percentage |
 
 # ABV (Always Be Visualizing)
 
-a. **Your turn**: First, let's get rid of two outliers. Create a new data frame called `fifa_clean` that contains only those member countries whose share of the global population is below 10%. 
+a.  **Your turn**: First, let's get rid of two outliers. Create a new data frame called `fifa_clean` that contains only those member countries whose share of the global population is below 10%.
 
 ```{r}
 fifa_clean <- fifa |>
   filter(population_share < 10)
 ```
 
-b. **Your turn**: Create a visualization to explore the relationship between our variables of interest. Let's consider `population_share` as our explanatory variable and `tv_audience_share` as our outcome. Include a linear trendline.
+b.  **Your turn**: Create a visualization to explore the relationship between our variables of interest. Let's consider `population_share` as our explanatory variable and `tv_audience_share` as our outcome. Include a linear trendline.
 
 ```{r}
 #| message: false
@@ -68,7 +72,7 @@ baby_fifa <- fifa_clean |>
 glimpse(baby_fifa)
 ```
 
-c. Plot the baby thing, again adding a linear trendline:
+c.  Plot the baby thing, again adding a linear trendline:
 
 ```{r}
 ggplot(baby_fifa, aes(x = population_share, y = tv_audience_share)) +
@@ -97,14 +101,14 @@ I know, I hate it too, but it's the way it is.
 b.  **Your turn**: Typeset the equation for the model fit:
 
 $$
-\widehat{tv~audience~share} = -0.09415766	+ 2.45268107 \times population~share
+\widehat{tv~audience~share} = -0.09415766   + 2.45268107 \times population~share
 $$
 
 c.  **Your turn**: Interpret the slope and the intercept estimates:
 
-We predict that a FIFA member country with 0% share of the global population has a -9.4% share of the global World Cup TV audience, on average. 
+We predict that a FIFA member country with 0% share of the global population has a -9.4% share of the global World Cup TV audience, on average.
 
-We would expect that for every percentage point increase in a FIFA member country's share of the global population, the country's share of the global World Cup TV audience increases by 2.45 percentage points, on average. 
+We would expect that for every percentage point increase in a FIFA member country's share of the global population, the country's share of the global World Cup TV audience increases by 2.45 percentage points, on average.
 
 # Hypothesis Testing
 
@@ -112,11 +116,9 @@ Let's consider the hypotheses:
 
 $$
 H_0:\beta_1=0
-$$ 
-$$
+$$ $$
 H_A: \beta_1\neq 0.
-$$
-The null hypothesis corresponds to the claim that a FIFA member country's share of the global population and its share of the global World Cup TV audience are unrelated / uncorrelated.
+$$ The null hypothesis corresponds to the claim that a FIFA member country's share of the global population and its share of the global World Cup TV audience are unrelated / uncorrelated.
 
 a.  Simulate and plot the null distribution for the slope:
 
@@ -153,7 +155,8 @@ null_dist |>
   get_p_value(obs_stat = observed_fit, direction = "two-sided")
 ```
 
-Reject the null hypothesis. There is sufficient evidence for some relationship between a FIFA member country's share of the global population and its share of the global World Cup TV audience.
+Reject the null hypothesis.
+There is sufficient evidence for some relationship between a FIFA member country's share of the global population and its share of the global World Cup TV audience.
 
 # Interval Estimation
 

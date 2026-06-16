@@ -1,5 +1,6 @@
 ---
 title: "AE 15: Building a spam filter"
+subtitle: "Suggested answers"
 format:
   html:
     self-contained: true
@@ -81,7 +82,7 @@ ggplot(email, aes(x = exclaim_mess, y = as.numeric(spam))) +
 Is the linear model a good fit for the data?
 Why or why not?
 
-No; our outcome can only be either 0 or 1, but a linear model predicts nonsensical, impossible values for this outcome. 
+No; our outcome can only be either 0 or 1, but a linear model predicts nonsensical, impossible values for this outcome.
 
 ## Exercise 3
 
@@ -100,7 +101,7 @@ $$\log\Big(\frac{\hat{p}}{1-\hat{p}}\Big) = -2.272 + 0.000272 \times exclaim\_me
 
 c.  How does the code above differ from previous code we've used to fit regression models?
 
-We used `logistic_reg()` instead of `linear_reg()`. 
+We used `logistic_reg()` instead of `linear_reg()`.
 
 ## Exercise 4
 
