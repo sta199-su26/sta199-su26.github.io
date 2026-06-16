@@ -71,6 +71,8 @@ website:
             text: "Milestone 3"
           - href: project/4-peer-review.qmd
             text: "Milestone 4"
+          - href: project/4-writeup-presentation.qmd
+            text: "Milestone 5"
           
       - lab.qmd
       - ae.qmd
