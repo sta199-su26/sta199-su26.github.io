@@ -24,102 +24,8 @@ library(tidymodels)
 library(openintro)
 library(distr)
 library(glue)
-todays_ae <- "ae-24-card-krueger"
+todays_ae <- "ae-19-card-krueger"
 ```
-
-## While you wait: Participate 📱💻 {.small}
-
-:::::: columns
-:::: {.column width="70%"}
-::: wooclap
-
-What is a p-value?
-
-::: wooclap-choices
-- The probability that the null hypothesis is true given your result.
-- The probability of a result as or more extreme than the one you got.
-- The probability of a result as or more extreme than the one you got assuming the null is true.
-- The probability that the alternative hypothesis is true given your result.
-- The probability that the null hypothesis and alternative hypothesis are both true given your result.
-:::
-
-:::
-::::
-
-::: {.column width="30%"}
-{{< include _wooclap-column.qmd >}}
-:::
-::::::
-
-## Chamber music tonight and tomorrow
-
-:::::: columns
-:::: {.column width="40%"}
-![](images/24/duke-chamber.png)
-::::
-
-::: {.column width="60%"}
-
-- [April 20 @ 6PM (Nelson Music Room on East)](https://music.duke.edu/events/chamber-music-duke-concert-1);
-- [April 21 @ 7:30 PM (Baldwin)](https://music.duke.edu/events/chamber-music-duke-concert-2);
-- Several past, present, and future(!) students;
-- Many bangers and bops, including JZ favorites by Ravel and Fauré.
-:::
-::::::
-
-## Spread the word! Summer WANANA!
-
-:::::: columns
-:::: {.column width="50%"}
-
-- Summer Session 1
-- May 13 - June 25
-- Katie Solarz!
-
-![](images/24/lab-7.jpg){width="75%"}
-::::
-
-::: {.column width="50%"}
-
-- Summer Session 2
-- June 29 - August 10
-- Josh Lim!
-
-![](images/24/josh.jpeg)
-
-:::
-::::::
-
-## Sorry gang
-
-:::::: columns
-:::: {.column .fragment width="50%"}
-
-What the summer kids will get:
-
-![](images/24/young-lou.png)
-::::
-
-::: {.column .fragment width="50%"}
-
-What you got:
-
-![](images/24/old-lou.png)
-
-:::
-::::::
-
-## The final exam
-
-- Monday May 1 @ 2pm in Griffith Theater
-- Make Testing Center appointments now!
-- Similar style and format to midterms
-- Longer than midterm, but shouldn't take full 3 hours
-- Cumulative, with *a bit* more weight on the new inference stuff
-- As before, you get both sides of one 8.5" x 11" sheet of notes, prepared however you want.
-
-
-
 
 # Recap: statistical inference
 
@@ -316,7 +222,6 @@ fake_draws |>
   ) + 
   xlim(-5, 5)
 ```
-
 
 This is how the world should look *if the null is true*. 
 
@@ -515,25 +420,7 @@ visualize(null_dist) +
 - Standard choices: $\alpha=0.01, 0.05, 0.1, 0.15$.
 :::
 
-# Wooclap-a-palooza
-
-## Get in there
-
-:::::: columns
-:::: {.column width="60%"}
-{{< qrcode https://app.wooclap.com/TNRPMB?from=instruction-slide width=500 height=500 >}}
-::::
-
-:::: {.column width="40%"}
-Scan the QR code or go [HERE](https://app.wooclap.com/TNRPMB?from=instruction-slide). Log in with your Duke NetID.
-::::
-
-::::::
-
-
-
-
-
+# Multiple Choice!
 
 ## What is $b_1$? {.scrollable}
 
