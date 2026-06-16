@@ -1,0 +1,278 @@
+---
+title: "AE 16: Forest classification 🌳🌲"
+format:
+  html:
+    self-contained: true
+---
+
+In this application exercise, we will
+
+-   Split our data into testing and training
+-   Fit logistic regression regression models to testing data to classify outcomes
+-   Evaluate performance of models on testing data
+
+We will use **tidyverse** and **tidymodels** for data exploration and modeling, respectively, and the **forested** package for the data.
+
+```{r}
+#| label: load-packages
+#| message: false
+library(tidyverse)
+library(tidymodels)
+library(forested)
+```
+
+Remember from the lecture that the `forested` dataset contains information on whether a plot is forested (`Yes`) or not (`No`) as well as numerical and categorical features of that plot.
+
+```{r}
+#| label: glimpse-forested
+glimpse(forested)
+```
+
+# Spending your data
+
+Split your data into testing and training in a reproducible manner and display the split object.
+
+```{r}
+#| label: train-test-split
+set.seed(253)
+
+forest_split <- initial_split(forested)
+forest_split
+```
+
+What percent of the original `forested` data is allocated to training and what percent to testing?
+Compare your response to your neighbor's.
+Are the percentages roughly consistent?
+What determines this in the `initial_split()`?
+How would the code need to be updated to allocate 80% of the data to training and the remaining 20% to testing?
+
+~75% of the data is allocated to training, by default.
+
+```{r}
+#| label: train-test-percentages
+5330/7107
+```
+
+To allocate 80% to training, we need to add the argument `prop = .8` to our `initial_split()` function.
+
+```{r}
+#| label: train-test-80-20
+forested_split_2 <- initial_split(forested, prop = .8)
+forested_split_2
+```
+
+Let's stick with the default split and save our testing and training data.
+
+```{r}
+#| label: train-test-save
+forest_train <- training(forest_split)
+forest_test <- testing(forest_split)
+```
+
+# Exploratory data analysis
+
+Create a visualization that explores the relationship between the outcome, one numerical predictor, and one categorical predictor.
+Then, describe, in a few sentences, what the visualization shows about the relationship between these variables.
+
+**Note:** Pay attention to which dataset you use for your exploration.
+
+```{r}
+#| label: eda-plot
+#| warning: false
+#| message: false
+ggplot(forest_train, aes(x = temp_annual_mean, fill = land_type)) +
+  geom_histogram(alpha = 0.7) +
+  facet_wrap(~ forested, ncol = 1)
+```
+
+We observe that that the majority of plots classified as not forested are of land type "Barren" or "Non-tree vegetation", not "Tree". The distribution of `temp_annual_mean` is centered at a higher value for non-forested plots than for forested, and it's more concentrated around it's center as well. 
+
+# Model 1: Custom choice of predictors
+
+## Fit
+
+Fit a model for classifying plots as forested or not based on a subset of predictors of your choice.
+Name the model `forested_custom_fit` and display a tidy output of the model.
+
+```{r}
+#| label: forested-custom-fit
+forested_custom_fit <- logistic_reg() |>
+  fit(forested ~ precip_annual + elevation + temp_annual_mean, data = forest_train)
+
+tidy(forested_custom_fit)
+```
+
+## Interpret
+
+Interpret the intercept (with respect to $\widehat{p}$) in the context of these data. Then, interpret one slope coefficient of your choice (with respect to the odds), again in the context of these data.
+
+Intercept: 
+
+For a plot of land with 0 annual precipitation, 0 elevation, and an average annual temperature 0, we predict the probability that the plot is not forested is 0.00181323. 
+
+All else equal, we expect that for a one unit increase in annual precipitation, the predicted odds that a plot of land is not forested will decrease by a multiplicative factor of 0.9982989, on average.
+
+```{r}
+#| label: forested-interpret
+exp(-6.310830752) / (1 + exp(-6.310830752	))
+
+levels(forest_train$forested)
+
+exp(-0.001702569)
+```
+
+## Predict
+
+Predict for the testing data using this model.
+
+```{r}
+#| label: forested-custom-aug
+forest_aug <- augment(forested_custom_fit, new_data = forest_test)
+
+forest_aug
+```
+
+## Evaluate
+
+Calculate the error rates (and their complements) for the testing data using this model.
+
+```{r}
+#| label: forested-custom-eval
+forest_aug |>
+  count(forested, .pred_class) |>
+  group_by(forested) |>
+  mutate(prop = n / sum(n),
+         decision = case_when(
+           forested == "Yes" & .pred_class == "Yes" ~ "True Positive",
+           forested == "Yes" & .pred_class == "No" ~ "False Negative",
+           forested == "No" & .pred_class == "Yes" ~ "False Positive",
+           forested == "No" & .pred_class == "No" ~ "True Negative"
+         ))
+```
+
+Another commonly used display of this information is a confusion matrix.
+Create this using the `conf_mat()` function.
+You will need to review the documentation for the function to determine how to use it.
+
+```{r}
+#| label: conf-mat-custom
+conf_mat(forest_aug,
+         truth = forested,
+         estimate = .pred_class)
+```
+
+## Sensitivity, specificity, ROC curve
+
+Calculate sensitivity and specificity and draw the ROC curve.
+
+```{r}
+#| label: forested-custom-roc
+forest_custom_roc <- roc_curve(forest_aug,
+                               truth = forested,
+                               .pred_Yes,
+                               event_level = "first")
+
+forest_custom_roc
+
+ggplot(forest_custom_roc, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_path() +
+  geom_abline(lty = "dashed")
+```
+
+# Model 2: All predictors
+
+## Fit
+
+Fit a model for classifying plots as forested or not based on all predictors available.
+Name the model `forested_full_fit` and display a tidy output of the model.
+
+```{r}
+#| label: forested-full-fit
+forested_full_fit <- logistic_reg() |>
+  fit(forested ~ ., data = forest_train)
+
+tidy(forested_full_fit)
+```
+
+## Predict
+
+Predict for the testing data using this model.
+
+```{r}
+#| label: forested-full-aug
+forest_full_aug <- augment(forested_full_fit, new_data = forest_test)
+forest_full_aug
+```
+
+## Evaluate
+
+Calculate the error rates (and their complements) for the testing data using this model.
+
+```{r}
+#| label: forested-full-eval
+forest_full_aug |>
+  count(forested, .pred_class) |>
+  group_by(forested) |>
+  mutate(prop = n / sum(n),
+         decision = case_when(
+           forested == "Yes" & .pred_class == "Yes" ~ "True Positive",
+           forested == "Yes" & .pred_class == "No" ~ "False Negative",
+           forested == "No" & .pred_class == "Yes" ~ "False Positive",
+           forested == "No" & .pred_class == "No" ~ "True Negative"
+         ))
+```
+
+## Sensitivity, specificity, ROC curve
+
+Calculate sensitivity and specificity and draw the ROC curve.
+
+```{r}
+#| label: forested-full-roc
+forest_full_roc <- roc_curve(forest_full_aug,
+                               truth = forested,
+                               .pred_Yes,
+                               event_level = "first")
+
+ggplot(forest_full_roc, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_path() +
+  geom_abline(lty = "dashed")
+```
+
+# Model 1 vs. Model 2
+
+Plot both ROC curves and articulate how you would use them to compare these models.
+
+```{r}
+#| label: compare
+forest_custom_roc <- forest_custom_roc |>
+  mutate(model = "custom")
+forest_custom_roc
+
+forest_full_roc <- forest_full_roc |>
+  mutate(model = "full")
+
+forest_roc <- rbind(forest_custom_roc, forest_full_roc)
+forest_roc
+
+ggplot(forest_roc, aes(x = 1 - specificity, y = sensitivity, color = model)) +
+  geom_path() +
+  geom_abline(lty = "dashed")
+```
+
+We would choose to favor the model with the larger AUC; in this case, this is the full model.
+
+```{r}
+forest_full_auc <- roc_auc(forest_full_aug,
+                               truth = forested,
+                               .pred_Yes,
+                               event_level = "first")
+forest_full_auc
+
+forest_custom_auc <- roc_auc(forest_aug,
+                               truth = forested,
+                               .pred_Yes,
+                               event_level = "first")
+forest_custom_auc
+```
+
+

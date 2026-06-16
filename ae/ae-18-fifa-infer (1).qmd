@@ -1,0 +1,203 @@
+---
+title: "AE 18: FIFA Inference ⚽"
+---
+
+Today we’ll explore the relationship between a FIFA member country's share of the world population and it's share of the global World Cup TV audience. 
+
+# Packages
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+```
+
+# Data
+
+In this exercise, we will work with data from FiveThirtyEight’s story *How To Break FIFA*. The dataset contains information on FIFA member countries, including each country’s confederation, share of the global population, share of World Cup TV audience, and GDP-weighted audience share.
+
+The dataset, called `fifa_countries_audience.csv`, can be found in the `data` folder.
+
+First, let's load the data:
+
+```{r}
+#| label: load-data
+#| message: false
+fifa <- read_csv("data/fifa_countries_audience.csv")
+
+glimpse(fifa)
+```
+
+## Data Dictionary
+
+| Variable             | Description                                                                   |
+| -------------------- | ----------------------------------------------------------------------------- |
+| `country`            | FIFA member country                                                           |
+| `confederation`      | Confederation to which the country belongs                                    |
+| `population_share`   | Country’s share of the global population, recorded as a percentage            |
+| `tv_audience_share`  | Country’s share of the global World Cup TV audience, recorded as a percentage |
+| `gdp_weighted_share` | Country’s GDP-weighted audience share, recorded as a percentage               |
+
+# ABV (Always Be Visualizing)
+
+a. **Your turn**: First, let's get rid of two outliers. Create a new data frame called `fifa_clean` that contains only those member countries whose share of the global population is below 10%. 
+
+```{r}
+fifa_clean <- fifa |>
+  filter(population_share < 10)
+```
+
+b. **Your turn**: Create a visualization to explore the relationship between our variables of interest. Let's consider `population_share` as our explanatory variable and `tv_audience_share` as our outcome. Include a linear trendline.
+
+```{r}
+#| message: false
+ggplot(fifa_clean, aes(x = population_share, y = tv_audience_share)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+Now let’s imagine we only had a tiny subset of these data to work with:
+
+```{r}
+#| eval: true
+set.seed(847)
+baby_fifa <- fifa_clean |>
+  slice(sample(1:nrow(fifa_clean), 25))
+glimpse(baby_fifa)
+```
+
+c. Plot the baby thing, again adding a linear trendline:
+
+```{r}
+ggplot(baby_fifa, aes(x = population_share, y = tv_audience_share)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+# Inference with the small dataset
+
+a.  **Your turn**: Obtain the point estimate $b_1$ from the baby data.
+
+```{r}
+#| message: false
+observed_fit <- baby_fifa |>
+  specify(tv_audience_share ~ population_share) |>
+  fit()
+
+observed_fit
+```
+
+::: callout-note
+This gives the exact same numbers that you get if you use `linear_reg() |> fit()`, but we need this new syntax because it plays nice with the tools we have for confidence intervals and hypothesis tests.
+I know, I hate it too, but it's the way it is.
+:::
+
+b.  **Your turn**: Typeset the equation for the model fit:
+
+$$
+\widehat{tv~audience~share} = -0.09415766	+ 2.45268107 \times population~share
+$$
+
+c.  **Your turn**: Interpret the slope and the intercept estimates:
+
+We predict that a FIFA member country with 0% share of the global population has a -9.4% share of the global World Cup TV audience, on average. 
+
+We would expect that for every percentage point increase in a FIFA member country's share of the global population, the country's share of the global World Cup TV audience increases by 2.45 percentage points, on average. 
+
+# Hypothesis Testing
+
+Let's consider the hypotheses:
+
+$$
+H_0:\beta_1=0
+$$ 
+$$
+H_A: \beta_1\neq 0.
+$$
+The null hypothesis corresponds to the claim that a FIFA member country's share of the global population and its share of the global World Cup TV audience are unrelated / uncorrelated.
+
+a.  Simulate and plot the null distribution for the slope:
+
+```{r}
+#| message: false
+set.seed(847)
+
+null_dist <- baby_fifa |>
+  specify(tv_audience_share ~ population_share) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  fit()
+
+null_dist
+
+null_dist |>
+  filter(term == "population_share") |>
+  ggplot(aes(x = estimate)) +
+  geom_histogram()
+```
+
+b.  Where does our actual point estimate fall under the null distribution? Add a vertical line corresponding to our point estimate and *shade* the region corresponding to the $p$-value.
+
+```{r}
+visualize(null_dist) +
+  shade_p_value(obs_stat = observed_fit, direction = "two-sided")
+```
+
+c.  Compute the $p$-value for this test and interpret it:
+
+```{r}
+#| warning: false
+null_dist |>
+  get_p_value(obs_stat = observed_fit, direction = "two-sided")
+```
+
+Reject the null hypothesis. There is sufficient evidence for some relationship between a FIFA member country's share of the global population and its share of the global World Cup TV audience.
+
+# Interval Estimation
+
+a.  **Demo**: Generate `500` bootstrap samples, and store them in a new data frame called `bstrap_samples`.
+
+```{r}
+set.seed(847)
+
+bstrap_samples <- baby_fifa |>
+  specify(tv_audience_share ~ population_share) |>
+  generate(reps = 500, type = "bootstrap")
+```
+
+b.  **Demo**: Fit a linear model to each of these bootstrap samples and store the estimates in a new data framed called `bstrap_fits`.
+
+```{r}
+bstrap_fits <- bstrap_samples |>
+  fit()
+```
+
+c.  **Demo**: Compute 95% confidence intervals for the slope and the intercept using the `get_confidence_interval` command.
+
+```{r}
+ci_95 <- get_confidence_interval(bstrap_fits,
+                        point_estimate = observed_fit,
+                        level = 0.95,
+                        type = "percentile")
+
+ci_95
+```
+
+d.  **Your turn**: Verify that you get the same numbers when you manually calculate the quantiles of the slope estimates using `summarize` and `quantile`. *Pay attention to the grouping*.
+
+```{r}
+bstrap_fits |>
+  filter(term == "population_share") |>
+  ungroup() |>
+  summarize(lower_ci = quantile(estimate, .025),
+            upper_ci = quantile(estimate, .975))
+```
+
+e.  **BONUS**: You can visualize the confidence interval:
+
+```{r}
+visualize(bstrap_fits) +
+  shade_confidence_interval(ci_95)
+```

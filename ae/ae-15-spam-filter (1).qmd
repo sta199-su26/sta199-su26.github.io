@@ -1,0 +1,153 @@
+---
+title: "AE 15: Building a spam filter"
+format:
+  html:
+    self-contained: true
+---
+
+In this application exercise, we will
+
+-   Use logistic regression to fit a model for a binary response variable
+-   Fit a logistic regression model in R
+-   Use a logistic regression model for classification
+
+To illustrate logistic regression, we will build a spam filter from email data.
+
+The data come from incoming emails in David Diez's Gmail account for the first three months of 2012.
+All personally identifiable information has been removed.
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+```
+
+```{r}
+glimpse(email)
+
+levels(email$spam)
+```
+
+The variables we'll use in this analysis are
+
+-   `spam`: 1 if the email is spam, 0 otherwise
+-   `exclaim_mess`: The number of exclamation points in the email message
+
+**Goal:** Use the number of exclamation points in an email to predict whether or not it is spam.
+
+# Exercises
+
+## Exercise 1
+
+Let's start with some exploratory analysis:
+
+a.  Create an density plot to investigate the relationship between `spam` and `exclaim_mess`.
+
+```{r}
+#| warning: false
+email |>
+  filter(exclaim_mess <= 200) |>
+  ggplot(aes(x = exclaim_mess, color = spam)) +
+  geom_density() +
+  xlim(0, 20) + ## constrain x-axis for better viz
+  labs(x = "# Exclamation Points",
+       y = NULL,
+       title = "Density Plot of # Exclamation Points in Email Data",
+       color = "Spam Category")
+```
+
+b.  Additionally, calculate the mean number of exclamation points for both spam and non-spam emails.
+
+```{r}
+email |>
+  group_by(spam) |>
+  summarize(mean_exclaim = mean(exclaim_mess))
+```
+
+## Exercise 2
+
+Visualize a linear model fit for these data:
+
+```{r}
+#| message: false
+ggplot(email, aes(x = exclaim_mess, y = as.numeric(spam))) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+Is the linear model a good fit for the data?
+Why or why not?
+
+No; our outcome can only be either 0 or 1, but a linear model predicts nonsensical, impossible values for this outcome. 
+
+## Exercise 3
+
+a.  Fit the logistic regression model using the number of exclamation points to predict the probability an email is spam:
+
+```{r}
+log_reg_exclaim <- logistic_reg() |>
+  fit(spam ~ exclaim_mess, data = email)
+
+tidy(log_reg_exclaim)
+```
+
+b.  Add your estimates to the fitted equation below
+
+$$\log\Big(\frac{\hat{p}}{1-\hat{p}}\Big) = -2.272 + 0.000272 \times exclaim\_mess$$
+
+c.  How does the code above differ from previous code we've used to fit regression models?
+
+We used `logistic_reg()` instead of `linear_reg()`. 
+
+## Exercise 4
+
+a.  What is the probability the email is spam if it contains 10 exclamation points? Answer the question using the `predict()` function.
+
+The predicted probability that the new email is spam is 0.0937.
+
+```{r}
+exclaim_new <- tibble(exclaim_mess = 10)
+exclaim_new
+
+predict(log_reg_exclaim, new_data = exclaim_new, type = "prob")
+augment(log_reg_exclaim, new_data = exclaim_new)
+```
+
+b.  A probability is nice, but we want an actual decision. Classify the darn email.
+
+```{r}
+predict(log_reg_exclaim, new_data = exclaim_new, type = "class")
+```
+
+## Exercise 5
+
+a.  Fit a model with **all** variables in the dataset as predictors.
+
+```{r}
+#| warning: false
+email_full_fit <- logistic_reg() |>
+  fit(spam ~ ., data = email)
+
+tidy(email_full_fit)
+```
+
+b.  If you used this model to classify the emails in the dataset, how would it do? Use the fitted model to classify each email in the dataset, and then calculate the classification error rates (TP, TN, FP, FN).
+
+```{r}
+full_aug <- augment(email_full_fit, new_data = email)
+full_aug
+
+full_aug |>
+  count(spam, .pred_class) |>
+  group_by(spam) |>
+  mutate(prop = n / sum(n),
+         decision = case_when(
+           spam == 0 & .pred_class == 0 ~ "true negative",
+           spam == 1 & .pred_class == 1 ~ "true positive",
+           spam == 1 & .pred_class == 0 ~ "false negative",
+           spam == 0 & .pred_class == 1 ~ "false positive"
+         ))
+```
