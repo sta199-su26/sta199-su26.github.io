@@ -133,7 +133,7 @@ Here is a *suggested* outline as you think through the slides; you [**do not**]{
 
 ## Presentation
 
-Presentations will be in person in lab on Thursday March 26.
+Presentations will be in person during lecture on Monday June 22. We will kick-off with presentations, so please ensure your slide deck is uploaded into your repo as `presentation.pdf` by 9:30am Monday morning to facilitate a smooth process. 
 **The presentation should be between 5-7 minutes; there will be 2 minutes or so reserved for Q&A following each presentation.**
 
 ## Grading
