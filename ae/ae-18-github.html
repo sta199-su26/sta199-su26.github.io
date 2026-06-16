@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.39">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Peer review – STA 199</title>
+<title>AE 18: FIFA Inference ⚽ – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,6 +17,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -25,8 +59,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../lab.html" rel="next">
-<link href="../project/3-improvement-progress.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -63,13 +95,38 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="../style/sta199.scss">
-<meta property="og:title" content="Peer review – STA 199">
-<meta property="og:description" content="Milestone 4">
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script><link rel="stylesheet" href="../style/sta199.scss">
+<meta property="og:title" content="AE 18: FIFA Inference ⚽ – STA 199">
+<meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Peer review – STA 199">
-<meta name="twitter:description" content="Milestone 4">
-<meta name="twitter:image" content="https://sta199-su26.github.io/project/img/twitter-card-ks.pdf">
+<meta name="twitter:title" content="AE 18: FIFA Inference ⚽ – STA 199">
+<meta name="twitter:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
+<meta name="twitter:image" content="https://sta199-su26.github.io/ae/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -80,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../project/description.html">Project</a></li><li class="breadcrumb-item"><a href="../project/4-peer-review.html">Milestone 4</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 18: FIFA Inference ⚽</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -188,13 +245,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Project</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project/description.html" class="sidebar-item-text sidebar-link">
@@ -221,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/4-peer-review.html" class="sidebar-item-text sidebar-link active">
+  <a href="../project/4-peer-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Milestone 4</span></a>
   </div>
 </li>
@@ -270,20 +327,23 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#review-pairings" id="toc-review-pairings" class="nav-link" data-scroll-target="#review-pairings">Review pairings</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/project/4-peer-review.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<li><a href="#packages" id="toc-packages" class="nav-link active" data-scroll-target="#packages">Packages</a></li>
+  <li>
+<a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+<li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link" data-scroll-target="#data-dictionary">Data Dictionary</a></li>
+  </ul>
+</li>
+  <li><a href="#abv-always-be-visualizing" id="toc-abv-always-be-visualizing" class="nav-link" data-scroll-target="#abv-always-be-visualizing">ABV (Always Be Visualizing)</a></li>
+  <li><a href="#inference-with-the-small-dataset" id="toc-inference-with-the-small-dataset" class="nav-link" data-scroll-target="#inference-with-the-small-dataset">Inference with the small dataset</a></li>
+  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing">Hypothesis Testing</a></li>
+  <li><a href="#interval-estimation" id="toc-interval-estimation" class="nav-link" data-scroll-target="#interval-estimation">Interval Estimation</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae/ae-18-github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../project/description.html">Project</a></li><li class="breadcrumb-item"><a href="../project/4-peer-review.html">Milestone 4</a></li></ol></nav><div class="quarto-title">
-<h1 class="title">Peer review</h1>
-<p class="subtitle lead">Milestone 4</p>
-  <div class="quarto-categories">
-    <div class="quarto-category">Project</div>
-  </div>
-  </div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">AE 18: FIFA Inference ⚽</h1>
+</div>
 
 
 
@@ -296,551 +356,98 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header><div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You must attend this lab in person and participate in the peer review in person to be eligible for the points for this milestone. Team members who are not in lab in person for this milestone will not be eligible for these points, regardless of their contribution throughout the rest of the project.</p>
-</div>
-</div>
-<p>During the peer feedback process, you will be provided read-only access to your partner team’s GitHub repo. You will provide your feedback in the form of GitHub issues to your partner team’s GitHub repo.</p>
-<section id="goals" class="level1"><h1>Goals</h1>
-<p>The goals of this milestone are as follows:</p>
-<ul>
-<li>Review others’ project drafts as a team and provide feedback</li>
-<li>Post issues on GitHub using an issue template</li>
-<li>Learn from others’ projects and improve your own project based on their strengths and weaknesses</li>
-</ul></section><section id="instructions" class="level1"><h1>Instructions</h1>
-<p>Review one other teams’ project. As a team you should spend ~30 minutes on the review.</p>
-<ul>
-<li><p>Find the names of the team whose project you’re reviewing below. You should already have access to this team’s repo.</p></li>
-<li><p>Each team member should go to the repo of the team you’re reviewing.</p></li>
-<li>
-<p>Then,</p>
-<ul>
-<li><p>1-2 team members clone the team’s project and renders it to check for reproducibility.</p></li>
-<li><p>All team members open the team’s project in their browser and starts reading through the project draft.</p></li>
-<li><p>1 team member opens an issue on the team’s repo using the peer review template.</p></li>
-<li><p>All team members discuss the project based on the prompts on the issue template and one team member records the feedback and submits the issue.</p></li>
-</ul>
-</li>
-<li>
-<p>To open an issue in the repo you’re reviewing, click on New issue, and click on Get started for the Peer review issue. Fill out this issue, answering the following questions:</p>
-<ul>
-<li><p>Peer review by: [NAME OF TEAM DOING THE REVIEW]</p></li>
-<li><p>Names of team members that participated in this review: [FULL NAMES OF TEAM MEMBERS DOING THE REVIEW]</p></li>
-<li><p>Describe the goal of the project.</p></li>
-<li><p>Describe the data used or collected, if any. If the proposal does not include the use of a specific dataset, comment on whether the project would be strengthened by the inclusion of a dataset.</p></li>
-<li><p>Describe the approaches, tools, and methods that will be used.</p></li>
-<li><p>Provide constructive feedback on how the team might be able to improve their project. Make sure your feedback includes at least one comment on the statistical reasoning aspect of the project, but do feel free to comment on aspects beyond the reasoning as well.</p></li>
-<li><p>What aspect of this project are you most interested in and would like to see highlighted in the presentation?</p></li>
-<li><p>Were you able to reproduce the project by clicking on Render Website once you cloned it? Were there any issues with reproducibility?</p></li>
-<li><p>Provide constructive feedback on any issues with file and/or code organization.</p></li>
-<li><p>What have you learned from this team’s project that you are considering implementing in your own project?</p></li>
-<li><p>(Optional) Any further comments or feedback?</p></li>
-</ul>
-</li>
-</ul></section><section id="review-pairings" class="level1"><h1>Review pairings</h1>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Peer Review Assignments</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+</header><p>Today we’ll explore the relationship between a FIFA member country’s share of the world population and it’s share of the global World Cup TV audience.</p>
+<section id="packages" class="level1"><h1>Packages</h1>
 <div class="cell">
-<div class="cell-output-display">
-<div id="ozfvfspdmb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ozfvfspdmb table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#ozfvfspdmb thead, #ozfvfspdmb tbody, #ozfvfspdmb tfoot, #ozfvfspdmb tr, #ozfvfspdmb td, #ozfvfspdmb th {
-  border-style: none;
-}
-
-#ozfvfspdmb p {
-  margin: 0;
-  padding: 0;
-}
-
-#ozfvfspdmb .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#ozfvfspdmb .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#ozfvfspdmb .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#ozfvfspdmb .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#ozfvfspdmb .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ozfvfspdmb .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ozfvfspdmb .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ozfvfspdmb .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#ozfvfspdmb .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#ozfvfspdmb .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#ozfvfspdmb .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#ozfvfspdmb .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#ozfvfspdmb .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#ozfvfspdmb .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#ozfvfspdmb .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#ozfvfspdmb .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#ozfvfspdmb .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#ozfvfspdmb .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#ozfvfspdmb .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ozfvfspdmb .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#ozfvfspdmb .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#ozfvfspdmb .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#ozfvfspdmb .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ozfvfspdmb .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#ozfvfspdmb .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#ozfvfspdmb .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ozfvfspdmb .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ozfvfspdmb .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#ozfvfspdmb .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ozfvfspdmb .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#ozfvfspdmb .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ozfvfspdmb .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ozfvfspdmb .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ozfvfspdmb .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ozfvfspdmb .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ozfvfspdmb .gt_left {
-  text-align: left;
-}
-
-#ozfvfspdmb .gt_center {
-  text-align: center;
-}
-
-#ozfvfspdmb .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#ozfvfspdmb .gt_font_normal {
-  font-weight: normal;
-}
-
-#ozfvfspdmb .gt_font_bold {
-  font-weight: bold;
-}
-
-#ozfvfspdmb .gt_font_italic {
-  font-style: italic;
-}
-
-#ozfvfspdmb .gt_super {
-  font-size: 65%;
-}
-
-#ozfvfspdmb .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#ozfvfspdmb .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#ozfvfspdmb .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#ozfvfspdmb .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#ozfvfspdmb .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#ozfvfspdmb .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#ozfvfspdmb .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#ozfvfspdmb .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#ozfvfspdmb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
-<th id="your_team_name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Your team name</th>
-<th id="team_to_review_1" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Team to review</th>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="data" class="level1"><h1>Data</h1>
+<p>In this exercise, we will work with data from FiveThirtyEight’s story <em>How To Break FIFA</em>. The dataset contains information on FIFA member countries, including each country’s confederation, share of the global population, share of World Cup TV audience, and GDP-weighted audience share.</p>
+<p>The dataset, called <code>fifa_countries_audience.csv</code>, can be found in the <code>data</code> folder.</p>
+<p>First, let’s load the data:</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fifa</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/fifa_countries_audience.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">fifa</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 191
+Columns: 5
+$ country            &lt;chr&gt; "United States", "Japan", "China", "Germany", "Braz…
+$ confederation      &lt;chr&gt; "CONCACAF", "AFC", "AFC", "UEFA", "CONMEBOL", "UEFA…
+$ population_share   &lt;dbl&gt; 4.5, 1.9, 19.5, 1.2, 2.8, 0.9, 0.9, 0.9, 2.1, 0.7, …
+$ tv_audience_share  &lt;dbl&gt; 4.3, 4.9, 14.8, 2.9, 7.1, 2.1, 2.1, 2.0, 3.1, 1.8, …
+$ gdp_weighted_share &lt;dbl&gt; 11.3, 9.1, 7.3, 6.3, 5.4, 4.2, 4.0, 4.0, 3.5, 3.1, …</code></pre>
+</div>
+</div>
+<section id="data-dictionary" class="level2"><h2 class="anchored" data-anchor-id="data-dictionary">Data Dictionary</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<thead><tr class="header">
+<th>Variable</th>
+<th>Description</th>
 </tr></thead>
-<tbody class="gt_table_body">
+<tbody>
 <tr class="odd">
-<td class="gt_row gt_left" headers="your_team_name">data denominators</td>
-<td class="gt_row gt_left" headers="team_to_review_1"><a href="https://github.com/sta199-su26/project-r-stars">r-stars</a></td>
+<td><code>country</code></td>
+<td>FIFA member country</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="your_team_name">r-stars</td>
-<td class="gt_row gt_left" headers="team_to_review_1"><a href="https://github.com/sta199-su26/project-data-dominators">data-denominators</a></td>
+<td><code>confederation</code></td>
+<td>Confederation to which the country belongs</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="your_team_name">r-tists</td>
-<td class="gt_row gt_left" headers="team_to_review_1"><a href="https://github.com/sta199-su26/project-code-conquerors">code-conquerors</a></td>
+<td><code>population_share</code></td>
+<td>Country’s share of the global population, recorded as a percentage</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="your_team_name">code-conquerors</td>
-<td class="gt_row gt_left" headers="team_to_review_1"><a href="https://github.com/sta199-su26/project-r-tists">r-tists</a></td>
+<td><code>tv_audience_share</code></td>
+<td>Country’s share of the global World Cup TV audience, recorded as a percentage</td>
+</tr>
+<tr class="odd">
+<td><code>gdp_weighted_share</code></td>
+<td>Country’s GDP-weighted audience share, recorded as a percentage</td>
 </tr>
 </tbody>
-</table>
+</table></section></section><section id="abv-always-be-visualizing" class="level1"><h1>ABV (Always Be Visualizing)</h1>
+<ol type="a">
+<li>
+<strong>Your turn</strong>: First, let’s get rid of two outliers. Create a new data frame called <code>fifa_clean</code> that contains only those member countries whose share of the global population is below 10%.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ol start="2" type="a">
+<li>
+<strong>Your turn</strong>: Create a visualization to explore the relationship between our variables of interest. Let’s consider <code>population_share</code> as our explanatory variable and <code>tv_audience_share</code> as our outcome. Include a linear trendline.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Now let’s imagine we only had a tiny subset of these data to work with:</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">847</span><span class="op">)</span></span>
+<span><span class="va">baby_fifa</span> <span class="op">&lt;-</span> <span class="va">fifa_clean</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">fifa_clean</span><span class="op">)</span>, <span class="fl">25</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">baby_fifa</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ol start="3" type="a">
+<li>Plot the baby thing, again adding a linear trendline:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section><section id="inference-with-the-small-dataset" class="level1"><h1>Inference with the small dataset</h1>
+<ol type="a">
+<li>
+<strong>Your turn</strong>: Obtain the point estimate <span class="math inline">\(b_1\)</span> from the baby data.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</section><section id="grading" class="level1"><h1>Grading</h1>
-<p>Peer reviews will be graded on the extent to which it comprehensively and constructively addresses the components of the reviewee’s team’s report.</p>
-<p>Only the team members participating in the review during the lab session are eligible for points for the peer review. If you’re unable to make it to lab in person, you should arrange to virtually connect with your team during your lab session.</p>
-<ul>
-<li><p>0 points: No peer review</p></li>
-<li><p>1 point: Feedback provided is not constructive or actionable</p></li>
-<li><p>2-4 points: Feedback provided is not sufficiently thorough</p></li>
-<li><p>5 points: Peer review is constructive, actionable, and sufficiently thorough</p></li>
-</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -851,8 +458,81 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The feedback issue will come from one team member on GitHub since you can’t collectively edit an issue. However it must represent the opinions of the entire team. It is not a single team member’s responsibility to provide feedback, they’re just the record keeper for the team.</p>
+<p>This gives the exact same numbers that you get if you use <code>linear_reg() |&gt; fit()</code>, but we need this new syntax because it plays nice with the tools we have for confidence intervals and hypothesis tests. I know, I hate it too, but it’s the way it is.</p>
 </div>
+</div>
+<ol start="2" type="a">
+<li>
+<strong>Your turn</strong>: Typeset the equation for the model fit:</li>
+</ol>
+<p><span class="math display">\[
+add~math~here
+\]</span></p>
+<ol start="3" type="a">
+<li>
+<strong>Your turn</strong>: Interpret the slope and the intercept estimates:</li>
+</ol></section><section id="hypothesis-testing" class="level1"><h1>Hypothesis Testing</h1>
+<p>Let’s consider the hypotheses:</p>
+<p><span class="math display">\[
+H_0:\beta_1=0
+\]</span> <span class="math display">\[
+H_A: \beta_1\neq 0.
+\]</span> The null hypothesis corresponds to the claim that a FIFA member country’s share of the global population and its share of the global World Cup TV audience are unrelated / uncorrelated.</p>
+<ol type="a">
+<li>Simulate and plot the null distribution for the slope:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">847</span><span class="op">)</span></span>
+<span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="a">
+<li>Where does our actual point estimate fall under the null distribution? Add a vertical line correspoinding to our point estimate and <em>shade</em> the region corresponding to the <span class="math inline">\(p\)</span>-value.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="a">
+<li>Compute the <span class="math inline">\(p\)</span>-value for this test and interpret it:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="interval-estimation" class="level1"><h1>Interval Estimation</h1>
+<ol type="a">
+<li>
+<strong>Demo</strong>: Generate <code>500</code> bootstrap samples, and store them in a new data frame called <code>bstrap_samples</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">847</span><span class="op">)</span></span>
+<span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="a">
+<li>
+<strong>Demo</strong>: Fit a linear model to each of these bootstrap samples and store the estimates in a new data framed called <code>bstrap_fits</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="a">
+<li>
+<strong>Demo</strong>: Compute 95% confidence intervals for the slope and the intercept using the <code>get_confidence_interval</code> command.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="a">
+<li>
+<strong>Your turn</strong>: Verify that you get the same numbers when you manually calculate the quantiles of the slope estimates using <code>summarize</code> and <code>quantile</code>. <em>Pay attention to the grouping</em>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="a">
+<li>
+<strong>BONUS</strong>: You can visualize the confidence interval:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -1272,17 +952,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../project/3-improvement-progress.html" class="pagination-link" aria-label="Milestone 3">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Milestone 3</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../lab.html" class="pagination-link" aria-label="Labs">
-        <span class="nav-page-text">Labs</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
+</script>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
@@ -1290,7 +960,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/project/4-peer-review.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/ae/ae-18-github.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #f21118;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
