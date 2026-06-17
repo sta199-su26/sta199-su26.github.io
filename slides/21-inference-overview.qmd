@@ -1,5 +1,5 @@
 ---
-title: "Inference overview"
+title: "Inference Overview"
 subtitle: "Lecture 20"
 date: "2026-06-17"
 format: 
