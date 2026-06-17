@@ -1,6 +1,6 @@
 ---
 title: "Inference Overview"
-subtitle: "Lecture 20"
+subtitle: "Lecture 21"
 date: "2026-06-17"
 format: 
   revealjs:
