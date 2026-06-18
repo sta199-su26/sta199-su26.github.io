@@ -1,0 +1,255 @@
+---
+title: Lab 6
+subtitle: Lemurs
+categories: Lab
+description: "Due to Gradescope by Sun. June 21 11:59 PM"
+draft: false
+---
+
+::: callout-important
+In order to ensure that you receive graded feedback in advance of the final exam, you must submit this lab by Sun. June 21 at 11:59pm. The late submission window will remain open through Tues. June 23 at 11:59pm; late submissions are subject to the standard 5% penalty per day late policy, and we cannot assure graded feedback prior to the final exam.
+:::
+
+# Introduction
+
+In this lab, you'll gain practice with interval estimation and hypothesis testing while continuing to reinforce data science / coding best practices mastered in the first half of the course.
+
+## Getting Started
+
+By now you should be familiar with how to get started on a lab assignment by cloning the GitHub repo for the assignment.
+
+<details>
+
+<summary>Click to expand if you need a refresher on how to get started with a lab assignment.</summary>
+
+-   Go to <https://cmgr.oit.duke.edu/containers> and login with your Duke NetID and Password.
+-   Click `STA199` under My reservations to log into your container. You should now see the RStudio environment.
+-   Go to the course organization at [github.com/sta199-su26](https://github.com/sta199-su26) organization on GitHub. Click on the repo with the prefix **lab-6**. It contains the starter documents you need to complete the homework.
+-   Click on the green **CODE** button, select **Use SSH**. Click on the clipboard icon to copy the repo URL.
+-   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+-   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+-   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
+
+</details>
+
+Open the *lab-6.qmd* template Quarto file and update the `authors` field to add your name (first and last).
+Render the document.
+Examine the rendered document and make sure your name is updated in the document.
+Commit your changes with a meaningful commit message and push to GitHub.
+
+<details>
+
+<summary>Click to expand if you need a refresher on assignment guidelines.</summary>
+
+**Code Guidelines:**
+
+As we've discussed in the lecture, your plots should include an informative title, axes and legends should have human-readable labels, and aesthetic choices should be carefully considered.
+
+Additionally, code should follow the [tidyverse style](https://style.tidyverse.org/).
+In particular,
+
+-   there should be spaces before and line breaks after each `+` when building a `ggplot`,
+
+-   there should also be spaces before and line breaks after each `|>` in a data transformation pipeline,
+
+-   code should be properly indented,
+
+-   there should be spaces around `=` signs and spaces after commas.
+
+Furthermore, all code should be visible in the PDF output, i.e., should not run off the page on the PDF.
+Long lines that run off the page should be split across multiple lines with line breaks.
+
+As you complete the lab and other assignments in this course, remember to develop a sound workflow for reproducible data analysis.
+This assignment will periodically remind you to render, commit, and push your changes to GitHub.
+You should have at least 3 commits with meaningful commit messages by the end of the assignment.
+
+</details>
+
+## Packages
+
+In this lab, you will work with the **tidyverse** and **tidymodels** packages.
+
+```{r}
+#| message: false
+library(tidyverse)
+library(tidymodels)
+```
+
+# Part 1: Lemurs
+
+To begin, you'll work with data from the [Duke Lemur Center](https://lemur.duke.edu/), which houses over 200 lemurs across 14 species -- the most diverse population of lemurs on Earth, outside their native Madagascar.
+
+> **Duke Lemur Center:**
+>
+> Lemurs are the most threatened group of mammals on the planet, and 95% of lemur species are at risk of extinction.
+> Our mission is to learn everything we can about lemurs -- because the more we learn, the better we can work to save them from extinction.
+> They are endemic only to Madagascar, so it's essentially a one-shot deal: once lemurs are gone from Madagascar, they are gone from the wild.
+
+> By studying the variables that most affect their health, reproduction, and social dynamics, the Duke Lemur Center learns how to most effectively focus [their conservation efforts](https://lemur.duke.edu/protect/overview-madagascar-conservation-programs/).
+> And the more we learn about lemurs, the better we can educate the public around the world about just how amazing these animals are, why they need to be protected, and how each and every one of us can make a difference in their survival.
+
+> Source: [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md)
+
+You'll work with a dataset of selected lemur species.
+The dataset, called `lemurs.csv`, can be found in the `data` folder.
+You can learn more about the data at: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24>.
+
+::: callout-note
+## Zoboomafoo
+
+If you ever watched the kids show Zoboomafoo, the lemur featured was from the Duke Lemur Center and is in our data set!
+For one bonus point added to this lab, write code that clearly displays this lemur's name, taxon, date of birth, and age at death.
+Place this code in a code chunk labeled "bonus" (i.e., `#| label: bonus`) before proceeding. 
+:::
+
+## Question 1
+
+Load the `lemurs` data from your `data` folder and save it as `lemurs`. Then, report which "types" of lemurs are represented in the sample, and how many of each. Note that this information is in the `taxon` variable. You should refer back to the linked data dictionary to understand what the different values of `taxon` mean. Your response should be a tibble with three columns: `taxon`, `taxon_name` (a new variable you create that contains the description of the `taxon`, e.g., `EMON` is `Mongoose lemur`), and `n` (number of lemurs with that taxon).
+
+## Question 2
+
+Compute a 95% bootstrap interval for the slope of the regression line for predicting weights of lemurs (`weight_g`) from the ages of lemurs (in years) when their weight was measured (`age_at_wt_y`). In your code, use 1,000 bootstrap samples when simulating your bootstrap distribution. Don't forget to set a seed!
+
+In your narrative, first report your point estimate; then, provide an interpretation of the 95% confidence interval you obtain for the slope in the context of these data.
+
+## Question 3
+
+Now, let's consider an additive linear regression model predicting weights of lemurs (`weight_g`) from the ages of lemurs (in years) when their weight was measured (`age_at_wt_y`) and their types (`taxon`). Calculate a 95% bootstrap bootstrap confidence interval for each slope parameter. In your code, use 1,000 bootstrap samples when simulating your bootstrap distribution. Don't forget to set a seed!
+
+In your narrative, first report the point estimate obtained for each slope parameter; then, provide an interpretation of the 95% confidence interval you obtain for each slope parameter.
+
+## Question 4
+
+Do female Coquerel's sifaka lemurs have different weights than male Coquerel's sifaka, on average?
+
+a.  Create a new data frame `cs_lemurs` filtered to have **only** Coquerel's sifaka lemurs with determined sex (sex is not determined when `sex` equals `ND`).
+
+b.  Create an appropriate data visualization to compare the distribution of weights of male and female coquerel's sifaka lemurs. Provide a brief interpretation of this visualization.
+
+c.  Consider the following population model:
+
+$$
+\text{weight_g} = \beta_0 + \beta_1 \times \text{sex} + \epsilon
+$$
+
+Write the relevant hypotheses corresponding to a hypothesis test that will address our question, i.e., "Do female Coquerel's sifaka lemurs have different weights than male Coquerel's sifaka, on average?" Your hypotheses should be clearly stated in the context of the data and the research question. Then, in a sentence or two, explain why a test with respect to the parameter $\beta_1$ is functionally equivalent to testing the "difference in means" (i.e., mean weight (g)) by gender. 
+
+d.  Conduct the relevant hypothesis test to answer our question at 5% significance level.
+    While doing this, you should make sure your answer includes:
+
+    -   A visualization of the p-value and the null distribution in the same image
+
+    -   The computed p-value clearly displayed
+
+    -   A one-sentence conclusion for your hypothesis test in the context of the data and the research question.
+
+Make sure to set a seed and use 1,000 samples (`reps = 1000`) when simulating your permutation-based null distribution.
+
+::: callout-tip
+If you are having trouble getting started, refer back to Tuesday's slides and / or AE 18
+:::
+
+e.  Based on your answer to part (d), would you expect a 95% confidence interval for the difference in means of female and male lemurs to include 0? Explain your reasoning.
+
+# Part 2: Babies!
+
+Every year, the US releases to the public a large dataset containing information on births recorded in the country.
+This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children.[^1]
+This is a random sample of 1,000 cases from the dataset released in 2014.
+
+[^1]: United States Department of Health and Human Services.
+    Centers for Disease Control and Prevention.
+    National Center for Health Statistics.
+    Natality Detail File, 2014 United States.
+    Inter-university Consortium for Political and Social Research, 2016-10-07.
+    doi:10.3886/ICPSR36461.v1.
+
+The data are available your `data` folder in `births14.csv`.
+
+The variables in the data are as follows:
+
+-   `fage`: Father's age in years.
+-   `mage`: Mother's age in years.
+-   `mature`: Maturity status of mother.
+-   `weeks`: Length of pregnancy in weeks.
+-   `premie`: Whether the birth was classified as premature (preemie) or full-term.
+-   `visits`: Number of hospital visits during pregnancy.
+-   `gained`: Weight gained by mother during pregnancy in pounds.
+-   `weight`: Weight of the baby at birth in pounds.
+-   `lowbirthweight`: Whether baby was classified as low birthweight (low) or not (⁠not low⁠).
+-   `sex`: Sex of the baby, female or male.
+-   `habit`: Status of the mother as a nonsmoker or a smoker.
+-   `marital`: Whether mother is married or ⁠not married⁠ at birth.
+-   `whitemom`: Whether mom is white or ⁠not white⁠.
+
+## Question 5 
+
+a.  First, read the data in and store it as `births14_raw`.
+
+Then, in a single pipeline, filter for any rows of the `births14_raw` data frame where one or more of the following variables has an `NA` value: `weeks`, `mage`, `weight`, `habit`, `mature`, `lowbirthweight`, then select only these six variables to display.
+
+b.  In a single pipeline, remove any rows of the `births14_raw` data frame with `NA` values among those you identified as having `NA` values in the previous question, and save the results as `births14`.
+
+Then, find and state the numbers of rows and columns of `births14`.
+
+::: callout-tip
+You should end up with 981 rows.
+If you do not, revisit your earlier work to make sure you have removed all rows with `NA` values in any of the specified columns.
+:::
+
+c.  In a single pipeline, recode the variables `mature`, `habit`, and `lowbirthweight` in the `births14` data frame as follows:
+
+-   `mature` : "mature mom" → "35 and over" (baseline), "younger mom" → "34 and under"
+-   `habit` : "nonsmoker" → "Non-smoker" (baseline), "smoker" → "Smoker"
+-   `lowbirthweight` : "not low" → "Not low" (baseline), "low" → "Low", 
+
+In that same pipeline, relocate these three variables to be the first three columns of the data frame.
+
+Save the result back to `births14` and display the first 10 rows (and however many columns fit across the page) of `births14`.
+
+d. Split the data into training (75%) and testing (25%) sets. Be sure to save the training and testing sets separately. **NOTE**: use `set.seed(847)`.
+
+## Question 6
+
+a.  Fit the appropriate model to predict whether a baby was classified as low birthweight (Low) from length of pregnancy in weeks (`weeks`), and display a tidy summary of the model output. **Make sure you use only the training data**.
+
+b.  Typeset the fitted regression equation using LaTeX.
+
+c.  Interpret the *slope* coefficient in the context of the data and the research question.
+
+d.  Now, fit the appropriate model to predict a baby was classified as low birthweight (Low) from length of pregnancy in weeks (`weeks`), mother's smoking status (`habit`), and mother's maturity (`mature`), and display a tidy summary of the model output. **Make sure you use only the training data**.
+
+e.  Interpret the *intercept* coefficient in the context of the data and the research question.
+
+## Question 7
+
+a.  Plot the ROC curves of the models from Question 6 on the same plot, using different colors for each model and including a legend that describes which model is represented with which color.
+
+b.  Calculate the AUC (area under the curve) for each model using the `roc_auc()` function.
+
+c.  Based on the results of parts a and b, which model do you prefer? Explain your reasoning.
+
+# Wrap-up
+
+::: callout-warning
+Before you wrap up the assignment, make sure that you render, commit, and push one final time so that the final versions of both your `.qmd` file and the rendered PDF are pushed to GitHub and your Git pane is empty.
+We will be checking these to make sure you have been practicing how to commit and push changes.
+:::
+
+## Grading and Feedback
+
+Reminders:
+
+-   Questions will be graded for accuracy and completeness
+
+-   Partial credit will be given where appropriate
+
+-   There are also workflow points for:
+
+    -   committing at least three times as you work through your lab
+
+    -   having your final version of `.qmd` and `.pdf` files in your GitHub repository
+
+    -   selecting pages corresponding to each question in Gradescope
+
+
