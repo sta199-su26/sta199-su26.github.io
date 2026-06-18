@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.39">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Peer review – STA 199</title>
+<meta name="description" content="Due Monday June 23 11:59 PM">
+<title>Lab 6 – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,6 +18,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -25,8 +60,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../project/5-writeup-presentation.html" rel="next">
-<link href="../project/3-improvement-progress.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -64,12 +97,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script><link rel="stylesheet" href="../style/sta199.scss">
-<meta property="og:title" content="Peer review – STA 199">
-<meta property="og:description" content="Milestone 4">
+<meta property="og:title" content="Lab 6 – STA 199">
+<meta property="og:description" content="Due Monday June 23 11:59 PM">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Peer review – STA 199">
-<meta name="twitter:description" content="Milestone 4">
-<meta name="twitter:image" content="https://sta199-su26.github.io/project/img/twitter-card-ks.pdf">
+<meta name="twitter:title" content="Lab 6 – STA 199">
+<meta name="twitter:description" content="Due Monday June 23 11:59 PM">
+<meta name="twitter:image" content="https://sta199-su26.github.io/lab/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -80,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../project/description.html">Project</a></li><li class="breadcrumb-item"><a href="../project/4-peer-review.html">Milestone 4</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 6</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -188,13 +221,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Project</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project/description.html" class="sidebar-item-text sidebar-link">
@@ -221,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/4-peer-review.html" class="sidebar-item-text sidebar-link active">
+  <a href="../project/4-peer-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Milestone 4</span></a>
   </div>
 </li>
@@ -276,21 +309,31 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#review-pairings" id="toc-review-pairings" class="nav-link" data-scroll-target="#review-pairings">Review pairings</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/project/4-peer-review.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<li>
+<a href="#introduction-lemurs" id="toc-introduction-lemurs" class="nav-link active" data-scroll-target="#introduction-lemurs">Introduction: Lemurs</a>
+  <ul class="collapse">
+<li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/lab/lab-6 (2).qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../project/description.html">Project</a></li><li class="breadcrumb-item"><a href="../project/4-peer-review.html">Milestone 4</a></li></ol></nav><div class="quarto-title">
-<h1 class="title">Peer review</h1>
-<p class="subtitle lead">Milestone 4</p>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Lab 6</h1>
+<p class="subtitle lead">Lemurs</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Project</div>
+    <div class="quarto-category">Lab</div>
   </div>
   </div>
 
+<div>
+  <div class="description">
+    Due Monday June 23 11:59 PM
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -312,557 +355,131 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You must attend this lab in person and participate in the peer review in person to be eligible for the points for this milestone. Team members who are not in lab in person for this milestone will not be eligible for these points, regardless of their contribution throughout the rest of the project.</p>
+<p>The due date has been pushed back by one day to allow you more time to work on your projects before their due date. The late submission deadline is a <em><strong>hard cutoff of Wednesday at 8:30 AM</strong>.</em> We will release solutions on Wednesday morning to help in studying for the final. <u>NO late submissions will be allowed after this point</u>. The standard 5% penalty per day late applies.</p>
 </div>
 </div>
-<p>During the peer feedback process, you will be provided read-only access to your partner team’s GitHub repo. You will provide your feedback in the form of GitHub issues to your partner team’s GitHub repo.</p>
-<section id="goals" class="level1"><h1>Goals</h1>
-<p>The goals of this milestone are as follows:</p>
-<ul>
-<li>Review others’ project drafts as a team and provide feedback</li>
-<li>Post issues on GitHub using an issue template</li>
-<li>Learn from others’ projects and improve your own project based on their strengths and weaknesses</li>
-</ul></section><section id="instructions" class="level1"><h1>Instructions</h1>
-<p>Review one other teams’ project. As a team you should spend ~30 minutes on the review.</p>
-<ul>
-<li><p>Find the names of the team whose project you’re reviewing below. You should already have access to this team’s repo.</p></li>
-<li><p>Each team member should go to the repo of the team you’re reviewing.</p></li>
-<li>
-<p>Then,</p>
-<ul>
-<li><p>1-2 team members clone the team’s project and renders it to check for reproducibility.</p></li>
-<li><p>All team members open the team’s project in their browser and starts reading through the project draft.</p></li>
-<li><p>1 team member opens an issue on the team’s repo using the peer review template.</p></li>
-<li><p>All team members discuss the project based on the prompts on the issue template and one team member records the feedback and submits the issue.</p></li>
-</ul>
-</li>
-<li>
-<p>To open an issue in the repo you’re reviewing, click on New issue, and click on Get started for the Peer review issue. Fill out this issue, answering the following questions:</p>
-<ul>
-<li><p>Peer review by: [NAME OF TEAM DOING THE REVIEW]</p></li>
-<li><p>Names of team members that participated in this review: [FULL NAMES OF TEAM MEMBERS DOING THE REVIEW]</p></li>
-<li><p>Describe the goal of the project.</p></li>
-<li><p>Describe the data used or collected, if any. If the proposal does not include the use of a specific dataset, comment on whether the project would be strengthened by the inclusion of a dataset.</p></li>
-<li><p>Describe the approaches, tools, and methods that will be used.</p></li>
-<li><p>Provide constructive feedback on how the team might be able to improve their project. Make sure your feedback includes at least one comment on the statistical reasoning aspect of the project, but do feel free to comment on aspects beyond the reasoning as well.</p></li>
-<li><p>What aspect of this project are you most interested in and would like to see highlighted in the presentation?</p></li>
-<li><p>Were you able to reproduce the project by clicking on Render Website once you cloned it? Were there any issues with reproducibility?</p></li>
-<li><p>Provide constructive feedback on any issues with file and/or code organization.</p></li>
-<li><p>What have you learned from this team’s project that you are considering implementing in your own project?</p></li>
-<li><p>(Optional) Any further comments or feedback?</p></li>
-</ul>
-</li>
-</ul></section><section id="review-pairings" class="level1"><h1>Review pairings</h1>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Peer Review Assignments</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="cell">
-<div class="cell-output-display">
-<div id="spotwbjkfm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#spotwbjkfm table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#spotwbjkfm thead, #spotwbjkfm tbody, #spotwbjkfm tfoot, #spotwbjkfm tr, #spotwbjkfm td, #spotwbjkfm th {
-  border-style: none;
-}
-
-#spotwbjkfm p {
-  margin: 0;
-  padding: 0;
-}
-
-#spotwbjkfm .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#spotwbjkfm .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#spotwbjkfm .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#spotwbjkfm .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#spotwbjkfm .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#spotwbjkfm .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#spotwbjkfm .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#spotwbjkfm .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#spotwbjkfm .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#spotwbjkfm .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#spotwbjkfm .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#spotwbjkfm .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#spotwbjkfm .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#spotwbjkfm .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#spotwbjkfm .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#spotwbjkfm .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#spotwbjkfm .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#spotwbjkfm .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#spotwbjkfm .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#spotwbjkfm .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#spotwbjkfm .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#spotwbjkfm .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#spotwbjkfm .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#spotwbjkfm .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#spotwbjkfm .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#spotwbjkfm .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#spotwbjkfm .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#spotwbjkfm .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#spotwbjkfm .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#spotwbjkfm .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#spotwbjkfm .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#spotwbjkfm .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#spotwbjkfm .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#spotwbjkfm .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#spotwbjkfm .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#spotwbjkfm .gt_left {
-  text-align: left;
-}
-
-#spotwbjkfm .gt_center {
-  text-align: center;
-}
-
-#spotwbjkfm .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#spotwbjkfm .gt_font_normal {
-  font-weight: normal;
-}
-
-#spotwbjkfm .gt_font_bold {
-  font-weight: bold;
-}
-
-#spotwbjkfm .gt_font_italic {
-  font-style: italic;
-}
-
-#spotwbjkfm .gt_super {
-  font-size: 65%;
-}
-
-#spotwbjkfm .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#spotwbjkfm .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#spotwbjkfm .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#spotwbjkfm .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#spotwbjkfm .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#spotwbjkfm .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#spotwbjkfm .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#spotwbjkfm .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#spotwbjkfm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
-<th id="your_team_name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Your team name</th>
-<th id="team_to_review_1" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Team to review</th>
-</tr></thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="your_team_name">data denominators</td>
-<td class="gt_row gt_left" headers="team_to_review_1"><a href="https://github.com/sta199-su26/project-r-stars">r-stars</a></td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="your_team_name">r-stars</td>
-<td class="gt_row gt_left" headers="team_to_review_1"><a href="https://github.com/sta199-su26/project-data-dominators">data-denominators</a></td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="your_team_name">r-tists</td>
-<td class="gt_row gt_left" headers="team_to_review_1"><a href="https://github.com/sta199-su26/project-code-conquerors">code-conquerors</a></td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="your_team_name">code-conquerors</td>
-<td class="gt_row gt_left" headers="team_to_review_1"><a href="https://github.com/sta199-su26/project-r-tists">r-tists</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="grading" class="level1"><h1>Grading</h1>
-<p>Peer reviews will be graded on the extent to which it comprehensively and constructively addresses the components of the reviewee’s team’s report.</p>
-<p>Only the team members participating in the review during the lab session are eligible for points for the peer review. If you’re unable to make it to lab in person, you should arrange to virtually connect with your team during your lab session.</p>
-<ul>
-<li><p>0 points: No peer review</p></li>
-<li><p>1 point: Feedback provided is not constructive or actionable</p></li>
-<li><p>2-4 points: Feedback provided is not sufficiently thorough</p></li>
-<li><p>5 points: Peer review is constructive, actionable, and sufficiently thorough</p></li>
-</ul>
+<section id="introduction-lemurs" class="level1"><h1>Introduction: Lemurs</h1>
+<p>In this lab, you’ll work with data from the <a href="https://lemur.duke.edu/">Duke Lemur Center</a>, which houses over 200 lemurs across 14 species – the most diverse population of lemurs on Earth, outside their native Madagascar.</p>
+<blockquote class="blockquote">
+<p><strong>Duke Lemur Center:</strong></p>
+<p>Lemurs are the most threatened group of mammals on the planet, and 95% of lemur species are at risk of extinction. Our mission is to learn everything we can about lemurs – because the more we learn, the better we can work to save them from extinction. They are endemic only to Madagascar, so it’s essentially a one-shot deal: once lemurs are gone from Madagascar, they are gone from the wild.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>By studying the variables that most affect their health, reproduction, and social dynamics, the Duke Lemur Center learns how to most effectively focus <a href="https://lemur.duke.edu/protect/overview-madagascar-conservation-programs/">their conservation efforts</a>. And the more we learn about lemurs, the better we can educate the public around the world about just how amazing these animals are, why they need to be protected, and how each and every one of us can make a difference in their survival.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Source: <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24/readme.md">TidyTuesday</a></p>
+</blockquote>
+<p>You’ll work with a dataset of selected lemur species. The dataset, called <code>lemurs.csv</code>, can be found in the <code>data</code> folder. You can learn more about the data at: <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24" class="uri">https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-08-24</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Zoboomafoo
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The feedback issue will come from one team member on GitHub since you can’t collectively edit an issue. However it must represent the opinions of the entire team. It is not a single team member’s responsibility to provide feedback, they’re just the record keeper for the team.</p>
+<p>If you ever watched the kids show Zoboomafoo, the lemur featured was from the Duke Lemur Center and is in our data set! For one bonus point added to this lab, write code that clearly displays this lemur’s name, taxon, date of birth, and age at death. Place this code in a section titled bonus.</p>
 </div>
 </div>
+<p>The packages you will need for this lab are:</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="question-1" class="level2"><h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<ol type="a">
+<li><p>Load the <code>lemurs</code> data from your <code>data</code> folder and save it as <code>lemurs</code>.</p></li>
+<li>
+<p>In a single pipeline, write code to report which types of lemurs (in the <code>taxon</code> variable) are represented in the sample and how many of each. In addition to reporting the value of <code>taxon</code>, you should also report the common name. You should refer back to the linked data dictionary to understand what the different values of <code>taxon</code> mean.</p>
+<p><strong>Your response should be a tibble with three columns</strong>: <code>taxon</code>, <code>common_name</code> (a new variable you create that contains the common name of the <code>taxon</code>, e.g., <code>EMON</code> is <code>Mongoose lemur</code>), and <code>n</code> (number of lemurs with that taxon).</p>
+</li>
+</ol></section><section id="question-2" class="level2"><h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>Compute a 95% bootstrap interval for the slope of the regression line for predicting weights of lemurs (<code>weight_g</code>) from the ages of lemurs (in years) when their weight was measured (<code>age_at_wt_y</code>). In your code, use 1,000 bootstrap samples when simulating your bootstrap distribution. Don’t forget to set a seed!</p>
+<p>In narrative, provide an interpretation of this 95% confidence interval for the slope. Additionally, report your point estimate.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Below is a step-by-step recipe for constructing and visualizing a confidence interval. The code snippets shown are not “complete.” They include some blanks you need to fill in, and they are just intended to guide you in the right direction.</p>
+<ul>
+<li>Step 1: Calculate the point estimate for the slope and the intercept of the regression line.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>obs_fit <span class="ot">&lt;-</span> lemurs <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(______ <span class="sc">~</span> ______) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Step 2: Simulate a bootstrap distribution of regression estimates.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(___)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>boot_dist <span class="ot">&lt;-</span> lemurs <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(_____ <span class="sc">~</span> ______) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> ____, <span class="at">type =</span> _______) <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Step 3: Calculate the bounds of the confidence interval.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>conf_ints <span class="ot">&lt;-</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_confidence_interval</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    ____, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">level =</span> ___, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">point_estimate =</span> ____</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section><section id="question-3" class="level2"><h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<p>What are the slopes of the regression line for an additive model predicting weights of lemurs (<code>weight_g</code>) from the ages of lemurs (in years) when their weight was measured (<code>age_at_wt_y</code>) and their types (<code>taxon</code>)? Calculate and interpret a 95% bootstrap bootstrap confidence interval for each. Also report your point estimates. Don’t forget to set a seed and use 1,000 bootstrap samples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p>
+</section><section id="question-4" class="level2"><h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<p>Do female coquerel’s sifaka lemurs have different weights than male coquerel’s sifaka on average?</p>
+<ol type="a">
+<li><p>Create a new data frame <code>cs_lemurs</code> filtered to have only coquerel’s sifaka lemurs with determined sex (sex is not determined when <code>sex</code> equals <code>ND</code>).</p></li>
+<li><p>Create an appropriate data visualization to compare the distribution of weights of male and female coquerel’s sifaka lemurs. Provide a brief interpretation of this visualization.</p></li>
+<li>
+<p>Conduct a hypothesis test to answer our question at 5% significance level. While doing this, you should make sure your answer includes:</p>
+<ul>
+<li><p>Your hypotheses clearly stated in the context of the data and the research question</p></li>
+<li><p>A visualization of the p-value and the null distribution</p></li>
+<li><p>The computed p-value clearly displayed</p></li>
+<li><p>A one-sentence conclusion for your hypothesis test in the context of the data and the research question.</p></li>
+</ul>
+</li>
+</ol>
+<p>Make sure to set a seed and use 1,000 samples (<code>reps = 1000</code>) when simulating your permutation-based null distribution.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are having trouble getting started, refer back to Wednesday’s slides - check out the example where we compared weights of babies born to smoking/non-smoking mothers.</p>
+</div>
+</div>
+<ol start="4" type="a">
+<li><p>Based on your answer to part (c), would you expect a 95% confidence interval for the difference in means of female and male lemurs to include 0? Explain your reasoning.</p></li>
+<li><p>Construct and interpret a 95% bootstrap confidence interval for the difference in means of female and male lemurs. Does it include 0? Don’t forget to set a seed and use 1,000 bootstrap samples (<code>reps = 1000</code>) when simulating your bootstrap distribution.</p></li>
+</ol>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1278,17 +895,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../project/3-improvement-progress.html" class="pagination-link" aria-label="Milestone 3">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Milestone 3</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../project/5-writeup-presentation.html" class="pagination-link" aria-label="Milestone 5">
-        <span class="nav-page-text">Milestone 5</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
+</script>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
@@ -1296,7 +903,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/project/4-peer-review.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/lab/lab-6 (2).qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #f21118;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
