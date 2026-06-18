@@ -71,7 +71,6 @@ library(tidyverse)
 library(tidymodels)
 ```
 
-
 # Part 1: Do you even lift?
 
 In this part, you will be working with data from www.openpowerlifting.org.
@@ -109,28 +108,36 @@ c.
 
 ## Question 2
 
-In Question 1, you fit a simple linear regression model to predict squat (lbs) from age. Before gleefully presenting the results of your linear regression model, it is important to assess whether the assumptions underlying the model are reasonable. In particular, this question prompts you to assess whether or not the assumptions of linearity, equal / constant variance, and normality of the residuals are likely to hold. 
+In Question 1, you fit a simple linear regression model to predict squat (lbs) from age.
+Before gleefully presenting the results of your linear regression model, it is important to assess whether the assumptions underlying the model are reasonable.
+In particular, this question prompts you to assess whether or not the assumptions of linearity, equal / constant variance, and normality of the residuals are likely to hold.
 
-a.  Create a fitted values vs. residuals plot for the `age_fit` model; you will need to use `augment()` to obtain both the fitted values **and** residuals for your model. Your plot should:
+a.  Create a fitted values vs. residuals plot for the `age_fit` model; you will need to use `augment()` to obtain both the fitted values **and** residuals for your model.
+    Your plot should:
 
     -   Plot fitted values on the x-axis.
     -   Plot residuals on the y-axis
     -   Include a horizontal reference line at 0 (hint: check out the help file for `geom_abline()` with `??geom_abline`, and click into the help page entitled `ggplot2::geom_abline`)
-    
-b.  Using the fitted values vs. residuals plot from part (a), assess the following assumptions of (1) linearity; and (2) constant variance (homoskedasticity). For each assumption, you should articulate whether or not you believe the assumption is appropriately satisfied and provide a brief justification (referencing the plot in part (a)) to support your answer. 
+
+b.  Using the fitted values vs. residuals plot from part (a), assess the following assumptions of (1) linearity; and (2) constant variance (homoskedasticity).
+    For each assumption, you should articulate whether or not you believe the assumption is appropriately satisfied and provide a brief justification (referencing the plot in part (a)) to support your answer.
 
 c.  Create the following two plots using the residuals from age_fit:
 
     -   A histogram of the residuals
     -   A normal Q–Q plot of the residuals
-    
-d.   Using the plots from part (c), assess whether the normality of errors assumption appears to be satisfied. In 2–3 sentences, describe any features of the plots that support your conclusion.
+
+d.  Using the plots from part (c), assess whether the normality of errors assumption appears to be satisfied.
+    In 2–3 sentences, describe any features of the plots that support your conclusion.
 
 ## Question 3
 
-a.  Building on your `ipf_squat` data frame, update `ipf_squat` to include a new column called `age2` that takes the age of each lifter and squares it. Next, plot squat (in lbs) vs `age2` (`age2` should be on the x-axis) and add a linear trendline.
+a.  Building on your `ipf_squat` data frame, update `ipf_squat` to include a new column called `age2` that takes the age of each lifter and squares it.
+    Next, plot squat (in lbs) vs `age2` (`age2` should be on the x-axis) and add a linear trendline.
 
-b.  One metric to assess the fit of a model is the squared correlation coefficient, also known as $R^2$. Fit the model predicting squat (in lbs) from age$^2$ and save the object as `age2_fit`. Obtain the $R^2$ of the new model (squat vs. age$^2$) as well as the $R^2$ of the earlier model (squat vs. age) and compare the two; specifically, identify which has a higher $R^2$ and interpret this value in the context of these data.
+b.  One metric to assess the fit of a model is the squared correlation coefficient, also known as $R^2$.
+    Fit the model predicting squat (in lbs) from age$^2$ and save the object as `age2_fit`.
+    Obtain the $R^2$ of the new model (squat vs. age$^2$) as well as the $R^2$ of the earlier model (squat vs. age) and compare the two; specifically, identify which has a higher $R^2$ and interpret this value in the context of these data.
 
 # Part 2: General Social Survey
 
@@ -146,11 +153,14 @@ In this part you will work with variables from the 2022 General Social Survey.
 a.  Read in the `gss22.csv` file that is in your data folder and save it as `gss22`.
     Report its number of rows and columns.
 
-b.  Create a new data frame called `gss22_advfront` that only contains the variables `advfront`, `educ`, and `polviews`. Then, update this new data frame by using the `drop_na()` function to remove rows that contain NAs from `gss22_advfront`.
+b.  Create a new data frame called `gss22_advfront` that only contains the variables `advfront`, `educ`, and `polviews`.
+    Then, update this new data frame by using the `drop_na()` function to remove rows that contain NAs from `gss22_advfront`.
     Report the number of rows and columns of `gss22_advfront`.
     Additionally, report what percent of the observations were discarded at this step.
 
-c.  Re-level the `advfront` variable such that it has two levels: "Strongly agree" and "Agree" combined into a new level called "Agree", and the remaining levels combined into "Not agree". Then, re-order the levels in the following order: "Agree" and "Not agree". Finally, `count()` how many times each new level appears in the `advfront` variable and print these counts to the screen.
+c.  Re-level the `advfront` variable such that it has two levels: "Strongly agree" and "Agree" combined into a new level called "Agree", and the remaining levels combined into "Not agree".
+    Then, re-order the levels in the following order: "Agree" and "Not agree".
+    Finally, `count()` how many times each new level appears in the `advfront` variable and print these counts to the screen.
 
 ::: callout-tip
 You can do this in various ways.
@@ -164,7 +174,8 @@ d.  Combine the levels of the `polviews` variable such that levels that have the
 
 ## Question 5
 
-a.  Fit a **logistic** regression model that predicts `advfront` from `educ`. Report the tidy output of the model.
+a.  Fit a **logistic** regression model that predicts `advfront` from `educ`.
+    Report the tidy output of the model.
 
 b.  Write out the fitted model using proper statistical notation.
 
@@ -172,14 +183,17 @@ c.  Using your fitted model, predict the probability of agreeing with the statem
 
 ## Question 6
 
-a.  Fit a model that adds the additional explanatory variable `polviews` to your model from Question 5. Report the tidy output of the model.
+a.  Fit a model that adds the additional explanatory variable `polviews` to your model from Question 5.
+    Report the tidy output of the model.
 
 b.  Now, predict the probability of agreeing with the following statement *"Even if it brings no immediate benefits, scientific research that advances the frontiers of knowledge is necessary and should be supported by the federal government."* (`Agree` in `advfront`) for a Conservative person with 7 years of education.
 
 # Part 3: Hotel Cancellations
 
-The data stored in `hotels.csv` in your data folder describe the demand of two different types of hotels. Each observation represents a hotel booking between July 1, 2015 and August 31, 2017.
-Some bookings were canceled (`is_canceled = 1`) and others were kept, i.e., the guests checked into the hotel (`is_canceled = 0`). You can view the code book for all variables [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md).
+The data stored in `hotels.csv` in your data folder describe the demand of two different types of hotels.
+Each observation represents a hotel booking between July 1, 2015 and August 31, 2017.
+Some bookings were canceled (`is_canceled = 1`) and others were kept, i.e., the guests checked into the hotel (`is_canceled = 0`).
+You can view the code book for all variables [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md).
 
 Read in the data frame and store this data as `hotels` using the following code:
 
@@ -190,24 +204,29 @@ hotels <- read_csv("data/hotels.csv")
 
 ## Question 7
 
-The outcome variable for this analysis is `is_canceled`, where: 0 indicates a booking that was not canceled; 1 indicates a booking that was canceled. We will consider the following variables as potential predictors: `arrival_date_day_of_month` (day of the month on which the reservation begins) and `hotel` (hotel type; resort or city hotel). 
+The outcome variable for this analysis is `is_canceled`, where: 0 indicates a booking that was not canceled; 1 indicates a booking that was canceled.
+We will consider the following variables as potential predictors: `arrival_date_day_of_month` (day of the month on which the reservation begins) and `hotel` (hotel type; resort or city hotel).
 
-Create a single visualization that explores the relationship between the outcome and the predictors of interest. In a few sentences, describe what the visualization shows about the relationship between these variables. Do you think that either, both, or neither of these variables might be informative predictors of our outcome of interest? 
+Create a single visualization that explores the relationship between the outcome and the predictors of interest.
+In a few sentences, describe what the visualization shows about the relationship between these variables.
+Do you think that either, both, or neither of these variables might be informative predictors of our outcome of interest?
 
 ## Question 8
 
-a.  Update the `hotels` df by transforming the outcome variable to the appropriate data class such that 
+a.  Update the `hotels` df by transforming the outcome variable to the appropriate data class such that
 
-    - it uses informative labels ("not canceled" and "canceled" instead of 0 and 1, respectively), and
-    
-    - the levels are ordered such that when we fit a logistic regression model to predict this outcome, success (or, a value of 1) is defined as "canceled" (what we're predicting)
+    -   it uses informative labels ("not canceled" and "canceled" instead of 0 and 1, respectively), and
 
-b.  Next, let's address a few data quality issues before moving forward with the analysis. To do so, again update the `hotels` dataset to filter out (remove)
+    -   the levels are ordered such that when we fit a logistic regression model to predict this outcome, success (or, a value of 1) is defined as "canceled" (what we're predicting)
 
-    - any bookings with average daily rate, `adr`, greater than $1,000, and
-    - any bookings with number of adults, `adults`, greater than or equal to 5
+b.  Next, let's address a few data quality issues before moving forward with the analysis.
+    To do so, again update the `hotels` dataset to filter out (remove)
 
-c.  Split the data into a training set (75%) and a testing set (25%), setting the random seed to `847` (shoutout Arlington Heights!!) for reproducibility. Be sure to save your testing and training data frames. 
+    -   any bookings with average daily rate, `adr`, greater than \$1,000, and
+    -   any bookings with number of adults, `adults`, greater than or equal to 5
+
+c.  Split the data into a training set (75%) and a testing set (25%), setting the random seed to `847` (shoutout Arlington Heights!!) for reproducibility.
+    Be sure to save your testing and training data frames.
 
 ## Question 9
 
@@ -245,7 +264,8 @@ a.  Fit another model to predict whether a reservation was canceled from `arriva
 
 b.  Interpret the intercept in context of the data.
 
-c.  Using this model, predict cancellation status for all reservations in your **testing** dataset with `augment()`. Store the resulting data frame under an appropriate name.
+c.  Using this model, predict cancellation status for all reservations in your **testing** dataset with `augment()`.
+    Store the resulting data frame under an appropriate name.
 
 d.  Using your augmented data frame from part (c), determine, in a single pipeline, and using `count()`, the numbers of emails:
 
@@ -256,7 +276,8 @@ d.  Using your augmented data frame from part (c), determine, in a single pipeli
 
     Store the resulting data frame with an appropriate name.
 
-e.  In a single pipeline, using `group_by()` and `mutate()`, calculate the false positive and false negative rates. In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identifies the two rates.
+e.  In a single pipeline, using `group_by()` and `mutate()`, calculate the false positive and false negative rates.
+    In addition to these numbers showing in your R output, you must write a sentence that explicitly states and identifies the two rates.
 
 # Wrap-up
 

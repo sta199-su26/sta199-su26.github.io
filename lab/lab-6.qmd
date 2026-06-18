@@ -7,7 +7,10 @@ draft: false
 ---
 
 ::: callout-important
-In order to ensure that you receive graded feedback in advance of the final exam, you must submit this lab by Sun. June 21 at 11:59pm. The late submission window will remain open through Tues. June 23 at 11:59pm; late submissions are subject to the standard 5% penalty per day late policy, and we cannot assure graded feedback prior to the final exam.
+In order to ensure that you receive graded feedback in advance of the final exam, you must submit this lab by Sun.
+June 21 at 11:59pm.
+The late submission window will remain open through Tues.
+June 23 at 11:59pm; late submissions are subject to the standard 5% penalty per day late policy, and we cannot assure graded feedback prior to the final exam.
 :::
 
 # Introduction
@@ -99,22 +102,31 @@ You can learn more about the data at: <https://github.com/rfordatascience/tidytu
 
 If you ever watched the kids show Zoboomafoo, the lemur featured was from the Duke Lemur Center and is in our data set!
 For one bonus point added to this lab, write code that clearly displays this lemur's name, taxon, date of birth, and age at death.
-Place this code in a code chunk labeled "bonus" (i.e., `#| label: bonus`) before proceeding. 
+Place this code in a code chunk labeled "bonus" (i.e., `#| label: bonus`) before proceeding.
 :::
 
 ## Question 1
 
-Load the `lemurs` data from your `data` folder and save it as `lemurs`. Then, report which "types" of lemurs are represented in the sample, and how many of each. Note that this information is in the `taxon` variable. You should refer back to the linked data dictionary to understand what the different values of `taxon` mean. Your response should be a tibble with three columns: `taxon`, `taxon_name` (a new variable you create that contains the description of the `taxon`, e.g., `EMON` is `Mongoose lemur`), and `n` (number of lemurs with that taxon).
+Load the `lemurs` data from your `data` folder and save it as `lemurs`.
+Then, report which "types" of lemurs are represented in the sample, and how many of each.
+Note that this information is in the `taxon` variable.
+You should refer back to the linked data dictionary to understand what the different values of `taxon` mean.
+Your response should be a tibble with three columns: `taxon`, `taxon_name` (a new variable you create that contains the description of the `taxon`, e.g., `EMON` is `Mongoose lemur`), and `n` (number of lemurs with that taxon).
 
 ## Question 2
 
-Compute a 95% bootstrap interval for the slope of the regression line for predicting weights of lemurs (`weight_g`) from the ages of lemurs (in years) when their weight was measured (`age_at_wt_y`). In your code, use 1,000 bootstrap samples when simulating your bootstrap distribution. Don't forget to set a seed!
+Compute a 95% bootstrap interval for the slope of the regression line for predicting weights of lemurs (`weight_g`) from the ages of lemurs (in years) when their weight was measured (`age_at_wt_y`).
+In your code, use 1,000 bootstrap samples when simulating your bootstrap distribution.
+Don't forget to set a seed!
 
 In your narrative, first report your point estimate; then, provide an interpretation of the 95% confidence interval you obtain for the slope in the context of these data.
 
 ## Question 3
 
-Now, let's consider an additive linear regression model predicting weights of lemurs (`weight_g`) from the ages of lemurs (in years) when their weight was measured (`age_at_wt_y`) and their types (`taxon`). Calculate a 95% bootstrap bootstrap confidence interval for each slope parameter. In your code, use 1,000 bootstrap samples when simulating your bootstrap distribution. Don't forget to set a seed!
+Now, let's consider an additive linear regression model predicting weights of lemurs (`weight_g`) from the ages of lemurs (in years) when their weight was measured (`age_at_wt_y`) and their types (`taxon`).
+Calculate a 95% bootstrap bootstrap confidence interval for each slope parameter.
+In your code, use 1,000 bootstrap samples when simulating your bootstrap distribution.
+Don't forget to set a seed!
 
 In your narrative, first report the point estimate obtained for each slope parameter; then, provide an interpretation of the 95% confidence interval you obtain for each slope parameter.
 
@@ -124,15 +136,17 @@ Do female Coquerel's sifaka lemurs have different weights than male Coquerel's s
 
 a.  Create a new data frame `cs_lemurs` filtered to have **only** Coquerel's sifaka lemurs with determined sex (sex is not determined when `sex` equals `ND`).
 
-b.  Create an appropriate data visualization to compare the distribution of weights of male and female coquerel's sifaka lemurs. Provide a brief interpretation of this visualization.
+b.  Create an appropriate data visualization to compare the distribution of weights of male and female coquerel's sifaka lemurs.
+    Provide a brief interpretation of this visualization.
 
 c.  Consider the following population model:
 
 $$
-\text{weight_g} = \beta_0 + \beta_1 \times \text{sex} + \epsilon
+weight~(g) = \beta_0 + \beta_1 \times sex + \epsilon
 $$
 
-Write the relevant hypotheses corresponding to a hypothesis test that will address our question, i.e., "Do female Coquerel's sifaka lemurs have different weights than male Coquerel's sifaka, on average?" Your hypotheses should be clearly stated in the context of the data and the research question. Then, in a sentence or two, explain why a test with respect to the parameter $\beta_1$ is functionally equivalent to testing the "difference in means" (i.e., mean weight (g)) by gender. 
+Write the relevant hypotheses corresponding to a hypothesis test that will address our question, i.e., "Do female Coquerel's sifaka lemurs have different weights than male Coquerel's sifaka, on average?" Your hypotheses should be clearly stated in the context of the data and the research question.
+Then, in a sentence or two, explain why a test with respect to the parameter $\beta_1$ is functionally equivalent to testing the "difference in means" (i.e., mean weight (g)) by gender.
 
 d.  Conduct the relevant hypothesis test to answer our question at 5% significance level.
     While doing this, you should make sure your answer includes:
@@ -182,7 +196,7 @@ The variables in the data are as follows:
 -   `marital`: Whether mother is married or ⁠not married⁠ at birth.
 -   `whitemom`: Whether mom is white or ⁠not white⁠.
 
-## Question 5 
+## Question 5
 
 a.  First, read the data in and store it as `births14_raw`.
 
@@ -201,23 +215,25 @@ c.  In a single pipeline, recode the variables `mature`, `habit`, and `lowbirthw
 
 -   `mature` : "mature mom" → "35 and over" (baseline), "younger mom" → "34 and under"
 -   `habit` : "nonsmoker" → "Non-smoker" (baseline), "smoker" → "Smoker"
--   `lowbirthweight` : "not low" → "Not low" (baseline), "low" → "Low", 
+-   `lowbirthweight` : "not low" → "Not low" (baseline), "low" → "Low",
 
 In that same pipeline, relocate these three variables to be the first three columns of the data frame.
 
 Save the result back to `births14` and display the first 10 rows (and however many columns fit across the page) of `births14`.
 
-d. Split the data into training (75%) and testing (25%) sets. Be sure to save the training and testing sets separately. **NOTE**: use `set.seed(847)`.
+d.  Split the data into training (75%) and testing (25%) sets. Be sure to save the training and testing sets separately. **NOTE**: use `set.seed(847)`.
 
 ## Question 6
 
-a.  Fit the appropriate model to predict whether a baby was classified as low birthweight (Low) from length of pregnancy in weeks (`weeks`), and display a tidy summary of the model output. **Make sure you use only the training data**.
+a.  Fit the appropriate model to predict whether a baby was classified as low birthweight (Low) from length of pregnancy in weeks (`weeks`), and display a tidy summary of the model output.
+    **Make sure you use only the training data**.
 
 b.  Typeset the fitted regression equation using LaTeX.
 
 c.  Interpret the *slope* coefficient in the context of the data and the research question.
 
-d.  Now, fit the appropriate model to predict a baby was classified as low birthweight (Low) from length of pregnancy in weeks (`weeks`), mother's smoking status (`habit`), and mother's maturity (`mature`), and display a tidy summary of the model output. **Make sure you use only the training data**.
+d.  Now, fit the appropriate model to predict a baby was classified as low birthweight (Low) from length of pregnancy in weeks (`weeks`), mother's smoking status (`habit`), and mother's maturity (`mature`), and display a tidy summary of the model output.
+    **Make sure you use only the training data**.
 
 e.  Interpret the *intercept* coefficient in the context of the data and the research question.
 
@@ -227,7 +243,8 @@ a.  Plot the ROC curves of the models from Question 6 on the same plot, using di
 
 b.  Calculate the AUC (area under the curve) for each model using the `roc_auc()` function.
 
-c.  Based on the results of parts a and b, which model do you prefer? Explain your reasoning.
+c.  Based on the results of parts a and b, which model do you prefer?
+    Explain your reasoning.
 
 # Wrap-up
 
@@ -251,5 +268,3 @@ Reminders:
     -   having your final version of `.qmd` and `.pdf` files in your GitHub repository
 
     -   selecting pages corresponding to each question in Gradescope
-
-
