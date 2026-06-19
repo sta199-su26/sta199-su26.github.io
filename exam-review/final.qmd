@@ -1,64 +1,37 @@
 ---
-title: "Midterm 2 Study Guide"
+title: "Final Study Guide"
 execute:
   echo: false
 ---
-
-::: callout-note
-Answers are [here](/exams/midterm-2-answers.html).
-:::
 
 ```{r}
 #| label: load-packages
 #| message: false
 library(tidyverse)
 library(tidymodels)
-library(openintro)
+library(knitr)
 library(scales)
+library(conflicted)
 library(palmerpenguins)
+library(openintro)
+library(glue)
+conflicts_prefer(
+  dplyr::select(),
+  dplyr::filter(),
+  palmerpenguins::penguins
+)
 theme_set(theme_minimal(base_size = 12))
 ```
 
-Midterm Exam 2 focuses on the modeling material that has been introduced since spring break. As such, you should be spending most of your time with these:
-
-- [Lecture 15 (intro to models)](/slides/15-models.html)
-    - [Application exercise 15 (ice cover)](/ae/ae-15-icecover-model.html)
-- [Lecture 16 (simple linear regression)](/slides/16-simple-linear-regression.html)
-    - [Application exercise 16 (penguins)](/ae/ae-16-modeling-penguins.html)
-- [Lecture 17 (multiple linear regression)](/slides/17-multiple-linear-regression-1.html)
-- [Lecture 18 (multiple linear regression)](/slides/18-multiple-linear-regression-2.html)
-    - [Application exercise 18 (interest rates)](/ae/ae-18-modeling-loans.html)
-- [Lecture 19 (logistic regression)](/slides/19-logistic-regression-1.html)
-     - [Application exercise 19 (spam filter)](/ae/ae-19-spam-filter.html)
-- [Lecture 20 (logistic regression)](/slides/20-logistic-regression-2.html)
-     - [Application exercise 20 (forests)](/ae/ae-20-forest-classification.html)
-- [Lecture 21 (logistic regression)](/slides/21-logistic-regression-3.html)
-- [Lab 6](/lab/lab-6.html)
-- [Lab 7](/lab/lab-7.html)
-- [HW 5](/hw/hw-5.html)
-- [HW 6](/hw/hw-6.html)
-
-The exam consists of two parts:
-
-- In-class portion
-    - Wednesday April 8 at 11:45 AM - 1:00 PM in Griffith Theater;
-    - Worth 80% of your Midterm 2 grade;
-    - All multiple choice;
-    - Your only resource is both sides of one 8.5" x 11" note sheet that you and only you created (written, typed, iPad, etc);
-- Take-home portion
-    - Released Thursday April 9 at 6:00 PM;
-    - Due Sunday April 12 at 11:59 PM;
-    - Worth 20% of your Midterm 2 grade;
-    - Similar to a homework assignment, but shorter;
-    - Completely open resource (open note, open internet, open ChatGPT, open everything), but citation policies apply, and collaboration between students is forbidden.
-    
-[Here](https://edstem.org/us/courses/90224/discussion/7626328) is our advice about how you should prioritize your studying. Below are 35 practice questions to get your wheels spinning.
-
+The final exam is cumulative, but there will be a greater emphasis on material covered in the second half of the course (i.e., statistical modeling and inference).
+For a review of material covered in the first half of the course, please reference the "Midterm Review" provided [here](https://sta199-su26.github.io/exam-review/midterm.html).
 
 ::: callout-tip
 ## Try this
 
-Attempt all of the problems below *without resources*. Make note of your pain points and blind spots along the way. That might give you an idea of the stuff you would benefit from if you had it on a cheat sheet.
+Attempt all of the problems below *without resources*.
+Make note of your pain points and blind spots along the way.
+That might give you an idea of the stuff you would benefit from if you had it on a cheat sheet.
 :::
 
 # Concepts and main ideas
@@ -67,29 +40,175 @@ Attempt all of the problems below *without resources*. Make note of your pain po
 
 Can you answer each of these in one or two sentences?
 
-i. When we plot a line of best fit for a numerical predictor and numerical response, what does "best" mean?
-i. What does the correlation coefficient between two numerical variables measure?
-i. What does the $R^2$ of a linear regression measure?
-i. What is the main lesson of examples like Anscombe's Quartet or the datasauRus dozen?
-i. What is the difference between $Y=\beta_0+\beta_1 X + \varepsilon$ and $\hat{Y}=b_0+b_1 X$?
-i. Under what circumstances is the intercept in a regression model a meaningful quantity?
-i. If you run a "simple" linear regression model with a numerical response and a categorical predictor with three levels, what does the computer actually do to estimate that model?
-i. Consider this bit of toy code: `linear_reg() |> fit(_BLANK_, df)`? What goes in the blank? What purpose does that argument serve, and how do you use it?
-i. Let $\hat{y}^{(\text{old})}$ be the prediction at $x$ of a simple linear regression, and let $\hat{y}^{(\text{new})}$ be the prediction at $x+1$ of the same regression. How are $\hat{y}^{(\text{old})}$ and $\hat{y}^{(\text{new})}$ related? In other words, how does the prediction of the simple linear regression model change when you change the input from $x$ to $x+1$?
-i. Let $\hat{o}^{(\text{old})}$ be the estimated odds at $x$ from a simple logistic regression model, and let $\hat{o}^{(\text{new})}$ be the estimated odds at $x+1$ of the same regression. How are $\hat{o}^{(\text{old})}$ and $\hat{o}^{(\text{new})}$ related? In other words, how does the prediction of the simple logistic regression model change when you change the input from $x$ to $x+1$?
-i. Why is adjusted $R^2$ a better model selection criterion than unadjusted $R^2$?
+i.  When we plot a line of best fit for a numerical predictor and numerical response, what does "best" mean?
+ii. What does the correlation coefficient between two numerical variables measure?
+iii. What does the $R^2$ of a linear regression measure?
+iv.  What is the difference between $Y=\beta_0+\beta_1 X + \varepsilon$ and $\widehat{Y}=b_0+b_1 X$?
+v. Under what circumstances is the intercept in a regression model a "meaningful" quantity?
+vi. If you run a "simple" linear regression model with a numerical response and a categorical predictor with three levels, what does the computer actually do to estimate that model?
+vii. Consider this bit of toy code: `linear_reg() |> fit(_BLANK_, df)`? What goes in the blank? What purpose does that argument serve, and how do you use it?
+viii. Let $\widehat{y}^{(\text{old})}$ be the prediction at $x$ of a simple linear regression, and let $\widehat{y}^{(\text{new})}$ be the prediction at $x+1$ of the same regression. How are $\widehat{y}^{(\text{old})}$ and $\widehat{y}^{(\text{new})}$ related? In other words, how do the predictions of the simple linear regression model differ when you change the input from $x$ to $x+1$?
+ix.  Let $\widehat{o}^{(\text{old})}$ be the estimated odds at $x$ from a simple logistic regression model, and let $\widehat{o}^{(\text{new})}$ be the estimated odds at $x+1$ of the same regression. How are $\widehat{o}^{(\text{old})}$ and $\widehat{o}^{(\text{new})}$ related? In other words, how do the predicted odds of the simple logistic regression model differ when you change the input from $x$ to $x+1$?
+x. Why is adjusted $R^2$ a better linear regression model selection criterion than unadjusted $R^2$?
 
 # Visual understanding
 
 ### Question 2
 
-Practice!
+```{r}
+#| echo: false
+set.seed(1234567)
+my_colors <- c("red", "blue", "forestgreen")
+subsamps <- c(10, 20, 35)
+b0 <- 12 + c(2, 6, -3)
+b1 <- c(1, 5, -0.2)
 
-<https://www.rossmanchance.com/applets/2021/guesscorrelation/GuessCorrelation.html>
+y <- c()
+x <- c()
+cl <- c()
+
+for(i in 1:length(my_colors)){
+  x_sub <- rnorm(subsamps[i], 4, 1)
+  y <- c(y, b0[i] + b1[i] * x_sub + rnorm(subsamps[i], 0, 1))
+  x <- c(x, x_sub)
+  cl <- c(cl, rep(my_colors[i], subsamps[i]))
+}
+
+df <- tibble(
+  x = x, y = y, color = fct_relevel(cl, my_colors)
+)
+df <- df[sample(1:nrow(df)), ]
+```
+
+Here's a nonsense dataset that I made up:
+
+```{r}
+glimpse(df)
+```
+
+Imagine you run this code:
+
+```{r}
+#| eval: false
+linear_reg() |>
+  fit(y ~ x + color, df) |>
+  tidy()
+```
+
+The output would be a lil' table like this:
+
+::: {.center-table}
+| `term` | `estimate` | 
+|---------|:-----|
+| `(Intercept)`      | $b_0$   |   
+| `x`     | $b_1$  |  
+| `colorblue`       | $b_2$   |   
+| `colorforestgreen`       | $b_3$    |   
+:::
+
+A plot of the model fit might look something like this:
+
+```{r}
+#| fig-asp: 1
+#| echo: false
+#| fig-align: center
+
+add_slope_wedge <- function(intercept, slope, x0,
+                            run = NULL,       # horizontal length of wedge
+                            cex = 1,          # text size
+                            col = "black",
+                            lwd = 2,
+                            label = TRUE) {
+
+  # If run not supplied, choose something that looks reasonable
+  if (is.null(run)) {
+    usr <- par("usr")              # current plot limits
+    run <- 0.08 * (usr[2] - usr[1])
+  }
+  
+  # Point on the line where wedge attaches
+  y0 <- intercept + slope * x0
+  
+  # End of horizontal "run"
+  x1 <- x0 + run
+  y1 <- y0
+  
+  # Vertical "rise"
+  rise <- slope * run
+  x2 <- x1
+  y2 <- y1 + rise
+  
+  # Draw the triangle edges
+  segments(x0, y0, x1, y1, col = col, lwd = lwd)  # run
+  segments(x1, y1, x2, y2, col = col, lwd = lwd)  # rise
+  segments(x0, y0, x2, y2, col = col, lwd = lwd)  # hypotenuse (optional but nice)
+  
+  # Optional labels
+  if (label) {
+    text((x0 + x1)/2, y0, "run", pos = 1, cex = cex, col = col)
+    text(x1, (y1 + y2)/2, "rise", pos = 4, cex = cex, col = col)
+  }
+}
+
+my_fit <- linear_reg() |>
+  fit(y ~ x + color, df) |>
+  tidy()
+
+cepts <- c(my_fit$estimate[1], my_fit$estimate[1] + my_fit$estimate[3], my_fit$estimate[1] + my_fit$estimate[4])
+slope <- my_fit$estimate[2]
+
+plot(x, y, col = cl, pch = 19, xaxt = "n", yaxt = "n", bty = "n", xlim = c(-4, 1.4 * max(x)), ylim = c(-5, max(y)), cex = 1)
+add_slope_wedge(cepts[1], slope, 7, label = FALSE)
+add_slope_wedge(cepts[2], slope, 7, label = FALSE)
+add_slope_wedge(cepts[3], slope, 7, label = FALSE)
+abline(v = 0, lwd = 2)
+abline(h = 0, lwd = 2)
+abline(a = cepts[1], b = slope, col = my_colors[1], lwd = 2)
+abline(a = cepts[2], b = slope, col = my_colors[2], lwd = 2)
+abline(a = cepts[3], b = slope, col = my_colors[3], lwd = 2)
+points(numeric(length(cepts)), 
+       cepts, 
+       cex = 2, pch = 19)
+arrows(-1, 0.95 * cepts[2] + slope * (-1), -1, 1.1 * cepts[1] + slope * (-1), lwd = 2, code = 3)
+arrows(-1, 0.95 * cepts[1] + slope * (-1), -1, 1.1 * cepts[3] + slope * (-1), lwd = 2, code = 3)
+arrows(-3, 0.95 * cepts[2] + slope * (-3), -3, 1.1 * cepts[3] + slope * (-3), lwd = 2, code = 3)
+
+
+#text(0.5, 1.5 + cepts[2] + slope * 0.5, "IV")
+
+text(-4, 0.5*cepts[1] + 0.5*cepts[2], "I")
+text(-2, 0.5*cepts[1] + 0.5*cepts[2], "II")
+text(-2, 0.5*cepts[1] + 0.5*cepts[3], "III")
+
+text(0.5, 1.5 + cepts[2] + slope * 0.5, "IV")
+text(0.5, 1.5 + cepts[1] + slope * 0.5, "V")
+text(0.5, 1.5 + cepts[3] + slope * 0.5, "VI")
+
+text(7.5, cepts[2] + slope * 7 - 2, "VII")
+text(7.5, cepts[1] + slope * 7 - 2, "VIII")
+text(7.5, cepts[3] + slope * 7 - 2, "IX")
+```
+
+Match the labeled features of the plot to the correct quantity listed below:
+
+a. $b_0$
+a. $b_1$
+a. $b_2$
+a. $b_3$
+a. $b_0 + b_1$
+a. $b_0 + b_2$
+a. $b_0 + b_3$
+a. $b_1 + b_2$
+a. $b_1 + b_3$
+a. $b_2 + b_3$
+a. $b_2 - b_3$
+
+**Note**: Some of these quantities might go unused, and some might be used more than once.
 
 ### Questions 3 - 8
 
-In what follows, let $y$ be a binary response, let $x$ be a numerical predictor, and let $z$ be a binary predictor. Match the S-curve to the model equation.
+In what follows, let $y$ be a binary response, let $x$ be a numerical predictor, and let $z$ be a binary predictor.
+Match the S-curve to the model equation.
 
 ```{r}
 #| fig-asp: 1
@@ -182,12 +301,12 @@ curve(exp(b0 + b1 * x) / (1 + exp(b0 + b1 * x)), from = min(x), to = max(x), n =
 
 ```
 
-a. $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 22.9 + 4.54 \times x$
-b. $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 0.118 + 0.246 \times x$
-c. $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 0.798 + 0.486 \times x$
-d. $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = -6.035 + 1.194 \times x$
-e. $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = -2.26 - 0.99 \times x+1.26\times z$
-f. $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 0.079  -0.373 \times x$
+a.  $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 22.9 + 4.54 \times x$
+b.  $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 0.118 + 0.246 \times x$
+c.  $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 0.798 + 0.486 \times x$
+d.  $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = -6.035 + 1.194 \times x$
+e.  $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = -2.26 - 0.99 \times x+1.26\times z$
+f.  $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 0.079  -0.373 \times x$
 
 ### Questions 9 - 12
 
@@ -196,7 +315,6 @@ f. $\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 0.079  -0.373 \times x$
 email <- email |> relocate(spam, exclaim_mess)
 ```
 
-
 Recall the dataset on spam emails:
 
 ```{r}
@@ -204,7 +322,7 @@ Recall the dataset on spam emails:
 email
 ```
 
-Here is a regression model trained on all of these data:
+Here is a regression model trained on all available predictors:
 
 ```{r}
 #| echo: true
@@ -229,7 +347,6 @@ To see how well the model did, we can compute the classification error rates for
 email_roc <- roc_curve(email_aug, truth = spam, .pred_1, event_level = "second")
 ```
 
-
 ```{r}
 #| echo: false
 
@@ -250,11 +367,9 @@ ggplot(email_roc, aes(x = 1 - specificity, y = sensitivity)) +
   )
 ```
 
+Match the point on the ROC curve to the threshold that was used to compute it.
 
-Match the point on the ROC curve to the threshold that was used to compute it. 
-
-
-a. 
+a.  
 
 ```{r}
 #| echo: true
@@ -263,7 +378,7 @@ email_aug |>
   count(spam, .pred_class) |> group_by(spam) |> mutate(prop = n / sum(n))
 ```
 
-b. 
+b.  
 
 ```{r}
 #| echo: true
@@ -272,7 +387,7 @@ email_aug |>
   count(spam, .pred_class) |> group_by(spam) |> mutate(prop = n / sum(n))
 ```
 
-c. 
+c.  
 
 ```{r}
 #| echo: true
@@ -281,7 +396,7 @@ email_aug |>
   count(spam, .pred_class) |> group_by(spam) |> mutate(prop = n / sum(n))
 ```
 
-d.
+d.  
 
 ```{r}
 #| echo: true
@@ -290,10 +405,10 @@ email_aug |>
   count(spam, .pred_class) |> group_by(spam) |> mutate(prop = n / sum(n))
 ```
 
+# Stat doctor
 
-# WANANA doctor
-
-What's wrong with the interpretations below? Diagnose the problem and fix it if possible.
+What's wrong with the interpretations below?
+Diagnose the problem and fix it if possible.
 
 ```{r}
 q_no <- 12
@@ -350,7 +465,6 @@ linear_reg() |>
 
 > If flipper length and bill length both increase by 1mm, then we predict that body mass is lower by 48.14 grams, on average.
 
-
 ```{r}
 q_no <- q_no + 1
 ```
@@ -385,7 +499,6 @@ linear_reg() |>
 
 > About 60% of the observed variation in miles/gallon is explained by the model.
 
-
 ```{r}
 q_no <- q_no + 1
 ```
@@ -402,7 +515,6 @@ logistic_reg() |>
 ```
 
 > If an email contains no exclamation marks, no dollar signs, and no mentions of viagra, then the model predicts that the probability of it being spam is $e^{-2.218}\approx 0.10886$.
-
 
 ```{r}
 q_no <- q_no + 1
@@ -421,7 +533,6 @@ linear_reg() |>
 
 > If a male penguin has a bill depth of 0mm (sad!), then we expect its bill length to be 60.99mm on average.
 
-
 ```{r}
 q_no <- q_no + 1
 ```
@@ -439,7 +550,129 @@ linear_reg() |>
 
 > The correlation between body mass, flipper length, and bill length is about $\sqrt{0.76}\approx 0.87$.
 
+## Pokémon
 
+The data for Questions X - Y was originally gathered using the [**Complete Pokémon Dataset**](https://www.kaggle.com/datasets/rounakbanik/pokemon) from Kaggle. 
+
+First, let's load the data:
+
+```{r}
+#| message: false
+pokemon <- read_csv("data/pokemon.csv") |>
+  mutate(
+    is_legendary = as_factor(is_legendary)
+  )
+
+glimpse(pokemon)
+```
+
+Below are several failed attempts at interpreting statistical results for these data. Diagnose the problem and fix it if possible.
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+```
+
+### Question `{r} q_no`
+
+```{r}
+observed_fit <- pokemon |>
+  specify(speed ~ defense) |>
+  fit()
+
+observed_fit
+```
+
+> A Pokémon with speed of 0 will have defense score of 69.66.
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+```
+
+### Question `{r} q_no`
+
+```{r}
+logistic_fit <- logistic_reg() |>
+  fit(is_legendary ~ hp + attack + defense, pokemon)
+
+tidy(logistic_fit)
+```
+
+> A one unit increase in hp is associated with a 0.027 increase in the probability that the Pokémon is not legendary, on average.
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+```
+
+### Question `{r} q_no`
+
+```{r}
+logistic_fit |>
+  augment(pokemon) |>
+  roc_auc(
+    truth = is_legendary, 
+    .pred_TRUE, 
+    event_level = "second"
+  )
+```
+
+> About 85% of the variation in the response is explained by the model.
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+```
+
+### Question `{r} q_no`
+
+```{r}
+set.seed(12345)
+
+pokemon |>
+  specify(speed ~ defense) |>
+  generate(reps = 500, type = "bootstrap") |>
+  fit() |>
+  get_confidence_interval(
+    point_estimate = observed_fit,
+    level = 0.9,
+    type = "percentile"
+  ) |>
+  filter(term == "defense")
+```
+
+> We are confident that 95% of our data lies between -0.065 and 0.046.
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+```
+
+### Question `{r} q_no`
+
+```{r}
+set.seed(24601)
+
+pokemon |>
+  specify(speed ~ defense) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 500, type = "permute") |>
+  fit() |>
+  get_p_value(obs_stat = observed_fit, direction = "two-sided")
+
+```
+
+> The probability that the null hypothesis is true (meaning `defense` and `speed` are uncorrelated) is about 53%.
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+```
+
+### Question `{r} q_no`
+
+> Because the p-value is greater than 50%, we reject the alternative hypothesis. 
 
 # Data analysis
 
@@ -495,7 +728,9 @@ q_no <- q_no + 1
 
 ### Question `{r} q_no`
 
-You fit a model for predicting raises (`percent_incr`) from salaries (`annual_salary`). We'll call this model `raise_1_fit`. A tidy output of the model is shown below.
+You fit a model for predicting raises (`percent_incr`) from salaries (`annual_salary`).
+We'll call this model `raise_1_fit`.
+A tidy output of the model is shown below.
 
 ```{r}
 #| label: raise-salary-fit
@@ -518,13 +753,14 @@ q_no <- q_no + 1
 
 ### Question `{r} q_no`
 
-You then fit a model for predicting raises (`percent_incr`) from salaries (`annual_salary`) and performance ratings (`performance_rating`). We'll call this model `raise_2_fit`. Which of the following is definitely true based on the information you have so far?
+You then fit a model for predicting raises (`percent_incr`) from salaries (`annual_salary`) and performance ratings (`performance_rating`).
+We'll call this model `raise_2_fit`.
+Which of the following is definitely true based on the information you have so far?
 
 a.  Intercept of `raise_2_fit` is higher than intercept of `raise_1_fit`.
 b.  Slope of `raise_2_fit` is higher than RMSE of `raise_1_fit`.
 c.  Adjusted $R^2$ of `raise_2_fit` is higher than adjusted $R^2$ of `raise_1_fit`.
 d.  $R^2$ of `raise_2_fit` is higher $R^2$ of `raise_1_fit`.
-
 
 ```{r}
 q_no <- q_no + 1
@@ -542,9 +778,9 @@ raise_2_fit <- linear_reg() |>
 tidy(raise_2_fit)
 ```
 
-When your teammate sees this model output, they remark 
+When your teammate sees this model output, they remark
 
-> "The coefficient for `performance_ratingSuccessful` is negative. That's weird. I guess it means that people who get successful performance ratings get lower raises." 
+> "The coefficient for `performance_ratingSuccessful` is negative. That's weird. I guess it means that people who get successful performance ratings get lower raises."
 
 How would you respond to your teammate?
 
@@ -574,7 +810,8 @@ raise_2_fit <- linear_reg() |>
 tidy(raise_2_fit)
 ```
 
-Unfortunately they didn't write their code in a Quarto document, instead just wrote some code in the Console and then lost track of their work. They remember using the `fct_relevel()` function and doing something like the following:
+Unfortunately they didn't write their code in a Quarto document, instead just wrote some code in the Console and then lost track of their work.
+They remember using the `fct_relevel()` function and doing something like the following:
 
 ```{r}
 #| eval: false
@@ -596,7 +833,8 @@ q_no <- q_no + 1
 
 ### Question `{r} q_no`
 
-Suppose we fit a model to predict `percent_incr` from `annual_salary` and `salary_type`. A tidy output of the model is shown below.
+Suppose we fit a model to predict `percent_incr` from `annual_salary` and `salary_type`.
+A tidy output of the model is shown below.
 
 ```{r}
 #| label: raise-salary-type-fit
@@ -606,7 +844,8 @@ raise_3_fit <- linear_reg() |>
 tidy(raise_3_fit)
 ```
 
-Which of the following visualizations represent this model? Explain your reasoning.
+Which of the following visualizations represent this model?
+Explain your reasoning.
 
 ```{r}
 #| label: fig-raise-salary-type
@@ -719,15 +958,14 @@ ggplot(
   scale_y_continuous(labels = label_percent(scale = 1))
 ```
 
-
-
 ```{r}
 q_no <- q_no + 1
 ```
 
 ### Question `{r} q_no`
 
-Suppose you now fit a model to predict the natural log of percent increase, `log(percent_incr)`, from performance rating. The model is called `raise_4_fit`.
+Suppose you now fit a model to predict the natural log of percent increase, `log(percent_incr)`, from performance rating.
+The model is called `raise_4_fit`.
 
 ```{r}
 raise_4_fit <- linear_reg() |>
@@ -745,19 +983,22 @@ tidy(raise_4_fit) |>
 
 Based on this, which of the following is true?
 
-a\. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by 10.25% compared to the employees with Poor performance rating.
+a\.
+The model predicts that the percentage increase employees with Successful performance get, on average, is higher by 10.25% compared to the employees with Poor performance rating.
 
-b\. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by 6.93% compared to the employees with Poor performance rating.
+b\.
+The model predicts that the percentage increase employees with Successful performance get, on average, is higher by 6.93% compared to the employees with Poor performance rating.
 
-c\. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 1025 compared to the employees with Poor performance rating.
+c\.
+The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 1025 compared to the employees with Poor performance rating.
 
-d\. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 6.93 compared to the employees with Poor performance rating.
-
-
+d\.
+The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 6.93 compared to the employees with Poor performance rating.
 
 ## Movies
 
-The data for this part comes from the Internet Movie Database (IMDB). Specifically, the data are a random sample of movies released between 1980 and 2020.
+The data for this part comes from the Internet Movie Database (IMDB).
+Specifically, the data are a random sample of movies released between 1980 and 2020.
 
 ```{r}
 #| label: load-data
@@ -769,29 +1010,28 @@ The name of the data frame used for this analysis is `movies`, and it contains t
 
 \setcounter{table}{0}
 
-| Variable          | Description                                                             |
-|----------------------|--------------------------------------------------|
-| `name`            | name of the movie                                                       |
-| `rating`          | rating of the movie (R, PG, etc.)                                       |
-| `genre`           | main genre of the movie.                                                |
-| `runtime`         | duration of the movie                                                   |
-| `year`            | year of release                                                         |
-| `release_date`    | release date (YYYY-MM-DD)                                               |
-| `release_country` | release country                                                         |
-| `score`           | IMDB user rating                                                        |
-| `votes`           | number of user votes                                                    |
-| `director`        | the director                                                            |
-| `writer`          | writer of the movie                                                     |
-| `star`            | main actor/actress                                                      |
-| `country`         | country of origin                                                       |
-| `budget`          | the budget of a movie (some movies don't have this, so it appears as 0) |
-| `gross`           | revenue of the movie                                                    |
-| `company`         | the production company                                                  |
+| Variable | Description |
+|-----------------------|------------------------------------------------|
+| `name` | name of the movie |
+| `rating` | rating of the movie (R, PG, etc.) |
+| `genre` | main genre of the movie. |
+| `runtime` | duration of the movie |
+| `year` | year of release |
+| `release_date` | release date (YYYY-MM-DD) |
+| `release_country` | release country |
+| `score` | IMDB user rating |
+| `votes` | number of user votes |
+| `director` | the director |
+| `writer` | writer of the movie |
+| `star` | main actor/actress |
+| `country` | country of origin |
+| `budget` | the budget of a movie (some movies don't have this, so it appears as 0) |
+| `gross` | revenue of the movie |
+| `company` | the production company |
 
 : Data dictionary for `movies` {#tbl-data-dictionary tbl-colwidths="\[20,80\]"}
 
 The first thirty rows of the `movies` data frame are shown in @tbl-data, with variable types suppressed (since we'll ask about them later).
-
 
 ```{r}
 #| echo: false
@@ -829,9 +1069,7 @@ movies <- movies |>
   )
 ```
 
-```{=tex}
 \begin{landscape}
-```
 
 ::: {#tbl-data}
 First 30 rows of `movies`, with variable types suppressed.
@@ -856,10 +1094,7 @@ options(
   pillar.sigfig = 3
 )
 ```
-
 :::
-
-
 
 ### Score vs. runtime
 
@@ -871,8 +1106,9 @@ score_runtime_fit <- linear_reg() |>
   fit(score ~ runtime, data = movies)
 ```
 
-
-@fig-score-runtime visualizes the relationship between `score` and `runtime` as well as the linear model for predicting `score` from `runtime`. The first three movies in @tbl-data are labeled in the visualization as well. Answer all questions in this part based on @fig-score-runtime.
+@fig-score-runtime visualizes the relationship between `score` and `runtime` as well as the linear model for predicting `score` from `runtime`.
+The first three movies in @tbl-data are labeled in the visualization as well.
+Answer all questions in this part based on @fig-score-runtime.
 
 ```{r}
 #| label: fig-score-runtime-prep
@@ -925,15 +1161,15 @@ ggplot(movies, aes(x = runtime, y = score)) +
   scale_x_continuous(breaks = seq(80, 240, 20))
 ```
 
-
 ```{r}
 q_no <- q_no + 1
 ```
 
 #### Question `{r} q_no`
 
-Partial code for producing @fig-score-runtime is given below. Which of the following goes in the blank on Line 2? **Select all that apply.**
-
+Partial code for producing @fig-score-runtime is given below.
+Which of the following goes in the blank on Line 2?
+**Select all that apply.**
 
 ```{r}
 #| eval: false
@@ -975,8 +1211,6 @@ d.  Blue City \> Winter Sleep \> Rang De Basanti
 
 e.  Blue City \> Rang De Basanti \> Winter Sleep
 
-
-
 ```{r}
 q_no <- q_no + 1
 ```
@@ -988,7 +1222,8 @@ q_no <- q_no + 1
 score_runtime_rsq <- round(glance(score_runtime_fit)$r.squared * 100, 0)
 ```
 
-The R-squared for the model visualized in @fig-score-runtime is `{r} score_runtime_rsq`%. Which of the following is the [**best**]{.underline} interpretation of this value?
+The R-squared for the model visualized in @fig-score-runtime is `{r} score_runtime_rsq`%.
+Which of the following is the [**best**]{.underline} interpretation of this value?
 
 a.  `{r} score_runtime_rsq`% of the variability in movie runtimes is explained by their scores.
 
@@ -1002,7 +1237,8 @@ e.  The correlation between scores and runtimes of movies is `{r} score_runtime_
 
 ### Score vs. runtime or year
 
-The visualizations below show the relationship between `score` and `runtime` as well as `score` and `year`, respectively. Additionally, the lines of best fit are overlaid on the visualizations.
+The visualizations below show the relationship between `score` and `runtime` as well as `score` and `year`, respectively.
+Additionally, the lines of best fit are overlaid on the visualizations.
 
 ```{r}
 #| layout-ncol: 2
@@ -1017,7 +1253,8 @@ ggplot(movies, aes(x = year, y = score)) +
   geom_smooth(method = "lm", se = FALSE, color = "black", linewidth = 1.2)
 ```
 
-The correlation coefficients of these relationships are calculated below, though some of the code and the output are missing. Answer all questions in this part based on the code and output shown below.
+The correlation coefficients of these relationships are calculated below, though some of the code and the output are missing.
+Answer all questions in this part based on the code and output shown below.
 
 ```{r}
 #| include: false
@@ -1081,7 +1318,6 @@ d.  A value between 0 and -0.434.
 
 e.  A value between -1 and -0.434.
 
-
 ### Score vs. runtime and rating
 
 In this part, we fit a model predicting `score` from `runtime` and `rating` (categorized as G, PG, PG-13, R, NC-17, and Not Rated), and name it `score_runtime_rating_fit`.
@@ -1091,7 +1327,8 @@ score_runtime_rating_fit <- linear_reg() |>
   fit(score ~ runtime + rating, data = movies)
 ```
 
-The model output for `score_runtime_rating_fit` is shown in @tbl-score-runtime-rating-tidy. Answer all questions in this part based on @tbl-score-runtime-rating-tidy.
+The model output for `score_runtime_rating_fit` is shown in @tbl-score-runtime-rating-tidy.
+Answer all questions in this part based on @tbl-score-runtime-rating-tidy.
 
 ```{r}
 #| label: tbl-score-runtime-rating-tidy
@@ -1101,15 +1338,14 @@ tidy(score_runtime_rating_fit) |>
   knitr::kable(digits = 3)
 ```
 
-
-
 ```{r}
 q_no <- q_no + 1
 ```
 
 #### Question `{r} q_no`
 
-Which of the following is [**TRUE**]{.underline} about the intercept of `score_runtime_rating_fit`? **Select all that are true.**
+Which of the following is [**TRUE**]{.underline} about the intercept of `score_runtime_rating_fit`?
+**Select all that are true.**
 
 a.  Keeping runtime constant, G-rated movies are predicted to score, on average, 4.525 points.
 
@@ -1120,8 +1356,6 @@ c.  Movies without a rating that are 0 minutes in length are predicted to score,
 d.  All else held constant, movies that are 0 minutes in length are predicted to score, on average, 4.525 points.
 
 e.  G-rated movies that are 0 minutes in length are predicted to score, on average, 4.525 points.
-
-
 
 ```{r}
 q_no <- q_no + 1
@@ -1161,15 +1395,14 @@ d.  cannot be compared (based on the information provided) to
 
 e.  is both greater than and less than
 
-
-
 ```{r}
 q_no <- q_no + 1
 ```
 
 #### Question `{r} q_no`
 
-The model `score_runtime_rating_fit` (the model predicting `score` from `runtime` and `rating`) can be visualized as parallel lines for each level of `rating`. Which of the following is the equation of the line for R-rated movies?
+The model `score_runtime_rating_fit` (the model predicting `score` from `runtime` and `rating`) can be visualized as parallel lines for each level of `rating`.
+Which of the following is the equation of the line for R-rated movies?
 
 a.  $\widehat{score} = (4.525 - 0.257) + 0.021 \times runtime$
 
@@ -1180,3 +1413,373 @@ c.  $\widehat{score} = 4.525 + (0.021 - 0.257) \times runtime$
 d.  $score = 4.525 + (0.021 - 0.257) \times runtime$
 
 e.  $\widehat{score} = (4.525 + 0.021) - 0.257 \times runtime$
+
+## Holiday movies
+
+```{r}
+#| include: false
+holiday_movies <- read_csv("data/holiday-movies.csv")
+```
+
+A team of five data scientists is working model and make inferences about holiday movies using a dataset on `{r} nrow(holiday_movies)` holiday movies; movies with "holiday", "Christmas", "Hanukkah", or "Kwanzaa" (or variants thereof) in their title.
+Each member of the team is responsible for a different part of the analysis.
+The data come from the Internet Movie Database (IMDb).
+The data frame is called `holiday_movies` and it contains the variables described in the table below.
+
+| Variable | Description |
+|:-----------------|:-----------------------------------------------------|
+| `id` | IMDb ID of movie |
+| `title_type` | Type of the title (Feature Film or TV Movie) |
+| `title` | Title used on promotional materials at the point of release |
+| `year` | Release year of a title |
+| `runtime` | Primary runtime of the title, in minutes |
+| `genre` | Primary genre associated with the title |
+| `score` | Weighted average of all the individual user ratings on IMDb |
+| `num_votes` | Number of votes the title has received on IMDb |
+| `christmas` | Whether the title includes "christmas", "xmas", "x mas", etc. |
+| `hanukkah` | Whether the title includes "hanukkah", "chanukah", etc. |
+| `kwanzaa` | Whether the title includes "kwanzaa" |
+| `holiday` | Whether the title includes the word "holiday" |
+
+: {tbl-colwidths="\[20,80\]"}
+
+A peek at the data is shown below.
+
+```{r}
+holiday_movies
+```
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+
+```
+
+### Question `{r} q_no` 
+
+
+
+The second team member is working on inference, focusing on comparing `score`s between Feature Films and TV Movies using the full dataset.
+They use the full dataset for their analysis.
+Answer the questions in this part for this team member's portion of the analysis.
+
+```{r}
+#| include: false
+holiday_means <- holiday_movies |>
+  group_by(title_type) |>
+  summarize(mean_score = mean(score))
+
+holiday_ff_mean <- holiday_means |> 
+  filter(title_type == "Feature Film") |> 
+  pull(mean_score) |> 
+  round(2)
+
+holiday_tv_mean <- holiday_means |> 
+  filter(title_type == "TV Movie") |> 
+  pull(mean_score) |> 
+  round(2)
+```
+
+The density curves below show the distributions of `score`s in Feature Films and TV Movies.
+The means are overlaid on these distributions: a mean score of `{r} holiday_ff_mean` for Feature Films and a mean score of `{r} holiday_tv_mean` for TV Movies.
+The observed difference between these scores (TV Movies - Feature Films) is `{r} holiday_tv_mean - holiday_ff_mean`.
+
+```{r}
+#| echo: false
+#| fig-asp: 0.45
+#| fig-width: 8
+ggplot(
+  holiday_movies,
+  aes(x = score, fill = title_type, color = title_type)
+  ) +
+  geom_density(alpha = 0.5) +
+  scale_fill_manual(
+    values = c("Feature Film" = "black", "TV Movie" = "gray70")
+  ) +
+  scale_color_manual(
+    values = c("Feature Film" = "black", "TV Movie" = "gray70")
+  ) +
+  annotate(
+    geom = "segment",
+    x = holiday_ff_mean, xend = holiday_ff_mean,
+    y = 0, yend = 0.6,
+    color = "black", linewidth = 1.5
+  ) +
+  annotate(
+    geom = "label",
+    x = holiday_ff_mean - 2.5, y = 0.55,
+    label = glue('Mean score for\nFeature Films: {holiday_ff_mean}'),
+    color = "black", fill = "white", size = 4
+  ) +
+  annotate(
+    geom = "segment",
+    x = holiday_tv_mean, xend = holiday_tv_mean,
+    y = 0, yend = 0.6,
+    color = "gray70", linewidth = 1.5
+  ) +
+  annotate(
+    geom = "label",
+    x = holiday_tv_mean + 2.2, y = 0.55,
+    label = glue('Mean score for\nTV Movies: {holiday_tv_mean}'),
+    color = "black", fill = "gray70", alpha = 0.5, size = 4
+  ) +
+  coord_cartesian(clip = "off") +
+  scale_x_continuous(limits = c(0, 10.5)) +
+  labs(y = NULL)
+```
+
+A bootstrap distribution of the difference between the mean scores of holiday TV Movies and Feature Films is generated using the code below:
+
+```{r}
+set.seed(1234)
+
+boot_dist <- holiday_movies |>
+  specify(score ~ title_type) |>
+  generate(reps = 1000, type = "bootstrap") |>
+  fit()
+```
+
+
+```{r}
+#| include: false
+ci <- boot_dist |>
+  ungroup() |>
+  filter(term == "title_typeTV Movie") |>
+  summarize(
+    lower = quantile(estimate, 0.025),
+    upper = quantile(estimate, 0.975),
+  )
+```
+
+The plot below visualizes the bootstrap distribution.
+The 95% confidence interval is (0.442, 0.670).
+The bounds for this interval are overlaid on the plot.
+
+```{r}
+#| echo: false
+#| fig-asp: 0.5
+boot_dist |>
+  ungroup() |>
+  filter(term == "title_typeTV Movie") |>
+  ggplot(aes(x = estimate)) +
+  geom_histogram(binwidth = 0.05, color = "gray") +
+  scale_x_continuous(breaks = round(seq(-0.6, 0.6, 0.1), 1)) +
+  scale_y_continuous(breaks = seq(0, 300, 50)) +
+  geom_vline(xintercept = c(ci$lower, ci$upper), linewidth = 1.5)
+```
+
+Noting that this guide is written in Quarto with all figures and tables produced with code, which of the following is [**TRUE**]{.underline} about this analysis?
+**Select all that apply.**
+
+a.  We are 95% confident that 44.2% to 67% of holiday movies are TV Movies.
+
+b.  The upper bound of the interval marks the 2.5th percentile of the bootstrap distribution.
+
+c.  We are 95% confident that the mean score of holiday TV Movies is 0.442 points to 0.67 points higher than holiday Feature Films.
+
+d.  If this document is rendered again, we might get slightly different values for the bounds of the confidence interval.
+
+e.  1,000 bootstrap samples were taken when constructing this confidence interval.
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+
+```
+
+### Question `{r} q_no` 
+
+A post in a data science blog states that holiday TV movies score discernibly differently than holiday Feature Films, on average.
+Suppose you want to evaluate this claim using a hypothesis test so you write the following code to simulate the null distribution.
+
+```{r}
+set.seed(1234)
+
+null_dist <- holiday_movies |>
+  specify(score ~ title_type) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  fit()
+```
+
+The plot below visualizes the null distributions for the slope and intercept. Focus on the slope.
+
+```{r}
+#| echo: false
+#| fig-asp: 0.5
+visualize(null_dist)
+```
+
+Which of the following is [**TRUE**]{.underline} about this analysis?
+**Select all that apply.**
+
+a.  The null hypothesis states that the mean score of all holiday TV movies is equal to the mean score of all holiday Feature Films.    
+
+b.  The alternative hypothesis states that the mean score of all holiday TV movies is different than the mean score of all holiday Feature Films. 
+
+c.  The p-value is approximately 0.
+
+d.  The data provide discernible evidence that the mean score of all holiday TV movies is equal to the mean score of all holiday Feature Films.
+
+e.  The confidence interval from the previous question and the result of the hypothesis test in this question do not agree with each other.
+
+
+
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+
+```
+
+### Question `{r} q_no` 
+
+The third team member is working on modeling, predicting `score`.
+They first split up the data into training and testing sets.
+
+```{r}
+set.seed(199)
+holiday_movies_split <- initial_split(holiday_movies)
+holiday_movies_train <- training(holiday_movies_split)
+holiday_movies_test <- testing(holiday_movies_split)
+```
+
+They then fit a model predicting `score` from `runtime` and `genre` (categorized as Comedy, Drama, Other, Animation, Family, and Romance), and name it `score_runtime_genre_fit`,
+using the training data.
+Answer the questions in this part for this team member's portion of the analysis.
+
+```{r}
+score_runtime_genre_fit <- linear_reg() |>
+  fit(score ~ runtime * genre, data = holiday_movies_train)
+```
+
+The model output for `score_runtime_genre_fit` is shown below.
+
+```{r}
+#| echo: false
+tidy(score_runtime_genre_fit) |>
+  knitr::kable(digits = 3)
+```
+
+
+
+
+Which of the following is [**true**]{.underline} about the intercept of `score_runtime_genre_fit`?
+**Select all that apply.**
+
+a.  The intercept is meaningless in context of the data.
+
+b.  Animation movies that are 0 minutes in length are predicted to score, on average, 7.327 points. 
+
+c.  All else held constant, movies that are 0 minutes in length are predicted to score, on average, 7.327 points.
+
+d.  Movies without a genre that are 0 minutes in length are predicted to score, on average, 7.327 points.
+
+e.  Keeping runtime constant, animation movies are predicted to score, on average, 7.327 points.
+
+
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+
+```
+
+### Question `{r} q_no` 
+
+Fill in the blank:
+
+> Adjusted R-squared for `score_runtime_genre_fit` (the model predicting `score` from `runtime` and `genre`) \_\_\_\_\_\_\_\_\_ the adjusted R-squared of the model `score_runtime_fit` (for predicting `score` from `runtime` alone).
+
+a.  is equal to
+
+b.  is less than
+
+c.  is greater than
+
+d.  is both greater than and less than
+
+e.  cannot be compared (based on the information provided) to 
+
+
+
+
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+
+```
+
+### Question `{r} q_no` 
+
+The fourth team member is also working on modeling, but they classifying movies as either Feature Films or TV Movies (`title_type`) based on their `runtime`, `score`, and  `num_votes`.
+Their code and output is shown below.
+
+```{r}
+# make title_type a factor
+holiday_movies <- holiday_movies |>
+  mutate(title_type = fct_relevel(title_type, "TV Movie", "Feature Film"))
+
+# split the data into training and testing
+set.seed(221)
+holiday_movies_split <- initial_split(holiday_movies)
+holiday_movies_train <- training(holiday_movies_split)
+holiday_movies_test <- testing(holiday_movies_split)
+
+# fit model to training data
+title_type_fit <- logistic_reg() |>
+  fit(title_type ~ runtime + score + num_votes, data = holiday_movies_train)
+
+# make predictions for testing data
+holiday_movies_aug <- augment(title_type_fit, new_data = holiday_movies_test)
+
+# summarize predictions
+holiday_movies_aug |>
+  count(title_type, .pred_class)
+```
+
+
+
+
+
+Which of the following is the **false positive rate** of the model for this testing set?
+
+a.  30 / (30 + 256) = `{r} round(30 / (30 + 256) , 2)` 
+
+b.  256 / (30 + 256) = `{r} round(256 / (30 + 256) , 2)`
+
+c.  95 / (95 + 78) = `{r} round(95 / (95 + 78) , 2)`
+
+d.  78 / (95 + 78) = `{r} round(78 / (95 + 78) , 2)`
+
+e.  78 / (30 + 78) = `{r} round(78 / (30 + 78) , 2)`
+
+
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+
+```
+
+### Question `{r} q_no` 
+
+Suppose you fit one other model, predicting `title_type` from `runtime` and `score` only.
+You should choose this model over the original model if ...
+
+a.  it has a higher adjusted R-squared
+
+b.  it has a higher R-squared
+
+c.  it has a lower false positive rate
+
+d.  it has a higher false negative rate
+
+e.  it has a higher area under the ROC curve
+
+```{r}
+#| include: false
+q_no <- q_no + 1
+```
+
