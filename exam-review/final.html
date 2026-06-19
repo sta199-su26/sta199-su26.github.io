@@ -1,0 +1,2166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Final Study Guide – STA 199</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../exam-review/midterm-key.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0dd86df0a49f8ca43885eaae46087b40.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script><link rel="stylesheet" href="../style/sta199.scss">
+<meta property="og:title" content="Final Study Guide – STA 199">
+<meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
+<meta property="og:image" content="https://sta199-su26.github.io/exam-review/final_files/figure-html/unnamed-chunk-4-1.png">
+<meta property="og:site_name" content="STA 199">
+<meta property="og:image:height" content="1344">
+<meta property="og:image:width" content="1344">
+<meta name="twitter:title" content="Final Study Guide – STA 199">
+<meta name="twitter:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
+<meta name="twitter:image" content="https://sta199-su26.github.io/exam-review/img/twitter-card-ks.pdf">
+<meta name="twitter:creator" content="@minebocek">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exam-review/midterm.html">Exam Review</a></li><li class="breadcrumb-item"><a href="../exam-review/final.html">Final Review</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/sta199-su26" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Course Information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-team.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Team</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Couse Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful Links</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Computing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-cheatsheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cheatsheets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-principles-oh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coding principles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing-troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/description.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Description</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/1-working-collaboratively.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/2-proposal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/3-improvement-progress.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/4-peer-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/5-writeup-presentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Milestone 5</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ae.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application Exercises</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Exam Review</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam-review/midterm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm Review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam-review/midterm-key.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Midterm Review Answer Key</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam-review/final.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Final Review</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#concepts-and-main-ideas" id="toc-concepts-and-main-ideas" class="nav-link active" data-scroll-target="#concepts-and-main-ideas">Concepts and main ideas</a>
+  <ul class="collapse">
+<li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#visual-understanding" id="toc-visual-understanding" class="nav-link" data-scroll-target="#visual-understanding">Visual understanding</a>
+  <ul class="collapse">
+<li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#questions-3---8" id="toc-questions-3---8" class="nav-link" data-scroll-target="#questions-3---8">Questions 3 - 8</a></li>
+  <li><a href="#questions-9---12" id="toc-questions-9---12" class="nav-link" data-scroll-target="#questions-9---12">Questions 9 - 12</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#stat-doctor" id="toc-stat-doctor" class="nav-link" data-scroll-target="#stat-doctor">Stat doctor</a>
+  <ul class="collapse">
+<li><a href="#question-13" id="toc-question-13" class="nav-link" data-scroll-target="#question-13">Question 13</a></li>
+  <li><a href="#question-14" id="toc-question-14" class="nav-link" data-scroll-target="#question-14">Question 14</a></li>
+  <li><a href="#question-15" id="toc-question-15" class="nav-link" data-scroll-target="#question-15">Question 15</a></li>
+  <li><a href="#question-16" id="toc-question-16" class="nav-link" data-scroll-target="#question-16">Question 16</a></li>
+  <li><a href="#question-17" id="toc-question-17" class="nav-link" data-scroll-target="#question-17">Question 17</a></li>
+  <li><a href="#question-18" id="toc-question-18" class="nav-link" data-scroll-target="#question-18">Question 18</a></li>
+  <li><a href="#question-19" id="toc-question-19" class="nav-link" data-scroll-target="#question-19">Question 19</a></li>
+  <li><a href="#question-20" id="toc-question-20" class="nav-link" data-scroll-target="#question-20">Question 20</a></li>
+  <li>
+<a href="#pok%C3%A9mon" id="toc-pokémon" class="nav-link" data-scroll-target="#pok%C3%A9mon">Pokémon</a>
+  <ul class="collapse">
+<li><a href="#question-21" id="toc-question-21" class="nav-link" data-scroll-target="#question-21">Question 21</a></li>
+  <li><a href="#question-22" id="toc-question-22" class="nav-link" data-scroll-target="#question-22">Question 22</a></li>
+  <li><a href="#question-23" id="toc-question-23" class="nav-link" data-scroll-target="#question-23">Question 23</a></li>
+  <li><a href="#question-24" id="toc-question-24" class="nav-link" data-scroll-target="#question-24">Question 24</a></li>
+  <li><a href="#question-25" id="toc-question-25" class="nav-link" data-scroll-target="#question-25">Question 25</a></li>
+  <li><a href="#question-26" id="toc-question-26" class="nav-link" data-scroll-target="#question-26">Question 26</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  <li>
+<a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data analysis</a>
+  <ul class="collapse">
+<li>
+<a href="#blizzard-salaries" id="toc-blizzard-salaries" class="nav-link" data-scroll-target="#blizzard-salaries">Blizzard salaries</a>
+  <ul class="collapse">
+<li><a href="#question-27" id="toc-question-27" class="nav-link" data-scroll-target="#question-27">Question 27</a></li>
+  <li><a href="#question-28" id="toc-question-28" class="nav-link" data-scroll-target="#question-28">Question 28</a></li>
+  <li><a href="#question-29" id="toc-question-29" class="nav-link" data-scroll-target="#question-29">Question 29</a></li>
+  <li><a href="#question-30" id="toc-question-30" class="nav-link" data-scroll-target="#question-30">Question 30</a></li>
+  <li><a href="#question-31" id="toc-question-31" class="nav-link" data-scroll-target="#question-31">Question 31</a></li>
+  <li><a href="#question-32" id="toc-question-32" class="nav-link" data-scroll-target="#question-32">Question 32</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#movies" id="toc-movies" class="nav-link" data-scroll-target="#movies">Movies</a>
+  <ul class="collapse">
+<li><a href="#score-vs.-runtime" id="toc-score-vs.-runtime" class="nav-link" data-scroll-target="#score-vs.-runtime">Score vs.&nbsp;runtime</a></li>
+  <li><a href="#score-vs.-runtime-or-year" id="toc-score-vs.-runtime-or-year" class="nav-link" data-scroll-target="#score-vs.-runtime-or-year">Score vs.&nbsp;runtime or year</a></li>
+  <li><a href="#score-vs.-runtime-and-rating" id="toc-score-vs.-runtime-and-rating" class="nav-link" data-scroll-target="#score-vs.-runtime-and-rating">Score vs.&nbsp;runtime and rating</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#holiday-movies" id="toc-holiday-movies" class="nav-link" data-scroll-target="#holiday-movies">Holiday movies</a>
+  <ul class="collapse">
+<li><a href="#question-42" id="toc-question-42" class="nav-link" data-scroll-target="#question-42">Question 42</a></li>
+  <li><a href="#question-43" id="toc-question-43" class="nav-link" data-scroll-target="#question-43">Question 43</a></li>
+  <li><a href="#question-44" id="toc-question-44" class="nav-link" data-scroll-target="#question-44">Question 44</a></li>
+  <li><a href="#question-45" id="toc-question-45" class="nav-link" data-scroll-target="#question-45">Question 45</a></li>
+  <li><a href="#question-46" id="toc-question-46" class="nav-link" data-scroll-target="#question-46">Question 46</a></li>
+  <li><a href="#question-47" id="toc-question-47" class="nav-link" data-scroll-target="#question-47">Question 47</a></li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/exam-review/final.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exam-review/midterm.html">Exam Review</a></li><li class="breadcrumb-item"><a href="../exam-review/final.html">Final Review</a></li></ol></nav><div class="quarto-title">
+<h1 class="title">Final Study Guide</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><p>The final exam is cumulative, but there will be a greater emphasis on material covered in the second half of the course (i.e., statistical modeling and inference). For a review of material covered in the first half of the course, please reference the “Midterm Review” provided <a href="https://sta199-su26.github.io/exam-review/midterm.html">here</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Try this
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Attempt all of the problems below <em>without resources</em>. Make note of your pain points and blind spots along the way. That might give you an idea of the stuff you would benefit from if you had it on a cheat sheet.</p>
+</div>
+</div>
+<section id="concepts-and-main-ideas" class="level1"><h1>Concepts and main ideas</h1>
+<section id="question-1" class="level3"><h3 class="anchored" data-anchor-id="question-1">Question 1</h3>
+<p>Can you answer each of these in one or two sentences?</p>
+<ol type="i">
+<li>When we plot a line of best fit for a numerical predictor and numerical response, what does “best” mean?</li>
+<li>What does the correlation coefficient between two numerical variables measure?</li>
+<li>What does the <span class="math inline">\(R^2\)</span> of a linear regression measure?</li>
+<li>What is the difference between <span class="math inline">\(Y=\beta_0+\beta_1 X + \varepsilon\)</span> and <span class="math inline">\(\widehat{Y}=b_0+b_1 X\)</span>?</li>
+<li>Under what circumstances is the intercept in a regression model a “meaningful” quantity?</li>
+<li>If you run a “simple” linear regression model with a numerical response and a categorical predictor with three levels, what does the computer actually do to estimate that model?</li>
+<li>Consider this bit of toy code: <code>linear_reg() |&gt; fit(_BLANK_, df)</code>? What goes in the blank? What purpose does that argument serve, and how do you use it?</li>
+<li>Let <span class="math inline">\(\widehat{y}^{(\text{old})}\)</span> be the prediction at <span class="math inline">\(x\)</span> of a simple linear regression, and let <span class="math inline">\(\widehat{y}^{(\text{new})}\)</span> be the prediction at <span class="math inline">\(x+1\)</span> of the same regression. How are <span class="math inline">\(\widehat{y}^{(\text{old})}\)</span> and <span class="math inline">\(\widehat{y}^{(\text{new})}\)</span> related? In other words, how do the predictions of the simple linear regression model differ when you change the input from <span class="math inline">\(x\)</span> to <span class="math inline">\(x+1\)</span>?</li>
+<li>Let <span class="math inline">\(\widehat{o}^{(\text{old})}\)</span> be the estimated odds at <span class="math inline">\(x\)</span> from a simple logistic regression model, and let <span class="math inline">\(\widehat{o}^{(\text{new})}\)</span> be the estimated odds at <span class="math inline">\(x+1\)</span> of the same regression. How are <span class="math inline">\(\widehat{o}^{(\text{old})}\)</span> and <span class="math inline">\(\widehat{o}^{(\text{new})}\)</span> related? In other words, how do the predicted odds of the simple logistic regression model differ when you change the input from <span class="math inline">\(x\)</span> to <span class="math inline">\(x+1\)</span>?</li>
+<li>Why is adjusted <span class="math inline">\(R^2\)</span> a better linear regression model selection criterion than unadjusted <span class="math inline">\(R^2\)</span>?</li>
+</ol></section></section><section id="visual-understanding" class="level1"><h1>Visual understanding</h1>
+<section id="question-2" class="level3"><h3 class="anchored" data-anchor-id="question-2">Question 2</h3>
+<p>Here’s a nonsense dataset that I made up:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 65
+Columns: 3
+$ x     &lt;dbl&gt; 4.892947, 4.232442, 1.892767, 4.730670, 5.373811, 4.156704, 4.44…
+$ y     &lt;dbl&gt; 8.197365, 39.317266, 9.828075, 18.352456, 20.915403, 19.258701, …
+$ color &lt;fct&gt; forestgreen, blue, forestgreen, red, red, red, blue, red, forest…</code></pre>
+</div>
+</div>
+<p>Imagine you run this code:</p>
+<p>The output would be a lil’ table like this:</p>
+<div class="center-table">
+<table class="caption-top table">
+<thead><tr class="header">
+<th><code>term</code></th>
+<th style="text-align: left;"><code>estimate</code></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>(Intercept)</code></td>
+<td style="text-align: left;"><span class="math inline">\(b_0\)</span></td>
+</tr>
+<tr class="even">
+<td><code>x</code></td>
+<td style="text-align: left;"><span class="math inline">\(b_1\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>colorblue</code></td>
+<td style="text-align: left;"><span class="math inline">\(b_2\)</span></td>
+</tr>
+<tr class="even">
+<td><code>colorforestgreen</code></td>
+<td style="text-align: left;"><span class="math inline">\(b_3\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A plot of the model fit might look something like this:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="final_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Match the labeled features of the plot to the correct quantity listed below:</p>
+<ol type="a">
+<li><span class="math inline">\(b_0\)</span></li>
+<li><span class="math inline">\(b_1\)</span></li>
+<li><span class="math inline">\(b_2\)</span></li>
+<li><span class="math inline">\(b_3\)</span></li>
+<li><span class="math inline">\(b_0 + b_1\)</span></li>
+<li><span class="math inline">\(b_0 + b_2\)</span></li>
+<li><span class="math inline">\(b_0 + b_3\)</span></li>
+<li><span class="math inline">\(b_1 + b_2\)</span></li>
+<li><span class="math inline">\(b_1 + b_3\)</span></li>
+<li><span class="math inline">\(b_2 + b_3\)</span></li>
+<li><span class="math inline">\(b_2 - b_3\)</span></li>
+</ol>
+<p><strong>Note</strong>: Some of these quantities might go unused, and some might be used more than once.</p>
+</section><section id="questions-3---8" class="level3"><h3 class="anchored" data-anchor-id="questions-3---8">Questions 3 - 8</h3>
+<p>In what follows, let <span class="math inline">\(y\)</span> be a binary response, let <span class="math inline">\(x\)</span> be a numerical predictor, and let <span class="math inline">\(z\)</span> be a binary predictor. Match the S-curve to the model equation.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="final_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol type="a">
+<li><span class="math inline">\(\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 22.9 + 4.54 \times x\)</span></li>
+<li><span class="math inline">\(\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 0.118 + 0.246 \times x\)</span></li>
+<li><span class="math inline">\(\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 0.798 + 0.486 \times x\)</span></li>
+<li><span class="math inline">\(\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = -6.035 + 1.194 \times x\)</span></li>
+<li><span class="math inline">\(\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = -2.26 - 0.99 \times x+1.26\times z\)</span></li>
+<li><span class="math inline">\(\log\left(\frac{\hat{p}}{1-\hat{p}}\right) = 0.079  -0.373 \times x\)</span></li>
+</ol></section><section id="questions-9---12" class="level3"><h3 class="anchored" data-anchor-id="questions-9---12">Questions 9 - 12</h3>
+<p>Recall the dataset on spam emails:</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">email</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,921 × 21
+   spam  exclaim_mess to_multiple from     cc sent_email time               
+   &lt;fct&gt;        &lt;dbl&gt; &lt;fct&gt;       &lt;fct&gt; &lt;int&gt; &lt;fct&gt;      &lt;dttm&gt;             
+ 1 0                0 0           1         0 0          2012-01-01 06:16:41
+ 2 0                1 0           1         0 0          2012-01-01 07:03:59
+ 3 0                6 0           1         0 0          2012-01-01 16:00:32
+ 4 0               48 0           1         0 0          2012-01-01 09:09:49
+ 5 0                1 0           1         0 0          2012-01-01 10:00:01
+ 6 0                1 0           1         0 0          2012-01-01 10:04:46
+ 7 0                1 1           1         0 1          2012-01-01 17:55:06
+ 8 0               18 1           1         1 1          2012-01-01 18:45:21
+ 9 0                1 0           1         0 0          2012-01-01 21:08:59
+10 0                0 0           1         0 0          2012-01-01 18:12:00
+# ℹ 3,911 more rows
+# ℹ 14 more variables: image &lt;dbl&gt;, attach &lt;dbl&gt;, dollar &lt;dbl&gt;, winner &lt;fct&gt;,
+#   inherit &lt;dbl&gt;, viagra &lt;dbl&gt;, password &lt;dbl&gt;, num_char &lt;dbl&gt;,
+#   line_breaks &lt;int&gt;, format &lt;fct&gt;, re_subj &lt;fct&gt;, exclaim_subj &lt;dbl&gt;,
+#   urgent_subj &lt;fct&gt;, number &lt;fct&gt;</code></pre>
+</div>
+</div>
+<p>Here is a regression model trained on all available predictors:</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">log_fit</span> <span class="op">&lt;-</span> <span class="fu">logistic_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">spam</span> <span class="op">~</span> <span class="va">.</span>, data <span class="op">=</span> <span class="va">email</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <em>in-sample</em> predictions of the model are here:</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">email_aug</span> <span class="op">&lt;-</span> <span class="fu">augment</span><span class="op">(</span><span class="va">log_fit</span>, <span class="va">email</span><span class="op">)</span></span>
+<span><span class="va">email_aug</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,921 × 24
+   .pred_class .pred_0  .pred_1 spam  exclaim_mess to_multiple from     cc
+   &lt;fct&gt;         &lt;dbl&gt;    &lt;dbl&gt; &lt;fct&gt;        &lt;dbl&gt; &lt;fct&gt;       &lt;fct&gt; &lt;int&gt;
+ 1 0             0.867 1.33e- 1 0                0 0           1         0
+ 2 0             0.943 5.70e- 2 0                1 0           1         0
+ 3 0             0.942 5.78e- 2 0                6 0           1         0
+ 4 0             0.920 7.96e- 2 0               48 0           1         0
+ 5 0             0.903 9.74e- 2 0                1 0           1         0
+ 6 0             0.901 9.87e- 2 0                1 0           1         0
+ 7 0             1.000 7.89e-12 0                1 1           1         0
+ 8 0             1.000 1.24e-12 0               18 1           1         1
+ 9 0             0.862 1.38e- 1 0                1 0           1         0
+10 0             0.922 7.76e- 2 0                0 0           1         0
+# ℹ 3,911 more rows
+# ℹ 16 more variables: sent_email &lt;fct&gt;, time &lt;dttm&gt;, image &lt;dbl&gt;,
+#   attach &lt;dbl&gt;, dollar &lt;dbl&gt;, winner &lt;fct&gt;, inherit &lt;dbl&gt;, viagra &lt;dbl&gt;,
+#   password &lt;dbl&gt;, num_char &lt;dbl&gt;, line_breaks &lt;int&gt;, format &lt;fct&gt;,
+#   re_subj &lt;fct&gt;, exclaim_subj &lt;dbl&gt;, urgent_subj &lt;fct&gt;, number &lt;fct&gt;</code></pre>
+</div>
+</div>
+<p>To see how well the model did, we can compute the classification error rates for different thresholds and summarize the results with the ROC curve:</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">email_roc</span> <span class="op">&lt;-</span> <span class="fu">roc_curve</span><span class="op">(</span><span class="va">email_aug</span>, truth <span class="op">=</span> <span class="va">spam</span>, <span class="va">.pred_1</span>, event_level <span class="op">=</span> <span class="st">"second"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="final_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Match the point on the ROC curve to the threshold that was used to compute it.</p>
+<ol type="a">
+<li>
+</li></ol>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">email_aug</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>.pred_class <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">.pred_1</span> <span class="op">&lt;=</span> <span class="fl">0.25</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">spam</span>, <span class="va">.pred_class</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">group_by</span><span class="op">(</span><span class="va">spam</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">mutate</span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   spam [2]
+  spam  .pred_class     n   prop
+  &lt;fct&gt;       &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;
+1 0               0  3263 0.918 
+2 0               1   291 0.0819
+3 1               0   172 0.469 
+4 1               1   195 0.531 </code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li>
+</li></ol>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">email_aug</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>.pred_class <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">.pred_1</span> <span class="op">&lt;=</span> <span class="fl">0.0</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">spam</span>, <span class="va">.pred_class</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">group_by</span><span class="op">(</span><span class="va">spam</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">mutate</span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+# Groups:   spam [2]
+  spam  .pred_class     n  prop
+  &lt;fct&gt;       &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
+1 0               1  3554     1
+2 1               1   367     1</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li>
+</li></ol>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">email_aug</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>.pred_class <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">.pred_1</span> <span class="op">&lt;=</span> <span class="fl">1.00</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">spam</span>, <span class="va">.pred_class</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">group_by</span><span class="op">(</span><span class="va">spam</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">mutate</span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+# Groups:   spam [2]
+  spam  .pred_class     n  prop
+  &lt;fct&gt;       &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
+1 0               0  3554     1
+2 1               0   367     1</code></pre>
+</div>
+</div>
+<ol start="4" type="a">
+<li>
+</li></ol>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">email_aug</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>.pred_class <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="va">.pred_1</span> <span class="op">&lt;=</span> <span class="fl">0.1</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">spam</span>, <span class="va">.pred_class</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">group_by</span><span class="op">(</span><span class="va">spam</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">mutate</span><span class="op">(</span>prop <span class="op">=</span> <span class="va">n</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   spam [2]
+  spam  .pred_class     n  prop
+  &lt;fct&gt;       &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
+1 0               0  2740 0.771
+2 0               1   814 0.229
+3 1               0    47 0.128
+4 1               1   320 0.872</code></pre>
+</div>
+</div>
+</section></section><section id="stat-doctor" class="level1"><h1>Stat doctor</h1>
+<p>What’s wrong with the interpretations below? Diagnose the problem and fix it if possible.</p>
+<section id="question-13" class="level2"><h2 class="anchored" data-anchor-id="question-13">Question 13</h2>
+<p>Some bozo ran this regression and wrote the following interpretation:</p>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">bill_length_mm</span> <span class="op">~</span> <span class="va">flipper_length_mm</span>, <span class="va">penguins</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">tidy</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term              estimate std.error statistic  p.value
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)         -7.26     3.20       -2.27 2.38e- 2
+2 flipper_length_mm    0.255    0.0159     16.0  1.74e-43</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>If the flipper length of a penguin increases by 1mm, then the bill length will increase by 0.25mm.</p>
+</blockquote>
+</section><section id="question-14" class="level2"><h2 class="anchored" data-anchor-id="question-14">Question 14</h2>
+<p>Some schmuck ran this regression and wrote the following interpretation:</p>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">logistic_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">spam</span> <span class="op">~</span> <span class="va">num_char</span>, <span class="va">email</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">tidy</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term        estimate std.error statistic   p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)  -1.80     0.0716     -25.1  2.04e-139
+2 num_char     -0.0621   0.00801     -7.75 9.50e- 15</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>If the number of characters in an email increases by 1000, then the estimated probability of that email being spam is lower by -0.062, on average.</p>
+</blockquote>
+<p>FYI: from the documentation (<code>?email</code>), <code>num_char</code> is “The number of characters in the email, in thousands.”</p>
+</section><section id="question-15" class="level2"><h2 class="anchored" data-anchor-id="question-15">Question 15</h2>
+<p>Some putz ran this regression and wrote the following interpretation:</p>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">flipper_length_mm</span> <span class="op">+</span> <span class="va">bill_length_mm</span>, <span class="va">penguins</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">tidy</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term              estimate std.error statistic  p.value
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)       -5737.      308.      -18.6  7.80e-54
+2 flipper_length_mm    48.1       2.01     23.9  7.56e-75
+3 bill_length_mm        6.05      5.18      1.17 2.44e- 1</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>If flipper length and bill length both increase by 1mm, then we predict that body mass is lower by 48.14 grams, on average.</p>
+</blockquote>
+</section><section id="question-16" class="level2"><h2 class="anchored" data-anchor-id="question-16">Question 16</h2>
+<p>Some blockhead ran this regression and wrote the following interpretation:</p>
+<div class="cell">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">flipper_length_mm</span> <span class="op">*</span> <span class="va">species</span>, <span class="va">penguins</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">tidy</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+  term                               estimate std.error statistic  p.value
+  &lt;chr&gt;                                 &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)                        -2536.      879.      -2.88  4.19e- 3
+2 flipper_length_mm                     32.8       4.63     7.10  7.69e-12
+3 speciesChinstrap                    -501.     1523.      -0.329 7.42e- 1
+4 speciesGentoo                      -4251.     1427.      -2.98  3.11e- 3
+5 flipper_length_mm:speciesChinstrap     1.74      7.86     0.222 8.25e- 1
+6 flipper_length_mm:speciesGentoo       21.8       6.94     3.14  1.84e- 3</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>If the flipper length of a Chinstrap penguin increases by 1mm, then we predict that the body mass is higher by 1.74 grams on average.</p>
+</blockquote>
+</section><section id="question-17" class="level2"><h2 class="anchored" data-anchor-id="question-17">Question 17</h2>
+<p>Some nitwit ran this regression and wrote the following interpretation:</p>
+<div class="cell">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">hp</span> <span class="op">~</span> <span class="va">mpg</span>, <span class="va">mtcars</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">glance</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 12
+  r.squared adj.r.squared sigma statistic     p.value    df logLik   AIC   BIC
+      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     0.602         0.589  43.9      45.5 0.000000179     1  -165.  337.  341.
+# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>About 60% of the observed variation in miles/gallon is explained by the model.</p>
+</blockquote>
+</section><section id="question-18" class="level2"><h2 class="anchored" data-anchor-id="question-18">Question 18</h2>
+<p>Some chooch ran this regression and wrote the following interpretation:</p>
+<div class="cell">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">logistic_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">spam</span> <span class="op">~</span> <span class="va">exclaim_mess</span> <span class="op">+</span> <span class="va">viagra</span> <span class="op">+</span> <span class="va">dollar</span>, <span class="va">email</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">tidy</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+  term         estimate std.error statistic p.value
+  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)  -2.22      0.0568   -39.1    0      
+2 exclaim_mess  0.00189   0.00108    1.75   0.0794 
+3 viagra        1.86     40.6        0.0459 0.963  
+4 dollar       -0.0656    0.0208    -3.15   0.00165</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>If an email contains no exclamation marks, no dollar signs, and no mentions of viagra, then the model predicts that the probability of it being spam is <span class="math inline">\(e^{-2.218}\approx 0.10886\)</span>.</p>
+</blockquote>
+</section><section id="question-19" class="level2"><h2 class="anchored" data-anchor-id="question-19">Question 19</h2>
+<p>Some nincompoop ran this regression and wrote the following interpretation:</p>
+<div class="cell">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">bill_length_mm</span> <span class="op">~</span> <span class="va">bill_depth_mm</span> <span class="op">+</span> <span class="va">sex</span>, <span class="va">penguins</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">tidy</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term          estimate std.error statistic  p.value
+  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)      61.0      2.35      26.0  7.39e-82
+2 bill_depth_mm    -1.15     0.141     -8.16 7.35e-15
+3 sexmale           5.44     0.555      9.81 4.18e-20</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>If a male penguin has a bill depth of 0mm (sad!), then we expect its bill length to be 60.99mm on average.</p>
+</blockquote>
+</section><section id="question-20" class="level2"><h2 class="anchored" data-anchor-id="question-20">Question 20</h2>
+<p>Some silly goose ran this regression and wrote the following interpretation:</p>
+<div class="cell">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">flipper_length_mm</span> <span class="op">+</span> <span class="va">bill_length_mm</span>, <span class="va">penguins</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">glance</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 12
+  r.squared adj.r.squared sigma statistic   p.value    df logLik   AIC   BIC
+      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     0.760         0.759  394.      537. 9.09e-106     2 -2528. 5063. 5079.
+# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>The correlation between body mass, flipper length, and bill length is about <span class="math inline">\(\sqrt{0.76}\approx 0.87\)</span>.</p>
+</blockquote>
+</section><section id="pokémon" class="level2"><h2 class="anchored" data-anchor-id="pokémon">Pokémon</h2>
+<p>The data for Questions X - Y was originally gathered using the <a href="https://www.kaggle.com/datasets/rounakbanik/pokemon"><strong>Complete Pokémon Dataset</strong></a> from Kaggle.</p>
+<p>First, let’s load the data:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 924
+Columns: 17
+$ name            &lt;chr&gt; "Bulbasaur", "Ivysaur", "Venusaur", "Mega Venusaur", "…
+$ generation      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+$ type_1          &lt;chr&gt; "Grass", "Grass", "Grass", "Grass", "Fire", "Fire", "F…
+$ type_2          &lt;chr&gt; "Poison", "Poison", "Poison", "Poison", NA, NA, "Flyin…
+$ height_m        &lt;dbl&gt; 0.7, 1.0, 2.0, 2.4, 0.6, 1.1, 1.7, 1.7, 1.7, 0.5, 1.0,…
+$ weight_kg       &lt;dbl&gt; 6.9, 13.0, 100.0, 155.5, 8.5, 19.0, 90.5, 110.5, 100.5…
+$ total_points    &lt;dbl&gt; 318, 405, 525, 625, 309, 405, 534, 634, 634, 314, 405,…
+$ hp              &lt;dbl&gt; 45, 60, 80, 80, 39, 58, 78, 78, 78, 44, 59, 79, 79, 45…
+$ attack          &lt;dbl&gt; 49, 62, 82, 100, 52, 64, 84, 130, 104, 48, 63, 83, 103…
+$ defense         &lt;dbl&gt; 49, 63, 83, 123, 43, 58, 78, 111, 78, 65, 80, 100, 120…
+$ sp_attack       &lt;dbl&gt; 65, 80, 100, 122, 60, 80, 109, 130, 159, 50, 65, 85, 1…
+$ sp_defense      &lt;dbl&gt; 65, 80, 100, 120, 50, 65, 85, 85, 115, 64, 80, 105, 11…
+$ speed           &lt;dbl&gt; 45, 60, 80, 80, 65, 80, 100, 100, 100, 43, 58, 78, 78,…
+$ catch_rate      &lt;dbl&gt; 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 25…
+$ base_friendship &lt;dbl&gt; 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70…
+$ base_experience &lt;dbl&gt; 64, 142, 236, 281, 62, 142, 240, 285, 285, 63, 142, 23…
+$ is_legendary    &lt;fct&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE…</code></pre>
+</div>
+</div>
+<p>Below are several failed attempts at interpreting statistical results for these data. Diagnose the problem and fix it if possible.</p>
+<section id="question-21" class="level3"><h3 class="anchored" data-anchor-id="question-21">Question 21</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term      estimate
+  &lt;chr&gt;        &lt;dbl&gt;
+1 intercept  69.7   
+2 defense    -0.0144</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>A Pokémon with speed of 0 will have defense score of 69.66.</p>
+</blockquote>
+</section><section id="question-22" class="level3"><h3 class="anchored" data-anchor-id="question-22">Question 22</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+  term        estimate std.error statistic  p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)  -7.77     0.609      -12.8  3.07e-37
+2 hp            0.0274   0.00423      6.48 8.92e-11
+3 attack        0.0230   0.00389      5.92 3.25e- 9
+4 defense       0.0162   0.00380      4.25 2.10e- 5</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>A one unit increase in hp is associated with a 0.027 increase in the probability that the Pokémon is not legendary, on average.</p>
+</blockquote>
+</section><section id="question-23" class="level3"><h3 class="anchored" data-anchor-id="question-23">Question 23</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .metric .estimator .estimate
+  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+1 roc_auc binary         0.852</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>About 85% of the variation in the response is explained by the model.</p>
+</blockquote>
+</section><section id="question-24" class="level3"><h3 class="anchored" data-anchor-id="question-24">Question 24</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  term    lower_ci upper_ci
+  &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt;
+1 defense  -0.0657   0.0458</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>We are confident that 95% of our data lies between -0.065 and 0.046.</p>
+</blockquote>
+</section><section id="question-25" class="level3"><h3 class="anchored" data-anchor-id="question-25">Question 25</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  term      p_value
+  &lt;chr&gt;       &lt;dbl&gt;
+1 defense     0.532
+2 intercept   0.532</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>The probability that the null hypothesis is true (meaning <code>defense</code> and <code>speed</code> are uncorrelated) is about 53%.</p>
+</blockquote>
+</section><section id="question-26" class="level3"><h3 class="anchored" data-anchor-id="question-26">Question 26</h3>
+<blockquote class="blockquote">
+<p>Because the p-value is greater than 50%, we reject the alternative hypothesis.</p>
+</blockquote>
+</section></section></section><section id="data-analysis" class="level1"><h1>Data analysis</h1>
+<section id="blizzard-salaries" class="level2"><h2 class="anchored" data-anchor-id="blizzard-salaries">Blizzard salaries</h2>
+<p>In 2020, employees of Blizzard Entertainment circulated a spreadsheet to anonymously share salaries and recent pay increases amidst rising tension in the video game industry over wage disparities and executive compensation. (Source: <a href="https://www.bloomberg.com/news/articles/2020-08-03/blizzard-workers-share-salaries-in-revolt-over-wage-disparities">Blizzard Workers Share Salaries in Revolt Over Pay</a>)</p>
+<p>The name of the data frame used for this analysis is <code>blizzard_salary</code> and the variables are:</p>
+<ul>
+<li><p><code>percent_incr</code>: Raise given in July 2020, as percent increase with values ranging from 1 (1% increase) to 21.5 (21.5% increase)</p></li>
+<li><p><code>salary_type</code>: Type of salary, with levels <code>Hourly</code> and <code>Salaried</code></p></li>
+<li><p><code>annual_salary</code>: Annual salary, in USD, with values ranging from $50,939 to $216,856.</p></li>
+<li><p><code>performance_rating</code>: Most recent review performance rating, with levels <code>Poor</code>, <code>Successful</code>, <code>High</code>, and <code>Top</code>. The <code>Poor</code> level is the lowest rating and the <code>Top</code> level is the highest rating.</p></li>
+</ul>
+<p>The first ten rows of <code>blizzard_salary</code> are shown below:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 409 × 4
+   percent_incr salary_type annual_salary performance_rating
+          &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;             
+ 1          1   Salaried               1  High              
+ 2          1   Salaried               1  Successful        
+ 3          1   Salaried               1  High              
+ 4          1   Hourly             33987. Successful        
+ 5         NA   Hourly             34798. High              
+ 6         NA   Hourly             35360  &lt;NA&gt;              
+ 7         NA   Hourly             37440  &lt;NA&gt;              
+ 8          0   Hourly             37814. &lt;NA&gt;              
+ 9          4   Hourly             41101. Top               
+10          1.2 Hourly             42328  &lt;NA&gt;              
+# ℹ 399 more rows</code></pre>
+</div>
+</div>
+<section id="question-27" class="level3"><h3 class="anchored" data-anchor-id="question-27">Question 27</h3>
+<p>You fit a model for predicting raises (<code>percent_incr</code>) from salaries (<code>annual_salary</code>). We’ll call this model <code>raise_1_fit</code>. A tidy output of the model is shown below.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term           estimate  std.error statistic   p.value
+  &lt;chr&gt;             &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)   1.87      0.432           4.33 0.0000194
+2 annual_salary 0.0000155 0.00000452      3.43 0.000669 </code></pre>
+</div>
+</div>
+<p>Which of the following is the best interpretation of the slope coefficient?</p>
+<ol type="a">
+<li>For every additional $1,000 of annual salary, the model predicts the raise to be higher, on average, by 1.55%.</li>
+<li>For every additional $1,000 of annual salary, the raise goes up by 0.0155%.</li>
+<li>For every additional $1,000 of annual salary, the model predicts the raise to be higher, on average, by 0.0155%.</li>
+<li>For every additional $1,000 of annual salary, the model predicts the raise to be higher, on average, by 1.87%.</li>
+</ol></section><section id="question-28" class="level3"><h3 class="anchored" data-anchor-id="question-28">Question 28</h3>
+<p>You then fit a model for predicting raises (<code>percent_incr</code>) from salaries (<code>annual_salary</code>) and performance ratings (<code>performance_rating</code>). We’ll call this model <code>raise_2_fit</code>. Which of the following is definitely true based on the information you have so far?</p>
+<ol type="a">
+<li>Intercept of <code>raise_2_fit</code> is higher than intercept of <code>raise_1_fit</code>.</li>
+<li>Slope of <code>raise_2_fit</code> is higher than RMSE of <code>raise_1_fit</code>.</li>
+<li>Adjusted <span class="math inline">\(R^2\)</span> of <code>raise_2_fit</code> is higher than adjusted <span class="math inline">\(R^2\)</span> of <code>raise_1_fit</code>.</li>
+<li>
+<span class="math inline">\(R^2\)</span> of <code>raise_2_fit</code> is higher <span class="math inline">\(R^2\)</span> of <code>raise_1_fit</code>.</li>
+</ol></section><section id="question-29" class="level3"><h3 class="anchored" data-anchor-id="question-29">Question 29</h3>
+<p>The tidy model output for the <code>raise_2_fit</code> model you fit is shown below.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  term                            estimate  std.error statistic  p.value
+  &lt;chr&gt;                              &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)                   3.55       0.508           6.99 1.99e-11
+2 annual_salary                 0.00000989 0.00000436      2.27 2.42e- 2
+3 performance_ratingPoor       -4.06       1.42           -2.86 4.58e- 3
+4 performance_ratingSuccessful -2.40       0.397          -6.05 4.68e- 9
+5 performance_ratingTop         2.99       0.715           4.18 3.92e- 5</code></pre>
+</div>
+</div>
+<p>When your teammate sees this model output, they remark</p>
+<blockquote class="blockquote">
+<p>“The coefficient for <code>performance_ratingSuccessful</code> is negative. That’s weird. I guess it means that people who get successful performance ratings get lower raises.”</p>
+</blockquote>
+<p>How would you respond to your teammate?</p>
+</section><section id="question-30" class="level3"><h3 class="anchored" data-anchor-id="question-30">Question 30</h3>
+<p>Ultimately, your teammate decides they don’t like the negative slope coefficients in the model output you created (not that there’s anything wrong with negative slope coefficients!), does something else, and comes up with the following model output.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  term                            estimate  std.error statistic    p.value
+  &lt;chr&gt;                              &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+1 (Intercept)                  -0.511      1.47          -0.347 0.729     
+2 annual_salary                 0.00000989 0.00000436     2.27  0.0242    
+3 performance_ratingSuccessful  1.66       1.42           1.17  0.242     
+4 performance_ratingHigh        4.06       1.42           2.86  0.00458   
+5 performance_ratingTop         7.05       1.53           4.60  0.00000644</code></pre>
+</div>
+</div>
+<p>Unfortunately they didn’t write their code in a Quarto document, instead just wrote some code in the Console and then lost track of their work. They remember using the <code>fct_relevel()</code> function and doing something like the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>blizzard_salary <span class="ot">&lt;-</span> blizzard_salary <span class="sc">|&gt;</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">performance_rating =</span> <span class="fu">fct_relevel</span>(performance_rating, ___))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What should they put in the blanks to get the same model output as above?</p>
+<ol type="a">
+<li>“Poor”, “Successful”, “High”, “Top”</li>
+<li>“Successful”, “High”, “Top”</li>
+<li>“Top”, “High”, “Successful”, “Poor”</li>
+<li>Poor, Successful, High, Top</li>
+</ol></section><section id="question-31" class="level3"><h3 class="anchored" data-anchor-id="question-31">Question 31</h3>
+<p>Suppose we fit a model to predict <code>percent_incr</code> from <code>annual_salary</code> and <code>salary_type</code>. A tidy output of the model is shown below.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  term                 estimate  std.error statistic p.value
+  &lt;chr&gt;                   &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)         1.24      0.570           2.18 0.0300 
+2 annual_salary       0.0000137 0.00000464      2.96 0.00329
+3 salary_typeSalaried 0.913     0.544           1.68 0.0938 </code></pre>
+</div>
+</div>
+<p>Which of the following visualizations represent this model? Explain your reasoning.</p>
+<div id="fig-raise-salary-type" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-raise-salary-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-raise-salary-type" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-raise-salary-type-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure"><div aria-describedby="fig-raise-salary-type-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="final_files/figure-html/fig-raise-salary-type-1.png" class="img-fluid figure-img" data-ref-parent="fig-raise-salary-type" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-raise-salary-type-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Option 1
+</figcaption></figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-raise-salary-type" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-raise-salary-type-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure"><div aria-describedby="fig-raise-salary-type-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="final_files/figure-html/fig-raise-salary-type-2.png" class="img-fluid figure-img" data-ref-parent="fig-raise-salary-type" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-raise-salary-type-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Option 2
+</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-raise-salary-type" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-raise-salary-type-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure"><div aria-describedby="fig-raise-salary-type-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="final_files/figure-html/fig-raise-salary-type-3.png" class="img-fluid figure-img" data-ref-parent="fig-raise-salary-type" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-raise-salary-type-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Option 3
+</figcaption></figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-raise-salary-type" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-raise-salary-type-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure"><div aria-describedby="fig-raise-salary-type-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="final_files/figure-html/fig-raise-salary-type-4.png" class="img-fluid figure-img" data-ref-parent="fig-raise-salary-type" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-raise-salary-type-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) Option 4
+</figcaption></figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-raise-salary-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Visualizations of the relationship between percent increase, annual salary, and salary type
+</figcaption></figure>
+</div>
+</section><section id="question-32" class="level3"><h3 class="anchored" data-anchor-id="question-32">Question 32</h3>
+<p>Suppose you now fit a model to predict the natural log of percent increase, <code>log(percent_incr)</code>, from performance rating. The model is called <code>raise_4_fit</code>.</p>
+<p>You’re provided the following:</p>
+<div class="cell">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tidy</span><span class="op">(</span><span class="va">raise_4_fit</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">term</span>, <span class="va">estimate</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>exp_estimate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">estimate</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  term                         estimate exp_estimate
+  &lt;chr&gt;                           &lt;dbl&gt;        &lt;dbl&gt;
+1 (Intercept)                     -7.15     0.000786
+2 performance_ratingSuccessful     6.93  1025.      
+3 performance_ratingHigh           8.17  3534.      
+4 performance_ratingTop            8.91  7438.      </code></pre>
+</div>
+</div>
+<p>Based on this, which of the following is true?</p>
+<p>a. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by 10.25% compared to the employees with Poor performance rating.</p>
+<p>b. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by 6.93% compared to the employees with Poor performance rating.</p>
+<p>c. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 1025 compared to the employees with Poor performance rating.</p>
+<p>d. The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 6.93 compared to the employees with Poor performance rating.</p>
+</section></section><section id="movies" class="level2"><h2 class="anchored" data-anchor-id="movies">Movies</h2>
+<p>The data for this part comes from the Internet Movie Database (IMDB). Specifically, the data are a random sample of movies released between 1980 and 2020.</p>
+<p>The name of the data frame used for this analysis is <code>movies</code>, and it contains the variables shown in <a href="#tbl-data-dictionary" class="quarto-xref">Table&nbsp;1</a>.</p>
+<div id="tbl-data-dictionary" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[20,80]">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-dictionary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Data dictionary for <code>movies</code>
+</figcaption><div aria-describedby="tbl-data-dictionary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<thead><tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>name</code></td>
+<td>name of the movie</td>
+</tr>
+<tr class="even">
+<td><code>rating</code></td>
+<td>rating of the movie (R, PG, etc.)</td>
+</tr>
+<tr class="odd">
+<td><code>genre</code></td>
+<td>main genre of the movie.</td>
+</tr>
+<tr class="even">
+<td><code>runtime</code></td>
+<td>duration of the movie</td>
+</tr>
+<tr class="odd">
+<td><code>year</code></td>
+<td>year of release</td>
+</tr>
+<tr class="even">
+<td><code>release_date</code></td>
+<td>release date (YYYY-MM-DD)</td>
+</tr>
+<tr class="odd">
+<td><code>release_country</code></td>
+<td>release country</td>
+</tr>
+<tr class="even">
+<td><code>score</code></td>
+<td>IMDB user rating</td>
+</tr>
+<tr class="odd">
+<td><code>votes</code></td>
+<td>number of user votes</td>
+</tr>
+<tr class="even">
+<td><code>director</code></td>
+<td>the director</td>
+</tr>
+<tr class="odd">
+<td><code>writer</code></td>
+<td>writer of the movie</td>
+</tr>
+<tr class="even">
+<td><code>star</code></td>
+<td>main actor/actress</td>
+</tr>
+<tr class="odd">
+<td><code>country</code></td>
+<td>country of origin</td>
+</tr>
+<tr class="even">
+<td><code>budget</code></td>
+<td>the budget of a movie (some movies don’t have this, so it appears as 0)</td>
+</tr>
+<tr class="odd">
+<td><code>gross</code></td>
+<td>revenue of the movie</td>
+</tr>
+<tr class="even">
+<td><code>company</code></td>
+<td>the production company</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The first thirty rows of the <code>movies</code> data frame are shown in <a href="#tbl-data" class="quarto-xref">Table&nbsp;2</a>, with variable types suppressed (since we’ll ask about them later).</p>
+<p>\begin{landscape}</p>
+<div id="tbl-data" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2
+</figcaption><div aria-describedby="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p>First 30 rows of <code>movies</code>, with variable types suppressed.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 500 × 16
+   name           score runtime genre     rating    release_country release_date
+ 1 Blue City        4.4 83 mins Action    R         United States   1986-05-02  
+ 2 Winter Sleep     8.1 196     Drama     Not Rated Turkey          2014-06-12  
+ 3 Rang De Basan…   8.1 167     Comedy    Not Rated United States   2006-01-26  
+ 4 Pokémon Detec…   6.6 104     Action    PG        United States   2019-05-10  
+ 5 A Bad Moms Ch…   5.6 104     Comedy    R         United States   2017-11-01  
+ 6 Replicas         5.5 107     Drama     PG-13     United States   2019-01-11  
+ 7 Windy City       5.8 103     Drama     R         Uruguay         1986-01-01  
+ 8 War for the P…   7.4 140     Action    PG-13     United States   2017-07-14  
+ 9 Tales from th…   6.4 98      Crime     R         United States   1995-05-24  
+10 Fire with Fire   6.5 103     Drama     PG-13     United States   1986-05-09  
+11 Raising Helen    6   119     Comedy    PG-13     United States   2004-05-28  
+12 Feeling Minne…   5.4 99      Comedy    R         United States   1996-09-13  
+13 The Babe         5.9 115     Biography PG        United States   1992-04-17  
+14 The Real Blon…   6   105     Comedy    R         United States   1998-02-27  
+15 To vlemma tou…   7.6 176     Drama     Not Rated United States   1997-11-01  
+16 Going the Dis…   6.3 102     Comedy    R         United States   2010-09-03  
+17 Jung on zo       6.8 103     Action    R         Hong Kong       1993-06-24  
+18 Rita, Sue and…   6.5 93      Comedy    R         United Kingdom  1987-05-29  
+19 Phone Booth      7   81      Crime     R         United States   2003-04-04  
+20 Happy Death D…   6.6 96      Comedy    PG-13     United States   2017-10-13  
+21 Barely Legal     4.7 90      Comedy    R         Thailand        2006-05-25  
+22 Three Kings      7.1 114     Action    R         United States   1999-10-01  
+23 Menace II Soc…   7.5 97      Crime     R         United States   1993-05-26  
+24 Four Rooms       6.8 98      Comedy    R         United States   1995-12-25  
+25 Quartet          6.8 98      Comedy    PG-13     United States   2013-03-01  
+26 Tape             7.2 86      Drama     R         Denmark         2002-07-12  
+27 Marked for De…   6   93      Action    R         United States   1990-10-05  
+28 Congo            5.2 109     Action    PG-13     United States   1995-06-09  
+29 Stop-Loss        6.4 112     Drama     R         United States   2008-03-28  
+30 Con Air          6.9 115     Action    R         United States   1997-06-06  
+# ℹ 470 more rows
+# ℹ 9 more variables: budget, gross, votes, year,
+#   director, writer, star, company, country</code></pre>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<section id="score-vs.-runtime" class="level3"><h3 class="anchored" data-anchor-id="score-vs.-runtime">Score vs.&nbsp;runtime</h3>
+<p>In this part, we fit a model predicting <code>score</code> from <code>runtime</code> and name it <code>score_runtime_fit</code>.</p>
+<div class="cell">
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">score_runtime_fit</span> <span class="op">&lt;-</span> <span class="fu">linear_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">score</span> <span class="op">~</span> <span class="va">runtime</span>, data <span class="op">=</span> <span class="va">movies</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a> visualizes the relationship between <code>score</code> and <code>runtime</code> as well as the linear model for predicting <code>score</code> from <code>runtime</code>. The first three movies in <a href="#tbl-data" class="quarto-xref">Table&nbsp;2</a> are labeled in the visualization as well. Answer all questions in this part based on <a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-score-runtime" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-score-runtime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="final_files/figure-html/fig-score-runtime-1.png" class="img-fluid figure-img" width="624">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-score-runtime-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Scatterplot of <code>score</code> vs.&nbsp;<code>runtime</code> for <code>movies</code>.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<section id="question-33" class="level4"><h4 class="anchored" data-anchor-id="question-33">Question 33</h4>
+<p>Partial code for producing <a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a> is given below. Which of the following goes in the blank on Line 2? <strong>Select all that apply.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>movies <span class="sc">|&gt;</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>  <span class="fu">mutate</span>(<span class="at">runtime =</span> ___) <span class="sc">|&gt;</span></span>
+<span id="cb48-3"><a href="#cb48-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> runtime, <span class="at">y =</span> score)) <span class="sc">+</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb48-5"><a href="#cb48-5"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb48-6"><a href="#cb48-6"></a><span class="co"># additional code for annotating Blue City on the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="a">
+<li><p><code>grepl(" mins", runtime)</code></p></li>
+<li><p><code>grep(" mins", runtime)</code></p></li>
+<li><p><code>str_remove(runtime, " mins")</code></p></li>
+<li><p><code>as.numeric(str_remove(runtime, " mins"))</code></p></li>
+<li><p><code>na.rm(runtime)</code></p></li>
+</ol></section><section id="question-34" class="level4"><h4 class="anchored" data-anchor-id="question-34">Question 34</h4>
+<p>Based on this model, order the three labeled movies in <a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a> in decreasing order of the magnitude (absolute value) of their residuals.</p>
+<ol type="a">
+<li><p>Winter Sleep &gt; Rang De Basanti &gt; Blue City</p></li>
+<li><p>Winter Sleep &gt; Blue City &gt; Rang De Basanti</p></li>
+<li><p>Rang De Basanti &gt; Winter Sleep &gt; Blue City</p></li>
+<li><p>Blue City &gt; Winter Sleep &gt; Rang De Basanti</p></li>
+<li><p>Blue City &gt; Rang De Basanti &gt; Winter Sleep</p></li>
+</ol></section><section id="question-35" class="level4"><h4 class="anchored" data-anchor-id="question-35">Question 35</h4>
+<p>The R-squared for the model visualized in <a href="#fig-score-runtime" class="quarto-xref">Figure&nbsp;2</a> is 31%. Which of the following is the <u><strong>best</strong></u> interpretation of this value?</p>
+<ol type="a">
+<li><p>31% of the variability in movie runtimes is explained by their scores.</p></li>
+<li><p>31% of the variability in movie scores is explained by their runtime.</p></li>
+<li><p>The model accurately predicts scores of 31% of the movies in this sample.</p></li>
+<li><p>The model accurately predicts scores of 31% of all movies.</p></li>
+<li><p>The correlation between scores and runtimes of movies is 0.31.</p></li>
+</ol></section></section><section id="score-vs.-runtime-or-year" class="level3"><h3 class="anchored" data-anchor-id="score-vs.-runtime-or-year">Score vs.&nbsp;runtime or year</h3>
+<p>The visualizations below show the relationship between <code>score</code> and <code>runtime</code> as well as <code>score</code> and <code>year</code>, respectively. Additionally, the lines of best fit are overlaid on the visualizations.</p>
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="final_files/figure-html/unnamed-chunk-63-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="final_files/figure-html/unnamed-chunk-63-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<p>The correlation coefficients of these relationships are calculated below, though some of the code and the output are missing. Answer all questions in this part based on the code and output shown below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>movies <span class="sc">|&gt;</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">__blank_1__</span>(</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_score_runtime =</span> <span class="fu">cor</span>(runtime, score),</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_score_year =</span> <span class="fu">cor</span>(year, score)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code># A tibble: 1 × 2
+  r_score_runtime r_score_year
+            &lt;dbl&gt;        &lt;dbl&gt;
+1           0.434. __blank_2__       </code></pre>
+<section id="question-36" class="level4"><h4 class="anchored" data-anchor-id="question-36">Question 36</h4>
+<p>Which of the following goes in <code>__blank_1__</code>?</p>
+<ol type="a">
+<li><p><code>summarize</code></p></li>
+<li><p><code>mutate</code></p></li>
+<li><p><code>group_by</code></p></li>
+<li><p><code>arrange</code></p></li>
+<li><p><code>filter</code></p></li>
+</ol></section><section id="question-37" class="level4"><h4 class="anchored" data-anchor-id="question-37">Question 37</h4>
+<p>What can we say about the value that goes in <code>__blank_2__</code>?</p>
+<ol type="a">
+<li><p><code>NA</code></p></li>
+<li><p>A value between 0 and 0.434.</p></li>
+<li><p>A value between 0.434 and 1.</p></li>
+<li><p>A value between 0 and -0.434.</p></li>
+<li><p>A value between -1 and -0.434.</p></li>
+</ol></section></section><section id="score-vs.-runtime-and-rating" class="level3"><h3 class="anchored" data-anchor-id="score-vs.-runtime-and-rating">Score vs.&nbsp;runtime and rating</h3>
+<p>In this part, we fit a model predicting <code>score</code> from <code>runtime</code> and <code>rating</code> (categorized as G, PG, PG-13, R, NC-17, and Not Rated), and name it <code>score_runtime_rating_fit</code>.</p>
+<p>The model output for <code>score_runtime_rating_fit</code> is shown in <a href="#tbl-score-runtime-rating-tidy" class="quarto-xref">Table&nbsp;3</a>. Answer all questions in this part based on <a href="#tbl-score-runtime-rating-tidy" class="quarto-xref">Table&nbsp;3</a>.</p>
+<div class="cell">
+<div id="tbl-score-runtime-rating-tidy" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-score-runtime-rating-tidy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Regression output for <code>score_runtime_rating_fit</code>.
+</figcaption><div aria-describedby="tbl-score-runtime-rating-tidy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">4.525</td>
+<td style="text-align: right;">0.332</td>
+<td style="text-align: right;">13.647</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">runtime</td>
+<td style="text-align: right;">0.021</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">10.702</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ratingPG</td>
+<td style="text-align: right;">-0.189</td>
+<td style="text-align: right;">0.295</td>
+<td style="text-align: right;">-0.642</td>
+<td style="text-align: right;">0.521</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ratingPG-13</td>
+<td style="text-align: right;">-0.452</td>
+<td style="text-align: right;">0.292</td>
+<td style="text-align: right;">-1.547</td>
+<td style="text-align: right;">0.123</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ratingR</td>
+<td style="text-align: right;">-0.257</td>
+<td style="text-align: right;">0.285</td>
+<td style="text-align: right;">-0.901</td>
+<td style="text-align: right;">0.368</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ratingNC-17</td>
+<td style="text-align: right;">-0.355</td>
+<td style="text-align: right;">0.486</td>
+<td style="text-align: right;">-0.730</td>
+<td style="text-align: right;">0.466</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ratingNot Rated</td>
+<td style="text-align: right;">-0.282</td>
+<td style="text-align: right;">0.328</td>
+<td style="text-align: right;">-0.860</td>
+<td style="text-align: right;">0.390</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<section id="question-38" class="level4"><h4 class="anchored" data-anchor-id="question-38">Question 38</h4>
+<p>Which of the following is <u><strong>TRUE</strong></u> about the intercept of <code>score_runtime_rating_fit</code>? <strong>Select all that are true.</strong></p>
+<ol type="a">
+<li><p>Keeping runtime constant, G-rated movies are predicted to score, on average, 4.525 points.</p></li>
+<li><p>Keeping runtime constant, movies without a rating are predicted to score, on average, 4.525 points.</p></li>
+<li><p>Movies without a rating that are 0 minutes in length are predicted to score, on average, 4.525 points.</p></li>
+<li><p>All else held constant, movies that are 0 minutes in length are predicted to score, on average, 4.525 points.</p></li>
+<li><p>G-rated movies that are 0 minutes in length are predicted to score, on average, 4.525 points.</p></li>
+</ol></section><section id="question-39" class="level4"><h4 class="anchored" data-anchor-id="question-39">Question 39</h4>
+<p>Which of the following is the <u><strong>best</strong></u> interpretation of the slope of <code>runtime</code> in <code>score_runtime_rating_fit</code>?</p>
+<ol type="a">
+<li><p>All else held constant, as runtime increases by 1 minute, the score of the movie increases by 0.021 points.</p></li>
+<li><p>For G-rated movies, all else held constant, as runtime increases by 1 minute, we predict the score of the movie to be higher by 0.021 points on average.</p></li>
+<li><p>All else held constant, for each additional minute of runtime, movie scores will be higher by 0.021 points on average.</p></li>
+<li><p>G-rated movies that are 0 minutes in length are predicted to score 0.021 points on average.</p></li>
+<li><p>For each higher level of rating, the movie scores go up by 0.021 points on average.</p></li>
+</ol></section><section id="question-40" class="level4"><h4 class="anchored" data-anchor-id="question-40">Question 40</h4>
+<p>Fill in the blank:</p>
+<blockquote class="blockquote">
+<p>R-squared for <code>score_runtime_rating_fit</code> (the model predicting <code>score</code> from <code>runtime</code> and <code>rating</code>) _________ the R-squared the model <code>score_runtime_fit</code> (for predicting <code>score</code> from <code>runtime</code> alone).</p>
+</blockquote>
+<ol type="a">
+<li><p>is less than</p></li>
+<li><p>is equal to</p></li>
+<li><p>is greater than</p></li>
+<li><p>cannot be compared (based on the information provided) to</p></li>
+<li><p>is both greater than and less than</p></li>
+</ol></section><section id="question-41" class="level4"><h4 class="anchored" data-anchor-id="question-41">Question 41</h4>
+<p>The model <code>score_runtime_rating_fit</code> (the model predicting <code>score</code> from <code>runtime</code> and <code>rating</code>) can be visualized as parallel lines for each level of <code>rating</code>. Which of the following is the equation of the line for R-rated movies?</p>
+<ol type="a">
+<li><p><span class="math inline">\(\widehat{score} = (4.525 - 0.257) + 0.021 \times runtime\)</span></p></li>
+<li><p><span class="math inline">\(score = (4.525 - 0.257) + 0.021 \times runtime\)</span></p></li>
+<li><p><span class="math inline">\(\widehat{score} = 4.525 + (0.021 - 0.257) \times runtime\)</span></p></li>
+<li><p><span class="math inline">\(score = 4.525 + (0.021 - 0.257) \times runtime\)</span></p></li>
+<li><p><span class="math inline">\(\widehat{score} = (4.525 + 0.021) - 0.257 \times runtime\)</span></p></li>
+</ol></section></section></section><section id="holiday-movies" class="level2"><h2 class="anchored" data-anchor-id="holiday-movies">Holiday movies</h2>
+<p>A team of five data scientists is working model and make inferences about holiday movies using a dataset on 1835 holiday movies; movies with “holiday”, “Christmas”, “Hanukkah”, or “Kwanzaa” (or variants thereof) in their title. Each member of the team is responsible for a different part of the analysis. The data come from the Internet Movie Database (IMDb). The data frame is called <code>holiday_movies</code> and it contains the variables described in the table below.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">IMDb ID of movie</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>title_type</code></td>
+<td style="text-align: left;">Type of the title (Feature Film or TV Movie)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>title</code></td>
+<td style="text-align: left;">Title used on promotional materials at the point of release</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>year</code></td>
+<td style="text-align: left;">Release year of a title</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>runtime</code></td>
+<td style="text-align: left;">Primary runtime of the title, in minutes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>genre</code></td>
+<td style="text-align: left;">Primary genre associated with the title</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>score</code></td>
+<td style="text-align: left;">Weighted average of all the individual user ratings on IMDb</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>num_votes</code></td>
+<td style="text-align: left;">Number of votes the title has received on IMDb</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>christmas</code></td>
+<td style="text-align: left;">Whether the title includes “christmas”, “xmas”, “x mas”, etc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>hanukkah</code></td>
+<td style="text-align: left;">Whether the title includes “hanukkah”, “chanukah”, etc.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>kwanzaa</code></td>
+<td style="text-align: left;">Whether the title includes “kwanzaa”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>holiday</code></td>
+<td style="text-align: left;">Whether the title includes the word “holiday”</td>
+</tr>
+</tbody>
+</table>
+<p>A peek at the data is shown below.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,835 × 12
+   id        title_type  title     year runtime genre  score num_votes christmas
+   &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;     &lt;dbl&gt; &lt;lgl&gt;    
+ 1 tt0020356 Feature Fi… Sailor'…  1929      58 Comedy   5.4        55 FALSE    
+ 2 tt0020823 Feature Fi… The Dev…  1930      80 Drama    6         242 FALSE    
+ 3 tt0020985 Feature Fi… Holiday   1930      91 Comedy   6.3       638 FALSE    
+ 4 tt0021268 Feature Fi… Holiday…  1930      83 Comedy   7.4       256 FALSE    
+ 5 tt0021377 Feature Fi… Sin Tak…  1930      81 Comedy   6.1       740 FALSE    
+ 6 tt0021381 Feature Fi… Sinners…  1930      60 Other    6.3       688 FALSE    
+ 7 tt0023039 Feature Fi… Husband…  1931      70 Drama    6.4        27 FALSE    
+ 8 tt0024869 Feature Fi… Beggar'…  1934      60 Other    5.6        15 FALSE    
+ 9 tt0025006 Feature Fi… Cowboy …  1934      56 Other    4.8        74 FALSE    
+10 tt0025037 Feature Fi… Death T…  1934      79 Drama    6.9      2361 FALSE    
+# ℹ 1,825 more rows
+# ℹ 3 more variables: hanukkah &lt;lgl&gt;, kwanzaa &lt;lgl&gt;, holiday &lt;lgl&gt;</code></pre>
+</div>
+</div>
+<section id="question-42" class="level3"><h3 class="anchored" data-anchor-id="question-42">Question 42</h3>
+<p>The second team member is working on inference, focusing on comparing <code>score</code>s between Feature Films and TV Movies using the full dataset. They use the full dataset for their analysis. Answer the questions in this part for this team member’s portion of the analysis.</p>
+<p>The density curves below show the distributions of <code>score</code>s in Feature Films and TV Movies. The means are overlaid on these distributions: a mean score of 5.65 for Feature Films and a mean score of 6.21 for TV Movies. The observed difference between these scores (TV Movies - Feature Films) is 0.56.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="final_files/figure-html/unnamed-chunk-77-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A bootstrap distribution of the difference between the mean scores of holiday TV Movies and Feature Films is generated using the code below:</p>
+<p>The plot below visualizes the bootstrap distribution. The 95% confidence interval is (0.442, 0.670). The bounds for this interval are overlaid on the plot.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="final_files/figure-html/unnamed-chunk-80-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Noting that this guide is written in Quarto with all figures and tables produced with code, which of the following is <u><strong>TRUE</strong></u> about this analysis? <strong>Select all that apply.</strong></p>
+<ol type="a">
+<li><p>We are 95% confident that 44.2% to 67% of holiday movies are TV Movies.</p></li>
+<li><p>The upper bound of the interval marks the 2.5th percentile of the bootstrap distribution.</p></li>
+<li><p>We are 95% confident that the mean score of holiday TV Movies is 0.442 points to 0.67 points higher than holiday Feature Films.</p></li>
+<li><p>If this document is rendered again, we might get slightly different values for the bounds of the confidence interval.</p></li>
+<li><p>1,000 bootstrap samples were taken when constructing this confidence interval.</p></li>
+</ol></section><section id="question-43" class="level3"><h3 class="anchored" data-anchor-id="question-43">Question 43</h3>
+<p>A post in a data science blog states that holiday TV movies score discernibly differently than holiday Feature Films, on average. Suppose you want to evaluate this claim using a hypothesis test so you write the following code to simulate the null distribution.</p>
+<p>The plot below visualizes the null distributions for the slope and intercept. Focus on the slope.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="final_files/figure-html/unnamed-chunk-83-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Which of the following is <u><strong>TRUE</strong></u> about this analysis? <strong>Select all that apply.</strong></p>
+<ol type="a">
+<li><p>The null hypothesis states that the mean score of all holiday TV movies is equal to the mean score of all holiday Feature Films.</p></li>
+<li><p>The alternative hypothesis states that the mean score of all holiday TV movies is different than the mean score of all holiday Feature Films.</p></li>
+<li><p>The p-value is approximately 0.</p></li>
+<li><p>The data provide discernible evidence that the mean score of all holiday TV movies is equal to the mean score of all holiday Feature Films.</p></li>
+<li><p>The confidence interval from the previous question and the result of the hypothesis test in this question do not agree with each other.</p></li>
+</ol></section><section id="question-44" class="level3"><h3 class="anchored" data-anchor-id="question-44">Question 44</h3>
+<p>The third team member is working on modeling, predicting <code>score</code>. They first split up the data into training and testing sets.</p>
+<p>They then fit a model predicting <code>score</code> from <code>runtime</code> and <code>genre</code> (categorized as Comedy, Drama, Other, Animation, Family, and Romance), and name it <code>score_runtime_genre_fit</code>, using the training data. Answer the questions in this part for this team member’s portion of the analysis.</p>
+<p>The model output for <code>score_runtime_genre_fit</code> is shown below.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">7.327</td>
+<td style="text-align: right;">0.258</td>
+<td style="text-align: right;">28.360</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">runtime</td>
+<td style="text-align: right;">-0.018</td>
+<td style="text-align: right;">0.006</td>
+<td style="text-align: right;">-3.183</td>
+<td style="text-align: right;">0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">genreComedy</td>
+<td style="text-align: right;">-1.001</td>
+<td style="text-align: right;">0.369</td>
+<td style="text-align: right;">-2.714</td>
+<td style="text-align: right;">0.007</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">genreDrama</td>
+<td style="text-align: right;">-1.177</td>
+<td style="text-align: right;">0.506</td>
+<td style="text-align: right;">-2.327</td>
+<td style="text-align: right;">0.020</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">genreFamily</td>
+<td style="text-align: right;">-0.086</td>
+<td style="text-align: right;">0.497</td>
+<td style="text-align: right;">-0.172</td>
+<td style="text-align: right;">0.863</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">genreOther</td>
+<td style="text-align: right;">-0.609</td>
+<td style="text-align: right;">0.331</td>
+<td style="text-align: right;">-1.841</td>
+<td style="text-align: right;">0.066</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">genreRomance</td>
+<td style="text-align: right;">1.216</td>
+<td style="text-align: right;">1.580</td>
+<td style="text-align: right;">0.770</td>
+<td style="text-align: right;">0.442</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">runtime:genreComedy</td>
+<td style="text-align: right;">0.012</td>
+<td style="text-align: right;">0.006</td>
+<td style="text-align: right;">1.928</td>
+<td style="text-align: right;">0.054</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">runtime:genreDrama</td>
+<td style="text-align: right;">0.018</td>
+<td style="text-align: right;">0.007</td>
+<td style="text-align: right;">2.377</td>
+<td style="text-align: right;">0.018</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">runtime:genreFamily</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.008</td>
+<td style="text-align: right;">0.064</td>
+<td style="text-align: right;">0.949</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">runtime:genreOther</td>
+<td style="text-align: right;">0.008</td>
+<td style="text-align: right;">0.006</td>
+<td style="text-align: right;">1.264</td>
+<td style="text-align: right;">0.206</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">runtime:genreRomance</td>
+<td style="text-align: right;">-0.012</td>
+<td style="text-align: right;">0.019</td>
+<td style="text-align: right;">-0.644</td>
+<td style="text-align: right;">0.520</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Which of the following is <u><strong>true</strong></u> about the intercept of <code>score_runtime_genre_fit</code>? <strong>Select all that apply.</strong></p>
+<ol type="a">
+<li><p>The intercept is meaningless in context of the data.</p></li>
+<li><p>Animation movies that are 0 minutes in length are predicted to score, on average, 7.327 points.</p></li>
+<li><p>All else held constant, movies that are 0 minutes in length are predicted to score, on average, 7.327 points.</p></li>
+<li><p>Movies without a genre that are 0 minutes in length are predicted to score, on average, 7.327 points.</p></li>
+<li><p>Keeping runtime constant, animation movies are predicted to score, on average, 7.327 points.</p></li>
+</ol></section><section id="question-45" class="level3"><h3 class="anchored" data-anchor-id="question-45">Question 45</h3>
+<p>Fill in the blank:</p>
+<blockquote class="blockquote">
+<p>Adjusted R-squared for <code>score_runtime_genre_fit</code> (the model predicting <code>score</code> from <code>runtime</code> and <code>genre</code>) _________ the adjusted R-squared of the model <code>score_runtime_fit</code> (for predicting <code>score</code> from <code>runtime</code> alone).</p>
+</blockquote>
+<ol type="a">
+<li><p>is equal to</p></li>
+<li><p>is less than</p></li>
+<li><p>is greater than</p></li>
+<li><p>is both greater than and less than</p></li>
+<li><p>cannot be compared (based on the information provided) to</p></li>
+</ol></section><section id="question-46" class="level3"><h3 class="anchored" data-anchor-id="question-46">Question 46</h3>
+<p>The fourth team member is also working on modeling, but they classifying movies as either Feature Films or TV Movies (<code>title_type</code>) based on their <code>runtime</code>, <code>score</code>, and <code>num_votes</code>. Their code and output is shown below.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  title_type   .pred_class      n
+  &lt;fct&gt;        &lt;fct&gt;        &lt;int&gt;
+1 TV Movie     TV Movie       256
+2 TV Movie     Feature Film    30
+3 Feature Film TV Movie        95
+4 Feature Film Feature Film    78</code></pre>
+</div>
+</div>
+<p>Which of the following is the <strong>false positive rate</strong> of the model for this testing set?</p>
+<ol type="a">
+<li><p>30 / (30 + 256) = 0.1</p></li>
+<li><p>256 / (30 + 256) = 0.9</p></li>
+<li><p>95 / (95 + 78) = 0.55</p></li>
+<li><p>78 / (95 + 78) = 0.45</p></li>
+<li><p>78 / (30 + 78) = 0.72</p></li>
+</ol></section><section id="question-47" class="level3"><h3 class="anchored" data-anchor-id="question-47">Question 47</h3>
+<p>Suppose you fit one other model, predicting <code>title_type</code> from <code>runtime</code> and <code>score</code> only. You should choose this model over the original model if …</p>
+<ol type="a">
+<li><p>it has a higher adjusted R-squared</p></li>
+<li><p>it has a higher R-squared</p></li>
+<li><p>it has a lower false positive rate</p></li>
+<li><p>it has a higher false negative rate</p></li>
+<li><p>it has a higher area under the ROC curve</p></li>
+</ol>
+
+
+</section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/sta199-su26\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../exam-review/midterm-key.html" class="pagination-link" aria-label="Midterm Review Answer Key">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Midterm Review Answer Key</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2026, Mine Çetinkaya-Rundel, Marie Neubrander, John Zito, Katie Solarz</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/exam-review/final.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This page is built with <span style="color: #f21118;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+</body></html>
