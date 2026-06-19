@@ -82,6 +82,8 @@ website:
             text: "Midterm Review"
           - href: exam-review/midterm-key.qmd   
             text: "Midterm Review Answer Key"
+          - href: exam-review/final.qmd
+            text: "Final Review"
       
       
             
