@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.39">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Peer review – STA 199</title>
+
+
+<title>Midterm 2 Study Guide Solutions – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,14 +22,13 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
+
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../project/5-writeup-presentation.html" rel="next">
-<link href="../project/3-improvement-progress.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -37,7 +39,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-0dd86df0a49f8ca43885eaae46087b40.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -63,35 +66,75 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="../style/sta199.scss">
-<meta property="og:title" content="Peer review – STA 199">
-<meta property="og:description" content="Milestone 4">
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../style/sta199.scss">
+<meta property="og:title" content="Midterm 2 Study Guide Solutions – STA 199">
+<meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Peer review – STA 199">
-<meta name="twitter:description" content="Milestone 4">
-<meta name="twitter:image" content="https://sta199-su26.github.io/project/img/twitter-card-ks.pdf">
+<meta name="twitter:title" content="Midterm 2 Study Guide Solutions – STA 199">
+<meta name="twitter:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
+<meta name="twitter:image" content="https://sta199-su26.github.io/exam-review/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
 <meta name="twitter:card" content="summary_large_image">
 </head>
+
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../project/description.html">Project</a></li><li class="breadcrumb-item"><a href="../project/4-peer-review.html">Milestone 4</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Midterm 2 Study Guide Solutions</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <img src="../img/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
       <div class="sidebar-tools-main">
     <a href="https://github.com/sta199-su26" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://cmgr.oit.duke.edu/containers" title="RStudio containers" class="quarto-navigation-tool px-1" aria-label="RStudio containers"><i class="bi bi-code-square"></i></a>
@@ -104,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course Information</span></a>
@@ -112,8 +155,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
@@ -150,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -159,8 +202,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../computing-access.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Access</span></a>
@@ -185,17 +228,17 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Project</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project/description.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Description</span></a>
@@ -221,7 +264,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/4-peer-review.html" class="sidebar-item-text sidebar-link active">
+  <a href="../project/4-peer-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Milestone 4</span></a>
   </div>
 </li>
@@ -232,7 +275,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab.html" class="sidebar-item-text sidebar-link">
@@ -253,8 +296,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../exam-review/midterm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Midterm Review</span></a>
@@ -273,29 +316,39 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#review-pairings" id="toc-review-pairings" class="nav-link" data-scroll-target="#review-pairings">Review pairings</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/project/4-peer-review.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+  <li><a href="#concepts-and-main-ideas" id="toc-concepts-and-main-ideas" class="nav-link active" data-scroll-target="#concepts-and-main-ideas">Concepts and main ideas</a></li>
+  <li><a href="#visual-understanding" id="toc-visual-understanding" class="nav-link" data-scroll-target="#visual-understanding">Visual understanding</a>
+  <ul class="collapse">
+  <li><a href="#s-curves" id="toc-s-curves" class="nav-link" data-scroll-target="#s-curves">S-curves</a></li>
+  <li><a href="#roc" id="toc-roc" class="nav-link" data-scroll-target="#roc">ROC</a></li>
+  </ul></li>
+  <li><a href="#wanana-doctor" id="toc-wanana-doctor" class="nav-link" data-scroll-target="#wanana-doctor">WANANA doctor</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data analysis</a>
+  <ul class="collapse">
+  <li><a href="#blizzard" id="toc-blizzard" class="nav-link" data-scroll-target="#blizzard">Blizzard</a></li>
+  <li><a href="#movies" id="toc-movies" class="nav-link" data-scroll-target="#movies">Movies</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/exam-review/final-key.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../project/description.html">Project</a></li><li class="breadcrumb-item"><a href="../project/4-peer-review.html">Milestone 4</a></li></ol></nav><div class="quarto-title">
-<h1 class="title">Peer review</h1>
-<p class="subtitle lead">Milestone 4</p>
-  <div class="quarto-categories">
-    <div class="quarto-category">Project</div>
-  </div>
-  </div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Midterm 2 Study Guide Solutions</h1>
+</div>
 
 
 
@@ -308,567 +361,130 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header><div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You must attend this lab in person and participate in the peer review in person to be eligible for the points for this milestone. Team members who are not in lab in person for this milestone will not be eligible for these points, regardless of their contribution throughout the rest of the project.</p>
-</div>
-</div>
-<p>During the peer feedback process, you will be provided read-only access to your partner team’s GitHub repo. You will provide your feedback in the form of GitHub issues to your partner team’s GitHub repo.</p>
-<section id="goals" class="level1"><h1>Goals</h1>
-<p>The goals of this milestone are as follows:</p>
+</header>
+
+
+<section id="concepts-and-main-ideas" class="level1">
+<h1>Concepts and main ideas</h1>
+<ol type="1">
+<li><p>Rapid-fire:</p>
+<ol type="i">
+<li>The line is chosen to make the sum of <em>squared</em> residuals as small as possible;</li>
+<li>It measures the strength and direction of the linear association between two numerical variables;</li>
+<li>It measures the proportion of the variation in the response variable explained by the model;</li>
+<li>Always Be Visualizing! Wildly different datasets could have very similar numerical summaries. Actually plot the data so that you aren’t fooled;</li>
+<li><span class="math inline">\(Y=\beta_0+\beta_1 X + \varepsilon\)</span> is the “true,” population relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. <span class="math inline">\(\hat{Y}=b_0+b_1 X\)</span> is the estimated relationship based on a sample of imperfect data;</li>
+<li>If it makes sense for the predictor to take on a value of zero, and if the model prediction at zero is a value that the response could plausibly take, then the intercept is meaningful;</li>
+<li>The computer creates two dummy variables indicating whether or not an observation belongs to the two levels of the categorical predictor that are not the base level. Then it runs a multiple linear regression with those two dummies as predictors;</li>
+<li>A formula goes in the blank. This is <code>R</code> syntax like <code>y ~ x + z</code> where you tell the computer which columns in your data frame you want to use, and how to use them. Predictors go on the righthand side of the tilde, and the response variable goes on the left;</li>
+<li><span class="math inline">\(\hat{y}^{(\text{new})} = \hat{y}^{(\text{old})} + b_1\)</span>;</li>
+<li><span class="math inline">\(\hat{o}^{(\text{new})}=\hat{o}^{(\text{old})}\times e^{b_1}\)</span>;</li>
+<li>Unadjusted <span class="math inline">\(R^2\)</span> always goes up when you add any new variable to a linear regression model, even if that variable is worthless. Unadjusted <span class="math inline">\(R^2\)</span> penalizes the addition of irrelevant predictors.</li>
+</ol></li>
+</ol>
+</section>
+<section id="visual-understanding" class="level1">
+<h1>Visual understanding</h1>
+<section id="s-curves" class="level2">
+<h2 class="anchored" data-anchor-id="s-curves">S-curves</h2>
+<ol start="3" type="1">
+<li><ol start="3" type="a">
+<li>This is the plain vanilla one.</li>
+</ol></li>
+<li><ol start="5" type="a">
+<li>Like an additive linear regression, the inclusion of the categorical predictor (with two levels) means that each level gets its own curve.</li>
+</ol></li>
+<li><ol start="6" type="a">
+<li>Negative slope means the probability goes down as <span class="math inline">\(x\)</span> increases.</li>
+</ol></li>
+<li><ol start="4" type="a">
+<li>The negative intercept makes the probability at <span class="math inline">\(x=0\)</span> tiny, so the curve shifts right.</li>
+</ol></li>
+<li><ol type="a">
+<li>The bigger slope means the probability increases faster as <span class="math inline">\(x\)</span> increases, so steep curve.</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li>The itty bitty slope means the probability increases slower as <span class="math inline">\(x\)</span> increases, so flatter curve.</li>
+</ol></li>
+</ol>
+</section>
+<section id="roc" class="level2">
+<h2 class="anchored" data-anchor-id="roc">ROC</h2>
+<ol start="9" type="1">
+<li>c</li>
+<li>a</li>
+<li>d</li>
+<li>b</li>
+</ol>
+</section>
+</section>
+<section id="wanana-doctor" class="level1">
+<h1>WANANA doctor</h1>
+<ol start="13" type="1">
+<li>Causal-sounding language that makes the prediction sound like a guarantee.</li>
+<li>A one unit (which is measured in thousands of characters here) increase in the predictor is associated with a decrease by -0.0621 in the estimated <em>log-odds</em>, not the probability.</li>
+<li>Holding bill length constant, a one unit increase in flipper length is associated with a 48.14 gram <em>increase</em> in body mass, on average.</li>
+<li>1.74 is not the slope between flipper length and body mass for Chinstrap penguins. It’s the <em>adjustment</em> that must be made to the baseline slope of 32.8 in order to get the Chinstrap slope. Those interaction terms are slope adjusters, not slopes themselves.</li>
+<li><span class="math inline">\(R^2\)</span> is percent of variation in the <em>response</em> that is explained by the model. <code>mpg</code> is the predictor here (since it’s to the right of the tilde).</li>
+<li><span class="math inline">\(e^{-2.218}\approx 0.10886\)</span> is the <em>odds</em> of the email being spam. The probability would be</li>
+</ol>
+<p><span class="math display">\[
+\frac{e^{-2.218}}{1+e^{-2.218}}\approx 0.098.
+\]</span></p>
+<ol start="19" type="1">
+<li>The base level is female, not male, so the intercept applies to the female penguins.</li>
+<li>Correlation applies to <em>pairs</em> of numerical variables. We don’t talk about correlation between three variables. Since this is multiple linear regression instead of simple, we cannot interpret the <span class="math inline">\(R^2\)</span> as literally the square of a correlation coefficient.</li>
+</ol>
+</section>
+<section id="data-analysis" class="level1">
+<h1>Data analysis</h1>
+<section id="blizzard" class="level2">
+<h2 class="anchored" data-anchor-id="blizzard">Blizzard</h2>
+<ol start="21" type="1">
+<li>(c) For every additional $1,000 of annual salary, the model predicts the raise to be higher, on average, by 0.0155%.</li>
+<li>(d) <span class="math inline">\(R^2\)</span> of <code>raise_2_fit</code> is higher than <span class="math inline">\(R^2\)</span> of <code>raise_1_fit</code> since <code>raise_2_fit</code> has one more predictor</li>
+<li>The reference level of <code>performance_rating</code> is High, since it’s the first level alphabetically. Therefore, the coefficient -2.40% is the predicted difference in raise comparing High to Successful. In this context a negative coefficient makes sense since we would expect those with High performance rating to get higher raises than those with Successful performance.</li>
+<li>(a) “Poor”, “Successful”, “High”, “Top”.</li>
+<li>(c) Option 3. It’s a linear model with no interaction effect, so parallel lines. And since the slope for <code>salary_typeSalaried</code> is positive, its intercept is higher. The equations of the lines are as follows:
 <ul>
-<li>Review others’ project drafts as a team and provide feedback</li>
-<li>Post issues on GitHub using an issue template</li>
-<li>Learn from others’ projects and improve your own project based on their strengths and weaknesses</li>
-</ul></section><section id="instructions" class="level1"><h1>Instructions</h1>
-<p>Review one other teams’ project. As a team you should spend ~30 minutes on the review.</p>
-<ul>
-<li><p>Find the names of the team whose project you’re reviewing below. You should already have access to this team’s repo.</p></li>
-<li><p>Each team member should go to the repo of the team you’re reviewing.</p></li>
-<li>
-<p>Then,</p>
-<ul>
-<li><p>1-2 team members clone the team’s project and renders it to check for reproducibility.</p></li>
-<li><p>All team members open the team’s project in their browser and starts reading through the project draft.</p></li>
-<li><p>1 team member opens an issue on the team’s repo using the peer review template.</p></li>
-<li><p>All team members discuss the project based on the prompts on the issue template and one team member records the feedback and submits the issue.</p></li>
-</ul>
-</li>
-<li>
-<p>To open an issue in the repo you’re reviewing, click on New issue, and click on Get started for the Peer review issue. Fill out this issue, answering the following questions:</p>
-<ul>
-<li><p>Peer review by: [NAME OF TEAM DOING THE REVIEW]</p></li>
-<li><p>Names of team members that participated in this review: [FULL NAMES OF TEAM MEMBERS DOING THE REVIEW]</p></li>
-<li><p>Describe the goal of the project.</p></li>
-<li><p>Describe the data used or collected, if any. If the proposal does not include the use of a specific dataset, comment on whether the project would be strengthened by the inclusion of a dataset.</p></li>
-<li><p>Describe the approaches, tools, and methods that will be used.</p></li>
-<li><p>Provide constructive feedback on how the team might be able to improve their project. Make sure your feedback includes at least one comment on the statistical reasoning aspect of the project, but do feel free to comment on aspects beyond the reasoning as well.</p></li>
-<li><p>What aspect of this project are you most interested in and would like to see highlighted in the presentation?</p></li>
-<li><p>Were you able to reproduce the project by clicking on Render Website once you cloned it? Were there any issues with reproducibility?</p></li>
-<li><p>Provide constructive feedback on any issues with file and/or code organization.</p></li>
-<li><p>What have you learned from this team’s project that you are considering implementing in your own project?</p></li>
-<li><p>(Optional) Any further comments or feedback?</p></li>
-</ul>
-</li>
-</ul></section><section id="review-pairings" class="level1"><h1>Review pairings</h1>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Peer Review Assignments</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="cell">
-<div class="cell-output-display">
-<div id="qcmcdefrob" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qcmcdefrob table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#qcmcdefrob thead, #qcmcdefrob tbody, #qcmcdefrob tfoot, #qcmcdefrob tr, #qcmcdefrob td, #qcmcdefrob th {
-  border-style: none;
-}
-
-#qcmcdefrob p {
-  margin: 0;
-  padding: 0;
-}
-
-#qcmcdefrob .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#qcmcdefrob .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#qcmcdefrob .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#qcmcdefrob .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#qcmcdefrob .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#qcmcdefrob .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#qcmcdefrob .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#qcmcdefrob .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#qcmcdefrob .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#qcmcdefrob .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#qcmcdefrob .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#qcmcdefrob .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#qcmcdefrob .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#qcmcdefrob .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#qcmcdefrob .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#qcmcdefrob .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#qcmcdefrob .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#qcmcdefrob .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#qcmcdefrob .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qcmcdefrob .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#qcmcdefrob .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#qcmcdefrob .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#qcmcdefrob .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qcmcdefrob .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#qcmcdefrob .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#qcmcdefrob .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#qcmcdefrob .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qcmcdefrob .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#qcmcdefrob .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#qcmcdefrob .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#qcmcdefrob .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#qcmcdefrob .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#qcmcdefrob .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qcmcdefrob .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#qcmcdefrob .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qcmcdefrob .gt_left {
-  text-align: left;
-}
-
-#qcmcdefrob .gt_center {
-  text-align: center;
-}
-
-#qcmcdefrob .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#qcmcdefrob .gt_font_normal {
-  font-weight: normal;
-}
-
-#qcmcdefrob .gt_font_bold {
-  font-weight: bold;
-}
-
-#qcmcdefrob .gt_font_italic {
-  font-style: italic;
-}
-
-#qcmcdefrob .gt_super {
-  font-size: 65%;
-}
-
-#qcmcdefrob .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#qcmcdefrob .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#qcmcdefrob .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#qcmcdefrob .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#qcmcdefrob .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#qcmcdefrob .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#qcmcdefrob .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#qcmcdefrob .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#qcmcdefrob div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
-<th id="your_team_name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Your team name</th>
-<th id="team_to_review_1" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Team to review</th>
-</tr></thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="your_team_name">data denominators</td>
-<td class="gt_row gt_left" headers="team_to_review_1"><a href="https://github.com/sta199-su26/project-r-stars">r-stars</a></td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="your_team_name">r-stars</td>
-<td class="gt_row gt_left" headers="team_to_review_1"><a href="https://github.com/sta199-su26/project-data-dominators">data-denominators</a></td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="your_team_name">r-tists</td>
-<td class="gt_row gt_left" headers="team_to_review_1"><a href="https://github.com/sta199-su26/project-code-conquerors">code-conquerors</a></td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="your_team_name">code-conquerors</td>
-<td class="gt_row gt_left" headers="team_to_review_1"><a href="https://github.com/sta199-su26/project-r-tists">r-tists</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section id="grading" class="level1"><h1>Grading</h1>
-<p>Peer reviews will be graded on the extent to which it comprehensively and constructively addresses the components of the reviewee’s team’s report.</p>
-<p>Only the team members participating in the review during the lab session are eligible for points for the peer review. If you’re unable to make it to lab in person, you should arrange to virtually connect with your team during your lab session.</p>
-<ul>
-<li><p>0 points: No peer review</p></li>
-<li><p>1 point: Feedback provided is not constructive or actionable</p></li>
-<li><p>2-4 points: Feedback provided is not sufficiently thorough</p></li>
-<li><p>5 points: Peer review is constructive, actionable, and sufficiently thorough</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The feedback issue will come from one team member on GitHub since you can’t collectively edit an issue. However it must represent the opinions of the entire team. It is not a single team member’s responsibility to provide feedback, they’re just the record keeper for the team.</p>
-</div>
-</div>
+<li><p>Hourly: <span class="math display">\[
+\begin{align*}
+\widehat{percent\_incr} &amp;= 1.24 + 0.0000137 \times annual\_salary + 0.913 \times salary\_typeSalaried \\
+&amp;= 1.24 + 0.0000137 \times annual\_salary + 0.913 \times 0 \\
+&amp;= 1.24 + 0.0000137 \times annual\_salary
+\end{align*}
+\]</span></p></li>
+<li><p>Salaried: <span class="math display">\[
+\begin{align*}
+\widehat{percent\_incr} &amp;= 1.24 + 0.0000137 \times annual\_salary + 0.913 \times salary\_typeSalaried \\
+&amp;= 1.24 + 0.0000137 \times annual\_salary + 0.913 \times 1 \\
+&amp;= 2.153 + 0.0000137 \times annual\_salary
+\end{align*}
+\]</span></p></li>
+</ul></li>
+<li>(c) The model predicts that the percentage increase employees with Successful performance get, on average, is higher by a factor of 1025 compared to the employees with Poor performance rating.</li>
+</ol>
+</section>
+<section id="movies" class="level2">
+<h2 class="anchored" data-anchor-id="movies">Movies</h2>
+<ol start="27" type="1">
+<li>(d) <code>as.numeric(str_remove(runtime, " mins"))</code></li>
+<li>(e) Blue City <span class="math inline">\(&gt;\)</span> Rang De Basanti <span class="math inline">\(&gt;\)</span> Winter Sleep</li>
+<li>(b) 31% of the variability in movie scores is explained by their runtime.</li>
+<li>(a) summarize</li>
+<li>(b) A value between 0 and 0.434.</li>
+<li>(e) G-rated movies that are 0 minutes in length are predicted to score, on average, 4.525 points.</li>
+<li>(c) All else held constant, for each additional minute of runtime, movie scores will be higher by 0.021 points on average.</li>
+<li>(c) is greater than</li>
+<li>(a) <span class="math inline">\(\widehat{score} = (4.525 - 0.257) + 0.021 \times runtime\)</span></li>
+</ol>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1284,30 +900,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../project/3-improvement-progress.html" class="pagination-link" aria-label="Milestone 3">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Milestone 3</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../project/5-writeup-presentation.html" class="pagination-link" aria-label="Milestone 5">
-        <span class="nav-page-text">Milestone 5</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
+</script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© Copyright 2026, Mine Çetinkaya-Rundel, Marie Neubrander, John Zito, Katie Solarz</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/project/4-peer-review.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/exam-review/final-key.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <span style="color: #f21118;"><i class="fa-solid fa-heart" aria-label="heart"></i></span> and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>
