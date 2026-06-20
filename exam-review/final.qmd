@@ -7,6 +7,7 @@ execute:
 ```{r}
 #| label: load-packages
 #| message: false
+#| echo: false
 library(tidyverse)
 library(tidymodels)
 library(knitr)
@@ -214,6 +215,7 @@ Match the S-curve to the model equation.
 #| fig-asp: 1
 #| fig-width: 8
 #| warning: false
+#| echo: false
 
 set.seed(1234)
 
@@ -411,6 +413,7 @@ What's wrong with the interpretations below?
 Diagnose the problem and fix it if possible.
 
 ```{r}
+#| echo: false
 q_no <- 12
 
 q_no <- q_no + 1
@@ -430,6 +433,7 @@ linear_reg() |>
 > If the flipper length of a penguin increases by 1mm, then the bill length will increase by 0.25mm.
 
 ```{r}
+#| echo: false
 q_no <- q_no + 1
 ```
 
@@ -1717,6 +1721,8 @@ The fourth team member is also working on modeling, but they classifying movies 
 Their code and output is shown below.
 
 ```{r}
+#| echo: true
+
 # make title_type a factor
 holiday_movies <- holiday_movies |>
   mutate(title_type = fct_relevel(title_type, "TV Movie", "Feature Film"))
