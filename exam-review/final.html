@@ -59,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../exam-review/final-key.html" rel="next">
 <link href="../exam-review/midterm-key.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -331,6 +332,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../exam-review/final.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Final Review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam-review/final-key.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Review Answer Key</span></a>
   </div>
 </li>
       </ul>
@@ -1696,6 +1703,26 @@ Table&nbsp;3: Regression output for <code>score_runtime_rating_fit</code>.
 </ol></section><section id="question-46" class="level3"><h3 class="anchored" data-anchor-id="question-46">Question 46</h3>
 <p>The fourth team member is also working on modeling, but they classifying movies as either Feature Films or TV Movies (<code>title_type</code>) based on their <code>runtime</code>, <code>score</code>, and <code>num_votes</code>. Their code and output is shown below.</p>
 <div class="cell">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># make title_type a factor</span></span>
+<span><span class="va">holiday_movies</span> <span class="op">&lt;-</span> <span class="va">holiday_movies</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>title_type <span class="op">=</span> <span class="fu">fct_relevel</span><span class="op">(</span><span class="va">title_type</span>, <span class="st">"TV Movie"</span>, <span class="st">"Feature Film"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># split the data into training and testing</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">221</span><span class="op">)</span></span>
+<span><span class="va">holiday_movies_split</span> <span class="op">&lt;-</span> <span class="fu">initial_split</span><span class="op">(</span><span class="va">holiday_movies</span><span class="op">)</span></span>
+<span><span class="va">holiday_movies_train</span> <span class="op">&lt;-</span> <span class="fu">training</span><span class="op">(</span><span class="va">holiday_movies_split</span><span class="op">)</span></span>
+<span><span class="va">holiday_movies_test</span> <span class="op">&lt;-</span> <span class="fu">testing</span><span class="op">(</span><span class="va">holiday_movies_split</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># fit model to training data</span></span>
+<span><span class="va">title_type_fit</span> <span class="op">&lt;-</span> <span class="fu">logistic_reg</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">fit</span><span class="op">(</span><span class="va">title_type</span> <span class="op">~</span> <span class="va">runtime</span> <span class="op">+</span> <span class="va">score</span> <span class="op">+</span> <span class="va">num_votes</span>, data <span class="op">=</span> <span class="va">holiday_movies_train</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># make predictions for testing data</span></span>
+<span><span class="va">holiday_movies_aug</span> <span class="op">&lt;-</span> <span class="fu">augment</span><span class="op">(</span><span class="va">title_type_fit</span>, new_data <span class="op">=</span> <span class="va">holiday_movies_test</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># summarize predictions</span></span>
+<span><span class="va">holiday_movies_aug</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">title_type</span>, <span class="va">.pred_class</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
   title_type   .pred_class      n
@@ -2146,6 +2173,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../exam-review/final-key.html" class="pagination-link" aria-label="Final Review Answer Key">
+        <span class="nav-page-text">Final Review Answer Key</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Midterm 2 Study Guide Solutions – STA 199</title>
+<title>Final Study Guide Solutions – STA 199</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,6 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../exam-review/final.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -99,10 +100,10 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../style/sta199.scss">
-<meta property="og:title" content="Midterm 2 Study Guide Solutions – STA 199">
+<meta property="og:title" content="Final Study Guide Solutions – STA 199">
 <meta property="og:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
 <meta property="og:site_name" content="STA 199">
-<meta name="twitter:title" content="Midterm 2 Study Guide Solutions – STA 199">
+<meta name="twitter:title" content="Final Study Guide Solutions – STA 199">
 <meta name="twitter:description" content="Homepage for STA 199 - Introduction to Data Science at Duke University, Summer 2026: Session I.">
 <meta name="twitter:image" content="https://sta199-su26.github.io/exam-review/img/twitter-card-ks.pdf">
 <meta name="twitter:creator" content="@minebocek">
@@ -118,7 +119,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Midterm 2 Study Guide Solutions</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exam-review/midterm.html">Exam Review</a></li><li class="breadcrumb-item"><a href="../exam-review/final-key.html">Final Review Answer Key</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -290,13 +291,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Exam Review</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../exam-review/midterm.html" class="sidebar-item-text sidebar-link">
@@ -315,6 +316,12 @@ window.Quarto = {
  <span class="menu-text">Final Review</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exam-review/final-key.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Final Review Answer Key</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -330,14 +337,19 @@ window.Quarto = {
   <li><a href="#concepts-and-main-ideas" id="toc-concepts-and-main-ideas" class="nav-link active" data-scroll-target="#concepts-and-main-ideas">Concepts and main ideas</a></li>
   <li><a href="#visual-understanding" id="toc-visual-understanding" class="nav-link" data-scroll-target="#visual-understanding">Visual understanding</a>
   <ul class="collapse">
-  <li><a href="#s-curves" id="toc-s-curves" class="nav-link" data-scroll-target="#s-curves">S-curves</a></li>
-  <li><a href="#roc" id="toc-roc" class="nav-link" data-scroll-target="#roc">ROC</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#questions-3---8" id="toc-questions-3---8" class="nav-link" data-scroll-target="#questions-3---8">Questions 3 - 8</a></li>
+  <li><a href="#questions-9---12" id="toc-questions-9---12" class="nav-link" data-scroll-target="#questions-9---12">Questions 9 - 12</a></li>
   </ul></li>
-  <li><a href="#wanana-doctor" id="toc-wanana-doctor" class="nav-link" data-scroll-target="#wanana-doctor">WANANA doctor</a></li>
+  <li><a href="#stat-doctor" id="toc-stat-doctor" class="nav-link" data-scroll-target="#stat-doctor">Stat doctor</a>
+  <ul class="collapse">
+  <li><a href="#pokémon" id="toc-pokémon" class="nav-link" data-scroll-target="#pokémon">Pokémon</a></li>
+  </ul></li>
   <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data analysis</a>
   <ul class="collapse">
-  <li><a href="#blizzard" id="toc-blizzard" class="nav-link" data-scroll-target="#blizzard">Blizzard</a></li>
+  <li><a href="#blizzard-salaries" id="toc-blizzard-salaries" class="nav-link" data-scroll-target="#blizzard-salaries">Blizzard salaries</a></li>
   <li><a href="#movies" id="toc-movies" class="nav-link" data-scroll-target="#movies">Movies</a></li>
+  <li><a href="#holiday-movies" id="toc-holiday-movies" class="nav-link" data-scroll-target="#holiday-movies">Holiday movies</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/edit/main/exam-review/final-key.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sta199-su26/sta199-su26.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -345,9 +357,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../exam-review/midterm.html">Exam Review</a></li><li class="breadcrumb-item"><a href="../exam-review/final-key.html">Final Review Answer Key</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Midterm 2 Study Guide Solutions</h1>
+<h1 class="title">Final Study Guide Solutions</h1>
 </div>
 
 
@@ -372,21 +384,71 @@ window.Quarto = {
 <li>The line is chosen to make the sum of <em>squared</em> residuals as small as possible;</li>
 <li>It measures the strength and direction of the linear association between two numerical variables;</li>
 <li>It measures the proportion of the variation in the response variable explained by the model;</li>
-<li>Always Be Visualizing! Wildly different datasets could have very similar numerical summaries. Actually plot the data so that you aren’t fooled;</li>
 <li><span class="math inline">\(Y=\beta_0+\beta_1 X + \varepsilon\)</span> is the “true,” population relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. <span class="math inline">\(\hat{Y}=b_0+b_1 X\)</span> is the estimated relationship based on a sample of imperfect data;</li>
 <li>If it makes sense for the predictor to take on a value of zero, and if the model prediction at zero is a value that the response could plausibly take, then the intercept is meaningful;</li>
 <li>The computer creates two dummy variables indicating whether or not an observation belongs to the two levels of the categorical predictor that are not the base level. Then it runs a multiple linear regression with those two dummies as predictors;</li>
 <li>A formula goes in the blank. This is <code>R</code> syntax like <code>y ~ x + z</code> where you tell the computer which columns in your data frame you want to use, and how to use them. Predictors go on the righthand side of the tilde, and the response variable goes on the left;</li>
-<li><span class="math inline">\(\hat{y}^{(\text{new})} = \hat{y}^{(\text{old})} + b_1\)</span>;</li>
-<li><span class="math inline">\(\hat{o}^{(\text{new})}=\hat{o}^{(\text{old})}\times e^{b_1}\)</span>;</li>
+<li><span class="math inline">\(\widehat{y}^{(\text{new})} = \widehat{y}^{(\text{old})} + b_1\)</span>;</li>
+<li><span class="math inline">\(\widehat{o}^{(\text{new})}=\widehat{o}^{(\text{old})}\times e^{b_1}\)</span>;</li>
 <li>Unadjusted <span class="math inline">\(R^2\)</span> always goes up when you add any new variable to a linear regression model, even if that variable is worthless. Unadjusted <span class="math inline">\(R^2\)</span> penalizes the addition of irrelevant predictors.</li>
 </ol></li>
 </ol>
 </section>
 <section id="visual-understanding" class="level1">
 <h1>Visual understanding</h1>
-<section id="s-curves" class="level2">
-<h2 class="anchored" data-anchor-id="s-curves">S-curves</h2>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<div class="center-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>feature</th>
+<th>quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>I</td>
+<td>k</td>
+</tr>
+<tr class="even">
+<td>II</td>
+<td>c</td>
+</tr>
+<tr class="odd">
+<td>III</td>
+<td>d</td>
+</tr>
+<tr class="even">
+<td>IV</td>
+<td>f</td>
+</tr>
+<tr class="odd">
+<td>V</td>
+<td>a</td>
+</tr>
+<tr class="even">
+<td>VI</td>
+<td>g</td>
+</tr>
+<tr class="odd">
+<td>VII</td>
+<td>b</td>
+</tr>
+<tr class="even">
+<td>VIII</td>
+<td>b</td>
+</tr>
+<tr class="odd">
+<td>IX</td>
+<td>b</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="questions-3---8" class="level2">
+<h2 class="anchored" data-anchor-id="questions-3---8">Questions 3 - 8</h2>
 <ol start="3" type="1">
 <li><ol start="3" type="a">
 <li>This is the plain vanilla one.</li>
@@ -408,8 +470,8 @@ window.Quarto = {
 </ol></li>
 </ol>
 </section>
-<section id="roc" class="level2">
-<h2 class="anchored" data-anchor-id="roc">ROC</h2>
+<section id="questions-9---12" class="level2">
+<h2 class="anchored" data-anchor-id="questions-9---12">Questions 9 - 12</h2>
 <ol start="9" type="1">
 <li>c</li>
 <li>a</li>
@@ -418,8 +480,8 @@ window.Quarto = {
 </ol>
 </section>
 </section>
-<section id="wanana-doctor" class="level1">
-<h1>WANANA doctor</h1>
+<section id="stat-doctor" class="level1">
+<h1>Stat doctor</h1>
 <ol start="13" type="1">
 <li>Causal-sounding language that makes the prediction sound like a guarantee.</li>
 <li>A one unit (which is measured in thousands of characters here) increase in the predictor is associated with a decrease by -0.0621 in the estimated <em>log-odds</em>, not the probability.</li>
@@ -435,12 +497,23 @@ window.Quarto = {
 <li>The base level is female, not male, so the intercept applies to the female penguins.</li>
 <li>Correlation applies to <em>pairs</em> of numerical variables. We don’t talk about correlation between three variables. Since this is multiple linear regression instead of simple, we cannot interpret the <span class="math inline">\(R^2\)</span> as literally the square of a correlation coefficient.</li>
 </ol>
+<section id="pokémon" class="level2">
+<h2 class="anchored" data-anchor-id="pokémon">Pokémon</h2>
+<ol start="21" type="1">
+<li>First, they got the variables flipped. 69.66 is a prediction for <em>speed</em> when <em>defense</em> is zero. Second, our models deliver predictions, not guarantees. A defense of 0 is not guaranteed to yield a speed of 69.66. That’s just the prediction <em>on average</em>.</li>
+<li>Holding attack and defense constant, a one unit increase in <code>hp</code> predicts an increase in the <em>odds</em> of being legendary by a multiplicative factor of <span class="math inline">\(e^{0.0274}\approx 1.027\)</span>, on average.</li>
+<li>This is just nonsense. 0.85 is the area under the ROC curve for a logistic regression model. It is not the <span class="math inline">\(R^2\)</span> for a linear regression.</li>
+<li>90% (not 95%) of the <em>bootstrap estimates</em> lie between -0.065 and 0.046, not the data values themselves.</li>
+<li>The p-value <strong>is not</strong> the probability that the null is true. It is the probability of an estimate as or more extreme than the one you observed <em>assuming</em> the null is true.</li>
+<li>A discernibility level of 50% is just crazy. You would never do that. Even if you did, the conclusion is worded strangely. We don’t <em>reject</em> the alternative hypothesis. You fail to reject the null. A large p-value is saying “the jury’s out.” The data are not speaking loudly enough to distinguish competing claims. So you aren’t coming down firmly on either side if the p-value is large.</li>
+</ol>
+</section>
 </section>
 <section id="data-analysis" class="level1">
 <h1>Data analysis</h1>
-<section id="blizzard" class="level2">
-<h2 class="anchored" data-anchor-id="blizzard">Blizzard</h2>
-<ol start="21" type="1">
+<section id="blizzard-salaries" class="level2">
+<h2 class="anchored" data-anchor-id="blizzard-salaries">Blizzard salaries</h2>
+<ol start="27" type="1">
 <li>(c) For every additional $1,000 of annual salary, the model predicts the raise to be higher, on average, by 0.0155%.</li>
 <li>(d) <span class="math inline">\(R^2\)</span> of <code>raise_2_fit</code> is higher than <span class="math inline">\(R^2\)</span> of <code>raise_1_fit</code> since <code>raise_2_fit</code> has one more predictor</li>
 <li>The reference level of <code>performance_rating</code> is High, since it’s the first level alphabetically. Therefore, the coefficient -2.40% is the predicted difference in raise comparing High to Successful. In this context a negative coefficient makes sense since we would expect those with High performance rating to get higher raises than those with Successful performance.</li>
@@ -467,7 +540,7 @@ window.Quarto = {
 </section>
 <section id="movies" class="level2">
 <h2 class="anchored" data-anchor-id="movies">Movies</h2>
-<ol start="27" type="1">
+<ol start="33" type="1">
 <li>(d) <code>as.numeric(str_remove(runtime, " mins"))</code></li>
 <li>(e) Blue City <span class="math inline">\(&gt;\)</span> Rang De Basanti <span class="math inline">\(&gt;\)</span> Winter Sleep</li>
 <li>(b) 31% of the variability in movie scores is explained by their runtime.</li>
@@ -477,6 +550,17 @@ window.Quarto = {
 <li>(c) All else held constant, for each additional minute of runtime, movie scores will be higher by 0.021 points on average.</li>
 <li>(c) is greater than</li>
 <li>(a) <span class="math inline">\(\widehat{score} = (4.525 - 0.257) + 0.021 \times runtime\)</span></li>
+</ol>
+</section>
+<section id="holiday-movies" class="level2">
+<h2 class="anchored" data-anchor-id="holiday-movies">Holiday movies</h2>
+<ol start="42" type="1">
+<li>c, e</li>
+<li>a, b, c</li>
+<li>a, b</li>
+<li>e</li>
+<li>a</li>
+<li>e</li>
 </ol>
 
 
@@ -901,6 +985,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../exam-review/final.html" class="pagination-link" aria-label="Final Review">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Final Review</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
