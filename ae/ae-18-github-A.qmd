@@ -37,7 +37,7 @@ glimpse(fifa)
 ## Data Dictionary
 
 | Variable | Description |
-|-----------------|-------------------------------------------------------|
+|----|----|
 | `country` | FIFA member country |
 | `confederation` | Confederation to which the country belongs |
 | `population_share` | Country’s share of the global population, recorded as a percentage |

@@ -1,5 +1,9 @@
 ---
 title: "AE 19: Minimum wage"
+subtitle: "Suggested answers"
+format:
+  html:
+    self-contained: true
 ---
 
 Card and Krueger (1994 AER) is a famous study on the impact of minimum wage increases on employment.
@@ -137,7 +141,6 @@ card_krueger |>
   theme_minimal()
 ```
 
-
 # Point estimate
 
 Here is the simple linear regression that you fit on Lab 4:
@@ -160,7 +163,7 @@ multi_fit <- linear_reg() |>
 tidy(multi_fit)
 ```
 
-We predict that a KFC restaurant has an employment difference of 0.235 employees larger than a Burger King restaurant, on average, holding all else constant. 
+We predict that a KFC restaurant has an employment difference of 0.235 employees larger than a Burger King restaurant, on average, holding all else constant.
 
 ## Which model is "best"
 
@@ -199,7 +202,7 @@ ci_95 <- get_confidence_interval(boot_fits,
 ci_95
 ```
 
-We are 95% confident that, for a NJ restaurant, we would expect to observe an employment difference between -0.012 fewer and 5.131 greater employees than a PA restaurant after the policy change, on average. 
+We are 95% confident that, for a NJ restaurant, we would expect to observe an employment difference between -0.012 fewer and 5.131 greater employees than a PA restaurant after the policy change, on average.
 
 # Hypothesis test
 
@@ -214,7 +217,9 @@ $$
 
 Compute, visualize, and interpret the p-value.
 
-If the null were true, the probability of observing a sample statistic ($b_1$) as or more extreme than the one we observe (-0.012) is 0.068. Since 0.068 > 0.05, we fail to reject the null hypothesis. We do not have sufficient evidence for a nonzero correlation between state and employment difference. 
+If the null were true, the probability of observing a sample statistic ($b_1$) as or more extreme than the one we observe (-0.012) is 0.068.
+Since 0.068 \> 0.05, we fail to reject the null hypothesis.
+We do not have sufficient evidence for a nonzero correlation between state and employment difference.
 
 ```{r}
 set.seed(847)
