@@ -1,0 +1,233 @@
+---
+title: "AE 19: Minimum wage"
+---
+
+Card and Krueger (1994 AER) is a famous study on the impact of minimum wage increases on employment.
+The abstract reads:
+
+> On April 1, 1992, New Jersey's minimum wage rose from \$4.25 to \$5.05 per hour.
+> To evaluate the impact of the law we surveyed 410 fast-food restaurants in New Jersey and eastern Pennsylvania before and after the rise.
+> Comparisons of employment growth at stores in New Jersey and Pennsylvania (where the minimum wage was constant) provide simple estimates of the effect of the higher minimum wage.
+> We also compare employment changes at stores in New Jersey that were initially paying high wages (above \$5) to the changes at lower-wage stores.
+> We find no indication that the rise in the minimum wage reduced employment.
+
+The data in Card and Krueger are purely observational, but the main idea is that the arbitrary placement of otherwise similar restaurants on either side of the PA/NJ border acts as if a controlled, randomized experiment were performed, and so we can use these data to draw causal conclusions about the impact of minimum wage policy on employment.
+
+You already played with these data on Lab 4, but that was before we had begun working with *multiple* linear regression, and before we had studied statistical inference.
+So let us revisit this study with our new tools.
+
+# Packages
+
+You know the drill:
+
+```{r}
+#| message: false
+library(tidyverse)
+library(tidymodels)
+```
+
+# Data
+
+Load in dat data:
+
+```{r}
+#| message: false
+card_krueger <- read_csv("data/ck-study.csv")
+
+card_krueger <- card_krueger |>
+  mutate(
+    state = fct_relevel(state, "PA", "NJ")
+  )
+
+glimpse(card_krueger)
+```
+
+Variables include:
+
+-   `id`: a unique identifier for each restaurant;
+-   `state`: which state is the restaurant in?
+-   `chain`: which restaurant chain does the store belong to?
+-   `co_owned`: is the restaurant company owned?
+-   `wage_st` and `wage_st2`: the starting wage in US dollars before and after policy change;
+-   `fte` and `fte2`: full-time-equivalent employment before and after the change, calculated as the number of full-time workers (including managers) plus 0.5 times the number of part-time workers;
+-   `hrsopen` and `hrsopen2`: number of hours open per day;
+-   `meal_price` and `meal_price2`: the price of a meal (soda, fries, entree);
+-   `emp_diff`: `fte2-fte`.
+
+**Question**: are these data tidy?
+
+# Explore and visualize
+
+The core claim of the study is that the two groups of restaurants are indistinguishable in all respects except for the minimum wage policy, and so any differences in employment can be ascribed to the causal impact of that policy.
+Let's see how the states compare.
+
+## Compare chain composition
+
+Do both states have roughly the same proportions of each restaurants in each chain?
+Create a figure that answers this question.
+
+```{r}
+ggplot(card_krueger, aes(x = state, fill = chain)) +
+  geom_bar(position = "fill") +
+  labs(x = "State",
+       y = "Proportion",
+       fill = "Chain",
+       title = "Chain Restaurant Composition by State") +
+  theme_minimal()
+```
+
+## Same proportion of company owned?
+
+What proportion of restaurants in each state are company-owned?
+
+```{r}
+ggplot(card_krueger, aes(x = state, fill = as.factor(co_owned))) +
+  geom_bar(position = "fill") +
+  labs(x = "State",
+       y = "Proportion",
+       fill = "Co-Owned Status",
+       title = "Restaurant Co-Ownership Status by State") +
+  theme_minimal()
+
+card_krueger |>
+  group_by(state) |>
+  summarize(prop = mean(co_owned))
+```
+
+## Compare meal prices
+
+How did the distribution of meal prices in each state compare before and after the policy change?
+
+```{r}
+#| warning: false
+ggplot(card_krueger, aes(x = meal_price, color = state, fill = state)) +
+  geom_density(alpha = .7) +
+  xlim(0, 6) +
+  labs(title = "Distribution of Meal Prices",
+       subtitle = "Before Policy Change",
+       x = "Meal Price ($)",
+       y = "Density") +
+  theme_minimal()
+
+ggplot(card_krueger, aes(x = meal_price2, color = state, fill = state)) +
+  geom_density(alpha = .7) +
+  xlim(0, 6) +
+  labs(title = "Distribution of Meal Prices",
+       subtitle = "After Policy Change",
+       x = "Meal Price ($)",
+       y = "Density") +
+  theme_minimal()
+```
+
+**Investigate**: Why is the distribution bimodal?
+
+```{r}
+#| warning: false
+card_krueger |>
+  filter(state == "NJ") |>
+  ggplot(aes(x = meal_price, color = chain, fill = chain)) +
+  geom_density(alpha = .7) +
+  xlim(0, 6) +
+  labs(title = "Distribution of Meal Prices",
+       subtitle = "After Policy Change",
+       x = "Meal Price ($)",
+       y = "Density",
+       fill = "Chain",
+       color = "Chain") +
+  theme_minimal()
+```
+
+
+# Point estimate
+
+Here is the simple linear regression that you fit on Lab 4:
+
+```{r}
+simple_fit <- linear_reg() |>
+  fit(emp_diff ~ state, data = card_krueger)
+
+tidy(simple_fit)
+```
+
+## Fit an alternative model with multiple predictors
+
+Fit a new model that controls for the restaurant chain and whether or not it is company owned:
+
+```{r}
+multi_fit <- linear_reg() |>
+  fit(emp_diff ~ state + chain + co_owned, data = card_krueger)
+
+tidy(multi_fit)
+```
+
+We predict that a KFC restaurant has an employment difference of 0.235 employees larger than a Burger King restaurant, on average, holding all else constant. 
+
+## Which model is "best"
+
+```{r}
+glance(simple_fit)$adj.r.squared
+glance(multi_fit)$adj.r.squared
+```
+
+The simple linear regression model because it has a higher adjusted $R^2$.
+
+# Interval estimate
+
+Compute and visualize a 95% confidence interval for the change in average employment before and after the policy change:
+
+```{r}
+observed_fit <- card_krueger |>
+  specify(emp_diff ~ state) |>
+  fit()
+
+observed_fit
+
+set.seed(847)
+
+boot_fits <- card_krueger |>
+  specify(emp_diff ~ state) |>
+  generate(reps = 500, type = "bootstrap") |>
+  fit()
+
+boot_fits
+
+ci_95 <- get_confidence_interval(boot_fits,
+                                 point_estimate = observed_fit,
+                                 level = .95,
+                                 type = "percentile")
+
+ci_95
+```
+
+We are 95% confident that, for a NJ restaurant, we would expect to observe an employment difference between -0.012 fewer and 5.131 greater employees than a PA restaurant after the policy change, on average. 
+
+# Hypothesis test
+
+Test these hypotheses at a 5% discernibility level:
+
+$$
+\begin{aligned}
+H_0&: \beta_1=0 \quad(\text{no change})\\
+H_0&: \beta_1\neq0 \quad(\text{some change})
+\end{aligned}
+$$
+
+Compute, visualize, and interpret the p-value.
+
+If the null were true, the probability of observing a sample statistic ($b_1$) as or more extreme than the one we observe (-0.012) is 0.068. Since 0.068 > 0.05, we fail to reject the null hypothesis. We do not have sufficient evidence for a nonzero correlation between state and employment difference. 
+
+```{r}
+set.seed(847)
+
+null_dist <- card_krueger |>
+  specify(emp_diff ~ state) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 500, type = "permute") |>
+  fit()
+
+visualize(null_dist) +
+  shade_p_value(obs_stat = observed_fit, direction = "two-sided")
+
+null_dist |>
+  get_p_value(obs_stat = observed_fit, direction = "two-sided")
+```
