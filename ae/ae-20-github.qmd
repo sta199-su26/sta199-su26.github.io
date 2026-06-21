@@ -1,0 +1,241 @@
+---
+title: "AE 20: Final 'Live Coding' Exam Practice 🎬💳"
+---
+
+## Packages
+
+Use **only** the following packages for this exam:
+
+```{r}
+#| message: false
+library(tidyverse)
+library(tidymodels)
+```
+
+# Part 1 - Movies
+
+We will work with data from the Internet Movie Database (IMDB). Specifically, the data were a random sample of movies released between 1980 and 2020.
+
+The variables and their descriptions in the raw movies dataset are as
+follows:
+
+| Variable          | Description                                                             |
+|-------------------|-------------------------------------------------------------------------|
+| `name`            | name of the movie                                                       |
+| `score`           | IMDB user rating                                                        |
+| `runtime`         | duration of the movie                                                   |
+| `genre`           | main genre of the movie.                                                |
+| `rating`          | rating of the movie (R, PG, etc.)                                       |
+| `release_country` | release country                                                         |
+| `release_date`    | release date (YYYY-MM-DD)                                               |
+| `budget`          | the budget of a movie (some movies don’t have this, so it appears as 0) |
+| `gross`           | revenue of the movie                                                    |
+| `votes`           | number of user votes                                                    |
+| `year`            | year of release                                                         |
+| `director`        | the director                                                            |
+| `writer`          | writer of the movie                                                     |
+| `star`            | main actor/actress                                                      |
+| `country`         | country of origin                                                       |
+| `company`         | the production company                                                  |
+
+## Question 1: Clean and recode
+
+The data you’ll use for this question is in the `data` folder of your
+repository, and it’s called `movies-raw.csv`. The goal of the question
+is to “clean” this raw data and save a new version of it as
+`movies-processed.csv`. The following parts walk you through what you
+need to do to clean the data.
+
+**a.** Read the dataset called `movies-raw.csv` and save it as
+`movies_raw`.
+
+```{r}
+#| label: q1_part_a
+# add code here
+```
+
+**b.** In a single pipeline,
+
+- remove the character string `" mins"` from `runtime` and convert
+  `runtime` to numeric,
+- recode the levels of `release_country` to `"United States"` and
+  `"Not United States"`, in that order,
+- recode the levels of `genre` to `"Action"`, `"Comedy"`, `"Drama"`,
+  `"Horror"`, and `"Other"`, in that order, and
+- save the resulting data frame as `movies_processed`.
+
+```{r}
+#| label: q1_part_b
+# add code here
+```
+
+**c.** In a single pipeline, calculate the cutoff for the top 20th
+percentile of movie `score`s and store it as `top_20_cutoff` as a single
+numeric value.
+
+> [!TIP]
+>
+> You can check if you’ve done this correctly by typing `top_20_cutoff`
+> in the Console and checking the output, it should look like the
+> following:
+>
+>     > top_20_cutoff
+>     80% 
+>     7.2
+
+```{r}
+#| label: q1_part_c
+# add code here
+```
+
+**d.** In a single pipeline, update `movies_processed` to include a column called `percentile` with 2 possible values: "Top 20th", if the movie's `score` is $\geq$ `top_20_cutoff`, and "Bottom 80th", if the movie's `score` is < `top_20_cutoff`. You should ensure that `percentile` is a factor variable coded such that "Bottom 80th" is the baseline level.
+
+```{r}
+#| label: q1_part_d
+# add code here
+```
+
+Regardless of your solution to the above question, run the chunk below to load a pre-saved `movies_processed` for use in subsequent questions. You will need to change the YAML setting to `#| eval: true` prior to rendering your `.qmd` file.
+
+```{r}
+#| label: intermed-data-1
+#| eval: false
+movies_processed <- read_csv("data/movies-processsed.csv")
+```
+
+## Question 2: Model
+
+**a.** Suppose that a movie studio makes decisions on whether to produce
+a movie or not based on whether they think it will score in the top 20th
+percentile of IMDB scores. Help them build a model to aid in their
+decision making.
+
+- Split the data into training (75%) and testing (25%) subsets 
+
+- Fit a model predicting whether the movie is in the Top 20th
+  percentile of scores based on its runtime, genre, and the interaction
+  of these two predictors.
+
+- Display a tidy output of the model.
+
+- Interpret the intercept in the context of these data with respect to $\widehat{p}$.
+
+```{r}
+#| label: q2_part_a
+# add code here
+```
+
+**b.** Based on your model from part (a), calculate the predicted values
+of `percentile` for movies in your testing dataset. Then, in a single pipeline,
+calculate the false positive and false negative rates for this model.
+Explicitly state in your narrative the false positive and false negative
+rates.
+
+```{r}
+#| label: q2_part_b
+# add code here
+```
+
+# Part 2 - Credit Cards
+
+The data for the second part of the take-home exam is on credit card
+balances.
+
+The variables in this dataset and their descriptions are as follows:
+
+| Variable          | Description                                                            |
+|-------------------|------------------------------------------------------------------------|
+| `balance`         | Credit card balance in \$                                              |
+| `income`          | Income in \$1,000                                                      |
+| `student_status`  | Whether the individual is a student (`Student`) or not (`Not student`) |
+| `marriage_status` | Whether the individual is a married (`Married`) or not (`Not married`) |
+| `limit`           | Credit limit                                                           |
+
+Assume that these data represent a random sample of American adults.
+
+## Question 3: Model compare
+
+**a.** The dataset is in the `data` folder of your repository, and it’s called
+`credit.csv`. First, load the data with `read_csv()`, and assign it to
+an object called `credit`.
+
+```{r}
+#| label: q3_part_a
+# add code here
+```
+
+**b.** Fit a model predicting `balance` from all other variables in the
+dataset. This should be an additive model, i.e., use only main effects,
+no interaction effects. Display a tidy output of the model.
+
+```{r}
+#| label: q3_part_b
+# add code here
+```
+
+**c.** Fit a model predicting `balance` from all other variables in the
+dataset, **except for one of your choice**. This should be an additive
+model, i.e., use only main effects, no interaction effects. Display a
+tidy output of the model. Then, write the fitted equation of the model using proper statistical notation.
+
+```{r}
+#| label: q3_part_c
+# add code here
+```
+
+$$
+add~math~here
+$$
+
+**d.** Determine which model – the one from part (a) or the one from
+part (b) – is the “better” model. Support your answer with an
+appropriate summary statistic.
+
+```{r}
+#| label: q3_part_d
+# add code here
+```
+
+**e.** For the model you chose in part (d), interpret the intercept and
+**one** of the slopes in context of the data.
+
+## Question 4: Infer
+
+What is the average difference in income between married and not married Americans?
+
+**a.** Fit a simple linear regression model that estimates the difference in mean income between these two groups. Make sure you display the tidy output. Then, write the corresponding *population* model using proper statistical notation.
+
+```{r}
+#| label: q4_part_a
+# add code here
+```
+
+$$
+add~math~here
+$$
+
+**b.** Compute a 95% bootstrap interval for the slope of the regression line for predicting income (`income`) from marital status (`marriage_status`). In your code, use 1,000 bootstrap samples when simulating your bootstrap distribution.
+Don't forget to set a seed!
+
+In your narrative, first report your point estimate; then, provide an interpretation of the 95% confidence interval you obtain for the slope in the context of these data.
+
+```{r}
+#| label: q4_part_b
+# add code here
+```
+
+**c.** Based on your answer to part (b), what would you expect your conclusion to be for a test of the following hypotheses at the 5% discernibility level, and why?
+
+$$
+\begin{aligned}
+H_0: \beta_1 = 0 \\
+H_A: \beta_1 \neq 0
+\end{aligned}
+$$
+
+
+
+
+
+
+
