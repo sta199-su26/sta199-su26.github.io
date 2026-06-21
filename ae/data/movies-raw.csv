@@ -1,0 +1,501 @@
+name,score,runtime,genre,rating,release_country,release_date,budget,gross,votes,year,director,writer,star,company,country
+Blue City,4.4,83 mins,Action,R,United States,5/2/86,10000000,6947787,1100,1986,Michelle Manning,Ross Macdonald,Judd Nelson,Paramount Pictures,United States
+Winter Sleep,8.1,196,Drama,Not Rated,Turkey,6/12/14,NA,4018705,48000,2014,Nuri Bilge Ceylan,Ebru Ceylan,Haluk Bilginer,NBC Film,Turkey
+Rang De Basanti,8.1,167,Comedy,Not Rated,United States,1/26/06,NA,10800778,115000,2006,Rakeysh Omprakash Mehra,Renzil D'Silva,Aamir Khan,ROMP,India
+Pokémon Detective Pikachu,6.6,104,Action,PG,United States,5/10/19,150000000,433921300,146000,2019,Rob Letterman,Dan Hernandez,Ryan Reynolds,Warner Bros.,United States
+A Bad Moms Christmas,5.6,104,Comedy,R,United States,11/1/17,28000000,130560428,46000,2017,Jon Lucas,Jon Lucas,Mila Kunis,Huayi Brothers Media,United States
+Replicas,5.5,107,Drama,PG-13,United States,1/11/19,30000000,9330075,34000,2018,Jeffrey Nachmanoff,Chad St. John,Keanu Reeves,Company Films,United Kingdom
+Windy City,5.8,103,Drama,R,Uruguay,1/1/86,NA,343890,262,1984,Armyan Bernstein,Armyan Bernstein,John Shea,CBS Theatrical Films,United States
+War for the Planet of the Apes,7.4,140,Action,PG-13,United States,7/14/17,150000000,490719763,235000,2017,Matt Reeves,Mark Bomback,Andy Serkis,Twentieth Century Fox,United States
+Tales from the Hood,6.4,98,Crime,R,United States,5/24/95,6000000,11837928,7400,1995,Rusty Cundieff,Rusty Cundieff,Clarence Williams III,40 Acres & A Mule Filmworks,United States
+Fire with Fire,6.5,103,Drama,PG-13,United States,5/9/86,NA,4636169,1500,1986,Duncan Gibbins,Bill Phillips,Craig Sheffer,Paramount Pictures,United States
+Raising Helen,6,119,Comedy,PG-13,United States,5/28/04,50000000,49718611,36000,2004,Garry Marshall,Patrick J. Clifton,Kate Hudson,Touchstone Pictures,United States
+Feeling Minnesota,5.4,99,Comedy,R,United States,9/13/96,NA,3124440,11000,1996,Steven Baigelman,Steven Baigelman,Keanu Reeves,Fine Line Features,United States
+The Babe,5.9,115,Biography,PG,United States,4/17/92,NA,19930973,9300,1992,Arthur Hiller,John Fusco,John Goodman,Universal Pictures,United States
+The Real Blonde,6,105,Comedy,R,United States,2/27/98,NA,83488,3900,1997,Tom DiCillo,Tom DiCillo,Matthew Modine,Lakeshore Entertainment,United States
+To vlemma tou Odyssea,7.6,176,Drama,Not Rated,United States,11/1/97,NA,NA,6400,1995,Theodoros Angelopoulos,Theodoros Angelopoulos,Harvey Keitel,Greek Film Center,Greece
+Going the Distance,6.3,102,Comedy,R,United States,9/3/10,32000000,42059111,57000,2010,Nanette Burstein,Geoff LaTulippe,Drew Barrymore,New Line Cinema,United States
+Jung on zo,6.8,103,Action,R,Hong Kong,6/24/93,NA,3741869,6100,1993,Kirk Wong,Tin Nam Chun,Jackie Chan,Golden Harvest Company,Hong Kong
+"Rita, Sue and Bob Too",6.5,93,Comedy,R,United Kingdom,5/29/87,NA,124167,3600,1987,Alan Clarke,Andrea Dunbar,Siobhan Finneran,British Screen Productions,United Kingdom
+Phone Booth,7,81,Crime,R,United States,4/4/03,13000000,97837138,255000,2002,Joel Schumacher,Larry Cohen,Colin Farrell,Fox 2000 Pictures,United States
+Happy Death Day,6.6,96,Comedy,PG-13,United States,10/13/17,4800000,125479266,124000,2017,Christopher Landon,Scott Lobdell,Jessica Rothe,Universal Pictures,United States
+Barely Legal,4.7,90,Comedy,R,Thailand,5/25/06,NA,83439,5900,2003,David Mickey Evans,David H. Steinberg,Erik von Detten,International West Pictures (IWP),Germany
+Three Kings,7.1,114,Action,R,United States,10/1/99,75000000,107752036,163000,1999,David O. Russell,John Ridley,George Clooney,Warner Bros.,United States
+Menace II Society,7.5,97,Crime,R,United States,5/26/93,3500000,27912072,54000,1993,Albert Hughes,Allen Hughes,Tyrin Turner,New Line Cinema,United States
+Four Rooms,6.8,98,Comedy,R,United States,12/25/95,4000000,4257354,100000,1995,Directors,Allison Anders,Tim Roth,Miramax,United States
+Quartet,6.8,98,Comedy,PG-13,United States,3/1/13,11000000,59520298,19000,2012,Dustin Hoffman,Ronald Harwood,Maggie Smith,Headline Pictures,United Kingdom
+Tape,7.2,86,Drama,R,Denmark,7/12/02,100000,515900,19000,2001,Richard Linklater,Stephen Belber,Ethan Hawke,Detour Filmproduction,United States
+Marked for Death,6,93,Action,R,United States,10/5/90,12000000,57968936,21000,1990,Dwight H. Little,Michael Grais,Steven Seagal,Victor & Grais,United States
+Congo,5.2,109,Action,PG-13,United States,6/9/95,50000000,152022101,43000,1995,Frank Marshall,Michael Crichton,Laura Linney,Paramount Pictures,United States
+Stop-Loss,6.4,112,Drama,R,United States,3/28/08,25000000,11212953,20000,2008,Kimberly Peirce,Mark Richard,Ryan Phillippe,Paramount Pictures,United States
+Con Air,6.9,115,Action,R,United States,6/6/97,75000000,224012234,282000,1997,Simon West,Scott Rosenberg,Nicolas Cage,Touchstone Pictures,United States
+Harold & Kumar Escape from Guantanamo Bay,6.6,114,Adventure,R,United States,4/25/08,12000000,43495888,132000,2008,Jon Hurwitz,Jon Hurwitz,John Cho,New Line Cinema,United States
+Parting Glances,7.2,90,Drama,Not Rated,United States,2/19/86,NA,NA,2800,1986,Bill Sherwood,Bill Sherwood,John Bolger,Rondo Productions,United States
+The Minus Man,6.1,111,Crime,R,United States,10/8/99,NA,370668,6400,1999,Hampton Fancher,Lew McCreary,Owen Wilson,Shooting Gallery,United States
+The NeverEnding Story,7.4,102,Adventure,PG,United States,7/20/84,27000000,20251411,135000,1984,Wolfgang Petersen,Wolfgang Petersen,Noah Hathaway,Constantin Film,West Germany
+The Legend of Bagger Vance,6.7,126,Drama,PG-13,United States,11/3/00,80000000,39459427,54000,2000,Robert Redford,Steven Pressfield,Will Smith,Twentieth Century Fox,United States
+Petit Con,6.2,90,Comedy,R,United States,4/19/85,NA,127426,105,1984,Gérard Lauzier,Gérard Lauzier,Guy Marchand,Gaumont International,France
+Transformers,7,144,Action,PG-13,United States,7/3/07,150000000,709709780,607000,2007,Michael Bay,Roberto Orci,Shia LaBeouf,Dreamworks Pictures,United States
+Lust in the Dust,6.4,84,Comedy,R,United States,3/1/85,3000000,727639,3000,1984,Paul Bartel,Philip John Taylor,Tab Hunter,Fox Run Productions Inc.,United States
+Gangster No. 1,6.7,103,Crime,R,United Kingdom,6/9/00,NA,30915,13000,2000,Paul McGuigan,Johnny Ferguson,Malcolm McDowell,FilmFour,United Kingdom
+True Crime,6.6,127,Crime,R,United States,3/19/99,55000000,16649768,33000,1999,Clint Eastwood,Andrew Klavan,Clint Eastwood,Warner Bros.,United States
+Criminal Law,5.7,117,Crime,R,United States,4/28/89,NA,9974446,3800,1988,Martin Campbell,Mark Kasdan,Gary Oldman,Hemdale,United States
+Eight Legged Freaks,5.4,99,Action,PG-13,United States,7/17/02,30000000,45867333,53000,2002,Ellory Elkayem,Ellory Elkayem,David Arquette,Warner Bros.,United States
+The Other Boleyn Girl,6.7,115,Biography,PG-13,United States,2/29/08,35000000,78201830,107000,2008,Justin Chadwick,Peter Morgan,Natalie Portman,Columbia Pictures,United Kingdom
+The Final Conflict,5.6,108,Horror,R,United States,3/20/81,5000000,20471382,19000,1981,Graham Baker,David Seltzer,Sam Neill,Twentieth Century Fox,United Kingdom
+She's All That,5.9,95,Comedy,PG-13,United States,1/29/99,10000000,103166989,86000,1999,Robert Iscove,R. Lee Fleming Jr.,Freddie Prinze Jr.,Miramax,United States
+A Star Is Born,7.6,136,Drama,R,United States,10/5/18,36000000,436188866,350000,2018,Bradley Cooper,Eric Roth,Lady Gaga,Warner Bros. Pictures,United States
+Desert Bloom,6.6,105,Drama,PG,United States,4/18/86,NA,416393,937,1986,Eugene Corr,Linda Remy,Jon Voight,Carson Productions,United States
+Grandma's Boy,7,94,Comedy,R,United States,1/6/06,NA,6566277,79000,2006,Nicholaus Goossen,Barry Wernick,Allen Covert,Twentieth Century Fox,United States
+Valentine,4.8,96,Horror,R,United States,2/2/01,29000000,36684136,26000,2001,Jamie Blanks,Tom Savage,Denise Richards,Warner Bros.,Canada
+The Dictator,6.4,83,Comedy,R,United States,5/16/12,65000000,179379533,286000,2012,Larry Charles,Sacha Baron Cohen,Sacha Baron Cohen,Paramount Pictures,United States
+Jekyll and Hyde... Together Again,6.2,87,Sci-Fi,R,United States,10/1/82,5000000,3792188,1100,1982,Jerry Belson,Monica Mcgowan Johnson,Mark Blankfield,Paramount Pictures,United States
+Barton Fink,7.7,116,Comedy,R,United States,8/21/91,9000000,6153939,116000,1991,Joel Coen,Joel Coen,John Turturro,Circle Films,United Kingdom
+Amityville II: The Possession,5.5,104,Horror,R,United States,9/24/82,5000000,12534817,11000,1982,Damiano Damiani,Tommy Lee Wallace,James Olson,Dino De Laurentiis Company,Mexico
+Windwalker,6.9,108,Adventure,PG,Sweden,11/18/83,3000000,NA,1000,1980,Kieth Merrill,Ray Goldrup,Trevor Howard,Santa Fe International,United States
+Psycho,4.6,105,Horror,R,United States,12/4/98,60000000,37170655,46000,1998,Gus Van Sant,Robert Bloch,Vince Vaughn,Universal Pictures,United States
+Dawn of the Planet of the Apes,7.6,130,Action,PG-13,United States,7/11/14,170000000,710644566,419000,2014,Matt Reeves,Mark Bomback,Gary Oldman,Chernin Entertainment,United States
+"Faith, Hope & Love",6.2,106,Comedy,PG,Australia,2/4/20,NA,210091,719,2019,J.J. Englert,Robert Krantz,Peta Murgatroyd,Ellinas Multimedia,United States
+The Last Supper,6.8,92,Comedy,R,United States,4/5/96,NA,459749,14000,1995,Stacy Title,Dan Rosen,Cameron Diaz,Columbia Pictures,United States
+Saw,7.6,103,Horror,R,United States,10/29/04,1200000,103911669,391000,2004,James Wan,Leigh Whannell,Cary Elwes,Evolution Entertainment,United States
+Running Scared,6.5,107,Action,R,United States,6/27/86,NA,38500726,12000,1986,Peter Hyams,Gary DeVore,Gregory Hines,Metro-Goldwyn-Mayer (MGM),United States
+The Souvenir,6.4,120,Drama,R,United Kingdom,8/30/19,NA,1719157,9300,2019,Joanna Hogg,Joanna Hogg,Neil Young,BBC Films,United Kingdom
+Ghajini,7.3,186,Action,Not Rated,United States,12/24/08,NA,38316584,58000,2008,A.R. Murugadoss,Piyush Mishra,Aamir Khan,Geetha Arts,India
+Amélie,8.3,122,Comedy,R,United States,2/8/02,10000000,173997108,717000,2001,Jean-Pierre Jeunet,Guillaume Laurant,Audrey Tautou,Claudie Ossard Productions,France
+The Evil That Men Do,6,90,Action,R,United States,9/21/84,4600000,13102025,3600,1984,J. Lee Thompson,R. Lance Hill,Charles Bronson,Capricorn,Mexico
+Krippendorf's Tribe,5,94,Comedy,PG-13,United States,2/27/98,NA,7571115,5300,1998,Todd Holland,Frank Parkin,Richard Dreyfuss,Dreyfuss / James Productions,United States
+Cheaper by the Dozen,5.9,98,Comedy,PG,United States,12/25/03,40000000,190538630,96000,2003,Shawn Levy,Frank B. Gilbreth Jr.,Steve Martin,Twentieth Century Fox,United States
+The Outing,5.1,87,Horror,R,Japan,11/21/87,2000000,1083395,1600,1987,Tom Daley,Warren Chaney,Deborah Winters,H.I.T. Films,United States
+Clockwise,6.6,96,Comedy,PG,United States,10/10/86,NA,1476356,12000,1986,Christopher Morahan,Michael Frayn,John Cleese,Thorn EMI Screen Entertainment,United Kingdom
+Zebrahead,6.3,100,Drama,R,United States,10/23/92,NA,1557771,1200,1992,Anthony Drazan,Anthony Drazan,Michael Rapaport,Ixtlan,United States
+Soul Surfer,7,112,Biography,PG,United States,4/8/11,18000000,47120948,47000,2011,Sean McNamara,Sean McNamara,AnnaSophia Robb,Enticing Entertainment,United States
+Hairspray,7,92,Comedy,PG,United States,2/26/88,2000000,6673032,20000,1988,John Waters,John Waters,Sonny Bono,New Line Cinema,United States
+Until September,5.7,95,Drama,R,United States,9/21/84,NA,4239154,634,1984,Richard Marquand,Janice Lee Graham,Karen Allen,United Artists,United States
+The 40-Year-Old Virgin,7.1,116,Comedy,R,United States,8/19/05,26000000,177378645,407000,2005,Judd Apatow,Judd Apatow,Steve Carell,Universal Pictures,United States
+Kiss Kiss Bang Bang,7.5,103,Comedy,R,United States,11/18/05,15000000,15785148,219000,2005,Shane Black,Brett Halliday,Robert Downey Jr.,Warner Bros.,United States
+Chain Reaction,5.7,107,Action,PG-13,United States,8/2/96,50000000,60209334,49000,1996,Andrew Davis,Arne Schmidt,Keanu Reeves,3 Arts Entertainment,United States
+Edge of Seventeen,6.8,99,Comedy,Not Rated,Australia,4/20/00,700000,871759,6000,1998,David Moreton,Todd Stephens,Chris Stafford,Blue Streak Films,United States
+I Give It a Year,5.7,97,Comedy,R,United Kingdom,2/8/13,NA,29128433,36000,2013,Dan Mazer,Dan Mazer,Rose Byrne,StudioCanal,United Kingdom
+Gandahar,7.1,78,Animation,PG,United States,9/20/89,NA,370698,4500,1987,René Laloux,René Laloux,Glenn Close,Col.Ima.Son,France
+Muppet Treasure Island,7,99,Action,G,United States,2/16/96,NA,34327391,22000,1996,Brian Henson,Robert Louis Stevenson,Tim Curry,Walt Disney Pictures,United States
+Elektra,4.7,97,Action,PG-13,United States,1/14/05,43000000,56995646,89000,2005,Rob Bowman,Mark Steven Johnson,Jennifer Garner,Twentieth Century Fox,Canada
+Happily Ever After,5.6,75,Animation,G,United States,5/28/93,NA,3299382,2200,1989,John Howley,Martha Moran,Edward Asner,Filmation Associates,United States
+Haunted Honeymoon,5.7,82,Comedy,PG,United States,7/25/86,13000000,8033397,6900,1986,Gene Wilder,Gene Wilder,Gene Wilder,Orion Pictures,United Kingdom
+The Curse of the Jade Scorpion,6.7,103,Comedy,PG-13,United States,8/24/01,33000000,18914307,38000,2001,Woody Allen,Woody Allen,Greg Stebner,Dreamworks Pictures,United States
+Needful Things,6.3,120,Crime,R,United States,8/27/93,NA,15185672,24000,1993,Fraser C. Heston,Stephen King,Max von Sydow,Castle Rock Entertainment,United States
+Things Change,7,100,Comedy,PG,United States,10/21/88,NA,3527886,3400,1988,David Mamet,David Mamet,Don Ameche,Columbia Pictures,United States
+Nine Months,5.5,103,Comedy,PG-13,United States,7/12/95,NA,138510230,36000,1995,Chris Columbus,Patrick Braoudé,Hugh Grant,Twentieth Century Fox,United States
+House Party,6.5,100,Comedy,R,United States,3/9/90,2500000,26385627,14000,1990,Reginald Hudlin,Reginald Hudlin,Christopher Reid,"Jackson/McHenry Company,The",United States
+Impulse,5.9,91,Horror,R,United States,9/28/84,10000000,2773433,1300,1984,Graham Baker,Nicholas Kazan,Tim Matheson,ABC Motion Pictures,United States
+Baby It's You,6.3,105,Comedy,R,United States,3/4/83,3000000,1867792,1700,1983,John Sayles,Amy Robinson,Rosanna Arquette,Double Play,United States
+The Love Witch,6.2,120,Comedy,Not Rated,United Kingdom,3/10/17,NA,246218,14000,2016,Anna Biller,Anna Biller,Samantha Robinson,Anna Biller Productions,United States
+Stick,5.7,109,Action,R,United States,4/26/85,22000000,8489518,1900,1985,Burt Reynolds,Elmore Leonard,Burt Reynolds,Universal Pictures,United States
+Celebrity,6.3,113,Comedy,R,United States,11/20/98,12000000,5078660,25000,1998,Woody Allen,Woody Allen,Kenneth Branagh,Sweetland Films,United States
+The Boyfriend School,5.8,101,Comedy,PG-13,United States,9/21/90,6700000,1171762,2600,1990,Malcolm Mowbray,Sarah Bird,Steve Guttenberg,Hemdale,United Kingdom
+Lagaan: Once Upon a Time in India,8.1,224,Drama,PG,United States,6/15/01,NA,1724806,108000,2001,Ashutosh Gowariker,Ashutosh Gowariker,Aamir Khan,Aamir Khan Productions,India
+Mi vida loca,6.5,92,Crime,R,United States,7/15/94,NA,3267313,2000,1993,Allison Anders,Allison Anders,Angel Aviles,Channel Four Films,United States
+Seabiscuit,7.3,140,Drama,PG-13,United States,7/25/03,87000000,148336445,68000,2003,Gary Ross,Laura Hillenbrand,Tobey Maguire,Universal Pictures,United States
+Voyager,6.7,117,Drama,PG-13,United States,1/31/92,NA,516517,3100,1991,Volker Schlöndorff,Max Frisch,Sam Shepard,Bioskop Film,Germany
+Twilight,5.2,122,Drama,PG-13,United States,11/21/08,37000000,408430415,435000,2008,Catherine Hardwicke,Melissa Rosenberg,Kristen Stewart,Summit Entertainment,United States
+City Heat,5.5,93,Action,PG,United States,12/7/84,25000000,38348988,9300,1984,Richard Benjamin,Blake Edwards,Clint Eastwood,Warner Bros.,United States
+Black Sheep,5.8,87,Comedy,Not Rated,New Zealand,3/29/07,NA,4947717,40000,2006,Jonathan King,Jonathan King,Oliver Driver,New Zealand Film Commission,New Zealand
+Daughters of the Dust,6.6,113,Drama,PG,United States,12/27/91,NA,1689723,2300,1991,Julie Dash,Julie Dash,Cora Lee Day,Geechee Girls,United States
+Experience Preferred... But Not Essential,7,80,Drama,PG,United Kingdom,12/22/82,NA,NA,240,1982,Peter Duffell,June Roberts,Elizabeth Edmonds,Channel Four Film,United Kingdom
+Texas Rangers,5.2,90,Action,PG-13,United States,11/30/01,38000000,763740,5500,2001,Steve Miner,George Durham,James Van Der Beek,Greisman Productions,United States
+Death Wish: The Face of Death,4.9,95,Action,R,United States,1/14/94,5000000,1702394,7200,1994,Allan A. Goldstein,Brian Garfield,Charles Bronson,21st Century Films,Canada
+Captain America: the First Avenger,6.9,124,Action,PG-13,United States,7/22/11,140000000,370569774,769000,2011,Joe Johnston,Christopher Markus,Chris Evans,Paramount Pictures,United States
+Cinderella,6.9,105,Drama,PG,United States,3/13/15,95000000,542358331,165000,2015,Kenneth Branagh,Chris Weitz,Lily James,Allison Shearmur Productions,United States
+Flyboys,6.5,140,Action,PG-13,United States,9/22/06,60000000,17858059,42000,2006,Tony Bill,Phil Sears,James Franco,Electric Entertainment,United Kingdom
+Kick-Ass 2,6.5,103,Action,R,United States,8/16/13,28000000,60795985,259000,2013,Jeff Wadlow,Jeff Wadlow,Aaron Taylor-Johnson,Universal Pictures,United Kingdom
+Queen Margot,7.4,159,Biography,R,United States,12/9/94,NA,1318578,17000,1994,Patrice Chéreau,Alexandre Dumas,Isabelle Adjani,Renn Productions,France
+Coach Carter,7.3,136,Biography,PG-13,United States,1/14/05,30000000,76669554,133000,2005,Thomas Carter,Mark Schwahn,Samuel L. Jackson,Coach Carter,United States
+Shakes the Clown,5.6,87,Comedy,R,United States,3/13/92,1400000,115103,4700,1991,Bobcat Goldthwait,Bobcat Goldthwait,Bobcat Goldthwait,IRS Media,United States
+Money Talks,6.2,97,Action,R,United States,8/22/97,25000000,48407611,28000,1997,Brett Ratner,Joel Cohen,Charlie Sheen,New Line Cinema,United States
+Living in Oblivion,7.5,90,Comedy,R,United States,7/21/95,500000,1111790,17000,1995,Tom DiCillo,Tom DiCillo,Steve Buscemi,JDI Productions,United States
+The Butterfly Effect,7.6,113,Drama,R,United States,1/23/04,13000000,96822421,460000,2004,Eric Bress,J. Mackye Gruber,Ashton Kutcher,BenderSpink,United States
+Greta,6,98,Drama,R,United States,3/1/19,NA,18653107,30000,2018,Neil Jordan,Ray Wright,Isabelle Huppert,Sidney Kimmel Entertainment,Ireland
+Once Upon a Time in China III,6.8,109,Action,R,Hong Kong,2/11/93,NA,NA,6600,1992,Hark Tsui,Tin-suen Chan,Jet Li,Golden Harvest Company,Hong Kong
+Das Boot,8.3,149,Adventure,Not Rated,United States,2/10/82,NA,11487676,237000,1981,Wolfgang Petersen,Wolfgang Petersen,Jürgen Prochnow,Bavaria Film,West Germany
+48 Hrs.,6.9,96,Action,R,United States,12/8/82,12000000,78868508,73000,1982,Walter Hill,Roger Spottiswoode,Nick Nolte,Paramount Pictures,United States
+Mindhunters,6.4,106,Crime,R,United States,5/13/05,27000000,21148829,59000,2004,Renny Harlin,Wayne Kramer,Val Kilmer,Dimension Films,Netherlands
+13 Assassins,7.6,141,Action,R,Japan,9/25/10,6000000,18689058,63000,2010,Takashi Miike,Kaneo Ikegami,Kôji Yakusho,Sedic International,Japan
+Garbo Talks,6.4,103,Comedy,PG-13,United States,10/12/84,NA,1493782,1500,1984,Sidney Lumet,Larry Grusin,Anne Bancroft,United Artists,United States
+The Hand,5.5,104,Drama,R,United States,4/24/81,NA,2447576,5700,1981,Oliver Stone,Marc Brandel,Michael Caine,Orion Pictures,United States
+One Night Stand,5.8,102,Drama,R,France,9/17/97,24000000,2642983,6600,1997,Mike Figgis,Mike Figgis,Wesley Snipes,New Line Cinema,United States
+There Goes My Baby,6.4,99,Comedy,R,United States,9/2/94,10500000,123509,1000,1994,Floyd Mutrux,Floyd Mutrux,Dermot Mulroney,Nelson Entertainment,United States
+Bullet to the Head,5.7,92,Action,R,United States,2/1/13,45000000,21947209,48000,2012,Walter Hill,Alessandro Camon,Sylvester Stallone,IM Global,United States
+Man Trouble,4.7,100,Comedy,PG-13,United States,7/17/92,30000000,4096030,3000,1992,Bob Rafelson,Carole Eastman,Jack Nicholson,Penta Entertainment,United States
+Predestination,7.5,97,Action,R,United States,1/9/15,5100000,4942449,262000,2014,Michael Spierig,Michael Spierig,Ethan Hawke,Screen Australia,Australia
+The Black Stallion Returns,6,103,Adventure,PG,United States,3/25/83,NA,12049514,2100,1983,Robert Dalva,Walter Farley,Kelly Reno,Zoetrope Studios,United States
+Rich and Famous,5.9,117,Drama,R,United States,10/9/81,NA,14492125,1600,1981,George Cukor,Gerald Ayres,Jacqueline Bisset,Jaquet,United States
+The Zookeeper's Wife,7,127,Biography,PG-13,United States,4/7/17,20000000,26152835,41000,2017,Niki Caro,Angela Workman,Jessica Chastain,Scion Films,Czech Republic
+Poseidon,5.7,98,Action,PG-13,United States,5/12/06,160000000,181674817,100000,2006,Wolfgang Petersen,Mark Protosevich,Richard Dreyfuss,Warner Bros.,United States
+Ride Along 2,5.9,102,Action,PG-13,United States,1/15/16,40000000,124608438,55000,2016,Tim Story,Phil Hay,Ice Cube,Universal Pictures,United States
+Disobedience,6.6,114,Drama,R,United States,4/27/18,6000000,8003180,27000,2017,Sebastián Lelio,Sebastián Lelio,Rachel Weisz,Braven Films,Ireland
+Venom,5.8,92,Horror,R,United States,1/29/82,NA,5229643,2600,1981,Piers Haggard,Alan Scholefield,Klaus Kinski,Morison Film Group,United Kingdom
+Twentynine Palms,5.2,119,Drama,Not Rated,France,9/17/03,NA,167999,4400,2003,Bruno Dumont,Bruno Dumont,Yekaterina Golubeva,3B Productions,France
+Blair Witch,5,89,Horror,R,United States,9/16/16,5000000,45173154,43000,2016,Adam Wingard,Simon Barrett,James Allen McCune,Lionsgate,Canada
+Ocean's Thirteen,6.9,122,Crime,PG-13,United States,6/8/07,85000000,311312624,328000,2007,Steven Soderbergh,Brian Koppelman,George Clooney,Warner Bros.,United States
+Underworld,7,121,Action,R,United States,9/19/03,22000000,95708457,258000,2003,Len Wiseman,Kevin Grevioux,Kate Beckinsale,Lakeshore Entertainment,United States
+Deadpool,8,108,Action,R,United States,2/12/16,58000000,782836791,932000,2016,Tim Miller,Rhett Reese,Ryan Reynolds,Twentieth Century Fox,United States
+"Surfer, Dude",4.7,85,Comedy,R,United States,9/5/08,6000000,52132,8500,2008,S.R. Bindler,S.R. Bindler,Matthew McConaughey,Berk/Lane Entertainment,United States
+Deadpool 2,7.7,119,Action,R,United States,5/18/18,110000000,786470484,505000,2018,David Leitch,Rhett Reese,Ryan Reynolds,Twentieth Century Fox,Canada
+Booksmart,7.2,102,Comedy,R,United States,5/24/19,6000000,24959607,102000,2019,Olivia Wilde,Emily Halpern,Kaitlyn Dever,Annapurna Pictures,United States
+The Stanford Prison Experiment,6.9,122,Biography,R,United States,7/17/15,NA,663114,40000,2015,Kyle Patrick Alvarez,Tim Talbott,Ezra Miller,Coup d'Etat Films,United States
+Coal Miner's Daughter,7.5,124,Biography,PG,United States,3/7/80,NA,67182787,17000,1980,Michael Apted,Thomas Rickman,Sissy Spacek,Universal Pictures,United States
+"O Brother, Where Art Thou?",7.7,107,Adventure,PG-13,United States,2/2/01,26000000,71870729,295000,2000,Joel Coen,Homer,George Clooney,Touchstone Pictures,United Kingdom
+Cradle Will Rock,6.8,132,Drama,R,United States,1/21/00,36000000,2986932,8900,1999,Tim Robbins,Tim Robbins,Hank Azaria,Cradle Productions Inc.,United States
+The Astronaut Farmer,6.3,104,Adventure,PG,United States,2/23/07,13000000,11130889,22000,2006,Michael Polish,Mark Polish,Billy Bob Thornton,Warner Bros.,United States
+Beautiful,5.6,112,Comedy,PG-13,United States,9/29/00,14000000,3169930,3700,2000,Sally Field,Jon Bernstein,Minnie Driver,Destination Films,United States
+When Marnie Was There,7.7,103,Animation,PG,United States,8/7/15,NA,34949567,35000,2014,James Simone,Joan G. Robinson,Sara Takatsuki,Dentsu,Japan
+World's Greatest Dad,6.9,99,Comedy,R,Ireland,9/24/10,NA,221805,38000,2009,Bobcat Goldthwait,Bobcat Goldthwait,Robin Williams,Magnolia Pictures,United States
+Bliss,6.9,112,Comedy,R,United States,2/21/86,NA,NA,1300,1985,Ray Lawrence,Ray Lawrence,Barry Otto,Window III Productions,Australia
+Dungeons & Dragons,3.7,107,Action,PG-13,United States,12/8/00,45000000,33978694,32000,2000,Courtney Solomon,Topper Lilien,Justin Whalin,New Line Cinema,United States
+Asylum,6.1,99,Drama,R,United Kingdom,9/9/05,NA,2788033,4900,2005,David Mackenzie,Patrick McGrath,Natasha Richardson,Paramount Classics,United Kingdom
+End of Days,5.8,122,Action,R,United States,11/24/99,100000000,211989043,107000,1999,Peter Hyams,Andrew W. Marlowe,Arnold Schwarzenegger,Beacon Communications,United States
+Reprise,7.3,105,Drama,R,Norway,9/8/06,NA,1297260,9800,2006,Joachim Trier,Joachim Trier,Anders Danielsen Lie,4 1/2 Film,Norway
+Red Dawn,6.4,114,Action,PG-13,United States,8/10/84,17000000,38376497,53000,1984,John Milius,Kevin Reynolds,Patrick Swayze,United Artists,United States
+Ghosts of Girlfriends Past,5.8,100,Comedy,PG-13,United States,5/1/09,37500000,102366815,86000,2009,Mark Waters,Jon Lucas,Matthew McConaughey,Jon Shestack Productions,United States
+The Young Victoria,7.3,105,Biography,PG,United States,1/8/10,35000000,29196409,59000,2009,Jean-Marc Vallée,Julian Fellowes,Emily Blunt,GK Films,United Kingdom
+The Blair Witch Project,6.5,81,Horror,R,United States,7/30/99,60000,248639099,239000,1999,Daniel Myrick,Daniel Myrick,Heather Donahue,Haxan Films,United States
+The Cold Light of Day,4.9,93,Action,PG-13,United States,9/7/12,20000000,16863583,36000,2012,Mabrouk El Mechri,Scott Wiper,Henry Cavill,Summit Entertainment,United States
+Country,6.7,105,Drama,PG,United States,9/29/84,NA,9640000,1800,1984,Richard Pearce,William D. Wittliff,Jessica Lange,Far West,United States
+You've Got Mail,6.7,119,Comedy,PG,United States,12/18/98,65000000,250821495,200000,1998,Nora Ephron,Miklós László,Tom Hanks,Warner Bros.,United States
+Spider-Man,7.3,121,Action,PG-13,United States,5/3/02,139000000,825025036,706000,2002,Sam Raimi,Stan Lee,Tobey Maguire,Columbia Pictures,United States
+The Thirteenth Floor,7.1,100,Mystery,R,United States,5/28/99,16000000,18564088,69000,1999,Josef Rusnak,Daniel F. Galouye,Craig Bierko,Columbia Pictures,United States
+The Conjuring 2,7.3,134,Horror,R,United States,6/10/16,40000000,321788219,242000,2016,James Wan,Chad Hayes,Vera Farmiga,New Line Cinema,Canada
+Nymphomaniac: Vol. I,6.9,117,Drama,Not Rated,United States,3/6/14,NA,13551156,119000,2013,Lars von Trier,Lars von Trier,Charlotte Gainsbourg,Zentropa Entertainments,Denmark
+American Ultra,6.1,96,Action,R,United States,8/21/15,28000000,27262374,87000,2015,Nima Nourizadeh,Max Landis,Jesse Eisenberg,PalmStar Media,United States
+Skinwalkers,4.6,110,Action,R,United States,8/10/07,NA,3269736,13000,2006,James Isaac,James DeMonaco,Jason Behr,Lionsgate,Canada
+High School Musical 3: Senior Year,4.9,112,Comedy,G,United States,10/24/08,11000000,252909177,59000,2008,Kenny Ortega,Peter Barsocchini,Zac Efron,Walt Disney Pictures,United States
+My Left Foot,7.9,103,Biography,R,United States,3/30/90,NA,14743391,70000,1989,Jim Sheridan,Shane Connaughton,Daniel Day-Lewis,Ferndale Films,Ireland
+Flight,7.3,138,Drama,R,United States,11/2/12,31000000,161772375,334000,2012,Robert Zemeckis,John Gatins,Denzel Washington,Paramount Pictures,United States
+1984,7.1,113,Drama,R,United States,3/22/85,NA,8430492,68000,1984,Michael Radford,Michael Radford,John Hurt,Virgin,United Kingdom
+The Anniversary Party,6.3,115,Comedy,R,United States,6/29/01,NA,4931888,8100,2001,Alan Cumming,Jennifer Jason Leigh,Alan Cumming,Fine Line Features,United States
+Children of a Lesser God,7.2,119,Drama,R,United States,10/31/86,10500000,31853080,15000,1986,Randa Haines,Mark Medoff,William Hurt,Paramount Pictures,United States
+Star Trek II: The Wrath of Khan,7.7,113,Action,PG,United States,6/4/82,11200000,78912963,115000,1982,Nicholas Meyer,Gene Roddenberry,William Shatner,Paramount Pictures,United States
+Cloak & Dagger,6.6,101,Action,PG,United States,8/10/84,NA,NA,7000,1984,Richard Franklin,Tom Holland,Henry Thomas,Universal Pictures,United States
+Buffalo Soldiers,6.8,98,Comedy,R,Germany,10/31/02,15000000,2300684,24000,2001,Gregor Jordan,Robert O'Connor,Joaquin Phoenix,FilmFour,United Kingdom
+Syriana,6.9,128,Drama,R,United States,12/9/05,50000000,93974620,127000,2005,Stephen Gaghan,Stephen Gaghan,George Clooney,Warner Bros.,United States
+Bright Star,6.9,119,Biography,PG,United States,10/9/09,8500000,14374652,26000,2009,Jane Campion,Jane Campion,Abbie Cornish,Pathé Renn Productions,United Kingdom
+The Lego Batman Movie,7.3,104,Animation,PG,United States,2/10/17,80000000,311950384,135000,2017,Chris McKay,Seth Grahame-Smith,Will Arnett,Animal Logic,United States
+It Comes at Night,6.2,91,Horror,R,United States,6/9/17,5000000,19735344,87000,2017,Trey Edward Shults,Trey Edward Shults,Joel Edgerton,Animal Kingdom,United States
+Trick or Treat,5.8,98,Comedy,R,United States,10/24/86,NA,6797218,6200,1986,Charles Martin Smith,Rhet Topham,Marc Price,De Laurentiis Entertainment Group (DEG),United States
+Wide Sargasso Sea,5.7,98,Drama,NC-17,United States,4/16/93,NA,1614784,1900,1993,John Duigan,Jan Sharp,Karina Lombard,Laughing Kookaburra Productions,Australia
+Wild Hearts Can't Be Broken,7.2,88,Drama,G,United States,5/24/91,NA,7294835,5000,1991,Steve Miner,Matt Williams,Gabrielle Anwar,Walt Disney Pictures,United States
+Crash,7.7,112,Crime,R,United States,5/6/05,6500000,98410061,424000,2004,Paul Haggis,Paul Haggis,Don Cheadle,Bob Yari Productions,United States
+Fatal Beauty,5.4,104,Action,R,United States,10/30/87,NA,12046526,3400,1987,Tom Holland,Bill Svanoe,Whoopi Goldberg,Metro-Goldwyn-Mayer (MGM),United States
+Cadillac Man,5.7,97,Comedy,R,United States,5/18/90,NA,27627310,14000,1990,Roger Donaldson,Ken Friedman,Robin Williams,Orion Pictures,United States
+Molly's Game,7.4,140,Biography,R,United States,1/5/18,30000000,59284015,153000,2017,Aaron Sorkin,Aaron Sorkin,Jessica Chastain,STX Entertainment,China
+Lost Souls,4.8,97,Drama,R,United States,10/13/00,50000000,31355910,11000,2000,Janusz Kaminski,Pierce Gardner,Winona Ryder,Prufrock Pictures,United States
+Black Robe,7.1,101,Adventure,R,United States,10/4/91,NA,8211952,6600,1991,Bruce Beresford,Brian Moore,Lothaire Bluteau,Alliance Communications Corporation,Canada
+Burn After Reading,7,96,Comedy,R,United States,9/12/08,37000000,163728902,317000,2008,Ethan Coen,Joel Coen,Brad Pitt,Focus Features,United States
+Hotel Transylvania 3: Summer Vacation,6.3,97,Animation,PG,United States,7/13/18,80000000,528583774,62000,2018,Genndy Tartakovsky,Genndy Tartakovsky,Adam Sandler,Sony Pictures Animation,United States
+Latter Days,7,107,Comedy,R,Israel,7/1/04,850000,865028,17000,2003,C. Jay Cox,C. Jay Cox,Wes Ramsey,Funny Boy Films,United States
+Johnny Stecchino,7.2,102,Comedy,R,Italy,10/24/91,NA,626057,10000,1991,Roberto Benigni,Roberto Benigni,Roberto Benigni,Cecchi Gori Group Tiger Cinematografica,Italy
+No Man's Land,7.9,98,Comedy,R,France,9/19/01,NA,4858869,45000,2001,Danis Tanovic,Danis Tanovic,Branko Djuric,Noé Productions,France
+Missing in Action,5.5,101,Action,R,United States,11/16/84,2550000,22812411,14000,1984,Joseph Zito,Arthur Silver,Chuck Norris,The Cannon Group,United States
+Pride and Prejudice,5.1,104,Comedy,PG,United States,12/5/03,NA,377271,2500,2003,Andrew Black,Jane Austen,Kam Heskin,Bestboy Pictures,United States
+O Fantasma,5.8,87,Drama,Not Rated,Portugal,10/20/00,NA,126783,3200,2000,João Pedro Rodrigues,João Pedro Rodrigues,Ricardo Meneses,Rosa Filmes,Portugal
+Heartburn,6.1,108,Comedy,R,United States,7/25/86,20000000,25314189,10000,1986,Mike Nichols,Nora Ephron,Meryl Streep,Paramount Pictures,United States
+The Accountant,7.3,128,Action,R,United States,10/14/16,44000000,155160045,271000,2016,Gavin O'Connor,Bill Dubuque,Ben Affleck,Warner Bros.,United States
+Think Like a Man Too,5.8,106,Comedy,PG-13,United States,6/20/14,24000000,70181428,20000,2014,Tim Story,Keith Merryman,Kevin Hart,LStar Capital,United States
+Fire Down Below,5.1,105,Action,R,United States,9/5/97,60000000,16228448,17000,1997,Félix Enríquez Alcalá,Jeb Stuart,Steven Seagal,Warner Bros.,United States
+Man Bites Dog,7.5,95,Comedy,NC-17,United States,1/15/93,NA,205569,37000,1992,Rémy Belvaux,Rémy Belvaux,Benoît Poelvoorde,Les Artistes Anonymes,Belgium
+Gwendoline,5.3,87,Action,R,United States,1/25/85,NA,1337274,2700,1984,Just Jaeckin,Just Jaeckin,Tawny Kitaen,Films de L'Alma,France
+A Christmas Carol,6.8,96,Animation,PG,United States,11/6/09,200000000,325286646,106000,2009,Robert Zemeckis,Charles Dickens,Jim Carrey,Walt Disney Pictures,United States
+Romeo Akbar Walter,6.6,141,Action,Not Rated,United States,4/5/19,NA,6111065,5200,2019,Robbie Grewal,Robbie Grewal,John Abraham,Kyta Productions,India
+Lake Placid,5.7,82,Action,R,United States,7/16/99,35000000,56870414,56000,1999,Steve Miner,David E. Kelley,Bridget Fonda,Fox 2000 Pictures,United States
+Rubber,5.8,82,Comedy,R,France,11/10/10,500000,101729,35000,2010,Quentin Dupieux,Quentin Dupieux,Stephen Spinella,Realitism Films,France
+Best Defense,3.8,94,Comedy,R,United States,7/20/84,18000000,19265302,5600,1984,Willard Huyck,Robert Grossbach,Dudley Moore,Cinema Group Ventures,United States
+Absolute Power,6.7,121,Action,R,United States,2/14/97,50000000,50068310,52000,1997,Clint Eastwood,David Baldacci,Clint Eastwood,Castle Rock Entertainment,United States
+Control,7.6,111,Comedy,R,Hungary,11/20/03,NA,1277800,25000,2003,Nimród Antal,Jim Adler,Sándor Csányi,Café Film,Hungary
+Jumanji: Welcome to the Jungle,6.9,119,Action,PG-13,United States,12/20/17,90000000,962542945,336000,2017,Jake Kasdan,Chris McKenna,Dwayne Johnson,Columbia Pictures,United States
+Love's Labour's Lost,6,93,Romance,PG,United Kingdom,3/31/00,13000000,299792,4400,2000,Kenneth Branagh,William Shakespeare,Alessandro Nivola,Pathé Pictures International,United Kingdom
+The Notebook,7.8,123,Drama,PG-13,United States,6/25/04,29000000,117815157,534000,2004,Nick Cassavetes,Jeremy Leven,Gena Rowlands,New Line Cinema,United States
+Nanny McPhee Returns,6.1,109,Comedy,PG,United States,8/20/10,35000000,93251121,30000,2010,Susanna White,Emma Thompson,Emma Thompson,Universal Pictures,United Kingdom
+The Weight of Water,5.9,114,Crime,R,France,7/31/02,16000000,321279,9100,2000,Kathryn Bigelow,Anita Shreve,Catherine McCormack,StudioCanal,United States
+Dark City,7.6,100,Fantasy,R,United States,2/27/98,27000000,27200316,191000,1998,Alex Proyas,Alex Proyas,Rufus Sewell,Mystery Clock Cinema,Australia
+Wanderlust,5.6,98,Comedy,R,United States,2/24/12,NA,23812816,74000,2012,David Wain,David Wain,Jennifer Aniston,A Hot Dog,United States
+The Matrix Reloaded,7.2,138,Action,R,United States,5/15/03,150000000,741847937,529000,2003,Lana Wachowski,Lilly Wachowski,Keanu Reeves,Warner Bros.,United States
+White Girl,5.7,88,Crime,Not Rated,United States,12/1/16,NA,200242,10000,2016,Elizabeth Wood,Elizabeth Wood,Morgan Saylor,Bank Street Films,United States
+Sisters,6,118,Comedy,R,United States,12/18/15,30000000,105011053,64000,2015,Jason Moore,Paula Pell,Amy Poehler,Little Stranger,United States
+How to Get Ahead in Advertising,6.9,90,Comedy,R,West Germany,3/29/90,NA,418053,5700,1989,Bruce Robinson,Bruce Robinson,Richard E. Grant,HandMade Films,United Kingdom
+World Trade Center,5.9,129,Drama,PG-13,United States,8/9/06,65000000,163247198,79000,2006,Oliver Stone,Andrea Berloff,Nicolas Cage,Paramount Pictures,United States
+Mr. Popper's Penguins,6,94,Comedy,PG,United States,6/17/11,55000000,187361754,91000,2011,Mark Waters,Sean Anders,Jim Carrey,Twentieth Century Fox,United States
+Soul Food,7,115,Comedy,R,United States,9/26/97,7500000,43700855,7400,1997,George Tillman Jr.,George Tillman Jr.,Vanessa Williams,Fox 2000 Pictures,United States
+Final Analysis,5.9,124,Drama,R,United States,2/7/92,32000000,28590665,14000,1992,Phil Joanou,Robert Berger,Richard Gere,Warner Bros.,United States
+Anna,6.5,99,Drama,R,Spain,1/24/14,7000000,1257142,22000,2013,Jorge Dorado,Guy Holmes,Mark Strong,The Safran Company,Spain
+Caravaggio,6.6,93,Biography,Not Rated,United States,8/29/86,NA,5478,5500,1986,Derek Jarman,Derek Jarman,Noam Almaz,British Film Institute (BFI),United Kingdom
+K2,6.2,104,Adventure,R,United States,5/1/92,NA,3106559,6500,1991,Franc Roddam,Patrick Meyers,Michael Biehn,Paramount Pictures,United Kingdom
+Just Married,5.5,95,Comedy,PG-13,United States,1/10/03,18000000,101564935,69000,2003,Shawn Levy,Sam Harper,Ashton Kutcher,Twentieth Century Fox,United States
+Boat Trip,4.9,94,Comedy,R,United States,3/21/03,20000000,15020293,31000,2002,Mort Nathan,Mort Nathan,Cuba Gooding Jr.,Motion Picture Corporation of America (MPCA),United States
+Marie,6.7,112,Biography,PG-13,United States,9/27/85,NA,2507995,861,1985,Roger Donaldson,Peter Maas,Sissy Spacek,Dino De Laurentiis Company,United States
+Paradise,4.9,100,Adventure,R,United States,5/7/82,NA,5588800,2500,1982,Stuart Gillard,Stuart Gillard,Willie Aames,Embassy Pictures,Canada
+I Am Number Four,6.1,111,Action,PG-13,United States,2/18/11,60000000,149878437,230000,2011,D.J. Caruso,Alfred Gough,Alex Pettyfer,Dreamworks Pictures,United States
+A Night in the Life of Jimmy Reardon,5.5,90,Comedy,R,United States,2/26/88,NA,6264058,2600,1988,William Richert,William Richert,River Phoenix,Island Pictures,United States
+Snowpiercer,7.1,126,Action,R,United States,7/11/14,39200000,86758912,335000,2013,Bong Joon Ho,Jacques Lob,Chris Evans,SnowPiercer,South Korea
+Prospero's Books,6.9,124,Drama,R,United Kingdom,8/30/91,NA,1750301,6100,1991,Peter Greenaway,William Shakespeare,John Gielgud,Allarts,United Kingdom
+Kill the Messenger,6.9,112,Biography,R,Hungary,10/9/14,NA,5218973,45000,2014,Michael Cuesta,Peter Landesman,Jeremy Renner,Sierra / Affinity,United States
+Square Dance,5.9,112,Drama,PG-13,Japan,1/9/88,NA,225358,878,1987,Daniel Petrie,Alan Hines,Jason Robards,Island Pictures,United States
+Spotlight,8.1,129,Biography,R,United States,11/20/15,20000000,98690254,435000,2015,Tom McCarthy,Josh Singer,Mark Ruffalo,Participant,United States
+The Witches of Eastwick,6.6,118,Comedy,R,United States,6/12/87,22000000,63766510,65000,1987,George Miller,John Updike,Jack Nicholson,Warner Bros.,United States
+Patch Adams,6.8,115,Biography,PG-13,United States,12/25/98,90000000,202292902,108000,1998,Tom Shadyac,Patch Adams,Robin Williams,Universal Pictures,United States
+Dolittle,5.6,101,Adventure,PG,United States,1/17/20,175000000,245487753,53000,2020,Stephen Gaghan,Stephen Gaghan,Robert Downey Jr.,Universal Pictures,United States
+Exterminator 2,4.5,89,Action,R,United States,9/14/84,NA,3739406,2000,1984,Mark Buntzman,Mark Buntzman,Robert Ginty,The Cannon Group,United States
+It's My Turn,5.5,91,Comedy,R,Argentina,2/5/81,NA,NA,875,1980,Claudia Weill,Eleanor Bergstein,Jill Clayburgh,Rastar Films,United States
+Padmaavat,7,164,Drama,Not Rated,India,1/25/18,NA,60508780,29000,2018,Sanjay Leela Bhansali,Prakash Kapadia,Deepika Padukone,Bhansali Productions,India
+The Adventures of Ford Fairlane,6.4,104,Action,R,United States,7/11/90,20000000,21413502,17000,1990,Renny Harlin,Daniel Waters,Andrew Dice Clay,Twentieth Century Fox,United States
+"Yor, the Hunter from the Future",4.4,88,Action,PG,United States,8/19/83,NA,2810199,2900,1983,Antonio Margheriti,Juan Zanotto,Reb Brown,Diamant Film,Italy
+Æon Flux,5.5,93,Action,PG-13,United States,12/2/05,62000000,53321673,125000,2005,Karyn Kusama,Phil Hay,Charlize Theron,Paramount Pictures,United States
+Extreme Measures,6.2,118,Crime,R,United States,9/27/96,38000000,17380126,17000,1996,Michael Apted,Michael Palmer,Hugh Grant,Castle Rock Entertainment,United Kingdom
+Aria,5.8,90,Comedy,R,United States,9/15/87,NA,1028679,2600,1987,Directors,Robert Altman,John Hurt,Lightyear Entertainment,United Kingdom
+We're the Millers,7,110,Comedy,R,United States,8/7/13,37000000,269994119,415000,2013,Rawson Marshall Thurber,Bob Fisher,Jason Sudeikis,New Line Cinema,United States
+Snow Falling on Cedars,6.8,127,Drama,PG-13,United States,1/7/00,35000000,23049593,14000,1999,Scott Hicks,David Guterson,Ethan Hawke,Universal Pictures,United States
+Kama Sutra: A Tale of Love,6,114,Crime,Not Rated,United States,2/28/97,3000000,4109095,10000,1996,Mira Nair,Helena Kriel,Naveen Andrews,NDF International,United Kingdom
+Much Ado About Nothing,7.3,111,Comedy,PG-13,United States,7/2/93,11000000,22549338,46000,1993,Kenneth Branagh,William Shakespeare,Kenneth Branagh,Renaissance Films,United Kingdom
+Deep Cover,6.9,107,Action,R,United States,4/15/92,8000000,16639799,9500,1992,Bill Duke,Michael Tolkin,Laurence Fishburne,Image Organization,United States
+Redbelt,6.7,99,Drama,R,United States,5/9/08,7000000,2674090,21000,2008,David Mamet,David Mamet,Chiwetel Ejiofor,Sony Pictures Classics,United States
+Serial Mom,6.8,95,Comedy,R,United States,4/13/94,13000000,7820688,28000,1994,John Waters,John Waters,Kathleen Turner,Savoy Pictures,United States
+The Ringer,5.8,94,Comedy,PG-13,United States,12/23/05,NA,40442443,36000,2005,Barry W. Blaustein,Ricky Blitt,Johnny Knoxville,Conundrum Entertainment,United States
+Robots,6.3,91,Animation,PG,United States,3/11/05,75000000,262511490,137000,2005,Chris Wedge,Ron Mita,Ewan McGregor,Twentieth Century Fox Animation,United States
+Madame Bovary,6.6,143,Drama,PG-13,United States,12/25/91,NA,1942423,3600,1991,Claude Chabrol,Gustave Flaubert,Isabelle Huppert,MK2 Productions,France
+Cabin Boy,5.3,80,Adventure,PG-13,United States,1/7/94,9000000,3662459,8200,1994,Adam Resnick,Chris Elliott,Chris Elliott,Touchstone Pictures,United States
+Surf's Up,6.7,85,Animation,PG,United States,6/8/07,100000000,152005713,72000,2007,Ash Brannon,Don Rhymer,Shia LaBeouf,Columbia Pictures,United States
+Detroit,7.3,143,Crime,R,United States,8/4/17,34000000,23355100,50000,2017,Kathryn Bigelow,Mark Boal,John Boyega,Annapurna Pictures,United States
+Stranger Than Paradise,7.5,89,Comedy,R,United Kingdom,10/4/84,90000,2436000,36000,1984,Jim Jarmusch,Jim Jarmusch,John Lurie,Cinesthesia Productions,United States
+Shall We Dance,6.1,106,Comedy,PG-13,United States,10/15/04,50000000,170128460,45000,2004,Peter Chelsom,Masayuki Suô,Richard Gere,Miramax,United States
+A Chorus Line,6.2,113,Drama,PG-13,United States,12/20/85,27000000,14202899,9300,1985,Richard Attenborough,Arnold Schulman,Michael Douglas,Embassy Pictures,United States
+The Pledge,6.8,124,Crime,R,United States,1/19/01,35000000,29419291,55000,2001,Sean Penn,Friedrich Dürrenmatt,Jack Nicholson,Morgan Creek Entertainment,United States
+Alvin and the Chipmunks: The Road Chip,5,92,Animation,PG,United States,12/18/15,90000000,234798636,18000,2015,Walt Becker,Ross Bagdasarian,Jason Lee,Fox 2000 Pictures,United States
+A Hologram for the King,6.1,98,Comedy,R,Germany,4/28/16,30000000,9169507,42000,2016,Tom Tykwer,Dave Eggers,Tom Hanks,X-Filme Creative Pool,United Kingdom
+The Puppet Masters,5.9,109,Horror,R,United States,10/21/94,NA,8647042,8500,1994,Stuart Orme,Robert A. Heinlein,Donald Sutherland,Hollywood Pictures,United States
+Bad Education,7.4,106,Crime,NC-17,United States,2/11/05,5000000,40423279,57000,2004,Pedro Almodóvar,Pedro Almodóvar,Gael García Bernal,Canal+ España,Spain
+The Benchwarmers,5.5,85,Comedy,PG-13,United States,4/7/06,33000000,64962629,49000,2006,Dennis Dugan,Allen Covert,David Spade,Revolution Studios,United States
+Wild Hogs,5.8,100,Action,PG-13,United States,3/2/07,NA,253625427,115000,2007,Walt Becker,Brad Copeland,Tim Allen,Touchstone Pictures,United States
+Bad Santa,7,92,Comedy,R,United States,11/26/03,23000000,76490720,137000,2003,Terry Zwigoff,Glenn Ficarra,Billy Bob Thornton,Columbia Pictures,Germany
+The Assignment,6.9,115,Action,R,United States,9/26/97,NA,332597,9000,1997,Christian Duguay,Dan Gordon,Aidan Quinn,Triumph Films,Canada
+Heathers,7.2,103,Comedy,R,United States,3/31/89,3000000,1163969,92000,1988,Michael Lehmann,Daniel Waters,Winona Ryder,New World Pictures,United States
+Highlander: The Final Dimension,4.5,99,Action,PG-13,United States,1/27/95,26000000,12303080,20000,1994,Andrew Morahan,Gregory Widen,Christopher Lambert,Fallingcloud,United Kingdom
+Gossip,5.9,90,Drama,R,United States,4/21/00,24000000,12591270,15000,2000,Davis Guggenheim,Gregory Poirier,James Marsden,NPV Entertainment,United States
+Husbands and Wives,7.5,108,Comedy,R,United States,9/18/92,20000000,10555619,28000,1992,Woody Allen,Woody Allen,Woody Allen,Jack Rollins & Charles H. Joffe Productions,United States
+Bob Roberts,7,102,Comedy,R,United States,9/4/92,NA,4479470,13000,1992,Tim Robbins,Tim Robbins,Tim Robbins,Miramax,United States
+Cop,6.4,110,Crime,R,United States,3/11/88,3000000,1984315,4800,1988,James B. Harris,James Ellroy,James Woods,Atlantic Entertainment Group,United States
+Wallace & Gromit: The Curse of the Were-Rabbit,7.4,85,Animation,G,United States,10/7/05,30000000,194137091,128000,2005,Steve Box,Steve Box,Peter Sallis,Aardman Animations,United Kingdom
+The Aviator,7.5,170,Biography,PG-13,United States,12/25/04,110000000,213719942,342000,2004,Martin Scorsese,John Logan,Leonardo DiCaprio,Forward Pass,United States
+Leaving Normal,6.6,110,Comedy,R,United States,4/29/92,NA,1514114,1300,1992,Edward Zwick,Ed Solomon,Christine Lahti,Mirage Entertainment,United States
+Neighbors,6.3,97,Comedy,R,United States,5/9/14,18000000,270665134,294000,2014,Nicholas Stoller,Andrew Jay Cohen,Seth Rogen,Good Universe,United States
+Middle Men,6.8,105,Comedy,R,United States,8/6/10,20000000,754301,37000,2009,George Gallo,George Gallo,Luke Wilson,Paramount Pictures,United States
+Night at the Museum,6.4,108,Adventure,PG,United States,12/22/06,110000000,574481229,323000,2006,Shawn Levy,Robert Ben Garant,Ben Stiller,Twentieth Century Fox,United States
+Casualties of War,7.1,113,Action,R,United States,8/18/89,22500000,18671317,42000,1989,Brian De Palma,Daniel Lang,Michael J. Fox,Art Linson Productions,United States
+Night on Earth,7.7,129,Comedy,R,Germany,12/12/91,3500000,2023808,57000,1991,Jim Jarmusch,Jim Jarmusch,Winona Ryder,Victor Company of Japan (JVC),France
+The Deep Blue Sea,6.2,98,Drama,R,United Kingdom,11/25/11,NA,3143514,15000,2011,Terence Davies,Terence Rattigan,Rachel Weisz,Camberwell / Fly Films,United Kingdom
+The 13th Warrior,6.6,102,Action,R,United States,8/27/99,160000000,61698899,119000,1999,John McTiernan,Michael Crichton,Antonio Banderas,Touchstone Pictures,United States
+Ice Age,7.5,81,Animation,PG,United States,3/15/02,59000000,383257136,452000,2002,Chris Wedge,Michael J. Wilson,Denis Leary,Twentieth Century Fox,United States
+The Living End,6.5,81,Comedy,Not Rated,United States,8/21/92,22769,692585,2900,1992,Gregg Araki,Gregg Araki,Mike Dytri,Desperate Pictures,United States
+Shiloh,6.4,93,Drama,PG,United States,4/25/97,NA,1007822,3100,1996,Dale Rosenbloom,Phyllis Reynolds Naylor,Blake Heron,Good Dog Productions LLC,United States
+Brad's Status,6.5,102,Comedy,R,United States,9/15/17,NA,3816527,17000,2017,Mike White,Mike White,Ben Stiller,Amazon Studios,United States
+Footloose,6.6,107,Drama,PG,United States,2/17/84,8200000,80039064,73000,1984,Herbert Ross,Dean Pitchford,Kevin Bacon,Paramount Pictures,United States
+Tyler Perry's Why Did I Get Married?,5.9,113,Comedy,PG-13,United States,10/12/07,15000000,55862886,12000,2007,Tyler Perry,Tyler Perry,Tyler Perry,Lions Gate Films,United States
+As It Is in Heaven,7.5,133,Comedy,Not Rated,Sweden,9/3/04,NA,18328469,17000,2004,Kay Pollak,Anders Nyberg,Michael Nyqvist,Sonet Film AB,Sweden
+The Equalizer,7.2,132,Action,R,United States,9/26/14,55000000,192330738,344000,2014,Antoine Fuqua,Richard Wenk,Denzel Washington,Columbia Pictures,United States
+King Solomon's Mines,5.2,100,Action,PG-13,United States,11/22/85,12500000,15057465,13000,1985,J. Lee Thompson,H. Rider Haggard,Richard Chamberlain,The Cannon Group,United States
+The Beautiful Troublemaker,7.6,238,Drama,Not Rated,France,9/4/91,NA,403056,7500,1991,Jacques Rivette,Pascal Bonitzer,Michel Piccoli,Pierre Grise Productions,France
+Lost & Found,5.1,100,Comedy,PG-13,United States,4/23/99,30000000,6552255,6200,1999,Jeff Pollack,J.B. Cook,David Spade,Alcon Entertainment,United States
+Calendar Girl,5.1,90,Comedy,PG-13,United States,9/3/93,13000000,2570550,2100,1993,John Whitesell,Paul W. Shapiro,Jason Priestley,Parkway Productions,United States
+Appaloosa,6.7,115,Action,R,United States,10/3/08,20000000,27712362,59000,2008,Ed Harris,Robert Knott,Ed Harris,New Line Cinema,United States
+Warlock,6.2,103,Action,R,United States,1/11/91,7000000,9094451,16000,1989,Steve Miner,David Twohy,Julian Sands,New World Pictures,United States
+Matewan,7.9,135,Drama,PG-13,United States,8/28/87,4000000,1680358,7500,1987,John Sayles,John Sayles,Chris Cooper,Cinecom Entertainment Group,United States
+Hot Tub Time Machine 2,5.1,93,Comedy,R,United States,2/20/15,14000000,13081651,38000,2015,Steve Pink,Josh Heald,Rob Corddry,Paramount Pictures,United States
+Monsoon Wedding,7.4,114,Comedy,R,United States,4/26/02,NA,30787356,24000,2001,Mira Nair,Sabrina Dhawan,Naseeruddin Shah,IFC Productions,India
+Cool Runnings,7,98,Adventure,PG,United States,10/1/93,14000000,154856263,96000,1993,Jon Turteltaub,Lynn Siefert,John Candy,Walt Disney Pictures,United States
+Panther,6.4,124,Drama,R,United States,5/3/95,NA,6834525,2300,1995,Mario Van Peebles,Melvin Van Peebles,Kadeem Hardison,Gramercy Pictures (I),United Kingdom
+Hercules,7.3,93,Animation,G,United States,6/27/97,85000000,252712101,212000,1997,Ron Clements,Ron Clements,Tate Donovan,Walt Disney Pictures,United States
+The Pillow Book,6.7,126,Drama,Not Rated,United States,6/6/97,NA,2372744,13000,1996,Peter Greenaway,Sei Shonagon,Vivian Wu,Centurion,Netherlands
+There Will Be Blood,8.2,158,Drama,R,United States,1/25/08,25000000,76182388,535000,2007,Paul Thomas Anderson,Paul Thomas Anderson,Daniel Day-Lewis,Paramount Vantage,United States
+All the Right Moves,5.9,91,Drama,R,United States,10/21/83,5600000,17233166,16000,1983,Michael Chapman,Michael Kane,Tom Cruise,Lucille Ball Productions,United States
+My Sister's Keeper,7.4,109,Drama,PG-13,United States,6/26/09,30000000,95714875,91000,2009,Nick Cassavetes,Jeremy Leven,Cameron Diaz,Curmudgeon Films,United States
+Hidalgo,6.7,136,Action,PG-13,United States,3/5/04,100000000,108040622,79000,2004,Joe Johnston,John Fusco,Viggo Mortensen,Touchstone Pictures,United States
+Mirror Mirror,5.6,106,Adventure,PG,United States,3/30/12,85000000,183018522,85000,2012,Tarsem Singh,Marc Klein,Lily Collins,Relativity Media,United States
+Mr. Church,7.7,104,Comedy,PG-13,Netherlands,11/11/16,8000000,685780,27000,2016,Bruce Beresford,Susan McMartin,Eddie Murphy,Cinelou Films,United States
+Hello Again,5.3,96,Comedy,PG,United States,11/6/87,NA,20419446,3200,1987,Frank Perry,Susan Isaacs,Shelley Long,Touchstone Pictures,United States
+Conan the Barbarian,6.9,129,Action,R,United States,5/14/82,20000000,68851475,141000,1982,John Milius,Robert E. Howard,Arnold Schwarzenegger,Universal Pictures,United States
+Donnie Darko,8,113,Drama,R,Mexico,1/19/01,6000000,6981586,755000,2001,Richard Kelly,Richard Kelly,Jake Gyllenhaal,Pandora Cinema,United States
+Cracks,6.7,104,Drama,R,United States,3/18/11,NA,101860,19000,2009,Jordan Scott,Ben Court,Eva Green,Antena 3 Films,United Kingdom
+Changeling,7.7,141,Biography,R,United States,10/31/08,55000000,113398237,244000,2008,Clint Eastwood,J. Michael Straczynski,Angelina Jolie,Imagine Entertainment,United States
+Robin Hood,6.6,140,Action,PG-13,United States,5/14/10,200000000,321669741,257000,2010,Ridley Scott,Brian Helgeland,Russell Crowe,Universal Pictures,United States
+The Man Who Knew Infinity,7.2,108,Biography,PG-13,United States,4/29/16,10000000,12252684,53000,2015,Matt Brown,Matt Brown,Dev Patel,Pressman Film,United Kingdom
+CB4,6.3,89,Comedy,R,United States,3/12/93,6000000,17953778,9000,1993,Tamra Davis,Chris Rock,Chris Rock,Imagine Entertainment,United States
+The Lego Ninjago Movie,6,101,Animation,PG,United States,9/22/17,70000000,123081555,24000,2017,Charlie Bean,Bob Logan,Jackie Chan,Animal Logic,United States
+The Sea Inside,8,126,Biography,PG-13,United States,3/4/05,NA,43731621,79000,2004,Alejandro Amenábar,Alejandro Amenábar,Javier Bardem,Sogepaq,Spain
+Son of a Gun,6.4,108,Action,R,United States,12/11/14,NA,660241,27000,2014,Julius Avery,Julius Avery,Ewan McGregor,Screen Australia,Australia
+The Dressmaker,7.1,119,Comedy,R,Australia,10/29/15,NA,25003426,56000,2015,Jocelyn Moorhouse,Rosalie Ham,Kate Winslet,Screen Australia,Australia
+The Longshot,5.4,89,Comedy,PG-13,United States,1/17/86,NA,NA,565,1986,Paul Bartel,Tim Conway,Tim Conway,Orion Pictures,United States
+Evil Under the Sun,7.1,117,Crime,PG,United States,3/5/82,10000000,6110670,15000,1982,Guy Hamilton,Anthony Shaffer,Peter Ustinov,EMI Films,United Kingdom
+Chocolat,7.2,121,Drama,PG-13,United States,1/19/01,25000000,152699976,181000,2000,Lasse Hallström,Joanne Harris,Juliette Binoche,Miramax,United Kingdom
+Monkey Shines,6.2,113,Drama,R,United States,7/29/88,7000000,5344577,11000,1988,George A. Romero,Michael Stewart,Jason Beghe,Orion Pictures,United States
+The Buddy System,5.7,110,Drama,PG,United States,1/20/84,NA,1820049,794,1984,Glenn Jordan,Mary Agnes Donoghue,Richard Dreyfuss,Twentieth Century Fox,United States
+Spectre,6.8,148,Action,PG-13,United States,11/6/15,245000000,880681519,393000,2015,Sam Mendes,John Logan,Daniel Craig,B24,United Kingdom
+Romy and Michele's High School Reunion,6.2,92,Comedy,R,United States,4/25/97,NA,29235353,43000,1997,David Mirkin,Robin Schiff,Mira Sorvino,Touchstone Pictures,United States
+Christopher Columbus: The Discovery,4.5,120,Adventure,PG-13,United States,8/21/92,40000000,8251071,2800,1992,John Glen,Mario Puzo,Marlon Brando,Christopher Columbus Productions,United Kingdom
+Two If by Sea,5.2,96,Comedy,R,United States,1/12/96,NA,10658278,5500,1996,Bill Bennett,Denis Leary,Sandra Bullock,Morgan Creek Entertainment,United States
+Five Feet Apart,7.2,116,Drama,PG-13,United States,3/15/19,7000000,91527795,51000,2019,Justin Baldoni,Mikki Daughtry,Haley Lu Richardson,CBS Films,United States
+S.O.B.,6.4,122,Comedy,R,United States,7/1/81,12000000,14867086,5700,1981,Blake Edwards,Blake Edwards,Julie Andrews,Artista Management,United States
+Jigsaw,5.8,92,Crime,R,United States,10/27/17,10000000,102952888,73000,2017,Michael Spierig,Josh Stolberg,Matt Passmore,Twisted Pictures,Canada
+Haywire,5.8,93,Action,R,United States,1/20/12,23000000,34513760,85000,2011,Steven Soderbergh,Lem Dobbs,Gina Carano,Relativity Media,Ireland
+The Good Girl,6.4,93,Drama,R,United States,8/30/02,8000000,16860964,44000,2002,Miguel Arteta,Mike White,Jennifer Aniston,Flan de Coco Films,United States
+Bride & Prejudice,6.2,122,Comedy,PG-13,United States,3/11/05,7000000,24716440,20000,2004,Gurinder Chadha,Jane Austen,Martin Henderson,Pathé Pictures International,United Kingdom
+Midnight Sun,6.6,91,Drama,PG-13,United States,3/23/18,2800000,27365467,26000,2018,Scott Speer,Kenji Bando,Bella Thorne,Boies / Schiller Film Group,United States
+BloodRayne,2.9,95,Action,R,United States,1/6/06,25000000,3650275,34000,2005,Uwe Boll,Guinevere Turner,Kristanna Loken,Boll Kino Beteiligungs GmbH & Co. KG,Germany
+The Mother,6.8,112,Drama,R,United States,6/18/04,2500000,3039587,4000,2003,Roger Michell,Hanif Kureishi,Anne Reid,BBC Films,United Kingdom
+The Death of Stalin,7.2,107,Comedy,R,United States,3/9/18,13000000,24646055,92000,2017,Armando Iannucci,Armando Iannucci,Steve Buscemi,Quad Productions,United Kingdom
+Thelma & Louise,7.5,130,Adventure,R,United States,5/24/91,16500000,45456285,142000,1991,Ridley Scott,Callie Khouri,Susan Sarandon,Pathé Entertainment,United States
+Angus,6.7,90,Comedy,PG-13,United States,9/15/95,NA,4821759,6400,1995,Patrick Read Johnson,Chris Crutcher,Charlie Talbert,Atlas Entertainment,United Kingdom
+The House of Yes,6.6,85,Comedy,R,United States,10/10/97,1500000,626057,7700,1997,Mark Waters,Wendy MacLeod,Parker Posey,Bandeira Entertainment,United States
+Secondhand Lions,7.5,109,Comedy,PG,United States,9/19/03,30000000,48260279,54000,2003,Tim McCanlies,Tim McCanlies,Haley Joel Osment,New Line Cinema,United States
+The Night We Never Met,6,99,Comedy,R,United States,4/30/93,8000000,1884814,2400,1993,Warren Leight,Warren Leight,Matthew Broderick,Miramax,United States
+Coming to America,7.1,117,Comedy,R,United States,6/29/88,39000000,288752301,196000,1988,John Landis,Eddie Murphy,Eddie Murphy,Paramount Pictures,United States
+The Importance of Being Earnest,6.8,97,Comedy,PG,United States,6/21/02,15000000,18009625,22000,2002,Oliver Parker,Oscar Wilde,Rupert Everett,Miramax,United Kingdom
+Tall Tale,5.9,96,Adventure,PG,United States,3/24/95,32000000,11047627,3500,1995,Jeremiah S. Chechik,Steve Bloom,Patrick Swayze,Caravan Pictures,United States
+Last Plane Out,4.5,92,Action,PG,United States,9/23/83,NA,NA,131,1983,David Nelson,Ernest Tidyman,Jan-Michael Vincent,NA,United States
+Death Warrant,5.7,89,Action,R,United States,9/14/90,4000000,16853487,18000,1990,Deran Sarafian,David S. Goyer,Jean-Claude Van Damme,Cannon Films,United States
+X-Men: the Last Stand,6.7,104,Action,PG-13,United States,5/26/06,210000000,460435291,491000,2006,Brett Ratner,Simon Kinberg,Patrick Stewart,Twentieth Century Fox,United States
+Sex Is Comedy,5.6,92,Comedy,R,France,6/5/02,NA,411830,2800,2002,Catherine Breillat,Catherine Breillat,Anne Parillaud,Arte France Cinéma,France
+"Silent Night, Deadly Night",5.9,79,Horror,R,United States,11/9/84,1065000,2491460,14000,1984,Charles E. Sellier Jr.,Paul Caimi,Lilyan Chauvin,TriStar Pictures,United States
+Compliance,6.4,90,Crime,R,France,9/26/12,270000,592116,33000,2012,Craig Zobel,Craig Zobel,Ann Dowd,Bad Cop Bad Cop Film Productions,United States
+How to Make an American Quilt,6.3,117,Comedy,PG-13,United States,10/6/95,10000000,41200020,11000,1995,Jocelyn Moorhouse,Whitney Otto,Winona Ryder,Universal Pictures,United States
+Cadence,6.5,97,Drama,PG-13,United States,2/15/91,4000000,2070871,5300,1990,Martin Sheen,Dennis Shryack,Charlie Sheen,The Movie Group,United States
+Gun Shy,5.7,101,Comedy,R,Australia,3/9/00,14000000,3284444,7000,2000,Eric Blakeney,Eric Blakeney,Liam Neeson,Hollywood Pictures,United States
+The Watch,5.7,102,Comedy,R,United States,7/27/12,68000000,68267862,123000,2012,Akiva Schaffer,Jared Stern,Ben Stiller,Twentieth Century Fox,United States
+The Iron Lady,6.4,105,Biography,PG-13,United States,1/13/12,13000000,115890699,105000,2011,Phyllida Lloyd,Abi Morgan,Meryl Streep,DJ Films,United Kingdom
+Last of the Dogmen,7,118,Adventure,PG,United States,9/8/95,NA,7024389,5000,1995,Tab Murphy,Tab Murphy,Tom Berenger,Carolco Pictures,United States
+The Name of the Rose,7.7,130,Crime,R,United States,9/24/86,NA,7153487,104000,1986,Jean-Jacques Annaud,Umberto Eco,Sean Connery,Constantin Film,West Germany
+Jacob's Ladder,7.5,113,Drama,R,United States,11/2/90,25000000,26118851,101000,1990,Adrian Lyne,Bruce Joel Rubin,Tim Robbins,Carolco Pictures,United States
+The Natural,7.5,138,Drama,PG,United States,5/11/84,28000000,47951979,46000,1984,Barry Levinson,Bernard Malamud,Robert Redford,TriStar Pictures,United States
+Maverick,7,127,Action,PG,United States,5/20/94,75000000,183031272,104000,1994,Richard Donner,Roy Huggins,Mel Gibson,Donner/Shuler-Donner Productions,United States
+In the Mouth of Madness,7.2,95,Drama,R,United States,2/3/95,8000000,8924549,64000,1994,John Carpenter,Michael De Luca,Sam Neill,New Line Cinema,United States
+American Heart,6.7,113,Crime,R,United States,5/7/93,10000000,384048,3200,1992,Martin Bell,Peter Silverman,Jeff Bridges,Avenue Pictures,United States
+Fast & Furious 6,7,130,Action,PG-13,United States,5/24/13,160000000,788680968,377000,2013,Justin Lin,Chris Morgan,Vin Diesel,Universal Pictures,United States
+The Take,6.3,92,Action,R,United States,11/18/16,20000000,14857808,40000,2016,James Watkins,Andrew Baldwin,Idris Elba,StudioCanal,United Kingdom
+The Least of These: The Graham Staines Story,6.4,112,Drama,PG-13,India,3/29/19,NA,695164,806,2019,Aneesh Daniel,Andrew E. Matthews,Sharman Joshi,Skypass Entertainment,United States
+"Paris, je t'aime",7.2,120,Comedy,R,United States,6/15/07,13000000,17471727,71000,2006,Directors,Tristan Carné,Juliette Binoche,Victoires International,France
+Sweet and Lowdown,7.2,95,Comedy,PG-13,United States,3/10/00,29750000,4525794,33000,1999,Woody Allen,Woody Allen,Sean Penn,Sweetland Films,United States
+Black Dog,5.4,89,Action,PG-13,United States,5/1/98,30000000,12951088,8600,1998,Kevin Hooks,William Mickelberry,Patrick Swayze,Universal Pictures,United States
+Limitless,7.4,105,Sci-Fi,PG-13,United States,3/18/11,27000000,161849455,538000,2011,Neil Burger,Leslie Dixon,Bradley Cooper,Relativity Media,United States
+Leatherface: Texas Chainsaw Massacre III,5.1,85,Horror,R,United States,1/12/90,2000000,5765562,15000,1990,Jeff Burr,Kim Henkel,Kate Hodge,Nicolas Entertainment,United States
+Brainscan,6.1,96,Comedy,R,United States,4/22/94,NA,4352094,11000,1994,John Flynn,Brian Owens,Edward Furlong,Admire Productions Ltd.,United Kingdom
+The Piano,7.6,121,Drama,R,United States,2/11/94,7000000,40185556,81000,1993,Jane Campion,Jane Campion,Holly Hunter,CiBy 2000,New Zealand
+Mona Lisa Smile,6.5,117,Drama,PG-13,United States,12/19/03,65000000,141337989,79000,2003,Mike Newell,Lawrence Konner,Julia Roberts,Revolution Studios,United States
+Meet the Parents,7,108,Comedy,PG-13,United States,10/6/00,55000000,330444045,317000,2000,Jay Roach,Greg Glienna,Ben Stiller,Universal Pictures,United States
+Ma,5.6,99,Horror,R,United States,5/31/19,5000000,61105744,46000,2019,Tate Taylor,Scotty Landes,Octavia Spencer,Blumhouse Productions,Japan
+The Age of Innocence,7.2,139,Drama,PG,United States,10/1/93,34000000,32255440,56000,1993,Martin Scorsese,Edith Wharton,Daniel Day-Lewis,Columbia Pictures,United States
+Private School,5.3,89,Comedy,R,United States,7/29/83,3500000,14049540,6100,1983,Noel Black,Dan Greenburg,Phoebe Cates,Unity Productions,United States
+Antitrust,6.1,108,Action,PG-13,United States,1/12/01,30000000,18195610,29000,2001,Peter Howitt,Howard Franklin,Ryan Phillippe,Metro-Goldwyn-Mayer (MGM),United States
+Bucky Larson: Born to Be a Star,3.2,97,Comedy,R,United States,9/9/11,10000000,2530394,12000,2011,Tom Brady,Adam Sandler,Nick Swardson,Columbia Pictures,United States
+What a Girl Wants,5.8,105,Comedy,PG,United States,4/4/03,25000000,50732139,61000,2003,Dennie Gordon,William Douglas-Home,Amanda Bynes,Warner Bros.,United States
+"Paris, Texas",8.1,145,Drama,R,United Kingdom,8/23/84,NA,2207548,96000,1984,Wim Wenders,L.M. Kit Carson,Harry Dean Stanton,Road Movies Filmproduktion,West Germany
+Chariots of Fire,7.2,125,Biography,PG,United States,4/9/82,5500000,59303359,56000,1981,Hugh Hudson,Colin Welland,Ben Cross,Enigma Productions,United Kingdom
+"Crouching Tiger, Hidden Dragon",7.8,120,Action,PG-13,United States,1/12/01,17000000,213525736,258000,2000,Ang Lee,Hui-Ling Wang,Chow Yun-Fat,Asia Union Film & Entertainment Ltd.,Taiwan
+Some Kind of Hero,5.8,97,Comedy,R,United States,4/2/82,NA,23671186,1400,1982,Michael Pressman,Robert Boris,Richard Pryor,Paramount Pictures,United States
+The Hunger,6.7,97,Drama,R,United States,4/29/83,NA,5988322,24000,1983,Tony Scott,James Costigan,Catherine Deneuve,Metro-Goldwyn-Mayer (MGM),United Kingdom
+Robin Hood: Men in Tights,6.7,104,Adventure,PG-13,United States,7/28/93,20000000,35739755,119000,1993,Mel Brooks,J.D. Shapiro,Cary Elwes,Brooksfilms,France
+Instant Family,7.3,118,Comedy,PG-13,United States,11/16/18,48000000,120556201,97000,2018,Sean Anders,Sean Anders,Mark Wahlberg,Closest to the Hole Productions,United States
+The Sheltering Sky,6.8,138,Adventure,R,United States,12/12/90,25000000,2075084,12000,1990,Bernardo Bertolucci,Paul Bowles,Debra Winger,Recorded Picture Company (RPC),United Kingdom
+Aliens in the Attic,5.4,86,Adventure,PG,United States,7/31/09,45000000,57881056,21000,2009,John Schultz,Mark Burton,Ashley Tisdale,Twentieth Century Fox,United States
+Herbie Goes Bananas,5,100,Adventure,G,United States,6/25/80,NA,18000000,5300,1980,Vincent McEveety,Don Tait,Charles Martin Smith,Walt Disney Productions,United States
+Amores Perros,8.1,154,Drama,R,United States,4/13/01,2000000,20908467,228000,2000,Alejandro G. Iñárritu,Guillermo Arriaga,Emilio Echevarría,Altavista Films,Mexico
+The Innocents,7.3,115,Drama,PG-13,France,2/10/16,NA,7400324,10000,2016,Anne Fontaine,Sabrina B. Karine,Lou de Laâge,Mandarin Films,France
+Over the Hedge,6.7,83,Animation,PG,United States,5/19/06,80000000,339795890,164000,2006,Tim Johnson,Len Blum,Bruce Willis,DreamWorks Animation,United States
+Hope Floats,6,114,Drama,PG-13,United States,5/29/98,30000000,81471882,25000,1998,Forest Whitaker,Steven Rogers,Sandra Bullock,Twentieth Century Fox,United States
+Women on the Verge of a Nervous Breakdown,7.6,88,Comedy,R,United States,11/11/88,700000,7263129,37000,1988,Pedro Almodóvar,Pedro Almodóvar,Carmen Maura,Laurenfilm,Spain
+Maid to Order,5.5,93,Fantasy,PG,United States,7/31/87,3000000,9868521,3300,1987,Amy Holden Jones,Amy Holden Jones,Ally Sheedy,Vista Organization,United States
+Radio Days,7.5,88,Comedy,PG,United States,1/30/87,16000000,14792779,32000,1987,Woody Allen,Woody Allen,Mia Farrow,Jack Rollins & Charles H. Joffe Productions,United States
+Gods and Monsters,7.4,105,Biography,R,United States,11/4/98,10000000,6451628,30000,1998,Bill Condon,Christopher Bram,Ian McKellen,Lions Gate Films,United States
+Walking Tall,6.3,86,Action,PG-13,United States,4/2/04,46000000,57223890,72000,2004,Kevin Bray,Mort Briskin,Dwayne Johnson,Metro-Goldwyn-Mayer (MGM),United States
+Breakdown,6.9,93,Crime,R,United States,5/2/97,36000000,50159144,51000,1997,Jonathan Mostow,Jonathan Mostow,Kurt Russell,Dino De Laurentiis Company,United States
+Return to Horror High,4.3,95,Comedy,R,United States,2/20/87,NA,1189709,3100,1987,Bill Froehlich,Bill Froehlich,Lori Lethin,Balcor Film Investors,United States
+Popeye,5.3,114,Adventure,PG,United States,12/12/80,20000000,49823037,30000,1980,Robert Altman,Jules Feiffer,Robin Williams,Paramount Pictures,United States
+The World's Fastest Indian,7.8,127,Biography,PG-13,United States,3/24/06,25000000,18299138,53000,2005,Roger Donaldson,Roger Donaldson,Anthony Hopkins,OLC / Rights Entertainment,New Zealand
+The Assault,7.2,144,Drama,PG,Netherlands,2/6/86,NA,512403,3100,1986,Fons Rademakers,Gerard Soeteman,Derek de Lint,Fons Rademakers Produktie,Netherlands
+Pred dozhdot,8,113,Drama,Not Rated,United States,2/24/95,1900000,763847,14000,1994,Milcho Manchevski,Milcho Manchevski,Katrin Cartlidge,Aim,Republic of Macedonia
+The Watcher in the Woods,6.3,84,Family,PG,United States,10/9/81,NA,5000000,5700,1980,John Hough,Brian Clemens,Bette Davis,Walt Disney Productions,United States
+The Secret Life of Bees,7.3,114,Drama,PG-13,United States,10/17/08,11000000,39952437,25000,2008,Gina Prince-Bythewood,Gina Prince-Bythewood,Dakota Fanning,Fox Searchlight Pictures,United States
+River of Death,4.3,107,Action,R,United States,9/29/89,NA,NA,1100,1989,Steve Carver,Alistair MacLean,Michael Dudikoff,Breton Film Productions,United States
+Irrational Man,6.6,95,Comedy,R,United States,8/7/15,11000000,27391084,60000,2015,Woody Allen,Woody Allen,Joaquin Phoenix,Gravier Productions,United States
+Krush Groove,6.5,97,Comedy,R,United States,10/25/85,3000000,11052713,2900,1985,Michael Schultz,Ralph Farquhar,Sheila E.,Crystalite Productions,United States
+Savages,6.5,131,Crime,R,United States,7/6/12,45000000,82966152,126000,2012,Oliver Stone,Shane Salerno,Aaron Taylor-Johnson,Ixtlan,United States
+Goodnight Mommy,6.7,99,Horror,R,United States,9/11/15,NA,2193474,47000,2014,Severin Fiala,Veronika Franz,Lukas Schwarz,Ulrich Seidl Film Produktion GmbH,Austria
+Death Wish 4: The Crackdown,5.4,99,Action,R,United States,11/6/87,5000000,6880310,9100,1987,J. Lee Thompson,Brian Garfield,Charles Bronson,Golan-Globus Productions,United States
+Batla House,7.2,146,Action,Not Rated,United States,8/15/19,NA,13098981,10000,2019,Nikkhil Advani,Ritesh Shah,Mrunal Thakur,Bake My Cake Films,India
+Knockaround Guys,6.1,92,Crime,R,United States,10/11/02,NA,12806614,23000,2001,Brian Koppelman,Brian Koppelman,Jennifer Baxter,New Line Cinema,United States
+The Adventures of Huck Finn,6.2,108,Adventure,PG,United States,4/2/93,6500000,24103594,8000,1993,Stephen Sommers,Mark Twain,Elijah Wood,Steve White Productions,United States
+Desert Hearts,7,91,Drama,R,United States,3/7/86,1250000,2492088,5500,1985,Donna Deitch,Jane Rule,Helen Shaver,Desert Hearts Productions,United States
+The Host,7.1,120,Action,R,United States,3/30/07,NA,89433436,112000,2006,Bong Joon Ho,Bong Joon Ho,Kang-ho Song,Chungeorahm Film,South Korea
+Santa Claus: The Movie,6.3,107,Adventure,PG,United States,11/27/85,50000000,23717291,12000,1985,Jeannot Szwarc,David Newman,Dudley Moore,GGG,United Kingdom
+Rogue,6.2,99,Action,R,Australia,11/8/07,NA,4631926,29000,2007,Greg McLean,Greg McLean,Michael Vartan,Dimension Films,Australia
+7 Days in Entebbe,5.8,107,Action,PG-13,United States,3/16/18,NA,8771432,15000,2018,José Padilha,Gregory Burke,Batsheva Dance Company,Participant,United Kingdom
+Memoirs of an Invisible Man,6,99,Comedy,PG-13,United States,2/28/92,40000000,14358033,23000,1992,John Carpenter,H.F. Saint,Chevy Chase,Warner Bros.,United States
+'71,7.2,99,Action,R,United Kingdom,10/10/14,NA,3062178,53000,2014,Yann Demange,Gregory Burke,Jack O'Connell,Film 4,United Kingdom
+Iron Eagle,5.5,117,Action,PG-13,United States,1/17/86,NA,24159872,14000,1986,Sidney J. Furie,Kevin Alyn Elders,Louis Gossett Jr.,TriStar Pictures,United States
+My Father the Hero,5.5,90,Comedy,PG,United States,2/4/94,NA,25479558,11000,1994,Steve Miner,Gérard Lauzier,Gérard Depardieu,Touchstone Pictures,France
+Black Hawk Down,7.7,144,Drama,R,United States,1/18/02,92000000,172989651,372000,2001,Ridley Scott,Mark Bowden,Josh Hartnett,Revolution Studios,United States
+Peter's Friends,7,101,Comedy,R,United States,12/25/92,5000000,4058564,11000,1992,Kenneth Branagh,Rita Rudner,Hugh Laurie,British Broadcasting Corporation (BBC),United Kingdom
+Fair Game,6.8,108,Biography,PG-13,United States,12/3/10,22000000,25806953,47000,2010,Doug Liman,Jez Butterworth,Naomi Watts,River Road Entertainment,United States
+Moonlight,7.4,111,Drama,R,United States,11/18/16,4000000,65336603,284000,2016,Barry Jenkins,Barry Jenkins,Mahershala Ali,A24,United States
+Saw VI,6,90,Horror,R,United States,10/23/09,11000000,68234154,105000,2009,Kevin Greutert,Patrick Melton,Tobin Bell,Twisted Pictures,Canada
+Keanu,6.3,100,Action,R,United States,4/29/16,15000000,20651333,47000,2016,Peter Atencio,Jordan Peele,Keegan-Michael Key,Artists First,United States
+The Heat,6.6,117,Action,R,United States,6/28/13,43000000,229930771,165000,2013,Paul Feig,Katie Dippold,Sandra Bullock,Twentieth Century Fox,United States
+Brassed Off,7.2,108,Comedy,R,United States,5/23/97,NA,2576738,19000,1996,Mark Herman,Mark Herman,Pete Postlethwaite,Channel Four Films,United Kingdom
+Beloved,6,172,Drama,R,United States,10/16/98,80000000,22852487,7200,1998,Jonathan Demme,Toni Morrison,Oprah Winfrey,Harpo Films,United States
+Shin Godzilla,6.8,120,Action,Not Rated,Japan,7/29/16,NA,78053145,25000,2016,Hideaki Anno,Hideaki Anno,Hiroki Hasegawa,Cine Bazar,Japan
+Dirty Work,6.4,82,Comedy,PG-13,United States,6/12/98,13000000,10023282,24000,1998,Bob Saget,Frank Sebastiano,Norm MacDonald,Metro-Goldwyn-Mayer (MGM),Canada
+The Horse Whisperer,6.6,169,Drama,PG-13,United States,5/15/98,60000000,186883563,40000,1998,Robert Redford,Nick Evans,Robert Redford,Touchstone Pictures,United States
+Side Effects,7.1,106,Crime,R,United States,2/8/13,30000000,63414135,183000,2013,Steven Soderbergh,Scott Z. Burns,Rooney Mara,Endgame Entertainment,United States
+RocknRolla,7.3,114,Action,R,United States,10/31/08,18000000,25740863,241000,2008,Guy Ritchie,Guy Ritchie,Gerard Butler,Warner Bros.,United Kingdom
+All Night Long,5.5,87,Comedy,R,United States,3/6/81,14000000,4454295,1700,1981,Jean-Claude Tramont,W.D. Richter,Gene Hackman,Universal Pictures,United States
+Bordello of Blood,5.4,87,Comedy,R,United States,8/16/96,13000000,5781045,14000,1996,Gilbert Adler,William M. Gaines,Dennis Miller,Universal City Studios,United States
+Colossal,6.2,109,Comedy,R,Canada,4/21/17,15000000,4531320,61000,2016,Nacho Vigalondo,Nacho Vigalondo,Anne Hathaway,Toy Fight Productions,Canada
+The Departed,8.5,151,Crime,R,United States,10/6/06,90000000,291465373,1200000,2006,Martin Scorsese,William Monahan,Leonardo DiCaprio,Warner Bros.,United States
+Chicken Run,7,84,Animation,G,United States,6/23/00,45000000,224834564,181000,2000,Peter Lord,Peter Lord,Mel Gibson,Aardman Animations,United States
+Diary of a Wimpy Kid: Dog Days,6.3,94,Animation,PG,United States,8/3/12,22000000,77229695,23000,2012,David Bowers,Maya Forbes,Zachary Gordon,Fox 2000 Pictures,United States
+Philadelphia,7.7,125,Drama,PG-13,United States,1/14/94,26000000,206678440,229000,1993,Jonathan Demme,Ron Nyswaner,Tom Hanks,TriStar Pictures,United States
+The DUFF,6.5,101,Comedy,PG-13,United States,2/20/15,8500000,43709744,87000,2015,Ari Sandel,Josh A. Cagan,Mae Whitman,CBS Films,United States
+Everything Must Go,6.4,97,Drama,R,United Kingdom,10/14/11,5000000,2820490,49000,2010,Dan Rush,Dan Rush,Will Ferrell,Temple Hill Entertainment,United States
+Trespass,6.3,101,Action,R,United States,12/25/92,14000000,13249535,10000,1992,Walter Hill,Bob Gale,Bill Paxton,Universal Pictures,United States
+Igor,6,87,Animation,PG,United States,9/19/08,25000000,30893885,23000,2008,Tony Leondis,Chris McKenna,John Cusack,Metro-Goldwyn-Mayer (MGM),United States
+Harry Potter and the Deathly Hallows: Part 1,7.7,146,Adventure,PG-13,United States,11/19/10,NA,977043483,495000,2010,David Yates,Steve Kloves,Daniel Radcliffe,Warner Bros.,United Kingdom
+Clinton Road,5.9,77,Horror,Not Rated,United States,6/14/19,2500000,50400,1900,2019,Richard Grieco,Noel Ashman,Ace Young,Growing Tree Productions,NA
+Rabbit-Proof Fence,7.4,94,Adventure,PG,United States,1/31/03,6000000,16217411,28000,2002,Phillip Noyce,Doris Pilkington,Everlyn Sampi,Rumbalara Films,Australia
+Greenfingers,6.8,91,Comedy,R,United Kingdom,9/14/01,NA,1961054,5600,2000,Joel Hershman,Joel Hershman,Clive Owen,Boneyard Entertainment,United Kingdom
+Leprechaun 2,4.6,85,Comedy,R,United States,4/8/94,2000000,2260622,9300,1994,Rodman Flender,Mark Jones,Warwick Davis,Planet Productions,United States
+Showgirls,4.9,128,Drama,NC-17,United States,9/22/95,45000000,20358624,64000,1995,Paul Verhoeven,Joe Eszterhas,Elizabeth Berkley,Carolco Pictures,France
+Isle of Dogs,7.9,101,Animation,PG-13,United States,4/13/18,NA,64337744,147000,2018,Wes Anderson,Wes Anderson,Bryan Cranston,Indian Paintbrush,Germany
+Zorro: The Gay Blade,6.2,93,Action,PG,United States,7/17/81,NA,NA,4100,1981,Peter Medak,Hal Dresner,George Hamilton,Melvin Simon Productions,United States
+Death Becomes Her,6.6,104,Comedy,PG-13,United States,7/31/92,55000000,149022650,108000,1992,Robert Zemeckis,Martin Donovan,Meryl Streep,Universal Pictures,United States
+Eight Days a Week,6.2,92,Comedy,R,United States,2/26/99,NA,9090,2900,1997,Michael Davis,Michael Davis,Joshua Schaefer,Underdog Productions,United States
+The Handmaid's Tale,6,108,Drama,R,United States,3/9/90,NA,4960385,9100,1990,Volker Schlöndorff,Margaret Atwood,Natasha Richardson,Bioskop Film,United States
+Batman Returns,7,126,Action,PG-13,United States,6/19/92,80000000,266892996,280000,1992,Tim Burton,Bob Kane,Michael Keaton,Warner Bros.,United States
+True Stories,7.2,89,Comedy,PG,United States,10/10/86,NA,2545459,6100,1986,David Byrne,Stephen Tobolowsky,David Byrne,Gary Kurfirst Pictures,United States
+Videodrome,7.2,87,Horror,R,United States,2/4/83,5952000,2120439,86000,1983,David Cronenberg,David Cronenberg,James Woods,Filmplan International,Canada
+Special Forces,6.4,109,Action,R,France,11/2/11,NA,3424648,18000,2011,Stéphane Rybojad,Stéphane Rybojad,Diane Kruger,Easy Company,France
+Machine Gun Preacher,6.8,129,Action,R,United Kingdom,11/2/11,30000000,3338690,64000,2011,Marc Forster,Jason Keller,Gerard Butler,Relativity Media,United States
+Small Time Crooks,6.7,94,Comedy,PG,United States,5/19/00,25000000,29934477,38000,2000,Woody Allen,Woody Allen,Woody Allen,Dreamworks Pictures,United States
+"4 Months, 3 Weeks and 2 Days",7.9,113,Drama,Not Rated,Romania,9/14/07,NA,10174839,58000,2007,Cristian Mungiu,Cristian Mungiu,Anamaria Marinca,Mobra Films,Romania
+Reckless,6.3,90,Comedy,R,United States,2/3/84,NA,8289916,1900,1984,James Foley,Chris Columbus,Aidan Quinn,Edgar J. Scherick Associates,United States
+The Edge of Seventeen,7.3,104,Comedy,R,United States,11/18/16,9000000,19370020,110000,2016,Kelly Fremon Craig,Kelly Fremon Craig,Hailee Steinfeld,Gracie Films,United States
+House Party 3,4.7,100,Comedy,R,United States,1/12/94,NA,19281235,4800,1994,Eric Meza,Reginald Hudlin,Christopher Reid,"Jackson/McHenry Company,The",United States
+Children of the Corn,5.6,92,Horror,R,United States,3/9/84,800000,14568989,49000,1984,Fritz Kiersch,Stephen King,Peter Horton,Hal Roach Studios,United States
+Vampire Academy,5.5,104,Action,PG-13,United States,2/7/14,30000000,15642346,53000,2014,Mark Waters,Richelle Mead,Zoey Deutch,Angry Films,United States
+Dolores Claiborne,7.4,132,Crime,R,United States,3/24/95,NA,24361867,41000,1995,Taylor Hackford,Stephen King,Kathy Bates,Castle Rock Entertainment,United States
+"To Wong Foo Thanks for Everything, Julie Newmar",6.6,109,Comedy,PG-13,United States,9/8/95,NA,47774193,30000,1995,Beeban Kidron,Douglas Carter Beane,Wesley Snipes,Universal Pictures,United States
+Extraordinary Measures,6.4,106,Drama,PG,United States,1/22/10,31000000,15134293,16000,2010,Tom Vaughan,Robert Nelson Jacobs,Brendan Fraser,CBS Films,United States
+Them That Follow,5.4,98,Drama,R,United States,8/2/19,NA,172952,2900,2019,Britt Poulton,Britt Poulton,Walton Goggins,Amasia Entertainment,United States
+Leaving Las Vegas,7.5,111,Drama,R,United States,2/9/96,3600000,32029928,117000,1995,Mike Figgis,John O'Brien,Nicolas Cage,Lumiere Pictures,United States
+Any Which Way You Can,6.1,116,Action,PG,United States,12/17/80,15000000,70687344,18000,1980,Buddy Van Horn,Stanford Sherman,Clint Eastwood,The Malpaso Company,United States
+The Spiderwick Chronicles,6.5,96,Action,PG,United States,2/14/08,90000000,164170327,91000,2008,Mark Waters,Karey Kirkpatrick,Freddie Highmore,Paramount Pictures,United States
+Glengarry Glen Ross,7.7,100,Crime,R,United States,10/2/92,12500000,10725228,98000,1992,James Foley,David Mamet,Al Pacino,New Line Cinema,United States
+Quills,7.3,124,Biography,R,United Kingdom,1/19/01,13500000,17989227,52000,2000,Philip Kaufman,Doug Wright,Geoffrey Rush,Fox Searchlight Pictures,United Kingdom
+Losing Isaiah,6.4,111,Drama,R,United States,3/17/95,17000000,7603766,5600,1995,Stephen Gyllenhaal,Seth Margolis,Jessica Lange,Paramount Pictures,United States
+It's Complicated,6.5,120,Comedy,R,United States,12/25/09,85000000,219103655,88000,2009,Nancy Meyers,Nancy Meyers,Meryl Streep,Universal Pictures,United States
+Bandits,6.5,123,Comedy,PG-13,United States,10/12/01,75000000,67631903,66000,2001,Barry Levinson,Harley Peyton,Bruce Willis,Metro-Goldwyn-Mayer (MGM),United States
+The Fog,6.8,89,Horror,R,United States,2/8/80,1000000,21448782,66000,1980,John Carpenter,John Carpenter,Adrienne Barbeau,AVCO Embassy Pictures,United States
