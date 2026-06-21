@@ -70,7 +70,7 @@ Display the data frame and state the numbers of rows and columns in the data fra
 # add code here
 ```
 
-## Question 2 - Check and clean 
+## Question 2 - Check and clean
 
 Joining the data by player name alone should have resulted in two position variables in `nba_draft_raw`: `position.x` and `position.y`.
 `position.x` is the `position` variable coming from the “left” data frame when you joined.
@@ -212,4 +212,3 @@ Your plot should:
 #| label: penguin-plot
 # add code here
 ```
-
