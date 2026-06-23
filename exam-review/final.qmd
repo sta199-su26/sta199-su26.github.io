@@ -89,6 +89,12 @@ glimpse(df)
 
 Imagine you run this code:
 
+```
+linear_reg() |>
+  fit(y ~ x + color, df) |>
+  tidy()
+```
+
 ```{r}
 #| eval: false
 linear_reg() |>
@@ -561,6 +567,7 @@ The data for Questions X - Y was originally gathered using the [**Complete Poké
 First, let's load the data:
 
 ```{r}
+#| echo: true
 #| message: false
 pokemon <- read_csv("data/pokemon.csv") |>
   mutate(
@@ -580,6 +587,7 @@ q_no <- q_no + 1
 ### Question `{r} q_no`
 
 ```{r}
+#| echo: true
 observed_fit <- pokemon |>
   specify(speed ~ defense) |>
   fit()
@@ -591,12 +599,14 @@ observed_fit
 
 ```{r}
 #| include: false
+#| echo: true
 q_no <- q_no + 1
 ```
 
 ### Question `{r} q_no`
 
 ```{r}
+#| echo : true
 logistic_fit <- logistic_reg() |>
   fit(is_legendary ~ hp + attack + defense, pokemon)
 
@@ -613,6 +623,7 @@ q_no <- q_no + 1
 ### Question `{r} q_no`
 
 ```{r}
+#| echo: true
 logistic_fit |>
   augment(pokemon) |>
   roc_auc(
@@ -632,6 +643,7 @@ q_no <- q_no + 1
 ### Question `{r} q_no`
 
 ```{r}
+#| echo: true
 set.seed(12345)
 
 pokemon |>
@@ -656,6 +668,7 @@ q_no <- q_no + 1
 ### Question `{r} q_no`
 
 ```{r}
+#| echo: true
 set.seed(24601)
 
 pokemon |>
